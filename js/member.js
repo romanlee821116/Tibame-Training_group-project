@@ -30,6 +30,8 @@ $(document).ready(function(){
                 // console.log(this.isActive);
                 $('.receiverDetail').fadeOut();
                 $('.greyBackground').remove();
+                // 可滑動卷軸
+                $('body').removeClass('stopScroll');
             },
         },
     });
