@@ -83,16 +83,15 @@
    width: 100%;
    max-width: 1400px;
    display: flex;
-   position: absolute;
-   left: 50%;
-   bottom: 30px;
-   transform: translateX(-50%);
+   position: relative;   
+   @content;
    .footer-left{
     width: 40%;
     height: 100%;
     display: flex;
     align-items: center;
     padding-left: 200px;
+    
         a{
             color: #bb866a;
             font-weight: 900;
