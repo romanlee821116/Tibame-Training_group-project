@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/login.css">
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src='./js/login.js'></script>
+    <title>log in / sign up</title>
+</head>
+<body>
+    <div class='loginAll'>
+        <div id="loginImg">
+            <img src="../images/login/login.png">
+        </div>
+        <div class='loginSignup'>
+            <img class='loginClose' src="./images/login/close.png">
+            <div class='loginLeft'>
+                <div id='loginTitle' class='loginFormTitle'>
+                    <h4 id='loginIcon'>會員登入</h4>
+                    <h4 id='signupIcon' class='loginRefresh'>會員註冊</h4>
+                    <div class='loginChoosenBar'></div>
+                </div>
+                <!-- 其他登入方式 -->
+                <div class="loginOther">
+                    <div class="loginOther1">
+                        <p class='loginUnderline'></p>
+                        <p>OR</p>
+                        <p class='loginUnderline'></p>
+                    </div>
+                    <div class="loginOther2">
+                        <div class="loginFB">
+                            <i class="fab fa-facebook-square"></i>
+                            <a href="###">使用FaceBook登入</a>
+                        </div>
+                        <div class="loginLine">
+                            <i class="fab fa-line"></i>
+                            <a>使用Line登入</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- 登入註冊============================= -->
+                <div class="loginForm">
+                    <form id='loginFormPage' method="POST" action="">
+                        <div class='loginWrapper'>
+                            <div id="loginArrow"></div>
+                            <input type="text" placeholder="請輸入您的信箱">
+                            <input id='password' class='psw' type="password" placeholder="請輸入密碼"><i class="eye eye1 fas fa-eye"></i>
+                            <div id='loginKeep'>
+                                <input type="checkbox" id='loginKeeplog'>
+                                <label for="loginKeeplog">保持登入</label>
+                                <span id='loginForgetPsw'>忘記密碼？</span>
+                            </div>
+                            <input type="password" placeholder="請再次輸入密碼"><i class="eye eye2 fas fa-eye"></i>
+                            <div class='loginGender'>
+                                <input name='loginGender' type="radio" id="male" value='male'>
+                                <label for="male">男性</label>
+                                <input name='loginGender' type="radio" id="female" value='male'>
+                                <label for="female">女性</label>
+                                <input name='loginGender' type="radio" id="other" value='male'>
+                                <label for="other">第三性</label>
+                            </div>
+                            <input type="text" placeholder="請輸入您的姓名">
+                            <input type="text" placeholder="請輸入您的連絡電話">
+                            <select class="select1" id="縣市1"></select>
+                            <select class="select2" id="鄉鎮市區1"></select>
+                            <input type="text" placeholder="地址">
+
+                            <div class='loginCode'>
+                                <input id='loginCodeEnter' type="text" placeholder="請輸入右方數字">
+                                <span class='loginCodeNew'></span>
+                                <i class="fas fa-sync-alt loginRefresh"></i>
+                            </div>
+                        </div>
+                        <button type="submit">
+                            <span>
+                            登入
+                            <br/>
+                            註冊
+                            </span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <!-- 忘記密碼============================= -->
+            <div class='forgetPWD'>
+                <div class='forgetFormTitle'>
+                    <h4>忘記密碼</h4>
+                    <div class='loginChoosenBar2'></div>
+                </div>
+                <div class="forgetForm">
+                    <form id='forgetFormPage' method="POST" action="">
+                        <div id="loginArrow2"></div>
+                        <input type="text" placeholder="請輸入您的信箱">
+                        <div class='loginCode'>
+                            <input id='loginCodeEnter' type="text" placeholder="請輸入右方數字">
+                            <span class='loginCodeNew'></span>
+                            <i class="fas fa-sync-alt loginRefresh"></i>
+                        </div>
+                        <button type="submit">
+                            傳送新密碼
+                        </button>
+                        <div class='loginBack'>
+                            <i class="fas fa-angle-left"></i>
+                            <span>返回登入</span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+    
+
+    </script>
+    
+</body>
+</html>
