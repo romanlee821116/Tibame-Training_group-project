@@ -1,0 +1,170 @@
+*{
+  box-sizing: border-box;
+  font-family: "微軟正黑體";
+  color: #bb866a;
+}
+
+body{
+  margin: 0;
+  background-image: url("../images/bg.png");
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+img{
+  width: 100%;
+}
+
+.container{
+  border: 1px solid black;
+  width: 80%;
+  max-width: 1200px;
+  margin: 100px auto;
+}
+
+
+/* ========== 訂單處理階段 ========== */
+
+
+.stage{
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: center;
+}
+
+.step{
+  /* border: 1px solid blue; */
+  width: 70px;
+  text-align: center;
+  font-size: 0;
+}
+
+.stepImg{
+  /* border: 1px solid green; */
+  width: 30px;
+  font-size: 0;
+  display: inline-block;
+}
+
+.step > p{
+  /* border: 1px solid green; */
+  margin: 0;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.payment{
+  margin: 0 100px;
+}
+
+/* ========== 訂單內容大標 ========== */
+
+.orderTitle{
+  /* border: 1px solid red; */
+  font-size: 24px;
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+/* ========== 訂單內容 ========== */
+
+.orderContent{
+  border: 1px solid red;
+  display: flex;
+}
+
+/* ========== 左邊 ========== */
+
+.left{
+  border: 1px solid blue;
+  width: 60%;
+}
+
+/* 標題 */
+.contentTitle{
+  border-bottom: 2px solid #172852;
+  padding: 10px 0 10px 30px;
+  font-size: 0;
+  margin-bottom: 20px;
+}
+
+.contentTitle > p{
+  /* border: 1px solid green; */
+  display: inline-block;
+  margin: 0;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.contentTitle > p:nth-child(1){
+  width: 50%;
+}
+
+.contentTitle > p:nth-child(2), .contentTitle > p:nth-child(3){
+  width: 25%;
+}
+
+/* 商品細項 */
+
+.list{
+  border: 1px solid red;
+  list-style: none;
+  padding: 0;
+}
+
+.item{
+  border: 1px solid green;
+  display: flex;
+  font-size: 0;
+}
+
+.check{
+  /* border: 1px solid blue; */
+  width: 15px;
+  margin: auto;
+}
+
+.check > input{
+  margin: 0;
+}
+
+.itemImg{
+  /* border: 1px solid red; */
+  width: 100px;
+  margin: 0 10px;
+}
+
+.itemName{
+  /* border: 1px solid red; */
+  width: 180px;
+  margin: auto;
+}
+
+.itemName > p{
+  margin: 0;
+  font-size: 1rem;
+}
+
+.quantity{
+  /* border: 1px solid green; */
+  width: 150px;
+  margin: auto;
+}
+
+.quantity > input[type="text"]{
+  width: 30px;
+}
+
+.unitPrice{
+  /* border: 1px solid red; */
+  width: 100px;
+  margin: auto;
+  font-size: 1rem;
+}
+
+.delete{
+  /* border: 1px solid blue ; */
+  width: 20px;
+  margin: auto 10px auto auto;
+}
+
