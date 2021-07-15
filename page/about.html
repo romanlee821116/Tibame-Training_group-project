@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小春堂</title>
+    <link rel="icon" href="../images/logo_footer.png">
+    <link rel="stylesheet" href="../css/about.css">    
+    <script src="https://kit.fontawesome.com/8c3a8ab95b.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+    
+    <script src="../js/about.js"></script>
+    <script src="../js/vue.js"></script>
+    <!-- scrollmagic -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+    
+</head>
+<body>
+    <div class="wrap" id='wrap'>
+        <div id="keypoint1"></div>
+        <!-- ======================= scene1 =======================  -->
+        <div id="scene1">            
+            <div class='about_street'>
+                <div v-for='item in people_list' class='people_container'>
+                    <img :src="item.src" :class='item.class'>
+                </div>                  
+            </div>   
+            <div class="about_street_end">
+                <img src="../images/temp.png" alt="">
+            </div>  
+        </div>
+        
+        <!-- content -->
+        <div class='about_history'>
+            小春堂創立於2021年初春，是與臺灣在地小農合作所打造的日式零食點心專門店，將日本最新流行的人氣和菓子與洋菓子同步在台製作上市，在家就可以品嘗多元道地的日本風味。
+        </div>  
+        <div class='about_brand'>
+            小春堂堅持所有食材皆來自台灣有機栽種，並與台灣各地的小農合作，讓每個點心都健康無汙染。就讓我們來看看這些與小春堂合作的小農們吧!
+        </div>  
+        <!-- ======================= scene2 =======================  -->
+        <div id="keypoint2"></div>
+        <div id='scene2'>            
+            <div class='about_taiwan'>
+                <img class='about_island' src="../images/island.png" alt="">
+            </div> 
+            <div class="about_taiwan_end">
+                <img src="../images/temp1.png" alt="">
+            </div>  
+        </div>
+        <component :is="content" v-on:Box-type='changeBox'></component>
+
+
+        <!-- content -->
+        <div v-for='(item, index) in taiwan_list' :class="item.place">
+            <h1>{{item.country}}</h1>
+            <div>
+                <h3>{{item.title}}</h3>
+                <p>{{item.content}}</p>
+            </div>
+            <a href="#" :class='item.fruit' @click.prevent='showBox(index)' >詳細資訊</a>
+        </div>
+
+        
+    </div> 
+    
+</body>
+</html>
+
