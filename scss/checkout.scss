@@ -1,103 +1,71 @@
-@charset "UTF-8";
-.navbar {
-  width: 100%;
-  height: 100px;
-  position: fixed;
-  top: 0px;
-  left: 0;
-  padding-top: 10px;
-  display: flex;
-  justify-content: space-between;
-  z-index: 900;
+@import '../mixin/mixin';
+
+.navbar{
+@include navbar();
 }
 
-.navbar .navbar-logo {
-  margin-left: 10px;
-  width: 60px;
-  height: 60px;
-}
-
-.navbar .navbar-logo img {
-  width: 100%;
-  height: 100%;
-}
-
-.navbar .navbar-icon {
-  display: flex;
-  margin-right: 10px;
-}
-
-.navbar .navbar-icon a {
-  display: block;
-  width: 60px;
-  height: 60px;
-  text-align: center;
-  line-height: 60px;
-}
-
-.navbar .navbar-icon i {
-  color: #bb866a;
-  font-size: 28px;
-}
-
-* {
+*{
   box-sizing: border-box;
   font-family: "微軟正黑體";
   color: #bb866a;
 }
 
-body {
+body{
   margin: 0;
   background-image: url("../images/bg.png");
   background-size: cover;
   background-attachment: fixed;
 }
 
-img {
+img{
   width: 100%;
 }
 
-.container {
+.container{
   border: 1px solid black;
   width: 80%;
   max-width: 1200px;
   margin: 100px auto;
 }
 
+
 /* ========== 訂單處理階段 ========== */
-.stage {
+
+
+.stage{
   /* border: 1px solid red; */
   display: flex;
   justify-content: center;
 }
 
-.step {
+.step{
   /* border: 1px solid blue; */
   width: 70px;
   text-align: center;
   font-size: 0;
 }
 
-.stepImg {
+.stepImg{
   /* border: 1px solid green; */
   width: 30px;
   font-size: 0;
   display: inline-block;
 }
 
-.step > p {
+.step > p{
   /* border: 1px solid green; */
   margin: 0;
   font-size: 1rem;
   font-weight: bold;
 }
 
-.payment {
+.payment{
   margin: 0 100px;
 }
 
 /* ========== 訂單內容大標 ========== */
-.orderTitle {
+
+.orderTitle{
   /* border: 1px solid red; */
   font-size: 24px;
   font-weight: bold;
@@ -105,26 +73,28 @@ img {
 }
 
 /* ========== 訂單內容 ========== */
-.orderContent {
+
+.orderContent{
   border: 1px solid red;
   display: flex;
 }
 
 /* ========== 左邊 ========== */
-.left {
+
+.left{
   border: 1px solid blue;
   width: 60%;
 }
 
 /* 標題 */
-.contentTitle {
+.contentTitle{
   border-bottom: 2px solid #172852;
   padding: 10px 0 10px 30px;
   font-size: 0;
   margin-bottom: 20px;
 }
 
-.contentTitle > p {
+.contentTitle > p{
   /* border: 1px solid green; */
   display: inline-block;
   margin: 0;
@@ -132,74 +102,75 @@ img {
   font-size: 1rem;
 }
 
-.contentTitle > p:nth-child(1) {
+.contentTitle > p:nth-child(1){
   width: 50%;
 }
 
-.contentTitle > p:nth-child(2), .contentTitle > p:nth-child(3) {
+.contentTitle > p:nth-child(2), .contentTitle > p:nth-child(3){
   width: 25%;
 }
 
 /* 商品細項 */
-.list {
+
+.list{
   border: 1px solid red;
   list-style: none;
   padding: 0;
 }
 
-.item {
+.item{
   border: 1px solid green;
   display: flex;
   font-size: 0;
 }
 
-.check {
+.check{
   /* border: 1px solid blue; */
   width: 15px;
   margin: auto;
 }
 
-.check > input {
+.check > input{
   margin: 0;
 }
 
-.itemImg {
+.itemImg{
   /* border: 1px solid red; */
   width: 100px;
   margin: 0 10px;
 }
 
-.itemName {
+.itemName{
   /* border: 1px solid red; */
   width: 180px;
   margin: auto;
 }
 
-.itemName > p {
+.itemName > p{
   margin: 0;
   font-size: 1rem;
 }
 
-.quantity {
+.quantity{
   /* border: 1px solid green; */
   width: 150px;
   margin: auto;
 }
 
-.quantity > input[type="text"] {
+.quantity > input[type="text"]{
   width: 30px;
 }
 
-.unitPrice {
+.unitPrice{
   /* border: 1px solid red; */
   width: 100px;
   margin: auto;
   font-size: 1rem;
 }
 
-.delete {
+.delete{
   /* border: 1px solid blue ; */
   width: 20px;
   margin: auto 10px auto auto;
 }
-/*# sourceMappingURL=checkout.css.map */
+
