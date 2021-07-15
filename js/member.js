@@ -13,7 +13,7 @@ $(document).ready(function(){
             };
         },
         template: `
-            <div class='receiverDetail' :class='{close: isActive}'>
+            <div class='receiverDetail'>
                 <div>
                     <p>收件人姓名：<input disabled type="text" :value='recevierName'></p>
                     <p>收件人電話：<input disabled type="text" :value='recevierPhone'></p>
@@ -26,6 +26,8 @@ $(document).ready(function(){
         methods: {
             recevierClose(){
                 this.isActive = true;
+                $('.receiverDetail').fadeOut();
+                $('.greyBackground').remove();
             },
         },
     });
