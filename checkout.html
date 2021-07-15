@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>購物車清單</title>
+  <link href="../css/checkout.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+</head>
+<body>
+
+  <!-- ========== header ========== -->
+
+  
+
+
+
+  <!-- ========== main ========== -->
+  <div class="container">
+
+    <!-- ========== 訂單處理階段 ========== -->
+    <div class="stage">
+
+      <div class="step orderData">
+        <div class="stepImg"><img src="../images/checkout/one.png"></div>
+        <p>訂單資料</p>
+      </div>
+
+      <div class="step payment">
+        <div class="stepImg"><img src="../images/checkout/two.png"></div>
+        <p>付款資訊</p>
+      </div>
+
+      <div class="step confirm">
+        <div class="stepImg"><img src="../images/checkout/three.png"></div>
+        <p>訂單確認</p>
+      </div>
+
+    </div>
+
+    <!-- ========== 訂單內容大標 ========== -->
+    <div class="orderTitle">訂單內容</div>
+
+
+    <!-- ========== 訂單內容 ========== -->
+    <div class="orderContent">
+
+      <!-- ========== 左邊 ========== -->
+      <!-- 標題 -->
+      <div class="left">
+        <div class="contentTitle">
+          <p>商品名稱</p>
+          <p>數量</p>
+          <p>價格</p>
+        </div>
+
+        <!-- 商品細項 -->
+        <ul class="list">
+          <li class="item">
+            <div class="check">
+              <input type="checkbox">
+            </div>
+    
+            <div class="itemImg">
+              <img src="../images/checkout/banner_strawberry_item.png">
+            </div>
+
+            <div class="itemName">
+              <p>草莓大福</p>
+              <p>6入</p>
+            </div>
+
+            <div class="quantity">
+              <button class="mainbtn">-</button>>
+              <input type="text">
+              <button class="mainbtn">+</button>>
+            </div>
+
+            <div class="unitPrice">$<span>480</span>元</div>
+
+            <div class="delete">
+              <img src="../images/checkout/close.png">
+            </div>
+    
+          </li>
+          
+          <li class="item">
+            <div class="check">
+              <input type="checkbox">
+            </div>
+    
+            <div class="itemImg">
+              <img src="../images/checkout/banner_strawberry_item.png">
+            </div>
+
+            <div class="itemName">
+              <p>草莓大福</p>
+              <p>6入</p>
+            </div>
+
+            <div class="quantity">
+              <input type="button" value="-">
+              <input type="text">
+              <input type="button" value="+">
+            </div>
+
+            <div class="unitPrice">$<span>480</span>元</div>
+
+            <div class="delete">
+              <img src="../images/checkout/close.png">
+            </div>
+    
+          </li>
+        </ul>
+
+
+
+
+    </div>
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+  </div>
+
+
+
+
+  <!-- ========== footer ========== -->
+
+  
+
+  <script src="../js/checkout.js"></script>
+</body>
+</html>
