@@ -79,6 +79,39 @@
     }
 }
 
+@mixin footer(){
+   width: 100%;
+   max-width: 1400px;
+   display: flex;
+   position: absolute;
+   left: 50%;
+   bottom: 30px;
+   transform: translateX(-50%);
+   .footer-left{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 200px;
+        a{
+            color: #bb866a;
+            font-weight: 900;
+            margin-left: 20px;
+        }
+    }
+    .footer-right{
+        width: 60%;
+        display: flex;
+        align-items: center;
+        padding-right: 100px;
+        p{
+            font-size: 8px !important;
+            color: #bb866a;
+            opacity: .8;
+        }
+    }    
+}
+
 @mixin psycoBtn($color){
     position: fixed;
     width: 80px;

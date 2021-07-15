@@ -26,6 +26,10 @@ $(document).ready(function(){
         methods: {
             recevierClose(){
                 this.isActive = true;
+                // console.log('close');
+                // console.log(this.isActive);
+                $('.receiverDetail').fadeOut();
+                $('.greyBackground').remove();
             },
         },
     });

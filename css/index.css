@@ -21,7 +21,7 @@
   padding-top: 10px;
   display: flex;
   justify-content: space-between;
-  z-index: 999;
+  z-index: 900;
 }
 
 .navbar .navbar-logo {
@@ -44,13 +44,12 @@
   display: block;
   width: 60px;
   height: 60px;
-  /* border: 1px solid blue; */
   text-align: center;
   line-height: 60px;
 }
 
 .navbar .navbar-icon i {
-  color: #fff;
+  color: #bb866a;
   font-size: 28px;
 }
 
