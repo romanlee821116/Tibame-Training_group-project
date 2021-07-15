@@ -83,10 +83,7 @@
    width: 100%;
    max-width: 1400px;
    display: flex;
-   position: absolute;
-   left: 50%;
-   bottom: 30px;
-   transform: translateX(-50%);
+   position: relative;   
    @content;
    .footer-left{
     width: 40%;
