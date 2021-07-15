@@ -1,4 +1,5 @@
 @import url(//db.onlinewebfonts.com/c/d5853a95968c50d209319cc9479f6aab?family=Microsoft+JhengHei);
+@import '../mixin/mixin';
 *{
     margin: 0;
     padding: 0;
@@ -97,39 +98,41 @@
 
 
 .psychotest{
-    position: fixed;
-    width: 80px;
-    height: 80px;
-    right: 30px;
-    bottom: 30px;
-    z-index: 2;
-    cursor: pointer;  
-    display: none;;  
+    @include psycoBtn(#fff);
+    // position: fixed;
+    // width: 80px;
+    // height: 80px;
+    // right: 30px;
+    // bottom: 30px;
+    // z-index: 2;
+    // cursor: pointer;  
+    // display: none;;  
+
 }
-.psychotest:hover img{
-    transform: scale(1.3);
-}
-    .psychotest img{
-        width: 100%;
-        height: 100%;
-        transition: .2s;
-    }
-    .psychotest p{
-        position: absolute;
-        top: 16px;
-        left: 50%;
-        transform: translateX(-50%);
-        color: #fff;
-        font-weight: 900;
-        width: 130px;
-        text-align: center;
-        font-size: 12px;
-        transition: .2s;
-    }
-    .psychotest:hover p{
-        font-size: 14px;
-        top: 12px;
-    }
+// .psychotest:hover img{
+//     transform: scale(1.3);
+// }
+//     .psychotest img{
+//         width: 100%;
+//         height: 100%;
+//         transition: .2s;
+//     }
+//     .psychotest p{
+//         position: absolute;
+//         top: 16px;
+//         left: 50%;
+//         transform: translateX(-50%);
+//         color: #fff;
+//         font-weight: 900;
+//         width: 130px;
+//         text-align: center;
+//         font-size: 12px;
+//         transition: .2s;
+//     }
+//     .psychotest:hover p{
+//         font-size: 14px;
+//         top: 12px;
+//     }
 
 .pagepoint{
     position: fixed;

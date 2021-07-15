@@ -121,6 +121,11 @@
   transform: scale(1.3);
 }
 
+.psychotest:hover p {
+  font-size: 14px;
+  top: 12px;
+}
+
 .psychotest img {
   width: 100%;
   height: 100%;
@@ -138,11 +143,6 @@
   text-align: center;
   font-size: 12px;
   transition: .2s;
-}
-
-.psychotest:hover p {
-  font-size: 14px;
-  top: 12px;
 }
 
 .pagepoint {
