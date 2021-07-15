@@ -6,7 +6,7 @@ new Vue({
       {
         id: 'item_1',
         itemName: '南投銅鑼燒',
-        img: '../images/banner_matcha_item.png',
+        img: '../images/cart/banner_matcha_item.png',
         price: 480,
         item_Quantity: '6',
         quantity: 1,
@@ -15,7 +15,7 @@ new Vue({
       {
         id: 'item_2',
         itemName: '苗栗大福草莓',
-        img: '../images/banner_strawberry_item.png',
+        img: '../images/cart/banner_strawberry_item.png',
         price: 480,
         item_Quantity: '6',
         quantity: 1,
@@ -24,7 +24,7 @@ new Vue({
       {
         id: 'item_3',
         itemName: '南投銅鑼燒',
-        img: '../images/banner_matcha_item.png',
+        img: '../images/cart/banner_matcha_item.png',
         price: 480,
         item_Quantity: '6',
         quantity: 1,
@@ -36,7 +36,7 @@ new Vue({
       {
         id: 'customization_1',
         itemName: '四格小資組合',
-        img: '../images/customized_box.png',
+        img: '../images/cart/customized_box.png',
         price: 480,
         quantity: 1,
         detail: ['草莓大福(1入)', '抹茶大福(1入)', '柳橙大福(1入)', '巧克力大福(1入)'],
@@ -46,7 +46,7 @@ new Vue({
       {
         id: 'customization_2',
         itemName: '四格小資組合',
-        img: '../images/customized_box.png',
+        img: '../images/cart/customized_box.png',
         price: 480,
         quantity: 1,
         detail: ['草莓大福(1入)', '柳橙大福(1入)', '巧克力大福(1入)'],

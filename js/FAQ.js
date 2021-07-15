@@ -3,9 +3,9 @@ $('#FAQ_transaction').click(function(){
   // 底線顏色
   $('.FAQ_titleBtn').attr('id','FAQ_a');
   // 圖片變換
-  $('#FAQ_transactionBtn').attr('src','../images/transaction_h.png');
-  $('#FAQ_ingredientsBtn').attr('src','../images/Ingredients_n.png');
-  $('#FAQ_transportBtn').attr('src','../images/transport_n.png');
+  $('#FAQ_transactionBtn').attr('src','../images/FAQ/transaction_h.png');
+  $('#FAQ_ingredientsBtn').attr('src','../images/FAQ/Ingredients_n.png');
+  $('#FAQ_transportBtn').attr('src','../images/FAQ/transport_n.png');
   
   // 文字顏色
   $('#FAQ_transaction > p').css('color','#172852');
@@ -22,9 +22,9 @@ $('#FAQ_ingredients').click(function(){
   $('.FAQ_titleBtn').attr('id','FAQ_b');
 
   // 圖片變換
-  $('#FAQ_ingredientsBtn').attr('src','../images/Ingredients_h.png');
-  $('#FAQ_transactionBtn').attr('src','../images/transaction_n.png');
-  $('#FAQ_transportBtn').attr('src','../images/transport_n.png');
+  $('#FAQ_ingredientsBtn').attr('src','../images/FAQ/Ingredients_h.png');
+  $('#FAQ_transactionBtn').attr('src','../images/FAQ/transaction_n.png');
+  $('#FAQ_transportBtn').attr('src','../images/FAQ/transport_n.png');
 
   // 文字顏色
   $('#FAQ_ingredients > p').css('color','#172852');
@@ -41,9 +41,9 @@ $('#FAQ_transport').click(function(){
   $('.FAQ_titleBtn').attr('id','FAQ_c');
   
   // 圖片變換
-  $('#FAQ_transportBtn').attr('src','../images/transport_h.png');
-  $('#FAQ_transactionBtn').attr('src','../images/transaction_n.png');
-  $('#FAQ_ingredientsBtn').attr('src','../images/Ingredients_n.png');
+  $('#FAQ_transportBtn').attr('src','../images/FAQ/transport_h.png');
+  $('#FAQ_transactionBtn').attr('src','../images/FAQ/transaction_n.png');
+  $('#FAQ_ingredientsBtn').attr('src','../images/FAQ/Ingredients_n.png');
   
   // 文字顏色
   $('#FAQ_transport > p').css('color','#172852');
