@@ -1,0 +1,169 @@
+@mixin navbar(){
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    top: 0px;
+    left: 0;
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    z-index: 900;
+    @content; 
+    .navbar-logo{
+        margin-left: 10px;
+        width: 60px;
+        height: 60px;    
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .navbar-icon{
+        display: flex;
+        margin-right: 10px;
+        a{
+            display: block;
+            width: 60px;
+            height: 60px;
+            text-align: center;
+            line-height: 60px;
+        }
+        i{
+            color: #bb866a;
+            font-size: 28px;
+        }
+    }       
+}
+
+@mixin media(){
+    position: fixed;
+    top: 50%;    
+    left: 10px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    z-index: 900;
+    &::before{
+        content: '';
+        position: absolute;
+        width:2px;
+        height: 15vh;
+        background-color: #bb866a;
+        left: 30px;
+        top: -15vh;
+    }
+    &::after{
+        content: '';
+        position: absolute;
+        width:2px;
+        height: 15vh;
+        background-color: #bb866a;
+        left: 30px;
+        bottom: -15vh;
+    }
+    a{
+        display: block;
+        width: 60px;
+        text-align: center;
+        margin-top: 10px; 
+        &:nth-child(1){
+            margin-top: 12px;
+        }
+        &:nth-child(3){
+            margin-bottom: 12px;
+        }
+        i{
+            color: #bb866a;
+            font-size: 28px;
+        }
+    }
+}
+
+@mixin popUp_twoBtn{
+    width: 400px;
+    height: 320px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, .95);
+    box-shadow: 0px 10px 32px rgba(23, 40, 82, .6);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 40px;
+    z-index: 999;
+    @content;
+    img{
+        width: 80px;
+        height: auto;
+    }
+    h2{
+        color: $btnBgc;
+        font-size: 28px;
+        margin-top: 15px;
+        margin-bottom: 10px;
+    }
+    p{
+        color: $btnBgc;
+        margin-bottom: 45px;
+        font-size: 14px;
+    }
+    div{
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;        
+    }
+}
+
+@mixin popUp_oneBtn{
+    width: 300px;
+    height: 340px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, .95);
+    box-shadow: 0px 10px 32px rgba(23, 40, 82, .6);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 40px;
+    z-index: 999;
+    @content;
+    img{
+        width: 80px;
+        height: auto;
+    }
+    h2{
+        color: $btnBgc;
+        font-size: 28px;
+        margin-top: 15px;
+        margin-bottom: 10px;
+    }
+    p{
+        color: $btnBgc;
+        margin-bottom: 45px;
+        font-size: 14px;
+    }
+    div{
+        display: flex;   
+        justify-content: center;
+    }
+}
+
+@mixin popUpBg{
+    width: 100vw;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 991;
+    display: none;
+    background-color: rgba(255,255,255,.6);
+    @content;    
+}
