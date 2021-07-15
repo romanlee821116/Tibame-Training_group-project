@@ -1,63 +1,27 @@
-@charset "UTF-8";
-.navbar {
-  width: 100%;
-  height: 100px;
-  position: fixed;
-  top: 0px;
-  left: 0;
-  padding-top: 10px;
-  display: flex;
-  justify-content: space-between;
-  z-index: 900;
+@import '../mixin/mixin';
+
+.navbar{
+@include navbar();
 }
 
-.navbar .navbar-logo {
-  margin-left: 10px;
-  width: 60px;
-  height: 60px;
-}
-
-.navbar .navbar-logo img {
-  width: 100%;
-  height: 100%;
-}
-
-.navbar .navbar-icon {
-  display: flex;
-  margin-right: 10px;
-}
-
-.navbar .navbar-icon a {
-  display: block;
-  width: 60px;
-  height: 60px;
-  text-align: center;
-  line-height: 60px;
-}
-
-.navbar .navbar-icon i {
-  color: #bb866a;
-  font-size: 28px;
-}
-
-* {
+*{
   box-sizing: border-box;
   font-family: "微軟正黑體";
   color: #bb866a;
 }
 
-body {
+body{
   margin: 0;
   background-image: url("../images/FAQ/bg.png");
   background-size: cover;
   background-attachment: fixed;
 }
 
-img {
+img{
   width: 100%;
 }
 
-.FAQ_container {
+.FAQ_container{
   /* border: 1px solid black; */
   width: 80%;
   max-width: 1200px;
@@ -65,7 +29,8 @@ img {
 }
 
 /* ========== 標題 ========== */
-#FAQ_QA {
+
+#FAQ_QA{
   border-bottom: 3px solid #bb866a;
   border-radius: 1.5px;
   display: inline-block;
@@ -74,21 +39,23 @@ img {
   font-size: 14px;
 }
 
-#FAQ_QTitle {
+#FAQ_QTitle{
   /* border: 1px solid blue; */
   margin: 30px 0 40px;
   font-size: 28px;
   font-weight: bold;
 }
 
+
+
 /* ========== 問題類別按鈕 ========== */
-.FAQ_titleBtn {
+.FAQ_titleBtn{
   /* border-bottom: 1px solid #172852; */
   display: flex;
   position: relative;
 }
 
-.FAQ_QBtn {
+.FAQ_QBtn{
   /* border: 1px solid red; */
   border-bottom: 2px solid #cba89a;
   /* padding-bottom: 12px; */
@@ -98,18 +65,18 @@ img {
   /* position: relative; */
 }
 
-.FAQ_QBtn > p {
+.FAQ_QBtn > p{
   /* border: 1px solid yellow; */
   font-weight: bold;
   font-size: 16px;
   margin: 20px 0;
 }
 
-#FAQ_transaction > p {
+#FAQ_transaction > p{
   color: #172852;
 }
 
-.FAQ_imgBtn {
+.FAQ_imgBtn{
   /* border: 1px solid black; */
   font-size: 0;
   width: 65px;
@@ -118,7 +85,7 @@ img {
 }
 
 /* 分類底線切換 */
-#FAQ_a::before {
+#FAQ_a::before{
   content: "";
   border-bottom: 4px solid #172852;
   position: absolute;
@@ -128,7 +95,7 @@ img {
   transition: 0.2s all linear;
 }
 
-#FAQ_b::before {
+#FAQ_b::before{
   content: "";
   border-bottom: 4px solid #172852;
   position: absolute;
@@ -138,7 +105,7 @@ img {
   transition: 0.2s all linear;
 }
 
-#FAQ_c::before {
+#FAQ_c::before{
   content: "";
   border-bottom: 4px solid #172852;
   position: absolute;
@@ -150,12 +117,12 @@ img {
 }
 
 /* 分類點點 */
-#FAQ_a::after {
+#FAQ_a::after{
   content: "";
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background-color: #172852;
+  background-color: #172852 ;
   position: absolute;
   left: calc(100% / 6);
   bottom: 0;
@@ -163,12 +130,12 @@ img {
   transition: 0.2s all linear;
 }
 
-#FAQ_b::after {
+#FAQ_b::after{
   content: "";
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background-color: #172852;
+  background-color: #172852 ;
   position: absolute;
   left: calc(100% / 2);
   bottom: 0;
@@ -176,12 +143,12 @@ img {
   transition: 0.2s all linear;
 }
 
-#FAQ_c::after {
+#FAQ_c::after{
   content: "";
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background-color: #172852;
+  background-color: #172852 ;
   position: absolute;
   left: calc(100% / 6 * 5);
   bottom: 0;
@@ -189,30 +156,34 @@ img {
   transition: 0.2s all linear;
 }
 
+
+
+
 /* ========== Q&A區域 ========== */
-.FAQ_classification {
+
+.FAQ_classification{
   display: none;
 }
 
 /* 切換QA */
-.FAQ_on {
+.FAQ_on{
   display: block;
 }
 
-.FAQ_QAList {
+.FAQ_QAList{
   position: relative;
 }
 
-.FAQ_question {
+.FAQ_question{
   /* border: 1px solid green; */
   display: flex;
   padding: 15px 0;
   cursor: pointer;
 }
 
-.FAQ_QAList::after {
+.FAQ_QAList::after{
   content: "";
-  background-color: #bb866a;
+  background-color:#bb866a;
   height: 1px;
   opacity: 0.5;
   position: absolute;
@@ -220,7 +191,7 @@ img {
   bottom: 0;
 }
 
-.FAQ_question > p:first-child, .FAQ_answer > p:first-child {
+.FAQ_question > p:first-child, .FAQ_answer > p:first-child{
   /* border: 1px solid blue; */
   margin: 0;
   margin-right: 15px;
@@ -228,17 +199,17 @@ img {
   font-weight: bold;
 }
 
-.FAQ_question > p:nth-child(2) {
+.FAQ_question > p:nth-child(2){
   /* border: 1px solid blue; */
   margin: 0;
-  font-weight: 700;
+  font-weight: 700; 
   font-size: 16px;
   display: flex;
   align-items: center;
   flex-grow: 1;
 }
 
-.FAQ_openAnsBtn {
+.FAQ_openAnsBtn{
   /* border: 1px solid red; */
   width: 20px;
   height: 20px;
@@ -246,7 +217,7 @@ img {
   align-self: center;
 }
 
-.FAQ_minus {
+.FAQ_minus{
   border: 1px solid #bb866a;
   background-color: #bb866a;
   width: 18px;
@@ -255,7 +226,7 @@ img {
   border-radius: 2.5px;
 }
 
-.FAQ_plus {
+.FAQ_plus{
   border: 1px solid #bb866a;
   background-color: #bb866a;
   width: 5px;
@@ -268,25 +239,25 @@ img {
 }
 
 /* 打開+變成- */
-.FAQ_spin {
+.FAQ_spin{
   transform: rotate(90deg);
   transition: 0.2s all linear;
 }
 
-.FAQ_outBorder {
+.FAQ_outBorder{
   display: none;
 }
 
-.FAQ_answer {
+.FAQ_answer{
   /* border: 1px solid green; */
   padding: 15px 0;
   display: flex;
   position: relative;
 }
 
-.FAQ_answer::before {
+.FAQ_answer::before{
   content: "";
-  background-color: #bb866a;
+  background-color:#bb866a;
   height: 1px;
   opacity: 0.2;
   position: absolute;
@@ -294,7 +265,8 @@ img {
   top: 0;
 }
 
-.FAQ_answer > p:nth-child(2) {
+
+.FAQ_answer > p:nth-child(2){
   /* border: 1px solid red; */
   margin: 0;
   display: inline-block;
@@ -302,4 +274,7 @@ img {
   font-size: 16px;
   padding-top: 10px;
 }
-/*# sourceMappingURL=FAQ.css.map */
+
+
+
+

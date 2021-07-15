@@ -120,6 +120,7 @@ $(function(){
   });
   // 關掉購物車
   $('.cart_close').click(function(){
+    console.log('a');
     $('.cart_cartBoard').css('right','-600px');
     // 禮盒細項關起來
     $('.cart_detailBorder').css('display','none');
