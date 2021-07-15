@@ -103,9 +103,7 @@ body{
             width: 100%;
             height: 100%;
         }
-    }
-       
-
+    }     
 }
 
 
@@ -153,13 +151,23 @@ body{
         transform: transalte(-50%,-50%);
     }
 }
-
+.scene2_transition{
+    width: 100%;
+    height: 400px;
+    background: url('');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.about_island{
+    transform: scaleY(.7);
+}
 .about_taiwan{
     opacity: 1;
     width: 100%;
     height: 100%;
     position: absolute;
-    background: url('../images/about/ocean.png');
+    background: url('../../images/about/aboutUs_bg.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
