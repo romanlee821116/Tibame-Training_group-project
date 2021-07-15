@@ -1757,7 +1757,7 @@ html, body {
 .p2-right {
   width: 50%;
   height: 100%;
-  background: url("../images/banner_monaka_bg.png");
+  background: url("../images/index/banner_monaka_bg.png");
   background-size: cover 120%;
   background-repeat: no-repeat;
   background-position: center;
@@ -1856,7 +1856,7 @@ html, body {
 .gap {
   width: 100%;
   height: 350px;
-  background: url("../images/bg.png");
+  background: url("../images/index/bg.png");
   background-size: cover;
 }
 
@@ -1864,7 +1864,7 @@ html, body {
 .page3 {
   position: relative;
   overflow-x: hidden;
-  background: url("../images/bg.png");
+  background: url("../images/index/bg.png");
   background-size: cover;
 }
 
@@ -1963,7 +1963,7 @@ html, body {
 .page4 {
   position: relative;
   overflow-x: hidden;
-  background: url("../images/bg.png");
+  background: url("../images/index/bg.png");
   background-size: cover;
 }
 
@@ -2167,7 +2167,7 @@ html, body {
 .page5 {
   position: relative;
   overflow-x: hidden;
-  background: url("../images/bg.png");
+  background: url("../images/index/bg.png");
   background-size: cover;
 }
 
@@ -2344,7 +2344,7 @@ html, body {
 .page6 {
   position: relative;
   overflow-x: hidden;
-  background: url("../images/bg.png");
+  background: url("../images/index/bg.png");
   background-size: cover;
 }
 
@@ -2396,7 +2396,7 @@ html, body {
   height: 320px;
   margin: 0 20px;
   border-radius: 10px;
-  background: url("../images/news_hoverbg.png");
+  background: url("../images/index/news_hoverbg.png");
   background-size: cover;
 }
 
@@ -2519,7 +2519,7 @@ html, body {
 .page7 {
   position: relative;
   overflow-x: hidden;
-  background: url("../images/bg.png");
+  background: url("../images/index/bg.png");
   background-size: cover;
 }
 
