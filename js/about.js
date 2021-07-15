@@ -108,7 +108,7 @@ $(function () {
     sticky.to('.about_street', 0, { scale: '1%',top: '-0px' })
         .to('.about_street', 2, { scale: '2%',top: '-100px' })
         .to('.about_street', 2, { scale: '3%',top: '-200px' })
-        .to('.about_street', 1, { opacity: '0' })
+        .to('.about_street', 1.5, { opacity: '0' })
         
     
     new ScrollMagic.Scene({
@@ -119,6 +119,7 @@ $(function () {
 // ==========================================================================
     var stickyMap = new TimelineMax();
     stickyMap.to('.about_taiwan', 0, { scale: '1%' })
+            .to('.about_island',2, {scaleY: '1'})
             .to('.about_taiwan', 5, { scale: '3.5%', top: '120%', left: '-20%'}) 
             .to('.about_taiwan', 4, { scale: '3.5%', top: '120%', left: '-20%'})  
             .to('.about_island', 5, {top: '-20%', left:'15%'}) 
