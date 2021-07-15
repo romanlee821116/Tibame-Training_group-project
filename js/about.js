@@ -17,7 +17,7 @@ $(function () {
         template:`
         <div class='about_farmerDetail_bg'>
             <div class='about_farmerDetail_box'>
-                <img src="../images/farmer1.jpg" alt="">
+                <img src="../images/about/farmer1.jpg" alt="">
                 <div class='about_farmerDetail_title'>
                     <h2>讓老鷹再次高飛</h2>
                     <h3>屏東 - 老鷹紅豆</h3>
@@ -43,7 +43,7 @@ $(function () {
         template:`
         <div class='about_farmerDetail_bg'>
             <div class='about_farmerDetail_box'>
-                <img src="../images/farmer2.jpg" alt="">
+                <img src="../images/about/farmer2.jpg" alt="">
                 <div class='about_farmerDetail_title'>
                     <h2>這是一棵樹</h2>
                     <h3>屏東 - 老鷹紅豆</h3>
@@ -63,12 +63,12 @@ $(function () {
         el: '#wrap',
         data: {
             people_list: [
-                { src: '../images/people1.png', class: 'about_people1 people' },
-                { src: '../images/people2.png', class: 'about_people2 people' },
-                { src: '../images/people3.png', class: 'about_people3 people' },
-                { src: '../images/people4.png', class: 'about_people4 people' },
-                { src: '../images/people5.png', class: 'about_people5 people' },
-                { src: '../images/people6.png', class: 'about_people6 people' },
+                { src: '../images/about/people1.png', class: 'about_people1 people' },
+                { src: '../images/about/people2.png', class: 'about_people2 people' },
+                { src: '../images/about/people3.png', class: 'about_people3 people' },
+                { src: '../images/about/people4.png', class: 'about_people4 people' },
+                { src: '../images/about/people5.png', class: 'about_people5 people' },
+                { src: '../images/about/people6.png', class: 'about_people6 people' },
             ],
             farmer_list: [
                 {class:'custom_farmer_straw'},

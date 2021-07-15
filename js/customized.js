@@ -4,7 +4,7 @@ $(function(){
         template: `
         <div class='custom_popUp_template'>
             <div class="custom_popUp">
-                <img src="../images/customized_step_a.png" alt="">
+                <img src="../images/customized/customized_step_a.png" alt="">
                 <h2>請選擇商品</h2>
                 <p>禮盒內容尚有空格</p>
                 <div>
@@ -24,7 +24,7 @@ $(function(){
         template: `
         <div class='custom_popUp_template'>
             <div class="custom_popUp">
-                <img src="../images/customized_step_a.png" alt="">
+                <img src="../images/customized/customized_step_a.png" alt="">
                 <h2>卡片尚未選擇</h2>
                 <p>請選擇卡片種類</p>
                 <div>
@@ -39,9 +39,9 @@ $(function(){
         el: '#cus-wrap',
         data: {           
             boxImg: [
-                {src: '../images/four_boxBodyIn.png', class: 'box1',txt: '四格小資組合', price: '$480'},
-                {src: '../images/six_boxBodyIn.png', class: 'box2',txt: '六格家庭組合', price: '$680'},
-                {src: '../images/nine_boxBodyIn.png', class: 'box3',txt: '九格派對組合', price: '$980'}
+                {src: '../images/customized/four_boxBodyIn.png', class: 'box1',txt: '四格小資組合', price: '$480'},
+                {src: '../images/customized/six_boxBodyIn.png', class: 'box2',txt: '六格家庭組合', price: '$680'},
+                {src: '../images/customized/nine_boxBodyIn.png', class: 'box3',txt: '九格派對組合', price: '$980'}
             ],
 
             category: [
@@ -55,42 +55,42 @@ $(function(){
             ],
 
             cus_item: [
-                {txt: '這是第1個產品',class:'1 cus-item', img: '../images/product_small.png'},
-                {txt: '這是第2個產品',class:'2 cus-item', img: '../images/product_small.png'},
-                {txt: '這是第3個產品',class:'3 cus-item', img: '../images/product_small.png'},
-                {txt: '這是第4個產品',class:'4 cus-item', img: '../images/product_small.png'},
-                {txt: '這是第5個產品',class:'5 cus-item', img: '../images/product_small.png'},
-                {txt: '這是第6個產品',class:'6 cus-item', img: '../images/product_small.png'},
-                {txt: '這是第7個產品',class:'7 cus-item', img: '../images/product_small.png'},
-                {txt: '這是第8個產品',class:'8 cus-item', img: '../images/product_small.png'},
-                {txt: '這是第9個產品',class:'9 cus-item', img: '../images/product_small.png'},
-                {txt: '這是第10個產品',class:'10 cus-item', img: '../images/product_small.png'},
-                {txt: '這是第11個產品',class:'11 cus-item', img: '../images/product_small.png'},
-                {txt: '這是第12個產品',class:'12 cus-item', img: '../images/product_small.png'},
-                {txt: '這是第13個產品',class:'13 cus-item', img: '../images/product_small.png'},
-                {txt: '這是第14個產品',class:'14 cus-item', img: '../images/product_small.png'},
-                {txt: '這是第15個產品',class:'15 cus-item', img: '../images/product_small.png'},
-                {txt: '這是第16個產品',class:'16 cus-item', img: '../images/product_small.png'},
-                {txt: '這是第17個產品',class:'17 cus-item', img: '../images/product_small.png'},
-                {txt: '這是第18個產品',class:'18 cus-item', img: '../images/product_small.png'},
-                {txt: '這是第19個產品',class:'19 cus-item', img: '../images/product_small.png'},
+                {txt: '這是第1個產品',class:'1 cus-item', img: '../images/customized/product_small.png'},
+                {txt: '這是第2個產品',class:'2 cus-item', img: '../images/customized/product_small.png'},
+                {txt: '這是第3個產品',class:'3 cus-item', img: '../images/customized/product_small.png'},
+                {txt: '這是第4個產品',class:'4 cus-item', img: '../images/customized/product_small.png'},
+                {txt: '這是第5個產品',class:'5 cus-item', img: '../images/customized/product_small.png'},
+                {txt: '這是第6個產品',class:'6 cus-item', img: '../images/customized/product_small.png'},
+                {txt: '這是第7個產品',class:'7 cus-item', img: '../images/customized/product_small.png'},
+                {txt: '這是第8個產品',class:'8 cus-item', img: '../images/customized/product_small.png'},
+                {txt: '這是第9個產品',class:'9 cus-item', img: '../images/customized/product_small.png'},
+                {txt: '這是第10個產品',class:'10 cus-item', img: '../images/customized/product_small.png'},
+                {txt: '這是第11個產品',class:'11 cus-item', img: '../images/customized/product_small.png'},
+                {txt: '這是第12個產品',class:'12 cus-item', img: '../images/customized/product_small.png'},
+                {txt: '這是第13個產品',class:'13 cus-item', img: '../images/customized/product_small.png'},
+                {txt: '這是第14個產品',class:'14 cus-item', img: '../images/customized/product_small.png'},
+                {txt: '這是第15個產品',class:'15 cus-item', img: '../images/customized/product_small.png'},
+                {txt: '這是第16個產品',class:'16 cus-item', img: '../images/customized/product_small.png'},
+                {txt: '這是第17個產品',class:'17 cus-item', img: '../images/customized/product_small.png'},
+                {txt: '這是第18個產品',class:'18 cus-item', img: '../images/customized/product_small.png'},
+                {txt: '這是第19個產品',class:'19 cus-item', img: '../images/customized/product_small.png'},
             ],
             bagCard: [
-                {src: '../images/testCard1.jpg', class:'choose-card card2', id:'2'},
-                {src: '../images/testCard1.jpg', class:'choose-card card3', id:'3'},
-                {src: '../images/testCard1.jpg', class:'choose-card card1', id:'1'},
-                {src: '../images/testBag.png', class:'choose-bag', id:''},
+                {src: '../images/customized/testCard1.jpg', class:'choose-card card2', id:'2'},
+                {src: '../images/customized/testCard1.jpg', class:'choose-card card3', id:'3'},
+                {src: '../images/customized/testCard1.jpg', class:'choose-card card1', id:'1'},
+                {src: '../images/customized/testBag.png', class:'choose-bag', id:''},
             ],            
             iconList: [
-                {src: '../images/meme1.png', id:'1'},
-                {src: '../images/meme1.png', id:'2'},
-                {src: '../images/meme1.png', id:'3'},
-                {src: '../images/meme2.png', id:'4'},
-                {src: '../images/meme2.png', id:'5'},
-                {src: '../images/meme2.png', id:'6'},
-                {src: '../images/meme3.png', id:'7'},
-                {src: '../images/meme3.png', id:'8'},
-                {src: '../images/meme3.png', id:'9'},
+                {src: '../images/customized/meme1.png', id:'1'},
+                {src: '../images/customized/meme1.png', id:'2'},
+                {src: '../images/customized/meme1.png', id:'3'},
+                {src: '../images/customized/meme2.png', id:'4'},
+                {src: '../images/customized/meme2.png', id:'5'},
+                {src: '../images/customized/meme2.png', id:'6'},
+                {src: '../images/customized/meme3.png', id:'7'},
+                {src: '../images/customized/meme3.png', id:'8'},
+                {src: '../images/customized/meme3.png', id:'9'},
             ],                 
             message: '',
             content: 'checkBox',
