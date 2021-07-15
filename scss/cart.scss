@@ -1,4 +1,4 @@
-@import '../mixin/mixin';
+@import '../scss/mixin/mixin';
 
 .navbar{
 @include navbar();
@@ -28,7 +28,7 @@ img{
   font-size: 0;
   width: 600px;
   height: 100vh;
-  z-index: 2;
+  z-index: 991;
   position: absolute;
   top: 0;
   right: -600px;
@@ -415,4 +415,5 @@ img{
   width: 25px;
   position: relative;
   cursor: pointer;
+  margin-top: 100px; 
 }
