@@ -84,7 +84,8 @@
    width: 100%;
    max-width: 1400px;
    display: flex;
-   position: relative;   
+   position: relative;
+   padding: 60px 0 30px 0; 
    @content;
    .footer-left{
     width: 40%;
