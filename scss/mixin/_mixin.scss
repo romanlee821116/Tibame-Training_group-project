@@ -1,4 +1,5 @@
 //=============Header=============
+@import '../base/color.scss';
 @mixin navbar(){
     width: 100%;
     height: 100px;
@@ -44,6 +45,7 @@
     display: flex;
     flex-direction: column;
     z-index: 900;
+    @content;
     &::before{
         content: '';
         position: absolute;
@@ -77,7 +79,10 @@
             color: #bb866a;
             font-size: 28px;
         }
-    }
+    }  
+    @include rwd(575px){
+        display: none;
+    }  
 }
 //=============Footer=============
 @mixin footer(){
@@ -85,19 +90,36 @@
    max-width: 1400px;
    display: flex;
    position: relative;
-   padding: 60px 0 20px 0; 
+   margin: 0 auto;
+   padding: 60px 0 20px 0;    
    @content;
+   a, p{
+       color: $darkBrown;
+   }
+   .footer-logo{
+    display: none;  
+    }
+    .footer-media{
+        display: none;
+        @content;
+    }
    .footer-left{
     width: 40%;
     height: 100%;
     display: flex;
     align-items: center;
-    padding-left: 200px;
-    
+    padding-left: 200px;   
+    @content; 
         a{
-            color: #bb866a;
             font-weight: 900;
-            margin-left: 20px;
+            margin: 0px 10px;
+            @content;
+        }        
+        .footer-policy{
+            display: flex; 
+            justify-content: center;
+            min-width: 200px;   
+            @content;        
         }
     }
     .footer-right{
@@ -105,10 +127,46 @@
         display: flex;
         align-items: center;
         padding-right: 100px;
+        @content;
         p{
             font-size: 8px !important;
-            color: #bb866a;
             opacity: .8;
+        }
+    }
+    @include rwd(960px){
+        .footer-left{
+            padding-left: 100px;
+        }        
+    }
+    @include rwd(767px){        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .footer-left{
+            padding-left: 0px;
+            justify-content: center;
+            margin-bottom: 10px;
+         }
+        .footer-right{
+            width: 90%;
+            padding-right: 0px;
+        }
+    }
+    @include rwd(575px){      
+        padding-top: 30px;  
+        background-color: $darkBrown;
+        a, p{
+            color: #fff;
+        }
+        .footer-media{
+            display: block;
+            margin-bottom: 10px;
+            a{
+                margin: 0 5px;
+            }
+            i{
+                font-size: 16px;
+            }
         }
     }    
 }
@@ -153,7 +211,13 @@
 @mixin boxShadow($color:#555) {
     box-shadow: 0px 0px 20px $color;    
 }
-//=============陰影=============
+//============RWD=============
+@mixin rwd($width) {
+    @media(max-width: $width){
+        @content;
+    }
+}
+//=============彈窗=============
 @mixin popUp_twoBtn(){
     width: 400px;
     height: 320px;
@@ -243,4 +307,5 @@
     background-color: rgba(255,255,255,.6);
     @content;    
 }
+
 

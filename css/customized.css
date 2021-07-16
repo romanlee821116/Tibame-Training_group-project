@@ -109,6 +109,12 @@ html, body {
   font-size: 28px;
 }
 
+@media (max-width: 575px) {
+  .mediacolumn {
+    display: none;
+  }
+}
+
 .custom_waterMark {
   position: fixed;
   z-index: 0;

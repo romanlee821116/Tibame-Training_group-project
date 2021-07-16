@@ -10,7 +10,6 @@ $(function(){
         el: '.page3',
         data: {
             p3_list: [
-                {class: 'p3-bg', src: './images/index/aboutus_rightbg.png'},
                 {class: 'p3-watermark p3-mark1', src: './images/index/aboutus_watercolor_a.png'},
                 {class: 'p3-watermark p3-mark2', src: './images/index/aboutus_watercolor_b.png'},
             ],
