@@ -291,13 +291,15 @@ body{
         .about_farmerDetail_title{
             display: inline-block;
             height: 180px;
-            width: 200px;
+            width: 220px;
+            // width: 100%;
             position: relative;
             margin-left: 20px;
             // border: 1px solid red;
             h2{
                 font-size: 24px;
                 color: $darkBrown;
+                // color: red;
                 margin-bottom: 10px;
             }
             h3{

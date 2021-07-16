@@ -1,8 +1,4 @@
 @charset "UTF-8";
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -22,8 +18,7 @@ time, mark, audio, video {
   font-size: 100%;
   font: bold inherit '微軟正黑體';
   vertical-align: baseline;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   text-decoration: none;
   font-weight: 900;
 }
@@ -109,8 +104,7 @@ body {
 #scene1 .about_people2 {
   bottom: 40px;
   right: 30vw;
-  -webkit-animation: walk2 28s linear infinite;
-          animation: walk2 28s linear infinite;
+  animation: walk2 28s linear infinite;
 }
 
 #scene1 .about_people3 {
@@ -121,8 +115,7 @@ body {
 #scene1 .about_people4 {
   bottom: 30px;
   right: 50vw;
-  -webkit-animation: walk1 30s linear infinite;
-          animation: walk1 30s linear infinite;
+  animation: walk1 30s linear infinite;
 }
 
 #scene1 .about_people5 {
@@ -132,19 +125,7 @@ body {
 
 #scene1 .about_people6 {
   bottom: 40px;
-  -webkit-animation: bike 15s linear infinite;
-          animation: bike 15s linear infinite;
-}
-
-@-webkit-keyframes bike {
-  0% {
-    right: -10vw;
-    bottom: 40px;
-  }
-  100% {
-    right: 110vw;
-    bottom: 40px;
-  }
+  animation: bike 15s linear infinite;
 }
 
 @keyframes bike {
@@ -155,33 +136,6 @@ body {
   100% {
     right: 110vw;
     bottom: 40px;
-  }
-}
-
-@-webkit-keyframes walk1 {
-  0% {
-    right: 60vw;
-  }
-  8% {
-    opacity: 1;
-  }
-  10% {
-    opacity: 0;
-  }
-  20% {
-    opacity: 1;
-  }
-  58% {
-    opacity: 1;
-  }
-  60% {
-    opacity: 0;
-  }
-  70% {
-    opacity: 1;
-  }
-  100% {
-    right: -10vw;
   }
 }
 
@@ -209,33 +163,6 @@ body {
   }
   100% {
     right: -10vw;
-  }
-}
-
-@-webkit-keyframes walk2 {
-  0% {
-    right: 30vw;
-  }
-  8% {
-    opacity: 1;
-  }
-  10% {
-    opacity: 0;
-  }
-  20% {
-    opacity: 1;
-  }
-  58% {
-    opacity: 1;
-  }
-  60% {
-    opacity: 0;
-  }
-  70% {
-    opacity: 1;
-  }
-  100% {
-    right: 110vw;
   }
 }
 
@@ -323,8 +250,7 @@ body {
   position: fixed;
   top: 50%;
   left: 50%;
-  -webkit-transform: transalte(-50%, -50%);
-          transform: transalte(-50%, -50%);
+  transform: transalte(-50%, -50%);
 }
 
 .scene2_transition {
@@ -466,8 +392,7 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   border-radius: 20px;
   padding: 50px;
 }
@@ -481,7 +406,7 @@ body {
 .about_farmerDetail_bg .about_farmerDetail_box .about_farmerDetail_title {
   display: inline-block;
   height: 180px;
-  width: 200px;
+  width: 220px;
   position: relative;
   margin-left: 20px;
 }

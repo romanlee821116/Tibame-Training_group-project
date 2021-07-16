@@ -12,7 +12,7 @@
 
 html, body {
   width: 100%;
-  background-image: url("../images/bg.png");
+  background-image: url("../images/customized/bg.png");
   background-size: cover;
   overflow: hidden;
   position: relative;
@@ -327,7 +327,7 @@ html, body {
 }
 
 .four-grid {
-  background-image: url("../images/four_boxBody.png");
+  background-image: url("../images/customized/four_boxBody.png");
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -344,7 +344,7 @@ html, body {
 }
 
 .six-grid {
-  background-image: url("../images/six_boxBody.png");
+  background-image: url("../images/customized/six_boxBody.png");
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -359,7 +359,7 @@ html, body {
 }
 
 .nine-grid {
-  background-image: url("../images/nine_boxBody.png");
+  background-image: url("../images/customized/nine_boxBody.png");
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -809,7 +809,7 @@ html, body {
   position: absolute;
   left: 50%;
   bottom: -50%;
-  background: url("../images/testBag.png");
+  background: url("../images/customized/testBag.png");
   background-position: center;
   background-size: 120% cover;
   transition: 2s;

@@ -318,7 +318,7 @@
             font-weight: 900;
         }
         .p3-txt a{
-            background-color: $darkblue;
+            background-color: $darkBlue;
             color: #fff;
             padding: 10px 20px;
             border-radius: 25px;
@@ -410,7 +410,7 @@
             font-weight: 900;
         }
         .p4-txt a{
-            background-color: $darkblue;
+            background-color: $darkBlue;
             color: #fff;
             padding: 10px 20px;
             border-radius: 25px;
@@ -458,7 +458,7 @@
         }
         .p4-bigpic-info p{
             font-size: 18px;
-            color: $darkblue;
+            color: $darkBlue;
         }        
     @keyframes resize {
         0% {border-radius: 50% 50% 54% 46% / 49% 50% 50% 51%;}
@@ -578,7 +578,7 @@
             line-height: 30px;
         }
         .p5-txt a{
-            background-color: $darkblue;
+            background-color: $darkBlue;
             color: #fff;
             padding: 10px 20px;
             border-radius: 25px;
@@ -633,11 +633,11 @@
             .p5-manual-item h3{
                 text-align: center;
                 margin-bottom: 10px;
-                color: $darkblue;
+                color: $darkBlue;
             }
             .p5-manual-item p{
                 font-size: 14px;
-                color: $darkblue;
+                color: $darkBlue;
                 font-weight: 900;
                 line-height: 25px;
             }
@@ -779,7 +779,7 @@
                 right: 20px;
                 bottom: 10px;
                 font-size: 14px;
-                color: $darkblue;
+                color: $darkBlue;
                 font-weight: 900;
             }
 
@@ -788,7 +788,7 @@
         padding-top: 55px;
     }
         .p6-btn a{
-            background-color: $darkblue;
+            background-color: $darkBlue;
             color: #fff;
             padding: 10px 20px;
             border-radius: 25px;
@@ -911,7 +911,7 @@
             width: 100px;
         }
             .p7-address-detailed a{
-                background-color: $darkblue;
+                background-color: $darkBlue;
                 color: #fff;
                 font-size: 12px;
                 padding: 10px 20px;
@@ -959,19 +959,19 @@
             display: inline-block;
             width: 60px;
             height: 60px;
-            background-color: $darkblue;
+            background-color: $darkBlue;
             border-radius: 50%;            
             text-align: center; 
             margin-left: 10px;           
         }
         .p7-shopbtn a.p7-shopbtn-left{
             background-color: #fff;
-            border: 2px solid $darkblue;
+            border: 2px solid $darkBlue;
         }
 
             .p7-shopbtn .fa-chevron-left{
                 font-size: 20px;
-                color: $darkblue;
+                color: $darkBlue;
                 line-height: 60px;
             }
             .p7-shopbtn .fa-chevron-right{
@@ -1010,35 +1010,41 @@
 }
 
 /* ==================footer================== */  
+// .footer{
+//    width: 100%;
+//    max-width: 1400px;
+//    display: flex;
+//    position: absolute;
+//    left: 50%;
+//    bottom: 30px;
+//    transform: translateX(-50%);
+// }
+//     .footer-left{
+//         width: 40%;
+//         height: 100%;
+//         display: flex;
+//         align-items: center;
+//         padding-left: 200px;
+//     }
+//         .footer-left a{
+//             color: $darkBrown;
+//             font-weight: 900;
+//             margin-left: 20px;
+//         }
+//     .footer-right{
+//         width: 60%;
+//         display: flex;
+//         align-items: center;
+//         padding-right: 100px;
+//     }
+//         .footer-right p{
+//             font-size: 8px !important;
+//             color: $darkBrown;
+//             opacity: .8;
+//         }
 .footer{
-   width: 100%;
-   max-width: 1400px;
-   display: flex;
-   position: absolute;
-   left: 50%;
-   bottom: 30px;
-   transform: translateX(-50%);
+    @include footer();
+    position: absolute;
+    bottom: 0;
+    left: 0;
 }
-    .footer-left{
-        width: 40%;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        padding-left: 200px;
-    }
-        .footer-left a{
-            color: $darkBrown;
-            font-weight: 900;
-            margin-left: 20px;
-        }
-    .footer-right{
-        width: 60%;
-        display: flex;
-        align-items: center;
-        padding-right: 100px;
-    }
-        .footer-right p{
-            font-size: 8px !important;
-            color: $darkBrown;
-            opacity: .8;
-        }
