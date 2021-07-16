@@ -1,21 +1,19 @@
 $(function () {
-
-    
+    // place0
     Vue.component('place0', {
         data(){
             return{
-                content:'place1'
+                content:'place1',
+                isHide: true,
             }
         },
         methods: {
-            close(){
-                $('.about_farmerDetail_bg').fadeOut();
-                this.$emit('BoxType',this.content);
-                console.log('第一個組件content回傳'+this.content);
-            }
+           hidden: function(){
+               this.$emit('hidden')
+           }
         },
         template:`
-        <div class='about_farmerDetail_bg'>
+        <div class='about_farmerDetail_bg' >
             <div class='about_farmerDetail_box'>
                 <img src="../images/about/farmer1.jpg" alt="">
                 <div class='about_farmerDetail_title'>
@@ -23,7 +21,7 @@ $(function () {
                     <h3>屏東 - 老鷹紅豆</h3>
                     <p>友善老鷹農法農友 - 林清源</p>
                 </div> 
-                <i class="fas fa-times" @click='close'></i>
+                <i class="fas fa-times" @click.prevent='hidden'></i>                
                 <div class='about_farmerDetail_text'>
                     2013年，屏科大鳥類研究人員發現少數農友使用農藥以防鳥害，老鷹誤食被毒死的小鳥而間接死亡。在研究團隊努力下，農友採用機械波種、自然熟成、安全管理方式種植，以保護台灣老鷹生態及土地環境的永續健全，並在2016以「老鷹紅豆」品牌成為東港鎮農會銷售產品之一。<br>
                     <br>
@@ -31,32 +29,106 @@ $(function () {
                 </div>
             </div>
         </div>
-        `,
+        `,        
     })
-
+    // place1
     Vue.component('place1', {
-        methods: {
-            close(){
-                $('.about_farmerDetail_bg').fadeOut();
+        data(){
+            return{
+                content:'place1',
+                isHide: true,
             }
         },
+        methods: {
+           hidden: function(){
+               this.$emit('hidden')
+           }
+        },
         template:`
-        <div class='about_farmerDetail_bg'>
+        <div class='about_farmerDetail_bg' >
             <div class='about_farmerDetail_box'>
                 <img src="../images/about/farmer2.jpg" alt="">
                 <div class='about_farmerDetail_title'>
-                    <h2>這是一棵樹</h2>
-                    <h3>屏東 - 老鷹紅豆</h3>
-                    <p>友善老鷹農法農友 - 林清源</p>
+                    <h2>讓高雄再次高飛</h2>
+                    <h3>高雄 - 韓國瑜</h3>
+                    <p>友善老鷹農法農友 - 韓國瑜</p>
                 </div> 
-                <i class="fas fa-times" @click='close'></i>
+                <i class="fas fa-times" @click.prevent='hidden'></i>                
                 <div class='about_farmerDetail_text'>
-                    這是一棵樹這是一棵樹這是一棵樹這是一棵樹這是一棵樹這是一棵樹
+                    韓國瑜，我愛你! 韓國瑜，我愛你! 韓國瑜，我愛你! 韓國瑜，我愛你!<br>
+                    <br>
+                    小春堂對此理念深感認同，我們提供的所有紅豆物料皆購自於東港鎮農會之老鷹紅豆，在提供優良產品的同時也為台灣的土地盡一份心力。
                 </div>
             </div>
         </div>
-        `,
+        `,        
     })
+    // place2
+    Vue.component('place2', {
+        data(){
+            return{
+                content:'place1',
+                isHide: true,
+            }
+        },
+        methods: {
+           hidden: function(){
+               this.$emit('hidden')
+           }
+        },
+        template:`
+        <div class='about_farmerDetail_bg' >
+            <div class='about_farmerDetail_box'>
+                <img src="../images/about/farmer1.jpg" alt="">
+                <div class='about_farmerDetail_title'>
+                    <h2>讓老鷹再次高飛</h2>
+                    <h3>屏東 - 老鷹紅豆</h3>
+                    <p>友善老鷹農法農友 - 韓國瑜</p>
+                </div> 
+                <i class="fas fa-times" @click.prevent='hidden'></i>                
+                <div class='about_farmerDetail_text'>
+                    2013年，屏科大鳥類研究人員發現少數農友使用農藥以防鳥害，老鷹誤食被毒死的小鳥而間接死亡。在研究團隊努力下，農友採用機械波種、自然熟成、安全管理方式種植，以保護台灣老鷹生態及土地環境的永續健全，並在2016以「老鷹紅豆」品牌成為東港鎮農會銷售產品之一。<br>
+                    <br>
+                    小春堂對此理念深感認同，我們提供的所有紅豆物料皆購自於東港鎮農會之老鷹紅豆，在提供優良產品的同時也為台灣的土地盡一份心力。
+                </div>
+            </div>
+        </div>
+        `,        
+    })
+    // place3
+    Vue.component('place3', {
+        data(){
+            return{
+                content:'place1',
+                isHide: true,
+            }
+        },
+        methods: {
+           hidden: function(){
+               this.$emit('hidden')
+           }
+        },
+        template:`
+        <div class='about_farmerDetail_bg' >
+            <div class='about_farmerDetail_box'>
+                <img src="../images/about/farmer1.jpg" alt="">
+                <div class='about_farmerDetail_title'>
+                    <h2>讓老鷹再次高飛</h2>
+                    <h3>屏東 - 老鷹紅豆</h3>
+                    <p>友善老鷹農法農友 - 林清源</p>
+                </div> 
+                <i class="fas fa-times" @click.prevent='hidden'></i>                
+                <div class='about_farmerDetail_text'>
+                    2013年，屏科大鳥類研究人員發現少數農友使用農藥以防鳥害，老鷹誤食被毒死的小鳥而間接死亡。在研究團隊努力下，農友採用機械波種、自然熟成、安全管理方式種植，以保護台灣老鷹生態及土地環境的永續健全，並在2016以「老鷹紅豆」品牌成為東港鎮農會銷售產品之一。<br>
+                    <br>
+                    小春堂對此理念深感認同，我們提供的所有紅豆物料皆購自於東港鎮農會之老鷹紅豆，在提供優良產品的同時也為台灣的土地盡一份心力。
+                </div>
+            </div>
+        </div>
+        `,        
+    })
+
+   
 
 
     new Vue({
@@ -82,19 +154,21 @@ $(function () {
                 {place:'taiwanPlace about_place3', country:'屏東', title:'讓老鷹再次高飛 - 老鷹紅豆', content:'小春堂提供的所有紅豆物料皆購自於東港鎮農會之老鷹紅豆，在提供優良產品的同時也為台灣的土地盡一份心力。',fruit:'about_card3'},
                 {place:'taiwanPlace about_place4', country:'台東', title:'全國稻米三冠王 - 池上米', content:'小春堂選用池上鄉農會的三冠米，以最好的品質，打造最美味的產品',fruit:'about_card4'},
             ],
-            content: 'place0',            
+            content: 'place0',  
+            boxDisplay: false,          
         },
         methods: {
             showBox: function(index){
-                console.log(index); 
-                // let next = `place${index+1}`              
-                // this.content= next;
-                $('.about_farmerDetail_bg').fadeIn()                
-                console.log(this.content);
+                this.boxDisplay = true;
+                this.content='place'+(index);
+                console.log("目前place="+this.content);
             },
             changeBox(item){
                 console.log('changeBox');
                 this.content=item;
+            },
+            hiddenBox: function(){
+                this.boxDisplay = false;
             }
         },
     })
@@ -108,7 +182,7 @@ $(function () {
     sticky.to('.about_street', 0, { scale: '1%',top: '-0px' })
         .to('.about_street', 2, { scale: '2%',top: '-100px' })
         .to('.about_street', 2, { scale: '3%',top: '-200px' })
-        .to('.about_street', 1, { opacity: '0' })
+        .to('.about_street', 1.5, { opacity: '0' })
         
     
     new ScrollMagic.Scene({
@@ -119,6 +193,7 @@ $(function () {
 // ==========================================================================
     var stickyMap = new TimelineMax();
     stickyMap.to('.about_taiwan', 0, { scale: '1%' })
+            .to('.about_island',2, {scaleY: '1'})
             .to('.about_taiwan', 5, { scale: '3.5%', top: '120%', left: '-20%'}) 
             .to('.about_taiwan', 4, { scale: '3.5%', top: '120%', left: '-20%'})  
             .to('.about_island', 5, {top: '-20%', left:'15%'}) 

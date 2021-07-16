@@ -1,305 +1,311 @@
+@import '../mixin/mixin';
+
+.navbar{
+@include navbar();
+}
+
 *{
-    box-sizing: border-box;
-    font-family: "微軟正黑體";
-    color: #bb866a;
-  }
-  
-  body{
-    margin: 0;
-    background-image: url("../images/bg.png");
-    background-size: cover;
-    background-attachment: fixed;
-  }
-  
-  img{
-    width: 100%;
-  }
-  
-  .contact_container{
-    /* border: 1px solid black; */
-    width: 80%;
-    max-width: 1200px;
-    margin: 100px auto;
-  
-  }
-  
-  /* ========== 標題&外框 ========== */
-  
-  #contact_contact{
-    border-bottom: 3px solid #bb866a;
-    border-radius: 1.5px;
-    display: inline-block;
-    padding-bottom: 3px;
-    margin: 0 0 30px;
-    font-size: 14px;
-  }
-  
-  #contact_contactBorder{
-    /* border: 1px solid green; */
-    width: 100%;
-    display: flex;
-  }
-  
-  
-  /* ========== 左邊部分 ========== */
-  
-  .contact_left{
-    /* border: 1px solid red; */
-    width: 50%;
-    margin-right: 60px;
-  }
-  
-  /* ========== 聯絡我們 ========== */
-  
-  .contact_title{
-    /* border: 1px solid blue; */
-    display: inline-block;
-    font-size: 28px;
-    font-weight: bold;
-    margin: 0 0 20px;
-  }
-  
-  .contact_description{
-    /* border: 1px solid red; */
-    margin: 0;
-    font-weight: bold;
-    font-size: 14px;
-  }
-  
-  
-  /* ========== 來電聯繫 ========== */
-  
-  .contact_call, .contact_line{
-    /* border: 1px solid blue; */
-    display: inline-flex;
-    margin-top: 50px;
-  }
-  
-  .contact_callImg, .contact_lineImg{
-    /* border: 1px solid red; */
-    width: 25px;
-    font-size: 0;
-    margin-right: 12px;
-  }
-  
-  .contact_call > p, .contact_line > p{
-    /* border: 1px solid red; */
-    margin: 0;
-    font-size: 24px;
-    font-weight: bold;
-    color: #172852;
-  }
-  
-  #contact_serviceTime{
-    /* border: 1px solid blue; */
-    font-weight: bold;
-    margin: 18px 0 15px;
-    font-size: 14px;
-  }
-  
-  #contact_number{
-    /* border: 1px solid blue; */
-    font-weight: bold;
-    margin: 0;
-    font-size: 14px;
-  }
-  
-  #contact_lineText{
-    /* border: 1px solid red; */
-    margin: 18px 0;
-    font-weight: bold;
-    font-size: 14px;
-  }
-  
-  #contact_qrcode{
-    /* border: 1px solid red; */
-    width: 110px;
-    border-radius: 10px;
-    box-shadow: 0px 7px 14.6px 1.4px rgba(187, 134, 106, 0.34);
-    background-color: #ffffff;
-    overflow: hidden;
-  }
-  
-  
-  
-  
-  /* ========== 右邊部分 ========== */
-  
-  .contact_right{
-    /* border: 1px solid red; */
-    width: 50%;
-    padding: 36px;
-    box-shadow: 9.5px 14.1px 26.4px 2.6px rgba(187, 134, 106, 0.44);
-    background-color: #ffffff;
-  }
-  
-  /* ========== 姓名、電話、信箱 ========== */
-  
-  #contact_contactTitle{
-    /* border: 1px solid red; */
-    margin: 0 0 18px;
-    font-size: 24px;
-    font-weight: bold;
-    color: #172852;
-  }
-  
-  .contact_nameBorder > input{
-    border: none;
-    outline: none;
-    border-radius: 5px;
-    background-color:#f0ebe9;
-    width: 100%;
-    height: 40px;
-    margin-bottom: 10px;
-    padding: 16px;
-    font-size: 14px;
-    color: #172852;
-  }
-  
-  ::placeholder {
-    color: #cba89a;
-  }
-  
-  .contact_nameBorder > input:focus{
-    border: 2px solid #172852;
-  }
-  
-  
-  
-  /* ========== 聯繫方式選擇 ========== */
-  .contact_wantContect{
-    color: #172852;
-    font-weight: bold;
-    margin: 30px 0 10px;
-  }
-  
-  .contact_radio{
-    /* border: 1px solid green; */
-    display: inline-block;
-  }
-  
-  .contact_radio1{
-    margin-right: 30px;
-  }
-  
-  .contact_radio > label{
-    font-weight: bold;
-    cursor: pointer;
-    /* font-family: MicrosoftJhengHeiBold; */
-  }
-  
-  input[type="radio"]{
-    margin: 0 5px 0 0;
-    opacity: 0;
-    position: relative;
-    z-index: 1;
-    cursor: pointer;
-  }
-  
-  input[type="radio"]:checked + label{
-    color: #172852;
-  }
-  
-  
-  /* ========== 假的按鈕顏色 ========== */
-  
-  .contact_fake1, .contact_fake2{
-    border: 1.5px solid #bb866a;
-    border-radius: 50%;
-    width: 13px;
-    height: 13px;
-    position: relative;
-    top: -17px;
-    left: 0;
-  }
-  
-  /* 中間點點顏色 */
-  .contact_fakeClick1, .contact_fakeClick2{
-    background-color: #172852;
-    border-radius: 50%;
-    width: 7px;
-    height: 7px;
-    margin: 1.5px auto;
-    display: none;
-  }
-  
-  
-  
-  /* ========== 詳細內容 ========== */
-  #contact_message{
-    /* border: 1px solid red; */
-    color: #172852;
-    font-weight: bold;
-    margin: 40px 0 10px;
-  }
-  
-  textarea{
-    border: none;
-    outline: none;
-    border-radius: 5px;
-    color: #172852;
-    background-color: #f0ebe9;
-    padding: 16px;
-    width: 100%;
-    height: 200px;
-    resize: none;
-  }
-  
-  textarea:focus{
-    border: 2px solid #172852;
-  }
-  
-  
-  
-  /* ========== 送出按鈕 ========== */
-  button{
-    border: none;
-    background-color: #172852;
-    border-radius: 5px;
-    color: #ffffff;
-    font-weight: bold;
-    width: 100%;
-    height: 40px;
-    margin-top: 10px;
-    cursor: pointer;
-  }
-  
-  
-  
-  /* ========== 錯誤視窗 ========== */
-  .contact_nameBorder, .contact_radioBorder{
-    position: relative;
-  }
-  
-  .contact_error{
-    background-color: #dc3838;
-    border-radius: 5px;
-    width: 120px;
-    height: 25px;
-    padding: 5px 10px;
-    display: none;
-    font-size: 12px;
-    text-align: center;
-    position: absolute;
-    right: 20px;
-    bottom: -15px;
-    z-index: 1;
-  }
-  
-  .contact_error > p{
-    display: inline-block;
-    margin: 0;
-    color: #ffffff;
-  }
-  
-  .contact_error > div{
-    border-top: 1px solid transparent;
-    border-right: 8px solid transparent;
-    border-left: 8px solid transparent;
-    border-bottom: 13px solid #dc3838;
-    position: relative;
-    width: 15px;
-    height: 18px;
-    top: -36px;
-    right: -85px;
-  }
+  box-sizing: border-box;
+  font-family: "微軟正黑體";
+  color: #bb866a;
+}
+
+body{
+  margin: 0;
+  background-image: url("../images/bg.png");
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+img{
+  width: 100%;
+}
+
+.contact_container{
+  /* border: 1px solid black; */
+  width: 80%;
+  max-width: 1200px;
+  margin: 100px auto;
+
+}
+
+/* ========== 標題&外框 ========== */
+
+#contact_contact{
+  border-bottom: 3px solid #bb866a;
+  border-radius: 1.5px;
+  display: inline-block;
+  padding-bottom: 3px;
+  margin: 0 0 30px;
+  font-size: 14px;
+}
+
+#contact_contactBorder{
+  /* border: 1px solid green; */
+  width: 100%;
+  display: flex;
+}
+
+
+/* ========== 左邊部分 ========== */
+
+.contact_left{
+  /* border: 1px solid red; */
+  width: 50%;
+  margin-right: 60px;
+}
+
+/* ========== 聯絡我們 ========== */
+
+.contact_title{
+  /* border: 1px solid blue; */
+  display: inline-block;
+  font-size: 28px;
+  font-weight: bold;
+  margin: 0 0 20px;
+}
+
+.contact_description{
+  /* border: 1px solid red; */
+  margin: 0;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+
+/* ========== 來電聯繫 ========== */
+
+.contact_call, .contact_line{
+  /* border: 1px solid blue; */
+  display: inline-flex;
+  margin-top: 50px;
+}
+
+.contact_callImg, .contact_lineImg{
+  /* border: 1px solid red; */
+  width: 25px;
+  font-size: 0;
+  margin-right: 12px;
+}
+
+.contact_call > p, .contact_line > p{
+  /* border: 1px solid red; */
+  margin: 0;
+  font-size: 24px;
+  font-weight: bold;
+  color: #172852;
+}
+
+#contact_serviceTime{
+  /* border: 1px solid blue; */
+  font-weight: bold;
+  margin: 18px 0 15px;
+  font-size: 14px;
+}
+
+#contact_number{
+  /* border: 1px solid blue; */
+  font-weight: bold;
+  margin: 0;
+  font-size: 14px;
+}
+
+#contact_lineText{
+  /* border: 1px solid red; */
+  margin: 18px 0;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+#contact_qrcode{
+  /* border: 1px solid red; */
+  width: 110px;
+  border-radius: 10px;
+  box-shadow: 0px 7px 14.6px 1.4px rgba(187, 134, 106, 0.34);
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+
+
+
+/* ========== 右邊部分 ========== */
+
+.contact_right{
+  /* border: 1px solid red; */
+  width: 50%;
+  padding: 36px;
+  box-shadow: 9.5px 14.1px 26.4px 2.6px rgba(187, 134, 106, 0.44);
+  background-color: #ffffff;
+}
+
+/* ========== 姓名、電話、信箱 ========== */
+
+#contact_contactTitle{
+  /* border: 1px solid red; */
+  margin: 0 0 18px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #172852;
+}
+
+.contact_nameBorder > input{
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  background-color:#f0ebe9;
+  width: 100%;
+  height: 40px;
+  margin-bottom: 10px;
+  padding: 16px;
+  font-size: 14px;
+  color: #172852;
+}
+
+::placeholder {
+  color: #cba89a;
+}
+
+.contact_nameBorder > input:focus{
+  border: 2px solid #172852;
+}
+
+
+
+/* ========== 聯繫方式選擇 ========== */
+.contact_wantContect{
+  color: #172852;
+  font-weight: bold;
+  margin: 30px 0 10px;
+}
+
+.contact_radio{
+  /* border: 1px solid green; */
+  display: inline-block;
+}
+
+.contact_radio1{
+  margin-right: 30px;
+}
+
+.contact_radio > label{
+  font-weight: bold;
+  cursor: pointer;
+  /* font-family: MicrosoftJhengHeiBold; */
+}
+
+input[type="radio"]{
+  margin: 0 5px 0 0;
+  opacity: 0;
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+}
+
+input[type="radio"]:checked + label{
+  color: #172852;
+}
+
+
+/* ========== 假的按鈕顏色 ========== */
+
+.contact_fake1, .contact_fake2{
+  border: 1.5px solid #bb866a;
+  border-radius: 50%;
+  width: 13px;
+  height: 13px;
+  position: relative;
+  top: -17px;
+  left: 0;
+}
+
+/* 中間點點顏色 */
+.contact_fakeClick1, .contact_fakeClick2{
+  background-color: #172852;
+  border-radius: 50%;
+  width: 7px;
+  height: 7px;
+  margin: 1.5px auto;
+  display: none;
+}
+
+
+
+/* ========== 詳細內容 ========== */
+#contact_message{
+  /* border: 1px solid red; */
+  color: #172852;
+  font-weight: bold;
+  margin: 40px 0 10px;
+}
+
+textarea{
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  color: #172852;
+  background-color: #f0ebe9;
+  padding: 16px;
+  width: 100%;
+  height: 200px;
+  resize: none;
+}
+
+textarea:focus{
+  border: 2px solid #172852;
+}
+
+
+
+/* ========== 送出按鈕 ========== */
+button{
+  border: none;
+  background-color: #172852;
+  border-radius: 5px;
+  color: #ffffff;
+  font-weight: bold;
+  width: 100%;
+  height: 40px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+
+
+/* ========== 錯誤視窗 ========== */
+.contact_nameBorder, .contact_radioBorder{
+  position: relative;
+}
+
+.contact_error{
+  background-color: #dc3838;
+  border-radius: 5px;
+  width: 120px;
+  height: 25px;
+  padding: 5px 10px;
+  display: none;
+  font-size: 12px;
+  text-align: center;
+  position: absolute;
+  right: 20px;
+  bottom: -15px;
+  z-index: 1;
+}
+
+.contact_error > p{
+  display: inline-block;
+  margin: 0;
+  color: #ffffff;
+}
+
+.contact_error > div{
+  border-top: 1px solid transparent;
+  border-right: 8px solid transparent;
+  border-left: 8px solid transparent;
+  border-bottom: 13px solid #dc3838;
+  position: relative;
+  width: 15px;
+  height: 18px;
+  top: -36px;
+  right: -85px;
+}
