@@ -74,15 +74,29 @@ new Vue({
     delete_Item(index){
       // console.log(index);
       this.itemList.splice(index,1);
+      // 刪除多個後若沒商品顯示無商品
+      if(this.itemList.length == 0 && this.customization.length == 0){
+        $('.cart_NoItem').css('display','block');
+      }else if(this.itemList.length > 0 || this.customization.length > 0){
+        $('.cart_NoItem').css('display','none');
+      }
     },
     // 刪除(禮盒)
     delete_Customization(index){
       // console.log(index);
       this.customization.splice(index,1);
+      // 刪除多個後若沒商品顯示無商品
+      if(this.itemList.length == 0 && this.customization.length == 0){
+        $('.cart_NoItem').css('display','block');
+      }else if(this.itemList.length > 0 || this.customization.length > 0){
+        $('.cart_NoItem').css('display','none');
+      }
     },
     // 刪除打勾的項目
     delete_All(){
       // 一般商品
+      // x = this.itemList.length;
+      // y = this.customization.length;
       for(let i = 0; i < this.itemList.length; i++){
         let item = this.itemList[i].status;
         if(item == true){
@@ -104,19 +118,59 @@ new Vue({
           a--;
         };
       };
+
+      // 刪除多個後若沒商品顯示無商品
+      if(this.itemList.length == 0 && this.customization.length == 0){
+        $('.cart_NoItem').css('display','block');
+      }else if(this.itemList.length > 0 || this.customization.length > 0){
+        $('.cart_NoItem').css('display','none');
+      }
     },
     // checkbox被選擇變色，刪除多個變色
     choose(item){
       // checkbox
       item.status=!item.status;
+
       // 刪除多個
+      x = this.itemList.length;
       for(let i = 0; i < this.itemList.length; i++){
-        if(this.itemList[i].status == true){
-          this.delete_bgc = '#bb866a';
-          this.delete_cursor = 'pointer';
+        if(this.itemList[i].status == false){
+          x--;
         };
       };
+
+      y = this.customization.length;
+      for(let a = 0; a < this.customization.length; a++){
+        if(this.customization[a].status == false){
+          y--;
+        };
+      };
+      
+      if(x+y == 0){
+        this.delete_bgc = '#a3a3a3';
+        this.delete_cursor = 'default';
+      }else if(x+y > 0){
+        this.delete_bgc = '#bb866a';
+        this.delete_cursor = 'pointer';
+      };
     },
+    // 打開購物車
+    open(){
+      $('.cart_cartBoard').css('right','0px');
+      // 若沒商品顯示無商品
+      if(this.itemList.length == 0 && this.customization.length == 0){
+        $('.cart_NoItem').css('display','block');
+      }else if(this.itemList.length > 0 || this.customization.length > 0){
+        $('.cart_NoItem').css('display','none');
+      }
+    },
+    close(){
+      $('.cart_cartBoard').css('right','-600px');
+      // 禮盒細項關起來
+      $('.cart_detailBorder').css('display','none');
+      // 查看禮盒明細按鈕顏色
+      $('.cart_detailBtn').css('background-color','#bb866a');
+    }
   },
   computed: {
     // 購物車總金額
