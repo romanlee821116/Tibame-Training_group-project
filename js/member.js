@@ -13,7 +13,7 @@ $(document).ready(function(){
             };
         },
         template: `
-            <div class='receiverDetail' :class='{close: isActive}'>
+            <div class='receiverDetail'>
                 <div>
                     <p>收件人姓名：<input disabled type="text" :value='recevierName'></p>
                     <p>收件人電話：<input disabled type="text" :value='recevierPhone'></p>
@@ -30,6 +30,8 @@ $(document).ready(function(){
                 // console.log(this.isActive);
                 $('.receiverDetail').fadeOut();
                 $('.greyBackground').remove();
+                // 可滑動卷軸
+                $('body').removeClass('stopScroll');
             },
         },
     });

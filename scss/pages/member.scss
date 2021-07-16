@@ -1,0 +1,537 @@
+@import '../mixin/mixin';
+
+*{
+    box-sizing: border-box;
+    font-family: '微軟正黑體';
+    font-weight: bold;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url(../images/member/member_bg.png);
+    background-repeat: no-repeat;
+}
+
+.navbar{
+    @include navbar();
+}
+
+.footer{
+    @include footer();
+}
+
+.memberAll{
+    width: 60%;
+    max-width: 1200px;
+    margin: 0 auto;
+    /* border: 1px solid red; */
+}
+
+/* 彈出視窗時禁止滑動 */
+.stopScroll{
+    height: 100%;
+    overflow: hidden;
+}
+/* 彈出視窗時出現灰底 */
+.greyBackground{
+    width: 100%;
+    height: 1000px;
+    background-color: rgba(0,0,0,0.7);
+    z-index: 910;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* 預設文字色彩 */
+::placeholder {
+    color: #cba89a;
+}
+
+/* 滑動效果 */
+.choosenBar2, .memberTitle h4{
+    transition: all .8s cubic-bezier(.6,0,.4,1); 
+}
+
+/* 大標 */
+.memberAll>p{
+    font-size: 14px;
+    color: #bb866a;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #bb866a;
+    display: inline-block;
+    margin: 40px 0 30px 0;
+}
+.memberAll h2{
+    font-size: 28px;
+    color: #bb866a;
+    margin: 0 0 30px 0;
+}
+/* 標題 */
+.memberTitle{
+    display: flex;
+    margin-bottom: 10px;
+}
+.memberTitle h4{
+    /* border: 1px solid orange; */
+    flex: 0 0 20%;
+    text-align: center;
+    margin: 0;
+    color: #cba89a;
+    font-size: 16px;
+    cursor: pointer;
+}
+.memberTitle h4:first-child{
+    color: #172852;
+}
+/* 標題下方選擇提示條 */
+.underLine{
+    position: relative;
+}
+.underLine .choosenBar{
+    width: 100%;
+    height: 2px;
+    background-color: #cba89a;
+    /* display: block; */
+}
+.underLine .choosenBar2{
+    width: 20%;
+    height: 2px;
+    background-color: #172852;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.underLine .choosenBar2::before{
+    content:'';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50px;
+    background-color: #172852;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+/* 會員資料=================================== */
+.memberPart1{
+    /* display: none; */
+
+    /* border: 1px solid blue; */
+    margin-top: 18px;
+    width: 350px;
+    margin: 0 auto;
+    font-size: 14px;
+    color: #172852;
+}
+.memberPart1 label input{
+    width: 270px;
+    display: inline-block;
+
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f0ebe9;
+    border: none;
+    color: #172852;
+}
+.memberPart1 .gender{
+    margin-bottom: 10px;
+    padding: 7px 0 7px 0;
+}
+.memberPart1 .gender label{
+    color: #cba89a;
+}
+.memberPart1 .gender input:checked + label{
+    color: #172852;
+}
+.memberLeft{
+    margin-left: 28px;
+}
+
+.memberTop{
+    margin-top: 20px;
+}
+/* 送出鈕 */
+.memberPart1 button{
+    margin: 0 auto;
+    display: block;
+    width: 120px;
+
+    height: 30px;
+    padding: 0 10px 0 10px;
+    border-radius: 25px;
+    background-color:#172852;
+    color: #f0ebe9;
+    border: none;
+
+    margin-top: 40px;
+}
+
+
+
+/* 修改密碼================================ */
+.memberPart2{
+    /* border: 1px solid blue; */
+    display: none;
+
+    margin-top: 18px;
+    width: 270px;
+    margin: 0 auto;
+    font-size: 14px;
+    color: #172852;
+}
+.memberPart2 input{
+    width: 270px;
+    display: inline-block;
+
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f0ebe9;
+    border: none;
+    color: #172852;
+}
+/* 送出鈕 */
+.memberPart2 button{
+    margin: 0 auto;
+    display: block;
+    width: 120px;
+
+    height: 30px;
+    padding: 0 10px 0 10px;
+    border-radius: 25px;
+    background-color:#172852;
+    color: #f0ebe9;
+    border: none;
+
+    margin-top: 40px;
+}
+
+
+
+/* 訂單查詢================================== */
+.memberPart3{
+    /* border: 1px solid blue; */
+    display: none;
+
+    margin-top: 15px;
+    font-size: 14px;
+    color: #172852;
+}
+/* 搜尋方式================== */
+.memberPart3 .orderSearch{
+    float: right;
+    margin-bottom: 15px;
+}
+.memberPart3 .orderSearch input{
+    padding: 10px 20px 10px 20px;
+    border-radius: 5px;
+    background-color: #f0ebe9;
+    border: none;
+    color: #172852;
+}
+.memberPart3 .orderSearch button{
+    padding: 10px 34px 10px 34px;
+    border-radius: 5px;
+    background-color:#a3a3a3;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+
+    margin-left: 12px;
+}
+
+/* 表格===================== */
+.memberOrder{
+    margin-top: 25px;
+}
+.memberOrder:first-child{
+    margin-top: 0;
+}
+.memberOrder .memberOrderContent{
+    width: 100%;
+    border: solid 2px #cba89a;
+    border-collapse: collapse;
+}
+/* 第一行 */
+.memberOrder .memberOrderContent tr:first-child{
+    background-color: #cba89a;
+    color: #fff;
+}
+.memberOrder .memberOrderContent tr:first-child td{
+    padding: 7px 0 7px 0;
+}
+.memberOrder .memberOrderContent tr:first-child td:first-child{
+    padding-left: 10px;
+}
+/* 第二行 */
+.memberOrder .memberOrderContent tr:nth-child(2){
+    background-color: #f8f0e0;
+    color: #bb866a;
+}
+.memberOrder .memberOrderContent tr:nth-child(2) td{
+    padding: 15px 0 15px 0;
+}
+.memberOrder .memberOrderContent tr:nth-child(2) td:first-child{
+    padding-left: 10px;
+}
+.memberOrder .memberOrderContent tr:nth-child(2) td:last-child{
+    color: #647bb5;
+    cursor: pointer;
+}
+
+/* 收貨進度=================== */
+.memberProgressAll{
+    display: flex;
+    border: solid 2px #cba89a;
+    margin-top: -2px;
+}
+.memberProgressAll>div{
+    /* border: 1px solid red; */
+    padding: 10px 5% 10px 5%;
+}
+/* 進度條 */
+.memberProgressAll div .memberProgressDot{
+    display: flex;
+    align-items: center;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+.memberProgressAll div .memberProgressDot div{
+    position: relative;  /* 給dot_check定位 */
+}
+/* 進度小點 */
+.memberProgressAll div .memberProgressDot div:nth-child(2n+1){
+    width: 12px;
+    height: 12px;
+    background-image: url(../images/member/checkcircle.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.memberUnchecked{
+    border-radius: 50px;
+    border: 3.5px solid #c4c4c4;
+    background-color: #fff;
+    background-image: none !important;
+}
+/* 進度線條 */
+.memberProgressAll div .memberProgressDot div:nth-child(2n){
+    width: 150px;
+    height: 2px;
+    background-color: #c4c4c4;
+}
+.memberProgressAll div .memberProgressDot div.memberLineCheck{
+    background-color: #f7c242;
+}
+/* 進度文字 */
+.memberProgressAll div .memberProgressWord{
+    color: #a3a3a3;
+    /* border: 1px solid blue; */
+    display: flex;
+    justify-content: space-between;
+    margin-left: -25px;
+    margin-right: -25px;
+}
+.memberWordCheck{
+    color: #f7c242;
+}
+/* 再次購買 */
+.memberProgressAll>div:last-child{
+    display: flex;
+    flex-direction: column;
+}
+.memberProgressAll div .memberBuyAgain{
+    margin: 0 auto;
+    display: block;
+    width: 80px;
+    height: 22px;
+
+    font-size: 10px;
+    border-radius: 25px;
+    background-color:#bb866a;
+    color: #f0ebe9;
+    border: none;
+    align-self: center;
+    margin-right: 28px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+.memberProgressAll div .noshow{
+    display: none;
+}
+/* 明細鈕 */
+.memberProgressAll div .memberOpenDetail{
+    margin: 0 auto;
+    display: block;
+    width: 80px;
+    height: 22px;
+
+    font-size: 10px;
+    border-radius: 25px;
+    background-color:#172852;
+    color: #f0ebe9;
+    border: none;
+    align-self: center;
+    margin-right: 28px;
+    cursor: pointer;
+}
+.memberProgressAll div .close_detail{
+    background-color:#647bb5;
+}
+
+/* 訂單明細==================== */
+.memberOrderDetail{
+    width: 100%;
+    border: solid 2px #c4c4c4;
+    border-collapse: collapse;
+    font-size: 12px;
+    margin: 0;
+}
+/* 第一行 */
+.memberOrderDetail tr:first-child{
+    background-color: #c4c4c4;
+    color: #fff;
+    padding: 20px 0 20px 0;
+}
+.memberOrderDetail tr:first-child td{
+    padding: 5px 0 5px 0;
+}
+.memberOrderDetail tr:first-child td:first-child{
+    padding-left: 10px;
+}
+
+/* 第二行 */
+.memberOrderDetail tr td img{
+    max-width: 50px;
+    /* margin: 5px; */
+}
+.memberOrderDetail tr:nth-child(2) td:first-child{
+    width: 80px;
+    /* border: 1px solid red; */
+    padding-left: 10px;
+}
+.memberOrderDetail tr:nth-child(2) td:nth-child(2){
+    width: 210px;
+}
+.memberOrderDetail tr:nth-child(2) td:nth-child(3){
+    width: 100px;
+}
+.word-sp1{
+    vertical-align: bottom;
+}
+.word-sp2{
+    vertical-align: top;
+}
+
+/* 收件人詳細資訊============= */
+.receiverDetail{
+    display: none;
+    /* border: 1px solid red; */
+    width: 430px;
+    height: 250px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    border-radius: 10px;
+    box-shadow: 0px 10px 32px 0 rgba(23, 40, 82, 0.6);
+    background-color: #fff;
+    z-index: 920;
+}
+.receiverDetail div{
+    padding: 20px 0 0px 0;
+}
+.receiverDetail div p{
+    /* border: 1px solid blue; */
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 10px;
+}
+.receiverDetail div p input{
+    width: 250px;
+
+    /* margin-bottom: 10px; */
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f0ebe9;
+    border: none;
+    color: #172852;   
+}
+.receiverDetail>p{
+    color: #647bb5;
+    font-size: 12px;
+    text-align: center;
+}
+.receiverDetail>button{
+    margin: 0 auto;
+    display: block;
+    width: 120px;
+
+    height: 30px;
+    padding: 0 10px 0 10px;
+    border-radius: 25px;
+    background-color:#172852;
+    color: #f0ebe9;
+    border: none;
+    cursor: pointer;
+}
+
+
+/* 取消/退款查詢================================ */
+.memberPart4{
+    /* border: 1px solid blue; */
+    display: none;
+
+    margin-top: 18px;
+    font-size: 14px;
+    color: #172852;
+}
+/* 搜尋方式================== */
+.memberPart4 .orderSearch{
+    float: right;
+    margin-bottom: 15px;
+}
+.memberPart4 .orderSearch input{
+    padding: 10px 20px 10px 20px;
+    border-radius: 5px;
+    background-color: #f0ebe9;
+    border: none;
+    color: #172852;
+}
+.memberPart4 .orderSearch button{
+    padding: 10px 34px 10px 34px;
+    border-radius: 5px;
+    background-color:#a3a3a3;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+
+    margin-left: 12px;
+}
+
+.close{
+    display: none;
+}
+
+/* ================= R W D =================== */
+@media screen and (min-width: 992px) and (max-width: 1199px){
+    .memberAll{
+        width: 80%;
+        margin: 0 auto;
+        border: 1px solid red;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px){
+    .memberAll{
+        width: 90%;
+        margin: 0 auto;
+        border: 1px solid red;
+    }
+}
