@@ -53,7 +53,8 @@
                 <img src="../images/about/temp1.png" alt="">
             </div>
         </div>
-        <component :is="content" v-on:Box-type='changeBox'></component>
+        <!-- 彈窗 -->
+        <component :is="content" v-on:Box-type='changeBox' v-show='boxDisplay' @hidden='hiddenBox'></component>
 
 
         <!-- content -->
