@@ -112,4 +112,13 @@ function ticker(e){
     }, 30);
 }
 
+document.addEventListener('click', function(){
+    if(this.classList.contains('eye')){
+        let input_type=this.previousSibling.getAttribute('password');
+        if(input_type=='password'){
+            this.previousSibling.getAttribute('type', 'text')
+        }
+    }
+    
+})
 
