@@ -17,6 +17,10 @@ body{
     @include navbar();
 }
 
+.footer{
+    @include footer();
+}
+
 .memberAll{
     width: 60%;
     max-width: 1200px;
@@ -493,8 +497,8 @@ body{
     float: right;
     margin-bottom: 15px;
 }
-.memberPart4 .orderSearch select{
-    padding: 10px 30px 10px 30px;
+.memberPart4 .orderSearch input{
+    padding: 10px 20px 10px 20px;
     border-radius: 5px;
     background-color: #f0ebe9;
     border: none;
