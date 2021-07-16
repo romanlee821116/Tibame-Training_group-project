@@ -79,11 +79,25 @@ $(document).ready(function(){
             $(this).prev().attr('type','text');
         };
     });
-    // $('.eye').click(function(){
-    //     $(this).prev().attr('type','text');
-    // });
+    
     // $(document).click(function(){
-    //     $('.eye').prev().attr('type','password');
+    //     if( $('.eye').prev().attr('type') == 'text'){
+    //         $('.eye').prev().attr('type','password');
+    //     }
+    // });
+
+    // $('body').on('click', function(){
+    //     console.log($(this));
+    //     if($(this).hasClass('eye')){
+    //         console.log('abc');
+    //         let input_type = $(this).prev().attr('type');
+    //         if(input_type=='password'){
+    //             $(this).prev().attr('type','text');
+    //         };
+    //     }else{
+    //         console.log('QQ');
+    //         $('.eye').prev().attr('type', 'text');
+    //     };
     // });
 
 

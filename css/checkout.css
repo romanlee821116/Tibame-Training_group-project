@@ -6,8 +6,12 @@
   top: 0px;
   left: 0;
   padding-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   z-index: 900;
 }
 
@@ -23,6 +27,8 @@
 }
 
 .navbar .navbar-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin-right: 10px;
 }
@@ -41,7 +47,8 @@
 }
 
 * {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   font-family: "微軟正黑體";
   color: #bb866a;
 }
@@ -67,8 +74,12 @@ img {
 /* ========== 訂單處理階段 ========== */
 .stage {
   /* border: 1px solid red; */
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .step {
@@ -107,6 +118,8 @@ img {
 /* ========== 訂單內容 ========== */
 .orderContent {
   border: 1px solid red;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -149,6 +162,8 @@ img {
 
 .item {
   border: 1px solid green;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   font-size: 0;
 }
