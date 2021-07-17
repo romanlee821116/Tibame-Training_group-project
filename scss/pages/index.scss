@@ -734,12 +734,13 @@
                 width: 100%;
                 height: 48%;
                 overflow: hidden;
-            }
-                .item-img img{
+                img{
                     width: 100%;
                     height: 100%;
-                    vertical-align: middle;
+                    vertical-align: top;
                 }
+            }
+                
             .item-txt{
                 width: 100%;
                 height: 52%;
