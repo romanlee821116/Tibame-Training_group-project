@@ -52,7 +52,7 @@ $(function(){
                 {class: 'p6-watermark p6-mark3', src: './images/index/news_watercolor_c.png'},
             ],
             card_list: [
-                {src:'./images/index/news_pic_a.png', time:'2021/06/01', title:'挺防疫，免運活動開跑', txt:'即日起至2021/08/31，輸入折扣碼即可享運費折抵'},
+                {src:'./images/index/news_pic_a.png', time:'2021/06/01', title:'挺防疫，免運活動開跑', txt:'即日起至08/31，輸入折扣碼即可享運費折抵'},
                 {src:'./images/index/news_pic_b.png', time:'2021/04/15', title:'抹茶銅鑼燒新品上市', txt:'靜岡抹茶與阿里山台茶12號以黃金比例調配'},
                 {src:'./images/index/news_pic_c.png', time:'2021/02/02', title:'芋頭銅鑼燒新品上市', txt:'嚴選香濃綿密的大甲芋頭，甜而不膩好滋味'},
             ],
@@ -78,18 +78,15 @@ $(function(){
     
 
     ticker(); 
-
-    
+    newsCarousel();    
 })
 
 
 // 跑馬燈替換
-function ticker(e){
+function ticker(){
     let length = 0;
     let index = 0;
-    let titleWord = ['MONOKA', 'DORAYAKI','DAIFUKU'];
-    
-
+    let titleWord = ['MONOKA', 'DORAYAKI','DAIFUKU']; 
     let bgColor = ['#f1ca96', '#6b8871', '#e09ba9'];
     let bgPic = ['./images/index/banner_monaka_bg.png', './images/index/banner_matcha_bg.png', './images/index/banner_strawberry_bg.png'];
     let itemPic = ['./images/index/banner_monaka_item.png', './images/index/banner_matcha_item.png', './images/index/banner_strawberry_item.png'];
@@ -112,13 +109,36 @@ function ticker(e){
     }, 30);
 }
 
-document.addEventListener('click', function(){
-    if(this.classList.contains('eye')){
-        let input_type=this.previousSibling.getAttribute('password');
-        if(input_type=='password'){
-            this.previousSibling.getAttribute('type', 'text')
-        }
+//商品輪播
+function newsCarousel(){
+    let winWidth = $(window).width();
+    if(winWidth <767){
+        console.log("小於767");
+        $('.p6_carousel').show();
+        let index = 0;
+        setInterval(function(){
+            $('.p6_card_container').animate({
+                left: index*-350,
+            },500);
+            let point = `.p6_carousel_point:nth-child(${index+1})`;
+            $('.p6_carousel_point').css('backgroundColor','#ccc')
+            $(point).css('backgroundColor','#172852'); 
+            index+=1;
+            if(index==3){
+                index = 0;
+            };
+        }, 3000);
+        $('.p6_carousel_point').on('click', function(){
+            let this_index = $('.p6_carousel_point').index(this);
+            index=this_index;
+            $('.p6_card_container').animate({
+                left: index*-350,
+            },500);
+            let point = `.p6_carousel_point:nth-child(${index+1})`;
+            $('.p6_carousel_point').css('backgroundColor','#ccc')
+            $(point).css('backgroundColor','#172852');
+        })
     }
-    
-})
+}
+
 

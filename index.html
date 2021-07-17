@@ -206,20 +206,29 @@
                 </div>
                 <!-- 卡片內容 -->
                 <div class="p6-card">
-                    <div class="p6-cardbg" v-for='item in card_list'>
-                        <div class="p6-card-item">
-                            <div class="item-img">
-                                <img :src="item.src" alt="">
+                    <div class="p6_card_container">
+                        <div class="p6-cardbg" v-for='item in card_list'>
+                            <div class="p6-card-item">
+                                <div class="item-img">
+                                    <img :src="item.src" alt="">
+                                </div>
+                                <div class="item-txt">
+                                    <h3>{{item.time}}</h3>
+                                    <h4>{{item.title}}</h4>
+                                    <p>{{item.txt}}</p>
+                                    <a href="#" class='card-btn'>詳細資訊</a>
+                                </div>            
                             </div>
-                            <div class="item-txt">
-                                <h3>{{item.time}}</h3>
-                                <h4>{{item.title}}</h4>
-                                <p>{{item.txt}}</p>
-                            </div>                        
-                            <a href="#" class='card-btn'>詳細資訊</a>                        
-                        </div>
-                    </div>                    
+                        </div>  
+                    </div>                  
                 </div>
+                <!-- 輪播 -->
+                <div class="p6_carousel">
+                    <div class='p6_carousel_point'></div>
+                    <div class='p6_carousel_point'></div>
+                    <div class='p6_carousel_point'></div>
+                </div>
+
                 <!-- 按鈕 -->
                 <div class="p6-btn">
                     <a href="#" class='mainbtn'>更多消息</a>
@@ -236,24 +245,26 @@
                     <h1>Shop</h1>
                     <h3>店鋪資訊</h3>   
                 </div>
-                <div class="p7-shopinfo">
-                    <h2>台北本店</h2>
-                    <div class="p7-address">
-                        <p>地址</p>
-                        <div class="p7-address-detailed">
-                            <p>台北市南京東路三段219號4-5F</p>
-                            <a href="#">Google Map</a>
+                <div class="p7-info">
+                    <div class="p7-shopinfo">
+                        <h2>台北本店</h2>
+                        <div class="p7-address">
+                            <p>地址</p>
+                            <div class="p7-address-detailed">
+                                <p>台北市南京東路三段219號4-5F</p>
+                                <a href="#">Google Map</a>
+                            </div>
+                        </div>
+                        <div v-for='item in shop_info' :class='item.class'>
+                            <p>{{item.title}}</p>
+                            <p>{{item.txt}}</p>
                         </div>
                     </div>
-                    <div v-for='item in shop_info' :class='item.class'>
-                        <p>{{item.title}}</p>
-                        <p>{{item.txt}}</p>
+                    <div class="p7-shopbtn">
+                        <a href="#" class='p7-shopbtn-left'><i class="fas fa-chevron-left"></i></a>
+                        <a href="#" class='p7-shopbtn-right'><i class="fas fa-chevron-right"></i></a>                    
                     </div>
-                </div>
-                <div class="p7-shopbtn">
-                    <a href="#" class='p7-shopbtn-left'><i class="fas fa-chevron-left"></i></a>
-                    <a href="#" class='p7-shopbtn-right'><i class="fas fa-chevron-right"></i></a>                    
-                </div>
+                </div>  
                 <div class="p7-bigpic">
                     <img src="./images/index/shop_pic_a.png" alt="">
                 </div>
@@ -279,9 +290,7 @@
                     <p>本網站為緯育TibaMe前端設計工程師班第66期第__組學員專題成果作品，本平台僅供學習、展示之用。參考資源:XXXXXXXXXXXXX。若有侵權疑慮，您可以私訊[TibaMe-前端設計工程師養成班]，後續會由專人協助處理</p>
                 </div>
             </div>
-        </div>
-        
-
+        </div>    
     </div>
     <script>
         $( "#homepage" ).fullpage({
@@ -338,10 +347,6 @@
                     });
                 //    隱藏社群bar
                     $('.mediacolumn').css({
-                        visibility: 'hidden',
-                    });
-                //    隱藏語言icon
-                    $('.language').css({
                         visibility: 'hidden',
                     });
                 //    隱藏測驗

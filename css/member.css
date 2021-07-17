@@ -130,7 +130,7 @@ body {
 
 @media (max-width: 575px) {
   .footer {
-    padding-top: 30px;
+    padding-top: 25px;
     background-color: #bb866a;
   }
   .footer a, .footer p {
