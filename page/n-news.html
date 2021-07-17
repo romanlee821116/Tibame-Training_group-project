@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>product</title>
+    <link rel="stylesheet" href="./css/n-news.css">
+</head>
+<body>
+    <div id="app">
+        <header class="header">
+            <div class="logo">
+                <img src="./images/n_logo.png" alt="" srcset="">
+                <p>小春堂後臺管理</p>
+            </div>
+               
+            <div class="logout">
+                <p>帳號登出</p>
+                <img src="./images/log-out.png" alt="" srcset="">
+            </div>
+        </header>
+
+        <main class="main">
+            <div class="left">
+                <a v-for = 'btn in mainbtn' :href="btn.url">{{btn.name}}</a>
+            </div>
+
+            <div class="right">
+
+                <form action="" method="get" id="">
+                    <p>消息管理</p>
+
+                    <div class="newsbtn">
+                        <button class="add">新增</button>
+                        <button class="delete">刪除</button>
+                    </div>
+    
+                    <section>
+                        <input type="text" name="search" id="search" placeholder="以文章編號查詢" v-model='news_number'>    
+                        <label for="search" :class="{'-active':news_number}">搜尋</label>
+                    </section>
+                </form>
+
+                <div>
+                    <ul class="title">
+                        <li v-for = 'title in titles'>{{title}}</li>
+                        <li></li>
+                    </ul>
+
+                    <ul v-for='(news,key) in newss' class="news"> 
+                        <li>
+                            <input type="checkbox" name="" id="">
+                        </li>     
+                        <li>{{news.文章編號}}</li>
+                        <li>{{news.上架日期}}</li>
+                        <li>{{n_sort_list[news.文章分類]}}</li>
+                        <li>{{news.標題}}</li>
+                        <li :class="{'-active2':newss[key].上下架 == '1'}">{{on_off_list[news.上下架]}}</li> 
+                        <li>{{news.最後更新日期}}</li>
+                        <li @click='edit(key)'>編輯與查看</li>
+                    </ul>                
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <ul>
+                <li v-for='page in pages'>{{page.page}}</li>
+            </ul>
+        </footer>
+
+        <div class="edit" v-if='current_edit !== null'>
+        <!-- <div class="edit" v-if='true'> -->
+
+            <p>編輯與查看</p>
+            
+            <div class="news_mid">
+                <ul>                    
+                    <li>
+                        <section>文章分類:
+                            <select name="status" id="" v-model='n_sort'>
+                                <option value="0">新品上市</option>
+                                <option value="1">舊品出清</option>
+                            </select>
+                        </section>
+                    
+                        <section>上下架:
+                            <select name="status" id="" v-model='on_off'>
+                                <option value="0">上架</option>
+                                <option value="1">下架</option>
+                            </select>
+                        </section>
+                    </li>
+
+                    <li>
+                        <label for="">主標題:</label>
+                        <input type="text" v-model='n_main_title'>
+                    </li>
+
+                    <li>
+                        <label for="">副標題:</label>
+                        <input type="text" v-model='n_sec_title'>
+                    </li>
+
+                    <li>
+                        <label for="">內文01:</label>
+                        <textarea name="" id="" cols="73" rows="5" v-model='n_main_content'>{{p_ingredient}}</textarea>
+                    </li>
+                    
+                    <li>
+                        <label for="">內文02:</label>
+                        <textarea name="" id="" cols="73" rows="5" v-model='n_sec_content'>{{p_descript}}</textarea>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="news_bot">
+
+                <div class="group">
+                    <label for="group1">右上圖:</label>
+                    <input type="file" id="group1" @change='upload_img'>
+                    <p>{{group1_name}}</p>
+                    <div class="img">
+                        <img src="" id="g_img1">
+                        <p v-if ='group1_name == "請選擇圖片上傳"'>{{group1_name}}</p>
+                    </div>
+                </div>
+
+                <div class="group">
+                    <label for="group2">主題:</label>
+                    <input type="file" id="group2" @change='upload_img'>
+                    <p>{{group2_name}}</p>
+                    <div class="img">
+                        <img src="" id="g_img2">
+                        <p v-if ='group2_name == "請選擇圖片上傳"'>{{group2_name}}</p>
+                    </div>
+                </div>
+
+                <div class="group">
+                    <label for="group3">圖片01:</label>
+                    <input type="file" id="group3" @change='upload_img'>
+                    <p>{{group3_name}}</p>
+                    <div class="img">
+                        <img src="" id="g_img3">
+                        <p v-if ='group3_name == "請選擇圖片上傳"'>{{group3_name}}</p>
+                    </div>
+                </div>
+
+                <div class="group">
+                    <label for="group4">圖片02:</label>
+                    <input type="file" id="group4" @change='upload_img'>
+                    <p>{{group4_name}}</p>
+                    <div class="img">
+                        <img src="" id="g_img4">
+                        <p v-if ='group4_name == "請選擇圖片上傳"'>{{group4_name}}</p>
+                    </div>
+                </div>
+
+                <div class="group">
+                    <label for="group5">圖片03:</label>
+                    <input type="file" id="group5" @change='upload_img'>
+                    <p>{{group5_name}}</p>
+                    <div class="img">
+                        <img src="" id="g_img5">
+                        <p v-if ='group5_name == "請選擇圖片上傳"'>{{group5_name}}</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="editbtn">
+                <button class="close" @click='f_close'>關閉</button>
+                <!-- <button class="save" @click='finish'>儲存</button> -->
+                <button class="save" @click='f_save'>儲存</button>
+            </div>
+        </div>
+
+        <div id="hide" v-if='current_edit !== null'></div>
+
+    </div>
+
+    <script src="./js/vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data:{
+                news_number:'',
+                on_off_list:['上架', '下架'],
+                n_sort_list:['新品上市', '舊品出清'],
+                n_main_title:'',
+                n_sec_title:'',
+                n_sort:0,
+                on_off:0,       
+                n_main_content:'',
+                n_sec_content:'',         
+
+                group1_name:'請選擇圖片上傳',
+                group2_name:'請選擇圖片上傳',
+                group3_name:'請選擇圖片上傳',
+                group4_name:'請選擇圖片上傳',
+                group5_name:'請選擇圖片上傳',
+
+
+                mainbtn: [  
+                    {name:"會員管理", url: "./n-member.html"},
+                    {name:"訂單管理", url: "./n-order.html"},
+                    {name:"商品管理", url: "./n-product.html"},
+                    {name:"客製化商品管理", url: "./n-customized.html"},
+                    {name:"消息管理", url: "./n-news.html"},
+                    {name:"折扣碼管理", url: "#"},
+                    {name:"Q&A", url: "./n-faq.html"},
+                ],
+                titles: ['', '文章編號', '上架日期', '文章分類', '標題', '上下架', '最後更新日期', ''],
+                newss:[
+                    {
+                        '文章編號':'1234567890',
+                        '上架日期':'2021/01/01',
+                        '文章分類':0,
+                        '標題':'新品上市新品上市新品上市新品上市新品上市',
+                        '上下架':0,
+                        '最後更新日期':'2021/03/01 16:16',
+                        '內文':'這就是內文',
+                    },
+                    {
+                        '文章編號':'1234567890',
+                        '上架日期':'2021/01/01',
+                        '文章分類':0,
+                        '標題':'新品上市新品上市新品上市新品上市',
+                        '上下架':1,
+                        '最後更新日期':'2021/03/01 16:16',
+                        '內文':'這就是內文',
+                    },
+                    {
+                        '文章編號':'1234567890',
+                        '上架日期':'2021/01/01',
+                        '文章分類':0,
+                        '標題':'新品上市新品上市新品上市新品上市新品上市新品上市新品上市新品上市新品上市新品上市新品上市',
+                        '上下架':0,
+                        '最後更新日期':'2021/03/01 16:16',
+                        '內文':'這就是內文',
+                    }
+                ],
+                pages:[
+                    {page:"<", url: "#"},
+                    {page:"1", url: "#"},
+                    {page:"2", url: "#"},
+                    {page:"3", url: "#"},
+                    {page:"4", url: "#"},
+                    {page:"5", url: "#"},
+                    {page:"...", url: "#"},
+                    {page:"20", url: "#"},
+                    {page:">", url: "#"},
+                ],
+                current_edit:null,
+            },
+
+            methods: {
+                edit(index){                    
+                    this.current_edit = index;     
+
+                    this.n_sort = this.newss[index].文章分類;
+                    this.on_off = this.newss[index].上下架;
+                    this.n_main_title = this.newss[index].標題;
+                    this.n_sec_title = this.newss[index].標題;
+                    this.n_main_content = this.newss[index].內文;
+                    this.n_sec_content = this.newss[index].內文;
+                },
+
+                f_close(){                    
+                    this.current_edit = null;
+                },  
+                f_save(){     
+
+                    let n_index = this.$data.current_edit;
+
+                    this.newss[n_index].上下架 = this.on_off;
+                    this.newss[n_index].文章分類 = this.n_sort;
+
+                    this.current_edit = null;
+                },  
+
+                upload_img(){
+
+                    let file1 = document.getElementById('group1').files[0];
+                    this.group1_name = file1.name;
+
+                    let readFile1 = new FileReader();
+                    readFile1.readAsDataURL(file1);
+                    readFile1.addEventListener('load', function(){
+                        document.getElementById('g_img1').src = readFile1.result;
+                    });
+
+                    let file2 = document.getElementById('group2').files[0];
+                    this.group2_name = file2.name;
+
+                    let readFile2 = new FileReader();
+                    readFile2.readAsDataURL(file2);
+                    readFile2.addEventListener('load', function(){
+                        document.getElementById('g_img2').src = readFile2.result;
+                    });
+
+                    let file3 = document.getElementById('group3').files[0];
+                    this.group3_name = file3.name;
+
+                    let readFile3 = new FileReader();
+                    readFile3.readAsDataURL(file3);
+                    readFile3.addEventListener('load', function(){
+                        document.getElementById('g_img3').src = readFile3.result;
+                    });
+
+                    let file4 = document.getElementById('group4').files[0];
+                    this.group4_name = file4.name;
+
+                    let readFile4 = new FileReader();
+                    readFile4.readAsDataURL(file4);
+                    readFile4.addEventListener('load', function(){
+                        document.getElementById('g_img4').src = readFile4.result;
+                    });
+
+                    let file5 = document.getElementById('group5').files[0];
+                    this.group5_name = file5.name;
+
+                    let readFile5 = new FileReader();
+                    readFile5.readAsDataURL(file5);
+                    readFile5.addEventListener('load', function(){
+                        document.getElementById('g_img5').src = readFile5.result;
+                    });
+
+
+                },
+                
+                
+            },
+            
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>member</title>
+    <link rel="stylesheet" href="./css/n-member.css">
+</head>
+<body>
+    <div id="app">
+        <header class="header">
+            <div class="logo">
+                <img src="./images/n_logo.png" alt="" srcset="">
+                <p>小春堂後臺管理</p>
+            </div>
+               
+            <div class="logout">
+                <p>帳號登出</p>
+                <img src="./images/log-out.png" alt="" srcset="">
+            </div>
+        </header>
+
+        <main class="main">
+            <div class="left">
+                <a v-for = 'btn in mainbtn' :href="btn.url">{{btn.name}}</a>
+            </div>
+
+            <div class="right">
+
+                <form action="" method="get" id="">
+                    <p>會員管理</p>
+    
+                    <section>
+                        <input type="text" name="search" id="search" placeholder="以會員編號查詢" v-model='member_number'>    
+                        <label for="search" :class="{'-active':member_number}">搜尋</label>
+                    </section>
+                </form>
+
+                <div>
+                    <ul class="title">
+                        <li v-for = 'title in titles'>{{title}}</li>
+                        <li></li>
+                    </ul>
+
+                    <ul v-for='(member,key) in members' class="member">                        
+                        <li>{{member.編號}}</li>
+                        <li>{{member.帳號}}</li>
+                        <li>{{member.姓名}}</li>
+                        <li>{{member.手機}}</li>
+                        <li :class="{'-active2':members[key].帳號狀態 == '1'}">{{member_list[member.帳號狀態]}}</li>
+                        <li>{{member.創建時間}}</li>        
+                        <li @click='edit(key)'>編輯與查看</li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <ul>
+                <li v-for='page in pages'>{{page.page}}</li>
+            </ul>
+        </footer>
+
+        <!-- <ul v-for='mem in mems'>
+            全吃
+            <li v-for='(me, index) in mem'>{{index}}--{{me}}</li>            
+        </ul> -->
+
+        <div class="edit -on" v-if='current_edit !== null'>
+            <p>編輯與查看</p>
+
+            <ul class="edit-member">                        
+                <li>編號:{{members[current_edit].編號}}</li>
+                <li>性別:{{members[current_edit].性別}}</li>
+                <li>帳號:{{members[current_edit].帳號}}</li>
+                <li>手機:{{members[current_edit].手機}}</li>
+                <li>姓名:{{members[current_edit].姓名}}</li>
+                <li>
+                    帳號狀態:
+                    <select name="status" id="" v-model='m_status'>
+                        <option value="0">正常</option>
+                        <option value="1">停權</option>
+                    </select>
+                </li>
+                <li>地址:{{members[current_edit].地址}}</li>
+                <li>創建時間:{{members[current_edit].創建時間}}</li> 
+            </ul>
+
+            <div class="editbtn">
+                <button class="close" @click='f_close'>關閉</button>
+                <!-- <button class="save" @click='finish'>儲存</button> -->
+                <button class="save" @click='f_save'>儲存</button>
+            </div>
+        </div>
+
+        <div id="hide" v-if='current_edit !== null'></div>
+
+    </div>
+
+    <script src="./js/vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data:{
+                member_number: '',
+                m_status:0,
+                member_list:['正常', '停權'],
+                mainbtn: [  
+                    {name:"會員管理", url: "./n-member.html"},
+                    {name:"訂單管理", url: "./n-order.html"},
+                    {name:"商品管理", url: "./n-product.html"},
+                    {name:"客製化商品管理", url: "./n-customized.html"},
+                    {name:"消息管理", url: "./n-news.html"},
+                    {name:"折扣碼管理", url: "#"},
+                    {name:"Q&A", url: "./n-faq.html"},
+                ],
+                titles: ['會員編號', '帳號', '姓名', '手機', '帳號狀態', '創建時間', '', ],
+                members:[
+                    {
+                        '編號':'001',
+                        '帳號':'Harukadou@gmail.com',
+                        '姓名':'張昭',
+                        '手機':'0910123456',
+                        '帳號狀態':0,
+                        '創建時間':'2021/01/01',
+                        '地址':'台北市大安區大安路一段16巷2號',
+                        '性別':'女',
+                    },
+                    {
+                        '編號':'002',
+                        '帳號':'Harukadouv2@gmail.com',
+                        '姓名':'張昭2',
+                        '手機':'0910123456',
+                        '帳號狀態':1,
+                        '創建時間':'2021/01/02',
+                        '地址':'台北市大安區大安路一段16巷2號',
+                        '性別':'女',
+                    },
+                    {
+                        '編號':'003',
+                        '帳號':'Harukadouv3@gmail.com',
+                        '姓名':'張昭3',
+                        '手機':'0910123456',
+                        '帳號狀態':0,
+                        '創建時間':'2021/01/03',
+                        '地址':'台北市大安區大安路一段16巷2號',
+                        '性別':'女',
+                    }
+                ],
+                pages:[
+                    {page:"<", url: "#"},
+                    {page:"1", url: "#"},
+                    {page:"2", url: "#"},
+                    {page:"3", url: "#"},
+                    {page:"4", url: "#"},
+                    {page:"5", url: "#"},
+                    {page:"...", url: "#"},
+                    {page:"20", url: "#"},
+                    {page:">", url: "#"},
+                ],
+                current_edit:null,
+            },
+
+            methods: {
+                edit(index){                    
+                    this.current_edit = index;    
+
+                    this.m_status = this.members[index].帳號狀態;
+                },
+                f_close(){                    
+                    this.current_edit = null;
+                },  
+                f_save(){     
+
+                    let n_index = this.$data.current_edit;
+
+                    this.members[n_index].帳號狀態 = this.m_status;
+
+                    this.current_edit = null;
+
+                },             
+                
+            },
+            
+        })
+    </script>
+</body>
+</html>

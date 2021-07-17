@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>member</title>
+    <link rel="stylesheet" href="./css/n-order.css">
+</head>
+<body>
+    <div id="app">
+        <header class="header">
+            <div class="logo">
+                <img src="./images/n_logo.png" alt="" srcset="">
+                <p>小春堂後臺管理</p>
+            </div>
+               
+            <div class="logout">
+                <p>帳號登出</p>
+                <img src="./images/log-out.png" alt="" srcset="">
+            </div>
+        </header>
+
+        <main class="main">
+            <div class="left">
+                <a v-for = 'btn in mainbtn' :href="btn.url">{{btn.name}}</a>
+            </div>
+
+            <div class="right">
+
+                <form action="" method="get" id="">
+                    <p>訂單管理</p>
+    
+                    <section>
+                        <input type="text" name="search" id="search" placeholder="以會員編號查詢" v-model='order_number'>    
+                        <label for="search" :class="{'-active':order_number}">搜尋</label>
+                    </section>
+                </form>
+
+                <div>
+                    <ul class="title">
+                        <li v-for = 'title in titles'>{{title}}</li>
+                        <li></li>
+                    </ul>
+
+                    <ul v-for='(order,key) in orders' class="order">                        
+                        <li>{{order.編號}}</li>
+                        <li>{{order.訂單編號}}</li>
+                        <li>{{order.帳號}}</li>
+                        <li>{{pay_list[order.付款狀態]}}</li>
+                        <li>{{form_list[order.訂單狀態]}}</li>
+                        <li>{{ship_list[order.貨運狀態]}}</li>
+                        <li>{{order.訂購日期}}</li>      
+                        <li @click='edit(key)'>編輯與查看</li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <ul>
+                <li v-for='page in pages'>{{page.page}}</li>
+            </ul>
+        </footer>
+
+        
+
+        <div class="edit" v-if='current_edit !== null'>
+
+            <p>編輯與查看</p>
+           
+            <div class="order_search">
+                <label for="">訂單編號:</label>
+                <input type="text" v-model='select_number'>
+            </div>
+
+            <ul class="total_status">
+                <li>
+                    付款狀態:
+                    <select name="pay_status" id="" v-model='o_pay'>
+                        <option value="0">未付款</option>
+                        <option value="1">已付款</option>
+                        <option value="2">付款失敗</option>
+                        <option value="3">退款中</option>
+                        <option value="4">已還款</option>
+                    </select>
+                </li>
+
+                <li>
+                    訂單狀態:
+                    <select name="order_status" id="" v-model='o_form'>
+                        <option value="0">處理中</option>
+                        <option value="1">已確認</option>
+                        <option value="2">已完成</option>
+                        <option value="3">已取消</option>
+                    </select>
+                </li>
+
+                <li>
+                    運送狀態:
+                    <select name="status_status" id="" v-model='o_ship'>
+                        <option value="0">待出貨</option>
+                        <option value="1">已出貨</option>
+                        <option value="2">已送達</option>
+                        <option value="3">已取貨</option>
+                        <option value="4">已退貨</option>
+                    </select>
+                </li>
+            </ul>
+
+            <ul class="order_information">
+                <li>會員姓名: {{orders[current_edit].姓名}}</li>
+                <li>運送方式: {{orders[current_edit].運送方式}}</li>
+                <li>會員編號:{{orders[current_edit].會員編號}}</li>
+                <li>收件人地址: {{orders[current_edit].收件人地址}}</li>
+                <li>會員帳號: {{orders[current_edit].帳號}}</li>
+                <li>門市名稱: {{orders[current_edit].門市名稱}}</li>
+                <li>&emsp;&emsp;手機: {{orders[current_edit].手機}}</li>
+                <li>門市地址: {{orders[current_edit].門市地址}}</li>
+                <li>付款方式: {{orders[current_edit].付款方式}}</li>
+                <li>物流編號: {{orders[current_edit].物流編號}}</li>
+            </ul>
+
+            <div class="order_detail">
+                <p>訂單商品明細</p>
+                <ul class="detail_title">
+                    <li v-for='title in order_title'>{{title}}</li>
+                </ul>
+
+                <section>
+                    <ul v-for='lists in order_list[current_edit]' class="detail_content">
+                        <li v-for='list in lists'>{{list}}</li>
+                    </ul>
+                </section>
+
+                <ul class="order_checkout">
+                    <li>商品金額:${{total_cost}}元</li>
+                    <li>折扣碼:N/A&emsp;&nbsp;&nbsp;&nbsp;</li>
+                    <li>運費:${{ship_cost[orders[current_edit].運費]}}元&nbsp;&nbsp;</li>
+                    <li>訂單總金額:${{order_cost}}元</li>
+                </ul>
+            </div>
+
+            <div class="editbtn">
+                <button class="close" @click='f_close'>關閉</button>
+                <!-- <button class="save" @click='finish'>儲存</button> -->
+                <button class="save" @click='f_save'>儲存</button>
+            </div>
+        </div>
+
+        <div id="hide" v-if='current_edit !== null'></div>
+
+    </div>
+
+    <script src="./js/vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data:{
+                order_number: '',
+                pay_list:['未付款','已付款','付款失敗','退款中','已還款'],
+                form_list:['處理中', '已確認', '已完成', '已取消'],
+                ship_list:['待出貨', '已出貨', '已送達', '已取貨', '已退貨'],
+
+                mainbtn: [  
+                    {name:"會員管理", url: "./n-member.html"},
+                    {name:"訂單管理", url: "./n-order.html"},
+                    {name:"商品管理", url: "./n-product.html"},
+                    {name:"客製化商品管理", url: "./n-customized.html"},
+                    {name:"消息管理", url: "./n-news.html"},
+                    {name:"折扣碼管理", url: "#"},
+                    {name:"Q&A", url: "./n-faq.html"},
+                ],
+                titles: ['編號', '訂單編號', '帳號', '付款狀態', '訂單狀態', '貨運狀態', '訂購日期', '', ],
+                orders:[
+                    {
+                        '編號':'001',
+                        '訂單編號':'1321344fff',
+                        '帳號':'Harukadou@gmail.com',
+                        '付款狀態':0,
+                        '訂單狀態':2,
+                        '貨運狀態':3,
+                        '訂購日期':'2021/01/01',
+                        '姓名':'員姓名',
+                        '運送方式':'宅配服務',
+                        '會員編號':'32242424',
+                        '收件人地址':'N/A',
+                        '門市名稱':'N/A',
+                        '付款方式':'信用卡',
+                        '物流編號':'N/A',
+                        '手機':'0123456789',
+                        '門市地址':'N/A',
+                        '運費':1,
+                    },
+                    {
+                        '編號':'002',
+                        '訂單編號':'1321344fff',
+                        '帳號':'Harukadou@gmail.com',
+                        '付款狀態':2,
+                        '訂單狀態':3,
+                        '貨運狀態':1,
+                        '訂購日期':'2021/01/01',
+                        '姓名':'員姓名',
+                        '運送方式':'宅配服務',
+                        '會員編號':'32242424',
+                        '收件人地址':'N/A',
+                        '門市名稱':'N/A',
+                        '付款方式':'信用卡',
+                        '物流編號':'N/A',
+                        '手機':'0123456789',
+                        '門市地址':'N/A',
+                        '運費':0,
+                    },
+                    {
+                        '編號':'003',
+                        '訂單編號':'1321344fff',
+                        '帳號':'Harukadou@gmail.com',
+                        '付款狀態':3,
+                        '訂單狀態':2,
+                        '貨運狀態':1,
+                        '訂購日期':'2021/01/01',
+                        '姓名':'員姓名',
+                        '運送方式':'宅配服務',
+                        '會員編號':'32242424',
+                        '收件人地址':'N/A',
+                        '門市名稱':'N/A',
+                        '付款方式':'信用卡',
+                        '物流編號':'N/A',
+                        '手機':'0123456789',
+                        '門市地址':'N/A',
+                        '運費':1,
+                    }
+                ],
+                pages:[
+                    {page:"<", url: "#"},
+                    {page:"1", url: "#"},
+                    {page:"2", url: "#"},
+                    {page:"3", url: "#"},
+                    {page:"4", url: "#"},
+                    {page:"5", url: "#"},
+                    {page:"...", url: "#"},
+                    {page:"20", url: "#"},
+                    {page:">", url: "#"},
+                ],
+                current_edit:null,
+                order_title: ['名稱', '數量', '金額'],
+                order_list:[
+                    {
+                        '名稱':['草莓大福', '藍莓大福', '草莓大福'],
+                        '數量':['2', '3', '4'],
+                        '金額':[456, 234, 444],
+                    },
+                    {
+                        '名稱':['草莓大福', '藍莓大福', '草莓大福'],
+                        '數量':['5', '6', '7'],
+                        '金額':[111, 222, 777],
+                    },
+                    {
+                        '名稱':['草莓大福', '藍莓大福', '草莓大福'],
+                        '數量':['8', '9', '4'],
+                        '金額':[256, 890, 343],
+                    },
+                    
+                ],
+                select_number:'',
+                total_cost:null,
+                order_cost:null,
+                ship_cost:[0, 160],
+            },
+
+            methods: {
+                edit(index){                    
+                    this.current_edit = index;   
+
+                    // 訂單編號
+                    this.select_number = this.orders[index].訂單編號;
+
+                    // 商品總金額
+                    let tot = this.order_list[index].金額;
+
+                    for(let i=0; i<tot.length; i++){
+                        this.total_cost += tot[i]
+                    }
+
+                    // 訂單總金額                    
+                    this.order_cost = this.total_cost + this.ship_cost[this.orders[index].運費];
+
+                    this.o_pay = this.orders[index].付款狀態;
+                    this.o_form = this.orders[index].訂單狀態;
+                    this.o_ship = this.orders[index].貨運狀態;
+                },
+
+                f_close(){                    
+                    this.current_edit = null;
+                    this.total_cost = null;
+                },  
+                f_save(){     
+
+                    let n_index = this.$data.current_edit;
+
+                    this.orders[n_index].付款狀態 = this.o_pay;
+                    this.orders[n_index].訂單狀態 = this.o_form;
+                    this.orders[n_index].貨運狀態 = this.o_ship;
+
+
+                    this.current_edit = null;
+                    this.total_cost = null;
+
+                },              
+               
+                
+            },
+            
+        })
+    </script>
+</body>
+</html>
