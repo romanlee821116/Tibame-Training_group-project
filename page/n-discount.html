@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>news</title>
-    <link rel="stylesheet" href="../css/n-news.css">
+    <title>discount</title>
+    <link rel="stylesheet" href="../css/n-discount.css">
 </head>
 <body>
     <div id="app">
@@ -31,14 +31,14 @@
                 <form action="" method="get" id="">
                     <p>消息管理</p>
 
-                    <div class="newsbtn">
+                    <div class="discountbtn">
                         <button class="add">新增</button>
                         <!-- <button class="delete">刪除</button> -->
                     </div>
     
                     <section>
-                        <input type="text" name="search" id="search" placeholder="以文章編號查詢" v-model='news_number'>    
-                        <label for="search" :class="{'-active':news_number}">搜尋</label>
+                        <input type="text" name="search" id="search" placeholder="以折扣碼編號查詢" v-model='discount_number'>    
+                        <label for="search" :class="{'-active':discount_number}">搜尋</label>
                     </section>
                 </form>
 
@@ -48,13 +48,13 @@
                         <li></li>
                     </ul>
 
-                    <ul v-for='(news,key) in newss' class="news">                              
-                        <li>{{news.文章編號}}</li>
-                        <li>{{news.上架日期}}</li>
-                        <li>{{n_sort_list[news.文章分類]}}</li>
-                        <li>{{news.標題}}</li>
-                        <li :class="{'-active2':newss[key].上下架 == '1'}">{{on_off_list[news.上下架]}}</li> 
-                        <li>{{news.最後更新日期}}</li>
+                    <ul v-for='(discount,key) in discounts' class="discount">                              
+                        <li>{{discount.折扣碼編號}}</li>
+                        <li>{{discount.上架日期}}</li>
+                        <li>{{d_number_list[discount.折扣碼號]}}</li>
+                        <li>{{discount.標題}}</li>
+                        <li :class="{'-active2':discounts[key].上下架 == '1'}">{{on_off_list[discount.上下架]}}</li> 
+                        <li>{{discount.最後更新日期}}</li>
                         <li @click='edit(key)'>編輯與查看</li>
                     </ul>                
                 </div>
@@ -72,13 +72,13 @@
 
             <p>編輯與查看</p>
             
-            <div class="news_mid">
+            <div class="discount_mid">
                 <ul>                    
                     <li>
-                        <section>文章分類:
-                            <select name="status" id="" v-model='n_sort'>
-                                <option value="0">新品上市</option>
-                                <option value="1">舊品出清</option>
+                        <section>折扣碼號:
+                            <select name="status" id="" v-model='d_number'>
+                                <option value="0">abcdefg</option>
+                                <option value="1">gtrfdes</option>
                             </select>
                         </section>
                     
@@ -92,28 +92,28 @@
 
                     <li>
                         <label for="">主標題:</label>
-                        <input type="text" v-model='n_main_title'>
+                        <input type="text" v-model='d_main_title'>
                     </li>
 
                     <li>
                         <label for="">副標題:</label>
-                        <input type="text" v-model='n_sec_title'>
+                        <input type="text" v-model='d_sec_title'>
                     </li>
 
                     <li>
                         <label for="">內文01:</label>
-                        <textarea name="" id="" cols="73" rows="5" v-model='n_main_content'></textarea>
+                        <textarea name="" id="" cols="73" rows="5" v-model='d_main_content'></textarea>
                     </li>
                     
                     <li>
                         <label for="">內文02:</label>
-                        <textarea name="" id="" cols="73" rows="5" v-model='n_sec_content'></textarea>
+                        <textarea name="" id="" cols="73" rows="5" v-model='d_sec_content'></textarea>
                     </li>
 
                 </ul>
             </div>
 
-            <div class="news_bot">
+            <div class="discount_bot">
 
                 <div class="group">
                     <label for="group1">右上圖:</label>
@@ -183,16 +183,15 @@
         new Vue({
             el: '#app',
             data:{
-                news_number:'',
+                discount_number:'',
                 on_off_list:['上架', '下架'],
-                n_sort_list:['新品上市', '舊品出清'],
-                n_main_title:'',
-                n_sec_title:'',
-                n_sort:0,
+                d_number_list:['abcdefg', 'gtrfdes'],
+                d_main_title:'',
+                d_sec_title:'',
+                d_number:0,
                 on_off:0,       
-                n_main_content:'',
-                n_sec_content:'',                  
-
+                d_main_content:'',
+                d_sec_content:'',         
 
                 group1_name:'請選擇圖片上傳',
                 group2_name:'請選擇圖片上傳',
@@ -210,34 +209,31 @@
                     {name:"折扣碼管理", url: "./n-discount.html"},
                     {name:"Q&A", url: "./n-faq.html"},
                 ],
-                titles: ['文章編號', '上架日期', '文章分類', '標題', '上下架', '最後更新日期', ''],
-                newss:[
+                titles: ['折扣碼編號', '上架日期', '折扣碼號', '標題', '上下架', '最後更新日期', ''],
+                discounts:[
                     {
-                        '文章編號':'1234567890',
+                        '折扣碼編號':'1234567890',
                         '上架日期':'2021/01/01',
-                        '文章分類':0,
+                        '折扣碼號':0,
                         '標題':'新品上市新品上市新品上市新品上市新品上市',
                         '上下架':0,
                         '最後更新日期':'2021/03/01 16:16',
-                        '內文':'這就是內文',
                     },
                     {
-                        '文章編號':'1234567890',
+                        '折扣碼編號':'1234567890',
                         '上架日期':'2021/01/01',
-                        '文章分類':0,
-                        '標題':'新品上市新品上市新品上市新品上市',
+                        '折扣碼號':1,
+                        '標題':'新品上市新品上市新品上市新品上市新品上市',
                         '上下架':1,
                         '最後更新日期':'2021/03/01 16:16',
-                        '內文':'這就是內文',
                     },
                     {
-                        '文章編號':'1234567890',
+                        '折扣碼編號':'1234567890',
                         '上架日期':'2021/01/01',
-                        '文章分類':0,
-                        '標題':'新品上市新品上市新品上市新品上市新品上市新品上市新品上市新品上市新品上市新品上市新品上市',
+                        '折扣碼號':0,
+                        '標題':'新品上市新品上市新品上市新品上市新品上市',
                         '上下架':0,
                         '最後更新日期':'2021/03/01 16:16',
-                        '內文':'這就是內文',
                     }
                 ],
                 pages:[
@@ -258,12 +254,12 @@
                 edit(index){                    
                     this.current_edit = index;     
 
-                    this.n_sort = this.newss[index].文章分類;
-                    this.on_off = this.newss[index].上下架;
-                    this.n_main_title = this.newss[index].標題;
-                    this.n_sec_title = this.newss[index].標題;
-                    this.n_main_content = this.newss[index].內文;
-                    this.n_sec_content = this.newss[index].內文;
+                    this.d_number = this.discounts[index].折扣碼號;
+                    this.on_off = this.discounts[index].上下架;
+                    this.d_main_title = this.discounts[index].標題;
+                    this.d_sec_title = this.discounts[index].標題;
+                    this.d_main_content = this.discounts[index].內文;
+                    this.d_sec_content = this.discounts[index].內文;
                 },
 
                 f_close(){                    
@@ -271,10 +267,9 @@
                 },  
                 f_save(){     
 
-                    let n_index = this.$data.current_edit;
+                    let d_index = this.$data.current_edit;
 
-                    this.newss[n_index].上下架 = this.on_off;
-                    this.newss[n_index].文章分類 = this.n_sort;
+                    this.discounts[d_index].上下架 = this.on_off;
 
                     this.current_edit = null;
                 },  

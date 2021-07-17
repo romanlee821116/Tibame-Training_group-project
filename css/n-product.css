@@ -1,5 +1,6 @@
 *{
     box-sizing: border-box;
+    font-family: '微軟正黑體';
 }
 
 body{
@@ -12,7 +13,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    background-image: url('../images/loginbg.png');
+    background-image: url('../images/backend/loginbg.png');
     background-repeat: no-repeat;
     background-position: center top;
     background-size: 120% 100%;
@@ -145,14 +146,14 @@ body{
 }
 
 .productbtn .delete::before{
-    content: url('../images/delete.png');
+    content: url('../images/backend/delete.png');
     position: relative;
     right: 5px;
     top: 2px;
 }
 
 .productbtn .add::before{
-    content: url('../images/add.png');
+    content: url('../images/backend/add.png');
     position: relative;
     right: 5px;
     top: 2px;
@@ -208,7 +209,7 @@ body{
     padding: 10px;
     list-style: none;
     display: grid;
-    grid-template-columns: .3fr 1.2fr 1fr 1fr .8fr .8fr .8fr 1fr .8fr 1fr;
+    grid-template-columns: 1.2fr 1fr 1.2fr .8fr .8fr .8fr .9fr .7fr 1fr;
     column-gap: 10px;
     background-color: #cba89a;
     font-size: 16px;
@@ -222,7 +223,7 @@ body{
     padding: 10px;
     list-style: none;
     display: grid;
-    grid-template-columns: .3fr 1.2fr 1fr 1fr .8fr .8fr .8fr 1fr .8fr 1fr;
+    grid-template-columns: 1.2fr 1fr 1.2fr .8fr .8fr .8fr .9fr .7fr 1fr;
     column-gap: 10px;
     background-color: #ffffff;
     font-size: 16px;
@@ -372,7 +373,7 @@ body{
     appearance: none;  
     outline: none;
     background: none;
-    background-image: url("../images/select.png");
+    background-image: url("../images/backend/select.png");
     background-repeat: no-repeat;
     background-position: right;
     background-size: contain;
@@ -448,7 +449,7 @@ body{
     color: #172852;
     font-weight: bold;
 
-    background-image: url("../images/select.png");
+    background-image: url("../images/backend/select.png");
     background-repeat: no-repeat;
     background-position: right;
     background-size: contain;

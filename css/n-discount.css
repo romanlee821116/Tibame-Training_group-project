@@ -84,7 +84,7 @@ body{
     background-color: #f4ece5;
 }
 
-.left > a:nth-child(5){
+.left > a:nth-child(6){
     background-color: #f7c242;
 }
 
@@ -117,7 +117,7 @@ body{
     border-bottom: 3px solid #b48164;
 }
 
-.newsbtn{
+.discountbtn{
     /* border: 1px solid red; */
     width: 280px;
     margin-left: 40px;
@@ -126,7 +126,7 @@ body{
     align-items: flex-end;
 }
 
-.newsbtn button{
+.discountbtn button{
     font-size: 16px;
     font-weight: bold;
     color: #ffffff;
@@ -140,20 +140,20 @@ body{
     height: 28px;
 }
 
-.newsbtn .delete{    
+.discountbtn .delete{    
     background-color: #a3a3a3;
     border: 1px solid #a3a3a3;    
 }
 
-.newsbtn .delete::before{
-    content: url('../images/backend/delete.png');
+.discountbtn .delete::before{
+    content: url('../images/delete.png');
     position: relative;
     right: 5px;
     top: 2px;
 }
 
-.newsbtn .add::before{
-    content: url('../images/backend/add.png');
+.discountbtn .add::before{
+    content: url('../images/add.png');
     position: relative;
     right: 5px;
     top: 2px;
@@ -217,7 +217,7 @@ body{
     font-weight: bold; 
 }
 
-.news{
+.discount{
     /* border: 1px solid #cba89a; */
     margin: 0;
     padding: 10px;
@@ -232,14 +232,14 @@ body{
     align-items: center;
 }
 
-.news li:last-child{
+.discount li:last-child{
     background-color: #6599e8;
     border-radius: 15px;
     text-align: center;
     color: #ffffff;
 }
 
-.news li:last-child:hover{
+.discount li:last-child:hover{
     cursor: pointer;
 }
 
@@ -318,7 +318,7 @@ body{
     z-index: 3;
 }
 
-.news_mid ul{
+.discount_mid ul{
     margin: 0;
     padding: 20px;
     list-style: none;
@@ -329,7 +329,7 @@ body{
     row-gap: 15px;
 }
 
-.news_mid ul li{
+.discount_mid ul li{
     font-size: 16px;
     color: #172852;
     font-weight: bold;
@@ -337,12 +337,12 @@ body{
     padding: 0;
 }
 
-.news_mid ul li:first-child{
+.discount_mid ul li:first-child{
     display: grid;
     grid-template-columns: 370px 370px;
 }
 
-.news_mid select{
+.discount_mid select{
     font-size: 16px;
     color: #172852;
     font-weight: bold;
@@ -355,14 +355,14 @@ body{
     appearance: none;  
     outline: none;
     background: none;
-    background-image: url("../images/backend/select.png");
+    background-image: url("../images/select.png");
     background-repeat: no-repeat;
     background-position: right;
     background-size: contain;
     border: 1.5px solid #cba89a;
 } 
 
-.news_mid input{
+.discount_mid input{
     font-size: 16px;
     color: #172852;
     font-weight: bold;
@@ -370,7 +370,7 @@ body{
     width: 655px;
 }
 
-.news_mid textarea{
+.discount_mid textarea{
     font-size: 16px;
     color: #172852;
     font-weight: bold;
@@ -379,7 +379,7 @@ body{
 }
 
 
-.news_bot{
+.discount_bot{
     display: grid;
     grid-template-columns: 1fr 1fr;
     justify-items: center;
@@ -426,13 +426,13 @@ body{
     color: #172852;
     font-weight: bold;
 
-    background-image: url("../images/backend/select.png");
+    background-image: url("../images/select.png");
     background-repeat: no-repeat;
     background-position: right;
     background-size: contain;
 }
 
-.news_bot div.img{
+.discount_bot div.img{
     border: 1.5px solid #cba89a;
     width: 260px;
     height: 130px;
@@ -443,7 +443,7 @@ body{
     position: relative;
 }
 
-.news_bot div.img > img{
+.discount_bot div.img > img{
     max-width: 255px;
     max-height: 125px;
     position: absolute;
@@ -452,7 +452,7 @@ body{
     transform: translate(-50%, -50%);
 }
 
-.news_bot div.img > p{
+.discount_bot div.img > p{
     position: absolute;
     top: 35px;
     left: 70px;

@@ -1,5 +1,6 @@
 *{
     box-sizing: border-box;
+    font-family: '微軟正黑體';
 }
 
 body{
@@ -12,7 +13,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    background-image: url('../images/loginbg.png');
+    background-image: url('../images/backend/loginbg.png');
     background-repeat: no-repeat;
     background-position: center top;
     background-size: 120% 100%;
@@ -195,7 +196,7 @@ body{
     color: #172852;
     font-weight: bold;
 
-    background-image: url("../images/select.png");
+    background-image: url("../images/backend/select.png");
     background-repeat: no-repeat;
     background-position: right;
     background-size: contain;

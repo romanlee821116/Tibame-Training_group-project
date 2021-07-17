@@ -5,19 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>product</title>
-    <link rel="stylesheet" href="./css/n-product.css">
+    <link rel="stylesheet" href="../css/n-product.css">
 </head>
 <body>
     <div id="app">
         <header class="header">
             <div class="logo">
-                <img src="./images/n_logo.png" alt="" srcset="">
+                <img src="../images/backend/n_logo.png" alt="" srcset="">
                 <p>小春堂後臺管理</p>
             </div>
                
             <div class="logout">
                 <p>帳號登出</p>
-                <img src="./images/log-out.png" alt="" srcset="">
+                <img src="../images/backend/log-out.png" alt="" srcset="">
             </div>
         </header>
 
@@ -33,7 +33,7 @@
 
                     <div class="productbtn">
                         <button class="add">新增</button>
-                        <button class="delete">刪除</button>
+                        <!-- <button class="delete">刪除</button> -->
                     </div>
     
                     <section>
@@ -48,10 +48,7 @@
                         <li></li>
                     </ul>
 
-                    <ul v-for='(product,key) in products' class="product"> 
-                        <li>
-                            <input type="checkbox" name="" id="">
-                        </li>     
+                    <ul v-for='(product,key) in products' class="product">                            
                         <li>{{product.商品編號}}</li>
                         <li>{{p_sort_list[product.商品類別]}}</li>
                         <li>{{product.名稱}}</li>
@@ -145,11 +142,11 @@
                     </li>
                     <li>
                         <label for="">&emsp;&emsp;成分:</label>
-                        <textarea name="" id="" cols="30" rows="5">{{p_ingredient}}</textarea>
+                        <textarea name="" id="" cols="30" rows="5" v-model='p_ingredient'></textarea>
                     </li>
                     <li>
                         <label for="">說明文字:</label>
-                        <textarea name="" id="" cols="30" rows="5">{{p_descript}}</textarea>
+                        <textarea name="" id="" cols="30" rows="5" v-model='p_descript'></textarea>
                     </li>
                 </ul>
             </div>
@@ -219,7 +216,7 @@
 
     </div>
 
-    <script src="./js/vue.js"></script>
+    <script src="../js/vue.js"></script>
     <script>
         new Vue({
             el: '#app',
@@ -257,10 +254,10 @@
                     {name:"商品管理", url: "./n-product.html"},
                     {name:"客製化商品管理", url: "./n-customized.html"},
                     {name:"消息管理", url: "./n-news.html"},
-                    {name:"折扣碼管理", url: "#"},
+                    {name:"折扣碼管理", url: "./n-discount.html"},
                     {name:"Q&A", url: "./n-faq.html"},
                 ],
-                titles: ['', '商品編號', '商品類別', '名稱', '原價', '售價', '庫存數量', '客製化禮盒', '上下架', ''],
+                titles: ['商品編號', '商品類別', '名稱', '原價', '售價', '庫存數量', '客製化禮盒', '上下架', ''],
                 products:[
                     {
                         '商品編號':'1234567890',
@@ -275,8 +272,8 @@
                         '保存期限':0,
                         '商品狀態上市':0,
                         '商品狀態商品':0,
-                        '成分':'吃不死',
-                        '說明':'吃就對了別廢話',
+                        '成分':'1吃不死',
+                        '說明':'1吃就對了別廢話',
                     },
                     {
                         '商品編號':'1234567890',
@@ -291,8 +288,8 @@
                         '保存期限':0,
                         '商品狀態上市':0,
                         '商品狀態商品':0,
-                        '成分':'吃不死',
-                        '說明':'吃就對了別廢話',
+                        '成分':'2吃不死',
+                        '說明':'2吃就對了別廢話',
                     },
                     {
                         '商品編號':'1234567890',
@@ -307,8 +304,8 @@
                         '保存期限':0,
                         '商品狀態上市':0,
                         '商品狀態商品':0,
-                        '成分':'吃不死',
-                        '說明':'吃就對了別廢話',
+                        '成分':'3吃不死',
+                        '說明':'3吃就對了別廢話',
                     }
                 ],
                 pages:[
@@ -356,6 +353,14 @@
 
                     this.products[n_index].上下架 = this.on_off;
                     this.products[n_index].客製化禮盒 = this.p_customized;
+
+                    this.products[n_index].名稱 = this.p_name;
+                    this.products[n_index].原價 = this.p_original;
+                    this.products[n_index].售價 = this.p_sell;
+                    this.products[n_index].庫存數量 = this.p_stock;
+
+                    this.products[n_index].商品類別 = this.p_sort;
+                    this.products[n_index].商品編號 = this.p_number;
 
                     this.current_edit = null;
                 },  

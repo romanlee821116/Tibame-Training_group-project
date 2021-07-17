@@ -4,20 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>product</title>
-    <link rel="stylesheet" href="./css/n-faq.css">
+    <title>Q&A</title>
+    <link rel="stylesheet" href="../css/n-faq.css">
 </head>
 <body>
     <div id="app">
         <header class="header">
             <div class="logo">
-                <img src="./images/n_logo.png" alt="" srcset="">
+                <img src="../images/backend/n_logo.png" alt="" srcset="">
                 <p>小春堂後臺管理</p>
             </div>
                
             <div class="logout">
                 <p>帳號登出</p>
-                <img src="./images/log-out.png" alt="" srcset="">
+                <img src="../images/backend/log-out.png" alt="" srcset="">
             </div>
         </header>
 
@@ -33,7 +33,7 @@
 
                     <div class="faqbtn">
                         <button class="add">新增</button>
-                        <button class="delete">刪除</button>
+                        <!-- <button class="delete">刪除</button> -->
                     </div>
     
                     <section>
@@ -48,10 +48,7 @@
                         <li></li>
                     </ul>
 
-                    <ul v-for='(faq,key) in faqs' class="faq"> 
-                        <li>
-                            <input type="checkbox" name="" id="">
-                        </li>     
+                    <ul v-for='(faq,key) in faqs' class="faq">                              
                         <li>{{faq.問題編號}}</li>
                         <li>{{f_sort_list[faq.問題分類]}}</li>
                         <li>{{faq.問題}}</li>
@@ -109,7 +106,7 @@
 
     </div>
 
-    <script src="./js/vue.js"></script>
+    <script src="../js/vue.js"></script>
     <script>
         new Vue({
             el: '#app',
@@ -126,10 +123,10 @@
                     {name:"商品管理", url: "./n-product.html"},
                     {name:"客製化商品管理", url: "./n-customized.html"},
                     {name:"消息管理", url: "./n-news.html"},
-                    {name:"折扣碼管理", url: "#"},
+                    {name:"折扣碼管理", url: "./n-discount.html"},
                     {name:"Q&A", url: "./n-faq.html"},
                 ],
-                titles: ['', '問題編號', '問題分類', '問題', '回答', ''],
+                titles: ['問題編號', '問題分類', '問題', '回答', ''],
                 faqs:[
                     {
                         '問題編號':'1234567890',
