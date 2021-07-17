@@ -1,6 +1,7 @@
 @charset "UTF-8";
 * {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   font-family: '微軟正黑體';
   font-weight: bold;
 }
@@ -19,8 +20,12 @@ body {
   top: 0px;
   left: 0;
   padding-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   z-index: 900;
 }
 
@@ -36,6 +41,8 @@ body {
 }
 
 .navbar .navbar-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin-right: 10px;
 }
@@ -60,7 +67,20 @@ body {
   display: -ms-flexbox;
   display: flex;
   position: relative;
-  padding: 60px 30px 30px 30px;
+  margin: 0 auto;
+  padding: 60px 0 20px 0;
+}
+
+.footer a, .footer p {
+  color: #bb866a;
+}
+
+.footer .footer-logo {
+  display: none;
+}
+
+.footer .footer-media {
+  display: none;
 }
 
 .footer .footer-left {
@@ -76,9 +96,18 @@ body {
 }
 
 .footer .footer-left a {
-  color: #bb866a;
   font-weight: 900;
-  margin-left: 20px;
+  margin: 0px 10px;
+}
+
+.footer .footer-left .footer-policy {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-width: 200px;
 }
 
 .footer .footer-right {
@@ -94,8 +123,59 @@ body {
 
 .footer .footer-right p {
   font-size: 8px !important;
-  color: #bb866a;
   opacity: .8;
+}
+
+@media (max-width: 960px) {
+  .footer .footer-left {
+    padding-left: 100px;
+  }
+}
+
+@media (max-width: 767px) {
+  .footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .footer .footer-left {
+    padding-left: 0px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-bottom: 10px;
+  }
+  .footer .footer-right {
+    width: 90%;
+    padding-right: 0px;
+  }
+}
+
+@media (max-width: 575px) {
+  .footer {
+    padding-top: 30px;
+    background-color: #bb866a;
+  }
+  .footer a, .footer p {
+    color: #fff;
+  }
+  .footer .footer-media {
+    display: block;
+    margin-bottom: 10px;
+  }
+  .footer .footer-media a {
+    margin: 0 5px;
+  }
+  .footer .footer-media i {
+    font-size: 16px;
+  }
 }
 
 .memberAll {
@@ -123,12 +203,22 @@ body {
 }
 
 /* 預設文字色彩 */
+::-webkit-input-placeholder {
+  color: #cba89a;
+}
+:-ms-input-placeholder {
+  color: #cba89a;
+}
+::-ms-input-placeholder {
+  color: #cba89a;
+}
 ::placeholder {
   color: #cba89a;
 }
 
 /* 滑動效果 */
 .choosenBar2, .memberTitle h4 {
+  -webkit-transition: all 0.8s cubic-bezier(0.6, 0, 0.4, 1);
   transition: all 0.8s cubic-bezier(0.6, 0, 0.4, 1);
 }
 
@@ -150,13 +240,17 @@ body {
 
 /* 標題 */
 .memberTitle {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin-bottom: 10px;
 }
 
 .memberTitle h4 {
   /* border: 1px solid orange; */
-  flex: 0 0 20%;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 20%;
+          flex: 0 0 20%;
   text-align: center;
   margin: 0;
   color: #cba89a;
@@ -199,7 +293,8 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 /* 會員資料=================================== */
@@ -378,6 +473,8 @@ body {
 
 /* 收貨進度=================== */
 .memberProgressAll {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   border: solid 2px #cba89a;
   margin-top: -2px;
@@ -390,8 +487,12 @@ body {
 
 /* 進度條 */
 .memberProgressAll div .memberProgressDot {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding-bottom: 5px;
   padding-top: 5px;
 }
@@ -432,8 +533,12 @@ body {
 .memberProgressAll div .memberProgressWord {
   color: #a3a3a3;
   /* border: 1px solid blue; */
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   margin-left: -25px;
   margin-right: -25px;
 }
@@ -444,8 +549,13 @@ body {
 
 /* 再次購買 */
 .memberProgressAll > div:last-child {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .memberProgressAll div .memberBuyAgain {
@@ -458,7 +568,9 @@ body {
   background-color: #bb866a;
   color: #f0ebe9;
   border: none;
-  align-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
   margin-right: 28px;
   margin-top: 5px;
   cursor: pointer;
@@ -479,7 +591,9 @@ body {
   background-color: #172852;
   color: #f0ebe9;
   border: none;
-  align-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
   margin-right: 28px;
   cursor: pointer;
 }
@@ -549,9 +663,11 @@ body {
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   border-radius: 10px;
-  box-shadow: 0px 10px 32px 0 rgba(23, 40, 82, 0.6);
+  -webkit-box-shadow: 0px 10px 32px 0 rgba(23, 40, 82, 0.6);
+          box-shadow: 0px 10px 32px 0 rgba(23, 40, 82, 0.6);
   background-color: #fff;
   z-index: 920;
 }

@@ -18,6 +18,7 @@ time, mark, audio, video {
   font-size: 100%;
   font: bold inherit '微軟正黑體';
   vertical-align: baseline;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   text-decoration: none;
   font-weight: 900;
@@ -104,7 +105,8 @@ body {
 #scene1 .about_people2 {
   bottom: 40px;
   right: 30vw;
-  animation: walk2 28s linear infinite;
+  -webkit-animation: walk2 28s linear infinite;
+          animation: walk2 28s linear infinite;
 }
 
 #scene1 .about_people3 {
@@ -115,7 +117,8 @@ body {
 #scene1 .about_people4 {
   bottom: 30px;
   right: 50vw;
-  animation: walk1 30s linear infinite;
+  -webkit-animation: walk1 30s linear infinite;
+          animation: walk1 30s linear infinite;
 }
 
 #scene1 .about_people5 {
@@ -125,7 +128,19 @@ body {
 
 #scene1 .about_people6 {
   bottom: 40px;
-  animation: bike 15s linear infinite;
+  -webkit-animation: bike 15s linear infinite;
+          animation: bike 15s linear infinite;
+}
+
+@-webkit-keyframes bike {
+  0% {
+    right: -10vw;
+    bottom: 40px;
+  }
+  100% {
+    right: 110vw;
+    bottom: 40px;
+  }
 }
 
 @keyframes bike {
@@ -136,6 +151,33 @@ body {
   100% {
     right: 110vw;
     bottom: 40px;
+  }
+}
+
+@-webkit-keyframes walk1 {
+  0% {
+    right: 60vw;
+  }
+  8% {
+    opacity: 1;
+  }
+  10% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  58% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    right: -10vw;
   }
 }
 
@@ -163,6 +205,33 @@ body {
   }
   100% {
     right: -10vw;
+  }
+}
+
+@-webkit-keyframes walk2 {
+  0% {
+    right: 30vw;
+  }
+  8% {
+    opacity: 1;
+  }
+  10% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  58% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    right: 110vw;
   }
 }
 
@@ -218,7 +287,8 @@ body {
   font-weight: 900;
   line-height: 30px;
   font-size: 16px;
-  box-shadow: 0px 0px 20px #555;
+  -webkit-box-shadow: 0px 0px 20px #555;
+          box-shadow: 0px 0px 20px #555;
 }
 
 .about_brand {
@@ -233,7 +303,8 @@ body {
   font-weight: 900;
   line-height: 30px;
   font-size: 16px;
-  box-shadow: 0px 0px 20px #555;
+  -webkit-box-shadow: 0px 0px 20px #555;
+          box-shadow: 0px 0px 20px #555;
 }
 
 #scene2 {
@@ -250,7 +321,8 @@ body {
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: transalte(-50%, -50%);
+  -webkit-transform: transalte(-50%, -50%);
+          transform: transalte(-50%, -50%);
 }
 
 .scene2_transition {
@@ -263,7 +335,8 @@ body {
 }
 
 .about_island {
-  transform: scaleY(0.7);
+  -webkit-transform: scaleY(0.7);
+          transform: scaleY(0.7);
 }
 
 .about_taiwan {
@@ -326,7 +399,8 @@ body {
   width: 100%;
   background-color: rgba(255, 255, 255, 0.9);
   padding: 30px 20px;
-  box-shadow: 0px 0px 20px #555;
+  -webkit-box-shadow: 0px 0px 20px #555;
+          box-shadow: 0px 0px 20px #555;
 }
 
 .about_place1 div h3, .about_place2 div h3, .about_place3 div h3, .about_place4 div h3 {
@@ -392,7 +466,8 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   border-radius: 20px;
   padding: 50px;
 }

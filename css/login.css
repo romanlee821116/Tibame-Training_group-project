@@ -33,7 +33,7 @@ body {
 }
 
 /* 滑動效果 */
-.loginLeft, .forgetPWD, #loginIcon, #signupIcon, .loginWrapper, #loginArrow, input, .loginGender, select, .loginCode, button, .loginUnderline, span, .loginChoosenBar {
+.loginLeft, .forgetPWD, #loginIcon, #signupIcon, .loginWrapper, #loginArrow, input, .loginGender, select, .loginCode, .loginButton, .loginUnderline, span, .loginChoosenBar {
   -webkit-transition: all 0.8s cubic-bezier(0.6, 0, 0.4, 1);
   transition: all 0.8s cubic-bezier(0.6, 0, 0.4, 1);
 }
@@ -351,7 +351,7 @@ body {
 }
 
 /* 按鈕 */
-button {
+.loginButton {
   width: 100%;
   display: block;
   padding: 0 10px 0 10px;
@@ -363,7 +363,7 @@ button {
   overflow: hidden;
 }
 
-button span {
+.loginButton span {
   display: block;
   line-height: 40px;
   position: relative;
