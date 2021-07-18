@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/n-login.css">
+</head>
+<body>
+    <div id="app">
+        <div class="header">
+            <img src="../images/backend/n_logo.png" alt="">
+            <p>小春堂後臺管理</p>
+        </div>
+        
+        <form action="" method="post">
+            <label for="account">帳號:</label>        
+            <input type="text" name="account" id="account" placeholder="請輸入您的帳號" v-model='accounts' >
+    
+            <label for="password">密碼:</label>
+            <input type="text" name="password" id="password" placeholder="請輸入您的密碼" v-model='passwords' >      
+    
+            <button type="button" id="login" @click='go_member' :class="{'-active':accounts && passwords}" :disabled='accounts && passwords ? false : true'>登入</button>
+        </form>
+    </div>  
+
+    <script src="../js/vue.js"></script>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data:{
+                accounts: '',
+                passwords: '',
+                disabled:'',
+            },
+            methods: {
+                
+                go_member(){
+                    
+                    location.href = "./n-member.html"
+                }
+            },            
+
+        })
+
+
+
+    </script>
+
+</body>
+</html>

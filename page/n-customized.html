@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>customized</title>
+    <link rel="stylesheet" href="../css/n-customized.css">
+</head>
+<body>
+    <div id="app">
+        <header class="header">
+            <div class="logo">
+                <img src="../images/backend/n_logo.png" alt="" srcset="">
+                <p>小春堂後臺管理</p>
+            </div>
+               
+            <div class="logout">
+                <p>帳號登出</p>
+                <img src="../images/backend/log-out.png" alt="" srcset="">
+            </div>
+        </header>
+
+        <main class="main">
+            <div class="left">
+                <a v-for = 'btn in mainbtn' :href="btn.url">{{btn.name}}</a>
+            </div>
+
+            <div class="right">
+
+                <p>客製化商品管理</p>
+
+                <div class="card_style">
+
+                    <p>卡片樣式</p>
+
+                    <div class="group">
+                        <label for="group1">圖片01:</label>
+                        <input type="file" id="group1" @change='upload_img'>
+                        <p>{{group1_name}}</p>
+                        <div class="img">
+                            <img src="" id="g_img1">
+                            <p v-if ='group1_name == "請選擇圖片上傳"'>{{group1_name}}</p>
+                        </div>
+                    </div>
+    
+                    <div class="group">
+                        <label for="group2">圖片02:</label>
+                        <input type="file" id="group2" @change='upload_img'>
+                        <p>{{group2_name}}</p>
+                        <div class="img">
+                            <img src="" id="g_img2">
+                            <p v-if ='group2_name == "請選擇圖片上傳"'>{{group2_name}}</p>
+                        </div>
+                    </div>
+    
+                    <div class="group">
+                        <label for="group3">圖片03:</label>
+                        <input type="file" id="group3" @change='upload_img'>
+                        <p>{{group3_name}}</p>
+                        <div class="img">
+                            <img src="" id="g_img3">
+                            <p v-if ='group3_name == "請選擇圖片上傳"'>{{group3_name}}</p>
+                        </div>
+                    </div>
+
+                    <div class="editbtn">
+                        <button class="close">關閉</button>
+                        <button class="save">儲存</button>
+                    </div>
+
+                </div>
+
+
+                <div class="sticker_style"> 
+                    
+                    <p>貼圖樣式</p>
+    
+                    <div class="group" v-for='(num,key) in 12'>
+                        <label for="group5">圖片{{key +1}}:</label>
+                        <input type="file" id="group5" @change='upload_img'>
+                        <p>{{group5_name}}</p>
+                        <div class="img">
+                            <img src="" id="g_img5">
+                            <p v-if ='group5_name == "請選擇圖片上傳"'>{{group5_name}}</p>
+                        </div>
+                    </div>
+    
+                    <div class="editbtn">
+                        <button class="close">關閉</button>
+                        <button class="save">儲存</button>
+                    </div>
+                    
+                </div>
+
+            </div>
+        </main>
+
+        
+
+       
+
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data:{                     
+
+                group1_name:'請選擇圖片上傳',
+                group2_name:'請選擇圖片上傳',
+                group3_name:'請選擇圖片上傳',
+                group4_name:'請選擇圖片上傳',
+                group5_name:'請選擇圖片上傳',
+
+                mainbtn: [  
+                    {name:"會員管理", url: "./n-member.html"},
+                    {name:"訂單管理", url: "./n-order.html"},
+                    {name:"商品管理", url: "./n-product.html"},
+                    {name:"客製化商品管理", url: "./n-customized.html"},
+                    {name:"消息管理", url: "./n-news.html"},
+                    {name:"折扣碼管理", url: "./n-discount.html"},
+                    {name:"Q&A", url: "./n-faq.html"},
+                ],
+                
+                current_edit:null,
+            },
+
+            methods: {   
+                upload_img(){
+
+                    let file1 = document.getElementById('group1').files[0];
+                    this.group1_name = file1.name;
+
+                    let readFile1 = new FileReader();
+                    readFile1.readAsDataURL(file1);
+                    readFile1.addEventListener('load', function(){
+                        document.getElementById('g_img1').src = readFile1.result;
+                    });
+
+                    let file2 = document.getElementById('group2').files[0];
+                    this.group2_name = file2.name;
+
+                    let readFile2 = new FileReader();
+                    readFile2.readAsDataURL(file2);
+                    readFile2.addEventListener('load', function(){
+                        document.getElementById('g_img2').src = readFile2.result;
+                    });
+
+                    let file3 = document.getElementById('group3').files[0];
+                    this.group3_name = file3.name;
+
+                    let readFile3 = new FileReader();
+                    readFile3.readAsDataURL(file3);
+                    readFile3.addEventListener('load', function(){
+                        document.getElementById('g_img3').src = readFile3.result;
+                    });
+
+
+
+                    // let file5 = document.getElementById('group5').files[0];
+                    // this.group5_name = file5.name;
+
+                    // let readFile5 = new FileReader();
+                    // readFile5.readAsDataURL(file5);
+                    // readFile5.addEventListener('load', function(){
+                    //     document.getElementById('g_img5').src = readFile5.result;
+                    // });
+
+                },
+                
+                
+            },
+            
+        })
+    </script>
+</body>
+</html>

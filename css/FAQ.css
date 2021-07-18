@@ -48,7 +48,7 @@
 
 body {
   margin: 0;
-  background-image: url("../../images/FAQ/bg.png");
+  background-image: url("../images/FAQ/bg.png");
   background-size: cover;
   background-attachment: fixed;
 }

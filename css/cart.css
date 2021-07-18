@@ -51,7 +51,6 @@ body {
   background-image: url("../../images/cart/bg.png");
   background-size: cover;
   background-attachment: fixed;
-  overflow: hidden;
 }
 
 img {
@@ -65,9 +64,9 @@ img {
   width: 600px;
   height: 100vh;
   z-index: 991;
-  position: absolute;
+  position: fixed;
+  right: 0;
   top: 0;
-  right: -600px;
   transition: .5s all linear;
 }
 
@@ -407,7 +406,6 @@ img {
 .noCopy {
   border: 1px solid red;
   width: 25px;
-  position: relative;
   cursor: pointer;
   margin-top: 100px;
 }
