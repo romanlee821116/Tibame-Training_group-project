@@ -54,14 +54,23 @@ $(function(){
 
 
   // 偵測input手動改數字，改變減號底色
-  $('.cart_quantity').blur(function(){
+  $('.cart_quantity').on("keypress keyup blur", function(e){
+    // 不能輸入符號
+    $(this).val($(this).val().replace(/[^\d].+/, ""));
+    if ((e.which < 48 || e.which > 57)) {
+        e.preventDefault();
+    }
+    
     let val = $(this).val();
     // console.log(val);
     if(val == 1){
       $(this).prev('.cart_less').css('background-color','#c4c4c4');
     }else if(val > 1){
       $(this).prev('.cart_less').css('background-color','#ffffff');
-    };
+    }else if(val == 0){
+      console.log('a');
+      val = 1;
+    }
   });
 
 
