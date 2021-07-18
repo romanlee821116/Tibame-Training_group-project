@@ -1,4 +1,57 @@
 @charset "UTF-8";
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: bold inherit '微軟正黑體';
+  vertical-align: baseline;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-weight: 900;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -149,7 +202,7 @@ html, body {
 }
 
 .cus-wrap {
-  width: 80%;
+  width: 90%;
   max-width: 1400px;
   margin: 0 auto;
   position: relative;
@@ -160,7 +213,7 @@ html, body {
   height: 200px;
   position: fixed;
   top: 50%;
-  right: 50px;
+  right: 30px;
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
@@ -211,30 +264,49 @@ html, body {
   background-color: #f7c242 !important;
 }
 
-.cus-step1-txt {
-  text-align: center;
-  padding-top: 50px;
-  width: 90%;
-  position: relative;
-}
-
-.cus-step1-txt h3 {
-  color: #bb866a;
-  font-size: 24px;
-  margin-bottom: 15px;
-}
-
-.cus-step1-txt h2 {
-  color: #bb866a;
-  font-size: 32px;
-}
-
 .cus-step1 {
   width: 100%;
   height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.cus-step1 .cus-step1-txt {
+  text-align: center;
+  padding-top: 50px;
+  width: 90%;
+  position: relative;
+}
+
+.cus-step1 .cus-step1-txt h3 {
+  color: #bb866a;
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.cus-step1 .cus-step1-txt h2 {
+  color: #bb866a;
+  font-size: 32px;
+}
+
+@media (max-width: 800px) {
+  .cus-step1 .cus-step1-txt {
+    margin-top: 80px;
+  }
+}
+
+@media (max-width: 575px) {
+  .cus-step1 .cus-step1-txt {
+    padding-top: 80px;
+    width: 100%;
+  }
+  .cus-step1 .cus-step1-txt h3 {
+    font-size: 20px;
+  }
+  .cus-step1 .cus-step1-txt h2 {
+    font-size: 24px;
+  }
 }
 
 .selectedBox {
@@ -247,7 +319,8 @@ html, body {
   text-align: center;
   width: 100%;
   position: relative;
-  top: 10%;
+  top: 40%;
+  transform: translateY(-50%);
   justify-items: center;
   align-items: center;
 }
@@ -284,6 +357,52 @@ html, body {
   height: auto;
 }
 
+@media (max-width: 960px) {
+  .cus-step1-box .box1 {
+    width: 120px;
+    height: auto;
+  }
+  .cus-step1-box .box2, .cus-step1-box .box3 {
+    width: 180px;
+    height: auto;
+  }
+}
+
+@media (max-width: 767px) {
+  .cus-step1-box {
+    width: 100%;
+  }
+  .cus-step1-box .box1 {
+    width: 100px;
+    height: auto;
+  }
+  .cus-step1-box .box2, .cus-step1-box .box3 {
+    width: 150px;
+    height: auto;
+  }
+}
+
+@media (max-width: 575px) {
+  .cus-step1-box {
+    display: flex;
+    flex-direction: column;
+  }
+  .cus-step1-box .cus_box_container {
+    margin-bottom: 20px;
+  }
+  .cus-step1-box .cus_box_container p {
+    margin-top: 5px;
+  }
+  .cus-step1-box .box1 {
+    width: 80px;
+    height: auto;
+  }
+  .cus-step1-box .box2, .cus-step1-box .box3 {
+    width: 120px;
+    height: auto;
+  }
+}
+
 .custom_btn {
   display: block;
   padding: 8px 10px;
@@ -300,6 +419,17 @@ html, body {
   background-color: #2e447c;
   color: #fff;
   border: 3px solid #2e447c;
+}
+
+@media (max-width: 575px) {
+  .custom_btn {
+    width: 80px;
+    font-size: 12px;
+    border-radius: 15px;
+  }
+  .custom_btn i {
+    display: none;
+  }
 }
 
 .custom_btn_p1Next {
@@ -410,6 +540,25 @@ html, body {
   font-size: 32px;
 }
 
+@media (max-width: 800px) {
+  .cus-step2 .cus-step2-txt {
+    margin-top: 80px;
+  }
+}
+
+@media (max-width: 575px) {
+  .cus-step2 .cus-step2-txt {
+    padding-top: 80px;
+    width: 100%;
+  }
+  .cus-step2 .cus-step2-txt h3 {
+    font-size: 20px;
+  }
+  .cus-step2 .cus-step2-txt h2 {
+    font-size: 24px;
+  }
+}
+
 .cus-step2 .prep {
   position: absolute;
   left: 0;
@@ -470,6 +619,19 @@ html, body {
   color: #fff;
 }
 
+@media (max-width: 800px) {
+  .cus-step2 .cus-product-category {
+    width: 100%;
+    margin-top: 10px;
+    text-align: center;
+  }
+  .cus-step2 .cus-product-category a {
+    margin: 10px 2.5px;
+    width: 85px;
+    font-size: 14px;
+  }
+}
+
 .cus-step2 .selected_item {
   position: absolute;
   top: 0;
@@ -486,6 +648,24 @@ html, body {
   width: 100%;
 }
 
+@media (max-width: 1000px) {
+  .cus-step2 .cus-product-contianer {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+@media (max-width: 800px) {
+  .cus-step2 .cus-product-contianer {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .cus-step2 .cus-product-contianer {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 .cus-step2 .cus-product-contianer .cus-item {
   margin-top: 20px;
   position: relative;
@@ -497,6 +677,12 @@ html, body {
   width: 180px;
   margin: 0 auto;
   position: relative;
+}
+
+@media (max-width: 400px) {
+  .cus-step2 .cus-product-contianer .cus-item .cus-item-img {
+    width: 160px;
+  }
 }
 
 .cus-step2 .cus-product-contianer .cus-item .cus-item-img img {
@@ -538,8 +724,16 @@ html, body {
   font-size: 22px;
 }
 
+@media (max-width: 400px) {
+  .cus-step2 .cus-product-contianer .cus-item .cus-item-txt {
+    transform: translate(-50%, -60px);
+  }
+}
+
 .cus-step2 .custom_itemConfirm_List {
-  width: 400px;
+  width: 35%;
+  max-width: 400px;
+  min-width: 320px;
   background-color: #fff;
   margin: 100px auto;
   padding: 20px;
@@ -572,6 +766,7 @@ html, body {
 .cus-step2 .custom_itemConfirm_List div p {
   color: #172852;
   font-weight: 900;
+  margin-left: 5px;
 }
 
 .cus-step2 .cus-confirm-btn {
@@ -601,22 +796,22 @@ html, body {
 }
 
 .cus-step2 .cus-giftbox {
-  width: 345px;
-  height: 200px;
+  width: 280px;
+  height: 160px;
   position: absolute;
   left: 50%;
   top: -300px;
   transform: translate(-50%, 0%);
   opacity: 0;
-  background: url("..//images/nine_boxHead.png");
+  background: url("../images/customized/nine_boxHead.png");
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 .cus-step2 .cus-bag-card {
-  width: 345px;
-  height: 210px;
+  width: 280px;
+  height: 160px;
   border: 3px solid green;
   position: absolute;
   bottom: -210px;
@@ -624,6 +819,13 @@ html, body {
   transform: translate(-50%, 0%);
   transition: .5s;
   display: none;
+}
+
+@media (max-width: 976px) {
+  .cus-step2 .cus-bag-card {
+    width: 240px;
+    height: 140px;
+  }
 }
 
 .cus-step2 .cus-bag-card .choose-card, .cus-step2 .cus-bag-card .choose-bag {
@@ -810,8 +1012,10 @@ html, body {
 }
 
 .custom_bag {
-  width: 400px;
-  height: 300px;
+  width: 45%;
+  max-width: 400px;
+  height: 22vh;
+  max-height: 300px;
   position: absolute;
   left: 50%;
   bottom: -50%;

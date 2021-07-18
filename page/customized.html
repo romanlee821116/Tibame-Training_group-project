@@ -65,7 +65,7 @@
                 </div>
             </div>
             <div class="cus-step1-box">
-                <div v-for='box in boxImg'>
+                <div v-for='box in boxImg' class='cus_box_container'>
                     <img  :src="box.src" alt="" :class='box.class'>                
                     <p>{{box.txt}}</p>
                     <p>{{box.price}}</p>

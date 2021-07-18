@@ -1,4 +1,5 @@
-$(function(){
+$(function(){   
+
 
     Vue.component('checkBox',{
         template: `
@@ -95,7 +96,7 @@ $(function(){
             message: '',
             content: 'checkBox',
         },
-        methods: {                   
+        methods: {                               
             //第一步到第二步
             p1_to_p2(){
                 //若有選擇格子才執行
@@ -119,6 +120,7 @@ $(function(){
             },
             //第二步回第一步
             p2_to_p1(){
+                let winWidth = $(window).width();
                 $('.custom_btn_p1Next').fadeOut();
                 $('.cus-step1-box > div').css('opacity','1');
                 //把下一步按鈕的select取消
@@ -131,6 +133,9 @@ $(function(){
                 //物件回來
                 $('.cus-step1-txt').fadeIn();
                 $('.cus-step1-box').fadeIn().css('display','grid');
+                if(winWidth <=575){
+                    $('.cus-step1-box').fadeIn().css('display','flex');
+                }
                 //body overflow關起來
                 $('body').css('overflowY','hidden');
                  //節點替換
@@ -156,6 +161,8 @@ $(function(){
     let item_list= [];
     let cardType=0;
     let icon_list=[];
+    let winWidth = $(window).width();
+  
     
 
     //判斷選到四格六格九格
@@ -327,6 +334,7 @@ $(function(){
     })
 //==================內容確認下一步==================
     $('.cus-confirm-nextstep').click(function(){  
+        
         //固定Y軸
         $('body').css('overflow','hidden');    
         //清單消失
@@ -340,7 +348,7 @@ $(function(){
         });
         //蓋子掉下來
         $('.cus-giftbox').animate({
-            top: '210px',
+            top: '28%',
             opacity: '1',
         },1000);
         //文字隱藏
@@ -431,13 +439,27 @@ $(function(){
         $('.cus-bag-card').css('bottom','45%');
         //卡片移動到中間打開
         $('.card2').animate({
-            top: '220px',
-            left: '-300px',
+            // top: '220px',
+            top: '120%',
+            // left: '-300px',
+            left: '-60%'
         }, 1000);
         $('.card3').animate({
-            top: '220px',
-            left: '300px',
+            // top: '220px',
+            top: '120%',
+            // left: '300px',
+            left: '60%'
         }, 1000);
+        // if(winWidth<856){
+        //     $('.card2').animate({
+        //         top: '150px',
+        //         left: '-150px',
+        //     }, 1000);
+        //     $('.card3').animate({
+        //         top: '150px',
+        //         left: '150px',
+        //     }, 1000);
+        // }
         //選擇卡片按鈕出現
         setTimeout(function(){
             $('.custom_chooseCard_btn').css('display','flex');
@@ -541,8 +563,8 @@ $(function(){
                 $('.cus-bag-card').css({
                     bottom: '50%',
                     left: '10%',
-                    width: '400px',
-                    height: '250px',
+                    width: '45%',
+                    height: '22vh',
                     transform: 'translate(0%, 50%)',
                 });
                 $('.choosenCard').css({
@@ -606,13 +628,15 @@ $(function(){
         })
          //卡片移動到中間打開
          $('.card2').css({
-             top: '220px',
-             left: '-300px',
+            top: '120%',
+            left: '-60%'
          });
+            //  top: '220px',
+            // left: '-300px',
          $('.card3').css({
-             top: '220px',
-             left:' 300px',
-             border: '1px solid black',
+            top: '120%',
+            left: '60%',
+            border: '1px solid black',
          });
          //textArea消失
          $('.custom_card_textArea').fadeOut();
@@ -768,3 +792,18 @@ function drag(){
 });
 }
 
+//滑鼠滾動判斷navbar出現/消失
+function navshow(){
+    var scrolltop = new Array();
+    var index = 0;
+    scrolltop[0] = 0;
+    $('.body').scroll(function(){
+        index++;
+        scrolltop[index] = $(document).scrollTop();
+        if (scrolltop[index] > scrolltop[index - 1]) {
+            $('.navbar').slideDown()
+        } else {
+            $('.navbar').slideUp()
+        };
+    })
+}

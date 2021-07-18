@@ -128,9 +128,7 @@ $(function () {
         `,        
     })
 
-   
-
-
+   // ==================================== new Vue ==================================== 
     new Vue({
         el: '#wrap',
         data: {
@@ -174,9 +172,8 @@ $(function () {
     })
 
 
-    //=======================jquery=======================
+    // ==================================== ScrollMagic ==================================== 
     
-
     var controller = new ScrollMagic.Controller();
     var sticky = new TimelineMax();
     sticky.to('.about_street', 0, { scale: '1%',top: '-0px' })
@@ -204,46 +201,36 @@ $(function () {
             .to('.about_island', 4, {top: '-40%', left:'0%'})
             .to('.about_island', 2, {top: '0%', left:'0%'})
             .to('.about_taiwan', 5, { scale: '1', top: '0%', left: '0%'}) 
-            .to('.about_taiwan', 3, { opacity: '0' }) 
-        
+            .to('.about_taiwan', 3, { opacity: '0' })         
     
     new ScrollMagic.Scene({
         triggerElement: '#keypoint2',
         triggerHook: 0,
         duration: '1000%',
     }).setPin('#scene2').setTween(stickyMap).addIndicators().addTo(controller);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    navbar();
 })
+
+function navbar(){
+    var scrolltop = new Array();
+    var index = 0;
+    scrolltop[0] = 0;
+    $(document).scroll(function(){
+        index++;
+        scrolltop[index] = $(document).scrollTop();
+        if (scrolltop[index] > scrolltop[index - 1]) {
+            $('.navbar').fadeOut()
+        } else {
+            $('.navbar').fadeIn()
+        };
+    })
+}
+
+function scroll(){
+    $(document).on('scroll resize', function(){
+        $('.about_street').css({
+            width: '100%',
+            height: '100%',
+        })
+    })
+}

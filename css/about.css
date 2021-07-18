@@ -65,11 +65,13 @@ h1, h2, h3, h4, h5, p {
 
 body {
   overflow-x: hidden;
+  position: relative;
 }
 
 .wrap {
   width: 100vw;
   height: 100vh;
+  position: relative;
 }
 
 #scene1 {
@@ -82,49 +84,50 @@ body {
 #scene1 .about_street {
   width: 100%;
   height: 100%;
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   background: url("../images/about/house.png");
   background-size: cover;
-  background-position: center;
+  background-position: center center;
   background-repeat: no-repeat;
 }
 
-#scene1 .people {
+#scene1 .about_street .people {
   position: absolute;
   height: 200px;
 }
 
-#scene1 .about_people1 {
-  bottom: 50px;
+#scene1 .about_street .about_people1 {
+  bottom: 10%;
   right: 35vw;
 }
 
-#scene1 .about_people2 {
-  bottom: 40px;
+#scene1 .about_street .about_people2 {
+  bottom: 7%;
   right: 30vw;
   animation: walk2 28s linear infinite;
 }
 
-#scene1 .about_people3 {
-  bottom: 55px;
-  right: 25vw;
+#scene1 .about_street .about_people3 {
+  bottom: 12%;
+  right: 20vw;
 }
 
-#scene1 .about_people4 {
-  bottom: 30px;
+#scene1 .about_street .about_people4 {
+  bottom: 4%;
   right: 50vw;
+  z-index: 2;
   animation: walk1 30s linear infinite;
 }
 
-#scene1 .about_people5 {
-  bottom: 60px;
+#scene1 .about_street .about_people5 {
+  bottom: 13%;
   right: 85vw;
 }
 
-#scene1 .about_people6 {
-  bottom: 40px;
+#scene1 .about_street .about_people6 {
+  bottom: 6%;
   animation: bike 15s linear infinite;
 }
 
@@ -207,7 +210,7 @@ body {
 }
 
 .about_history {
-  width: 550px;
+  width: 45%;
   height: auto;
   padding: 40px;
   color: #172852;
@@ -219,10 +222,11 @@ body {
   line-height: 30px;
   font-size: 16px;
   box-shadow: 0px 0px 20px #555;
+  z-index: 10;
 }
 
 .about_brand {
-  width: 550px;
+  width: 45%;
   height: auto;
   padding: 40px;
   color: #172852;
@@ -233,6 +237,7 @@ body {
   font-weight: 900;
   line-height: 30px;
   font-size: 16px;
+  z-index: 10;
   box-shadow: 0px 0px 20px #555;
 }
 
@@ -263,7 +268,7 @@ body {
 }
 
 .about_island {
-  transform: scaleY(0.7);
+  transform: scaleY(0.6);
 }
 
 .about_taiwan {
@@ -356,7 +361,7 @@ body {
 
 .about_place1 {
   left: 30%;
-  bottom: -750%;
+  bottom: -700%;
 }
 
 .about_place2 {
