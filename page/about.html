@@ -25,18 +25,19 @@
     <div class="wrap" id='wrap'>
         <div id="keypoint1"></div>
         <!-- ======================= scene1 =======================  -->
-        <div id="scene1">
-            <div class='about_street'>
-                <!-- <img src="../images/about/house.png" alt=""> -->
-                <!-- 人 -->
-                <div v-for='item in people_list' class='people_container'>
-                    <img :src="item.src" :class='item.class'>
+       
+            <div id="scene1">
+                <div class='about_street'>
+                    <!-- <img src="../images/about/house.png" alt=""> -->
+                    <!-- 人 -->
+                    <div v-for='item in people_list' class='people_container'>
+                        <img :src="item.src" :class='item.class'>
+                    </div>
                 </div>
-            </div>
-            <div class="about_street_end">
-                <img src="../images/about/temp.png" alt="">
-            </div>
-        </div>       
+                <div class="about_street_end">
+                    <img src="../images/about/temp.png" alt="">
+                </div>
+            </div>  
         <!-- ======================= scene2 =======================  -->
         <div id="keypoint2"></div>
         <div id='scene2'>
@@ -47,14 +48,14 @@
                 <img src="../images/about/temp1.png" alt="">
             </div>
         </div>
-         <!-- 商家介紹 -->
-         <div class='about_history'>
+        
+        <!-- 商家介紹 -->
+        <div class='about_history about_shopInfo'>
             小春堂創立於2021年初春，是與臺灣在地小農合作所打造的日式零食點心專門店，將日本最新流行的人氣和菓子與洋菓子同步在台製作上市，在家就可以品嘗多元道地的日本風味。
         </div>
-        <div class='about_brand'>
+        <div class='about_brand about_shopInfo'>
             小春堂堅持所有食材皆來自台灣有機栽種，並與台灣各地的小農合作，讓每個點心都健康無汙染。就讓我們來看看這些與小春堂合作的小農們吧!
-        </div>
-
+        </div>   
         <!-- 彈窗 -->
         <component :is="content" v-on:Box-type='changeBox' v-show='boxDisplay' @hidden='hiddenBox'></component>
         <!-- 小農介紹 -->

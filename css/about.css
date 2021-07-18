@@ -71,12 +71,12 @@ body {
 .wrap {
   width: 100vw;
   height: 100vh;
-  position: relative;
 }
 
 #scene1 {
-  width: 100%;
+  width: 100vw;
   height: 100%;
+  border: 5px solid green;
   position: relative;
   overflow: hidden;
 }
@@ -84,50 +84,49 @@ body {
 #scene1 .about_street {
   width: 100%;
   height: 100%;
-  position: relative;
+  position: absolute;
   top: 0;
   left: 0;
   background: url("../images/about/house.png");
   background-size: cover;
-  background-position: center center;
+  background-position: center;
   background-repeat: no-repeat;
 }
 
-#scene1 .about_street .people {
+#scene1 .people {
   position: absolute;
   height: 200px;
 }
 
-#scene1 .about_street .about_people1 {
-  bottom: 10%;
+#scene1 .about_people1 {
+  bottom: 50px;
   right: 35vw;
 }
 
-#scene1 .about_street .about_people2 {
-  bottom: 7%;
+#scene1 .about_people2 {
+  bottom: 40px;
   right: 30vw;
   animation: walk2 28s linear infinite;
 }
 
-#scene1 .about_street .about_people3 {
-  bottom: 12%;
-  right: 20vw;
+#scene1 .about_people3 {
+  bottom: 55px;
+  right: 25vw;
 }
 
-#scene1 .about_street .about_people4 {
-  bottom: 4%;
+#scene1 .about_people4 {
+  bottom: 30px;
   right: 50vw;
-  z-index: 2;
   animation: walk1 30s linear infinite;
 }
 
-#scene1 .about_street .about_people5 {
-  bottom: 13%;
+#scene1 .about_people5 {
+  bottom: 60px;
   right: 85vw;
 }
 
-#scene1 .about_street .about_people6 {
-  bottom: 6%;
+#scene1 .about_people6 {
+  bottom: 40px;
   animation: bike 15s linear infinite;
 }
 
@@ -200,7 +199,9 @@ body {
   opacity: 1;
   width: 100%;
   height: 100%;
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
   z-index: -1;
 }
 
@@ -209,36 +210,29 @@ body {
   height: 100%;
 }
 
-.about_history {
-  width: 45%;
+.about_shopInfo {
+  width: 80%;
+  max-width: 550px;
   height: auto;
   padding: 40px;
   color: #172852;
-  position: absolute;
-  right: 45%;
-  bottom: -30%;
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
   background-color: rgba(255, 255, 255, 0.9);
   font-weight: 900;
   line-height: 30px;
   font-size: 16px;
   box-shadow: 0px 0px 20px #555;
-  z-index: 10;
+  display: none;
+}
+
+.about_history {
+  left: 10%;
 }
 
 .about_brand {
-  width: 45%;
-  height: auto;
-  padding: 40px;
-  color: #172852;
-  position: absolute;
-  left: 45%;
-  bottom: -150%;
-  background-color: rgba(255, 255, 255, 0.9);
-  font-weight: 900;
-  line-height: 30px;
-  font-size: 16px;
-  z-index: 10;
-  box-shadow: 0px 0px 20px #555;
+  right: 10%;
 }
 
 #scene2 {
@@ -268,7 +262,7 @@ body {
 }
 
 .about_island {
-  transform: scaleY(0.6);
+  transform: scaleY(0.7);
 }
 
 .about_taiwan {
@@ -294,8 +288,8 @@ body {
 
 .about_taiwan_end {
   opacity: 1;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   z-index: -1;
   position: relative;
 }
@@ -306,10 +300,13 @@ body {
 }
 
 .about_place1, .about_place2, .about_place3, .about_place4 {
-  position: absolute;
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
   width: 600px;
   height: 220px;
   padding: 40px 50px;
+  display: none;
 }
 
 .about_place1 h1, .about_place2 h1, .about_place3 h1, .about_place4 h1 {
@@ -361,22 +358,18 @@ body {
 
 .about_place1 {
   left: 30%;
-  bottom: -700%;
 }
 
 .about_place2 {
   right: 5%;
-  bottom: -900%;
 }
 
 .about_place3 {
   right: 20%;
-  bottom: -1100%;
 }
 
 .about_place4 {
   left: 25%;
-  bottom: -1300%;
 }
 
 .about_farmerDetail_bg {

@@ -208,7 +208,9 @@ $(function () {
         triggerHook: 0,
         duration: '1000%',
     }).setPin('#scene2').setTween(stickyMap).addIndicators().addTo(controller);
+    // =======================================================================
     navbar();
+    popUpShow()
 })
 
 function navbar(){
@@ -232,5 +234,64 @@ function scroll(){
             width: '100%',
             height: '100%',
         })
+    })
+}
+
+//滑鼠滾動判斷navbar出現/消失
+function popUpShow(){
+    var scrolltop = new Array();
+    var index = 0;
+    scrolltop[0] = 0;
+    $(document).scroll(function(){
+        index++;
+        scrolltop[index] = $(document).scrollTop();
+        if (scrolltop[index] > scrolltop[index - 1]) {
+            console.log(scrolltop[index].toFixed(0));
+        } else {
+            console.log(scrolltop[index].toFixed(0));
+        };
+
+        //介紹一
+        if(scrolltop[index] > 400 && scrolltop[index] < 1200){
+            $('.about_history').fadeIn();
+        }else{
+            $('.about_history').fadeOut();
+        }
+
+        //介紹二
+        if(scrolltop[index] > 1400 && scrolltop[index] < 2200){
+            $('.about_brand').fadeIn();
+        }else{
+            $('.about_brand').fadeOut();
+        }
+
+        //小農一
+        if(scrolltop[index] > 5900 && scrolltop[index] < 6700){
+            $('.about_place1').fadeIn();
+        }else{
+            $('.about_place1').fadeOut();
+        }
+
+        //小農二
+        if(scrolltop[index] > 7400 && scrolltop[index] < 8200){
+            $('.about_place2').fadeIn();
+        }else{
+            $('.about_place2').fadeOut();
+        }
+
+        //小農三
+        if(scrolltop[index] > 9000 && scrolltop[index] < 9600){
+            $('.about_place3').fadeIn();
+        }else{
+            $('.about_place3').fadeOut();
+        }
+
+        //小農四
+        if(scrolltop[index] > 10500 && scrolltop[index] < 11000){
+            $('.about_place4').fadeIn();
+        }else{
+            $('.about_place4').fadeOut();
+        }
+        
     })
 }

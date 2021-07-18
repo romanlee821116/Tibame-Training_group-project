@@ -797,7 +797,7 @@ function navshow(){
     var scrolltop = new Array();
     var index = 0;
     scrolltop[0] = 0;
-    $('.body').scroll(function(){
+    $(document).scroll(function(){
         index++;
         scrolltop[index] = $(document).scrollTop();
         if (scrolltop[index] > scrolltop[index - 1]) {

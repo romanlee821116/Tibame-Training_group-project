@@ -14,63 +14,60 @@ h1,h2,h3,h4,h5,p{
 body{
     overflow-x: hidden;
     position: relative;
-
 }
 .wrap{
     width: 100vw;
-    height: 100vh;  
-    position: relative;
+    height: 100vh;    
 }
 #scene1{
-    width: 100%;
+    width: 100vw;
     height: 100%;    
+    border: 5px solid green;
     position: relative;    
     overflow: hidden;
     .about_street{
         width: 100%;
         height: 100%;
-        // position: absolute;
-        position: relative;
+        position: absolute;
         top: 0;
         left: 0;
         background: url('../images/about/house.png');
         background-size: cover;
-        background-position: center center;
+        background-position: center;
         background-repeat: no-repeat;
-        .people{
+    }
+    .people{
         position: absolute;
+        // border: 1px solid red;
         height: 200px;
     }
     .about_people1{
-        bottom: 10%;
+        bottom: 50px;
         right: 35vw;
     }
     .about_people2{
-        bottom: 7%;
+        bottom: 40px;
         right: 30vw;
         animation: walk2 28s linear infinite ;
     }
     .about_people3{
-        bottom: 12%;
-        right: 20vw;
+        bottom: 55px;
+        right: 25vw;
     }
     .about_people4{
-        bottom: 4%;
+        bottom: 30px;
         right: 50vw;
-        z-index: 2;
         animation: walk1 30s linear infinite ;
     }
     .about_people5{
-        bottom: 13%;
+        bottom: 60px;
         right: 85vw;
     }
     .about_people6{
-        bottom: 6%;
+        bottom: 40px;
         // right: -10vw;
         animation: bike 15s linear infinite ;
     }
-    }
-    
     @keyframes bike {
         0%{right: -10vw;
             bottom: 40px}
@@ -101,7 +98,9 @@ body{
         opacity: 1;
         width: 100%;
         height: 100%;
-        position: relative;
+        position: absolute;
+        top: 0;
+        left: 0;
         z-index: -1;
         img{
             width: 100%;
@@ -110,41 +109,34 @@ body{
     }     
 }
 
+.about_shopInfo{
+    width: 80%;
+    max-width: 550px;
+    height: auto;
+    padding: 40px;
+    color: $darkBlue;
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);    
+    background-color: rgba(255, 255,255, .9);
+    font-weight: 900;
+    line-height: 30px;
+    font-size: 16px;
+    @include boxShadow(); 
+    display: none;  
+}
 
 .about_history{
-    width: 45%;
-    height: auto;
-    padding: 40px;
-    color: $darkBlue;
-    position: absolute;
-    right:45%;
-    bottom: -30%;
-    background-color: rgba(255, 255,255, .9);
-    font-weight: 900;
-    line-height: 30px;
-    font-size: 16px;
-    @include boxShadow();
-    z-index: 10;
+    left: 10%; 
 }
 .about_brand{
-    width: 45%;
-    height: auto;
-    padding: 40px;
-    color: $darkBlue;
-    position: absolute;
-    left:45%;
-    bottom: -150%;
-    background-color: rgba(255, 255,255, .9);
-    font-weight: 900;
-    line-height: 30px;
-    font-size: 16px;
-    z-index: 10;
-    @include boxShadow();   
+    right: 10%;
 }
 #scene2{
     position: relative;
     width: 100%;
     height: 100%;
+    // border: 5px solid blue;
     overflow: hidden;
     .about_farmerDetail_box{
         width: 70%;
@@ -165,7 +157,7 @@ body{
     background-repeat: no-repeat;
 }
 .about_island{
-    transform: scaleY(.6);
+    transform: scaleY(.7);
 }
 .about_taiwan{
     opacity: 1;
@@ -190,8 +182,8 @@ body{
 }  
 .about_taiwan_end{
     opacity: 1;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     z-index: -1;
     position: relative;
     img{
@@ -200,10 +192,13 @@ body{
     }
 } 
 .about_place1, .about_place2, .about_place3, .about_place4{
-    position: absolute;
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
     width: 600px;
     height: 220px;
     padding: 40px 50px;
+    display: none;
     h1{
         width: 150px;
         height: 40px;
@@ -251,19 +246,15 @@ body{
 
 .about_place1{
     left: 30%;
-    bottom: -700%;
 }
 .about_place2{
     right: 5%;
-    bottom: -900%;
 }
 .about_place3{
     right: 20%;
-    bottom: -1100%;
 }
 .about_place4{
     left: 25%;
-    bottom: -1300%;
 }
 
 // 
@@ -331,7 +322,3 @@ body{
         }
     }
 }
-
-
-
-
