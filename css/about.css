@@ -68,12 +68,12 @@ body {
   position: relative;
 }
 
-.wrap {
+.about_wrap {
   width: 100vw;
   height: 100vh;
 }
 
-#scene1 {
+#about_scene1 {
   width: 100vw;
   height: 100%;
   border: 5px solid green;
@@ -81,7 +81,7 @@ body {
   overflow: hidden;
 }
 
-#scene1 .about_street {
+#about_scene1 .about_street {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -93,39 +93,39 @@ body {
   background-repeat: no-repeat;
 }
 
-#scene1 .people {
+#about_scene1 .people {
   position: absolute;
   height: 200px;
 }
 
-#scene1 .about_people1 {
+#about_scene1 .about_people1 {
   bottom: 50px;
   right: 35vw;
 }
 
-#scene1 .about_people2 {
+#about_scene1 .about_people2 {
   bottom: 40px;
   right: 30vw;
   animation: walk2 28s linear infinite;
 }
 
-#scene1 .about_people3 {
+#about_scene1 .about_people3 {
   bottom: 55px;
   right: 25vw;
 }
 
-#scene1 .about_people4 {
+#about_scene1 .about_people4 {
   bottom: 30px;
   right: 50vw;
   animation: walk1 30s linear infinite;
 }
 
-#scene1 .about_people5 {
+#about_scene1 .about_people5 {
   bottom: 60px;
   right: 85vw;
 }
 
-#scene1 .about_people6 {
+#about_scene1 .about_people6 {
   bottom: 40px;
   animation: bike 15s linear infinite;
 }
@@ -195,7 +195,7 @@ body {
   }
 }
 
-#scene1 .about_street_end {
+#about_scene1 .about_street_end {
   opacity: 1;
   width: 100%;
   height: 100%;
@@ -205,7 +205,7 @@ body {
   z-index: -1;
 }
 
-#scene1 .about_street_end img {
+#about_scene1 .about_street_end img {
   width: 100%;
   height: 100%;
 }
@@ -235,14 +235,14 @@ body {
   right: 10%;
 }
 
-#scene2 {
+#about_scene2 {
   position: relative;
   width: 100%;
   height: 100%;
   overflow: hidden;
 }
 
-#scene2 .about_farmerDetail_box {
+#about_scene2 .about_farmerDetail_box {
   width: 70%;
   height: 60%;
   background-color: #ccc;
@@ -250,15 +250,6 @@ body {
   top: 50%;
   left: 50%;
   transform: transalte(-50%, -50%);
-}
-
-.scene2_transition {
-  width: 100%;
-  height: 400px;
-  background: url("");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
 }
 
 .about_island {

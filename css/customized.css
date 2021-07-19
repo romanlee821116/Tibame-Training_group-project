@@ -201,7 +201,7 @@ html, body {
   top: 80%;
 }
 
-.cus-wrap {
+.cus_wrap {
   width: 90%;
   max-width: 1400px;
   margin: 0 auto;
@@ -264,7 +264,7 @@ html, body {
   background-color: #f7c242 !important;
 }
 
-.cus-step1 {
+.cus_step1 {
   width: 100%;
   height: 100vh;
   display: flex;
@@ -272,39 +272,39 @@ html, body {
   align-items: center;
 }
 
-.cus-step1 .cus-step1-txt {
+.cus_step1 .cus_step1_txt {
   text-align: center;
   padding-top: 50px;
   width: 90%;
   position: relative;
 }
 
-.cus-step1 .cus-step1-txt h3 {
+.cus_step1 .cus_step1_txt h3 {
   color: #bb866a;
   font-size: 24px;
   margin-bottom: 15px;
 }
 
-.cus-step1 .cus-step1-txt h2 {
+.cus_step1 .cus_step1_txt h2 {
   color: #bb866a;
   font-size: 32px;
 }
 
 @media (max-width: 800px) {
-  .cus-step1 .cus-step1-txt {
+  .cus_step1 .cus_step1_txt {
     margin-top: 80px;
   }
 }
 
 @media (max-width: 575px) {
-  .cus-step1 .cus-step1-txt {
+  .cus_step1 .cus_step1_txt {
     padding-top: 80px;
     width: 100%;
   }
-  .cus-step1 .cus-step1-txt h3 {
+  .cus_step1 .cus_step1_txt h3 {
     font-size: 20px;
   }
-  .cus-step1 .cus-step1-txt h2 {
+  .cus_step1 .cus_step1_txt h2 {
     font-size: 24px;
   }
 }
@@ -313,7 +313,7 @@ html, body {
   opacity: .5;
 }
 
-.cus-step1-box {
+.cus_step1-box {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   text-align: center;
@@ -325,79 +325,79 @@ html, body {
   align-items: center;
 }
 
-.cus-step1-box p {
+.cus_step1-box p {
   margin-top: 15px;
   color: #bb866a;
   font-weight: 900;
   font-size: 18px;
 }
 
-.cus-step1-box img {
+.cus_step1-box img {
   cursor: pointer;
   transition: .3s;
 }
 
-.cus-step1-box img:hover {
+.cus_step1-box img:hover {
   transform: scale(1.1);
   box-shadow: 5px 5px 10px #888;
   opacity: 1;
 }
 
-.cus-step1-box img:hover ~ p {
+.cus_step1-box img:hover ~ p {
   color: #172852;
 }
 
-.cus-step1-box .box1 {
+.cus_step1-box .box1 {
   width: 165px;
   height: auto;
 }
 
-.cus-step1-box .box2, .cus-step1-box .box3 {
+.cus_step1-box .box2, .cus_step1-box .box3 {
   width: 240px;
   height: auto;
 }
 
 @media (max-width: 960px) {
-  .cus-step1-box .box1 {
+  .cus_step1-box .box1 {
     width: 120px;
     height: auto;
   }
-  .cus-step1-box .box2, .cus-step1-box .box3 {
+  .cus_step1-box .box2, .cus_step1-box .box3 {
     width: 180px;
     height: auto;
   }
 }
 
 @media (max-width: 767px) {
-  .cus-step1-box {
+  .cus_step1-box {
     width: 100%;
   }
-  .cus-step1-box .box1 {
+  .cus_step1-box .box1 {
     width: 100px;
     height: auto;
   }
-  .cus-step1-box .box2, .cus-step1-box .box3 {
+  .cus_step1-box .box2, .cus_step1-box .box3 {
     width: 150px;
     height: auto;
   }
 }
 
 @media (max-width: 575px) {
-  .cus-step1-box {
+  .cus_step1-box {
     display: flex;
     flex-direction: column;
   }
-  .cus-step1-box .cus_box_container {
+  .cus_step1-box .cus_box_container {
     margin-bottom: 20px;
   }
-  .cus-step1-box .cus_box_container p {
+  .cus_step1-box .cus_box_container p {
     margin-top: 5px;
   }
-  .cus-step1-box .box1 {
+  .cus_step1-box .box1 {
     width: 80px;
     height: auto;
   }
-  .cus-step1-box .box2, .cus-step1-box .box3 {
+  .cus_step1-box .box2, .cus_step1-box .box3 {
     width: 120px;
     height: auto;
   }
@@ -446,13 +446,13 @@ html, body {
   position: relative;
 }
 
-.cus-box img {
+.cus_box img {
   width: 100%;
   height: 100%;
   filter: brightness(70%);
 }
 
-.cus-box img:hover {
+.cus_box img:hover {
   filter: brightness(100%);
 }
 
@@ -462,7 +462,7 @@ html, body {
   box-shadow: 0px 0px 10px 5px #f7c242;
 }
 
-.four-grid {
+.four_grid {
   background-image: url("../images/customized/four_boxBody.png");
   background-size: contain;
   background-position: center;
@@ -479,7 +479,7 @@ html, body {
   padding: 15px;
 }
 
-.six-grid {
+.six_grid {
   background-image: url("../images/customized/six_boxBody.png");
   background-size: contain;
   background-position: center;
@@ -494,7 +494,7 @@ html, body {
   padding: 15px;
 }
 
-.nine-grid {
+.nine_grid {
   background-image: url("../images/customized/nine_boxBody.png");
   background-size: contain;
   background-position: center;
@@ -513,7 +513,7 @@ html, body {
   margin-left: 10px;
 }
 
-.cus-step2 {
+.cus_step2 {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -521,7 +521,7 @@ html, body {
   min-height: 100vh;
 }
 
-.cus-step2 .cus-step2-txt {
+.cus_step2 .cus_step2_txt {
   text-align: center;
   padding-top: 50px;
   width: 90%;
@@ -529,37 +529,37 @@ html, body {
   margin-bottom: 50px;
 }
 
-.cus-step2 .cus-step2-txt h3 {
+.cus_step2 .cus_step2_txt h3 {
   color: #bb866a;
   font-size: 24px;
   margin-bottom: 15px;
 }
 
-.cus-step2 .cus-step2-txt h2 {
+.cus_step2 .cus_step2_txt h2 {
   color: #bb866a;
   font-size: 32px;
 }
 
 @media (max-width: 800px) {
-  .cus-step2 .cus-step2-txt {
+  .cus_step2 .cus_step2_txt {
     margin-top: 80px;
   }
 }
 
 @media (max-width: 575px) {
-  .cus-step2 .cus-step2-txt {
+  .cus_step2 .cus_step2_txt {
     padding-top: 80px;
     width: 100%;
   }
-  .cus-step2 .cus-step2-txt h3 {
+  .cus_step2 .cus_step2_txt h3 {
     font-size: 20px;
   }
-  .cus-step2 .cus-step2-txt h2 {
+  .cus_step2 .cus_step2_txt h2 {
     font-size: 24px;
   }
 }
 
-.cus-step2 .prep {
+.cus_step2 .prep {
   position: absolute;
   left: 0;
   bottom: 0;
@@ -569,19 +569,19 @@ html, body {
   text-align: center;
 }
 
-.cus-step2 .prep i {
+.cus_step2 .prep i {
   margin-right: 10px;
 }
 
-.cus-step2 .prep:hover {
+.cus_step2 .prep:hover {
   color: #333;
 }
 
-.cus-step2 .prep:hover::after {
+.cus_step2 .prep:hover::after {
   background-color: #333;
 }
 
-.cus-step2 .prep::after {
+.cus_step2 .prep::after {
   content: '';
   width: 80px;
   height: 2px;
@@ -592,17 +592,17 @@ html, body {
   transform: translate(-50%, 0);
 }
 
-.cus-step2 .next {
+.cus_step2 .next {
   position: absolute;
   right: 0;
   bottom: 0;
 }
 
-.cus-step2 .next i {
+.cus_step2 .next i {
   margin-left: 10px;
 }
 
-.cus-step2 .cus-product-category a {
+.cus_step2 .cus_product_category a {
   display: inline-block;
   padding: 5px 10px;
   width: 90px;
@@ -614,25 +614,25 @@ html, body {
   margin: 50px 5px;
 }
 
-.cus-step2 .cus-product-category a:hover {
+.cus_step2 .cus_product_category a:hover {
   background-color: #bb866a;
   color: #fff;
 }
 
 @media (max-width: 800px) {
-  .cus-step2 .cus-product-category {
+  .cus_step2 .cus_product_category {
     width: 100%;
     margin-top: 10px;
     text-align: center;
   }
-  .cus-step2 .cus-product-category a {
+  .cus_step2 .cus_product_category a {
     margin: 10px 2.5px;
     width: 85px;
     font-size: 14px;
   }
 }
 
-.cus-step2 .selected_item {
+.cus_step2 .selected_item {
   position: absolute;
   top: 0;
   left: 0;
@@ -640,7 +640,7 @@ html, body {
   height: 100%;
 }
 
-.cus-step2 .cus-product-contianer {
+.cus_step2 .cus_product_contianer {
   display: grid;
   grid-gap: 10px;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -649,48 +649,48 @@ html, body {
 }
 
 @media (max-width: 1000px) {
-  .cus-step2 .cus-product-contianer {
+  .cus_step2 .cus_product_contianer {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
 
 @media (max-width: 800px) {
-  .cus-step2 .cus-product-contianer {
+  .cus_step2 .cus_product_contianer {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
 @media (max-width: 600px) {
-  .cus-step2 .cus-product-contianer {
+  .cus_step2 .cus_product_contianer {
     grid-template-columns: 1fr 1fr;
   }
 }
 
-.cus-step2 .cus-product-contianer .cus-item {
+.cus_step2 .cus_product_contianer .cus-item {
   margin-top: 20px;
   position: relative;
   text-align: center;
   margin-bottom: 50px;
 }
 
-.cus-step2 .cus-product-contianer .cus-item .cus-item-img {
+.cus_step2 .cus_product_contianer .cus-item .cus_item_img {
   width: 180px;
   margin: 0 auto;
   position: relative;
 }
 
 @media (max-width: 400px) {
-  .cus-step2 .cus-product-contianer .cus-item .cus-item-img {
+  .cus_step2 .cus_product_contianer .cus-item .cus_item_img {
     width: 160px;
   }
 }
 
-.cus-step2 .cus-product-contianer .cus-item .cus-item-img img {
+.cus_step2 .cus_product_contianer .cus-item .cus_item_img img {
   width: 100%;
   height: auto;
 }
 
-.cus-step2 .cus-product-contianer .cus-item .cus-item-txt {
+.cus_step2 .cus_product_contianer .cus-item .cus_item_txt {
   position: absolute;
   left: 50%;
   top: 180px;
@@ -704,14 +704,14 @@ html, body {
   display: none;
 }
 
-.cus-step2 .cus-product-contianer .cus-item .cus-item-txt p {
+.cus_step2 .cus_product_contianer .cus-item .cus_item_txt p {
   position: absolute;
   left: 50%;
   top: 30px;
   transform: translateX(-50%);
 }
 
-.cus-step2 .cus-product-contianer .cus-item .cus-item-txt a.cus-add {
+.cus_step2 .cus_product_contianer .cus-item .cus_item_txt a.cus_add {
   position: absolute;
   left: 50%;
   bottom: 10px;
@@ -720,17 +720,17 @@ html, body {
   line-height: 30px;
 }
 
-.cus-step2 .cus-product-contianer .cus-item .cus-item-txt a.cus-add i.fa-plus {
+.cus_step2 .cus_product_contianer .cus-item .cus_item_txt a.cus_add i.fa-plus {
   font-size: 22px;
 }
 
 @media (max-width: 400px) {
-  .cus-step2 .cus-product-contianer .cus-item .cus-item-txt {
+  .cus_step2 .cus_product_contianer .cus-item .cus_item_txt {
     transform: translate(-50%, -60px);
   }
 }
 
-.cus-step2 .custom_itemConfirm_List {
+.cus_step2 .custom_itemConfirm_List {
   width: 35%;
   max-width: 400px;
   min-width: 320px;
@@ -740,7 +740,7 @@ html, body {
   display: none;
 }
 
-.cus-step2 .custom_itemConfirm_List h2 {
+.cus_step2 .custom_itemConfirm_List h2 {
   font-size: 20px;
   color: #bb866a;
   width: 100%;
@@ -749,12 +749,12 @@ html, body {
   margin-bottom: 10px;
 }
 
-.cus-step2 .custom_itemConfirm_List img {
+.cus_step2 .custom_itemConfirm_List img {
   width: 60px;
   height: 60px;
 }
 
-.cus-step2 .custom_itemConfirm_List div {
+.cus_step2 .custom_itemConfirm_List div {
   display: grid;
   grid-template-columns: 1fr 3fr 1fr;
   justify-content: center;
@@ -763,13 +763,13 @@ html, body {
   padding: 5px;
 }
 
-.cus-step2 .custom_itemConfirm_List div p {
+.cus_step2 .custom_itemConfirm_List div p {
   color: #172852;
   font-weight: 900;
   margin-left: 5px;
 }
 
-.cus-step2 .cus-confirm-btn {
+.cus_step2 .cus_confirm_btn {
   width: 100%;
   position: absolute;
   bottom: 0px;
@@ -780,7 +780,7 @@ html, body {
   justify-content: space-between;
 }
 
-.cus-step2 .cus-giftcard-btn {
+.cus_step2 .cus_giftcard_btn {
   width: 100%;
   position: absolute;
   top: 70vh;
@@ -790,12 +790,12 @@ html, body {
   justify-content: space-between;
 }
 
-.cus-step2 .cus-giftcard-btn a {
+.cus_step2 .cus_giftcard_btn a {
   display: block;
   margin: 0 15%;
 }
 
-.cus-step2 .cus-giftbox {
+.cus_step2 .cus_giftbox {
   width: 280px;
   height: 160px;
   position: absolute;
@@ -809,7 +809,7 @@ html, body {
   background-repeat: no-repeat;
 }
 
-.cus-step2 .cus-bag-card {
+.cus_step2 .cus_bag_card {
   width: 280px;
   height: 160px;
   border: 3px solid green;
@@ -822,13 +822,13 @@ html, body {
 }
 
 @media (max-width: 976px) {
-  .cus-step2 .cus-bag-card {
+  .cus_step2 .cus_bag_card {
     width: 240px;
     height: 140px;
   }
 }
 
-.cus-step2 .cus-bag-card .choose-card, .cus-step2 .cus-bag-card .choose-bag {
+.cus_step2 .cus_bag_card .choose-card, .cus_step2 .cus_bag_card .choose-bag {
   width: 100%;
   height: 100%;
   display: none;
@@ -836,7 +836,7 @@ html, body {
   cursor: pointer;
 }
 
-.cus-step2 .cus-bag-card pre {
+.cus_step2 .cus_bag_card pre {
   width: 100%;
   height: 100%;
   opacity: 0;
@@ -852,32 +852,32 @@ html, body {
   border: 2px solid pink;
 }
 
-.cus-step2 .cus-bag-card .choose-bag {
+.cus_step2 .cus_bag_card .choose-bag {
   top: 0;
   left: 0;
   display: none;
 }
 
-.cus-step2 .cus-bag-card .card1 {
+.cus_step2 .cus_bag_card .card1 {
   z-index: 2;
   top: 0;
   left: 0;
   display: none;
 }
 
-.cus-step2 .cus-bag-card .card2 {
+.cus_step2 .cus_bag_card .card2 {
   top: 30px;
   left: -50px;
   display: none;
 }
 
-.cus-step2 .cus-bag-card .card3 {
+.cus_step2 .cus_bag_card .card3 {
   top: 30px;
   left: 50px;
   display: none;
 }
 
-.cus-step2 .custom_chooseCard_btn {
+.cus_step2 .custom_chooseCard_btn {
   width: 100%;
   position: absolute;
   bottom: 0px;
@@ -888,11 +888,11 @@ html, body {
   justify-content: space-between;
 }
 
-.cus-step2 .choosenCard {
+.cus_step2 .choosenCard {
   box-shadow: 0px 0px 15px #555;
 }
 
-.cus-step2 .custom_card_textArea {
+.cus_step2 .custom_card_textArea {
   width: 35%;
   height: 60%;
   border: 2px solid blue;
@@ -905,12 +905,12 @@ html, body {
   background-color: #fff;
 }
 
-.cus-step2 .custom_card_textArea form {
+.cus_step2 .custom_card_textArea form {
   width: 100%;
   height: 100%;
 }
 
-.cus-step2 .custom_card_textArea textarea {
+.cus_step2 .custom_card_textArea textarea {
   width: 100%;
   height: 100%;
   line-height: 45px;
@@ -921,11 +921,11 @@ html, body {
   resize: none;
 }
 
-.cus-step2 .custom_card_textArea textarea:focus {
+.cus_step2 .custom_card_textArea textarea:focus {
   outline: 0;
 }
 
-.cus-step2 .custom_card_textArea .custom_card_iconList {
+.cus_step2 .custom_card_textArea .custom_card_iconList {
   width: 100%;
   height: 100%;
   border: 2px solid red;
@@ -937,7 +937,7 @@ html, body {
   display: none;
 }
 
-.cus-step2 .custom_card_textArea .custom_card_iconList img {
+.cus_step2 .custom_card_textArea .custom_card_iconList img {
   width: 100%;
   height: auto;
   background-color: transparent;
@@ -945,11 +945,11 @@ html, body {
   cursor: pointer;
 }
 
-.cus-step2 .custom_card_textArea .custom_card_iconList .choosen_icon {
+.cus_step2 .custom_card_textArea .custom_card_iconList .choosen_icon {
   border: 2px solid #cba89a;
 }
 
-.cus-step2 .cus-cardcontent-btn {
+.cus_step2 .cus-cardcontent-btn {
   width: 100%;
   position: absolute;
   bottom: 0px;
@@ -959,7 +959,7 @@ html, body {
   justify-content: space-between;
 }
 
-.cus-step2 .cus-cardIcon-btn {
+.cus_step2 .cus-cardIcon-btn {
   width: 100%;
   position: absolute;
   bottom: 0px;
@@ -969,7 +969,7 @@ html, body {
   justify-content: space-between;
 }
 
-.cus-step2 .custom_card_IconOnCard {
+.cus_step2 .custom_card_IconOnCard {
   width: 60px;
   height: 60px;
   position: absolute;
@@ -979,12 +979,12 @@ html, body {
   cursor: pointer;
 }
 
-.cus-step2 .custom_card_IconOnCard img {
+.cus_step2 .custom_card_IconOnCard img {
   width: 100%;
   height: auto;
 }
 
-.cus-step2 .cus-cardConfirm-btn {
+.cus_step2 .cus-cardConfirm-btn {
   width: 100%;
   position: absolute;
   bottom: 0px;
@@ -994,7 +994,7 @@ html, body {
   justify-content: space-between;
 }
 
-.cus-step2 .cus-cardConfirm-btn .cus-cardConfirm-nextstep::before {
+.cus_step2 .cus-cardConfirm-btn .cus_cardConfirm_nextstep::before {
   content: '添加到購物車';
   position: absolute;
   font-size: 14px;

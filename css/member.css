@@ -58,7 +58,7 @@ body {
   max-width: 1400px;
   display: flex;
   position: relative;
-  margin: 0 auto;
+  margin: 50px auto 0 auto;
   padding: 60px 0 20px 0;
 }
 
@@ -144,7 +144,11 @@ body {
     margin: 0 5px;
   }
   .footer .footer-media i {
-    font-size: 16px;
+    font-size: 20px;
+  }
+  .footer .footer-right {
+    opacity: .6;
+    line-height: 12px;
   }
 }
 

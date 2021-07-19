@@ -57,38 +57,38 @@
             
         <!-- </div> -->
         <!-- ==================第二頁首屏跑馬==================-->
-        <div class="section page2">
-            <div class="p2-container">
-                <div class="p2-left">
+        <div class="section index_page2">
+            <div class="index_p2_container">
+                <div class="index_p2_left">
                 </div>                
                 
-                <div id="p2-ticker">
+                <div id="index_p2_ticker">
                     <div class="view">
-                        <div class="p2-ticker-container">
+                        <div class="index_p2_tickerContainer">
                             <h1 v-for='txt in 20'>{{text}}</h1>                            
                         </div>
                     </div>
                 </div>
-                <div class="p2-pic">
+                <div class="index_p2_pic">
                     <img src="./images/index/banner_monaka_item.png" alt="">
                 </div>
-                <div class="p2-button">
+                <div class="index_p2_button">
                     <h2>MONOKA</h2>
-                    <a href="./page/shopping_choose.html" class='p2btn mainbtn'>更多商品</a>
+                    <a href="./page/shopping_choose.html" class='index_p2btn mainbtn'>更多商品</a>
                 </div>
-                <div class="p2-progress">
-                    <div class='p2-progress-solid'></div>
+                <div class="index_p2-progress">
+                    <div class='iindex_p2-progressSolid'></div>
                 </div>
-                <div class="p2-right"></div>
+                <div class="iindex_p2_right"></div>
             </div> 
         </div>
         <!-- 第三頁關於我們 -->
-        <div class="section page3">
-            <div class="p3-bg">
+        <div class="section index_page3">
+            <div class="index_p3_bg">
                 <img src="./images/index/aboutus_rightbg.png" alt="">
             </div>
-            <div class='p3-container'>
-                <div class='p3-txt'>
+            <div class='index_p3_container'>
+                <div class='index_p3_txt'>
                     <h1>About Us</h1>                    
                     <h3>關於我們</h3>
                     <p>小春堂創立於2021年初春，是與臺灣在地小農合作所打造的日式和菓子點心專門店，將日本流行的人氣和菓子與洋菓子同步在台製作上市，讓你在家就可以品嘗多元道地的日本風味。                        
@@ -106,40 +106,40 @@
         <div class="gap">
         </div>
         <!-- ==================第四頁產品專區================== -->
-        <div class="section page4">
+        <div class="section index_page4">
             <!-- watermark -->          
             <div v-for='p4 in p4_list' :class='p4.class'>
                 <img :src="p4.src" >
             </div>
-            <div class="p4-container">
+            <div class="index_p4_container">
                 <div class="p4-txt">
                     <h1>Product</h1>
                     <h3>商品專區</h3>
                     <p>小春堂堅持所有點心均為純手工製作，不額外添加任何化學原料，僅由天然食材製作而成。我們相信，吃點心這件事可以回歸最單純的初衷： &nbsp快樂吃，輕鬆健康無負擔。
                     </p>
                     <p>
-                        <a href="./page/shopping_choose.html" class='p4btn mainbtn'>更多商品</a>
+                        <a href="./page/shopping_choose.html" class='index_p4btn mainbtn'>更多商品</a>
                     </p>  
                 </div>
-                <div class="p4-bigpic">
-                    <div class="p4-bigpic-img">
+                <div class="index_p4_bigPic">
+                    <div class="index_p4_bigPic_img">
                         <img src="./images/index/product_big.png" alt="">
                     </div>                    
-                    <div class='p4-bigpic-info'>
+                    <div class='index_p4_bigPic_info'>
                         <p>紅豆銅鑼燒</p>
                         <p>6入 $480</p>
                     </div>
                 </div>
                 <!-- 商品輪播 -->                
-                <section id="marquee" class='p4-itemlist'> 
+                <section id="marquee" class='index_p4_itemList'> 
                     <div class="view">
-                        <div class="pic-container">
+                        <div class="index_p4_picContainer">
                             <!-- 商品列表 -->
                             <div v-for='item in 20'>
-                                <div class='p4-item-pic'>
+                                <div class='index_p4_itemPic'>
                                     <img src="./images/index/product_small.png">
                                 </div>
-                                <div class="p4-item-txt">
+                                <div class="index_p4_itemTxt">
                                     <p>商品</p>
                                 </div>
                             </div>
@@ -152,34 +152,34 @@
         <div class="gap">
         </div>
         <!-- ==================第五頁客製禮盒================== -->
-        <div class="section page5">
+        <div class="section index_page5">
              <!-- watermark -->            
             <div v-for='p5 in p5_list' :class='p5.class'>
                 <img :src="p5.src" >
             </div>
             <!--  -->
-            <div class="p5-container">                
-                <div class="p5-txt">
+            <div class="index_p5_container">                
+                <div class="index_p5_txt">
                     <h1>Customized</h1>
                     <h3>客製禮盒</h3>
                     <p>一份蘊含心意的點心，可以串起兩人之間歷久彌新的情誼，傳遞溫暖的掛念。小春堂提供客制化點心禮盒，由你來依據他的喜好精心挑選，就算不能見面，一樣能將幸福的心意傳遞出去。                    
                     </p>
                     <p>
-                        <a href="./page/customized.html" class='p5btn mainbtn'>開始客製禮盒</a>
+                        <a href="./page/customized.html" class='index_p5btn mainbtn'>開始客製禮盒</a>
                     </p>  
                 </div>
                 <!--  -->
-                <div class="p5-bigpic">
-                    <img src="./images/index/customized_box.png" alt="" class='p5-bigpic-box'>
-                    <img src="./images/index/customized_fouritem.png" alt="" class='p5-bigic-fouritem'>
+                <div class="index_p5_bigPic">
+                    <img src="./images/index/customized_box.png" alt="" class='index_p5_bigPic_box'>
+                    <img src="./images/index/customized_fouritem.png" alt="" class='index_p5_bigPic_fourItem'>
                 </div>
                 <!--  -->
-                <div class="p5-manual">
-                    <div class="p5-manual-item" v-for='item in manual_list'>
-                        <div class="p5-manual-pic">
+                <div class="index_p5_manual">
+                    <div class="index_p5_manualItem" v-for='item in manual_list'>
+                        <div class="index_p5_manual-pic">
                             <img :src="item.src" alt="">
                         </div>
-                        <div class="p5-manual-txt">
+                        <div class="index_p5_manualTxt">
                             <h3>{{item.title}}</h3>
                             <p>{{item.txt}}</p>
                         </div>
@@ -191,46 +191,46 @@
         <div class="gap">
         </div>
         <!-- ==================第六頁最新消息================== -->
-        <div class="section page6">
+        <div class="section index_page6">
             <!-- watermark -->
            
             <div v-for='p6 in p6_list' :class='p6.class'>
                 <img :src="p6.src" >
             </div>
             <!--  -->
-            <div class="p6-container">
+            <div class="index_p6_container">
                 <!-- 標題  -->
-                <div class="p6-txt">
+                <div class="index_p6_txt">
                     <h1>News</h1>
                     <h3>最新消息</h3>                    
                 </div>
                 <!-- 卡片內容 -->
-                <div class="p6-card">
-                    <div class="p6_card_container">
-                        <div class="p6-cardbg" v-for='item in card_list'>
-                            <div class="p6-card-item">
-                                <div class="item-img">
+                <div class="index_p6_card">
+                    <div class="index_p6_cardContainer">
+                        <div class="index_p6_cardbg" v-for='item in card_list'>
+                            <div class="index_p6_cardItem">
+                                <div class="index_p6_itemImg">
                                     <img :src="item.src" alt="">
                                 </div>
-                                <div class="item-txt">
+                                <div class="index_p6_itemTxt">
                                     <h3>{{item.time}}</h3>
                                     <h4>{{item.title}}</h4>
                                     <p>{{item.txt}}</p>
-                                    <a href="#" class='card-btn'>詳細資訊<i class="fas fa-long-arrow-alt-right"></i></a>
+                                    <a href="#" class='index_p6_cardBtn'>詳細資訊<i class="fas fa-long-arrow-alt-right"></i></a>
                                 </div>            
                             </div>
                         </div>  
                     </div>                  
                 </div>
                 <!-- 輪播 -->
-                <div class="p6_carousel">
-                    <div class='p6_carousel_point'></div>
-                    <div class='p6_carousel_point'></div>
-                    <div class='p6_carousel_point'></div>
+                <div class="index_p6_carousel">
+                    <div class='index_p6_carousel_point'></div>
+                    <div class='index_p6_carousel_point'></div>
+                    <div class='index_p6_carousel_point'></div>
                 </div>
 
                 <!-- 按鈕 -->
-                <div class="p6-btn">
+                <div class="index_p6-btn">
                     <a href="#" class='mainbtn'>更多消息</a>
                 </div>
             </div>
@@ -239,18 +239,18 @@
         <div class="gap">
         </div>
         <!-- ==================第七頁店家資訊================== -->
-        <div class="section page7">
-            <div class="p7-container">
-                <div class="p7-txt">
+        <div class="section index_page7">
+            <div class="index_p7_container">
+                <div class="index_p7_txt">
                     <h1>Shop</h1>
                     <h3>店鋪資訊</h3>   
                 </div>
-                <div class="p7-info">
-                    <div class="p7-shopinfo">
+                <div class="index_p7_info">
+                    <div class="index_p7_shopInfo">
                         <h2>台北本店</h2>
-                        <div class="p7-address">
+                        <div class="index_p7_address">
                             <p>地址</p>
-                            <div class="p7-address-detailed">
+                            <div class="index_p7_address_detailed">
                                 <p>台北市南京東路三段219號4-5F</p>
                                 <a href="#">Google Map</a>
                             </div>
@@ -260,12 +260,12 @@
                             <p>{{item.txt}}</p>
                         </div>
                     </div>
-                    <div class="p7-shopbtn">
-                        <a href="#" class='p7-shopbtn-left'><i class="fas fa-chevron-left"></i></a>
-                        <a href="#" class='p7-shopbtn-right'><i class="fas fa-chevron-right"></i></a>                    
+                    <div class="index_p7_shopBtn">
+                        <a href="#" class='index_p7_shopBtn-left'><i class="fas fa-chevron-left"></i></a>
+                        <a href="#" class='index_p7_shopBtn-right'><i class="fas fa-chevron-right"></i></a>                    
                     </div>
                 </div>  
-                <div class="p7-bigpic">
+                <div class="index_p7_bigPic">
                     <img src="./images/index/shop_pic_a.png" alt="">
                 </div>
             </div>
@@ -287,7 +287,7 @@
                     <a href="#"><i class="fab fa-twitter-square"></i></a>
                 </div>
                 <div class="footer-right">
-                    <p>本網站為緯育TibaMe前端設計工程師班第66期第__組學員專題成果作品，本平台僅供學習、展示之用。參考資源:XXXXXXXXXXXXX。若有侵權疑慮，您可以私訊[TibaMe-前端設計工程師養成班]，後續會由專人協助處理</p>
+                    <p>本網站為緯育TibaMe前端設計工程師班第68期第三組學員專題成果作品，本平台僅供學習、展示之用。參考資源:snaq.me。若有侵權疑慮，您可以私訊[TibaMe-前端設計工程師養成班]，後續會由專人協助處理</p>
                 </div>
             </div>
         </div>    
@@ -298,7 +298,7 @@
             navigation: true, // 顯示導行列
             navigationPosition: "right", // 導行列位置
             //====================================
-            anchors: ['firstPage', 'secondPage', 'thirdPage', 'fourthPage', 'lastPage'],
+            // anchors: ['', '', '', '', ''],
 
 	        onLeave: function(origin, destination, direction){
                 var leavingSection = this;
@@ -306,24 +306,20 @@
                 //after leaving section 2
                 if(origin.index == 0 && direction =='down'){
                    console.log('Going to section 2!')
-                //    顯示覽列
+                //顯示覽列
                    $('#fp-nav ul li a span').css({
                        display: 'block',
                         });
-                //    顯示navbar
+                //顯示navbar
                     $('.navbar').css({
                         // display: 'flex',
                         background: 'linear-gradient(rgba(255,255,255,.9), transparent)',
                         });
-                //    顯示社群bar
+                //顯示社群bar
                     $('.mediacolumn').css({
                         visibility: "visible",
                         });
-                //    顯示語言icon
-                    $('.language').css({
-                        visibility: "visible",
-                        });
-                //    顯示測驗
+                //顯示測驗
                     $('.psychotest').css({
                         display: "block",
                         });

@@ -130,7 +130,7 @@ $(function () {
 
    // ==================================== new Vue ==================================== 
     new Vue({
-        el: '#wrap',
+        el: '#about_wrap',
         data: {
             people_list: [
                 { src: '../images/about/people1.png', class: 'about_people1 people' },
@@ -186,7 +186,7 @@ $(function () {
         triggerElement: '#keypoint1',
         triggerHook: 0,
         duration: '500%',
-    }).setPin('#scene1').setTween(sticky).addIndicators().addTo(controller);
+    }).setPin('#about_scene1').setTween(sticky).addIndicators().addTo(controller);
 // ==========================================================================
     var stickyMap = new TimelineMax();
     stickyMap.to('.about_taiwan', 0, { scale: '1%' })
@@ -207,7 +207,7 @@ $(function () {
         triggerElement: '#keypoint2',
         triggerHook: 0,
         duration: '1000%',
-    }).setPin('#scene2').setTween(stickyMap).addIndicators().addTo(controller);
+    }).setPin('#about_scene2').setTween(stickyMap).addIndicators().addTo(controller);
     // =======================================================================
     navbar();
     popUpShow()
@@ -241,53 +241,63 @@ function scroll(){
 function popUpShow(){
     var scrolltop = new Array();
     var index = 0;
+    let winHeight = $(window).height();
     scrolltop[0] = 0;
+    
+    
     $(document).scroll(function(){
+
+       
+
+
         index++;
         scrolltop[index] = $(document).scrollTop();
+        let indexHeight = (scrolltop[index]/winHeight).toFixed(2)
+        console.log(indexHeight);
+
         if (scrolltop[index] > scrolltop[index - 1]) {
-            console.log(scrolltop[index].toFixed(0));
+            // console.log(scrolltop[index].toFixed(0));
         } else {
-            console.log(scrolltop[index].toFixed(0));
+            // console.log(scrolltop[index].toFixed(0));
         };
 
         //介紹一
-        if(scrolltop[index] > 400 && scrolltop[index] < 1200){
+        if(indexHeight > .75 && scrolltop[index] < 1.85){
             $('.about_history').fadeIn();
         }else{
             $('.about_history').fadeOut();
         }
 
         //介紹二
-        if(scrolltop[index] > 1400 && scrolltop[index] < 2200){
+        if(indexHeight > 2.3 && indexHeight < 3.4){
             $('.about_brand').fadeIn();
         }else{
             $('.about_brand').fadeOut();
         }
 
         //小農一
-        if(scrolltop[index] > 5900 && scrolltop[index] < 6700){
+        if(indexHeight > 7.25 && indexHeight < 8.25){
             $('.about_place1').fadeIn();
         }else{
             $('.about_place1').fadeOut();
         }
 
         //小農二
-        if(scrolltop[index] > 7400 && scrolltop[index] < 8200){
+        if(indexHeight > 9.04 && indexHeight < 10.04){
             $('.about_place2').fadeIn();
         }else{
             $('.about_place2').fadeOut();
         }
 
         //小農三
-        if(scrolltop[index] > 9000 && scrolltop[index] < 9600){
+        if(indexHeight > 11.02 && indexHeight < 12.02){
             $('.about_place3').fadeIn();
         }else{
             $('.about_place3').fadeOut();
         }
 
         //小農四
-        if(scrolltop[index] > 10500 && scrolltop[index] < 11000){
+        if(indexHeight > 13 && indexHeight < 13.8){
             $('.about_place4').fadeIn();
         }else{
             $('.about_place4').fadeOut();

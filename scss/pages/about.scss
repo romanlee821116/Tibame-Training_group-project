@@ -15,11 +15,11 @@ body{
     overflow-x: hidden;
     position: relative;
 }
-.wrap{
+.about_wrap{
     width: 100vw;
     height: 100vh;    
 }
-#scene1{
+#about_scene1{
     width: 100vw;
     height: 100%;    
     border: 5px solid green;
@@ -132,7 +132,7 @@ body{
 .about_brand{
     right: 10%;
 }
-#scene2{
+#about_scene2{
     position: relative;
     width: 100%;
     height: 100%;
@@ -148,14 +148,14 @@ body{
         transform: transalte(-50%,-50%);
     }
 }
-.scene2_transition{
-    width: 100%;
-    height: 400px;
-    background: url('');
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
+// .about_scene2_transition{
+//     width: 100%;
+//     height: 400px;
+//     background: url('');
+//     background-position: center;
+//     background-size: cover;
+//     background-repeat: no-repeat;
+// }
 .about_island{
     transform: scaleY(.7);
 }

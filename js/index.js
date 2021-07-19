@@ -1,13 +1,13 @@
 $(function () {
     var vm1 = new Vue({
-        el: '.page2',
+        el: '.index_page2',
         data: {
             text: 'MONOKA',
         },
     });
 
     var vm2 = new Vue({
-        el: '.page3',
+        el: '.index_page3',
         data: {
             p3_list: [
                 { class: 'p3-watermark p3-mark1', src: './images/index/aboutus_watercolor_a.png' },
@@ -17,7 +17,7 @@ $(function () {
     });
 
     var vm3 = new Vue({
-        el: '.page4',
+        el: '.index_page4',
         data: {
             p4_list: [
                 { class: 'p4-watermark p4-mark1', src: './images/index/product_watercolor_a.png' },
@@ -28,7 +28,7 @@ $(function () {
     })
 
     var vm4 = new Vue({
-        el: '.page5',
+        el: '.index_page5',
         data: {
             p5_list: [
                 { class: 'p5-watermark p5-mark1', src: './images/index/customized_watercolor_a.png' },
@@ -44,7 +44,7 @@ $(function () {
     })
 
     var vm5 = new Vue({
-        el: '.page6',
+        el: '.index_page6',
         data: {
             p6_list: [
                 { class: 'p6-watermark p6-mark1', src: './images/index/news_watercolor_a.png' },
@@ -60,7 +60,7 @@ $(function () {
     })
 
     var vm6 = new Vue({
-        el: '.page7',
+        el: '.index_page7',
         data: {
             p7_list: [
                 { class: 'p7-watermark p7-mark1', src: './images/index/shop_watercolor_a.png' },
@@ -79,7 +79,7 @@ $(function () {
 
     ticker();
     newsCarousel();
-    navbar();
+    // navbar();
 })
 
 
@@ -92,18 +92,18 @@ function ticker() {
     let bgPic = ['./images/index/banner_monaka_bg.png', './images/index/banner_matcha_bg.png', './images/index/banner_strawberry_bg.png'];
     let itemPic = ['./images/index/banner_monaka_item.png', './images/index/banner_matcha_item.png', './images/index/banner_strawberry_item.png'];
     setInterval(function () {
-        $('.p2-progress-solid').width(`${length}%`)
+        $('.iindex_p2-progressSolid').width(`${length}%`)
         length += .7;
         if (length >= 100) {
             length = 0;
             index += 1;
-            $('.p2-ticker-container>h1').html(`${titleWord[index % 3]}`);
-            $('.p2-button>h2').text(`${titleWord[index % 3]}`);
-            $('.p2-pic>img').attr('src', `${itemPic[index % 3]}`)
-            $('.p2-right').css({
+            $('.index_p2_tickerContainer>h1').html(`${titleWord[index % 3]}`);
+            $('.index_p2_button>h2').text(`${titleWord[index % 3]}`);
+            $('.index_p2_pic>img').attr('src', `${itemPic[index % 3]}`)
+            $('.iindex_p2_right').css({
                 background: `url(${bgPic[index % 3]})`
             });
-            $('.p2-left').css({
+            $('.index_p2_left').css({
                 backgroundColor: `${bgColor[index % 3]}`
             });
         }
@@ -115,28 +115,28 @@ function newsCarousel() {
     let winWidth = $(window).width();
     if (winWidth < 767) {
         console.log("小於767");
-        $('.p6_carousel').show();
+        $('.index_p6_carousel').show();
         let index = 0;
         setInterval(function () {
-            $('.p6_card_container').animate({
+            $('.index_p6_cardContainer').animate({
                 left: index * -350,
             }, 500);
-            let point = `.p6_carousel_point:nth-child(${index + 1})`;
-            $('.p6_carousel_point').css('backgroundColor', '#ccc')
+            let point = `.index_p6_carousel_point:nth-child(${index + 1})`;
+            $('.index_p6_carousel_point').css('backgroundColor', '#ccc')
             $(point).css('backgroundColor', '#172852');
             index += 1;
             if (index == 3) {
                 index = 0;
             };
         }, 3000);
-        $('.p6_carousel_point').on('click', function () {
-            let this_index = $('.p6_carousel_point').index(this);
+        $('.index_p6_carousel_point').on('click', function () {
+            let this_index = $('.index_p6_carousel_point').index(this);
             index = this_index;
-            $('.p6_card_container').animate({
+            $('.index_p6_cardContainer').animate({
                 left: index * -350,
             }, 500);
-            let point = `.p6_carousel_point:nth-child(${index + 1})`;
-            $('.p6_carousel_point').css('backgroundColor', '#ccc')
+            let point = `.index_p6_carousel_point:nth-child(${index + 1})`;
+            $('.index_p6_carousel_point').css('backgroundColor', '#ccc')
             $(point).css('backgroundColor', '#172852');
         })
     }

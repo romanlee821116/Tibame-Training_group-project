@@ -30,6 +30,11 @@
     @include psycoBtn(#fff);
     display: none;
 }
+.fp-right{
+    @include rwd(575px){
+        display: none;
+    }
+}
 
 .pagepoint{
     position: fixed;
@@ -60,14 +65,14 @@
     display: none;
 }
 /* ==================第二面================== */
-.p2-container{
+.index_p2_container{
     width: 100%;
     height: 100%;
     display: flex;
     position: relative;
     z-index: 2;
 }
-    .p2-right{
+    .iindex_p2_right{
         width: 50%;
         height: 100%;
         background: url('../images/index/banner_monaka_bg.png');
@@ -75,17 +80,17 @@
         background-repeat: no-repeat;
         background-position: center;        
     }
-        .p2-right-mask{
+        .iindex_p2_right-mask{
             width: 100%;
             height: 100%;
             background-color: rgba(0, 0, 0, .5);
         }
-    .p2-left{
+    .index_p2_left{
         width: 50%;
         height: 100%;
         background-color: #f1ca96;
     }
-    .p2-pic{
+    .index_p2_pic{
         position: absolute;
         top: 50%;
         left: 50%;
@@ -93,12 +98,12 @@
         height: 260px;
         transform: translate(-50%, -50%);        
     }
-        .p2-pic img{
+        .index_p2_pic img{
             width: 100%;
             height: 100%;
         }
         
-    .p2-button{
+    .index_p2_button{
         position: absolute;
         top: 0;
         left: 50%;
@@ -107,13 +112,13 @@
         text-align: center;
         overflow: hidden;
     }
-        .p2-button h2{
+        .index_p2_button h2{
             color: #fff;
             margin-top: 15px;
             font-size: 36px;
             font-family: arial;
         }
-        .p2-button a{
+        .index_p2_button a{
             color: #fff;
             border: 2px solid #fff;
             padding: 5px 20px;
@@ -127,7 +132,7 @@
         }
        
         
-    .p2-ticker{
+    .index_p2_ticker{
         position: absolute;
         top: 45%;
         right: 0;
@@ -135,7 +140,7 @@
         width: 100%;
         height: 40px;
     }
-        .p2-ticker marquee{
+        .index_p2_ticker marquee{
             color: #fff;
             font-size: 100px;
             height: 150px;
@@ -143,7 +148,7 @@
             text-align: center;
             display: inline-block;
         }
-    .p2-progress{
+    .index_p2-progress{
         position: absolute;
         left: 0;
         bottom: 0;
@@ -151,7 +156,7 @@
         height: 5px;
         background-color: #fff;
     }
-        .p2-progress-solid{
+        .iindex_p2-progressSolid{
             width: 60%;
             height: 5px;
             background-color: $darkBrown;
@@ -165,13 +170,13 @@
     background-size: cover;
 }
 /* ==================第三面================== */
-.page3{
+.index_page3{
     position: relative;
     overflow-x: hidden;
     background: url('../images/index/bg.png');
     background-size: cover;
 }
-.p3-container{
+.index_p3_container{
     height: 100vh;
     width: 100%;
     max-width: 1400px;
@@ -183,7 +188,7 @@
     
 }
 
-    .p3-txt{
+    .index_p3_txt{
         width: 50%;
         height: 100%;
         display: flex;
@@ -241,7 +246,7 @@
             }
         }
     }
-    .p3-bg{
+    .index_p3_bg{
         position: absolute;
         top: 0px;
         right: 0;
@@ -289,13 +294,13 @@
         }
        
 /* ==================第四面================== */
-.page4{
+.index_page4{
     position: relative;
     overflow-x: hidden;
     background: url('../images/index/bg.png');
     background-size: cover;
 }
-.p4-container{
+.index_p4_container{
     height: 100vh;
     width: 100%;
     max-width: 1400px;
@@ -352,7 +357,7 @@
         @include rwd(900px){
             padding-left: 0%; 
             padding: 0 30px;   
-            .p4btn{
+            .index_p4btn{
                 margin: 0 auto;
             }
             h1{
@@ -360,7 +365,7 @@
             }       
         }
     }        
-    .p4-bigpic{
+    .index_p4_bigPic{
         position: absolute;
         bottom: 18vh;
         left: 13vw;
@@ -369,17 +374,17 @@
         max-width: 450px;
         max-height: 410px;
         z-index: 2;
-        .p4-bigpic-img{
+        .index_p4_bigPic_img{
             width: 100%;
             height: 100%;
             overflow: hidden;
             animation: resize 10s linear infinite;
         }
-        .p4-bigpic img{
+        .index_p4_bigPic img{
             width: 100%;
             height: 100%;
         }
-        .p4-bigpic-info{
+        .index_p4_bigPic_info{
             position: absolute;
             left: 0;
             width: 190px;
@@ -395,7 +400,7 @@
             flex-direction: column;
             justify-content: center;
         }
-        .p4-bigpic-info p{
+        .index_p4_bigPic_info p{
             font-size: 18px;
             color: $darkBlue;
         }   
@@ -416,7 +421,7 @@
         66% {border-radius: 44% 56% 60% 40% / 41% 58% 42% 59% ;}
         100% {border-radius: 46% 54% 35% 65% / 47% 37% 63% 53%;}        
     }  
-    .p4-itemlist{
+    .index_p4_itemList{
         width: 100%;
         height: 40%;
         position: absolute;
@@ -429,18 +434,18 @@
             height: 150px;
             margin: 60px 25px;
         }
-            .p4-item-pic{
+            .index_p4_itemPic{
                 width: 150px;
                 height: 150px;
                 border-radius: 50%;
                 overflow: hidden;
                 margin: 0 auto;
             }
-            .p4-item-pic img{
+            .index_p4_itemPic img{
                 width: 100%;
                 height: 100%;
             }
-            .p4-item-txt{
+            .index_p4_itemTxt{
                 text-align: center;
                 margin-top: 10px;
             }
@@ -471,13 +476,13 @@
         }
 
 /* ==================第五面================== */
-.page5{
+.index_page5{
     position: relative;
     overflow-x: hidden;
     background: url('../images/index/bg.png');
     background-size: cover;
 }
-.p5-container{
+.index_p5_container{
     height: 100vh;
     width: 100%;
     max-width: 1400px;
@@ -485,7 +490,7 @@
     margin: auto;
     position: relative;  
 }
-    .p5-txt{
+    .index_p5_txt{
         width: 50%;
         height: 50%;
         position: relative;  
@@ -541,13 +546,13 @@
             margin: 0 auto;
             padding-left: 0px;
             z-index: 2;
-            .p5btn{
+            .index_p5btn{
                 margin: 0 auto;
             }
         }
     }
        
-    .p5-bigpic{       
+    .index_p5_bigPic{       
         width: 38vw;
         height: 33vw;
         max-width: 450px;
@@ -557,11 +562,11 @@
         top: 15vh;
         background-color: #fad689;
         animation: resize1 8s linear infinite;        
-        .p5-bigpic-box{
+        .index_p5_bigPic_box{
             width: 80%;
             height: auto;
         }
-        .p5-bigic-fouritem{
+        .index_p5_bigPic_fourItem{
             width: 48%;
             height: auto; 
             position: absolute;
@@ -581,14 +586,14 @@
         }
         
     }
-    .p5-manual{
+    .index_p5_manual{
         width: 100%;
         display: flex;  
         padding-left: 100px;
         padding-top: 100px; 
         position: relative;
         z-index: 2;
-        .p5-manual-item{
+        .index_p5_manualItem{
             width: 200px;
             margin: 0 10px;
             h3{
@@ -603,7 +608,7 @@
                 line-height: 25px;
             }
         }
-        .p5-manual-pic{
+        .index_p5_manual-pic{
             width: 80px;
             height: 80px;
             margin: 0 auto;
@@ -618,7 +623,7 @@
             left: 50%;
             transform: translateX(-50%);
             padding-left: 0px;
-            .p5-manual-txt p{
+            .index_p5_manualTxt p{
                 display: none;
             }
             h1{
@@ -630,7 +635,7 @@
         }   
         @include rwd(575px){
             padding-top: 50px; 
-            .p5-manual-pic{
+            .index_p5_manual-pic{
                 width: 50px;
                 height: 50px;
             }    
@@ -674,13 +679,13 @@
         100% {border-radius: 43% 57% 38% 62% / 50% 45% 55% 50%;}        
     }   
 /* ==================第六面================== */
-.page6{
+.index_page6{
     position: relative;
     overflow-x: hidden;
     background: url('../images/index/bg.png');
     background-size: cover;
 }
-.p6-container{
+.index_p6_container{
     height: 100vh;
     width: 100%;
     max-width: 1400px;
@@ -689,14 +694,14 @@
     position: relative;  
     /* padding-top: 50px; */
 }
-    .p6-txt{
+    .index_p6_txt{
         width: 100%;
         position: relative;  
         display: flex;
         flex-direction: column;
         align-items: center; 
     }
-        .p6-txt h1{
+        .index_p6_txt h1{
             width: 300px;
             text-align: center;
             font-size: 24px;
@@ -705,7 +710,7 @@
             line-height: 0.7em;
             margin-bottom: 12px;
         }
-        .p6-txt h3{
+        .index_p6_txt h3{
             width: 300px;
             text-align: center;
             font-size: 18px;
@@ -714,23 +719,23 @@
             line-height: 0.9em;            
         }
 
-    .p6-card{
+    .index_p6_card{
         width: 100%;
         height: auto;
              
-        .p6_card_container{
+        .index_p6_cardContainer{
             display: flex;
             justify-content: center;
             align-items: center;
             margin-bottom: 30px;
-            .p6-cardbg{
+            .index_p6_cardbg{
                 width: 20%;    
                 height: 40%;
                 margin: 0 20px;
                 border-radius: 10px;
                 background: url('../images/index/news_hoverbg.png');
                 background-size: cover;
-                .p6-card-item{
+                .index_p6_cardItem{
                     width: 100%;
                     height: 100%;  
                     position: relative;  
@@ -743,7 +748,7 @@
                     &:hover{
                         transform: translate(-10px, -10px);
                     }
-                    .item-img{
+                    .index_p6_itemImg{
                         width: 100%;
                         height: 45%;
                         overflow: hidden;
@@ -756,7 +761,7 @@
                             transform: translateX(-50%);
                         }
                     }
-                    .item-txt{
+                    .index_p6_itemTxt{
                         width: 100%;
                         height: 55%;
                         text-align: left;
@@ -779,7 +784,7 @@
                             margin-bottom: 10px;
                         }
                     }            
-                    .card-btn{
+                    .index_p6_cardBtn{
                         margin-top: 5%;
                         display: block;
                         text-align: right;
@@ -795,7 +800,7 @@
                 @include rwd(1030px){
                     width: 25%;
                     margin: 0 10px;
-                    .item-txt{
+                    .index_p6_itemTxt{
                         h4{
                             font-size: 14px;
                         }
@@ -809,7 +814,7 @@
            margin: 0 auto;
            position: relative;
            overflow: hidden;
-           .p6_card_container{
+           .index_p6_cardContainer{
                width: 1050px;
             //    border: 1px solid blue;
                margin: 0 auto;
@@ -817,7 +822,7 @@
                position: relative;
                top: 10px;
                left: 0;
-               .p6-cardbg{
+               .index_p6_cardbg{
                    margin: 0 45px;
                }
            }
@@ -826,13 +831,13 @@
     
 
         
-    .p6_carousel{
+    .index_p6_carousel{
         width: 100px;
         margin: 10px auto 50px auto;
         justify-content: center;
         // border: 1px solid red;
         display: none;
-        .p6_carousel_point{
+        .index_p6_carousel_point{
             width: 10px;
             height: 10px;
             border-radius: 50%;
@@ -840,19 +845,19 @@
             background-color: #ccc;
             cursor: pointer;
         }
-        .p6_carousel_point:nth-child(1){
+        .index_p6_carousel_point:nth-child(1){
             background-color: $darkBlue;
         }
         @include rwd(767px){
             display: flex;
         }
     }
-    .p6-btn{
+    .index_p6-btn{
         width: 100%;
         // position: absolute;
         // bottom: 10%;
     }
-        .p6-btn a{
+        .index_p6-btn a{
             background-color: $darkBlue;
             color: #fff;
             padding: 10px 20px;
@@ -893,20 +898,20 @@
             bottom: -15%;
         }
 /* ==================第七面================== */
-.page7{
+.index_page7{
     position: relative;
     overflow-x: hidden;
     background: url('../images/index/bg.png');
     background-size: cover;
 }
-.p7-container{
+.index_p7_container{
     height: 100vh;
     width: 100%;
     max-width: 1400px;
     max-height: 850px;
     margin: auto;
     position: relative;  
-    .p7-txt{
+    .index_p7_txt{
         width: 100%;
         text-align: center;
         display: flex;
@@ -948,7 +953,7 @@
             }
         }
     }
-    .p7-shopinfo{
+    .index_p7_shopInfo{
         width: 30%;
         position: relative;
         left: 20%;
@@ -984,7 +989,7 @@
                 }
             }
         }
-        .p7-address{
+        .index_p7_address{
             display: grid;
             grid-template-columns: 80px 250px;
             width: 100%;
@@ -993,7 +998,7 @@
                 color: $darkBrown;
                 // width: 100px;                
             }
-            .p7-address-detailed{
+            .index_p7_address_detailed{
                 a{
                     background-color: $darkBlue;
                     color: #fff;
@@ -1012,7 +1017,7 @@
         } 
             
     }
-    .p7-shopbtn{
+    .index_p7_shopBtn{
         width: 360px;
         padding-top: 10px;
         margin-left: 200px;
@@ -1027,7 +1032,7 @@
             text-align: center; 
             margin-left: 10px;           
         }
-        .p7-shopbtn-left{
+        .index_p7_shopBtn-left{
             background-color: #fff;
             border: 2px solid $darkBlue;
             .fa-chevron-left{
@@ -1042,7 +1047,7 @@
             line-height: 60px;
         }         
     }
-    .p7-bigpic{
+    .index_p7_bigPic{
         width: 30vw;
         height: 45vh;
         min-width: 140px;
@@ -1059,19 +1064,19 @@
         }
     }
     @include rwd(920px){
-        .p7-shopinfo{
+        .index_p7_shopInfo{
             width: 50%;
             left: 15%;
             .p7-servicehour, .p7-dayoff, .p7-tel{
                 margin-top: 5px;
             }            
         }
-        .p7-shopbtn{
+        .index_p7_shopBtn{
             margin-left: 100px;
         }
     }
     @include rwd(767px){
-        .p7-bigpic{
+        .index_p7_bigPic{
             width: 25vw;
             height: auto;
             top: 50%;
@@ -1082,13 +1087,13 @@
         h1{
             margin-top: 60px;
         }
-        .p7-info{
+        .index_p7_info{
             display: flex;
             flex-direction: column-reverse;
             position: relative;
             top:20%;
             z-index: 1;
-            .p7-shopinfo{
+            .index_p7_shopInfo{
                 left: 0%;
                 width: 80%;
                 margin: 0 auto;
@@ -1096,11 +1101,11 @@
                     font-size: 18px;
                 }
             }
-            .p7-shopbtn{
+            .index_p7_shopBtn{
                 display: none;
             }            
         }
-        .p7-bigpic{ 
+        .index_p7_bigPic{ 
             width: 150px;
             height: auto;          
             top: 22%;
