@@ -410,16 +410,16 @@ body{
 }
 
 // ---------- 忘記密碼送出彈窗 ------------
-// .loginpopBG{
-// 	@include popUpBg();
-// }
-// .type2{
-// 	@include popUp_oneBtn();
-// 	position: relative; //預設是fixed
-// }
-// .mainBtn{
-// 	@include btn(); //按鈕樣式
-// }
+.loginpopBG{
+	@include popUpBg();
+}
+.type2{
+	@include popUp_oneBtn();
+	position: relative; //預設是fixed
+}
+.mainBtn{
+	@include btn(); //按鈕樣式
+}
 
 
 // ---------- 使用者輸入資訊錯誤反饋 ------------
@@ -446,6 +446,7 @@ body{
     display: inline-block;
     margin: 0;
     color: #ffffff;
+    padding: 2px;
   }
   
   .loginError > div{

@@ -6,8 +6,12 @@
   top: 0px;
   left: 0;
   padding-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   z-index: 900;
 }
 
@@ -23,6 +27,8 @@
 }
 
 .navbar .navbar-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin-right: 10px;
 }
@@ -41,7 +47,8 @@
 }
 
 * {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   font-family: "微軟正黑體";
   color: #bb866a;
 }
@@ -67,8 +74,12 @@ img {
 /* ========== 訂單處理階段 ========== */
 .checkout_stage {
   border: 1px solid red;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin-bottom: 30px;
 }
 
@@ -132,6 +143,8 @@ img {
 /* ========== 訂單內容 ========== */
 .checkout_orderContent {
   border: 1px solid red;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -173,6 +186,8 @@ img {
 
 .checkout_item {
   border-bottom: 2px dashed #cba89a;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   font-size: 0;
   padding: 15px 0;
@@ -185,6 +200,8 @@ img {
 }
 
 .checkout_customizationItem {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -192,7 +209,9 @@ img {
   border: solid 2px #172852;
   background-color: #ffffff;
   border-radius: 5px;
-  align-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
   width: 20px;
   height: 20px;
   cursor: pointer;
@@ -209,9 +228,15 @@ img {
 
 .checkout_itemName {
   width: 165px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   padding-right: 5px;
 }
 
@@ -227,13 +252,19 @@ img {
   border-radius: 15px;
   background-color: #bb866a;
   color: #ffffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   width: 120px;
   height: 30px;
   font-size: 12px;
   font-weight: bold;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   cursor: pointer;
 }
 
@@ -244,7 +275,11 @@ img {
 
 .checkout_detail {
   margin-top: 15px;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -265,6 +300,8 @@ img {
 .checkout_quantity {
   width: 142px;
   margin: auto 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -337,7 +374,8 @@ img {
   position: absolute;
   top: calc((20px - 3px) / 2);
   left: 0;
-  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
 }
 
 .checkout_rightD {
@@ -348,6 +386,7 @@ img {
   position: absolute;
   top: calc((20px - 3px) / 2);
   left: 0;
-  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
 }
 /*# sourceMappingURL=checkout.css.map */

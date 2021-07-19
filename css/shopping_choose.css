@@ -18,6 +18,7 @@ time, mark, audio, video {
   font-size: 100%;
   font: bold inherit '微軟正黑體';
   vertical-align: baseline;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   text-decoration: none;
   font-weight: 900;
@@ -59,8 +60,12 @@ table {
   top: 0px;
   left: 0;
   padding-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   z-index: 900;
 }
 
@@ -76,6 +81,8 @@ table {
 }
 
 .navbar .navbar-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin-right: 10px;
 }
@@ -94,7 +101,8 @@ table {
 }
 
 * {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   /* border: solid 1px red; */
 }
 
@@ -107,23 +115,36 @@ body {
 .main {
   width: 100%;
   margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-flow: column wrap;
-  transform: translateY(100px);
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-transform: translateY(100px);
+          transform: translateY(100px);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .select_area {
   margin: 30px;
   width: 50%;
   height: 50vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-evenly;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 
 .items:nth-child(1) {
   width: 70px;
   height: 100%;
+  -webkit-transition: all .5s;
   transition: all .5s;
   background-image: url("../images/shopping_choose/11.png");
   background-repeat: no-repeat;
@@ -142,12 +163,14 @@ body {
 .items:nth-child(2) {
   width: 70px;
   height: 100%;
+  -webkit-transition: all .5s;
   transition: all .5s;
   background-image: url("../images/shopping_choose/22.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  transform: translateY(20px);
+  -webkit-transform: translateY(20px);
+          transform: translateY(20px);
 }
 
 .items:nth-child(2):hover {
@@ -160,6 +183,7 @@ body {
 .items:nth-child(3) {
   width: 70px;
   height: 100%;
+  -webkit-transition: all .5s;
   transition: all .5s;
   background-image: url("../images/shopping_choose/33.png");
   background-repeat: no-repeat;
@@ -178,13 +202,15 @@ body {
 .items:nth-child(4) {
   width: 70px;
   height: 100%;
+  -webkit-transition: all .5s;
   transition: all .5s;
   background-image: url("../images/shopping_choose/44.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   opacity: .7;
-  transform: translateY(-20px);
+  -webkit-transform: translateY(-20px);
+          transform: translateY(-20px);
 }
 
 .items:nth-child(4):hover {
@@ -197,13 +223,15 @@ body {
 .items:nth-child(5) {
   width: 70px;
   height: 100%;
+  -webkit-transition: all .5s;
   transition: all .5s;
   background-image: url("../images/shopping_choose/55.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   opacity: .7;
-  transform: translateY(20px);
+  -webkit-transform: translateY(20px);
+          transform: translateY(20px);
 }
 
 .items:nth-child(5):hover {
@@ -216,6 +244,7 @@ body {
 .items:nth-child(6) {
   width: 70px;
   height: 100%;
+  -webkit-transition: all .5s;
   transition: all .5s;
   background-image: url("../images/shopping_choose/66.png");
   background-repeat: no-repeat;
@@ -234,13 +263,15 @@ body {
 .items:nth-child(7) {
   width: 70px;
   height: 100%;
+  -webkit-transition: all .5s;
   transition: all .5s;
   background-image: url("../images/shopping_choose/77.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   opacity: .7;
-  transform: translateY(-20px);
+  -webkit-transform: translateY(-20px);
+          transform: translateY(-20px);
 }
 
 .items:nth-child(7):hover {
@@ -253,13 +284,15 @@ body {
 .text {
   width: 600px;
   text-align: center;
+  -webkit-transition: all .5s;
   transition: all .5s;
   color: #172852;
   font-weight: bold;
 }
 
 .text p {
-  transform: translateY(-15px);
+  -webkit-transform: translateY(-15px);
+          transform: translateY(-15px);
 }
 
 /* RWD */
@@ -272,8 +305,13 @@ body {
     height: 100vh;
     margin: 0;
     padding: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
   .items:nth-child(1) {
     margin: 0;
@@ -292,7 +330,8 @@ body {
     padding: 0;
     width: 100%;
     height: calc(100% / 7);
-    transform: translateY(0);
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
   .items:nth-child(2):hover {
     width: 100%;
@@ -305,7 +344,8 @@ body {
     padding: 0;
     width: 100%;
     height: calc(100% / 7);
-    transform: translateY(0);
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
   .items:nth-child(3):hover {
     width: 100%;
@@ -318,7 +358,8 @@ body {
     padding: 0;
     width: 100%;
     height: calc(100% / 7);
-    transform: translateY(0);
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
   .items:nth-child(4):hover {
     width: 100%;
@@ -331,7 +372,8 @@ body {
     padding: 0;
     width: 100%;
     height: calc(100% / 7);
-    transform: translateY(0);
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
   .items:nth-child(5):hover {
     width: 100%;
@@ -344,7 +386,8 @@ body {
     padding: 0;
     width: 100%;
     height: calc(100% / 7);
-    transform: translateY(0);
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
   .items:nth-child(6):hover {
     width: 100%;
@@ -357,7 +400,8 @@ body {
     padding: 0;
     width: 100%;
     height: calc(100% / 7);
-    transform: translateY(0);
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
   .items:nth-child(7):hover {
     width: 100%;

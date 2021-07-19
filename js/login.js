@@ -1,6 +1,7 @@
 $(document).ready(function(){
     getRandom();        //驗證碼亂數
     $('.eye2').hide();  //開眼睛看密碼
+    $('.loginpopBG').hide();   //送出密碼彈窗關閉
 
     // 登入與註冊的頁面轉換=====================
     $('#signup_form').hide();
@@ -247,12 +248,18 @@ $(document).ready(function(){
         
         // 如果點擊的是傳送新密碼，則跳出視窗
         if( $(this).hasClass('loginSendPSW')){
-            
+            $('.loginpopBG').show();
+            console.log('show');
         };
 
     });
 
-    // 清空表單反饋
+    // 忘記密碼 關閉彈窗---------------
+    $('.loginSendPSWclose').click(function(){
+        $('.loginpopBG').hide();
+    });
+
+    // 清空表單反饋-------------------
     function memberFormError0(){
         $('.loginError').css('display','none');
         $('.loginError').children('p').text('資料格式不正確');

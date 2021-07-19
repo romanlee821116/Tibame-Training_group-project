@@ -1,6 +1,4 @@
 @charset "UTF-8";
-<<<<<<< HEAD
-=======
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -20,6 +18,7 @@ time, mark, audio, video {
   font-size: 100%;
   font: bold inherit '微軟正黑體';
   vertical-align: baseline;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   text-decoration: none;
   font-weight: 900;
@@ -54,20 +53,6 @@ table {
   border-spacing: 0;
 }
 
-* {
-  box-sizing: border-box;
-  font-family: '微軟正黑體';
-  font-weight: bold;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  background-image: url(../images/member/member_bg.png);
-  background-repeat: no-repeat;
-}
-
->>>>>>> dev
 .navbar {
   width: 100%;
   height: 100px;
@@ -75,8 +60,12 @@ body {
   top: 0px;
   left: 0;
   padding-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   z-index: 900;
 }
 
@@ -92,6 +81,8 @@ body {
 }
 
 .navbar .navbar-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin-right: 10px;
 }
@@ -112,6 +103,8 @@ body {
 .footer {
   width: 100%;
   max-width: 1400px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   position: relative;
   margin: 50px auto 0 auto;
@@ -133,8 +126,12 @@ body {
 .footer .footer-left {
   width: 40%;
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding-left: 200px;
 }
 
@@ -144,15 +141,23 @@ body {
 }
 
 .footer .footer-left .footer-policy {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   min-width: 200px;
 }
 
 .footer .footer-right {
   width: 60%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding-right: 100px;
 }
 
@@ -169,13 +174,22 @@ body {
 
 @media (max-width: 767px) {
   .footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   .footer .footer-left {
     padding-left: 0px;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     margin-bottom: 10px;
   }
   .footer .footer-right {
@@ -250,12 +264,22 @@ body {
 }
 
 /* 預設文字色彩 */
+::-webkit-input-placeholder {
+  color: #cba89a;
+}
+:-ms-input-placeholder {
+  color: #cba89a;
+}
+::-ms-input-placeholder {
+  color: #cba89a;
+}
 ::placeholder {
   color: #cba89a;
 }
 
 /* 滑動效果 */
 .choosenBar2, .memberTitle h4 {
+  -webkit-transition: all 0.8s cubic-bezier(0.6, 0, 0.4, 1);
   transition: all 0.8s cubic-bezier(0.6, 0, 0.4, 1);
 }
 
@@ -277,13 +301,17 @@ body {
 
 /* 標題 */
 .memberTitle {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin-bottom: 10px;
 }
 
 .memberTitle h4 {
   /* border: 1px solid orange; */
-  flex: 0 0 20%;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 20%;
+          flex: 0 0 20%;
   text-align: center;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
@@ -329,7 +357,8 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 .memberAll > div {
@@ -510,6 +539,8 @@ body {
 
 /* 收貨進度=================== */
 .memberProgressAll {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   border: solid 2px #cba89a;
   margin-top: -2px;
@@ -523,8 +554,12 @@ body {
 
 /* 進度條 */
 .memberProgressAll div .memberProgressDot {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding-bottom: 5px;
   padding-top: 5px;
 }
@@ -570,8 +605,12 @@ body {
 .memberProgressAll div .memberProgressWord {
   color: #a3a3a3;
   /* border: 1px solid blue; */
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   margin-left: -25px;
   margin-right: -25px;
 }
@@ -582,8 +621,13 @@ body {
 
 /* 再次購買 */
 .memberProgressAll > div:last-child {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .memberProgressAll div .memberBuyAgain {
@@ -596,14 +640,9 @@ body {
   background-color: #bb866a;
   color: #f0ebe9;
   border: none;
-<<<<<<< HEAD
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
-=======
-  align-self: center;
-  margin-right: 28px;
->>>>>>> dev
   margin-top: 5px;
   cursor: pointer;
 }
@@ -623,14 +662,9 @@ body {
   background-color: #172852;
   color: #f0ebe9;
   border: none;
-<<<<<<< HEAD
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
-=======
-  align-self: center;
-  margin-right: 28px;
->>>>>>> dev
   cursor: pointer;
 }
 
@@ -699,9 +733,11 @@ body {
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   border-radius: 10px;
-  box-shadow: 0px 10px 32px 0 rgba(23, 40, 82, 0.6);
+  -webkit-box-shadow: 0px 10px 32px 0 rgba(23, 40, 82, 0.6);
+          box-shadow: 0px 10px 32px 0 rgba(23, 40, 82, 0.6);
   background-color: #fff;
   z-index: 920;
 }
