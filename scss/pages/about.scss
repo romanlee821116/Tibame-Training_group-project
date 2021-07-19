@@ -13,16 +13,16 @@ h1,h2,h3,h4,h5,p{
 }
 body{
     overflow-x: hidden;
-
+    position: relative;
 }
-.wrap{
+.about_wrap{
     width: 100vw;
     height: 100vh;    
 }
-#scene1{
-    width: 100%;
+#about_scene1{
+    width: 100vw;
     height: 100%;    
-    // border: 5px solid green;
+    border: 5px solid green;
     position: relative;    
     overflow: hidden;
     .about_street{
@@ -98,7 +98,9 @@ body{
         opacity: 1;
         width: 100%;
         height: 100%;
-        position: relative;
+        position: absolute;
+        top: 0;
+        left: 0;
         z-index: -1;
         img{
             width: 100%;
@@ -107,36 +109,30 @@ body{
     }     
 }
 
+.about_shopInfo{
+    width: 80%;
+    max-width: 550px;
+    height: auto;
+    padding: 40px;
+    color: $darkBlue;
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);    
+    background-color: rgba(255, 255,255, .9);
+    font-weight: 900;
+    line-height: 30px;
+    font-size: 16px;
+    @include boxShadow(); 
+    display: none;  
+}
 
 .about_history{
-    width: 550px;
-    height: auto;
-    padding: 40px;
-    color: $darkBlue;
-    position: absolute;
-    right:45%;
-    bottom: -30%;
-    background-color: rgba(255, 255,255, .9);
-    font-weight: 900;
-    line-height: 30px;
-    font-size: 16px;
-    @include boxShadow();
+    left: 10%; 
 }
 .about_brand{
-    width: 550px;
-    height: auto;
-    padding: 40px;
-    color: $darkBlue;
-    position: absolute;
-    left:45%;
-    bottom: -150%;
-    background-color: rgba(255, 255,255, .9);
-    font-weight: 900;
-    line-height: 30px;
-    font-size: 16px;
-    @include boxShadow();   
+    right: 10%;
 }
-#scene2{
+#about_scene2{
     position: relative;
     width: 100%;
     height: 100%;
@@ -152,14 +148,14 @@ body{
         transform: transalte(-50%,-50%);
     }
 }
-.scene2_transition{
-    width: 100%;
-    height: 400px;
-    background: url('');
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
+// .about_scene2_transition{
+//     width: 100%;
+//     height: 400px;
+//     background: url('');
+//     background-position: center;
+//     background-size: cover;
+//     background-repeat: no-repeat;
+// }
 .about_island{
     transform: scaleY(.7);
 }
@@ -186,8 +182,8 @@ body{
 }  
 .about_taiwan_end{
     opacity: 1;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     z-index: -1;
     position: relative;
     img{
@@ -196,10 +192,13 @@ body{
     }
 } 
 .about_place1, .about_place2, .about_place3, .about_place4{
-    position: absolute;
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
     width: 600px;
     height: 220px;
     padding: 40px 50px;
+    display: none;
     h1{
         width: 150px;
         height: 40px;
@@ -247,19 +246,15 @@ body{
 
 .about_place1{
     left: 30%;
-    bottom: -750%;
 }
 .about_place2{
     right: 5%;
-    bottom: -900%;
 }
 .about_place3{
     right: 20%;
-    bottom: -1100%;
 }
 .about_place4{
     left: 25%;
-    bottom: -1300%;
 }
 
 // 
@@ -327,7 +322,3 @@ body{
         }
     }
 }
-
-
-
-

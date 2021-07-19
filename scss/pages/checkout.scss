@@ -12,7 +12,7 @@
 
 body{
   margin: 0;
-  background-image: url("../../images/bg.png");
+  background-image: url("../../images/cart/bg.png");
   background-size: cover;
   background-attachment: fixed;
 }
@@ -21,7 +21,7 @@ img{
   width: 100%;
 }
 
-.container{
+.checkout_container{
   border: 1px solid black;
   width: 80%;
   max-width: 1200px;
@@ -32,145 +32,319 @@ img{
 /* ========== 訂單處理階段 ========== */
 
 
-.stage{
-  /* border: 1px solid red; */
+.checkout_stage{
+  border: 1px solid red;
   display: flex;
   justify-content: center;
+  margin-bottom: 30px;
 }
 
-.step{
-  /* border: 1px solid blue; */
-  width: 70px;
+.checkout_step{
+  border: 1px solid blue;
   text-align: center;
   font-size: 0;
 }
 
-.stepImg{
-  /* border: 1px solid green; */
-  width: 30px;
-  font-size: 0;
-  display: inline-block;
-}
-
-.step > p{
-  /* border: 1px solid green; */
-  margin: 0;
-  font-size: 1rem;
+.checkout_payment > div, .checkout_confirm > div{
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
   font-weight: bold;
+  display: inline-block;
+  color: #a3a3a3;
+  border: solid 3px #a3a3a3;
+  background-color: #ffffff;
+  border-radius: 50%;
+  line-height: 35px;
 }
 
-.payment{
+.checkout_payment > p, .checkout_confirm > p{
+  // border: 1px solid green;
+  margin: 5px 0 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: #a3a3a3;
+}
+
+.checkout_payment{
   margin: 0 100px;
 }
 
+// ========== 購物車階段 ==========
+.checkout_orderData > div{
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  font-weight: bold;
+  display: inline-block;
+  color: #f7c242;
+  border: solid 3px #f7c242;
+  background-color: #ffffff;
+  border-radius: 50%;
+  line-height: 35px;
+}
+
+.checkout_orderData > p{
+  // border: 1px solid green;
+  margin: 5px 0 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: #f7c242;
+}
+
+
+
+
 /* ========== 訂單內容大標 ========== */
 
-.orderTitle{
-  /* border: 1px solid red; */
+.checkout_orderTitle{
+  // border: 1px solid red;
   font-size: 24px;
   font-weight: bold;
-  margin: 20px 0;
+  margin-bottom: 20px;
 }
 
 /* ========== 訂單內容 ========== */
 
-.orderContent{
+.checkout_orderContent{
   border: 1px solid red;
   display: flex;
 }
 
 /* ========== 左邊 ========== */
 
-.left{
-  border: 1px solid blue;
+.checkout_left{
+  // border: 1px solid blue;
   width: 60%;
 }
 
 /* 標題 */
-.contentTitle{
-  border-bottom: 2px solid #172852;
-  padding: 10px 0 10px 30px;
+.checkout_contentTitle{
+  // border: 1px solid red;
+  padding: 10px 0 10px 40px;
   font-size: 0;
-  margin-bottom: 20px;
 }
 
-.contentTitle > p{
-  /* border: 1px solid green; */
+.checkout_contentTitle > p{
+  // border: 1px solid green;
   display: inline-block;
   margin: 0;
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 16px;
+  color: #cba89a;
 }
 
-.contentTitle > p:nth-child(1){
+.checkout_contentTitle > p:nth-child(1){
   width: 50%;
 }
 
-.contentTitle > p:nth-child(2), .contentTitle > p:nth-child(3){
+.checkout_contentTitle > p:nth-child(2), .checkout_contentTitle > p:nth-child(3){
   width: 25%;
 }
 
 /* 商品細項 */
 
-.list{
-  border: 1px solid red;
+.checkout_list{
+  border-top: 2px solid #cba89a;
+  border-bottom: 2px solid #cba89a;
   list-style: none;
-  padding: 0;
+  padding: 0 0 5px;
+  margin: 0;
 }
 
-.item{
-  border: 1px solid green;
+.checkout_item{
+  border-bottom: 2px dashed #cba89a;
   display: flex;
   font-size: 0;
+  padding: 15px 0;
 }
 
-.check{
-  /* border: 1px solid blue; */
-  width: 15px;
-  margin: auto;
+.checkout_customization{
+  border-bottom: 2px dashed #cba89a;
+  font-size: 0;
+  padding: 15px 0;
 }
 
-.check > input{
-  margin: 0;
+.checkout_customizationItem{
+  // border: 1px solid purple;
+  display: flex;
 }
 
-.itemImg{
-  /* border: 1px solid red; */
-  width: 100px;
-  margin: 0 10px;
-}
-
-.itemName{
-  /* border: 1px solid red; */
-  width: 180px;
-  margin: auto;
-}
-
-.itemName > p{
-  margin: 0;
-  font-size: 1rem;
-}
-
-.quantity{
-  /* border: 1px solid green; */
-  width: 150px;
-  margin: auto;
-}
-
-.quantity > input[type="text"]{
-  width: 30px;
-}
-
-.unitPrice{
-  /* border: 1px solid red; */
-  width: 100px;
-  margin: auto;
-  font-size: 1rem;
-}
-
-.delete{
-  /* border: 1px solid blue ; */
+.checkout_itemCB{
+  border: solid 2px #172852;
+  background-color: #ffffff;
+  border-radius: 5px;
+  align-self: center;
   width: 20px;
-  margin: auto 10px auto auto;
+  height: 20px;
+  cursor: pointer;
 }
 
+.checkout_choose{
+  background-color: #172852;
+}
+
+.checkout_itemImg{
+  // border: 1px solid red; 
+  width: 100px;
+  margin: 0 20px;
+}
+
+.checkout_itemName{
+  // border: 1px solid red;
+  width: 165px;
+  // margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-right: 5px;
+}
+
+.checkout_itemName > p{
+  margin: 0;
+  font-size: 16px;
+  color: #172852;
+  font-weight: bold;
+  word-break: break-word;
+}
+
+.checkout_detailBtn{
+  border-radius: 15px;
+  background-color: #bb866a;
+  color: #ffffff;
+  display: flex;
+  width: 120px;
+  height: 30px;
+  font-size: 12px;
+  font-weight: bold;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* ========== 禮盒明細 ========== */
+
+.checkout_detailBorder{
+  border: 1px solid blue;
+  // display: none;
+}
+
+.checkout_detail{
+  // border: 1px solid red;
+  margin-top: 15px;
+  justify-content: center;
+  display: flex;
+}
+
+.checkout_detailItem{
+  // border: 1px solid green;
+  color: #172852;
+  margin-right: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: left;
+}
+
+.checkout_detailQuantity{
+  // border: 1px solid orange;
+  font-size: 14px;
+  font-weight: bold;
+  color: #172852;
+}
+
+
+
+
+
+.checkout_quantity{
+  // border: 1px solid green;
+  width: 142px;
+  margin: auto 0;
+  display: flex;
+  
+}
+
+.checkout_quantity > input[type="text"]{
+  border: 1.5px solid #172852;
+  border-right: none;
+  border-left: none;
+  font-weight: bold;
+  font-size: 16.5px;
+  width: 50px;
+  height: 25px;
+  color: #172852;
+  text-align: center;
+  outline: none;
+}
+
+.checkout_quantity > button:nth-child(1){
+  border: 1.5px solid #172852;
+  background-color: #c4c4c4;
+  color: #172852;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 0;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  padding: 0px 1px 2px;
+}
+
+.checkout_quantity > button:nth-child(3){
+  border: 1.5px solid #172852;
+  background-color: #ffffff;
+  color: #172852;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 0;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  padding: 0px 1px 2px;
+}
+
+.checkout_unitPrice{
+  // border: 1px solid red;
+  width: 110px;
+  margin: auto;
+  font-size: 14px;
+  font-weight: bold;
+  color: #172852;
+}
+
+.checkout_unitPrice > span{
+  font-size: 16px;
+  font-weight: bold;
+  color: #172852;
+}
+
+.checkout_delete{
+  // border: 1px solid blue;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  position: relative;
+  margin: auto;
+}
+
+.checkout_leftD{
+  background-color: #172852;
+  border-radius: 5px;
+  width: 20px;
+  height: 3px;
+  position: absolute;
+  top: calc((20px - 3px) / 2);
+  left: 0;
+  transform: rotate(45deg);
+}
+
+.checkout_rightD{
+  background-color: #172852;
+  border-radius: 5px;
+  width: 20px;
+  height: 3px;
+  position: absolute;
+  top: calc((20px - 3px) / 2);
+  left: 0;
+  transform: rotate(135deg);
+}

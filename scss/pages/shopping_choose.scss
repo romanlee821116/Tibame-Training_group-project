@@ -1,4 +1,5 @@
 @import '../mixin/mixin';
+@import '../base/reset.scss';
 .navbar {
     @include navbar();
 }

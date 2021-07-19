@@ -128,11 +128,9 @@ $(function () {
         `,        
     })
 
-   
-
-
+   // ==================================== new Vue ==================================== 
     new Vue({
-        el: '#wrap',
+        el: '#about_wrap',
         data: {
             people_list: [
                 { src: '../images/about/people1.png', class: 'about_people1 people' },
@@ -174,9 +172,8 @@ $(function () {
     })
 
 
-    //=======================jquery=======================
+    // ==================================== ScrollMagic ==================================== 
     
-
     var controller = new ScrollMagic.Controller();
     var sticky = new TimelineMax();
     sticky.to('.about_street', 0, { scale: '1%',top: '-0px' })
@@ -189,7 +186,7 @@ $(function () {
         triggerElement: '#keypoint1',
         triggerHook: 0,
         duration: '500%',
-    }).setPin('#scene1').setTween(sticky).addIndicators().addTo(controller);
+    }).setPin('#about_scene1').setTween(sticky).addIndicators().addTo(controller);
 // ==========================================================================
     var stickyMap = new TimelineMax();
     stickyMap.to('.about_taiwan', 0, { scale: '1%' })
@@ -204,46 +201,107 @@ $(function () {
             .to('.about_island', 4, {top: '-40%', left:'0%'})
             .to('.about_island', 2, {top: '0%', left:'0%'})
             .to('.about_taiwan', 5, { scale: '1', top: '0%', left: '0%'}) 
-            .to('.about_taiwan', 3, { opacity: '0' }) 
-        
+            .to('.about_taiwan', 3, { opacity: '0' })         
     
     new ScrollMagic.Scene({
         triggerElement: '#keypoint2',
         triggerHook: 0,
         duration: '1000%',
-    }).setPin('#scene2').setTween(stickyMap).addIndicators().addTo(controller);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    }).setPin('#about_scene2').setTween(stickyMap).addIndicators().addTo(controller);
+    // =======================================================================
+    navbar();
+    popUpShow()
 })
+
+function navbar(){
+    var scrolltop = new Array();
+    var index = 0;
+    scrolltop[0] = 0;
+    $(document).scroll(function(){
+        index++;
+        scrolltop[index] = $(document).scrollTop();
+        if (scrolltop[index] > scrolltop[index - 1]) {
+            $('.navbar').fadeOut()
+        } else {
+            $('.navbar').fadeIn()
+        };
+    })
+}
+
+function scroll(){
+    $(document).on('scroll resize', function(){
+        $('.about_street').css({
+            width: '100%',
+            height: '100%',
+        })
+    })
+}
+
+//滑鼠滾動判斷navbar出現/消失
+function popUpShow(){
+    var scrolltop = new Array();
+    var index = 0;
+    let winHeight = $(window).height();
+    scrolltop[0] = 0;
+    
+    
+    $(document).scroll(function(){
+
+       
+
+
+        index++;
+        scrolltop[index] = $(document).scrollTop();
+        let indexHeight = (scrolltop[index]/winHeight).toFixed(2)
+        console.log(indexHeight);
+
+        if (scrolltop[index] > scrolltop[index - 1]) {
+            // console.log(scrolltop[index].toFixed(0));
+        } else {
+            // console.log(scrolltop[index].toFixed(0));
+        };
+
+        //介紹一
+        if(indexHeight > .75 && scrolltop[index] < 1.85){
+            $('.about_history').fadeIn();
+        }else{
+            $('.about_history').fadeOut();
+        }
+
+        //介紹二
+        if(indexHeight > 2.3 && indexHeight < 3.4){
+            $('.about_brand').fadeIn();
+        }else{
+            $('.about_brand').fadeOut();
+        }
+
+        //小農一
+        if(indexHeight > 7.25 && indexHeight < 8.25){
+            $('.about_place1').fadeIn();
+        }else{
+            $('.about_place1').fadeOut();
+        }
+
+        //小農二
+        if(indexHeight > 9.04 && indexHeight < 10.04){
+            $('.about_place2').fadeIn();
+        }else{
+            $('.about_place2').fadeOut();
+        }
+
+        //小農三
+        if(indexHeight > 11.02 && indexHeight < 12.02){
+            $('.about_place3').fadeIn();
+        }else{
+            $('.about_place3').fadeOut();
+        }
+
+        //小農四
+        if(indexHeight > 13 && indexHeight < 13.8){
+            $('.about_place4').fadeIn();
+        }else{
+            $('.about_place4').fadeOut();
+        }
+        
+    })
+}
