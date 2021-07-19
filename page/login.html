@@ -8,6 +8,7 @@
     <!-- fontawesome -->
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <script src='../js/login.js'></script>
     <title>log in / sign up</title>
 </head>
@@ -44,38 +45,64 @@
                 </div>
                 <!-- 登入註冊============================= -->
                 <div class="loginForm">
-                    <form id='loginFormPage' method="POST" action="">
+                    <form id='loginFormPage' action="">
                         <div class='loginWrapper'>
                             <div id="loginArrow"></div>
-                            <input type="text" placeholder="請輸入您的信箱">
-                            <input id='password' class='psw' type="password" placeholder="請輸入密碼"><i class="eye eye1 fas fa-eye"></i>
+                            <div class='loginErrorWrap'>
+                                <input class='loginAccount' type="text" placeholder="請輸入您的信箱">
+                                <member-error></member-error>
+                            </div>
+                            <div class='loginErrorWrap'>
+                                <input id='loginPassword' class='psw' type="password" placeholder="請輸入密碼"><i class="eye eye1 fas fa-eye"></i>
+                                <member-error></member-error>
+                            </div>
+                            
                             <div id='loginKeep'>
                                 <input type="checkbox" id='loginKeeplog'>
                                 <label for="loginKeeplog">保持登入</label>
                                 <span id='loginForgetPsw'>忘記密碼？</span>
                             </div>
-                            <input type="password" placeholder="請再次輸入密碼"><i class="eye eye2 fas fa-eye"></i>
-                            <div class='loginGender'>
-                                <input name='loginGender' type="radio" id="male" value='male'>
-                                <label for="male">男性</label>
-                                <input name='loginGender' type="radio" id="female" value='male'>
-                                <label for="female">女性</label>
-                                <input name='loginGender' type="radio" id="other" value='male'>
-                                <label for="other">第三性</label>
+                            <div class='loginErrorWrap'>
+                                <input id='loginPassword2' type="password" placeholder="請再次輸入密碼"><i class="eye eye2 fas fa-eye"></i>
+                                <member-error></member-error>
                             </div>
-                            <input type="text" placeholder="請輸入您的姓名">
-                            <input type="text" placeholder="請輸入您的連絡電話">
-                            <select class="select1" id="縣市1"></select>
-                            <select class="select2" id="鄉鎮市區1"></select>
-                            <input type="text" placeholder="地址">
+                            <div class='loginErrorWrap'>
+                                <div class='loginGender'>
+                                    <input name='loginGender' type="radio" id="loginMale" value='male'>
+                                    <label for="male">男性</label>
+                                    <input name='loginGender' type="radio" id="loginFemale" value='male'>
+                                    <label for="female">女性</label>
+                                    <input name='loginGender' type="radio" id="loginOther" value='male'>
+                                    <label for="other">第三性</label>
+                                </div>
+                                <member-error></member-error>
+                            </div>
+                            <div class='loginErrorWrap'>
+                                <input id='loginName' type="text" placeholder="請輸入您的姓名">
+                                <member-error></member-error>
+                            </div>
+                            <div class='loginErrorWrap'>
+                                <input id='loginPhone' type="text" placeholder="請輸入您的連絡電話">
+                                <member-error></member-error>
+                            </div>
+                            <div class='loginErrorAddress loginErrorWrap'>
+                                <select class="loginSelect1" id="縣市1"></select>
+                                <select class="loginSelect2" id="鄉鎮市區1"></select>
+                                <input id="loginAddress" type="text" placeholder="地址">
+                                <member-error></member-error>
+                            </div>
+                            
 
                             <div class='loginCode'>
-                                <input id='loginCodeEnter' type="text" placeholder="請輸入右方數字">
+                                <div class='loginErrorWrap'>
+                                    <input class='loginCodeEnter' type="text" placeholder="請輸入右方數字">
+                                    <member-error></member-error>
+                                </div>
                                 <span class='loginCodeNew'></span>
                                 <i class="fas fa-sync-alt loginRefresh"></i>
                             </div>
                         </div>
-                        <button class='loginButton' type="submit">
+                        <button class='loginButton' type='submit'>
                             <span>
                             登入
                             <br/>
@@ -92,21 +119,41 @@
                     <div class='loginChoosenBar2'></div>
                 </div>
                 <div class="forgetForm">
-                    <form id='forgetFormPage' method="POST" action="">
+                    <form id='forgetFormPage' action="">
                         <div id="loginArrow2"></div>
-                        <input type="text" placeholder="請輸入您的信箱">
+                        <div class='loginErrorWrap'>
+                            <input class='loginAccount' type="text" placeholder="請輸入您的信箱">
+                            <member-error></member-error>
+                        </div>
                         <div class='loginCode'>
-                            <input id='loginCodeEnter' type="text" placeholder="請輸入右方數字">
+                            <div class='loginErrorWrap'>
+                                <input class='loginCodeEnter' type="text" placeholder="請輸入右方數字">
+                                <member-error></member-error>
+                            </div>
+                                
                             <span class='loginCodeNew'></span>
                             <i class="fas fa-sync-alt loginRefresh"></i>
                         </div>
-                        <button class='loginButton' type="submit">
+                        <button class='loginButton loginSendPSW' type="submit">
                             傳送新密碼
                         </button>
                         <div class='loginBack'>
                             <i class="fas fa-angle-left"></i>
-                            <span>返回登入</span>
+                            <span>返回登入</span>                       
                         </div>
+                        <!-- 彈出跳窗 -->
+                        <div class='loginpopBG'> 
+                            <div class="type2 取什麼都行">
+                                    <img src="../images/customized/customized_step_a.png" alt="">
+                                    <h2>新密碼已寄出</h2>
+                                    <p>系統已發送新密碼至您的指定信箱</p>
+                                    <div>
+                                        <a href="#" class='mainBtn 取什麼都行'>返回</a>
+                                    </div>
+                            </div>
+                        </div>
+                        <!-- 跳窗結束 -->
+
                     </form>
                 </div>
             </div>
@@ -116,7 +163,18 @@
 
 
     <script>
-    
+        Vue.component('member-error',{
+            template:`
+            <div class="loginError">
+                <p>資料格式不正確</p>
+                <div></div>
+            </div>
+            `,
+        }),
+
+        new Vue({
+            el: '.loginAll',
+        })
 
     </script>
     
