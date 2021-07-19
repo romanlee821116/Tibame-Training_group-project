@@ -1,8 +1,4 @@
 @charset "UTF-8";
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -22,8 +18,7 @@ time, mark, audio, video {
   font-size: 100%;
   font: bold inherit '微軟正黑體';
   vertical-align: baseline;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   text-decoration: none;
   font-weight: 900;
 }
@@ -70,21 +65,23 @@ h1, h2, h3, h4, h5, p {
 
 body {
   overflow-x: hidden;
+  position: relative;
 }
 
-.wrap {
+.about_wrap {
   width: 100vw;
   height: 100vh;
 }
 
-#scene1 {
-  width: 100%;
+#about_scene1 {
+  width: 100vw;
   height: 100%;
+  border: 5px solid green;
   position: relative;
   overflow: hidden;
 }
 
-#scene1 .about_street {
+#about_scene1 .about_street {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -96,55 +93,41 @@ body {
   background-repeat: no-repeat;
 }
 
-#scene1 .people {
+#about_scene1 .people {
   position: absolute;
   height: 200px;
 }
 
-#scene1 .about_people1 {
+#about_scene1 .about_people1 {
   bottom: 50px;
   right: 35vw;
 }
 
-#scene1 .about_people2 {
+#about_scene1 .about_people2 {
   bottom: 40px;
   right: 30vw;
-  -webkit-animation: walk2 28s linear infinite;
-          animation: walk2 28s linear infinite;
+  animation: walk2 28s linear infinite;
 }
 
-#scene1 .about_people3 {
+#about_scene1 .about_people3 {
   bottom: 55px;
   right: 25vw;
 }
 
-#scene1 .about_people4 {
+#about_scene1 .about_people4 {
   bottom: 30px;
   right: 50vw;
-  -webkit-animation: walk1 30s linear infinite;
-          animation: walk1 30s linear infinite;
+  animation: walk1 30s linear infinite;
 }
 
-#scene1 .about_people5 {
+#about_scene1 .about_people5 {
   bottom: 60px;
   right: 85vw;
 }
 
-#scene1 .about_people6 {
+#about_scene1 .about_people6 {
   bottom: 40px;
-  -webkit-animation: bike 15s linear infinite;
-          animation: bike 15s linear infinite;
-}
-
-@-webkit-keyframes bike {
-  0% {
-    right: -10vw;
-    bottom: 40px;
-  }
-  100% {
-    right: 110vw;
-    bottom: 40px;
-  }
+  animation: bike 15s linear infinite;
 }
 
 @keyframes bike {
@@ -155,33 +138,6 @@ body {
   100% {
     right: 110vw;
     bottom: 40px;
-  }
-}
-
-@-webkit-keyframes walk1 {
-  0% {
-    right: 60vw;
-  }
-  8% {
-    opacity: 1;
-  }
-  10% {
-    opacity: 0;
-  }
-  20% {
-    opacity: 1;
-  }
-  58% {
-    opacity: 1;
-  }
-  60% {
-    opacity: 0;
-  }
-  70% {
-    opacity: 1;
-  }
-  100% {
-    right: -10vw;
   }
 }
 
@@ -212,33 +168,6 @@ body {
   }
 }
 
-@-webkit-keyframes walk2 {
-  0% {
-    right: 30vw;
-  }
-  8% {
-    opacity: 1;
-  }
-  10% {
-    opacity: 0;
-  }
-  20% {
-    opacity: 1;
-  }
-  58% {
-    opacity: 1;
-  }
-  60% {
-    opacity: 0;
-  }
-  70% {
-    opacity: 1;
-  }
-  100% {
-    right: 110vw;
-  }
-}
-
 @keyframes walk2 {
   0% {
     right: 30vw;
@@ -266,76 +195,61 @@ body {
   }
 }
 
-#scene1 .about_street_end {
+#about_scene1 .about_street_end {
   opacity: 1;
   width: 100%;
   height: 100%;
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
   z-index: -1;
 }
 
-#scene1 .about_street_end img {
+#about_scene1 .about_street_end img {
   width: 100%;
   height: 100%;
 }
 
-.about_history {
-  width: 550px;
+.about_shopInfo {
+  width: 80%;
+  max-width: 550px;
   height: auto;
   padding: 40px;
   color: #172852;
-  position: absolute;
-  right: 45%;
-  bottom: -30%;
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
   background-color: rgba(255, 255, 255, 0.9);
   font-weight: 900;
   line-height: 30px;
   font-size: 16px;
-  -webkit-box-shadow: 0px 0px 10px #333;
-          box-shadow: 0px 0px 10px #333;
+  box-shadow: 0px 0px 20px #555;
+  display: none;
+}
+
+.about_history {
+  left: 10%;
 }
 
 .about_brand {
-  width: 550px;
-  height: auto;
-  padding: 40px;
-  color: #172852;
-  position: absolute;
-  left: 45%;
-  bottom: -150%;
-  background-color: rgba(255, 255, 255, 0.9);
-  font-weight: 900;
-  line-height: 30px;
-  font-size: 16px;
-  -webkit-box-shadow: 0px 0px 20px #333;
-          box-shadow: 0px 0px 20px #333;
+  right: 10%;
 }
 
-#scene2 {
+#about_scene2 {
   position: relative;
   width: 100%;
   height: 100%;
   overflow: hidden;
 }
 
-#scene2 .about_farmerDetail_box {
+#about_scene2 .about_farmerDetail_box {
   width: 70%;
   height: 60%;
   background-color: #ccc;
   position: fixed;
   top: 50%;
   left: 50%;
-  -webkit-transform: transalte(-50%, -50%);
-          transform: transalte(-50%, -50%);
-}
-
-.scene2_transition {
-  width: 100%;
-  height: 400px;
-  background: url("");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  transform: transalte(-50%, -50%);
 }
 
 .about_island {
@@ -365,8 +279,8 @@ body {
 
 .about_taiwan_end {
   opacity: 1;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   z-index: -1;
   position: relative;
 }
@@ -377,10 +291,13 @@ body {
 }
 
 .about_place1, .about_place2, .about_place3, .about_place4 {
-  position: absolute;
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
   width: 600px;
   height: 220px;
   padding: 40px 50px;
+  display: none;
 }
 
 .about_place1 h1, .about_place2 h1, .about_place3 h1, .about_place4 h1 {
@@ -402,6 +319,7 @@ body {
   width: 100%;
   background-color: rgba(255, 255, 255, 0.9);
   padding: 30px 20px;
+  box-shadow: 0px 0px 20px #555;
 }
 
 .about_place1 div h3, .about_place2 div h3, .about_place3 div h3, .about_place4 div h3 {
@@ -431,33 +349,28 @@ body {
 
 .about_place1 {
   left: 30%;
-  bottom: -750%;
 }
 
 .about_place2 {
   right: 5%;
-  bottom: -900%;
 }
 
 .about_place3 {
   right: 20%;
-  bottom: -1100%;
 }
 
 .about_place4 {
   left: 25%;
-  bottom: -1300%;
 }
 
 .about_farmerDetail_bg {
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.4);
   z-index: 999;
   position: fixed;
   top: 0;
   left: 0;
-  display: none;
 }
 
 .about_farmerDetail_bg .about_farmerDetail_box {
@@ -468,8 +381,7 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   border-radius: 20px;
   padding: 50px;
 }
@@ -483,7 +395,7 @@ body {
 .about_farmerDetail_bg .about_farmerDetail_box .about_farmerDetail_title {
   display: inline-block;
   height: 180px;
-  width: 200px;
+  width: 220px;
   position: relative;
   margin-left: 20px;
 }
@@ -505,11 +417,12 @@ body {
   bottom: 0;
 }
 
-.about_farmerDetail_bg .about_farmerDetail_box i {
+.about_farmerDetail_bg .about_farmerDetail_box i.fa-times {
   font-size: 24px;
   position: absolute;
   top: 20px;
   right: 30px;
+  cursor: pointer;
 }
 
 .about_farmerDetail_bg .about_farmerDetail_box .about_farmerDetail_text {

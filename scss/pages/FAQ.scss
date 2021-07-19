@@ -1,4 +1,5 @@
 @import '../mixin/mixin';
+@import '../base/reset.scss';
 
 .navbar{
 @include navbar();
@@ -8,6 +9,7 @@
   box-sizing: border-box;
   font-family: "微軟正黑體";
   color: #bb866a;
+  font-size: 900;
 }
 
 body{
@@ -25,17 +27,17 @@ img{
   /* border: 1px solid black; */
   width: 80%;
   max-width: 1200px;
-  margin: 100px auto;
+  margin: 0px auto;
 }
 
 /* ========== 標題 ========== */
 
 #FAQ_QA{
-  border-bottom: 3px solid #bb866a;
+  border-bottom: 2px solid #bb866a;
   border-radius: 1.5px;
   display: inline-block;
   margin: 0;
-  padding-bottom: 3px;
+  padding-bottom: 5px;
   font-size: 14px;
 }
 

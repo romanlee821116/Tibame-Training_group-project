@@ -1,4 +1,5 @@
 @import '../mixin/mixin';
+@import '../base/reset.scss';
 
 *{
     margin: 0;
@@ -18,12 +19,9 @@ $barColor: #f7c242;
 $barBgc: #cba89a;
 
 
-
-
-
 html,body{
     width: 100%;
-    background-image: url('../images/bg.png');
+    background-image: url('../images/customized/bg.png');
     background-size: cover;
     overflow: hidden;
     // border: 5px solid orange;
@@ -33,6 +31,7 @@ html,body{
 
 .navbar{
     @include navbar();
+    position: fixed;
 }
 .mediacolumn{
     @include media
@@ -66,8 +65,9 @@ html,body{
     top: 80%;    
 }
 
-.cus-wrap{
-    width: 80%;
+.cus_wrap{
+    // width: 80%;
+    width: 90%;
     max-width: 1400px;
     margin: 0 auto;
     position: relative;
@@ -79,7 +79,7 @@ html,body{
     height: 200px;
     position: fixed;
     top: 50%;
-    right: 50px;
+    right: 30px;
     transform: translateY(-50%);
     // border: 1px solid red;
     display: flex;
@@ -127,40 +127,55 @@ html,body{
 
 
 
-.cus-step1-txt{
-    text-align: center;
-    padding-top: 50px;
-    // border: 1px solid blue;
-    width: 90%;
-    position: relative;
-    h3{
-        color: $fontColor;
-        font-size: 24px;
-        margin-bottom: 15px;
-    }
-    h2{
-        color: $fontColor;
-        font-size: 32px;
-    }
-}
-.cus-step1{
+
+.cus_step1{
     // border: 1px solid red;
     width: 100%;
     height: 100vh;
     display: flex;
     flex-direction: column;
-    align-items: center;    
+    align-items: center;
+    .cus_step1_txt{
+        text-align: center;
+        padding-top: 50px;
+        // border: 1px solid blue;
+        width: 90%;
+        position: relative;
+        h3{
+            color: $fontColor;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        h2{
+            color: $fontColor;
+            font-size: 32px;
+        }
+        @include rwd(800px){
+            margin-top: 80px;
+        }
+        @include rwd(575px){
+            padding-top: 80px;
+            width: 100%;
+            h3{
+                font-size: 20px;
+            }
+            h2{
+                font-size: 24px;
+            }
+        }
+    }    
 }
 .selectedBox{
     opacity: .5;    
 }
-.cus-step1-box{
+.cus_step1-box{
     display: grid;  
     grid-template-columns: 1fr 1fr 1fr;  
     text-align: center;
     width: 100%;
     position: relative;
-    top: 10%;
+    top: 40%;
+    transform: translateY(-50%);
     justify-items: center;
     align-items: center;
     // border: 1px solid blue;
@@ -191,6 +206,45 @@ html,body{
         width: 240px;
         height: auto;
     }
+    @include rwd(960px){
+        .box1{
+            width: 120px;
+            height: auto;
+        }
+        .box2, .box3{
+            width: 180px;
+            height: auto;
+        }
+    }   
+    @include rwd(767px){
+        width: 100%;
+        .box1{
+            width: 100px;
+            height: auto;
+        }
+        .box2, .box3{
+            width: 150px;
+            height: auto;
+        }
+    }
+    @include rwd(575px){
+        display: flex;
+        flex-direction: column;
+        .cus_box_container{
+            margin-bottom: 20px;
+            p{
+                margin-top: 5px;
+            }
+        }
+        .box1{
+            width: 80px;
+            height: auto;
+        }
+        .box2, .box3{
+            width: 120px;
+            height: auto;
+        }
+    }
     
 }
 
@@ -212,6 +266,14 @@ html,body{
         color: #fff;
         border: 3px solid $btnHover;
     }
+    @include rwd(575px){
+        width: 80px;
+        font-size: 12px;
+        border-radius: 15px;
+        i{
+            display: none;
+        }
+    }
 }
 .custom_btn_p1Next{
     position: absolute;
@@ -227,7 +289,7 @@ html,body{
     cursor: pointer;
     position: relative;
 }
-.cus-box img{
+.cus_box img{
     width: 100%;
     height: 100%;
     filter: brightness(70%);
@@ -243,8 +305,8 @@ html,body{
         box-shadow: 0px 0px 10px 5px #f7c242;
     }
 }
-.four-grid{
-    background-image: url('../images/four_boxBody.png');
+.four_grid{
+    background-image: url('../images/customized/four_boxBody.png');
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -260,8 +322,8 @@ html,body{
     transition: .3s;
     padding: 15px;
 } 
-.six-grid{
-    background-image: url('../images/six_boxBody.png');
+.six_grid{
+    background-image: url('../images/customized/six_boxBody.png');
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -275,8 +337,8 @@ html,body{
     transition: .3s;
     padding: 15px;
 }
-.nine-grid{
-    background-image: url('../images/nine_boxBody.png');
+.nine_grid{
+    background-image: url('../images/customized/nine_boxBody.png');
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -295,7 +357,7 @@ html,body{
 }
 
 // 第二步
-.cus-step2{
+.cus_step2{
     // border: 1px solid rgb(255, 0, 234);
     display: flex;
     flex-direction: column;
@@ -303,7 +365,7 @@ html,body{
     position: relative;
     min-height: 100vh;
 
-    .cus-step2-txt{
+    .cus_step2_txt{
         text-align: center;
         padding-top: 50px;
         width: 90%;
@@ -317,6 +379,19 @@ html,body{
         h2{
             color: $fontColor;
             font-size: 32px;
+        }
+        @include rwd(800px){
+            margin-top: 80px;
+        }
+        @include rwd(575px){
+            padding-top: 80px;
+            width: 100%;
+            h3{
+                font-size: 20px;
+            }
+            h2{
+                font-size: 24px;
+            }
         }
     }
     
@@ -360,19 +435,31 @@ html,body{
             margin-left: 10px;
         }
     }
-    .cus-product-category a{
-        display: inline-block;
-        padding: 5px 10px;
-        width: 90px;
-        border-radius: 20px;
-        border: 3px solid $fontColor;
-        background-color: #fff;    
-        color: $fontColor;
-        text-align: center;
-        margin: 50px 5px;
-        &:hover{
-            background-color: $fontColor;    
-            color: #fff;
+    .cus_product_category {
+        a{
+            display: inline-block;
+            padding: 5px 10px;
+            width: 90px;
+            border-radius: 20px;
+            border: 3px solid $fontColor;
+            background-color: #fff;    
+            color: $fontColor;
+            text-align: center;
+            margin: 50px 5px;
+            &:hover{
+                background-color: $fontColor;    
+                color: #fff;
+            }
+        }
+        @include rwd(800px){
+            width: 100%;
+            margin-top: 10px;
+            text-align: center;
+            a{
+                margin: 10px 2.5px;
+                width: 85px;
+                font-size: 14px;
+            }
         }
     } 
     .selected_item{
@@ -387,30 +474,41 @@ html,body{
 
     // 產品區
     $itemWidth : 180px;
-    .cus-product-contianer{
+    $rdwWidth : 160px; 
+    .cus_product_contianer{
         display: grid;
         grid-gap: 10px;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-        grid-auto-rows: auto;
-        // border: 1px solid blue;
+        grid-auto-rows: auto;        
         width: 100%;
+        @include rwd(1000px){
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+        @include rwd(800px){
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+        @include rwd(600px){
+            grid-template-columns: 1fr 1fr;
+        }
         .cus-item{
             margin-top: 20px;
             // border: 1px solid red;
             position: relative;
             text-align: center;
             margin-bottom: 50px;
-            .cus-item-img{
+            .cus_item_img{
                 width: $itemWidth;
-                // border: 1px solid green;
                 margin: 0 auto;
-                position: relative;                
+                position: relative;
+                @include rwd(400px){
+                    width: $rdwWidth;
+                }                
             }
-            .cus-item-img img{
+            .cus_item_img img{
                 width: 100%;
                 height: auto;
             }
-            .cus-item-txt{
+            .cus_item_txt{
                 position: absolute;
                 left: 50%;
                 top: $itemWidth;
@@ -428,7 +526,7 @@ html,body{
                    top: 30px;
                    transform: translateX(-50%);
                 }
-                a.cus-add{
+                a.cus_add{
                     position: absolute;
                     left: 50%;
                     bottom: 10px;
@@ -439,12 +537,17 @@ html,body{
                         font-size: 22px;
                     }
                 }
+                @include rwd(400px){
+                    transform: translate(-50%, -60px);
+                }
             }
         }        
     }
     //產品確認清單
     .custom_itemConfirm_List{
-        width: 400px;
+        width: 35%;
+        max-width: 400px;
+        min-width: 320px;
         // border: 1px solid red;
         background-color: #fff;
         margin: 100px auto;
@@ -472,12 +575,13 @@ html,body{
             p{
                 color:$btnBgc;
                 font-weight: 900;
+                margin-left: 5px;
             }
         }
 
     }
     //確認按鈕
-    .cus-confirm-btn{
+    .cus_confirm_btn{
         // border: 1px solid green;
         width: 100%;
         position: absolute;
@@ -490,7 +594,7 @@ html,body{
         
     }
     //客製禮卡需不需要按鈕
-    .cus-giftcard-btn{
+    .cus_giftcard_btn{
         // border: 1px solid green;
         width: 100%;
         position: absolute;
@@ -504,11 +608,15 @@ html,body{
             margin: 0 15%;
         }
     }
-    $boxHeight : 200px;
-    $boxWidth : 345px;
+    // $boxHeight : 200px;
+    // $boxWidth : 345px;
+    $boxHeight : 160px;
+    $boxWidth : 280px;
+    $rwdBoxWidth: 240px;
+    $rwdBoxHeight: 140px;
     
     //禮物蓋子
-    .cus-giftbox{
+    .cus_giftbox{
         width: $boxWidth;
         height: $boxHeight;
         position: absolute;
@@ -517,16 +625,15 @@ html,body{
         transform: translate(-50%, 0%);
         // border: 3px solid blue; 
         opacity: 0;
-        background: url('..//images/nine_boxHead.png');
+        background: url('../images/customized/nine_boxHead.png');
         background-size: contain;
         background-position: center;
         background-repeat: no-repeat;
     }
     //選擇袋子或卡片
-    .cus-bag-card{
+    .cus_bag_card{
         width: $boxWidth;
-        // height: 150px;
-        height: 210px;
+        height: $boxHeight;
         border: 3px solid green;
         position: absolute;
         bottom: -210px;
@@ -534,6 +641,10 @@ html,body{
         transform: translate(-50%, 0%);
         transition: .5s;
         display: none;
+        @include rwd(976px){
+            width: $rwdBoxWidth;
+            height: $rwdBoxHeight
+        }
         .choose-card, .choose-bag{
             width: 100%;
             height: 100%;
@@ -567,18 +678,21 @@ html,body{
             top: 0;
             left: 0;
             display: none;
+            // position: relative;
         }
         .card2{
             top: 30px;
             left: -50px;
             // border: 5px solid rgb(255, 0, 179);
             display: none;
+            // position: relative;
         }
         .card3{
             top: 30px;
             left: 50px;
             // border: 5px solid rgb(255, 0, 179);
             display: none;
+            // position: relative;
         }
     }
     //選擇禮卡按鈕
@@ -693,7 +807,7 @@ html,body{
         transform: translateX(-50%);
         display: none;
         justify-content: space-between;    
-        .cus-cardConfirm-nextstep{
+        .cus_cardConfirm_nextstep{
             &::before{
                 content: '添加到購物車';
                 position: absolute;
@@ -714,28 +828,32 @@ html,body{
     border: 3px solid #a3a3a3;
 }
 .custom_bag{
-    width: 400px;
-    height: 300px;
+    // width: 400px;
+    width: 45%;
+    max-width: 400px;
+    height: 22vh;
+    max-height: 300px;
     position: absolute;
     left: 50%;
     bottom: -50%;
-    background: url('../images/testBag.png');
+    background: url('../images/customized/testBag.png');
     background-position: center;
     background-size: 120% cover;
     transition: 2s;
     // display: none;
     transform: translate(-50%, 50%); 
 }
-// .custom_popUp_template, .custom_popUp_cart{
-//     // @include popUpBg();
-// }
 .custom_popUp{
     @include popUp_oneBtn();
+    display: none;
 }
 .custom_cart{
     @include popUp_twoBtn();
+    display: none;
 }
 
 .custom_popUp_bg{
     @include popUpBg();
+    display: none;
 }
+

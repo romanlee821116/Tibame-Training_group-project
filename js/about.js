@@ -1,29 +1,91 @@
 $(function () {
-
-    
+    // place0
     Vue.component('place0', {
         data(){
             return{
-                content:'place1'
+                content:'place1',
+                isHide: true,
             }
         },
         methods: {
-            close(){
-                $('.about_farmerDetail_bg').fadeOut();
-                this.$emit('BoxType',this.content);
-                console.log('第一個組件content回傳'+this.content);
-            }
+           hidden: function(){
+               this.$emit('hidden')
+           }
         },
         template:`
-        <div class='about_farmerDetail_bg'>
+        <div class='about_farmerDetail_bg' >
             <div class='about_farmerDetail_box'>
                 <img src="../images/about/farmer1.jpg" alt="">
+                <div class='about_farmerDetail_title'>
+                    <h2>台灣與歐盟的雙重標章</h2>
+                    <h3>苗栗 - 吉光有機草莓園</h3>
+                    <p>吉光有機農園 - 謝其吉</p>
+                </div> 
+                <i class="fas fa-times" @click.prevent='hidden'></i>                
+                <div class='about_farmerDetail_text'>
+                    因兩、三歲的侄兒常跑到田裡摘草莓吃，讓吉光有機農園負責人謝其吉決心朝無毒栽培發展，使用無農藥栽培管理技術，除了取得台灣有機驗證外，更取得歐盟最高規格Ecocert有機認證。<br>
+                    <br>
+                    小春堂所提供的草莓物料來源皆來自吉光有機農園，我們相信，讓消費者、栽種農民雙方都得到充分保障下才能提供最好的商品。
+                </div>
+            </div>
+        </div>
+        `,        
+    })
+    // place1
+    Vue.component('place1', {
+        data(){
+            return{
+                content:'place1',
+                isHide: true,
+            }
+        },
+        methods: {
+           hidden: function(){
+               this.$emit('hidden')
+           }
+        },
+        template:`
+        <div class='about_farmerDetail_bg' >
+            <div class='about_farmerDetail_box'>
+                <img src="../images/about/farmer2.jpg" alt="">
+                <div class='about_farmerDetail_title'>
+                    <h2>台灣第一家有機芒果農</h2>
+                    <h3>台南 - 瑞林有機農場</h3>
+                    <p>瑞林有機農場 - 李順序</p>
+                </div> 
+                <i class="fas fa-times" @click.prevent='hidden'></i>                
+                <div class='about_farmerDetail_text'>
+                    「要用好的心態跟芒果說話，它會聽的到，就會乖乖長大。」瑞林有機農場不使用任何農藥與化學肥料，李順序夫婦抱著「惜福」的心態，用心對待每棵芒果樹，雖然辛苦換得的收入不多，但卻得到心靈上的富足。<br>
+                    <br>
+                    小春堂與瑞林有機農場合作，同樣秉持所有商品不額外添加任何化學物料，提供最天然的物料給每位消費者。
+                </div>
+            </div>
+        </div>
+        `,        
+    })
+    // place2
+    Vue.component('place2', {
+        data(){
+            return{
+                content:'place1',
+                isHide: true,
+            }
+        },
+        methods: {
+           hidden: function(){
+               this.$emit('hidden')
+           }
+        },
+        template:`
+        <div class='about_farmerDetail_bg' >
+            <div class='about_farmerDetail_box'>
+                <img src="../images/about/farmer3.jpg" alt="">
                 <div class='about_farmerDetail_title'>
                     <h2>讓老鷹再次高飛</h2>
                     <h3>屏東 - 老鷹紅豆</h3>
                     <p>友善老鷹農法農友 - 林清源</p>
                 </div> 
-                <i class="fas fa-times" @click='close'></i>
+                <i class="fas fa-times" @click.prevent='hidden'></i>                
                 <div class='about_farmerDetail_text'>
                     2013年，屏科大鳥類研究人員發現少數農友使用農藥以防鳥害，老鷹誤食被毒死的小鳥而間接死亡。在研究團隊努力下，農友採用機械波種、自然熟成、安全管理方式種植，以保護台灣老鷹生態及土地環境的永續健全，並在2016以「老鷹紅豆」品牌成為東港鎮農會銷售產品之一。<br>
                     <br>
@@ -31,36 +93,44 @@ $(function () {
                 </div>
             </div>
         </div>
-        `,
+        `,        
     })
-
-    Vue.component('place1', {
-        methods: {
-            close(){
-                $('.about_farmerDetail_bg').fadeOut();
+    // place3
+    Vue.component('place3', {
+        data(){
+            return{
+                content:'place1',
+                isHide: true,
             }
         },
+        methods: {
+           hidden: function(){
+               this.$emit('hidden')
+           }
+        },
         template:`
-        <div class='about_farmerDetail_bg'>
+        <div class='about_farmerDetail_bg' >
             <div class='about_farmerDetail_box'>
-                <img src="../images/about/farmer2.jpg" alt="">
+                <img src="../images/about/farmer4.jpg" alt="">
                 <div class='about_farmerDetail_title'>
-                    <h2>這是一棵樹</h2>
-                    <h3>屏東 - 老鷹紅豆</h3>
-                    <p>友善老鷹農法農友 - 林清源</p>
+                    <h2>全國稻米三冠王</h2>
+                    <h3>台東 - 池上米</h3>
+                    <p>池上鄉農會 - 池上米</p>
                 </div> 
-                <i class="fas fa-times" @click='close'></i>
+                <i class="fas fa-times" @click.prevent='hidden'></i>                
                 <div class='about_farmerDetail_text'>
-                    這是一棵樹這是一棵樹這是一棵樹這是一棵樹這是一棵樹這是一棵樹
+                    池上鄉是全國唯一實行稻米分級收購制度的鄉鎮，由池上鄉農會及米糧商共同建立，依據稻穀的品質向契作農民收購，讓多付出心力的稻農得到相對的回饋。此外，池上鄉農會也首創稻米農藥檢測制度，讓消費者不僅吃的美味，也吃得安心健康。<br>
+                    <br>
+                    小春堂選用池上鄉農會的三冠米，以最好的品質，打造最美味的產品。
                 </div>
             </div>
         </div>
-        `,
+        `,        
     })
 
-
+   // ==================================== new Vue ==================================== 
     new Vue({
-        el: '#wrap',
+        el: '#about_wrap',
         data: {
             people_list: [
                 { src: '../images/about/people1.png', class: 'about_people1 people' },
@@ -82,27 +152,28 @@ $(function () {
                 {place:'taiwanPlace about_place3', country:'屏東', title:'讓老鷹再次高飛 - 老鷹紅豆', content:'小春堂提供的所有紅豆物料皆購自於東港鎮農會之老鷹紅豆，在提供優良產品的同時也為台灣的土地盡一份心力。',fruit:'about_card3'},
                 {place:'taiwanPlace about_place4', country:'台東', title:'全國稻米三冠王 - 池上米', content:'小春堂選用池上鄉農會的三冠米，以最好的品質，打造最美味的產品',fruit:'about_card4'},
             ],
-            content: 'place0',            
+            content: 'place0',  
+            boxDisplay: false,          
         },
         methods: {
             showBox: function(index){
-                console.log(index); 
-                // let next = `place${index+1}`              
-                // this.content= next;
-                $('.about_farmerDetail_bg').fadeIn()                
-                console.log(this.content);
+                this.boxDisplay = true;
+                this.content='place'+(index);
+                console.log("目前place="+this.content);
             },
             changeBox(item){
                 console.log('changeBox');
                 this.content=item;
+            },
+            hiddenBox: function(){
+                this.boxDisplay = false;
             }
         },
     })
 
 
-    //=======================jquery=======================
+    // ==================================== ScrollMagic ==================================== 
     
-
     var controller = new ScrollMagic.Controller();
     var sticky = new TimelineMax();
     sticky.to('.about_street', 0, { scale: '1%',top: '-0px' })
@@ -115,7 +186,7 @@ $(function () {
         triggerElement: '#keypoint1',
         triggerHook: 0,
         duration: '500%',
-    }).setPin('#scene1').setTween(sticky).addIndicators().addTo(controller);
+    }).setPin('#about_scene1').setTween(sticky).addIndicators().addTo(controller);
 // ==========================================================================
     var stickyMap = new TimelineMax();
     stickyMap.to('.about_taiwan', 0, { scale: '1%' })
@@ -130,46 +201,107 @@ $(function () {
             .to('.about_island', 4, {top: '-40%', left:'0%'})
             .to('.about_island', 2, {top: '0%', left:'0%'})
             .to('.about_taiwan', 5, { scale: '1', top: '0%', left: '0%'}) 
-            .to('.about_taiwan', 3, { opacity: '0' }) 
-        
+            .to('.about_taiwan', 3, { opacity: '0' })         
     
     new ScrollMagic.Scene({
         triggerElement: '#keypoint2',
         triggerHook: 0,
         duration: '1000%',
-    }).setPin('#scene2').setTween(stickyMap).addIndicators().addTo(controller);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    }).setPin('#about_scene2').setTween(stickyMap).addIndicators().addTo(controller);
+    // =======================================================================
+    navbar();
+    popUpShow()
 })
+
+function navbar(){
+    var scrolltop = new Array();
+    var index = 0;
+    scrolltop[0] = 0;
+    $(document).scroll(function(){
+        index++;
+        scrolltop[index] = $(document).scrollTop();
+        if (scrolltop[index] > scrolltop[index - 1]) {
+            $('.navbar').fadeOut()
+        } else {
+            $('.navbar').fadeIn()
+        };
+    })
+}
+
+function scroll(){
+    $(document).on('scroll resize', function(){
+        $('.about_street').css({
+            width: '100%',
+            height: '100%',
+        })
+    })
+}
+
+//滑鼠滾動判斷navbar出現/消失
+function popUpShow(){
+    var scrolltop = new Array();
+    var index = 0;
+    let winHeight = $(window).height();
+    scrolltop[0] = 0;
+    
+    
+    $(document).scroll(function(){
+
+       
+
+
+        index++;
+        scrolltop[index] = $(document).scrollTop();
+        let indexHeight = (scrolltop[index]/winHeight).toFixed(2)
+        console.log(indexHeight);
+
+        if (scrolltop[index] > scrolltop[index - 1]) {
+            // console.log(scrolltop[index].toFixed(0));
+        } else {
+            // console.log(scrolltop[index].toFixed(0));
+        };
+
+        //介紹一
+        if(indexHeight > .75 && scrolltop[index] < 1.85){
+            $('.about_history').fadeIn();
+        }else{
+            $('.about_history').fadeOut();
+        }
+
+        //介紹二
+        if(indexHeight > 2.3 && indexHeight < 3.4){
+            $('.about_brand').fadeIn();
+        }else{
+            $('.about_brand').fadeOut();
+        }
+
+        //小農一
+        if(indexHeight > 7.25 && indexHeight < 8.25){
+            $('.about_place1').fadeIn();
+        }else{
+            $('.about_place1').fadeOut();
+        }
+
+        //小農二
+        if(indexHeight > 9.04 && indexHeight < 10.04){
+            $('.about_place2').fadeIn();
+        }else{
+            $('.about_place2').fadeOut();
+        }
+
+        //小農三
+        if(indexHeight > 11.02 && indexHeight < 12.02){
+            $('.about_place3').fadeIn();
+        }else{
+            $('.about_place3').fadeOut();
+        }
+
+        //小農四
+        if(indexHeight > 13 && indexHeight < 13.8){
+            $('.about_place4').fadeIn();
+        }else{
+            $('.about_place4').fadeOut();
+        }
+        
+    })
+}

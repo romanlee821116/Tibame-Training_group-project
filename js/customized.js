@@ -1,4 +1,5 @@
-$(function(){
+$(function(){   
+
 
     Vue.component('checkBox',{
         template: `
@@ -36,7 +37,7 @@ $(function(){
     });
   
     let vm = new Vue({
-        el: '#cus-wrap',
+        el: '#cus_wrap',
         data: {           
             boxImg: [
                 {src: '../images/customized/four_boxBodyIn.png', class: 'box1',txt: '四格小資組合', price: '$480'},
@@ -95,17 +96,17 @@ $(function(){
             message: '',
             content: 'checkBox',
         },
-        methods: {                   
+        methods: {                               
             //第一步到第二步
             p1_to_p2(){
                 //若有選擇格子才執行
                 if($('.selected').length>0){
                     //第一屏收合
-                    $('.cus-step1').animate({
+                    $('.cus_step1').animate({
                         height: '0vh',
                     },800);
                     // 物件消失
-                    $('.cus-step1 > div').fadeOut();
+                    $('.cus_step1 > div').fadeOut();
                     //body overflow打開
                     $('body').css('overflowY','auto');
                     //節點替換
@@ -119,18 +120,22 @@ $(function(){
             },
             //第二步回第一步
             p2_to_p1(){
+                let winWidth = $(window).width();
                 $('.custom_btn_p1Next').fadeOut();
-                $('.cus-step1-box > div').css('opacity','1');
+                $('.cus_step1-box > div').css('opacity','1');
                 //把下一步按鈕的select取消
                 // $('.custom_btn').removeClass('selected');
-                $('.cus-box').removeClass('selected');
+                $('.cus_box').removeClass('selected');
                 //第一屏展開
-                $('.cus-step1').animate({
+                $('.cus_step1').animate({
                     height: '100vh',
                 },800);
                 //物件回來
-                $('.cus-step1-txt').fadeIn();
-                $('.cus-step1-box').fadeIn().css('display','grid');
+                $('.cus_step1_txt').fadeIn();
+                $('.cus_step1-box').fadeIn().css('display','grid');
+                if(winWidth <=575){
+                    $('.cus_step1-box').fadeIn().css('display','flex');
+                }
                 //body overflow關起來
                 $('body').css('overflowY','hidden');
                  //節點替換
@@ -156,28 +161,30 @@ $(function(){
     let item_list= [];
     let cardType=0;
     let icon_list=[];
+    let winWidth = $(window).width();
+  
     
 
     //判斷選到四格六格九格
-    $('.cus-step1-box > div').click(function(e){
+    $('.cus_step1-box > div').click(function(e){
         $('.custom_btn_p1Next').fadeIn();
-        $('.cus-step1-box > div').css('opacity','.5');
+        $('.cus_step1-box > div').css('opacity','.5');
         $(this).css('opacity','1');
-        $('.cus-box').removeClass('selected');
+        $('.cus_box').removeClass('selected');
         //選擇盒子尺寸
             let boxType = $(this).find('img').attr('class');
             if(boxType =='box1'){
                 boxSize = 4;
-                $('.cus-box').css('display','none');
-                $('.four-grid').css('display', 'grid').addClass('selected');
+                $('.cus_box').css('display','none');
+                $('.four_grid').css('display', 'grid').addClass('selected');
             }else if(boxType=='box2'){
                 boxSize = 6;
-                $('.cus-box').css('display','none');
-                $('.six-grid').css('display', 'grid').addClass('selected');
+                $('.cus_box').css('display','none');
+                $('.six_grid').css('display', 'grid').addClass('selected');
             }else{
                 boxSize = 9;
-                $('.cus-box').css('display','none');
-                $('.nine-grid').css('display', 'grid').addClass('selected');
+                $('.cus_box').css('display','none');
+                $('.nine_grid').css('display', 'grid').addClass('selected');
             }        
     })
 
@@ -190,14 +197,14 @@ $(function(){
     })    
     //hover到客製產品出現詳細資訊
     $('.cus-item').mouseover(function(e){
-        $(this).find('.cus-item-img').css('zIndex', '2');
-        $(this).find('.cus-item-txt').css({
+        $(this).find('.cus_item_img').css('zIndex', '2');
+        $(this).find('.cus_item_txt').css({
             display: 'block',
             zIndex: '1',
         });
     }).mouseleave(function(e){
-        $(this).find('.cus-item-img').css('zIndex', '0');
-        $(this).find('.cus-item-txt').css({
+        $(this).find('.cus_item_img').css('zIndex', '0');
+        $(this).find('.cus_item_txt').css({
             display: 'none',
             zIndex: '0'
         });
@@ -224,29 +231,29 @@ $(function(){
    
 
 //==================選擇內容下一步==================
-    $('.s2-nextstep').click(function(){
+    $('.s2_nextstep').click(function(){
         console.log($('.selected .haveItem').length);
         if($('.selected .haveItem').length==boxSize){
             //商品清單出現
             $('.custom_itemConfirm_List').fadeIn();
             //隱藏產品
-            $('.cus-product-contianer').fadeOut();
+            $('.cus_product_contianer').fadeOut();
             //隱藏分類
-            $('.cus-product-category').fadeOut();
+            $('.cus_product_category').fadeOut();
             //格子置中
-            $('.cus-box').css({
+            $('.cus_box').css({
                 transform: 'translate(0%, 30px)',
                 transition: '1s',
             });
             //商品全亮
             $('.selected .custom_gridBox').addClass('choosenBox');
             //確認按鈕出現
-            $('.cus-confirm-btn').css('display', 'flex');
+            $('.cus_confirm_btn').css('display', 'flex');
             //刪除原本上下一步按鈕
-            $('.s2-prestep').css('display', 'none');
-            $('.s2-nextstep').css('display', 'none');
-            // $('.cus-step2-txt>h3').css('display','none');
-            $('.cus-step2-txt>h2').text('確認禮盒內容');
+            $('.s2_prestep').css('display', 'none');
+            $('.s2_nextstep').css('display', 'none');
+            // $('.cus_step2_txt>h3').css('display','none');
+            $('.cus_step2_txt>h2').text('確認禮盒內容');
             //螢幕限高
             $('body').css({
                 // overflowY: 'hidden',
@@ -290,15 +297,15 @@ $(function(){
         }    
     })
 //==================內容確認返回上一步==================
-    $('.cus-confirm-prestep').click(function(){
+    $('.cus_confirm_prestep').click(function(){
         //刪除清單
         $('.custom_itemConfirm_List>div').remove();
         //顯示產品
-        $('.cus-product-contianer').fadeIn();
+        $('.cus_product_contianer').fadeIn();
         //顯示分類
-        $('.cus-product-category').fadeIn();
+        $('.cus_product_category').fadeIn();
         //格子回原位
-        $('.cus-box').css({
+        $('.cus_box').css({
             transform: 'translate(0%, 0%)',
             transition: '1s',
         });
@@ -307,17 +314,17 @@ $(function(){
         $('.custom_gridBox:nth-child(1)').addClass('choosenBox');        
        
         //確認按鈕消失
-        $('.cus-confirm-btn').css('display', 'none');
+        $('.cus_confirm_btn').css('display', 'none');
         //還原原本上下一步按鈕
-        $('.s2-prestep').css('display', 'block');
-        $('.s2-nextstep').css('display', 'block');
-        $('.cus-step2-txt>h3').text('第二步');
-        $('.cus-step2-txt>h2').text('選擇禮盒內容');
+        $('.s2_prestep').css('display', 'block');
+        $('.s2_nextstep').css('display', 'block');
+        $('.cus_step2_txt>h3').text('第二步');
+        $('.cus_step2_txt>h2').text('選擇禮盒內容');
         //取消螢幕限高
-        $('.cus-step1').animate({
+        $('.cus_step1').animate({
             height: '0vh',
         },800);
-        $('.cus-step1>div').css({
+        $('.cus_step1>div').css({
             display: 'none',
         });
         $('body').css({
@@ -326,49 +333,50 @@ $(function(){
 
     })
 //==================內容確認下一步==================
-    $('.cus-confirm-nextstep').click(function(){  
+    $('.cus_confirm_nextstep').click(function(){  
+        
         //固定Y軸
         $('body').css('overflow','hidden');    
         //清單消失
         $('.custom_itemConfirm_List').fadeOut();
          //卡片袋子出現
-        $('.cus-bag-card').fadeIn();
+        $('.cus_bag_card').fadeIn();
         //禮盒變小
-        $('.cus-box').css({
+        $('.cus_box').css({
             width: '130px',
             height: 'auto',
         });
         //蓋子掉下來
-        $('.cus-giftbox').animate({
-            top: '210px',
+        $('.cus_giftbox').animate({
+            top: '28%',
             opacity: '1',
         },1000);
         //文字隱藏
-        $('.cus-step2-txt').css('opacity','0');
+        $('.cus_step2_txt').css('opacity','0');
         //文字更換
-        $('.cus-step2-txt>h2').text('是否製作禮物卡?');
-        $('.cus-step2-txt>h3').text('第三步');
+        $('.cus_step2_txt>h2').text('是否製作禮物卡?');
+        $('.cus_step2_txt>h3').text('第三步');
         // 第三步文字先隱藏
-        $('.cus-step2-txt>h3').css('opacity','0');
+        $('.cus_step2_txt>h3').css('opacity','0');
         //按鈕隱藏
-        $('.cus-confirm-btn').fadeOut();
+        $('.cus_confirm_btn').fadeOut();
         
         //兩秒後觸發問要不要禮卡
         setTimeout(function(){            
             //盒子下降後消失
-            $('.cus-box').css({
+            $('.cus_box').css({
                 display: 'none',
             });
             //蓋子下降
-            $('.cus-giftbox').css({
+            $('.cus_giftbox').css({
                 top: '50%',
                 transform: 'translate(-50%, -50%)',
                 transition: '.5s',
             });
             //問要不要做卡片的title出現
-            $('.cus-step2-txt').css('opacity','1');
+            $('.cus_step2_txt').css('opacity','1');
             //問要不要做卡片的按鈕出現
-            $('.cus-giftcard-btn').css('display','flex').fadeIn();
+            $('.cus_giftcard_btn').css('display','flex').fadeIn();
         },1500);
         //節點替換
         $('.custom_sideNode_node:nth-child(5)').addClass('before_node');
@@ -376,31 +384,31 @@ $(function(){
         $('.custom_sideNode_frontBar').css('height','75%');
     });
     //hover不需要(結帳)
-    $('.cus-giftcard-stop').stop().mouseenter(function(){
+    $('.cus_giftcard_stop').stop().mouseenter(function(){
         $('.choose-bag').fadeIn();
-        $('.cus-bag-card').css('bottom','-5%');
+        $('.cus_bag_card').css('bottom','-5%');
     }).mouseleave(function(){
         $('.choose-bag').fadeOut();
-        $('.cus-bag-card').css('bottom','-100%');
+        $('.cus_bag_card').css('bottom','-100%');
     })
     //hover需要(卡片)
-    $('.cus-giftcard-nextstep').stop().mouseenter(function(){
+    $('.cus_giftcard_nextstep').stop().mouseenter(function(){
         $('.choose-card').fadeIn();
-        $('.cus-bag-card').css('bottom','-5%');
+        $('.cus_bag_card').css('bottom','-5%');
     }).mouseleave(function(){
         $('.choose-card').fadeOut();
-        $('.cus-bag-card').css('bottom','-100%');
+        $('.cus_bag_card').css('bottom','-100%');
     })
 // ==================是否製作卡片(結帳)==================
-    $('.cus-giftcard-stop').click(function(){
+    $('.cus_giftcard_stop').click(function(){
         //取消原本按鈕的hover事件
-        $('.cus-giftcard-nextstep').unbind('mouseenter mouseleave');
-        $('.cus-giftcard-stop').unbind('mouseenter mouseleave');
+        $('.cus_giftcard_nextstep').unbind('mouseenter mouseleave');
+        $('.cus_giftcard_stop').unbind('mouseenter mouseleave');
         // 標題消失
-        $('.cus-step2-txt').fadeOut();
-        $('.cus-giftcard-btn').fadeOut();
+        $('.cus_step2_txt').fadeOut();
+        $('.cus_giftcard_btn').fadeOut();
         $('.choose-bag').fadeIn();
-        $('.cus-bag-card').css({
+        $('.cus_bag_card').css({
             bottom: '50%',
             transform: 'translate(-50%, 50%)',
             transition: '2s',
@@ -413,69 +421,83 @@ $(function(){
 
 
 //==================是否製作卡片(需要卡片)==================
-    $('.cus-giftcard-nextstep').click(function(){
+    $('.cus_giftcard_nextstep').click(function(){
         // 改title文案
-        $('.cus-step2-txt>h2').text('選擇禮物卡樣式');
+        $('.cus_step2_txt>h2').text('選擇禮物卡樣式');
         //第三步文字出現
-        $('.cus-step2-txt>h3').css('opacity','1');
+        $('.cus_step2_txt>h3').css('opacity','1');
         //蓋子透明度變低
-        $('.cus-giftbox').css('opacity','.2');
+        $('.cus_giftbox').css('opacity','.2');
         //取消原本按鈕的hover事件
-        $('.cus-giftcard-nextstep').unbind('mouseenter mouseleave');
-        $('.cus-giftcard-stop').unbind('mouseenter mouseleave');
+        $('.cus_giftcard_nextstep').unbind('mouseenter mouseleave');
+        $('.cus_giftcard_stop').unbind('mouseenter mouseleave');
         //選擇按鈕消失
-        $('.cus-giftcard-btn').fadeOut();
+        $('.cus_giftcard_btn').fadeOut();
         //卡片進入
         $('.choose-card').fadeIn();
-        // $('.cus-bag-card').css('bottom','50%');
-        $('.cus-bag-card').css('bottom','45%');
+        // $('.cus_bag_card').css('bottom','50%');
+        $('.cus_bag_card').css('bottom','45%');
         //卡片移動到中間打開
         $('.card2').animate({
-            top: '220px',
-            left: '-300px',
+            // top: '220px',
+            top: '120%',
+            // left: '-300px',
+            left: '-60%'
         }, 1000);
         $('.card3').animate({
-            top: '220px',
-            left: '300px',
+            // top: '220px',
+            top: '120%',
+            // left: '300px',
+            left: '60%'
         }, 1000);
+        // if(winWidth<856){
+        //     $('.card2').animate({
+        //         top: '150px',
+        //         left: '-150px',
+        //     }, 1000);
+        //     $('.card3').animate({
+        //         top: '150px',
+        //         left: '150px',
+        //     }, 1000);
+        // }
         //選擇卡片按鈕出現
         setTimeout(function(){
             $('.custom_chooseCard_btn').css('display','flex');
         },1500);   
     })
 //==================卡片返回上一步==================
-    $('.custom-chooseCard-prep').click(function(){
+    $('.custom_chooseCard_prep').click(function(){
         $('.choosenCard').css('opacity','1');
         // title文案還原
-        $('.cus-step2-txt>h2').text('是否製作禮物卡?');
+        $('.cus_step2_txt>h2').text('是否製作禮物卡?');
         //第三步文字消失
-        $('.cus-step2-txt>h3').css('opacity','0');
+        $('.cus_step2_txt>h3').css('opacity','0');
         //蓋子透明度還原
-        $('.cus-giftbox').css('opacity','1');
+        $('.cus_giftbox').css('opacity','1');
         //綁定原本按鈕的hover事件
-        $('.cus-giftcard-nextstep').bind('mouseenter mouseleave');
-        $('.cus-giftcard-stop').bind('mouseenter mouseleave');
+        $('.cus_giftcard_nextstep').bind('mouseenter mouseleave');
+        $('.cus_giftcard_stop').bind('mouseenter mouseleave');
         //hover不需要(結帳)
-        $('.cus-giftcard-stop').mouseenter(function(){
+        $('.cus_giftcard_stop').mouseenter(function(){
             $('.choose-bag').fadeIn();
-            $('.cus-bag-card').css('bottom','-5%');
+            $('.cus_bag_card').css('bottom','-5%');
         }).mouseleave(function(){
             $('.choose-bag').fadeOut();
-            $('.cus-bag-card').css('bottom','-100%');
+            $('.cus_bag_card').css('bottom','-100%');
         })
         //hover需要(卡片)
-        $('.cus-giftcard-nextstep').mouseenter(function(){
+        $('.cus_giftcard_nextstep').mouseenter(function(){
             $('.choose-card').fadeIn();
-            $('.cus-bag-card').css('bottom','-5%');
+            $('.cus_bag_card').css('bottom','-5%');
         }).mouseleave(function(){
             $('.choose-card').fadeOut();
-            $('.cus-bag-card').css('bottom','-100%');
+            $('.cus_bag_card').css('bottom','-100%');
         })
         //選擇按鈕出現
-        $('.cus-giftcard-btn').fadeIn();
+        $('.cus_giftcard_btn').fadeIn();
         //卡片淡出
         $('.choose-card').fadeOut();
-        $('.cus-bag-card').animate({bottom:'-100%'}, 500);
+        $('.cus_bag_card').animate({bottom:'-100%'}, 500);
         //卡片校正回歸原味
         $('.card2').animate({
             top: '30px',
@@ -498,23 +520,23 @@ $(function(){
         $(this).addClass('choosenCard').css('opacity','1');;        
     })
 //==================卡片確認按鈕==================
-    $('.custom-chooseCard-next').click(function(){
+    $('.custom_chooseCard_next').click(function(){
         if($('.choosenCard').length!=0){
 
             let cardType = $('.choosenCard').attr('data-cardId');
             console.log(cardType);
             if(cardType==1){
-                $('.cus-bag-card > pre').css('backgroundColor','orange');
+                $('.cus_bag_card > pre').css('backgroundColor','orange');
             }else if(cardType==2){
-                $('.cus-bag-card > pre').css('backgroundColor','pink');
+                $('.cus_bag_card > pre').css('backgroundColor','pink');
             }else{
-                $('.cus-bag-card > pre').css('backgroundColor', '#999');
+                $('.cus_bag_card > pre').css('backgroundColor', '#999');
             }
 
             // 先取消所有卡片顯示
-            $('.cus-bag-card>img').css('display','none');
+            $('.cus_bag_card>img').css('display','none');
             //卡片外框置中
-            $('.cus-bag-card').css({
+            $('.cus_bag_card').css({
                 bottom: '40%', 
                 transform: 'translate(-50, 50%)',
             });
@@ -528,21 +550,21 @@ $(function(){
             });         
             //標題消失，更換標題內容
             setTimeout(function(){            
-                $('.cus-step2-txt').fadeOut();            
+                $('.cus_step2_txt').fadeOut();            
                 $('.custom_chooseCard_btn').fadeOut();
             },1000);
             //標題回歸，卡片左移，填寫欄位出現
             setTimeout(function(){
-                $('.cus-step2-txt>h3').text('第四步');
-                $('.cus-step2-txt>h2').text('填寫卡片內容');
+                $('.cus_step2_txt>h3').text('第四步');
+                $('.cus_step2_txt>h2').text('填寫卡片內容');
                 $('.custom_chooseCard_btn').css('display','flex').fadeIn();
-                $('.cus-step2-txt').fadeIn();
+                $('.cus_step2_txt').fadeIn();
                 $('.custom_card_textArea').fadeIn();
-                $('.cus-bag-card').css({
+                $('.cus_bag_card').css({
                     bottom: '50%',
                     left: '10%',
-                    width: '400px',
-                    height: '250px',
+                    width: '45%',
+                    height: '22vh',
                     transform: 'translate(0%, 50%)',
                 });
                 $('.choosenCard').css({
@@ -557,7 +579,7 @@ $(function(){
                     opacity: '0',
                     transition: '2s',
                 });
-                $('.cus-bag-card > pre').css({
+                $('.cus_bag_card > pre').css({
                     opacity: '1',
                     transform: 'scaleX(1)',
                     transition: '2s',
@@ -575,12 +597,12 @@ $(function(){
         }
     })
 // ==================第四步 : 填寫卡片內容上一步==================
-    $('.cus-cardcontent-prestep').click(function(){
+    $('.cus_cardcontent_prestep').click(function(){
         // 卡片出現
         $('.choose-card').removeClass('choosenCard');
         $('.choose-card').css({display:'block', opacity: '1', transition:'.5s'});
         //卡片外框置中
-        $('.cus-bag-card').css({
+        $('.cus_bag_card').css({
             width: '345px',
             height: '210px',
             bottom: '45%',
@@ -588,8 +610,8 @@ $(function(){
             transform: 'translate(-50%, 0%)',
         });
          // 改title文案
-         $('.cus-step2-txt>h2').text('選擇禮物卡樣式');
-         $('.cus-step2-txt>h3').text('第四步');
+         $('.cus_step2_txt>h2').text('選擇禮物卡樣式');
+         $('.cus_step2_txt>h3').text('第四步');
          //按鈕更換
          $('.cus-cardcontent-btn').fadeOut();
          $('.custom_chooseCard_btn').css('display','flex').fadeIn();
@@ -599,20 +621,22 @@ $(function(){
             opacity: '1',
             transition: '.5s',
         });
-        $('.cus-bag-card > pre').css({
+        $('.cus_bag_card > pre').css({
             opacity: '0',
             transform: 'scaleX(-1)',
             transition: '.5s',
         })
          //卡片移動到中間打開
          $('.card2').css({
-             top: '220px',
-             left: '-300px',
+            top: '120%',
+            left: '-60%'
          });
+            //  top: '220px',
+            // left: '-300px',
          $('.card3').css({
-             top: '220px',
-             left:' 300px',
-             border: '1px solid black',
+            top: '120%',
+            left: '60%',
+            border: '1px solid black',
          });
          //textArea消失
          $('.custom_card_textArea').fadeOut();
@@ -621,13 +645,13 @@ $(function(){
     });
 
     // ==================第五步 : 選擇禮物卡小圖案==================    
-    $('.cus-cardcontent-nextstep').click(function(){
+    $('.cus_cardcontent_nextstep').click(function(){
         //按鈕出現，前一組按鈕消失
         $('.cus-cardcontent-btn').fadeOut();        
         $('.cus-cardIcon-btn').fadeIn();
         //更換標題
-        $('.cus-step2-txt > h3').text('第五步');
-        $('.cus-step2-txt > h2').text('選擇禮物卡小圖案');
+        $('.cus_step2_txt > h3').text('第五步');
+        $('.cus_step2_txt > h2').text('選擇禮物卡小圖案');
         //form消失, icon出現
         $('.custom_card_textArea form').css('display','none');
         $('.custom_card_iconList').css('display','grid').fadeIn();
@@ -645,7 +669,7 @@ $(function(){
                     <img src='${icon_src}'  data-icon='${icon_id}' class='test'>
                 </div>             
             `;           
-            $('.cus-bag-card').append(icon_body);
+            $('.cus_bag_card').append(icon_body);
             drag();
 
         }else{
@@ -655,7 +679,7 @@ $(function(){
         };
     });
     // ==================第五步 : 選擇禮物卡小圖案上一步================== 
-    $('.cus-cardIcon-prestep').click(function(){
+    $('.cus_cardIcon_prestep').click(function(){
         // 按鈕替換
         $('.cus-cardIcon-btn').fadeOut();
         $('.cus-cardcontent-btn').fadeIn();
@@ -663,23 +687,23 @@ $(function(){
         $('.custom_card_textArea form').fadeIn();
         $('.custom_card_iconList').css('display','none');
         //更換標題
-        $('.cus-step2-txt > h3').text('第四步');
-        $('.cus-step2-txt > h2').text('填寫卡片內容');
+        $('.cus_step2_txt > h3').text('第四步');
+        $('.cus_step2_txt > h2').text('填寫卡片內容');
         //刪除貼圖
         $('.custom_card_IconOnCard').fadeOut();
         $('.custom_card_icon').removeClass('choosen_icon');
     })
     // ==================第五步 : 確認卡片內容==================  
-    $('.cus-cardIcon-nextstep').click(function(){
+    $('.cus_cardIcon_nextstep').click(function(){
         // 按鈕替換
         $('.cus-cardIcon-btn').fadeOut();
         $('.cus-cardConfirm-btn').fadeIn();
         //卡片填寫框消失
         $('.custom_card_textArea').fadeOut();
         //標題替換
-        $('.cus-step2-txt > h2').text('確認禮物卡內容');
+        $('.cus_step2_txt > h2').text('確認禮物卡內容');
         //卡片置中
-        $('.cus-bag-card').css({
+        $('.cus_bag_card').css({
             left: '50%',
             transform: 'translate(-50%, 50%)',
         })
@@ -687,14 +711,14 @@ $(function(){
     })
 
     // ==================第五步 : 確認卡片內容上一步================== 
-    $('.cus-cardConfirm-prestep').click(function(){
+    $('.cus_cardConfirm_prestep').click(function(){
         // 按鈕替換
         $('.cus-cardIcon-btn').fadeIn();
         $('.cus-cardConfirm-btn').fadeOut();
         //標題替換
-        $('.cus-step2-txt > h2').text('選擇禮物卡小圖案');
+        $('.cus_step2_txt > h2').text('選擇禮物卡小圖案');
         //卡片換回去
-        $('.cus-bag-card').css({
+        $('.cus_bag_card').css({
             left: '10%',
             transform: 'translate(0%, 50%)',
         })
@@ -706,10 +730,10 @@ $(function(){
 
 
     // ==================第五步 : 確認卡片完成================== 
-    $('.cus-cardConfirm-nextstep').click(function(){
+    $('.cus_cardConfirm_nextstep').click(function(){
         //卡片貼圖、標題、按鈕消失
         $('.custom_card_IconOnCard').fadeOut();
-        $('.cus-step2-txt').fadeOut();
+        $('.cus_step2_txt').fadeOut();
 
         //pre消失，卡片轉回來
         $('.choosenCard').css({
@@ -717,13 +741,13 @@ $(function(){
             opacity: '1',
             transition: '1s',                        
         });
-        $('.cus-bag-card > pre').css({
+        $('.cus_bag_card > pre').css({
             opacity: '0',
             transform: 'scaleX(-1)',
             transition: '1s',           
         });
         setTimeout(function(){
-            $('.cus-bag-card').css({
+            $('.cus_bag_card').css({
                 bottom: '45%',
                 left: '50%',
                 width: '100px',
@@ -733,7 +757,7 @@ $(function(){
             $('.choosenCard').css({
                 width:'100%',           
             }); 
-            $('.cus-giftbox').css({
+            $('.cus_giftbox').css({
                 opacity: '1',
                 transition: '.5s',
             })          
@@ -768,3 +792,18 @@ function drag(){
 });
 }
 
+//滑鼠滾動判斷navbar出現/消失
+function navshow(){
+    var scrolltop = new Array();
+    var index = 0;
+    scrolltop[0] = 0;
+    $(document).scroll(function(){
+        index++;
+        scrolltop[index] = $(document).scrollTop();
+        if (scrolltop[index] > scrolltop[index - 1]) {
+            $('.navbar').slideDown()
+        } else {
+            $('.navbar').slideUp()
+        };
+    })
+}
