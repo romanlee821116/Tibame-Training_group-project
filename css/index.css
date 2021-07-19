@@ -14,13 +14,14 @@
 .navbar {
   width: 100%;
   height: 100px;
-  position: fixed;
+  position: relative;
   top: 0px;
   left: 0;
   padding-top: 10px;
   display: flex;
   justify-content: space-between;
   z-index: 900;
+  position: fixed;
 }
 
 .navbar .navbar-logo {

@@ -14,6 +14,7 @@
 }
 .navbar{
     @include navbar();
+    position: fixed;
     ;
     .navbar-icon i{
         color: #fff;

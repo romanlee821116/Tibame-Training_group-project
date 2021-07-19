@@ -31,6 +31,7 @@ html,body{
 
 .navbar{
     @include navbar();
+    position: fixed;
 }
 .mediacolumn{
     @include media
@@ -842,17 +843,17 @@ html,body{
     // display: none;
     transform: translate(-50%, 50%); 
 }
-// .custom_popUp_template, .custom_popUp_cart{
-//     // @include popUpBg();
-// }
 .custom_popUp{
     @include popUp_oneBtn();
+    display: none;
 }
 .custom_cart{
     @include popUp_twoBtn();
+    display: none;
 }
 
 .custom_popUp_bg{
     @include popUpBg();
+    display: none;
 }
 
