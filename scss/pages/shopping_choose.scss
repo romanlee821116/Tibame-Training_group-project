@@ -1,9 +1,5 @@
 @import '../mixin/mixin';
 @import '../base/reset.scss';
-.navbar {
-    @include navbar();
-}
-
 * {
     box-sizing: border-box;
     // border: solid 1px red;
