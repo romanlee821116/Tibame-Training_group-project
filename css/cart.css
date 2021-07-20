@@ -2,7 +2,7 @@
 .navbar {
   width: 100%;
   height: 100px;
-  position: fixed;
+  position: relative;
   top: 0px;
   left: 0;
   padding-top: 10px;
@@ -67,10 +67,6 @@ img {
   position: fixed;
   right: -600px;
   top: 0;
-<<<<<<< HEAD
-  -webkit-transition: .5s all linear;
-=======
->>>>>>> mypage
   transition: .5s all linear;
 }
 
