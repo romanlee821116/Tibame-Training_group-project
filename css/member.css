@@ -209,7 +209,6 @@ body {
   width: 80%;
   max-width: 1200px;
   margin: 0 auto;
-  /* border: 1px solid red; */
 }
 
 /* 彈出視窗時禁止滑動 */
@@ -235,7 +234,8 @@ body {
 }
 
 /* 滑動效果 */
-.choosenBar2, .memberTitle h4 {
+.choosenBar2,
+.memberTitle h4 {
   transition: all 0.8s cubic-bezier(0.6, 0, 0.4, 1);
 }
 

@@ -1,11 +1,11 @@
 $(function() {
     // hover 效果
-    $('.items').mouseover(function() {
+    $('.choose_items').mouseover(function() {
 
         // 加字串到.text
-        $('.text').html('<h1>' + $(this).data('hover-text') + '</h1>' + '<p>' + $(this).data('text') + '</p>')
+        $('.choose_text').html('<h1>' + $(this).data('hover-text') + '</h1>' + '<p>' + $(this).data('text') + '</p>')
 
-        // .text動畫之一
+        // .text動畫
 
         let $h1demoText = $("#animate_text").find("h1");
         let $pdemoText = $("#animate_text").find("p");
