@@ -108,17 +108,38 @@ body {
 
 /* 消息區域 */
 
+<<<<<<< HEAD
 .newsPart1,.newsPart2,.newsPart3,.newsPart4,.newsPart5 {
+=======
+.newsPart1{
+>>>>>>> a627b91288355714767ff29dcba4947141b18acb
     /* border: solid 1px red; */
     width: 80%;
     max-width: 1200px;
     margin: 0 auto;
+<<<<<<< HEAD
+=======
+    margin-top: 50px;
+}
+
+.newsPart2,.newsPart3,.newsPart4,.newsPart5 {
+    /* border: solid 1px red; */
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: none;
+    margin-top: 50px;
+>>>>>>> a627b91288355714767ff29dcba4947141b18acb
 }
 
 /* 消息佈局 */
 
 .news_blockarray {
+<<<<<<< HEAD
     margin-top: 50px;
+=======
+    
+>>>>>>> a627b91288355714767ff29dcba4947141b18acb
     /* border: solid 1px blue; */
     display: flex;
     justify-content: space-between;

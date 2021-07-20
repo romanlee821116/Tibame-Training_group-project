@@ -18,6 +18,10 @@ time, mark, audio, video {
   font-size: 100%;
   font: bold inherit '微軟正黑體';
   vertical-align: baseline;
+<<<<<<< HEAD
+=======
+  -webkit-box-sizing: border-box;
+>>>>>>> a627b91288355714767ff29dcba4947141b18acb
   box-sizing: border-box;
   text-decoration: none;
   font-weight: 900;
@@ -218,12 +222,22 @@ body {
   color: #172852;
   position: fixed;
   top: 50%;
+<<<<<<< HEAD
   transform: translateY(-50%);
+=======
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+>>>>>>> a627b91288355714767ff29dcba4947141b18acb
   background-color: rgba(255, 255, 255, 0.9);
   font-weight: 900;
   line-height: 30px;
   font-size: 16px;
+<<<<<<< HEAD
   box-shadow: 0px 0px 20px #555;
+=======
+  -webkit-box-shadow: 0px 0px 20px #555;
+          box-shadow: 0px 0px 20px #555;
+>>>>>>> a627b91288355714767ff29dcba4947141b18acb
   display: none;
 }
 
@@ -249,11 +263,17 @@ body {
   position: fixed;
   top: 50%;
   left: 50%;
+<<<<<<< HEAD
   transform: transalte(-50%, -50%);
+=======
+  -webkit-transform: transalte(-50%, -50%);
+          transform: transalte(-50%, -50%);
+>>>>>>> a627b91288355714767ff29dcba4947141b18acb
 }
 
 .about_island {
-  transform: scaleY(0.7);
+  -webkit-transform: scaleY(0.7);
+          transform: scaleY(0.7);
 }
 
 .about_taiwan {
@@ -293,7 +313,12 @@ body {
 .about_place1, .about_place2, .about_place3, .about_place4 {
   position: fixed;
   top: 50%;
+<<<<<<< HEAD
   transform: translateY(-50%);
+=======
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+>>>>>>> a627b91288355714767ff29dcba4947141b18acb
   width: 600px;
   height: 220px;
   padding: 40px 50px;
@@ -319,7 +344,12 @@ body {
   width: 100%;
   background-color: rgba(255, 255, 255, 0.9);
   padding: 30px 20px;
+<<<<<<< HEAD
   box-shadow: 0px 0px 20px #555;
+=======
+  -webkit-box-shadow: 0px 0px 20px #555;
+          box-shadow: 0px 0px 20px #555;
+>>>>>>> a627b91288355714767ff29dcba4947141b18acb
 }
 
 .about_place1 div h3, .about_place2 div h3, .about_place3 div h3, .about_place4 div h3 {

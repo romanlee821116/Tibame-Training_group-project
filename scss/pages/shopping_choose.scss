@@ -1,5 +1,12 @@
 @import '../mixin/mixin';
 @import '../base/reset.scss';
+<<<<<<< HEAD
+=======
+.navbar {
+    @include navbar();
+}
+
+>>>>>>> a627b91288355714767ff29dcba4947141b18acb
 * {
     box-sizing: border-box;
     // border: solid 1px red;

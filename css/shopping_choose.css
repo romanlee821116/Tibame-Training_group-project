@@ -18,6 +18,10 @@ time, mark, audio, video {
   font-size: 100%;
   font: bold inherit '微軟正黑體';
   vertical-align: baseline;
+<<<<<<< HEAD
+=======
+  -webkit-box-sizing: border-box;
+>>>>>>> a627b91288355714767ff29dcba4947141b18acb
   box-sizing: border-box;
   text-decoration: none;
   font-weight: 900;
@@ -52,6 +56,7 @@ table {
   border-spacing: 0;
 }
 
+<<<<<<< HEAD
 * {
   box-sizing: border-box;
   font-family: '微軟正黑體';
@@ -63,6 +68,8 @@ body {
   background-image: url("../images/shopping_choose/bg.png");
 }
 
+=======
+>>>>>>> a627b91288355714767ff29dcba4947141b18acb
 .navbar {
   width: 100%;
   height: 100px;
@@ -70,8 +77,12 @@ body {
   top: 0px;
   left: 0;
   padding-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   z-index: 900;
 }
 
@@ -87,6 +98,8 @@ body {
 }
 
 .navbar .navbar-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin-right: 10px;
 }
@@ -104,8 +117,15 @@ body {
   font-size: 28px;
 }
 
+<<<<<<< HEAD
 .navbar-icon {
   margin-top: 12px;
+=======
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  /* border: solid 1px red; */
+>>>>>>> a627b91288355714767ff29dcba4947141b18acb
 }
 
 .footer {
@@ -212,17 +232,39 @@ body {
   max-width: 1200px;
   height: 70vh;
   margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+<<<<<<< HEAD
   flex-flow: column;
   align-items: center;
+=======
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-transform: translateY(100px);
+          transform: translateY(100px);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+>>>>>>> a627b91288355714767ff29dcba4947141b18acb
 }
 
 .choose_select_area {
   margin: 0 auto;
   width: 50%;
+<<<<<<< HEAD
   height: 100%;
+=======
+  height: 50vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+>>>>>>> a627b91288355714767ff29dcba4947141b18acb
   display: flex;
-  justify-content: space-evenly;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 
 .choose_items span {
@@ -237,6 +279,7 @@ body {
 .choose_items:nth-child(1) {
   width: 70px;
   height: 100%;
+  -webkit-transition: all .5s;
   transition: all .5s;
   background-image: url("../images/shopping_choose/11.png");
   background-repeat: no-repeat;
@@ -255,12 +298,14 @@ body {
 .choose_items:nth-child(2) {
   width: 70px;
   height: 100%;
+  -webkit-transition: all .5s;
   transition: all .5s;
   background-image: url("../images/shopping_choose/22.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  transform: translateY(20px);
+  -webkit-transform: translateY(20px);
+          transform: translateY(20px);
 }
 
 .choose_items:nth-child(2):hover {
@@ -273,6 +318,7 @@ body {
 .choose_items:nth-child(3) {
   width: 70px;
   height: 100%;
+  -webkit-transition: all .5s;
   transition: all .5s;
   background-image: url("../images/shopping_choose/33.png");
   background-repeat: no-repeat;
@@ -291,13 +337,15 @@ body {
 .choose_items:nth-child(4) {
   width: 70px;
   height: 100%;
+  -webkit-transition: all .5s;
   transition: all .5s;
   background-image: url("../images/shopping_choose/44.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   opacity: .7;
-  transform: translateY(-20px);
+  -webkit-transform: translateY(-20px);
+          transform: translateY(-20px);
 }
 
 .choose_items:nth-child(4):hover {
@@ -310,13 +358,15 @@ body {
 .choose_items:nth-child(5) {
   width: 70px;
   height: 100%;
+  -webkit-transition: all .5s;
   transition: all .5s;
   background-image: url("../images/shopping_choose/55.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   opacity: .7;
-  transform: translateY(20px);
+  -webkit-transform: translateY(20px);
+          transform: translateY(20px);
 }
 
 .choose_items:nth-child(5):hover {
@@ -329,6 +379,7 @@ body {
 .choose_items:nth-child(6) {
   width: 70px;
   height: 100%;
+  -webkit-transition: all .5s;
   transition: all .5s;
   background-image: url("../images/shopping_choose/66.png");
   background-repeat: no-repeat;
@@ -347,13 +398,15 @@ body {
 .choose_items:nth-child(7) {
   width: 70px;
   height: 100%;
+  -webkit-transition: all .5s;
   transition: all .5s;
   background-image: url("../images/shopping_choose/77.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   opacity: .7;
-  transform: translateY(-20px);
+  -webkit-transform: translateY(-20px);
+          transform: translateY(-20px);
 }
 
 .choose_items:nth-child(7):hover {
@@ -366,15 +419,22 @@ body {
 .choose_text {
   width: 600px;
   text-align: center;
+  -webkit-transition: all .5s;
   transition: all .5s;
   color: #172852;
   font-weight: bold;
   transform: translateY(30px);
 }
 
+<<<<<<< HEAD
 .choose_text h1 {
   letter-spacing: 2px;
   font-size: 26px;
+=======
+.text p {
+  -webkit-transform: translateY(-15px);
+          transform: translateY(-15px);
+>>>>>>> a627b91288355714767ff29dcba4947141b18acb
 }
 
 .choose_text p {
@@ -387,6 +447,7 @@ body {
     width: 100%;
     height: 700px;
   }
+<<<<<<< HEAD
   .choose_select_area {
     margin: 0 auto;
     width: 100%;
@@ -394,6 +455,20 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+=======
+  .select_area {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+>>>>>>> a627b91288355714767ff29dcba4947141b18acb
   }
   .choose_items span {
     display: block;
@@ -411,6 +486,12 @@ body {
   .choose_items:nth-child(1):hover {
     background-image: url("../images/shopping_choose/11.png");
     width: 100%;
+<<<<<<< HEAD
+=======
+    height: calc(100% / 7);
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+>>>>>>> a627b91288355714767ff29dcba4947141b18acb
   }
   .choose_items:nth-child(2) {
     width: 100%;
@@ -426,6 +507,12 @@ body {
   .choose_items:nth-child(2):hover {
     background-image: url("../images/shopping_choose/22.png");
     width: 100%;
+<<<<<<< HEAD
+=======
+    height: calc(100% / 7);
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+>>>>>>> a627b91288355714767ff29dcba4947141b18acb
   }
   .choose_items:nth-child(3) {
     width: 100%;
@@ -441,6 +528,12 @@ body {
   .choose_items:nth-child(3):hover {
     background-image: url("../images/shopping_choose/33.png");
     width: 100%;
+<<<<<<< HEAD
+=======
+    height: calc(100% / 7);
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+>>>>>>> a627b91288355714767ff29dcba4947141b18acb
   }
   .choose_items:nth-child(4) {
     width: 100%;
@@ -456,6 +549,12 @@ body {
   .choose_items:nth-child(4):hover {
     background-image: url("../images/shopping_choose/44.png");
     width: 100%;
+<<<<<<< HEAD
+=======
+    height: calc(100% / 7);
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+>>>>>>> a627b91288355714767ff29dcba4947141b18acb
   }
   .choose_items:nth-child(5) {
     width: 100%;
@@ -471,6 +570,12 @@ body {
   .choose_items:nth-child(5):hover {
     background-image: url("../images/shopping_choose/55.png");
     width: 100%;
+<<<<<<< HEAD
+=======
+    height: calc(100% / 7);
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+>>>>>>> a627b91288355714767ff29dcba4947141b18acb
   }
   .choose_items:nth-child(6) {
     width: 100%;
@@ -486,6 +591,12 @@ body {
   .choose_items:nth-child(6):hover {
     background-image: url("../images/shopping_choose/66.png");
     width: 100%;
+<<<<<<< HEAD
+=======
+    height: calc(100% / 7);
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+>>>>>>> a627b91288355714767ff29dcba4947141b18acb
   }
   .choose_items:nth-child(7) {
     width: 100%;
