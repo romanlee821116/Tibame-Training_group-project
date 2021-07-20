@@ -18,45 +18,7 @@ time, mark, audio, video {
   font-size: 100%;
   font: bold inherit '微軟正黑體';
   vertical-align: baseline;
-<<<<<<< HEAD
-  box-sizing: border-box;
-  text-decoration: none;
-  font-weight: 900;
-}
-
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-  display: block;
-}
-
-body {
-  line-height: 1;
-}
-
-ol, ul {
-  list-style: none;
-}
-
-blockquote, q {
-  quotes: none;
-}
-
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: '';
-  content: none;
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-* {
-=======
   -webkit-box-sizing: border-box;
->>>>>>> a627b91288355714767ff29dcba4947141b18acb
   box-sizing: border-box;
   text-decoration: none;
   font-weight: 900;
@@ -141,11 +103,8 @@ table {
 .footer {
   width: 100%;
   max-width: 1400px;
-<<<<<<< HEAD
-=======
   display: -webkit-box;
   display: -ms-flexbox;
->>>>>>> a627b91288355714767ff29dcba4947141b18acb
   display: flex;
   position: relative;
   margin: 50px auto 0 auto;
@@ -167,17 +126,12 @@ table {
 .footer .footer-left {
   width: 40%;
   height: 100%;
-<<<<<<< HEAD
-  display: flex;
-  align-items: center;
-=======
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
->>>>>>> a627b91288355714767ff29dcba4947141b18acb
   padding-left: 200px;
 }
 
@@ -187,33 +141,23 @@ table {
 }
 
 .footer .footer-left .footer-policy {
-<<<<<<< HEAD
-  display: flex;
-  justify-content: center;
-=======
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
->>>>>>> a627b91288355714767ff29dcba4947141b18acb
   min-width: 200px;
 }
 
 .footer .footer-right {
   width: 60%;
-<<<<<<< HEAD
-  display: flex;
-  align-items: center;
-=======
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
->>>>>>> a627b91288355714767ff29dcba4947141b18acb
   padding-right: 100px;
 }
 
@@ -230,15 +174,6 @@ table {
 
 @media (max-width: 767px) {
   .footer {
-<<<<<<< HEAD
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .footer .footer-left {
-    padding-left: 0px;
-    justify-content: center;
-=======
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -255,7 +190,6 @@ table {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
->>>>>>> a627b91288355714767ff29dcba4947141b18acb
     margin-bottom: 10px;
   }
   .footer .footer-right {
@@ -288,8 +222,6 @@ table {
   }
 }
 
-<<<<<<< HEAD
-=======
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -307,7 +239,6 @@ body {
   background-repeat: no-repeat;
 }
 
->>>>>>> a627b91288355714767ff29dcba4947141b18acb
 .memberAll {
   width: 80%;
   max-width: 1200px;
@@ -346,13 +277,9 @@ body {
 }
 
 /* 滑動效果 */
-<<<<<<< HEAD
 .choosenBar2,
 .memberTitle h4 {
-=======
-.choosenBar2, .memberTitle h4 {
   -webkit-transition: all 0.8s cubic-bezier(0.6, 0, 0.4, 1);
->>>>>>> a627b91288355714767ff29dcba4947141b18acb
   transition: all 0.8s cubic-bezier(0.6, 0, 0.4, 1);
 }
 
@@ -879,13 +806,10 @@ body {
   margin-bottom: 15px;
 }
 
-<<<<<<< HEAD
-=======
 .memberPart4 .clearBoth {
   clear: both;
 }
 
->>>>>>> a627b91288355714767ff29dcba4947141b18acb
 .memberPart4 .orderSearch input {
   padding: 10px 20px 10px 20px;
   border-radius: 5px;

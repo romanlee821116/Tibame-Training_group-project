@@ -1,8 +1,5 @@
 @import '../mixin/mixin';
 @import '../base/reset.scss';
-<<<<<<< HEAD
-* {
-=======
 
 .navbar{
     @include navbar();
@@ -13,40 +10,23 @@
 }
 
 *{
->>>>>>> a627b91288355714767ff29dcba4947141b18acb
     box-sizing: border-box;
     font-family: '微軟正黑體';
     font-weight: bold;
 }
 
-<<<<<<< HEAD
-body {
-=======
 /* .memberOrderDetailAll{
     display: none;
 } */
 
 body{
->>>>>>> a627b91288355714767ff29dcba4947141b18acb
     margin: 0;
     padding: 0;
     background-image: url(../images/member/member_bg.png);
     background-repeat: no-repeat;
 }
 
-<<<<<<< HEAD
-.navbar {
-    @include navbar();
-}
-
-.footer {
-    @include footer();
-}
-
-.memberAll {
-=======
 .memberAll{
->>>>>>> a627b91288355714767ff29dcba4947141b18acb
     width: 80%;
     max-width: 1200px;
     margin: 0 auto;
@@ -66,13 +46,8 @@ body{
 
 .greyBackground {
     width: 100%;
-<<<<<<< HEAD
-    height: 1000px;
-    background-color: rgba(0, 0, 0, 0.7);
-=======
     height: 3000px;
     background-color: rgba(0,0,0,0.7);
->>>>>>> a627b91288355714767ff29dcba4947141b18acb
     z-index: 910;
     position: absolute;
     left: 0;
@@ -171,12 +146,9 @@ body{
     transform: translate(-50%, -50%);
 }
 
-<<<<<<< HEAD
-=======
 .memberAll>div{
     margin-bottom: 30px;
 }
->>>>>>> a627b91288355714767ff29dcba4947141b18acb
 
 /* 會員資料=================================== */
 
@@ -297,15 +269,10 @@ body{
     float: right;
     margin-bottom: 15px;
 }
-<<<<<<< HEAD
-
-.memberPart3 .orderSearch input {
-=======
 .memberPart3 .clearBoth{
     clear: both;
 }
 .memberPart3 .orderSearch input{
->>>>>>> a627b91288355714767ff29dcba4947141b18acb
     padding: 10px 20px 10px 20px;
     border-radius: 5px;
     background-color: #f0ebe9;
@@ -340,41 +307,6 @@ body{
     border-collapse: collapse;
 }
 
-<<<<<<< HEAD
-
-/* 第一行 */
-
-.memberOrder .memberOrderContent tr:first-child {
-    background-color: #cba89a;
-    color: #fff;
-}
-
-.memberOrder .memberOrderContent tr:first-child td {
-    padding: 7px 0 7px 0;
-}
-
-.memberOrder .memberOrderContent tr:first-child td:first-child {
-    padding-left: 10px;
-}
-
-
-/* 第二行 */
-
-.memberOrder .memberOrderContent tr:nth-child(2) {
-    background-color: #f8f0e0;
-    color: #bb866a;
-}
-
-.memberOrder .memberOrderContent tr:nth-child(2) td {
-    padding: 15px 0 15px 0;
-}
-
-.memberOrder .memberOrderContent tr:nth-child(2) td:first-child {
-    padding-left: 10px;
-}
-
-.memberOrder .memberOrderContent tr:nth-child(2) td:last-child {
-=======
 /* 新表格===================== */
 .memberOrder .memberOrderContent .memberGrid{
     display: grid; 
@@ -397,7 +329,6 @@ body{
 }
 // 詳細資訊
 .memberOrder .memberOrderContent .memberGrid .memberReceiverID{
->>>>>>> a627b91288355714767ff29dcba4947141b18acb
     color: #647bb5;
     cursor: pointer;
 }
@@ -452,18 +383,12 @@ body{
 
 
 /* 進度線條 */
-<<<<<<< HEAD
-
-.memberProgressAll div .memberProgressDot div:nth-child(2n) {
-    width: 150px;
-=======
 .memberProgressAll>div:first-child{
     width: 80%;
     /* border: 1px solid black; */
 }
 .memberProgressAll div .memberProgressDot div:nth-child(2n){
     width: 30%;
->>>>>>> a627b91288355714767ff29dcba4947141b18acb
     height: 2px;
     background-color: #c4c4c4;
 }
@@ -668,15 +593,6 @@ body{
 
 
 /* 搜尋方式================== */
-<<<<<<< HEAD
-
-.memberPart4 .orderSearch {
-    float: right;
-    margin-bottom: 15px;
-}
-
-.memberPart4 .orderSearch input {
-=======
 .memberPart4 {
     /* border: 1px solid blue; */
     display: none;
@@ -692,7 +608,6 @@ body{
     clear: both;
 }
 .memberPart4 .orderSearch input{
->>>>>>> a627b91288355714767ff29dcba4947141b18acb
     padding: 10px 20px 10px 20px;
     border-radius: 5px;
     background-color: #f0ebe9;
@@ -710,9 +625,6 @@ body{
     margin-left: 12px;
 }
 
-<<<<<<< HEAD
-.close {
-=======
 // 收藏管理===========================================
 /* 收藏商品 */
 .memberPart5 {
@@ -748,37 +660,21 @@ body{
 
 
 .close{
->>>>>>> a627b91288355714767ff29dcba4947141b18acb
     display: none;
 }
 
 
 /* ================= R W D =================== */
 
-<<<<<<< HEAD
-@media screen and (min-width: 992px) and (max-width: 1199px) {
-    .memberAll {
-        width: 80%;
-        margin: 0 auto;
-        border: 1px solid red;
-=======
 body{
     @include rwd(1199px){
         .memberAll{
             width: 80%;
             margin: 0 auto;
         }
->>>>>>> a627b91288355714767ff29dcba4947141b18acb
     }
     @include rwd(991px){
 
-<<<<<<< HEAD
-@media screen and (min-width: 768px) and (max-width: 991px) {
-    .memberAll {
-        width: 90%;
-        margin: 0 auto;
-        border: 1px solid red;
-=======
     }
     @include rwd(767px){
         .memberAll{
@@ -831,9 +727,6 @@ body{
                 padding-bottom: 7px;
                 margin-right: 15px;
             }
-            .underLine{
-                // display: none;
-            }
         }
         .memberLine::-webkit-scrollbar{
             display:none
@@ -885,6 +778,5 @@ body{
                 }
             }
         }
->>>>>>> a627b91288355714767ff29dcba4947141b18acb
     }
 }
