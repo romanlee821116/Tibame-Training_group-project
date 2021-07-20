@@ -77,7 +77,7 @@
         <!-- 彈窗 -->
         <component :is="content" v-on:Box-type='changeBox' v-show='boxDisplay' @hidden='hiddenBox'></component>
         <!-- 小農介紹 -->
-        <div v-for='(item, index) in taiwan_list' :class="item.place">
+        <div v-for='(item, index) in taiwan_list' :class="item.place" class='about_taiwanPlace'>
             <h1>{{item.country}}</h1>
             <div>
                 <h3>{{item.title}}</h3>
