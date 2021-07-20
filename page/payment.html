@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>付款資訊</title>
+  <link href="../css/payment.css" rel="stylesheet">
+</head>
+<body>
+  <!-- ========== header ========== -->
+  <!-- navbar -->
+  <div class="navbar">
+    <div class="navbar-logo">
+      <img src="../images/index/logo.png" alt="">
+    </div>
+    <div class="navbar-icon">
+      <p id='scrollvalue'></p>
+      <a href="#"><i class="fas fa-user"></i></a>
+      <a href="#"><i class="fas fa-shopping-cart"></i></a>
+      <a href="#"><i class="fas fa-bars"></i></a>
+    </div>
+  </div>
+
+
+  <!-- ========== main ========== -->
+  <div id="payment_app">
+    <div class="payment_container">
+
+      <!-- ========== 訂單處理階段 ========== -->
+      <div class="payment_stage">
+  
+        <div class="payment_step payment_orderData">
+          <div>
+            <div class="payment_check">
+              <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check fa-w-16" role="img" viewBox="0 0 512 512"><path fill="#ffffff" d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg>
+            </div>
+            <div class="payment_line1"></div>
+          </div>
+          <p>訂單資料</p>
+        </div>
+  
+        <div class="payment_step payment_payment">
+          <div>2
+            <div class="payment_line2"></div>
+          </div>
+          <p>付款資訊</p>
+        </div>
+  
+        <div class="payment_step payment_confirm">
+          <div>3</div>
+          <p>訂單確認</p>
+        </div>
+  
+      </div>
+
+      <!-- ========== 訂單資訊 ========== -->
+      <div class="payment_orderContent">
+
+        <!-- 左邊 -->
+        <div class="payment_left">
+          <div class="payment_title">訂單資訊</div>
+
+          <!-- 填寫訂單資料區塊 -->
+          <div class="payment_orderInformation">
+
+            <!-- 同會員資料 -->
+            <div class="payment_same">
+              <div>訂購人資訊</div>
+
+              <div>
+                <div class="payment_itemCB" :class="{'payment_choose': item.status}" @click="choose(item)">
+                  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check fa-w-16" role="img" viewBox="0 0 512 512"><path fill="#ffffff" d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/>
+                  </svg>
+                </div>
+                <p>同會員資料</p>
+              </div>
+
+            </div>
+
+            <!-- 資料填寫 -->
+            <form action="#" method="post">
+
+              <div class="payment">
+                <div>姓名：</div>
+                <input type="text">
+              </div>
+
+            </form>
+
+
+          </div>
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+      </div>
+  
+
+
+
+
+
+    </div>
+  </div>
+
+  <script src="https://kit.fontawesome.com/8c3a8ab95b.js" crossorigin="anonymous"></script>
+
+</body>
+</html>

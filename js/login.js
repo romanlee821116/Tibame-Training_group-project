@@ -93,10 +93,7 @@ $(document).ready(function(){
         };
     });
     
-<<<<<<< HEAD
-=======
     // 嘗試寫點擊網頁頁面，就把開眼睛看密碼關掉
->>>>>>> a627b91288355714767ff29dcba4947141b18acb
     // $(document).click(function(){
     //     if( $('.eye').prev().attr('type') == 'text'){
     //         $('.eye').prev().attr('type','password');

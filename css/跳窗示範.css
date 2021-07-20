@@ -18,10 +18,6 @@ time, mark, audio, video {
   font-size: 100%;
   font: bold inherit '微軟正黑體';
   vertical-align: baseline;
-<<<<<<< HEAD
-=======
-  -webkit-box-sizing: border-box;
->>>>>>> a627b91288355714767ff29dcba4947141b18acb
   box-sizing: border-box;
   text-decoration: none;
   font-weight: 900;
@@ -89,28 +85,12 @@ table {
   position: fixed;
   top: 50%;
   left: 50%;
-<<<<<<< HEAD
   transform: translate(-50%, -50%);
   border-radius: 20px;
   background-color: rgba(255, 255, 255, 0.95);
   box-shadow: 0px 10px 32px rgba(23, 40, 82, 0.6);
   flex-direction: column;
   align-items: center;
-=======
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  border-radius: 20px;
-  background-color: rgba(255, 255, 255, 0.95);
-  -webkit-box-shadow: 0px 10px 32px rgba(23, 40, 82, 0.6);
-          box-shadow: 0px 10px 32px rgba(23, 40, 82, 0.6);
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
->>>>>>> a627b91288355714767ff29dcba4947141b18acb
   text-align: center;
   padding: 40px;
   z-index: 999;
@@ -137,17 +117,8 @@ table {
 
 .type1 div {
   width: 100%;
-<<<<<<< HEAD
   display: flex;
   justify-content: space-evenly;
-=======
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
->>>>>>> a627b91288355714767ff29dcba4947141b18acb
 }
 
 @media (max-width: 575px) {
@@ -165,28 +136,12 @@ table {
   position: fixed;
   top: 50%;
   left: 50%;
-<<<<<<< HEAD
   transform: translate(-50%, -50%);
   border-radius: 20px;
   background-color: rgba(255, 255, 255, 0.95);
   box-shadow: 0px 10px 32px rgba(23, 40, 82, 0.6);
   flex-direction: column;
   align-items: center;
-=======
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  border-radius: 20px;
-  background-color: rgba(255, 255, 255, 0.95);
-  -webkit-box-shadow: 0px 10px 32px rgba(23, 40, 82, 0.6);
-          box-shadow: 0px 10px 32px rgba(23, 40, 82, 0.6);
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
->>>>>>> a627b91288355714767ff29dcba4947141b18acb
   text-align: center;
   padding: 40px;
   z-index: 999;
@@ -212,17 +167,8 @@ table {
 }
 
 .type2 div {
-<<<<<<< HEAD
   display: flex;
   justify-content: center;
-=======
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
->>>>>>> a627b91288355714767ff29dcba4947141b18acb
 }
 
 @media (max-width: 575px) {

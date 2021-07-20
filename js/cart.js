@@ -68,7 +68,7 @@ $(function(){
     }else if(val > 1){
       $(this).prev('.cart_less').css('background-color','#ffffff');
     }else if(val == 0){
-      console.log('a');
+      // console.log('a');
       val = 1;
     }
   });
