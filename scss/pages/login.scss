@@ -1,10 +1,7 @@
-<<<<<<< HEAD
-=======
 @import '../mixin/mixin';
 @import '../base/reset.scss';
 @import '../base/color';
 
->>>>>>> a627b91288355714767ff29dcba4947141b18acb
 *{
     box-sizing: border-box;
     font-family: Calibri;
@@ -25,13 +22,8 @@ body{
 }
 .loginSignup{
     display: flex;
-<<<<<<< HEAD
-    margin-left: 80px;
-    margin-top: 60px;
-=======
     margin-left: 10%;
     margin-top: 3%;
->>>>>>> a627b91288355714767ff29dcba4947141b18acb
 
     /* border: 2px solid red; */
     width: 270px;
@@ -130,11 +122,7 @@ body{
 /* 登入註冊============================== */
 /* 決定顯示範圍 */
 .loginWrapper{
-<<<<<<< HEAD
-    height: 140px;
-=======
     height: 150px;
->>>>>>> a627b91288355714767ff29dcba4947141b18acb
     overflow: hidden;
     transition: all .5s cubic-bezier(.6,0,.4,1); 
     position: relative;    /* 給眼睛定位 */
@@ -167,11 +155,7 @@ body{
     float: right;
 }
 /* 表單調整 */
-<<<<<<< HEAD
-#loginFormPage .loginWrapper>input{
-=======
 #loginFormPage .loginWrapper .loginErrorWrap>input{
->>>>>>> a627b91288355714767ff29dcba4947141b18acb
     width: 100%;
     display: block;
 
@@ -186,22 +170,14 @@ body{
 .eye1{
     position: absolute;
     right: 10px;
-<<<<<<< HEAD
-    top: 65px;
-=======
     top: 10px;
->>>>>>> a627b91288355714767ff29dcba4947141b18acb
     color: #cba89a;
     cursor: pointer;
 }
 .eye2{
     position: absolute;
     right: 10px;
-<<<<<<< HEAD
-    top: 112px;
-=======
     top: 10px;
->>>>>>> a627b91288355714767ff29dcba4947141b18acb
     color: #cba89a;
     cursor: pointer;
 }
@@ -266,11 +242,7 @@ body{
 
 /* 註冊================================== */
 /* 縣市區域 */
-<<<<<<< HEAD
-#loginFormPage select{
-=======
 #loginFormPage div select{
->>>>>>> a627b91288355714767ff29dcba4947141b18acb
     margin-bottom: 10px;
     padding: 10px;
     border-radius: 5px;
@@ -278,25 +250,6 @@ body{
     border: none;
     color: #172852;
 }
-<<<<<<< HEAD
-#loginFormPage select:focus, #loginFormPage option:checked{
-    background-color: #f0ebe9;
-    /* color: #cba89a; */
-}
-.select1{
-    width:110px;
-}
-.select2{
-    width: calc(100% - 118.5px);
-    margin-left: 5px;
-}
-/* 姓別 */
-#loginFormPage input[type="radio"] {
-    /* vertical-align: text-top; */
-    margin-bottom: 2px;
-}
-#loginFormPage>.loginWrapper>.loginGender{
-=======
 #loginFormPage div select:focus, #loginFormPage option:checked{
     background-color: #f0ebe9;
     /* color: #cba89a; */
@@ -317,7 +270,6 @@ body{
     margin-bottom: 2px;
 }
 #loginFormPage .loginWrapper .loginErrorWrap .loginGender{
->>>>>>> a627b91288355714767ff29dcba4947141b18acb
     margin-bottom: 10px;
     color: #cba89a;
 }
@@ -328,11 +280,7 @@ body{
 .loginCode{
     display: flex;
 }
-<<<<<<< HEAD
-.loginCode input{
-=======
 .loginCode>div>input{
->>>>>>> a627b91288355714767ff29dcba4947141b18acb
     margin-bottom: 10px;
     padding: 10px;
     border-radius: 5px;
@@ -423,13 +371,10 @@ body{
     left: 50%;
     transform: translate(-50%,-50%);
 }
-<<<<<<< HEAD
-=======
 // 送出按鈕
 #forgetFormPage .loginButton{
     margin-top: 15px;
 }
->>>>>>> a627b91288355714767ff29dcba4947141b18acb
 /* 三角形 */
 #loginArrow2 {
     height: 0;
@@ -441,14 +386,9 @@ body{
 }
 
 /* 表單 */
-<<<<<<< HEAD
-#forgetFormPage input{
-    display: block;
-=======
 #forgetFormPage>.loginErrorWrap input{
     display: block;
     width: 100%;
->>>>>>> a627b91288355714767ff29dcba4947141b18acb
 
     margin-bottom: 10px;
     padding: 10px;
@@ -457,27 +397,14 @@ body{
     border: none;
     color: #172852;
 }
-<<<<<<< HEAD
-#forgetFormPage>input:nth-child(2){
-    width: 100%;
-}
-
-/* 返回登入 */
-.forgetForm div:last-child{
-=======
 
 /* 返回登入 */
 .forgetForm #forgetFormPage .loginBack{
->>>>>>> a627b91288355714767ff29dcba4947141b18acb
     margin-top: 50px;
     color:#bb866a;;
     font-weight: bold;
     cursor: pointer;
 }
-<<<<<<< HEAD
-.forgetForm div:last-child span{
-    padding-left: 15px;
-=======
 .forgetForm #forgetFormPage .loginBack span{
     padding-left: 15px;
 }
@@ -570,5 +497,4 @@ body{
         }
         
     }
->>>>>>> a627b91288355714767ff29dcba4947141b18acb
 }

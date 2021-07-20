@@ -1,5 +1,6 @@
 * {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   /* border: solid 1px red; */
 }
 
@@ -14,7 +15,8 @@ body {
   background-color: #cba89a;
   border-radius: 100% 0% 0% 87% / 0% 0% 100% 100%;
   display: none;
-  animation: animate 6s infinite ease-in-out;
+  -webkit-animation: animate 6s infinite ease-in-out;
+          animation: animate 6s infinite ease-in-out;
 }
 
 .slime2 {
@@ -24,7 +26,8 @@ body {
   background-color: #cba89a;
   border-radius: 100% 0% 28% 73% / 0% 0% 100% 100%;
   display: none;
-  animation: animate 6s infinite ease-in-out;
+  -webkit-animation: animate 6s infinite ease-in-out;
+          animation: animate 6s infinite ease-in-out;
   /* animation-delay: .5s; */
 }
 
@@ -35,7 +38,8 @@ body {
   background-color: #cba89a;
   border-radius: 100% 0% 28% 73% / 0% 0% 100% 100%;
   display: none;
-  animation: animate 6s infinite ease-in-out;
+  -webkit-animation: animate 6s infinite ease-in-out;
+          animation: animate 6s infinite ease-in-out;
   /* animation-delay: 1s; */
 }
 
@@ -73,12 +77,14 @@ body {
   background-color: #bb866a;
   border-radius: 10px;
   margin: 6px 0;
+  -webkit-transition: 0.4s;
   transition: 0.4s;
 }
 
 .change .bar1 {
   background-color: white;
-  transform: rotate(-45deg) translate(-9px, 6px);
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+          transform: rotate(-45deg) translate(-9px, 6px);
 }
 
 .change .bar2 {
@@ -87,7 +93,8 @@ body {
 
 .change .bar3 {
   background-color: white;
-  transform: rotate(45deg) translate(-8px, -8px);
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+          transform: rotate(45deg) translate(-8px, -8px);
 }
 
 .overlay {
@@ -99,6 +106,7 @@ body {
   right: 0;
   background-color: #b48164;
   overflow-x: hidden;
+  -webkit-transition: 0.5s;
   transition: 0.5s;
 }
 
@@ -119,6 +127,7 @@ body {
   display: block;
   letter-spacing: 2px;
   opacity: 0;
+  -webkit-transition: all .5s;
   transition: all .5s;
 }
 
@@ -130,6 +139,7 @@ body {
   display: inline-block;
   margin: 0 20px;
   background-color: transparent;
+  -webkit-transition: all .3s;
   transition: all .3s;
 }
 

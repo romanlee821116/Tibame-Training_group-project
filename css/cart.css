@@ -74,10 +74,7 @@ img {
   position: fixed;
   right: 0;
   top: 0;
-<<<<<<< HEAD
-=======
   -webkit-transition: .5s all linear;
->>>>>>> a627b91288355714767ff29dcba4947141b18acb
   transition: .5s all linear;
 }
 
