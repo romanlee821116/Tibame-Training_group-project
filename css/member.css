@@ -518,14 +518,28 @@ body {
       grid-template-columns: 1.2fr 1.2fr 1fr 1fr 1fr 1fr 1fr 1.2fr;
 }
 
-.memberGrid1, .memberGrid2, .memberGrid3, .memberGrid4, .memberGrid5, .memberGrid6, .memberGrid7, .memberGrid8 {
+.memberGrid1,
+.memberGrid2,
+.memberGrid3,
+.memberGrid4,
+.memberGrid5,
+.memberGrid6,
+.memberGrid7,
+.memberGrid8 {
   background-color: #cba89a;
   color: #fff;
   padding: 7px 0 7px 0;
   padding-left: 10px;
 }
 
-.memberGrid9, .memberGrid10, .memberGrid11, .memberGrid12, .memberGrid13, .memberGrid14, .memberGrid15, .memberGrid16 {
+.memberGrid9,
+.memberGrid10,
+.memberGrid11,
+.memberGrid12,
+.memberGrid13,
+.memberGrid14,
+.memberGrid15,
+.memberGrid16 {
   background-color: #f8f0e0;
   color: #bb866a;
   padding: 15px 0 15px 0;

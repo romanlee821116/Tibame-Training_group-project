@@ -74,7 +74,10 @@ img {
   position: fixed;
   right: -600px;
   top: 0;
+<<<<<<< HEAD
   -webkit-transition: .5s all linear;
+=======
+>>>>>>> dev
   transition: .5s all linear;
 }
 
