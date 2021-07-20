@@ -46,6 +46,7 @@ $(function(){
             ],
 
             category: [
+                {type: '所有商品', class:'', id: '0'}, 
                 {type: '銅鑼燒', class:'', id: '1'}, 
                 {type: '鯛魚燒', class:'', id: '2'}, 
                 {type: '大福', class:'', id: '3'}, 
@@ -56,25 +57,25 @@ $(function(){
             ],
 
             cus_item: [
-                {txt: '這是第1個產品',class:'1 cus-item', img: '../images/customized/product_small.png'},
-                {txt: '這是第2個產品',class:'2 cus-item', img: '../images/customized/product_small.png'},
-                {txt: '這是第3個產品',class:'3 cus-item', img: '../images/customized/product_small.png'},
-                {txt: '這是第4個產品',class:'4 cus-item', img: '../images/customized/product_small.png'},
-                {txt: '這是第5個產品',class:'5 cus-item', img: '../images/customized/product_small.png'},
-                {txt: '這是第6個產品',class:'6 cus-item', img: '../images/customized/product_small.png'},
-                {txt: '這是第7個產品',class:'7 cus-item', img: '../images/customized/product_small.png'},
-                {txt: '這是第8個產品',class:'8 cus-item', img: '../images/customized/product_small.png'},
-                {txt: '這是第9個產品',class:'9 cus-item', img: '../images/customized/product_small.png'},
-                {txt: '這是第10個產品',class:'10 cus-item', img: '../images/customized/product_small.png'},
-                {txt: '這是第11個產品',class:'11 cus-item', img: '../images/customized/product_small.png'},
-                {txt: '這是第12個產品',class:'12 cus-item', img: '../images/customized/product_small.png'},
-                {txt: '這是第13個產品',class:'13 cus-item', img: '../images/customized/product_small.png'},
-                {txt: '這是第14個產品',class:'14 cus-item', img: '../images/customized/product_small.png'},
-                {txt: '這是第15個產品',class:'15 cus-item', img: '../images/customized/product_small.png'},
-                {txt: '這是第16個產品',class:'16 cus-item', img: '../images/customized/product_small.png'},
-                {txt: '這是第17個產品',class:'17 cus-item', img: '../images/customized/product_small.png'},
-                {txt: '這是第18個產品',class:'18 cus-item', img: '../images/customized/product_small.png'},
-                {txt: '這是第19個產品',class:'19 cus-item', img: '../images/customized/product_small.png'},
+                {txt: '這是第1個產品',class:'1 cus-item', img: '../images/customized/product_small.png', type:''},
+                {txt: '這是第2個產品',class:'2 cus-item', img: '../images/customized/product_small.png', type:''},
+                {txt: '這是第3個產品',class:'3 cus-item', img: '../images/customized/product_small.png', type:''},
+                {txt: '這是第4個產品',class:'4 cus-item', img: '../images/customized/product_small.png', type:''},
+                {txt: '這是第5個產品',class:'5 cus-item', img: '../images/customized/product_small.png', type:''},
+                {txt: '這是第6個產品',class:'6 cus-item', img: '../images/customized/product_small.png', type:''},
+                {txt: '這是第7個產品',class:'7 cus-item', img: '../images/customized/product_small.png', type:''},
+                {txt: '這是第8個產品',class:'8 cus-item', img: '../images/customized/product_small.png', type:''},
+                {txt: '這是第9個產品',class:'9 cus-item', img: '../images/customized/product_small.png', type:''},
+                {txt: '這是第10個產品',class:'10 cus-item', img: '../images/customized/product_small.png', type:''},
+                {txt: '這是第11個產品',class:'11 cus-item', img: '../images/customized/product_small.png', type:''},
+                {txt: '這是第12個產品',class:'12 cus-item', img: '../images/customized/product_small.png', type:''},
+                {txt: '這是第13個產品',class:'13 cus-item', img: '../images/customized/product_small.png', type:''},
+                {txt: '這是第14個產品',class:'14 cus-item', img: '../images/customized/product_small.png', type:''},
+                {txt: '這是第15個產品',class:'15 cus-item', img: '../images/customized/product_small.png', type:''},
+                {txt: '這是第16個產品',class:'16 cus-item', img: '../images/customized/product_small.png', type:''},
+                {txt: '這是第17個產品',class:'17 cus-item', img: '../images/customized/product_small.png', type:''},
+                {txt: '這是第18個產品',class:'18 cus-item', img: '../images/customized/product_small.png', type:''},
+                {txt: '這是第19個產品',class:'19 cus-item', img: '../images/customized/product_small.png', type:''},
             ],
             bagCard: [
                 {src: '../images/customized/testCard1.jpg', class:'choose-card card2', id:'2'},
@@ -346,9 +347,10 @@ $(function(){
             width: '130px',
             height: 'auto',
         });
+        let boxTop = $('.cus_box').offset().top;
         //蓋子掉下來
         $('.cus_giftbox').animate({
-            top: '28%',
+            top: `${boxTop-5}px`,
             opacity: '1',
         },1000);
         //文字隱藏
@@ -422,6 +424,7 @@ $(function(){
 
 //==================是否製作卡片(需要卡片)==================
     $('.cus_giftcard_nextstep').click(function(){
+        let winWidth = $(window).width();
         // 改title文案
         $('.cus_step2_txt>h2').text('選擇禮物卡樣式');
         //第三步文字出現
@@ -436,30 +439,32 @@ $(function(){
         //卡片進入
         $('.choose-card').fadeIn();
         // $('.cus_bag_card').css('bottom','50%');
-        $('.cus_bag_card').css('bottom','45%');
+       
+
         //卡片移動到中間打開
-        $('.card2').animate({
-            // top: '220px',
-            top: '120%',
-            // left: '-300px',
-            left: '-60%'
-        }, 1000);
-        $('.card3').animate({
-            // top: '220px',
-            top: '120%',
-            // left: '300px',
-            left: '60%'
-        }, 1000);
-        // if(winWidth<856){
-        //     $('.card2').animate({
-        //         top: '150px',
-        //         left: '-150px',
-        //     }, 1000);
-        //     $('.card3').animate({
-        //         top: '150px',
-        //         left: '150px',
-        //     }, 1000);
-        // }
+        if(winWidth<575){
+            $('.cus_bag_card').css('bottom','50%');
+            $('.card2').animate({
+                top: '120%', 
+                left: '0px',              
+            }, 1000);
+            $('.card3').animate({
+                top: '240%',
+                left: '0px',
+            }, 1000);
+        }else{  
+            $('.cus_bag_card').css('bottom','45%');          
+            $('.card2').animate({
+                top: '120%',
+                // left: '-300px',
+                left: '-60%'
+            }, 1000);
+            $('.card3').animate({
+                top: '120%',
+                left: '60%'
+            }, 1000);
+        }
+        
         //選擇卡片按鈕出現
         setTimeout(function(){
             $('.custom_chooseCard_btn').css('display','flex');
@@ -564,7 +569,7 @@ $(function(){
                     bottom: '50%',
                     left: '10%',
                     width: '45%',
-                    height: '22vh',
+                    height: '45%',
                     transform: 'translate(0%, 50%)',
                 });
                 $('.choosenCard').css({
@@ -598,17 +603,30 @@ $(function(){
     })
 // ==================第四步 : 填寫卡片內容上一步==================
     $('.cus_cardcontent_prestep').click(function(){
+        let winWidth = $(window).width();
         // 卡片出現
         $('.choose-card').removeClass('choosenCard');
         $('.choose-card').css({display:'block', opacity: '1', transition:'.5s'});
         //卡片外框置中
-        $('.cus_bag_card').css({
-            width: '345px',
-            height: '210px',
-            bottom: '45%',
-            left: '50%',
-            transform: 'translate(-50%, 0%)',
-        });
+        if(winWidth<575){
+            $('.cus_bag_card').css({
+                width: '240px',
+                height: '140px',
+                bottom: '50%',
+                left: '50%',
+                transform: 'translate(-50%, 0%)',
+            });
+
+        }else{
+            $('.cus_bag_card').css({
+                width: '345px',
+                height: '210px',
+                bottom: '45%',
+                left: '50%',
+                transform: 'translate(-50%, 0%)',
+            });
+        }
+        
          // 改title文案
          $('.cus_step2_txt>h2').text('選擇禮物卡樣式');
          $('.cus_step2_txt>h3').text('第四步');
@@ -626,18 +644,30 @@ $(function(){
             transform: 'scaleX(-1)',
             transition: '.5s',
         })
-         //卡片移動到中間打開
-         $('.card2').css({
-            top: '120%',
-            left: '-60%'
-         });
-            //  top: '220px',
-            // left: '-300px',
-         $('.card3').css({
-            top: '120%',
-            left: '60%',
-            border: '1px solid black',
-         });
+       
+        //卡片移動到中間打開        
+        if(winWidth<575){
+            $('.card2').animate({
+                top: '120%', 
+                left: '0px',              
+            }, 1000);
+            $('.card3').animate({
+                top: '240%',
+                left: '0px',
+            }, 1000);
+        }else{            
+            $('.card2').animate({
+                top: '120%',
+                // left: '-300px',
+                left: '-60%'
+            }, 1000);
+            $('.card3').animate({
+                top: '120%',
+                left: '60%'
+            }, 1000);
+        }
+
+
          //textArea消失
          $('.custom_card_textArea').fadeOut();
          //禮卡確認按鈕消失
@@ -753,6 +783,7 @@ $(function(){
                 width: '100px',
                 height: '75px',
                 transform: 'rotate(-30deg) translate(-50%, 50%)',
+                transition: '.5s',
             });
             $('.choosenCard').css({
                 width:'100%',           

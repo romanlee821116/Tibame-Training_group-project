@@ -221,7 +221,7 @@
         @content;
     }
 }
-//=============彈窗=============
+//=============彈窗(雙按鈕)=============
 @mixin popUp_twoBtn($w:33%, $h: 320px){
     width: $w;
     height: $h;
@@ -267,7 +267,7 @@
     @content;
 }
 
-
+//=============彈窗(單按鈕)=============
 @mixin popUp_oneBtn($w:25%, $h:340px){
     width: $w;
     height: $h;
@@ -321,7 +321,7 @@
     background-color: $c;
     @content;    
 }
-
+//=============button=============
 @mixin btn($w:120px){
     display: block;
     padding: 8px 10px;

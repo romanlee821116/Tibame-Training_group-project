@@ -135,7 +135,7 @@
             <!--  商品列表  -->
             <div class="cus_product_contianer"> 
                 <!--商品 -->
-                <div :class='item.class' v-for='item in cus_item'>
+                <div :class='item.class' v-for='item in cus_item' :data-itemType='item.type'>
                     <div class='cus_item_img'>
                         <img :src="item.img" alt="">                        
                     </div>                    

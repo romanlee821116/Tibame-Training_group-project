@@ -8,12 +8,12 @@
     font-family: '微軟正黑體';
     text-decoration: none;
 }
-h1,h2,h3,h4,h5,p{
-    font-weight: 900;
-}
 body{
     overflow-x: hidden;
     position: relative;
+}
+body::-webkit-scrollbar {
+    display: none;
 }
 .about_wrap{
     width: 100vw;
@@ -22,7 +22,7 @@ body{
 #about_scene1{
     width: 100vw;
     height: 100%;    
-    border: 5px solid green;
+    // border: 5px solid green;
     position: relative;    
     overflow: hidden;
     .about_street{
@@ -31,42 +31,231 @@ body{
         position: absolute;
         top: 0;
         left: 0;
-        background: url('../images/about/house.png');
+        background: url('../../images/about/start_bg.png');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
     }
     .people{
         position: absolute;
-        // border: 1px solid red;
-        height: 200px;
+        height: 25vh; 
+        img{
+            position: relative;
+            height: 100%;
+            width: auto;
+            z-index: 5;
+        }       
     }
     .about_people1{
-        bottom: 50px;
-        right: 35vw;
+        bottom: 10%;
+        right: 15vw;  
+        // border: 2px solid red;
+        &::before{
+            content: '';
+            width: 90%;
+            height: 20%;
+            top: 12%;
+            left: -10px;
+            position: absolute;
+            border: 1px solid yellow;       
+            background: url('../../images/about/character01_2.png');  
+            background-size: contain;
+            background-repeat: no-repeat;  
+            // z-index: -1; 
+        }
+        &::after{
+            content: '';
+            width: 90%;
+            height: 20%;
+            top: 15%;
+            right: -30%;
+            position: absolute;
+            border: 1px solid green; 
+            background: url('../../images/about/character01_3.png');  
+            background-size: contain;
+            background-repeat: no-repeat; 
+            transform-origin: right 0;
+            animation: Leg 20s .5s linear infinite; 
+            z-index: 5;           
+        }
     }
     .about_people2{
-        bottom: 40px;
+        bottom: 5%;
         right: 30vw;
-        animation: walk2 28s linear infinite ;
+        height: 25%;
+        z-index: 8;
+        // border: 2px solid red;
+        &::before{
+            content: '';
+            width: 41%;
+            height: 45%;
+            bottom: -15%;
+            left: -7%;
+            position: absolute;
+            border: 1px solid yellow;       
+            background: url('../../images/about/character02_2.png');  
+            background-size: contain;
+            background-repeat: no-repeat; 
+            animation: wheel 3s linear infinite; 
+            // z-index: -1; 
+        }
+        &::after{
+            content: '';
+            width: 41%;
+            height: 45%;
+            bottom: -15%;
+            right: 0%;
+            position: absolute;
+            border: 1px solid green; 
+            background: url('../../images/about/character02_3.png');  
+            background-size: contain;
+            background-repeat: no-repeat;  
+            animation: wheel 3s linear infinite;
+        }
+        .about_people2_leg{
+            position: absolute;
+            width: 35%;
+            height: 45%;
+            left: 30%;
+            top: 50%;
+            transform-origin: right 0;
+            animation: bikeLeg 10s linear infinite;
+            img{
+                height: 100%;
+                width: auto;
+            }
+        }
+        animation: bike 15s linear infinite ;
     }
     .about_people3{
-        bottom: 55px;
+        height: 23%;
+        bottom: 8%;
         right: 25vw;
+        z-index: 7;
+        // border: 2px solid red;
+        &::before{
+            content: '';
+            width: 90%;
+            height: 30%;
+            bottom: -15%;
+            left: 10%;
+            position: absolute;
+            border: 1px solid yellow;       
+            background: url('../../images/about/character03_3.png');  
+            background-size: contain;
+            background-repeat: no-repeat; 
+            transform-origin: center top;
+            animation: Leg 10s linear infinite;
+        }
+        &::after{
+            content: '';
+            width: 88%;
+            height: 30%;
+            bottom: -16%;
+            right: -15%;
+            position: absolute;
+            border: 1px solid green; 
+            background: url('../../images/about/character03_4.png');  
+            background-size: contain;
+            background-repeat: no-repeat;  
+            transform-origin: center top;
+            animation: Leg 8s 1s linear infinite;
+        }
+        
+        animation: walk1 30s linear infinite ;
+        // animation: walk2 28s linear infinite ;     
     }
     .about_people4{
-        bottom: 30px;
+        bottom: 9%;
         right: 50vw;
-        animation: walk1 30s linear infinite ;
-    }
-    .about_people5{
-        bottom: 60px;
-        right: 85vw;
+        z-index: 10;
+        height: 22vh;
+        // border: 2px solid red;
+        &::before{
+            content: '';
+            width: 90%;
+            height: 30%;
+            bottom: -10%;
+            left: 0%;
+            transform: rotate(-60deg);
+            position: absolute;
+            border: 1px solid yellow;       
+            background: url('../../images/about/character04_3.png');  
+            background-size: contain;
+            background-repeat: no-repeat; 
+            transform-origin: center 0;
+            animation: Leg 10s linear infinite;
+        }
+        &::after{
+            content: '';
+            width: 90%;
+            height: 30%;
+            bottom: -12%;
+            right: -35%;
+            position: absolute;
+            border: 1px solid green; 
+            background: url('../../images/about/character04_4.png');  
+            background-size: contain;
+            background-repeat: no-repeat;  
+            transform-origin: center 0;
+            animation: Leg 8s 1s linear infinite;
+        }
+        
+        animation: walk2 28s linear infinite ; 
     }
     .about_people6{
-        bottom: 40px;
-        // right: -10vw;
-        animation: bike 15s linear infinite ;
+    bottom: 15%;
+    left: 15%;    
+    }
+    
+    .about_people7{
+        bottom: 11%;
+        right: 35vw;              
+        &::before{
+            content: '';
+            width: 60%;
+            height: 20%;
+            top: 25%;
+            left: -5%;
+            position: absolute;
+            border: 1px solid yellow;       
+            background: url('../../images/about/character07_2.png');  
+            background-size: contain;
+            background-repeat: no-repeat; 
+            transform-origin: left bottom;
+            z-index: 6;
+            animation: Leg 20s linear infinite;
+        }       
+    }
+    @keyframes bikeLeg {
+        0%{transform: rotate(-10deg)}
+        10%{transform: rotate(10deg)}
+        20%{transform: rotate(-10deg)}
+        30%{transform: rotate(10deg)}
+        40%{transform: rotate(-10deg)}
+        50%{transform: rotate(10deg)}
+        60%{transform: rotate(-10deg)}
+        70%{transform: rotate(10deg)}
+        80%{transform: rotate(-10deg)}
+        90%{transform: rotate(10deg)}
+        100%{transform: rotate(-10deg)}        
+    }
+    @keyframes Leg {
+        0%{transform: rotate(8deg)}
+        10%{transform: rotate(-2deg)}
+        20%{transform: rotate(8deg)}
+        30%{transform: rotate(-2deg)}
+        40%{transform: rotate(8deg)}
+        50%{transform: rotate(-2deg)}
+        60%{transform: rotate(8deg)}
+        70%{transform: rotate(-2deg)}
+        80%{transform: rotate(8deg)}
+        90%{transform: rotate(-2deg)}
+        100%{transform: rotate(8deg)}        
+    }
+    @keyframes wheel {
+        0%{transform: rotate(0deg)}
+        100%{transform: rotate(-360deg)}        
     }
     @keyframes bike {
         0%{right: -10vw;
@@ -105,6 +294,16 @@ body{
         img{
             width: 100%;
             height: 100%;
+        }
+        .about_street_endLogo{
+            position: absolute;
+            width: 15vw;
+            height: auto;
+            min-width: 170px;
+            min-height: 170px;
+            top: 56vh;
+            left: 50%;
+            transform: translate(-45%, -60%);
         }
     }     
 }
@@ -148,55 +347,151 @@ body{
         transform: transalte(-50%,-50%);
     }
 }
-// .about_scene2_transition{
-//     width: 100%;
-//     height: 400px;
-//     background: url('');
-//     background-position: center;
-//     background-size: cover;
-//     background-repeat: no-repeat;
-// }
-.about_island{
-    transform: scaleY(.7);
-}
+
 .about_taiwan{
     opacity: 1;
     width: 100%;
     height: 100%;
     position: absolute;
-    background: url('../../images/about/aboutUs_bg.jpg');
+    background: url('../../images/about/aboutUs_bg1.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     top: 0;
     left: 0;
-    img{
-        // border: 10px solid red;
-        width: 100%;
-        height: 100%;
+    .about_island{
+        transform: scaleY(.7);
+        // border: 1px solid red;
+        width: 60%;
+        height: 90%;
         position: absolute;
-        top: 0;
-        left: 0;
+        top: 10%;
+        left: 5%;
     }
-    
+    .about_spot{
+        transform: scaleY(.7);
+        position: absolute;
+        width: 10%;
+        height: 10%;
+        min-width: 120px;
+        min-height: 120px;
+        // border: 2px solid blue;
+        opacity: 0;
+        img{
+            width: 100%;
+            height: auto;
+        }
+    }
+    .about_spotDeco{
+        transform: scaleY(.7);
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        // opacity: 0;
+    }    
 }  
+.about_taiwanSpot1{
+    left: 45vw;    
+    top: 5vh;
+}
+.about_taiwanSpot2{
+    left: 35vw;    
+    top: 30vh;
+}
+.about_taiwanSpot3{
+    left: 40vw;    
+    top: 70vh;
+}
+.about_taiwanSpot4{
+    left: 55vw;    
+    top: 40vh;
+}
+
+.about_spotDeco1{
+    //熱氣球
+    left: 52vw;
+    top: 61vh;
+    z-index: 2;
+    img{
+        height: 120%;
+    }
+}
+.about_spotDeco2{
+    //小熱氣球1
+    left: 50vw;
+    top: 57vh;
+    img{
+        height: 100%;
+    }
+}
+.about_spotDeco3{
+    //小熱氣球2
+    left: 48vw;
+    top: 60vh;
+    img{
+        height: 100%;
+    }
+}
+.about_spotDeco4{    
+    left: 40vw;
+    top: 60vh;
+    img{
+        height: 100%;
+    }
+    border: 1px solid red;
+}
+.about_spotDeco5{}
+.about_spotDeco6{}
+.about_spotDeco7{}
+.about_spotDeco8{}
+.about_spotDeco9{}
+
+
+
 .about_taiwan_end{
     opacity: 1;
     width: 100%;
     height: 100%;
     z-index: -1;
     position: relative;
-    img{
-        width: 100%;
-        height: 100%;
+    background: url('../../images/about/aboutUs_bg3.jpg');   
+    // z-index: 50;
+    .about_taiwan_endLogo{
+        position: relative;
+        width: 15vw;
+        height: auto;
+        min-width: 170px;
+        min-height: 170px;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%);        
     }
+    h2{
+        color: #fff;
+        font-size: 24px;
+        text-align: center;
+        position: relative;
+        top: 25%;    
+    }
+    .about_endBtn{
+        // border: 1px solid red;
+        text-align: center;
+        position: relative;
+        top: 35%;        
+        a{
+            @include btn();
+            display: inline-block;
+            margin: 0 20px;
+        }
+    }
+    
 } 
 .about_place1, .about_place2, .about_place3, .about_place4{
     position: fixed;
     top: 50%;
     transform: translateY(-50%);
-    width: 600px;
-    height: 220px;
+    // width: 600px;
+    // height: 220px;
     padding: 40px 50px;
     display: none;
     h1{

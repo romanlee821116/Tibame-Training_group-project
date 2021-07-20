@@ -29,22 +29,41 @@
                 <div class='about_street'>
                     <!-- <img src="../images/about/house.png" alt=""> -->
                     <!-- 人 -->
-                    <div v-for='item in people_list' class='people_container'>
-                        <img :src="item.src" :class='item.class'>
+                    <div v-for='item in people_list' :class='item.class'>
+                        <img :src="item.src" >
+                    </div>
+                    <div class='about_people2 people'>
+                        <img src="../images/about/character02_1.png" >
+                        <img src="../images/about/character02_4.png" class='about_people2_leg'>
                     </div>
                 </div>
                 <div class="about_street_end">
-                    <img src="../images/about/temp.png" alt="">
+                    <img src="../images/about/logo.png" alt="" class='about_street_endLogo'>
+                    <img src="../images/about/aboutUs_bg2.jpg" >
                 </div>
             </div>  
         <!-- ======================= about_scene2 =======================  -->
         <div id="keypoint2"></div>
         <div id='about_scene2'>
+            <!-- 大海背景 -->
             <div class='about_taiwan'>
-                <img class='about_island' src="../images/about/island.png" alt="">
+                <!-- 台灣島 -->
+                <img class='about_island' src="../images/about/map1.png">
+                <div v-for='item in placePic' :class='item.class' class='about_spot'>
+                    <img :src="item.src">
+                </div>
+                <div v-for='item in placeDeco' :class='item.class' class='about_spotDeco'>
+                    <img :src="item.src">
+                </div>
             </div>
             <div class="about_taiwan_end">
-                <img src="../images/about/temp1.png" alt="">
+                <img src="../images/about/logo.png" class='about_taiwan_endLogo'>
+                <h2>最道地的日本風味</h2>
+                <div class='about_endBtn'>
+                    <a href="../index.html">返回首頁</a>
+                    <a href="./shopping_choose.html">前往商品頁</a>
+                </div>
+                
             </div>
         </div>
         

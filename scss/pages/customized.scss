@@ -23,7 +23,7 @@ html,body{
     width: 100%;
     background-image: url('../images/customized/bg.png');
     background-size: cover;
-    overflow: hidden;
+    // overflow: hidden;
     // border: 5px solid orange;
     // scroll-behavior: smooth;
     position: relative;
@@ -86,15 +86,7 @@ html,body{
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    .custom_sideNode_node{
-        width: 8px;
-        height: 8px;
-        border: 1px solid $barBgc;
-        background-color: $barBgc;
-        border-radius: 50%;
-        position: relative;
-        z-index: 2;
-    }    
+   
     .sideBar{
         width: 3px;        
         position: absolute;
@@ -110,19 +102,9 @@ html,body{
         height: 0%;  
         background-color: $barColor;
     }
-    .custom_sideNode_node:nth-child(3){
-        border: 2px solid $barColor;
-        background-color: #fff;
+    @include rwd(575px){
+        display: none;
     }
-    .current_node{
-        border: 2px solid $barColor;
-        background-color: #fff;
-    }
-    .before_node{
-        border: 2px solid $barColor;
-        background-color: $barColor !important;
-    }
-
 }
 
 
@@ -141,6 +123,7 @@ html,body{
         // border: 1px solid blue;
         width: 90%;
         position: relative;
+        padding-bottom: 50px;
         h3{
             color: $fontColor;
             font-size: 24px;
@@ -154,7 +137,8 @@ html,body{
             margin-top: 80px;
         }
         @include rwd(575px){
-            padding-top: 80px;
+            // padding-top: 80px;
+            padding-top: 0px;
             width: 100%;
             h3{
                 font-size: 20px;
@@ -174,10 +158,10 @@ html,body{
     text-align: center;
     width: 100%;
     position: relative;
-    top: 40%;
+    top: 35%;
     transform: translateY(-50%);
     justify-items: center;
-    align-items: center;
+    align-items: center;    
     // border: 1px solid blue;
     p{
         margin-top: 15px;
@@ -231,10 +215,11 @@ html,body{
         display: flex;
         flex-direction: column;
         .cus_box_container{
-            margin-bottom: 20px;
+            margin-bottom: 30px;
             p{
-                margin-top: 5px;
+                margin-top: 10px;
             }
+            
         }
         .box1{
             width: 80px;
@@ -267,9 +252,10 @@ html,body{
         border: 3px solid $btnHover;
     }
     @include rwd(575px){
-        width: 80px;
+        width: 100px;
         font-size: 12px;
         border-radius: 15px;
+        padding: 5px;
         i{
             display: none;
         }
@@ -281,8 +267,6 @@ html,body{
     right:0; 
     display: none; 
 }
-
-
 .custom_gridBox{
     width: 95%;
     height: 95%;       
@@ -370,7 +354,8 @@ html,body{
         padding-top: 50px;
         width: 90%;
         position: relative;
-        margin-bottom: 50px;
+        // margin-bottom: 50px;
+        padding-bottom: 50px;
         h3{
             color: $fontColor;
             font-size: 24px;
@@ -384,7 +369,8 @@ html,body{
             margin-top: 80px;
         }
         @include rwd(575px){
-            padding-top: 80px;
+            // padding-top: 80px;
+            padding-top: 0px;
             width: 100%;
             h3{
                 font-size: 20px;
@@ -398,7 +384,7 @@ html,body{
     .prep{
         position: absolute;
         left: 0;
-        bottom: 0;
+        bottom: 10px;
         // background: #fff;    
         // color: $btnBgc;
         background-color: transparent;
@@ -426,11 +412,16 @@ html,body{
             transform: translate(-50%, 0); 
             
         }
+        @include rwd(575px){
+            &::after{
+                width: 50px;
+            }
+        }
     }
     .next{
         position: absolute;
         right: 0;
-        bottom: 0;
+        bottom: 10px;
         i{
             margin-left: 10px;
         }
@@ -518,7 +509,7 @@ html,body{
                 margin: 0 auto;
                 background-color: #999;
                 text-align: center;
-                transform: translate(-50%, -20px);
+                transform: translate(-50%, -40px);
                 display: none;
                 p{
                    position: absolute;
@@ -634,6 +625,8 @@ html,body{
     .cus_bag_card{
         width: $boxWidth;
         height: $boxHeight;
+        max-width: 360px;
+        max-height: 200px;
         border: 3px solid green;
         position: absolute;
         bottom: -210px;
@@ -829,9 +822,9 @@ html,body{
 }
 .custom_bag{
     // width: 400px;
-    width: 45%;
+    width: 45%;    
+    height: 45%;
     max-width: 400px;
-    height: 22vh;
     max-height: 300px;
     position: absolute;
     left: 50%;
@@ -840,7 +833,7 @@ html,body{
     background-position: center;
     background-size: 120% cover;
     transition: 2s;
-    // display: none;
+    display: none;
     transform: translate(-50%, 50%); 
 }
 .custom_popUp{

@@ -133,12 +133,29 @@ $(function () {
         el: '#about_wrap',
         data: {
             people_list: [
-                { src: '../images/about/people1.png', class: 'about_people1 people' },
-                { src: '../images/about/people2.png', class: 'about_people2 people' },
-                { src: '../images/about/people3.png', class: 'about_people3 people' },
-                { src: '../images/about/people4.png', class: 'about_people4 people' },
-                { src: '../images/about/people5.png', class: 'about_people5 people' },
-                { src: '../images/about/people6.png', class: 'about_people6 people' },
+                { src: '../images/about/character01_1.png', class: 'about_people1 people' },
+                { src: '../images/about/character03_1.png', class: 'about_people3 people' },
+                { src: '../images/about/character04_1.png', class: 'about_people4 people' },
+                // { src: '../images/about/character05_1.png', class: 'about_people5 people' },
+                { src: '../images/about/character06_1.png', class: 'about_people6 people' },
+                { src: '../images/about/character07_1.png', class: 'about_people7 people' },
+            ],
+            placePic:[
+                {class:'about_taiwanSpot1', src:'../images/about/product04.png'},
+                {class:'about_taiwanSpot2', src:'../images/about/product01.png'},
+                {class:'about_taiwanSpot3', src:'../images/about/product02.png'},
+                {class:'about_taiwanSpot4', src:'../images/about/product03.png'},
+            ],
+            placeDeco:[
+                {class:'about_spotDeco1', src:'../images/about/map_balloon01.png'},
+                {class:'about_spotDeco2', src:'../images/about/map_balloon02.png'},
+                {class:'about_spotDeco3', src:'../images/about/map_balloon03.png'},
+                {class:'about_spotDeco4', src:'../images/about/map_dolphin01.png'},
+                {class:'about_spotDeco5', src:'../images/about/map_dolphin02.png'},
+                {class:'about_spotDeco6', src:'../images/about/map_lantern01.png'},
+                {class:'about_spotDeco7', src:'../images/about/map_lantern02.png'},
+                {class:'about_spotDeco8', src:'../images/about/map_lantern03.png'},
+                {class:'about_spotDeco9', src:'../images/about/map_whale.png'},
             ],
             farmer_list: [
                 {class:'custom_farmer_straw'},
@@ -177,8 +194,8 @@ $(function () {
     var controller = new ScrollMagic.Controller();
     var sticky = new TimelineMax();
     sticky.to('.about_street', 0, { scale: '1%',top: '-0px' })
-        .to('.about_street', 2, { scale: '2%',top: '-100px' })
-        .to('.about_street', 2, { scale: '3%',top: '-200px' })
+        .to('.about_street', 2, { scale: '2%',top: '-20vh' })
+        .to('.about_street', 2, { scale: '3%',top: '-45vh', left:'-2%'})
         .to('.about_street', 1.5, { opacity: '0' })
         
     
@@ -190,18 +207,27 @@ $(function () {
 // ==========================================================================
     var stickyMap = new TimelineMax();
     stickyMap.to('.about_taiwan', 0, { scale: '1%' })
-            .to('.about_island',2, {scaleY: '1'})
+            .to('.about_island, .about_spot, .about_spotDeco', 2, {scaleY: '1'})
+            .to('.about_spot',.5 , {opacity: '1'})
+            .to('.about_spot',.5 , {opacity: '1'})
             .to('.about_taiwan', 5, { scale: '3.5%', top: '120%', left: '-20%'}) 
             .to('.about_taiwan', 4, { scale: '3.5%', top: '120%', left: '-20%'})  
-            .to('.about_island', 5, {top: '-20%', left:'15%'}) 
-            .to('.about_island', 3, {top: '-20%', left:'15%'})   
-            .to('.about_island', 5, {top: '-60%', left:'10%'}) 
-            .to('.about_island', 3, {top: '-60%', left:'10%'}) 
-            .to('.about_island', 5, {top: '-40%', left:'0%'})
-            .to('.about_island', 4, {top: '-40%', left:'0%'})
-            .to('.about_island', 2, {top: '0%', left:'0%'})
+
+            .to('.about_taiwan', 5, {top: '40%', left:'30%'}) 
+            .to('.about_taiwan', 3, {top: '40%', left:'30%'}) 
+
+            .to('.about_taiwan', 5, {top: '-100%', left:'-5%'}) 
+            .to('.about_taiwan', 3, {top: '-100%', left:'-5%'}) 
+
+            .to('.about_taiwan', 5, {top: '10%', left:'-20%'})
+            .to('.about_taiwan', 5, {top: '10%', left:'-20%'})
+
+            .to('.about_taiwan', 2, {top: '50%', left:'0%'})
+
             .to('.about_taiwan', 5, { scale: '1', top: '0%', left: '0%'}) 
-            .to('.about_taiwan', 3, { opacity: '0' })         
+            .to('.about_taiwan', 2, { scale: '1', top: '0%', left: '0%'}) 
+            .to('.about_taiwan', 3, { opacity: '0' })      
+            .to('.about_taiwan_end', 0, { zIndex: '10' })    
     
     new ScrollMagic.Scene({
         triggerElement: '#keypoint2',
@@ -246,10 +272,6 @@ function popUpShow(){
     
     
     $(document).scroll(function(){
-
-       
-
-
         index++;
         scrolltop[index] = $(document).scrollTop();
         let indexHeight = (scrolltop[index]/winHeight).toFixed(2)
@@ -262,7 +284,7 @@ function popUpShow(){
         };
 
         //介紹一
-        if(indexHeight > .75 && scrolltop[index] < 1.85){
+        if(indexHeight > .75 && indexHeight < 1.85){
             $('.about_history').fadeIn();
         }else{
             $('.about_history').fadeOut();
@@ -290,14 +312,14 @@ function popUpShow(){
         }
 
         //小農三
-        if(indexHeight > 11.02 && indexHeight < 12.02){
+        if(indexHeight > 11 && indexHeight < 11.6){
             $('.about_place3').fadeIn();
         }else{
             $('.about_place3').fadeOut();
         }
 
         //小農四
-        if(indexHeight > 13 && indexHeight < 13.8){
+        if(indexHeight > 12.6 && indexHeight < 13.6){
             $('.about_place4').fadeIn();
         }else{
             $('.about_place4').fadeOut();

@@ -67,7 +67,6 @@ html, body {
   width: 100%;
   background-image: url("../images/customized/bg.png");
   background-size: cover;
-  overflow: hidden;
   position: relative;
 }
 
@@ -222,16 +221,6 @@ html, body {
   justify-content: space-between;
 }
 
-.custom_sideNode .custom_sideNode_node {
-  width: 8px;
-  height: 8px;
-  border: 1px solid #cba89a;
-  background-color: #cba89a;
-  border-radius: 50%;
-  position: relative;
-  z-index: 2;
-}
-
 .custom_sideNode .sideBar {
   width: 3px;
   position: absolute;
@@ -250,19 +239,10 @@ html, body {
   background-color: #f7c242;
 }
 
-.custom_sideNode .custom_sideNode_node:nth-child(3) {
-  border: 2px solid #f7c242;
-  background-color: #fff;
-}
-
-.custom_sideNode .current_node {
-  border: 2px solid #f7c242;
-  background-color: #fff;
-}
-
-.custom_sideNode .before_node {
-  border: 2px solid #f7c242;
-  background-color: #f7c242 !important;
+@media (max-width: 575px) {
+  .custom_sideNode {
+    display: none;
+  }
 }
 
 .cus_step1 {
@@ -278,6 +258,7 @@ html, body {
   padding-top: 50px;
   width: 90%;
   position: relative;
+  padding-bottom: 50px;
 }
 
 .cus_step1 .cus_step1_txt h3 {
@@ -299,7 +280,7 @@ html, body {
 
 @media (max-width: 575px) {
   .cus_step1 .cus_step1_txt {
-    padding-top: 80px;
+    padding-top: 0px;
     width: 100%;
   }
   .cus_step1 .cus_step1_txt h3 {
@@ -320,7 +301,7 @@ html, body {
   text-align: center;
   width: 100%;
   position: relative;
-  top: 40%;
+  top: 35%;
   transform: translateY(-50%);
   justify-items: center;
   align-items: center;
@@ -389,10 +370,10 @@ html, body {
     flex-direction: column;
   }
   .cus_step1-box .cus_box_container {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
   }
   .cus_step1-box .cus_box_container p {
-    margin-top: 5px;
+    margin-top: 10px;
   }
   .cus_step1-box .box1 {
     width: 80px;
@@ -424,9 +405,10 @@ html, body {
 
 @media (max-width: 575px) {
   .custom_btn {
-    width: 80px;
+    width: 100px;
     font-size: 12px;
     border-radius: 15px;
+    padding: 5px;
   }
   .custom_btn i {
     display: none;
@@ -527,7 +509,7 @@ html, body {
   padding-top: 50px;
   width: 90%;
   position: relative;
-  margin-bottom: 50px;
+  padding-bottom: 50px;
 }
 
 .cus_step2 .cus_step2_txt h3 {
@@ -549,7 +531,7 @@ html, body {
 
 @media (max-width: 575px) {
   .cus_step2 .cus_step2_txt {
-    padding-top: 80px;
+    padding-top: 0px;
     width: 100%;
   }
   .cus_step2 .cus_step2_txt h3 {
@@ -563,7 +545,7 @@ html, body {
 .cus_step2 .prep {
   position: absolute;
   left: 0;
-  bottom: 0;
+  bottom: 10px;
   background-color: transparent;
   color: #a3a3a3;
   border: none;
@@ -593,10 +575,16 @@ html, body {
   transform: translate(-50%, 0);
 }
 
+@media (max-width: 575px) {
+  .cus_step2 .prep::after {
+    width: 50px;
+  }
+}
+
 .cus_step2 .next {
   position: absolute;
   right: 0;
-  bottom: 0;
+  bottom: 10px;
 }
 
 .cus_step2 .next i {
@@ -701,7 +689,7 @@ html, body {
   margin: 0 auto;
   background-color: #999;
   text-align: center;
-  transform: translate(-50%, -20px);
+  transform: translate(-50%, -40px);
   display: none;
 }
 
@@ -813,6 +801,8 @@ html, body {
 .cus_step2 .cus_bag_card {
   width: 280px;
   height: 160px;
+  max-width: 360px;
+  max-height: 200px;
   border: 3px solid green;
   position: absolute;
   bottom: -210px;
@@ -1014,8 +1004,8 @@ html, body {
 
 .custom_bag {
   width: 45%;
+  height: 45%;
   max-width: 400px;
-  height: 22vh;
   max-height: 300px;
   position: absolute;
   left: 50%;
@@ -1024,6 +1014,7 @@ html, body {
   background-position: center;
   background-size: 120% cover;
   transition: 2s;
+  display: none;
   transform: translate(-50%, 50%);
 }
 
