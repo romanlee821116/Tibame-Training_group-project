@@ -1,0 +1,211 @@
+@import '../mixin/mixin';
+
+.navbar{
+@include navbar();
+}
+
+*{
+  box-sizing: border-box;
+  font-family: "微軟正黑體";
+  color: #bb866a;
+}
+
+body{
+  margin: 0;
+  background-image: url("../../images/payment/bg.png");
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+img{
+  width: 100%;
+}
+
+.payment_container{
+  border: 1px solid black;
+  width: 80%;
+  max-width: 1200px;
+  margin: 100px auto;
+}
+
+
+
+
+/* ========== 訂單處理階段 ========== */
+
+
+.payment_stage{
+  // border: 1px solid red;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.payment_step{
+  // border: 1px solid blue;
+  text-align: center;
+  font-size: 0;
+}
+
+.payment_confirm > div{
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  font-weight: bold;
+  display: inline-block;
+  color: #a3a3a3;
+  border: solid 3px #a3a3a3;
+  background-color: #ffffff;
+  border-radius: 50%;
+  line-height: 35px;
+}
+
+.payment_confirm > p{
+  // border: 1px solid green;
+  margin: 5px 0 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: #a3a3a3;
+}
+
+.payment_payment{
+  margin: 0 100px;
+}
+
+// ========== 購物車階段 ==========
+.payment_payment > div:first-child{
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  font-weight: bold;
+  display: inline-block;
+  color: #f7c242;
+  border: solid 3px #f7c242;
+  background-color: #ffffff;
+  border-radius: 50%;
+  line-height: 35px;
+}
+
+.payment_payment > p{
+  // border: 1px solid green;
+  margin: 5px 0 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: #f7c242;
+}
+
+// 前面已完成的階段
+.payment_orderData > div{
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  border: solid 3px #f7c242;
+  background-color: #f7c242;
+  border-radius: 50%;
+}
+
+.payment_check{
+  // border: 1px solid red;
+  width: 20px;
+  margin: auto;
+}
+
+.payment_orderData > p{
+    // border: 1px solid green;
+    margin: 5px 0 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: #f7c242;
+}
+// ===== 購物車階段中間的線條 =====
+
+.payment_orderData > div:first-child, .payment_payment > div:first-child{
+  position: relative;
+}
+
+.payment_line1{
+  background-color: #f7c242;
+  width: 135px;
+  height: 2px;
+  position: absolute;
+  top: 18px;
+  right: -138px;
+}
+
+.payment_line2{
+  background-color: #a3a3a3;
+  width: 135px;
+  height: 2px;
+  position: absolute;
+  top: 18px;
+  right: -138px;
+}
+
+
+// ========== 訂單資訊 ==========
+.payment_orderContent{
+  border: 1px solid red;
+  display: flex;
+}
+
+
+// ========== 左邊 ==========
+.payment_left{
+  border: 1px solid green;
+  width: 60%;
+}
+
+.payment_title{
+  // border: 1px solid blue;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+
+// ========== 訂購資料 ==========
+.payment_orderInformation{
+  border: 1px solid red;
+}
+.payment_same{
+  // border: 1px solid blue;
+  display: flex;
+  align-items: center;
+
+}
+
+.payment_same > div:first-child{
+  // border: 1px solid red;
+  color: #172852;
+  font-size: 18px;
+  font-weight: bold;
+  margin-right: 30px;
+}
+
+.payment_same > div:last-child{
+  display: flex;
+}
+
+.payment_same > div:last-child > p{
+  // border: 1px solid green;
+  margin: 0;
+  color: #172852;
+  font-size: 16px;
+  font-weight: bold;
+  margin-left: 10px;
+  display: flex;
+}
+
+// 同會員資料按鈕
+.payment_itemCB{
+  border: solid 2px #172852;
+  background-color: #ffffff;
+  border-radius: 5px;
+  align-self: center;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.payment_choose{
+  background-color: #172852;
+}

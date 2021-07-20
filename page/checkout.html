@@ -6,7 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>購物車清單</title>
   <link href="../css/checkout.css" rel="stylesheet">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.14/vue.js"></script>
 
 </head>
 <body>
@@ -28,163 +29,284 @@
 
 
   <!-- ========== main ========== -->
-  <div class="checkout_container">
+  <div id="checkout_app">
 
-    <!-- ========== 訂單處理階段 ========== -->
-    <div class="checkout_stage">
-
-      <div class="checkout_step checkout_orderData">
-        <div>1</div>
-        <p>訂單資料</p>
-      </div>
-
-      <div class="checkout_step checkout_payment">
-        <div>2</div>
-        <p>付款資訊</p>
-      </div>
-
-      <div class="checkout_step checkout_confirm">
-        <div>3</div>
-        <p>訂單確認</p>
-      </div>
-
-    </div>
-
-    <!-- ========== 訂單內容大標 ========== -->
-    <div class="checkout_orderTitle">訂單內容</div>
-
-
-    <!-- ========== 訂單內容 ========== -->
-    <div class="checkout_orderContent">
-
-      <!-- ========== 左邊 ========== -->
-      <!-- 標題 -->
-      <div class="checkout_left">
-        <div class="checkout_contentTitle">
-          <p>商品名稱</p>
-          <p>數量</p>
-          <p>價格</p>
+    <div class="checkout_container">
+  
+      <!-- ========== 訂單處理階段 ========== -->
+      <div class="checkout_stage">
+  
+        <div class="checkout_step checkout_orderData">
+          <div>1
+            <div class="checkout_line1"></div>
+          </div>
+          <p>訂單資料</p>
         </div>
-
-        <!-- 商品細項 -->
-        <ul class="checkout_list">
-
-          <li class="checkout_item">
-
-            <div class="checkout_itemCB" :class="{'checkout_choose': item.status}" @click="choose(item)">
-              <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check fa-w-16" role="img" viewBox="0 0 512 512"><path fill="#ffffff" d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/>
-              </svg>
-            </div>
-    
-            <div class="checkout_itemImg">
-              <img src="../images/checkout/banner_strawberry_item.png">
-            </div>
-
-            <div class="checkout_itemName">
-              <p>草莓大福</p>
-            </div>
-
-            <div class="checkout_quantity">
-              <button class="checkout_less mainbtn">-</button>>
-              <input class="checkout_quantity" type="text" value="1">
-              <button class="checkout_add mainbtn">+</button>>
-            </div>
-
-            <div class="checkout_unitPrice">$<span>480</span>元 / <span>6</span>入</div>
-
-            <div class="checkout_delete" @click="delete_Item(index)">
-              <div class="checkout_leftD"></div>
-              <div class="checkout_rightD"></div>
-            </div>
-            
-    
-          </li>
-
-          <li class="checkout_customization">
-            
-            <!-- 商品 -->
-            <div class="checkout_customizationItem">
-
+  
+        <div class="checkout_step checkout_payment">
+          <div>2
+            <div class="checkout_line2"></div>
+          </div>
+          <p>付款資訊</p>
+        </div>
+  
+        <div class="checkout_step checkout_confirm">
+          <div>3</div>
+          <p>訂單確認</p>
+        </div>
+  
+      </div>
+  
+      <!-- ========== 訂單內容大標 ========== -->
+      <div class="checkout_orderTitle">訂單內容</div>
+  
+  
+      <!-- ========== 訂單內容 ========== -->
+      <div class="checkout_orderContent">
+  
+        <!-- ========== 左邊 ========== -->
+        <div class="checkout_left">
+          <!-- 標題 -->
+          <div class="checkout_contentTitle">
+            <p>商品名稱</p>
+            <p>數量</p>
+            <p>價格</p>
+          </div>
+  
+          <!-- 商品細項 -->
+          <ul class="checkout_list">
+  
+            <!-- 一般商品 -->
+            <li class="checkout_item"  v-for="(item,index) in itemList" :id="item.id">
+  
               <div class="checkout_itemCB" :class="{'checkout_choose': item.status}" @click="choose(item)">
                 <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check fa-w-16" role="img" viewBox="0 0 512 512"><path fill="#ffffff" d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/>
                 </svg>
               </div>
       
               <div class="checkout_itemImg">
-                <img src="../images/checkout/banner_strawberry_item.png">
+                <img :src="item.img">
               </div>
   
               <div class="checkout_itemName">
-                <p>草莓大福</p>
-                <div class="checkout_detailBtn">查看禮盒明細</div>
+                <p>{{item.itemName}}</p>
               </div>
   
               <div class="checkout_quantity">
-                <button class="checkout_less mainbtn">-</button>>
-                <input class="checkout_quantity" type="text" value="1">
-                <button class="checkout_add mainbtn">+</button>>
+                <button class="checkout_less mainbtn" @click="sub(item)">-</button>
+                <input class="checkout_quantity" type="text" v-model="item.quantity">
+                <button class="checkout_add mainbtn" @click="add(item)">+</button>
               </div>
   
-              <div class="checkout_unitPrice">$<span>480</span>元</div>
-  
+              <div class="checkout_unitPrice">$<span>{{item.price}}</span>元 / <span>{{item.item_Quantity}}</span>入</div>
+
               <div class="checkout_delete" @click="delete_Item(index)">
                 <div class="checkout_leftD"></div>
                 <div class="checkout_rightD"></div>
               </div>
 
-            </div>
-
-            <!-- 禮盒明細 -->
-            <div class="checkout_detailBorder">
-
-              <div class="checkout_detail">
+            </li>
   
-                <div>
-                  <div class="checkout_detailItem" v-for="item in item.detail">
-                    - {{item}}
-                  </div>
-                  <div class="checkout_detailItem" v-for="item in item.detail">
-                    - {{item}}
-                  </div>
-                </div>
+            <!-- 禮盒 -->
+            <li class="checkout_customization" v-for="(item,index) in customization" :id="item.id">
+              
+              <!-- 商品 -->
+              <div class="checkout_customizationItem">
   
-                <div>
-                  <div class="checkout_detailQuantity" v-for="item in item.detail_Quantity">
-                    x {{item}}
-                  </div>
-                  <div class="checkout_detailQuantity" v-for="item in item.detail_Quantity">
-                    x {{item}}
-                  </div>
+                <div class="checkout_itemCB" :class="{'checkout_choose': item.status}" @click="choose(item)">
+                  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check fa-w-16" role="img" viewBox="0 0 512 512"><path fill="#ffffff" d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/>
+                  </svg>
                 </div>
-
-                
+        
+                <div class="checkout_itemImg">
+                  <img :src="item.img">
+                </div>
+    
+                <div class="checkout_itemName">
+                  <p>{{item.itemName}}</p>
+                  <div class="checkout_detailBtn">查看禮盒明細</div>
+                </div>
+    
+                <div class="checkout_quantity">
+                  <button class="checkout_less mainbtn" @click="sub(item)">-</button>>
+                  <input class="checkout_quantity" type="text" v-model="item.quantity">
+                  <button class="checkout_add mainbtn" @click="add(item)">+</button>>
+                </div>
+    
+                <div class="checkout_unitPrice">$<span>{{item.price}}</span>元</div>
+    
+                <div class="checkout_delete" @click="delete_Customization(index)">
+                  <div class="checkout_leftD"></div>
+                  <div class="checkout_rightD"></div>
+                </div>
   
               </div>
-
-            </div>
+  
+              <!-- 禮盒明細 -->
+              <div class="checkout_detailBorder">
+  
+                <div class="checkout_detail">
     
-          </li>
-
+                  <div>
+                    <div class="checkout_detailItem" v-for="item in item.detail">
+                      - {{item}}
+                    </div>
+                  </div>
+    
+                  <div>
+                    <div class="checkout_detailQuantity" v-for="item in item.detail_Quantity">
+                      x {{item}}
+                    </div>
+                  </div>
+  
+                  
+    
+                </div>
+              </div>
+      
+            </li>
+  
+  
+          </ul>
+  
+          <div class="checkout_deleteMany" @click="delete_All()" :style="{'background-color': delete_bgc, cursor: delete_cursor}">刪除多個</div>
+  
+        </div>
+  
+  
+        <!-- ========== 右邊 ========== -->
+        <div class="checkout_right">
+  
+          <!-- 使用折扣碼 -->
+          <div class="checkout_discountBorder">
+            <p>使用折扣碼</p>
+            <div class="checkout_discount">
+              <input type="text" placeholder="請輸入折扣碼" onfocus="this.placeholder=''" onblur="this.placeholder='請輸入折扣碼'">
+              <button>提交</button>
+            </div>
+          </div>
+  
+  
+          <!-- 金額細項 -->
+          <div class="checkout_moneyDetail">
+  
+            <div class="checkout_money">
+              <p>商品金額</p>
+              <p>$<span>{{itemPrice}}</span>元</p>
+            </div>
+  
+            <div class="checkout_discountMoney">
+              <p>折扣碼</p>
+              <p>-$<span>80</span>元</p>
+            </div>
+  
+            <div class="checkout_removeDiscount">
+              <div>移除折扣碼</div>
+            </div>
+  
+            <div class="checkout_Total">
+              <p>訂單總金額</p>
+              <p>$<span>{{totalPrice}}</span>元</p>
+            </div>
+  
+            
+          </div>
           
-
-        </ul>
-
-
-
-
+          <a href="#" class="checkout_checkout">結帳</a>
+  
+  
+        </div>
+  
+  
+  
+      </div>
+  
+  
+      <!-- ========== 你可能也會喜歡 ========== -->
+      <div class="checkout_maybe">
+        <p>你可能也會喜歡...</p>
+        <a href="#">返回商品列表，繼續購物</a>
+      </div>
+  
+  
+      <!-- ========== 商品推薦輪播 ========== -->
+      <div class="checkout_pushItemBorder">
+  
+        <!-- 左邊按鈕 -->
+        <div class="checkout_pushItemBtn">
+          <div class="checkout_pushItemBtnL">
+            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-left" class="svg-inline--fa fa-chevron-left fa-w-10" role="img" viewBox="0 0 320 512"><path fill="#172852" d="M34.52 239.03L228.87 44.69c9.37-9.37 24.57-9.37 33.94 0l22.67 22.67c9.36 9.36 9.37 24.52.04 33.9L131.49 256l154.02 154.75c9.34 9.38 9.32 24.54-.04 33.9l-22.67 22.67c-9.37 9.37-24.57 9.37-33.94 0L34.52 272.97c-9.37-9.37-9.37-24.57 0-33.94z"/></svg>
+          </div>
+        </div>
+  
+        <!-- 商品 -->
+        <div class="checkout_pushItemSlider">
+          <ul class="checkout_pushItemList">
+  
+            <li class="checkout_pushItem">
+              <img src="../images/checkout/banner_matcha_item.png">
+              <p>南投銅鑼燒</p>
+              <p>$480元/6入</p>
+              <div>加入購物車</div>
+            </li>
+  
+            <li class="checkout_pushItem">
+              <img src="../images/checkout/banner_matcha_item.png">
+              <p>南投銅鑼燒</p>
+              <p>$480元/6入</p>
+              <div>加入購物車</div>
+            </li>
+  
+            <li class="checkout_pushItem">
+              <img src="../images/checkout/banner_matcha_item.png">
+              <p>南投銅鑼燒</p>
+              <p>$480元/6入</p>
+              <div>加入購物車</div>
+            </li>
+  
+            <li class="checkout_pushItem">
+              <img src="../images/checkout/banner_matcha_item.png">
+              <p>南投銅鑼燒</p>
+              <p>$480元/6入</p>
+              <div>加入購物車</div>
+            </li>
+  
+            <li class="checkout_pushItem">
+              <img src="../images/checkout/banner_matcha_item.png">
+              <p>南投銅鑼燒</p>
+              <p>$480元/6入</p>
+              <div>加入購物車</div>
+            </li>
+  
+            <li class="checkout_pushItem">
+              <img src="../images/checkout/banner_strawberry_item.png">
+              <p>南投銅鑼燒</p>
+              <p>$480元/6入</p>
+              <div>加入購物車</div>
+            </li>
+  
+            <li class="checkout_pushItem">
+              <img src="../images/checkout/banner_strawberry_item.png">
+              <p>南投銅鑼燒</p>
+              <p>$480元/6入</p>
+              <div>加入購物車</div>
+            </li>
+  
+          </ul>
+        </div>
+  
+        <!-- 右邊按鈕 -->
+        <div class="checkout_pushItemBtn">
+          <div class="checkout_pushItemBtnR">
+            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right" class="svg-inline--fa fa-chevron-right fa-w-10" role="img" viewBox="0 0 320 512"><path fill="#172852" d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg>
+          </div>
+        </div>
+  
+      </div>
+  
+  
+  
     </div>
-
-
-
-    </div>
-
-
-
-
-
-
-
-
   </div>
 
 
@@ -195,7 +317,7 @@
   
 
   <script src="../js/checkout.js"></script>
-  <script src="../js/cart_vue.js"></script>
+  <script src="../js/checkout_vue.js"></script>
   <script src="https://kit.fontawesome.com/8c3a8ab95b.js" crossorigin="anonymous"></script>
 </body>
 </html>
