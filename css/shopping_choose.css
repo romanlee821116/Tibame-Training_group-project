@@ -219,7 +219,7 @@ body {
 
 .choose_select_area {
   margin: 0 auto;
-  width: 50%;
+  width: 65%;
   height: 100%;
   display: flex;
   justify-content: space-evenly;
@@ -235,7 +235,7 @@ body {
 }
 
 .choose_items:nth-child(1) {
-  width: 70px;
+  width: 90px;
   height: 100%;
   transition: all .5s;
   background-image: url("../images/shopping_choose/11.png");
@@ -253,7 +253,7 @@ body {
 }
 
 .choose_items:nth-child(2) {
-  width: 70px;
+  width: 90px;
   height: 100%;
   transition: all .5s;
   background-image: url("../images/shopping_choose/22.png");
@@ -271,7 +271,7 @@ body {
 }
 
 .choose_items:nth-child(3) {
-  width: 70px;
+  width: 90px;
   height: 100%;
   transition: all .5s;
   background-image: url("../images/shopping_choose/33.png");
@@ -289,7 +289,7 @@ body {
 }
 
 .choose_items:nth-child(4) {
-  width: 70px;
+  width: 90px;
   height: 100%;
   transition: all .5s;
   background-image: url("../images/shopping_choose/44.png");
@@ -308,7 +308,7 @@ body {
 }
 
 .choose_items:nth-child(5) {
-  width: 70px;
+  width: 90px;
   height: 100%;
   transition: all .5s;
   background-image: url("../images/shopping_choose/55.png");
@@ -327,7 +327,7 @@ body {
 }
 
 .choose_items:nth-child(6) {
-  width: 70px;
+  width: 90px;
   height: 100%;
   transition: all .5s;
   background-image: url("../images/shopping_choose/66.png");
@@ -345,7 +345,7 @@ body {
 }
 
 .choose_items:nth-child(7) {
-  width: 70px;
+  width: 90px;
   height: 100%;
   transition: all .5s;
   background-image: url("../images/shopping_choose/77.png");
@@ -380,6 +380,12 @@ body {
 .choose_text p {
   letter-spacing: 2px;
   transform: translateY(15px);
+}
+
+@media screen and (max-width: 1023px) {
+  .choose_select_area {
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 575px) {
