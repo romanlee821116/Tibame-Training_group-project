@@ -54,8 +54,13 @@ table {
 }
 
 * {
+<<<<<<< HEAD
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+=======
+  box-sizing: border-box;
+  border: solid 1px red;
+>>>>>>> wei
   font-family: '微軟正黑體';
 }
 
@@ -302,7 +307,7 @@ body {
   }
 }
 
-main {
+.product_main {
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
@@ -632,8 +637,8 @@ main {
   transition: all .5s;
 }
 
-@media screen and (min-width: 992px) and (max-width: 1199px) {
-  main {
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .product_main {
     width: 80%;
   }
 }
