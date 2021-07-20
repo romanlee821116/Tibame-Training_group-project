@@ -1,5 +1,7 @@
 $(document).ready(function(){
 
+    navbar();
+
     // ======================== vue ===========================
     // 訂單查詢的收件人詳細資訊
     Vue.component('receiver-detail',{
@@ -9,7 +11,7 @@ $(document).ready(function(){
                 recevierPhone: '0912345678',
                 recevierAddress: '******民權東路六段',
 
-                isActive: false,
+                // isActive: false,
             };
         },
         template: `
@@ -25,9 +27,7 @@ $(document).ready(function(){
         `,
         methods: {
             recevierClose(){
-                this.isActive = true;
-                // console.log('close');
-                // console.log(this.isActive);
+                // this.isActive = true;
                 $('.receiverDetail').fadeOut();
                 $('.greyBackground').remove();
                 // 可滑動卷軸
@@ -37,7 +37,7 @@ $(document).ready(function(){
     });
 
     new Vue({
-        el: '.vueOrder',
+        el: '.memberAll',
     
     });
 
@@ -49,7 +49,7 @@ $(document).ready(function(){
         $(this).css('color','#172852');
         $(this).siblings().css('color','#cba89a');
         $('.memberPart1').fadeIn(700);
-        $('.underLine ~ div').not('.memberPart1').hide();
+        $('.memberPart1 ~ div').not('.memberPart1').hide();
     });
 
     $('#memberPsw').click(function(){
@@ -57,7 +57,7 @@ $(document).ready(function(){
         $(this).css('color','#172852');
         $(this).siblings().css('color','#cba89a');
         $('.memberPart2').fadeIn(700);
-        $('.underLine ~ div').not('.memberPart2').hide();
+        $('.memberLine ~ div').not('.memberPart2').hide();
     });
 
     $('#memberOrder').click(function(){
@@ -65,7 +65,7 @@ $(document).ready(function(){
         $(this).css('color','#172852');
         $(this).siblings().css('color','#cba89a');
         $('.memberPart3').fadeIn(700);
-        $('.underLine ~ div').not('.memberPart3').hide();
+        $('.memberLine ~ div').not('.memberPart3').hide();
     });
 
     $('#memberRefund').click(function(){
@@ -73,13 +73,15 @@ $(document).ready(function(){
         $(this).css('color','#172852');
         $(this).siblings().css('color','#cba89a');
         $('.memberPart4').fadeIn(700);
-        $('.underLine ~ div').not('.memberPart4').hide();
+        $('.memberLine ~ div').not('.memberPart4').hide();
     });
 
     $('#memberLike').click(function(){
         $('.choosenBar2').css('left','80%');
         $(this).css('color','#172852');
         $(this).siblings().css('color','#cba89a');
+        $('.memberPart5').fadeIn(700);
+        $('.memberLine ~ div').not('.memberPart5').hide();
     });
     // ================訂單查詢===================
     // 查看明細 & 收合明細
@@ -98,7 +100,7 @@ $(document).ready(function(){
     // 收件人詳細資訊
     $('.memberReceiverID').click(function(){
         // 出現彈出視窗
-        recevier = $(this).parent().parent().parent().next().next().next();
+        recevier = $(this).parent().parent().next().next().next();
         // $('.receiverDetail').fadeIn(500);
         recevier.fadeIn(500);
         // 不可滑動卷軸
@@ -112,7 +114,34 @@ $(document).ready(function(){
     //     $('body').removeClass('stopScroll');
     // });
 
+    // ==================收藏管理==================
+    $('.memberLikeHeart').click(function(){
+        let deleItem = this;
+        $(deleItem).attr('src','../images/member/unfavorite.png')
+        $(deleItem).parent().fadeOut(1000);
+        setTimeout(function(){
+            $(deleItem).parent().remove();
+        },1000);
+        // $(this).parent().remove();
+    });
+
 
 });
+
+// navbar-------------------
+function navbar(){
+    var scrolltop = new Array();
+    var index = 0;
+    scrolltop[0] = 0;
+    $(document).scroll(function(){
+        index++;
+        scrolltop[index] = $(document).scrollTop();
+        if (scrolltop[index] > scrolltop[index - 1]) {
+            $('.navbar').fadeOut()
+        } else {
+            $('.navbar').fadeIn()
+        };
+    })
+}
 
 

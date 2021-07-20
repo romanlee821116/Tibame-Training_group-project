@@ -1,6 +1,7 @@
 $(document).ready(function(){
     getRandom();        //驗證碼亂數
     $('.eye2').hide();  //開眼睛看密碼
+    $('.loginpopBG').hide();   //送出密碼彈窗關閉
 
     // 登入與註冊的頁面轉換=====================
     $('#signup_form').hide();
@@ -11,7 +12,10 @@ $(document).ready(function(){
     });
     // ============登入============
     $('#loginIcon').click(function(){
-        $('.loginWrapper').css('height','140px');
+        // 清空表單反饋
+        memberFormError0();
+        // -----------
+        $('.loginWrapper').css('height','150px');
         // $('.loginWrapper').animate({height:'100px'},500);
         // FB跟LINE登入
         $('.loginOther').fadeIn(700);
@@ -33,14 +37,17 @@ $(document).ready(function(){
 
     // ============註冊============
     $('#signupIcon').click(function(){
-        $('.loginWrapper').css('height','410px');
+        // 清空表單反饋
+        memberFormError0();
+        // -----------
+        $('.loginWrapper').css('height','430px');
         // $('.loginWrapper').css('height','100%');
         // var full = $('.loginWrapper').height();
         // $('.loginWrapper').animate({height: full}, 500);
         // FB跟LINE登入
         $('.loginOther').css('display','none');
         // 密碼說明
-        $('#password').attr('placeholder','請輸入密碼 (數字+英文字母8-16位)');
+        $('#loginPassword').attr('placeholder','請輸入密碼 (數字+英文字母8-16位)');
         $('.eye2').show();
         // 小三角形移動位置
         $('#loginArrow').css('left','71%');
@@ -60,12 +67,18 @@ $(document).ready(function(){
     // 忘記密碼=============================
     // =========跳轉忘記密碼==========
     $('#loginForgetPsw').click(function(){
+        // 清空表單反饋
+        memberFormError0();
+        // -----------
         $('.loginLeft').css('transform','translate3d(-150%,0,0)');
         $('.forgetPWD').css('transform','translate3d(-150%,0,0)');
     });
 
     // ===========返回登入===========
     $('.loginBack').click(function(){
+        // 清空表單反饋
+        memberFormError0();
+        // -----------
         $('.loginLeft').css('transform','translate3d(0,0,0)');
         $('.forgetPWD').css('transform','translate3d(0,0,0)');
     });
@@ -80,6 +93,10 @@ $(document).ready(function(){
         };
     });
     
+<<<<<<< HEAD
+=======
+    // 嘗試寫點擊網頁頁面，就把開眼睛看密碼關掉
+>>>>>>> a627b91288355714767ff29dcba4947141b18acb
     // $(document).click(function(){
     //     if( $('.eye').prev().attr('type') == 'text'){
     //         $('.eye').prev().attr('type','password');
@@ -123,7 +140,140 @@ $(document).ready(function(){
         getRandom();
     });
 
+    // 表單錯誤資訊反饋========================
+    // 沒輸入按送出會跳出提示框
+    $('.loginButton').click(function(e){
+        // 清空重來
+        $('.loginError').css('display','none');
+        $('.loginError').children('p').text('資料格式不正確');
+        $('input').css('border','none');
+        // 設定變數
+        let account = $('.loginAccount').val();
+        let password = $('#loginPassword').val();
+        let password2 = $('#loginPassword2').val();
+        // 性別x3
+        let malecheck = $('#loginMale').is(":checked");
+        let femalecheck = $('#loginFemale').is(":checked");
+        let othercheck = $('#loginOther').is(":checked");
+
+        let name = $('#loginName').val();
+        let phone = $('#loginPhone').val();
+        // 地址x3
+        let address1 = $('.loginSelect1').val();
+        let address2 = $('.loginSelect2').val();
+        let address3 = $('#loginAddress').val();
+        
+        // 亂數碼
+        let code = $('.loginCodeEnter').val();
+        let codeRight = $('.loginCodeNew').text();
+        console.log(codeRight);
+
+        // 正規表示法
+        // email格式
+        let mailRight = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+        // 密碼格式
+        let passwordRight = /^.{8,16}$/;
+
+        // 程式開始----------------------------
+        if(account == ""){
+            e.preventDefault();
+            $('.loginAccount').css('border','2px solid #dc3838');
+            $('.loginAccount').next().css('display','inline-block');
+            $('.loginAccount').next().children('p').text('請輸入資訊');
+        }else if(!mailRight.test(account)){
+            e.preventDefault();
+            $('.loginAccount').css('border','2px solid #dc3838');
+            $('.loginAccount').next().css('display','inline-block');
+        }
+
+        if(password == ""){
+            e.preventDefault();
+            $('#loginPassword').css('border','2px solid #dc3838');
+            $('#loginPassword').next().next().css('display','inline-block');
+            $('#loginPassword').next().next().children('p').text('請輸入資訊');
+        }else if(!passwordRight.test(password)){
+            e.preventDefault();
+            $('#loginPassword').css('border','2px solid #dc3838');
+            $('#loginPassword').next().next().css('display','inline-block');
+        }
+
+        if(password2 == ""){
+            e.preventDefault();
+            $('#loginPassword2').css('border','2px solid #dc3838');
+            $('#loginPassword2').next().next().css('display','inline-block');
+            $('#loginPassword2').next().next().children('p').text('請輸入資訊');
+        }else if(!passwordRight.test(password2)){
+            e.preventDefault();
+            $('#loginPassword2').css('border','2px solid #dc3838');
+            $('#loginPassword2').next().next().css('display','inline-block');
+        }
+
+        if(malecheck == false && femalecheck == false && othercheck == false){
+            e.preventDefault();
+            $('.loginGender').next().css('display','inline-block');
+            $('.loginGender').next().children('p').text('請選擇性別');
+        }
+
+        if(name == ""){
+            e.preventDefault();
+            $('#loginName').css('border','2px solid #dc3838');
+            $('#loginName').next().css('display','inline-block');
+            $('#loginName').next().children('p').text('請輸入資訊');
+        }
+
+        if(phone == ""){
+            e.preventDefault();
+            $('#loginPhone').css('border','2px solid #dc3838');
+            $('#loginPhone').next().css('display','inline-block');
+            $('#loginPhone').next().children('p').text('請輸入資訊');
+        }
+
+        if(address1 == false || address2 == false || address3 == false){
+            e.preventDefault();
+            $('#loginAddress').next().css('display','inline-block');
+            $('#loginAddress').next().children('p').text('地址請填寫完全');
+        }
+
+        // 輸入數字
+        if(code == ""){
+            e.preventDefault();
+            $('.loginCodeEnter').css('border','2px solid #dc3838');
+            $('.loginCodeEnter').next().css('display','inline-block');
+            $('.loginCodeEnter').next().children('p').text('請輸入資訊');
+        }else if( code != codeRight ){
+            e.preventDefault();
+            $('.loginCodeEnter').css('border','2px solid #dc3838');
+            $('.loginCodeEnter').next().css('display','inline-block');
+            $('.loginCodeEnter').next().children('p').text('驗證碼錯誤');
+        }else{
+            
+        }
+        
+        // 如果點擊的是傳送新密碼，則跳出視窗
+        if( $(this).hasClass('loginSendPSW')){
+            $('.loginpopBG').show();
+            console.log('show');
+        };
+
+    });
+
+    // 忘記密碼 關閉彈窗---------------
+    $('.loginSendPSWclose').click(function(){
+        $('.loginpopBG').hide();
+    });
+
+    // 清空表單反饋-------------------
+    function memberFormError0(){
+        $('.loginError').css('display','none');
+        $('.loginError').children('p').text('資料格式不正確');
+        $('input').css('border','none');
+        // 清除所有input的值
+        $('input').val('');
+    };
+
 });
+
+
 
 
 

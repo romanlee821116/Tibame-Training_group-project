@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="../css/member.css">
     <!-- fontawesome -->
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
   crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
@@ -35,16 +34,18 @@
     <div class='memberAll'>
         <p>ACCOUNT</p>
         <h2>會員中心</h2>
-        <div class='memberTitle'>
-            <h4 id='memberId'>會員資料</h4>
-            <h4 id='memberPsw'>修改密碼</h4>
-            <h4 id='memberOrder'>訂單查詢</h4>
-            <h4 id='memberRefund'>取消/退款查詢</h4>
-            <h4 id='memberLike'>收藏管理</h4>
-        </div>
-        <div class='underLine'>
-            <div class='choosenBar'></div>
-            <div class='choosenBar2'></div>
+        <div class='memberLine'>
+            <div class='memberTitle'>
+                <h4 id='memberId'>會員資料</h4>
+                <h4 id='memberPsw'>修改密碼</h4>
+                <h4 id='memberOrder'>訂單查詢</h4>
+                <h4 id='memberRefund'>取消/退款查詢</h4>
+                <h4 id='memberLike'>收藏管理</h4>
+            </div>
+            <div class='underLine'>
+                <div class='choosenBar'></div>
+                <div class='choosenBar2'></div>
+            </div>
         </div>
         <!-- ==================會員資料=================== -->
         <div class='memberPart1'>
@@ -72,36 +73,36 @@
         </div>
 
         <!-- ==================訂單查詢=================== -->
-        <div class='memberPart3 vueOrder'>
+        <div class='memberPart3'>
             <div class='orderSearch'>
                 <input type="text" placeholder="請輸入您的訂單編號">
                 <button type='submit'>搜尋</button>
             </div>
+            <p class='clearBoth'></p>
             <div>
                 <!-- 訂單1 -->
                 <div class='memberOrder'>
-                    <table class='memberOrderContent' style="table-layout:fixed">
-                        <tr>
-                            <td>訂單編號</td>
-                            <td>日期</td>
-                            <td>金額</td>
-                            <td>付款方式</td>
-                            <td>付款狀態</td>
-                            <td>貨運狀態</td>
-                            <td>訂單狀態</td>
-                            <td>收件人資訊</td>
-                        </tr>
-                        <tr>
-                            <td>123456789</td>
-                            <td>2021-04-26</td>
-                            <td>$7000</td>
-                            <td>貨到付款</td>
-                            <td>未付款</td>
-                            <td>已出貨</td>
-                            <td>已確認</td>
-                            <td class='memberReceiverID'>詳細資訊</td>
-                        </tr>
-                    </table>
+                    <div class='memberOrderContent' style="table-layout:fixed">
+                        <div class="memberGrid">
+                            <div class='memberGrid1'>訂單編號</div>
+                            <div class='memberGrid2'>日期</div>
+                            <div class='memberGrid3'>金額</div>
+                            <div class='memberGrid4'>付款方式</div>
+                            <div class='memberGrid5'>付款狀態</div>
+                            <div class='memberGrid6'>貨運狀態</div>
+                            <div class='memberGrid7'>訂單狀態</div>
+                            <div class='memberGrid8'>收件人資訊</div>
+                            <div class='memberGrid9'>123456789</div>
+                            <div class='memberGrid10'>2021-04-26</div>
+                            <div class='memberGrid11'>$7000</div>
+                            <div class='memberGrid12'>貨到付款</div>
+                            <div class='memberGrid13'>未付款</div>
+                            <div class='memberGrid14'>已出貨</div>
+                            <div class='memberGrid15'>已確認</div>
+                            <div class='memberGrid16 memberReceiverID'>詳細資訊</div>
+                        </div>
+                    </div>
+
                     <div class='memberProgressAll'>
                         <div>
                             <div class='memberProgressDot'>
@@ -166,28 +167,26 @@
                 <!-- 訂單1結束====== -->
                 <!-- 訂單2 -->
                 <div class='memberOrder'>
-                    <table class='memberOrderContent' style="table-layout:fixed">
-                        <tr>
-                            <td>訂單編號</td>
-                            <td>日期</td>
-                            <td>金額</td>
-                            <td>付款方式</td>
-                            <td>付款狀態</td>
-                            <td>貨運狀態</td>
-                            <td>訂單狀態</td>
-                            <td>收件人資訊</td>
-                        </tr>
-                        <tr>
-                            <td>123456789</td>
-                            <td>2021-04-26</td>
-                            <td>$7000</td>
-                            <td>貨到付款</td>
-                            <td>未付款</td>
-                            <td>已出貨</td>
-                            <td>已確認</td>
-                            <td class='memberReceiverID'>詳細資訊</td>
-                        </tr>
-                    </table>
+                    <div class='memberOrderContent' style="table-layout:fixed">
+                        <div class="memberGrid">
+                            <div class='memberGrid1'>訂單編號</div>
+                            <div class='memberGrid2'>日期</div>
+                            <div class='memberGrid3'>金額</div>
+                            <div class='memberGrid4'>付款方式</div>
+                            <div class='memberGrid5'>付款狀態</div>
+                            <div class='memberGrid6'>貨運狀態</div>
+                            <div class='memberGrid7'>訂單狀態</div>
+                            <div class='memberGrid8'>收件人資訊</div>
+                            <div class='memberGrid9'>123456789</div>
+                            <div class='memberGrid10'>2021-04-26</div>
+                            <div class='memberGrid11'>$7000</div>
+                            <div class='memberGrid12'>貨到付款</div>
+                            <div class='memberGrid13'>未付款</div>
+                            <div class='memberGrid14'>已出貨</div>
+                            <div class='memberGrid15'>已確認</div>
+                            <div class='memberGrid16 memberReceiverID'>詳細資訊</div>
+                        </div>
+                    </div>
                     <div class='memberProgressAll'>
                         <div>
                             <div class='memberProgressDot'>
@@ -253,28 +252,26 @@
 
                 <!-- 訂單3 -->
                 <div class='memberOrder'>
-                    <table class='memberOrderContent' style="table-layout:fixed">
-                        <tr>
-                            <td>訂單編號</td>
-                            <td>日期</td>
-                            <td>金額</td>
-                            <td>付款方式</td>
-                            <td>付款狀態</td>
-                            <td>貨運狀態</td>
-                            <td>訂單狀態</td>
-                            <td>收件人資訊</td>
-                        </tr>
-                        <tr>
-                            <td>123456789</td>
-                            <td>2021-04-26</td>
-                            <td>$7000</td>
-                            <td>貨到付款</td>
-                            <td>未付款</td>
-                            <td>已出貨</td>
-                            <td>已確認</td>
-                            <td class='memberReceiverID'>詳細資訊</td>
-                        </tr>
-                    </table>
+                    <div class='memberOrderContent' style="table-layout:fixed">
+                        <div class="memberGrid">
+                            <div class='memberGrid1'>訂單編號</div>
+                            <div class='memberGrid2'>日期</div>
+                            <div class='memberGrid3'>金額</div>
+                            <div class='memberGrid4'>付款方式</div>
+                            <div class='memberGrid5'>付款狀態</div>
+                            <div class='memberGrid6'>貨運狀態</div>
+                            <div class='memberGrid7'>訂單狀態</div>
+                            <div class='memberGrid8'>收件人資訊</div>
+                            <div class='memberGrid9'>123456789</div>
+                            <div class='memberGrid10'>2021-04-26</div>
+                            <div class='memberGrid11'>$7000</div>
+                            <div class='memberGrid12'>貨到付款</div>
+                            <div class='memberGrid13'>未付款</div>
+                            <div class='memberGrid14'>已出貨</div>
+                            <div class='memberGrid15'>已確認</div>
+                            <div class='memberGrid16 memberReceiverID'>詳細資訊</div>
+                        </div>
+                    </div>
                     <div class='memberProgressAll'>
                         <div>
                             <div class='memberProgressDot'>
@@ -346,39 +343,37 @@
                 <input type="text" placeholder="請輸入您的訂單編號">
                 <button type='submit'>搜尋</button>
             </div>
+            <p class='clearBoth'></p>
             <div>
-                <!-- 訂單1 -->
                 <div class='memberOrder'>
-                    <table class='memberOrderContent' style="table-layout:fixed">
-                        <tr>
-                            <td>訂單編號</td>
-                            <td>日期</td>
-                            <td>金額</td>
-                            <td>付款方式</td>
-                            <td>付款狀態</td>
-                            <td>貨運狀態</td>
-                            <td>訂單狀態</td>
-                            <td>收件人資訊</td>
-                        </tr>
-                        <tr>
-                            <td>123456789</td>
-                            <td>2021-04-26</td>
-                            <td>$7000</td>
-                            <td>貨到付款</td>
-                            <td>未付款</td>
-                            <td>已出貨</td>
-                            <td>已確認</td>
-                            <td>詳細資訊</td>
-                        </tr>
-                    </table>
+                    <div class='memberOrderContent' style="table-layout:fixed">
+                        <div class="memberGrid">
+                            <div class='memberGrid1'>訂單編號</div>
+                            <div class='memberGrid2'>日期</div>
+                            <div class='memberGrid3'>金額</div>
+                            <div class='memberGrid4'>付款方式</div>
+                            <div class='memberGrid5'>付款狀態</div>
+                            <div class='memberGrid6'>貨運狀態</div>
+                            <div class='memberGrid7'>訂單狀態</div>
+                            <div class='memberGrid8'>收件人資訊</div>
+                            <div class='memberGrid9'>123456789</div>
+                            <div class='memberGrid10'>2021-04-26</div>
+                            <div class='memberGrid11'>$7000</div>
+                            <div class='memberGrid12'>貨到付款</div>
+                            <div class='memberGrid13'>未付款</div>
+                            <div class='memberGrid14'>已出貨</div>
+                            <div class='memberGrid15'>已確認</div>
+                            <div class='memberGrid16 memberReceiverID'>詳細資訊</div>
+                        </div>
+                    </div>
                     <div class='memberProgressAll'>
                         <div>
                             <div class='memberProgressDot'>
                                 <div></div>
                                 <div class='memberLineCheck'></div>
                                 <div></div>
-                                <div class='memberLineCheck'></div>
                                 <div></div>
+                                <div class='memberUnchecked'></div>
                                 <div></div>
                                 <div class='memberUnchecked'></div>
                             </div>
@@ -390,8 +385,8 @@
                             </div>
                         </div>
                         <div>
-                            <button class='memberBuyAgain noshow'>再次購買</button>
                             <button class='memberOpenDetail'>查看明細</button>
+                            <button class='memberBuyAgain noshow'>再次購買</button>
                         </div>
                     </div>
                     <div class='memberOrderDetailAll'>
@@ -427,14 +422,74 @@
                                 <td class='word-sp2'>五入</td>
                             </tr>
                         </table>
-                    </div>  
+                    </div> 
+                    <!-- 收件人詳細資訊 -->
+                    <receiver-detail></receiver-detail>
                     
                 </div>
                 <!-- 訂單1結束====== -->
             </div>
         </div>
 
-        <!-- =================================== -->
+        <!-- ============================================ -->
+
+        <!-- ==================收藏管理=================== -->
+        <div class='memberPart5'>
+            <div class='memberLikePack'>
+                <img class='memberLikeImg' src="../images/member/cookie.jpg">
+                <img class='memberLikeHeart' src="../images/member/favorite.png">
+            </div>
+            <div class='memberLikePack'>
+                <img class='memberLikeImg' src="../images/member/cookie2.jpg">
+                <img class='memberLikeHeart' src="../images/member/favorite.png">
+            </div>
+            <div class='memberLikePack'>
+                <img class='memberLikeImg' src="../images/member/cookie.jpg">
+                <img class='memberLikeHeart' src="../images/member/favorite.png">
+            </div>
+            <div class='memberLikePack'>
+                <img class='memberLikeImg' src="../images/member/cookie2.jpg">
+                <img class='memberLikeHeart' src="../images/member/favorite.png">
+            </div>
+            <div class='memberLikePack'>
+                <img class='memberLikeImg' src="../images/member/cookie.jpg">
+                <img class='memberLikeHeart' src="../images/member/favorite.png">
+            </div>
+            <div class='memberLikePack'>
+                <img class='memberLikeImg' src="../images/member/cookie2.jpg">
+                <img class='memberLikeHeart' src="../images/member/favorite.png">
+            </div>
+            <div class='memberLikePack'>
+                <img class='memberLikeImg' src="../images/member/cookie.jpg">
+                <img class='memberLikeHeart' src="../images/member/favorite.png">
+            </div>
+            <div class='memberLikePack'>
+                <img class='memberLikeImg' src="../images/member/cookie2.jpg">
+                <img class='memberLikeHeart' src="../images/member/favorite.png">
+            </div>
+            <div class='memberLikePack'>
+                <img class='memberLikeImg' src="../images/member/cookie.jpg">
+                <img class='memberLikeHeart' src="../images/member/favorite.png">
+            </div>
+            <div class='memberLikePack'>
+                <img class='memberLikeImg' src="../images/member/cookie2.jpg">
+                <img class='memberLikeHeart' src="../images/member/favorite.png">
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+
+    </div>
+    <!-- =============footer============== -->
+    <div class="footer">
+        <div class="footer-left">
+            <div class="footer-logo"><img src="./images/index/logo_footer.png" alt=""></div>
+            <p><a href="#">隱私政策</a></p>                        
+            <p><a href="#">服務條款</a></p>                        
+        </div>
+        <div class="footer-right">
+            <p>本網站為緯育TibaMe前端設計工程師班第66期第__組學員專題成果作品，本平台僅供學習、展示之用。參考資源:XXXXXXXXXXXXX。若有侵權疑慮，您可以私訊[TibaMe-前端設計工程師養成班]，後續會由專人協助處理</p>
+        </div>
     </div>
     <!-- =============footer============== -->
     <div class="footer">

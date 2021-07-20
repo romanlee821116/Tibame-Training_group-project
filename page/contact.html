@@ -1,161 +1,172 @@
 <!DOCTYPE html>
 <html lang="zh-tw">
+
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>contact</title>
-  <link href="../css/contact.css" rel="stylesheet">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>  <title>FAQ</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contact</title>
+    <link href="../css/contact.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>FAQ</title>
 
 </head>
-<body>
 
-    <!-- ========== header ========== -->
+<body>
 
     <!-- navbar -->
     <div class="navbar">
-      <div class="navbar-logo">
-        <img src="../images/index/logo.png" alt="">
-      </div>
-      <div class="navbar-icon">
-        <p id='scrollvalue'></p>
-        <a href="#"><i class="fas fa-user"></i></a>
-        <a href="#"><i class="fas fa-shopping-cart"></i></a>
-        <a href="#"><i class="fas fa-bars"></i></a>
-      </div>
+        <div class="navbar-logo">
+            <img src="../images/index/logo.png" alt="">
+        </div>
+        <div class="navbar-icon">
+            <p id='scrollvalue'></p>
+            <a href="#"><i class="fas fa-user"></i></a>
+            <a href="#"><i class="fas fa-shopping-cart"></i></a>
+            <a href="#"><i class="fas fa-bars"></i></a>
+        </div>
     </div>
 
 
 
-  <!-- ========== main ========== -->
-  <div class="contact_container">
+    <!-- ========== main ========== -->
+    <div class="contact_container">
 
-    <p id="contact_contact">CONTACT</p>
+        <p id="contact_contact">CONTACT</p>
 
-    <div id="contact_contactBorder">
+        <div id="contact_contactBorder">
 
-      <!-- ========== 左邊區塊 ========== -->
-      <div class="contact_left">
+            <!-- ========== 左邊區塊 ========== -->
+            <div class="contact_left">
 
-        <p class="contact_title">聯絡我們</p>
+                <p class="contact_title">聯絡我們</p>
 
-        <p class="contact_description">若您有任何疑問，可於營業時間內撥打電話，</p>
-        <p class="contact_description">或加入我們的LINE官方來聯繫客服人員，</p>
-        <p class="contact_description">亦可提寫右側表單留言給我們，我們將於服務時間內盡快回復您。</p>
+                <p class="contact_description">若您有任何疑問，可於營業時間內撥打電話，</p>
+                <p class="contact_description">或加入我們的LINE官方來聯繫客服人員，</p>
+                <p class="contact_description">亦可提寫右側表單留言給我們，我們將於服務時間內盡快回復您。</p>
 
 
-        <div class="contact_call">
-          <div class="contact_callImg"><img src="../images/contact/phone-alt-solid.svg"></div>
-          <p>來電聯繫</p>
+                <div class="contact_call">
+                    <div class="contact_callImg"><img src="../images/contact/phone-alt-solid.svg"></div>
+                    <p>來電聯繫</p>
+                </div>
+
+
+                <p id="contact_serviceTime">營業時間 9:00 - 20:00</p>
+                <p id="contact_number">TEL 0800-123-123</p>
+
+
+                <div class="contact_line">
+                    <div class="contact_lineImg"><img src="../images/contact/line-brands.svg"></div>
+                    <p>LINE聯繫</p>
+                </div>
+
+
+                <p id="contact_lineText">掃描下方QRcode加入我們的LINE官方來聯繫客服人員</p>
+                <div id="contact_qrcode"><img src="../images/contact/QRcode.png"></div>
+
+            </div>
+
+
+            <!-- ========== 右邊區塊 ========== -->
+            <div class="contact_right">
+
+                <form class="contact_contactList" action="#" method="post">
+                    <p id="contact_contactTitle">信件聯繫</p>
+
+                    <div class="contact_nameBorder">
+                        <input type="text" name="name" placeholder="請輸入您的姓名" onfocus="this.placeholder=''" onblur="this.placeholder='請輸入您的姓名'" id="contact_yourName">
+                        <div class="contact_error contact_one">
+                            <p>資料格式不正確</p>
+                            <div></div>
+                        </div>
+                    </div>
+
+                    <div class="contact_nameBorder">
+                        <input type="tel" name="phone" placeholder="請輸入您的連絡電話" onfocus="this.placeholder=''" onblur="this.placeholder='請輸入您的連絡電話'" id="contact_yourPhone">
+                        <div class="contact_error contact_two">
+                            <p>資料格式不正確</p>
+                            <div></div>
+                        </div>
+                    </div>
+
+                    <div class="contact_nameBorder">
+                        <input type="text" name="Email" placeholder="請輸入您的信箱" onfocus="this.placeholder=''" onblur="this.placeholder='請輸入您的信箱'" id="contact_yourEmail">
+                        <div class="contact_error contact_three">
+                            <p>資料格式不正確</p>
+                            <div></div>
+                        </div>
+
+                    </div>
+
+
+
+                    <p class="contact_wantContect">希望我們連繫您的方式</p>
+
+                    <div class="contact_radioBorder">
+                        <div class="contact_radio contact_radio1">
+                            <input type="radio" name="callBack" id="contact_tel">
+                            <label for="contact_tel">電話</label>
+                            <div class="contact_fake1">
+                                <div class="contact_fakeClick1"></div>
+                            </div>
+                        </div>
+
+                        <div class="contact_radio contact_radio2">
+                            <input type="radio" name="callBack" id="contact_mail">
+                            <label for="contact_mail">Email</label>
+                            <div class="contact_fake2">
+                                <div class="contact_fakeClick2"></div>
+                            </div>
+                        </div>
+
+                        <div class="contact_error contact_four">
+                            <p>聯絡方式未勾選</p>
+                            <div></div>
+                        </div>
+                    </div>
+
+
+
+                    <p id="contact_message">詳細內容</p>
+
+                    <div class="contact_nameBorder">
+                        <textarea id="contact_content" placeholder="請輸入您的訊息內容" onfocus="this.placeholder=''" onblur="this.placeholder='請輸入您的訊息內容'"></textarea>
+                        <div class="contact_error contact_five">
+                            <p>資料格式不正確</p>
+                            <div></div>
+                        </div>
+                    </div>
+
+                    <button type="contact_submit" class="contact_mainbtn mainbtn">送出</button>
+
+                </form>
+
+            </div>
+
         </div>
 
 
-        <p id="contact_serviceTime">營業時間 9:00 - 20:00</p>
-        <p id="contact_number">TEL 0800-123-123</p>
-
-
-        <div class="contact_line">
-          <div class="contact_lineImg"><img src="../images/contact/line-brands.svg"></div>
-          <p>LINE聯繫</p>
-        </div>
-
-
-        <p id="contact_lineText">掃描下方QRcode加入我們的LINE官方來聯繫客服人員</p>
-        <div id="contact_qrcode"><img src="../images/contact/QRcode.png"></div>
-
-      </div>
-
-
-      <!-- ========== 右邊區塊 ========== -->
-      <div class="contact_right">
-
-        <form class="contact_contactList" action="#" method="post">
-          <p id="contact_contactTitle">信件聯繫</p>
-
-          <div class="contact_nameBorder">
-            <input type="text" name="name" placeholder="請輸入您的姓名" onfocus="this.placeholder=''" onblur="this.placeholder='請輸入您的姓名'" id="contact_yourName">
-            <div class="contact_error contact_one">
-              <p>資料格式不正確</p>
-              <div></div>
-            </div>
-          </div>
-
-          <div class="contact_nameBorder">
-            <input type="tel" name="phone" placeholder="請輸入您的連絡電話" onfocus="this.placeholder=''" onblur="this.placeholder='請輸入您的連絡電話'" id="contact_yourPhone">
-            <div class="contact_error contact_two">
-              <p>資料格式不正確</p>
-              <div></div>
-            </div>
-          </div>
-
-          <div class="contact_nameBorder">
-            <input type="text" name="Email" placeholder="請輸入您的信箱" onfocus="this.placeholder=''" onblur="this.placeholder='請輸入您的信箱'" id="contact_yourEmail">
-            <div class="contact_error contact_three">
-              <p>資料格式不正確</p>
-              <div></div>
-            </div>
-
-          </div>
-          
-
-
-          <p class="contact_wantContect">希望我們連繫您的方式</p>
-
-          <div class="contact_radioBorder">
-            <div class="contact_radio contact_radio1">
-              <input type="radio" name="callBack" id="contact_tel">
-              <label for="contact_tel">電話</label>
-              <div class="contact_fake1"><div class="contact_fakeClick1"></div></div>
-            </div>
-    
-            <div class="contact_radio contact_radio2">
-              <input type="radio" name="callBack" id="contact_mail">
-              <label for="contact_mail">Email</label>
-              <div class="contact_fake2"><div class="contact_fakeClick2"></div></div>
-            </div>
-
-            <div class="contact_error contact_four">
-              <p>聯絡方式未勾選</p>
-              <div></div>
-            </div>
-          </div>
-
-
-
-          <p id="contact_message">詳細內容</p>
-
-          <div class="contact_nameBorder">
-            <textarea id="contact_content" placeholder="請輸入您的訊息內容" onfocus="this.placeholder=''" onblur="this.placeholder='請輸入您的訊息內容'"></textarea>
-            <div class="contact_error contact_five">
-              <p>資料格式不正確</p>
-              <div></div>
-            </div>
-          </div>
-
-          <button type="contact_submit" class="contact_mainbtn mainbtn">送出</button>
-
-        </form>
-
-      </div>
 
     </div>
 
 
 
-  </div>
+
+    <!-- ========== footer ========== -->
 
 
 
-
-  <!-- ========== footer ========== -->
-
-
-
+<<<<<<< HEAD
+    <script src="../js/contact.js"></script>
+    <script src="https://kit.fontawesome.com/8c3a8ab95b.js" crossorigin="anonymous"></script>
+=======
   <script src="../js/contact.js"></script>
   <script src="https://kit.fontawesome.com/8c3a8ab95b.js" crossorigin="anonymous"></script>
+>>>>>>> a627b91288355714767ff29dcba4947141b18acb
 
 
 
 </body>
+
 </html>

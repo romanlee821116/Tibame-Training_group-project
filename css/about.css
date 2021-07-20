@@ -504,6 +504,13 @@ body::-webkit-scrollbar {
   top: 50%;
   left: 50%;
   transform: transalte(-50%, -50%);
+  -webkit-transform: transalte(-50%, -50%);
+          transform: transalte(-50%, -50%);
+}
+
+.about_island {
+  -webkit-transform: scaleY(0.7);
+          transform: scaleY(0.7);
 }
 
 .about_taiwan {
@@ -666,6 +673,10 @@ body::-webkit-scrollbar {
   position: fixed;
   top: 50%;
   transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 600px;
+  height: 220px;
   padding: 40px 50px;
   display: none;
 }
@@ -690,6 +701,8 @@ body::-webkit-scrollbar {
   background-color: rgba(255, 255, 255, 0.9);
   padding: 30px 20px;
   box-shadow: 0px 0px 20px #555;
+  -webkit-box-shadow: 0px 0px 20px #555;
+          box-shadow: 0px 0px 20px #555;
 }
 
 .about_place1 div h3, .about_place2 div h3, .about_place3 div h3, .about_place4 div h3 {

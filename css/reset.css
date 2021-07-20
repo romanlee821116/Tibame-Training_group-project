@@ -18,6 +18,10 @@ time, mark, audio, video {
   font-size: 100%;
   font: bold inherit '微軟正黑體';
   vertical-align: baseline;
+<<<<<<< HEAD
+=======
+  -webkit-box-sizing: border-box;
+>>>>>>> a627b91288355714767ff29dcba4947141b18acb
   box-sizing: border-box;
   text-decoration: none;
   font-weight: 900;
