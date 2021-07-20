@@ -1,53 +1,82 @@
-@import '../mixin/mixin';
-
-.navbar{
-@include navbar();
+@charset "UTF-8";
+.navbar {
+  width: 100%;
+  height: 100px;
+  position: fixed;
+  top: 0px;
+  left: 0;
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  z-index: 900;
 }
 
-*{
+.navbar .navbar-logo {
+  margin-left: 10px;
+  width: 60px;
+  height: 60px;
+}
+
+.navbar .navbar-logo img {
+  width: 100%;
+  height: 100%;
+}
+
+.navbar .navbar-icon {
+  display: flex;
+  margin-right: 10px;
+}
+
+.navbar .navbar-icon a {
+  display: block;
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+}
+
+.navbar .navbar-icon i {
+  color: #bb866a;
+  font-size: 28px;
+}
+
+* {
   box-sizing: border-box;
   font-family: "微軟正黑體";
   color: #bb866a;
 }
 
-body{
+body {
   margin: 0;
   background-image: url("../../images/payment/bg.png");
   background-size: cover;
   background-attachment: fixed;
 }
 
-img{
+img {
   width: 100%;
 }
 
-.payment_container{
+.payment_container {
   border: 1px solid black;
   width: 80%;
   max-width: 1200px;
   margin: 100px auto;
 }
 
-
-
-
 /* ========== 訂單處理階段 ========== */
-
-
-.payment_stage{
-  // border: 1px solid red;
+.payment_stage {
   display: flex;
   justify-content: center;
   margin-bottom: 30px;
 }
 
-.payment_step{
-  // border: 1px solid blue;
+.payment_step {
   text-align: center;
   font-size: 0;
 }
 
-.payment_confirm > div{
+.payment_confirm > div {
   width: 40px;
   height: 40px;
   font-size: 20px;
@@ -60,20 +89,18 @@ img{
   line-height: 35px;
 }
 
-.payment_confirm > p{
-  // border: 1px solid green;
+.payment_confirm > p {
   margin: 5px 0 0;
   font-size: 18px;
   font-weight: bold;
   color: #a3a3a3;
 }
 
-.payment_payment{
+.payment_payment {
   margin: 0 100px;
 }
 
-// ========== 購物車階段 ==========
-.payment_payment > div:first-child{
+.payment_payment > div:first-child {
   width: 40px;
   height: 40px;
   font-size: 20px;
@@ -86,16 +113,14 @@ img{
   line-height: 35px;
 }
 
-.payment_payment > p{
-  // border: 1px solid green;
+.payment_payment > p {
   margin: 5px 0 0;
   font-size: 18px;
   font-weight: bold;
   color: #f7c242;
 }
 
-// 前面已完成的階段
-.payment_orderData > div{
+.payment_orderData > div {
   width: 40px;
   height: 40px;
   display: inline-flex;
@@ -104,26 +129,23 @@ img{
   border-radius: 50%;
 }
 
-.payment_check{
-  // border: 1px solid red;
+.payment_check {
   width: 20px;
   margin: auto;
 }
 
-.payment_orderData > p{
-    // border: 1px solid green;
-    margin: 5px 0 0;
-    font-size: 18px;
-    font-weight: bold;
-    color: #f7c242;
+.payment_orderData > p {
+  margin: 5px 0 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: #f7c242;
 }
-// ===== 購物車階段中間的線條 =====
 
-.payment_orderData > div:first-child, .payment_payment > div:first-child{
+.payment_orderData > div:first-child, .payment_payment > div:first-child {
   position: relative;
 }
 
-.payment_line1{
+.payment_line1 {
   background-color: #f7c242;
   width: 135px;
   height: 2px;
@@ -132,7 +154,7 @@ img{
   right: -138px;
 }
 
-.payment_line2{
+.payment_line2 {
   background-color: #a3a3a3;
   width: 135px;
   height: 2px;
@@ -141,51 +163,38 @@ img{
   right: -138px;
 }
 
-
-// ========== 訂單資訊 ==========
-.payment_orderContent{
-  // border: 1px solid red;
+.payment_orderContent {
   display: flex;
 }
 
-
-// ========== 左邊 ==========
-.payment_left{
-  // border: 1px solid green;
+.payment_left {
   width: 60%;
 }
 
-.payment_title{
-  // border: 1px solid blue;
+.payment_title {
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 30px;
 }
 
-
-// ========== 訂購資料 ==========
-
-.payment_same{
-  // border: 1px solid blue;
+.payment_same {
   display: flex;
   align-items: center;
   margin-bottom: 20px;
 }
 
-.payment_same > div:first-child{
-  // border: 1px solid red;
+.payment_same > div:first-child {
   color: #172852;
   font-size: 18px;
   font-weight: bold;
   margin-right: 30px;
 }
 
-.payment_same > div:last-child{
+.payment_same > div:last-child {
   display: flex;
 }
 
-.payment_same > div:last-child > p{
-  // border: 1px solid green;
+.payment_same > div:last-child > p {
   margin: 0;
   color: #172852;
   font-size: 16px;
@@ -194,8 +203,7 @@ img{
   display: flex;
 }
 
-// 同會員資料按鈕
-.payment_itemCB{
+.payment_itemCB {
   border: solid 2px #172852;
   background-color: #ffffff;
   border-radius: 5px;
@@ -205,21 +213,16 @@ img{
   cursor: pointer;
 }
 
-.payment_choose{
+.payment_choose {
   background-color: #172852;
 }
 
-
-
-// 姓名、電話、地址
-.payment_data{
-  // border: 1px solid green;
+.payment_data {
   display: flex;
   margin-top: 15px;
 }
 
-.payment_data > div{
-  // border: 1px solid red;
+.payment_data > div {
   color: #172852;
   font-size: 16px;
   font-weight: bold;
@@ -228,11 +231,11 @@ img{
   align-items: center;
 }
 
-.payment_data > input{
+.payment_data > input {
   border: none;
   outline: none;
   border-radius: 5px;
-  background-color:#f0ebe9;
+  background-color: #f0ebe9;
   width: 400px;
   height: 35px;
   padding: 15px;
@@ -244,57 +247,42 @@ img{
   color: #cba89a;
 }
 
-.payment_transport, .payment_payMoney{
-  // border: 1px solid blue;
+.payment_transport, .payment_payMoney {
   display: flex;
   margin: 20px 0;
   align-items: flex-start;
 }
 
-.payment_transport > div:first-child, .payment_payMoney > div:first-child{
-    // border: 1px solid red;
-    color: #172852;
-    font-size: 16px;
-    font-weight: bold;
-    margin-right: 32px;
-    display: flex;
-    align-items: center;
+.payment_transport > div:first-child, .payment_payMoney > div:first-child {
+  color: #172852;
+  font-size: 16px;
+  font-weight: bold;
+  margin-right: 32px;
+  display: flex;
+  align-items: center;
 }
 
-.payment_transport > div:last-child{
-  // border: 1px solid red;
+.payment_transport > div:last-child {
   display: flex;
   flex-direction: column;
   font-weight: bold;
 }
 
-.payment_transport label{
+.payment_transport label {
   color: #cba89a;
 }
 
-.payment_transport label:nth-child(2){
-  // border: 1px solid blue;
+.payment_transport label:nth-child(2) {
   margin: 5px 0;
 }
 
-.payment_payMoney label{
-  // border: 1px solid red;
+.payment_payMoney label {
   font-weight: bold;
   color: #cba89a;
   margin-right: 30px;
 }
 
-
-
-
-
-
-
-
-
-// ========== 右邊 ==========
-.payment_right{
-  // border: 1px solid green;
+.payment_right {
   background-color: #ffffff;
   box-shadow: 0 0 24px 0 rgba(25, 28, 54, 0.15);
   width: 40%;
@@ -302,17 +290,13 @@ img{
   padding: 20px 15px;
 }
 
-// ========== 明細標題 ==========
-.payment_cartTitle{
-  // border: 1px solid red;
+.payment_cartTitle {
   font-weight: bold;
   font-size: 18px;
   color: #cba89a;
 }
 
-// ========== 明細 ==========
-
-.payment_detail{
+.payment_detail {
   border-top: 1.5px solid #cba89a;
   border-bottom: 1.5px solid #cba89a;
   list-style: none;
@@ -322,100 +306,83 @@ img{
   overflow: auto;
 }
 
-.payment_item{
+.payment_item {
   border-bottom: 2px dashed #cba89a;
   display: flex;
   padding: 10px 0;
 }
 
-.payment_itemImg{
-  // border: 1px solid green;
+.payment_itemImg {
   width: 50px;
   height: 50px;
   margin: 0 10px;
 }
 
-.payment_itemData{
-  // border: 1px solid red;
+.payment_itemData {
   display: flex;
   flex-direction: column;
   justify-content: center;
   flex-grow: 1;
 }
 
-.payment_itemData > p{
+.payment_itemData > p {
   margin: 0;
   color: #172852;
   font-size: 14px;
   font-weight: bold;
 }
 
-.payment_itemQuantity{
-  // border: 1px solid green;
+.payment_itemQuantity {
   margin-right: 10px;
   font-weight: bold;
   margin: auto;
   color: #172852;
 }
 
-// ========== 金額明細 ==========
-
-.payment_moneyDetail, .payment_discount{
-  // border: 1px solid green;
+.payment_moneyDetail, .payment_discount {
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
 }
 
-.payment_moneyDetail > div:first-child, .payment_discount > div:first-child{
+.payment_moneyDetail > div:first-child, .payment_discount > div:first-child {
   color: #cba89a;
   font-weight: bold;
   font-size: 14px;
 }
 
-.payment_moneyDetail > div:last-child{
+.payment_moneyDetail > div:last-child {
   color: #172852;
   font-weight: bold;
   font-size: 14px;
 }
 
-.payment_discount > div:last-child{
+.payment_discount > div:last-child {
   color: #dc3838;
   font-weight: bold;
   font-size: 14px;
 }
 
-
-
-// ========== 總金額 ==========
-.payment_totalPrice{
+.payment_totalPrice {
   border-top: 1.5px solid #cba89a;
   padding-top: 30px;
   display: flex;
   justify-content: space-between;
 }
 
-.payment_totalPrice > div:first-child{
-  // border: 1px solid green;
+.payment_totalPrice > div:first-child {
   color: #cba89a;
   font-size: 18px;
   font-weight: bold;
 }
 
-.payment_totalPrice > div:last-child, .payment_totalPrice span{
-  // border: 1px solid green;
+.payment_totalPrice > div:last-child, .payment_totalPrice span {
   color: #172852;
   font-size: 18px;
   font-weight: bold;
 }
 
-
-
-
-// ========== 上、下一頁數 ==========
-
-.payment_page{
-  // border: 1px solid green;
+.payment_page {
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -423,16 +390,13 @@ img{
   margin-top: 100px;
 }
 
-// 上一頁
-.payment_previous{
-  // border: 1px solid red;
+.payment_previous {
   display: flex;
   margin-right: 100px;
   text-decoration: none;
 }
 
-.payment_previousImg{
-  // border: 1px solid blue;
+.payment_previousImg {
   width: 10px;
   height: 15px;
   margin-right: 10px;
@@ -440,7 +404,7 @@ img{
   margin-top: 5px;
 }
 
-.payment_previousText{
+.payment_previousText {
   border-bottom: 1.5px solid #a3a3a3;
   padding-bottom: 5px;
   color: #a3a3a3;
@@ -448,8 +412,7 @@ img{
   font-weight: bold;
 }
 
-// 下一頁
-.payment_next{
+.payment_next {
   display: flex;
   border-radius: 25px;
   background-color: #172852;
@@ -461,17 +424,17 @@ img{
   text-decoration: none;
 }
 
-.payment_nextText{
+.payment_nextText {
   color: #ffffff;
   font-size: 18px;
   font-weight: bold;
 }
 
-.payment_nextImg{
-    // border: 1px solid red;
-    width: 10px;
-    height: 15px;
-    margin-left: 10px;
-    display: flex;
-    margin-top: 3px;
+.payment_nextImg {
+  width: 10px;
+  height: 15px;
+  margin-left: 10px;
+  display: flex;
+  margin-top: 3px;
 }
+/*# sourceMappingURL=payment.css.map */
