@@ -72,17 +72,12 @@ img {
 
 /* ========== 訂單處理階段 ========== */
 .checkout_stage {
-<<<<<<< HEAD
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-=======
-  display: flex;
-  justify-content: center;
->>>>>>> dev
   margin-bottom: 30px;
 }
 
@@ -211,11 +206,8 @@ img {
 
 .checkout_item {
   border-bottom: 2px dashed #cba89a;
-<<<<<<< HEAD
   display: -webkit-box;
   display: -ms-flexbox;
-=======
->>>>>>> dev
   display: flex;
   font-size: 0;
   padding: 15px 0;
@@ -228,11 +220,8 @@ img {
 }
 
 .checkout_customizationItem {
-<<<<<<< HEAD
   display: -webkit-box;
   display: -ms-flexbox;
-=======
->>>>>>> dev
   display: flex;
 }
 
@@ -240,13 +229,9 @@ img {
   border: solid 2px #172852;
   background-color: #ffffff;
   border-radius: 5px;
-<<<<<<< HEAD
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
-=======
-  align-self: center;
->>>>>>> dev
   width: 20px;
   height: 20px;
   cursor: pointer;
@@ -267,7 +252,6 @@ img {
 
 .checkout_itemName {
   width: 165px;
-<<<<<<< HEAD
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -277,11 +261,6 @@ img {
           flex-direction: column;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-=======
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
->>>>>>> dev
   padding-right: 5px;
 }
 
@@ -297,27 +276,19 @@ img {
   border-radius: 15px;
   background-color: #bb866a;
   color: #ffffff;
-<<<<<<< HEAD
   display: -webkit-box;
   display: -ms-flexbox;
-=======
->>>>>>> dev
   display: flex;
   width: 120px;
   height: 30px;
   font-size: 12px;
   font-weight: bold;
-<<<<<<< HEAD
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-=======
-  align-items: center;
-  justify-content: center;
->>>>>>> dev
   cursor: pointer;
 }
 
@@ -328,15 +299,11 @@ img {
 
 .checkout_detail {
   margin-top: 15px;
-<<<<<<< HEAD
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   display: -webkit-box;
   display: -ms-flexbox;
-=======
-  justify-content: center;
->>>>>>> dev
   display: flex;
 }
 
@@ -357,11 +324,8 @@ img {
 .checkout_quantity {
   width: 142px;
   margin: auto 0;
-<<<<<<< HEAD
   display: -webkit-box;
   display: -ms-flexbox;
-=======
->>>>>>> dev
   display: flex;
 }
 
@@ -446,12 +410,8 @@ img {
   position: absolute;
   top: calc((20px - 3px) / 2);
   left: 0;
-<<<<<<< HEAD
   -webkit-transform: rotate(135deg);
           transform: rotate(135deg);
-=======
-  transform: rotate(135deg);
->>>>>>> dev
 }
 
 .checkout_deleteMany {

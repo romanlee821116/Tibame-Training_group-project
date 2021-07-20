@@ -1,3 +1,6 @@
+@import '../base/reset.scss';
+@import '../base/color.scss';
+
 * {
     box-sizing: border-box;
     /* border: solid 1px red; */
@@ -7,56 +10,6 @@ body {
     font-family: 'Lato', sans-serif;
 }
 
-.slime1 {
-    width: 100%;
-    height: 100px;
-    position: absolute;
-    background-color: #cba89a;
-    border-radius: 100% 0% 0% 87% / 0% 0% 100% 100%;
-    display: none;
-    animation: animate 6s infinite ease-in-out;
-}
-
-.slime2 {
-    width: 100%;
-    height: 100px;
-    position: absolute;
-    background-color: #cba89a;
-    border-radius: 100% 0% 28% 73% / 0% 0% 100% 100%;
-    display: none;
-    animation: animate 6s infinite ease-in-out;
-    /* animation-delay: .5s; */
-}
-
-.slime3 {
-    width: 100%;
-    height: 100px;
-    position: absolute;
-    background-color: #cba89a;
-    border-radius: 100% 0% 28% 73% / 0% 0% 100% 100%;
-    display: none;
-    animation: animate 6s infinite ease-in-out;
-    /* animation-delay: 1s; */
-}
-
-
-/* @keyframes animate {
-    0% {
-        border-radius: 100% 0% 2% 98% / 0% 0% 100% 100%;
-    }
-    25% {
-        border-radius: 100% 0% 28% 73% / 0% 0% 100% 100%;
-    }
-    50% {
-        border-radius: 100% 0% 52% 48% / 0% 0% 100% 100%;
-    }
-    75% {
-        border-radius: 100% 0% 80% 87% / 0% 0% 100% 100%;
-    }
-    100% {
-        border-radius: 100% 0% 2% 98% / 0% 0% 100% 100%;
-    }
-} */
 
 .container {
     display: inline-block;
@@ -65,33 +18,28 @@ body {
     top: 30px;
     right: 50px;
     z-index: 10;
-}
-
-.bar1,
-.bar2,
-.bar3 {
+    .bar1,
+    .bar2,
+    .bar3 {
     width: 35px;
     height: 5px;
     background-color: #bb866a;
     border-radius: 10px;
     margin: 6px 0;
     transition: 0.4s;
+    }
 }
-
-.change .bar1 {
+.ham_change .bar1 {
     background-color: white;
     transform: rotate(-45deg) translate(-9px, 6px);
 }
-
-.change .bar2 {
+.ham_change .bar2 {
     opacity: 0;
 }
-
-.change .bar3 {
+.ham_change .bar3 {
     background-color: white;
     transform: rotate(45deg) translate(-8px, -8px);
 }
-
 .overlay {
     height: 100%;
     width: 0;
@@ -100,52 +48,65 @@ body {
     top: 0;
     right: 0;
     background-color: #b48164;
-    overflow-x: hidden;
+    overflow: hidden;
     transition: 0.5s;
-}
+    .overlay-content {
+        position: relative;
+        top: 25%;
+        width: 100%;
+        text-align: center;
+        margin: 10px auto;
+        
+        
+    }
+    .ham_jelly{
+        width: 300vw;
+        height: 290vw;
+        position: absolute;
+        top: -302vw;
+        left:50%;
+        transform: translateX(-50%);
+        border-radius: 45%;
+        background-color: $lightBrown;
+        animation: rotate 15s linear infinite;
 
-.overlay-content {
-    position: relative;
-    top: 25%;
-    width: 100%;
-    text-align: center;
-    margin: 10px auto;
-}
-
-.overlay a {
-    padding: 10px;
-    text-decoration: none;
-    font-size: 20px;
-    font-weight: bold;
-    color: white;
-    display: block;
-    letter-spacing: 2px;
-    opacity: 0;
-    transition: all .5s;
-}
-
-.overlay a::before {
-    content: "\A";
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    display: inline-block;
-    margin: 0 20px;
-    background-color: transparent;
-    transition: all .3s;
-}
-
-.overlay a:hover,
-.overlay a:focus {
-    color: #fad689;
-}
-
-.overlay a:hover::before {
-    background-color: #fad689;
-}
-
-.select {
-    margin: 0 auto;
-    text-align: left;
-    width: 200px;
+    }
+    @keyframes rotate {
+        0% {transform: translate(-50%, 0) rotateZ(0deg);}
+        50% {transform: translate(-50%, -2%) rotateZ(180deg);}
+        100% {transform: translate(-50%, 0%) rotateZ(360deg);}
+    }
+    .select {
+        margin: 0 auto;
+        text-align: left;
+        width: 200px;
+    }
+    a {
+        padding: 10px;
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: bold;
+        color: white;
+        display: block;
+        letter-spacing: 2px;
+        opacity: 0;
+        transition: all .5s;
+        &:hover{
+            color: #fad689;
+            
+        }
+        &:hover:before{
+            background-color: #fad689
+        }
+        &::before{
+            content: "\A";
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            display: inline-block;
+            margin: 0 20px;
+            background-color: transparent;
+            transition: all .3s;
+        }
+    }
 }
