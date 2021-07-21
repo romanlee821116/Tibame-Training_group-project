@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,17 +9,22 @@
     <link rel="icon" href="./images/index/logo_footer.png">
     <!-- <link rel="stylesheet" href="./css/index.css"> -->
     <link rel="stylesheet" href="./css/index.css">
-    <link rel="stylesheet" href="./css/fullpage.css"> 
+    <link rel="stylesheet" href="./css/fullpage.css">
     <link rel="stylesheet" href="./css/rolling.css">
+    <link rel="stylesheet" href="./css/hamburger.css">
     <!-- <link rel="stylesheet" href="./css/rolling.css">   -->
     <script src="https://kit.fontawesome.com/8c3a8ab95b.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.js" integrity="sha512-gSf3NCgs6wWEdztl1e6vUqtRP884ONnCNzCpomdoQ0xXsk06lrxJsR7jX5yM/qAGkPGsps+4bLV5IEjhOZX+gg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="./js/index.js"></script>  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.js"
+        integrity="sha512-gSf3NCgs6wWEdztl1e6vUqtRP884ONnCNzCpomdoQ0xXsk06lrxJsR7jX5yM/qAGkPGsps+4bLV5IEjhOZX+gg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./js/index.js"></script>
     <script src="./js/vue.js"></script>
-    
-    
+    <script src="./js/hamburger.js"></script>
+
+
 </head>
+
 <body>
     <!-- navbar -->
     <div class="navbar">
@@ -26,11 +32,32 @@
             <img src="./images/index/logo.png" alt="">
         </div>
         <div class="navbar-icon">
-            <p id='scrollvalue'></p>
             <a href="#"><i class="fas fa-user"></i></a>
             <a href="#"><i class="fas fa-shopping-cart"></i></a>
-            <a href="#"><i class="fas fa-bars"></i></a>
+            <a href="#"></a>
         </div>
+        <!-- 漢堡 -->
+        <div class="ham_container">
+            <div class="ham_bar1 ham_bar"></div>
+            <div class="ham_bar2 ham_bar"></div>
+            <div class="ham_bar3 ham_bar"></div>
+        </div>
+        <div id="ham_myNav" class="ham_overlay">
+            <div class="ham_overlay-content">
+                <div class='ham_jelly'></div>
+                <div class="ham_select">
+                    <a href="../index.html">首頁</a>
+                    <a href="./about.html">關於我們</a>
+                    <a href="./news.html">最新消息</a>
+                    <a href="./shopping_choose.html">商品專區</a>
+                    <a href="./customized.html">客製化禮盒</a>
+                    <a href="./FAQ.html">Q&A</a>
+                    <a href="./login.html">會員中心</a>
+                </div>
+            </div>
+        </div>
+        <!-- 漢堡結束 -->
+
     </div>
     <!-- media -->
     <div class='mediacolumn'>
@@ -54,18 +81,18 @@
     <div id="homepage">
         <!-- ==================第一頁進場動畫================== -->
         <!-- <div class="section page1"> -->
-            
+
         <!-- </div> -->
         <!-- ==================第二頁首屏跑馬==================-->
         <div class="section index_page2">
             <div class="index_p2_container">
                 <div class="index_p2_left">
-                </div>                
-                
+                </div>
+
                 <div id="index_p2_ticker">
                     <div class="view">
                         <div class="index_p2_tickerContainer">
-                            <h1 v-for='txt in 20'>{{text}}</h1>                            
+                            <h1 v-for='txt in 20'>{{text}}</h1>
                         </div>
                     </div>
                 </div>
@@ -80,7 +107,7 @@
                     <div class='iindex_p2-progressSolid'></div>
                 </div>
                 <div class="iindex_p2_right"></div>
-            </div> 
+            </div>
         </div>
         <!-- 第三頁關於我們 -->
         <div class="section index_page3">
@@ -89,17 +116,17 @@
             </div>
             <div class='index_p3_container'>
                 <div class='index_p3_txt'>
-                    <h1>About Us</h1>                    
+                    <h1>About Us</h1>
                     <h3>關於我們</h3>
-                    <p>小春堂創立於2021年初春，是與臺灣在地小農合作所打造的日式和菓子點心專門店，將日本流行的人氣和菓子與洋菓子同步在台製作上市，讓你在家就可以品嘗多元道地的日本風味。                        
+                    <p>小春堂創立於2021年初春，是與臺灣在地小農合作所打造的日式和菓子點心專門店，將日本流行的人氣和菓子與洋菓子同步在台製作上市，讓你在家就可以品嘗多元道地的日本風味。
                     </p>
                     <p>
                         <a href="./page/about.html" class='mainbtn'>更多關於小春堂</a>
-                    </p>                    
-                </div>                
+                    </p>
+                </div>
             </div>
             <div v-for='p3 in p3_list' :class='p3.class'>
-                <img :src="p3.src" >
+                <img :src="p3.src">
             </div>
         </div>
         <!-- gap -->
@@ -107,9 +134,9 @@
         </div>
         <!-- ==================第四頁產品專區================== -->
         <div class="section index_page4">
-            <!-- watermark -->          
+            <!-- watermark -->
             <div v-for='p4 in p4_list' :class='p4.class'>
-                <img :src="p4.src" >
+                <img :src="p4.src">
             </div>
             <div class="index_p4_container">
                 <div class="p4-txt">
@@ -119,19 +146,19 @@
                     </p>
                     <p>
                         <a href="./page/shopping_choose.html" class='index_p4btn mainbtn'>更多商品</a>
-                    </p>  
+                    </p>
                 </div>
                 <div class="index_p4_bigPic">
                     <div class="index_p4_bigPic_img">
                         <img src="./images/index/product_big.png" alt="">
-                    </div>                    
+                    </div>
                     <div class='index_p4_bigPic_info'>
                         <p>紅豆銅鑼燒</p>
                         <p>6入 $480</p>
                     </div>
                 </div>
-                <!-- 商品輪播 -->                
-                <section id="marquee" class='index_p4_itemList'> 
+                <!-- 商品輪播 -->
+                <section id="marquee" class='index_p4_itemList'>
                     <div class="view">
                         <div class="index_p4_picContainer">
                             <!-- 商品列表 -->
@@ -145,28 +172,28 @@
                             </div>
                         </div>
                     </div>
-                </section>                
-            </div>            
+                </section>
+            </div>
         </div>
         <!-- gap -->
         <div class="gap">
         </div>
         <!-- ==================第五頁客製禮盒================== -->
         <div class="section index_page5">
-             <!-- watermark -->            
+            <!-- watermark -->
             <div v-for='p5 in p5_list' :class='p5.class'>
-                <img :src="p5.src" >
+                <img :src="p5.src">
             </div>
             <!--  -->
-            <div class="index_p5_container">                
+            <div class="index_p5_container">
                 <div class="index_p5_txt">
                     <h1>Customized</h1>
                     <h3>客製禮盒</h3>
-                    <p>一份蘊含心意的點心，可以串起兩人之間歷久彌新的情誼，傳遞溫暖的掛念。小春堂提供客制化點心禮盒，由你來依據他的喜好精心挑選，就算不能見面，一樣能將幸福的心意傳遞出去。                    
+                    <p>一份蘊含心意的點心，可以串起兩人之間歷久彌新的情誼，傳遞溫暖的掛念。小春堂提供客制化點心禮盒，由你來依據他的喜好精心挑選，就算不能見面，一樣能將幸福的心意傳遞出去。
                     </p>
                     <p>
                         <a href="./page/customized.html" class='index_p5btn mainbtn'>開始客製禮盒</a>
-                    </p>  
+                    </p>
                 </div>
                 <!--  -->
                 <div class="index_p5_bigPic">
@@ -193,16 +220,16 @@
         <!-- ==================第六頁最新消息================== -->
         <div class="section index_page6">
             <!-- watermark -->
-           
+
             <div v-for='p6 in p6_list' :class='p6.class'>
-                <img :src="p6.src" >
+                <img :src="p6.src">
             </div>
             <!--  -->
             <div class="index_p6_container">
                 <!-- 標題  -->
                 <div class="index_p6_txt">
                     <h1>News</h1>
-                    <h3>最新消息</h3>                    
+                    <h3>最新消息</h3>
                 </div>
                 <!-- 卡片內容 -->
                 <div class="index_p6_card">
@@ -216,11 +243,12 @@
                                     <h3>{{item.time}}</h3>
                                     <h4>{{item.title}}</h4>
                                     <p>{{item.txt}}</p>
-                                    <a href="#" class='index_p6_cardBtn'>詳細資訊<i class="fas fa-long-arrow-alt-right"></i></a>
-                                </div>            
+                                    <a href="#" class='index_p6_cardBtn'>詳細資訊<i
+                                            class="fas fa-long-arrow-alt-right"></i></a>
+                                </div>
                             </div>
-                        </div>  
-                    </div>                  
+                        </div>
+                    </div>
                 </div>
                 <!-- 輪播 -->
                 <div class="index_p6_carousel">
@@ -243,7 +271,7 @@
             <div class="index_p7_container">
                 <div class="index_p7_txt">
                     <h1>Shop</h1>
-                    <h3>店鋪資訊</h3>   
+                    <h3>店鋪資訊</h3>
                 </div>
                 <div class="index_p7_info">
                     <div class="index_p7_shopInfo">
@@ -262,24 +290,24 @@
                     </div>
                     <div class="index_p7_shopBtn">
                         <a href="#" class='index_p7_shopBtn-left'><i class="fas fa-chevron-left"></i></a>
-                        <a href="#" class='index_p7_shopBtn-right'><i class="fas fa-chevron-right"></i></a>                    
+                        <a href="#" class='index_p7_shopBtn-right'><i class="fas fa-chevron-right"></i></a>
                     </div>
-                </div>  
+                </div>
                 <div class="index_p7_bigPic">
                     <img src="./images/index/shop_pic_a.png" alt="">
                 </div>
             </div>
             <div v-for='p7 in p7_list' :class='p7.class'>
-                <img :src="p7.src" >
-            </div>    
-            
+                <img :src="p7.src">
+            </div>
+
             <div class="footer">
-                <div class="footer-logo"><img src="./images/index/logo_footer.png" alt=""></div>  
-                <div class="footer-left">                                      
+                <div class="footer-logo"><img src="./images/index/logo_footer.png" alt=""></div>
+                <div class="footer-left">
                     <div class='footer-policy'>
-                        <p><a href="#">隱私政策</a></p>               
+                        <p><a href="#">隱私政策</a></p>
                         <p><a href="#">服務條款</a></p>
-                    </div>                        
+                    </div>
                 </div>
                 <div class='footer-media'>
                     <a href="#"><i class="fab fa-instagram-square"></i></a>
@@ -287,93 +315,100 @@
                     <a href="#"><i class="fab fa-twitter-square"></i></a>
                 </div>
                 <div class="footer-right">
-                    <p>本網站為緯育TibaMe前端設計工程師班第68期第三組學員專題成果作品，本平台僅供學習、展示之用。參考資源:snaq.me。若有侵權疑慮，您可以私訊[TibaMe-前端設計工程師養成班]，後續會由專人協助處理</p>
+                    <p>本網站為緯育TibaMe前端設計工程師班第68期第三組學員專題成果作品，本平台僅供學習、展示之用。參考資源:snaq.me。若有侵權疑慮，您可以私訊[TibaMe-前端設計工程師養成班]，後續會由專人協助處理
+                    </p>
                 </div>
             </div>
-        </div>    
+        </div>
     </div>
     <script>
-        $( "#homepage" ).fullpage({
+        $("#homepage").fullpage({
             // 參數設定[註1]
             navigation: true, // 顯示導行列
             navigationPosition: "right", // 導行列位置
             //====================================
             // anchors: ['', '', '', '', ''],
 
-	        onLeave: function(origin, destination, direction){
+            onLeave: function (origin, destination, direction) {
                 var leavingSection = this;
 
                 //after leaving section 2
-                if(origin.index == 0 && direction =='down'){
-                   console.log('Going to section 2!')
-                //顯示覽列
-                   $('#fp-nav ul li a span').css({
-                       display: 'block',
-                        });
-                //顯示navbar
+                if (origin.index == 0 && direction == 'down') {
+                    console.log('Going to section 2!')
+                    //顯示覽列
+                    $('#fp-nav ul li a span').css({
+                        display: 'block',
+                    });
+                    //顯示navbar
                     $('.navbar').css({
                         // display: 'flex',
                         background: 'linear-gradient(rgba(255,255,255,.9), transparent)',
-                        });
-                //顯示社群bar
+                    });
+                    //顯示社群bar
                     $('.mediacolumn').css({
                         visibility: "visible",
-                        });
-                //顯示測驗
+                    });
+                    //顯示測驗
                     $('.psychotest').css({
                         display: "block",
-                        });
-                //navbar改色
+                    });
+                    //navbar改色
                     $('.navbar .navbar-icon i').css({
                         color: '#bb866a',
                     })
-                
+                    $('.ham_bar').css({
+                        backgroundColor: '#bb866a',
+                    })
+
                 }
 
-                else if(origin.index == 1 && direction == 'up'){
+                else if (origin.index == 1 && direction == 'up') {
                     console.log("Back to section 1!");
-                //    隱藏導覽  
+                    //    隱藏導覽  
                     $('#fp-nav ul li a span').css({
-                       display: 'none',
-                   });
-                //    隱藏navbar
+                        display: 'none',
+                    });
+                    //    隱藏navbar
                     $('.navbar').css({
                         // display: 'none',
                         background: 'transparent',
                     });
-                //    隱藏社群bar
+                    //    隱藏社群bar
                     $('.mediacolumn').css({
                         visibility: 'hidden',
                     });
-                //    隱藏測驗
+                    //    隱藏測驗
                     $('.psychotest').css({
                         display: 'none',
                     });
-                //    navbar改色
+                    //    navbar改色
                     $('.navbar .navbar-icon i').css({
                         color: '#fff',
                     })
-                   
+                    $('.ham_bar').css({
+                        backgroundColor: '#fff',
+                    })
+
                 }
             }, //導覽列提示
             navigationTooltips: ['首頁介紹', '關於我們', '商品專區', '客製禮盒', '最新消息', '店鋪資訊'],
-                
+
         });
 
-               
+
     </script>
     <script>
-        $('#fp-nav ul li a span').mouseenter(function(e){
-                $('.pagepoint').css({
-                    opacity: '1',
+        $('#fp-nav ul li a span').mouseenter(function (e) {
+            $('.pagepoint').css({
+                opacity: '1',
             })
         });
-        $('.pagepoint').mouseleave(function(){
-            
+        $('.pagepoint').mouseleave(function () {
             $('.pagepoint').css({
-                    opacity: '0',            
+                opacity: '0',
             })
         });
     </script>
 </body>
+
 </html>

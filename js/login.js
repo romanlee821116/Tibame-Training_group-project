@@ -143,7 +143,7 @@ $(document).ready(function(){
         // 清空重來
         $('.loginError').css('display','none');
         $('.loginError').children('p').text('資料格式不正確');
-        $('input').css('border','none');
+        $('input').css('border','2px solid transparent');
         // 設定變數
         let account = $('.loginAccount').val();
         let password = $('#loginPassword').val();
@@ -162,7 +162,7 @@ $(document).ready(function(){
         
         // 亂數碼
         let code = $('.loginCodeEnter').val();
-        let codeRight = $('.loginCodeNew').text();
+        let codeRight = $('.loginCodeNew').text().substr(0,4);
         console.log(codeRight);
 
         // 正規表示法
@@ -199,10 +199,11 @@ $(document).ready(function(){
             $('#loginPassword2').css('border','2px solid #dc3838');
             $('#loginPassword2').next().next().css('display','inline-block');
             $('#loginPassword2').next().next().children('p').text('請輸入資訊');
-        }else if(!passwordRight.test(password2)){
+        }else if(password2 != password ){
             e.preventDefault();
             $('#loginPassword2').css('border','2px solid #dc3838');
             $('#loginPassword2').next().next().css('display','inline-block');
+            $('#loginPassword2').next().next().children('p').text('兩次輸入密碼不同');
         }
 
         if(malecheck == false && femalecheck == false && othercheck == false){
@@ -263,7 +264,7 @@ $(document).ready(function(){
     function memberFormError0(){
         $('.loginError').css('display','none');
         $('.loginError').children('p').text('資料格式不正確');
-        $('input').css('border','none');
+        $('input').css('border','2px solid transparent');
         // 清除所有input的值
         $('input').val('');
     };
