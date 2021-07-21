@@ -194,6 +194,7 @@ img{
   /* font-family: MicrosoftJhengHeiBold; */
 }
 
+// 隱藏原本的radio
 input[type="radio"]{
   margin: 0 5px 0 0;
   opacity: 0;
@@ -202,6 +203,7 @@ input[type="radio"]{
   cursor: pointer;
 }
 
+// 被選擇，字要變色
 input[type="radio"]:checked + label{
   color: #172852;
 }
