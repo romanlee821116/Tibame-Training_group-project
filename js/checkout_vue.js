@@ -48,6 +48,7 @@ new Vue({
     delete_bgc: '#a3a3a3',
     delete_cursor: 'default',
     total_item: 0,
+    discount: 80,
     total_price: 0,
   },
   methods: {
@@ -140,6 +141,20 @@ new Vue({
         $('.cart_NoItem').css('display','none');
       }
     },
+    // 提交折扣
+    sendDiscount(){
+      if($('#checkout_discountNumber').val() !== ""){
+        $('.checkout_discountMoney').removeClass('checkout_none');
+        $('.checkout_removeDiscount').removeClass('checkout_none');
+        this.total_price -= 80;
+      }  
+    },
+    // 移除折扣
+    deleteDiscount(){
+      $('.checkout_discountMoney').addClass('checkout_none');
+      $('.checkout_removeDiscount').addClass('checkout_none');
+      this.total_price += 80;
+    }
   },
   computed: {
     // 商品總金額
@@ -160,8 +175,8 @@ new Vue({
     },
     // 訂單總金額
     totalPrice(){
-      total_price = this.total_item - 80;
-      return total_price;
+      this.total_price = this.total_item;
+      return this.total_price;
     }
   },
 })
