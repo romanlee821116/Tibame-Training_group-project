@@ -1,0 +1,65 @@
+* {
+  font-family: Calibri;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+body {
+  background: url("../images/shop_pic_a.png");
+}
+
+.popup {
+  width: 300px;
+  margin: 50px auto;
+  padding: 50px 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.3);
+  position: relative;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+}
+
+.popup .popup-icon i {
+  font-size: 50px;
+  background-color: transparent;
+}
+
+.popup .popup-txt {
+  text-align: center;
+  width: 70%;
+}
+
+.popup .popup-txt h2 {
+  font-size: 28px;
+  font-size: 1200;
+}
+
+.popup .popup-btn a {
+  display: block;
+  text-align: center;
+  color: #fff;
+}
+
+.popup .popup-btn-accept {
+  background-color: #bb866a;
+  padding: 15px 30px;
+  margin: 20px 0;
+  -webkit-box-shadow: 0px 5px 10px #c59981;
+          box-shadow: 0px 5px 10px #c59981;
+}
+
+.popup a.popup-btn-leave {
+  color: #000;
+  font-size: 14px;
+}
+/*# sourceMappingURL=popup.css.map */

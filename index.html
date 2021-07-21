@@ -4,9 +4,376 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>小春堂</title>
+    <link rel="icon" href="./images/index/logo_footer.png">
+    <!-- <link rel="stylesheet" href="./css/index.css"> -->
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/fullpage.css"> 
+    <link rel="stylesheet" href="./css/rolling.css">
+    <!-- <link rel="stylesheet" href="./css/rolling.css">   -->
+    <script src="https://kit.fontawesome.com/8c3a8ab95b.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.js" integrity="sha512-gSf3NCgs6wWEdztl1e6vUqtRP884ONnCNzCpomdoQ0xXsk06lrxJsR7jX5yM/qAGkPGsps+4bLV5IEjhOZX+gg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./js/index.js"></script>  
+    <script src="./js/vue.js"></script>
+    
+    
 </head>
 <body>
-    <h1>Hi</h1>
+    <!-- navbar -->
+    <div class="navbar">
+        <div class="navbar-logo">
+            <img src="./images/index/logo.png" alt="">
+        </div>
+        <div class="navbar-icon">
+            <p id='scrollvalue'></p>
+            <a href="#"><i class="fas fa-user"></i></a>
+            <a href="#"><i class="fas fa-shopping-cart"></i></a>
+            <a href="#"><i class="fas fa-bars"></i></a>
+        </div>
+    </div>
+    <!-- media -->
+    <div class='mediacolumn'>
+        <a href="#"><i class="fab fa-instagram-square"></i></a>
+        <a href="#"><i class="fab fa-facebook-square"></i></a>
+        <a href="#"><i class="fab fa-twitter-square"></i></a>
+    </div>
+    <!-- psycotest -->
+    <div class='psychotest'>
+        <a href=""><img src="./images/index/psychologicaltest_icon.png" alt=""></a>
+        <p>和菓子測驗</p>
+    </div>
+    <div class="pagepoint">
+        <a href="">關於我們</a>
+        <a href="">商品專區</a>
+        <a href="">客製禮盒</a>
+        <a href="">最新消息</a>
+        <a href="">店鋪資訊</a>
+    </div>
+    <!-- ====================================首頁內容====================================  -->
+    <div id="homepage">
+        <!-- ==================第一頁進場動畫================== -->
+        <!-- <div class="section page1"> -->
+            
+        <!-- </div> -->
+        <!-- ==================第二頁首屏跑馬==================-->
+        <div class="section index_page2">
+            <div class="index_p2_container">
+                <div class="index_p2_left">
+                </div>                
+                
+                <div id="index_p2_ticker">
+                    <div class="view">
+                        <div class="index_p2_tickerContainer">
+                            <h1 v-for='txt in 20'>{{text}}</h1>                            
+                        </div>
+                    </div>
+                </div>
+                <div class="index_p2_pic">
+                    <img src="./images/index/banner_monaka_item.png" alt="">
+                </div>
+                <div class="index_p2_button">
+                    <h2>MONOKA</h2>
+                    <a href="./page/shopping_choose.html" class='index_p2btn mainbtn'>更多商品</a>
+                </div>
+                <div class="index_p2-progress">
+                    <div class='iindex_p2-progressSolid'></div>
+                </div>
+                <div class="iindex_p2_right"></div>
+            </div> 
+        </div>
+        <!-- 第三頁關於我們 -->
+        <div class="section index_page3">
+            <div class="index_p3_bg">
+                <img src="./images/index/aboutus_rightbg.png" alt="">
+            </div>
+            <div class='index_p3_container'>
+                <div class='index_p3_txt'>
+                    <h1>About Us</h1>                    
+                    <h3>關於我們</h3>
+                    <p>小春堂創立於2021年初春，是與臺灣在地小農合作所打造的日式和菓子點心專門店，將日本流行的人氣和菓子與洋菓子同步在台製作上市，讓你在家就可以品嘗多元道地的日本風味。                        
+                    </p>
+                    <p>
+                        <a href="./page/about.html" class='mainbtn'>更多關於小春堂</a>
+                    </p>                    
+                </div>                
+            </div>
+            <div v-for='p3 in p3_list' :class='p3.class'>
+                <img :src="p3.src" >
+            </div>
+        </div>
+        <!-- gap -->
+        <div class="gap">
+        </div>
+        <!-- ==================第四頁產品專區================== -->
+        <div class="section index_page4">
+            <!-- watermark -->          
+            <div v-for='p4 in p4_list' :class='p4.class'>
+                <img :src="p4.src" >
+            </div>
+            <div class="index_p4_container">
+                <div class="p4-txt">
+                    <h1>Product</h1>
+                    <h3>商品專區</h3>
+                    <p>小春堂堅持所有點心均為純手工製作，不額外添加任何化學原料，僅由天然食材製作而成。我們相信，吃點心這件事可以回歸最單純的初衷： &nbsp快樂吃，輕鬆健康無負擔。
+                    </p>
+                    <p>
+                        <a href="./page/shopping_choose.html" class='index_p4btn mainbtn'>更多商品</a>
+                    </p>  
+                </div>
+                <div class="index_p4_bigPic">
+                    <div class="index_p4_bigPic_img">
+                        <img src="./images/index/product_big.png" alt="">
+                    </div>                    
+                    <div class='index_p4_bigPic_info'>
+                        <p>紅豆銅鑼燒</p>
+                        <p>6入 $480</p>
+                    </div>
+                </div>
+                <!-- 商品輪播 -->                
+                <section id="marquee" class='index_p4_itemList'> 
+                    <div class="view">
+                        <div class="index_p4_picContainer">
+                            <!-- 商品列表 -->
+                            <div v-for='item in 20'>
+                                <div class='index_p4_itemPic'>
+                                    <img src="./images/index/product_small.png">
+                                </div>
+                                <div class="index_p4_itemTxt">
+                                    <p>商品</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>                
+            </div>            
+        </div>
+        <!-- gap -->
+        <div class="gap">
+        </div>
+        <!-- ==================第五頁客製禮盒================== -->
+        <div class="section index_page5">
+             <!-- watermark -->            
+            <div v-for='p5 in p5_list' :class='p5.class'>
+                <img :src="p5.src" >
+            </div>
+            <!--  -->
+            <div class="index_p5_container">                
+                <div class="index_p5_txt">
+                    <h1>Customized</h1>
+                    <h3>客製禮盒</h3>
+                    <p>一份蘊含心意的點心，可以串起兩人之間歷久彌新的情誼，傳遞溫暖的掛念。小春堂提供客制化點心禮盒，由你來依據他的喜好精心挑選，就算不能見面，一樣能將幸福的心意傳遞出去。                    
+                    </p>
+                    <p>
+                        <a href="./page/customized.html" class='index_p5btn mainbtn'>開始客製禮盒</a>
+                    </p>  
+                </div>
+                <!--  -->
+                <div class="index_p5_bigPic">
+                    <img src="./images/index/customized_box.png" alt="" class='index_p5_bigPic_box'>
+                    <img src="./images/index/customized_fouritem.png" alt="" class='index_p5_bigPic_fourItem'>
+                </div>
+                <!--  -->
+                <div class="index_p5_manual">
+                    <div class="index_p5_manualItem" v-for='item in manual_list'>
+                        <div class="index_p5_manual-pic">
+                            <img :src="item.src" alt="">
+                        </div>
+                        <div class="index_p5_manualTxt">
+                            <h3>{{item.title}}</h3>
+                            <p>{{item.txt}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- gap -->
+        <div class="gap">
+        </div>
+        <!-- ==================第六頁最新消息================== -->
+        <div class="section index_page6">
+            <!-- watermark -->
+           
+            <div v-for='p6 in p6_list' :class='p6.class'>
+                <img :src="p6.src" >
+            </div>
+            <!--  -->
+            <div class="index_p6_container">
+                <!-- 標題  -->
+                <div class="index_p6_txt">
+                    <h1>News</h1>
+                    <h3>最新消息</h3>                    
+                </div>
+                <!-- 卡片內容 -->
+                <div class="index_p6_card">
+                    <div class="index_p6_cardContainer">
+                        <div class="index_p6_cardbg" v-for='item in card_list'>
+                            <div class="index_p6_cardItem">
+                                <div class="index_p6_itemImg">
+                                    <img :src="item.src" alt="">
+                                </div>
+                                <div class="index_p6_itemTxt">
+                                    <h3>{{item.time}}</h3>
+                                    <h4>{{item.title}}</h4>
+                                    <p>{{item.txt}}</p>
+                                    <a href="#" class='index_p6_cardBtn'>詳細資訊<i class="fas fa-long-arrow-alt-right"></i></a>
+                                </div>            
+                            </div>
+                        </div>  
+                    </div>                  
+                </div>
+                <!-- 輪播 -->
+                <div class="index_p6_carousel">
+                    <div class='index_p6_carousel_point'></div>
+                    <div class='index_p6_carousel_point'></div>
+                    <div class='index_p6_carousel_point'></div>
+                </div>
+
+                <!-- 按鈕 -->
+                <div class="index_p6-btn">
+                    <a href="#" class='mainbtn'>更多消息</a>
+                </div>
+            </div>
+        </div>
+        <!-- gap -->
+        <div class="gap">
+        </div>
+        <!-- ==================第七頁店家資訊================== -->
+        <div class="section index_page7">
+            <div class="index_p7_container">
+                <div class="index_p7_txt">
+                    <h1>Shop</h1>
+                    <h3>店鋪資訊</h3>   
+                </div>
+                <div class="index_p7_info">
+                    <div class="index_p7_shopInfo">
+                        <h2>台北本店</h2>
+                        <div class="index_p7_address">
+                            <p>地址</p>
+                            <div class="index_p7_address_detailed">
+                                <p>台北市南京東路三段219號4-5F</p>
+                                <a href="#">Google Map</a>
+                            </div>
+                        </div>
+                        <div v-for='item in shop_info' :class='item.class'>
+                            <p>{{item.title}}</p>
+                            <p>{{item.txt}}</p>
+                        </div>
+                    </div>
+                    <div class="index_p7_shopBtn">
+                        <a href="#" class='index_p7_shopBtn-left'><i class="fas fa-chevron-left"></i></a>
+                        <a href="#" class='index_p7_shopBtn-right'><i class="fas fa-chevron-right"></i></a>                    
+                    </div>
+                </div>  
+                <div class="index_p7_bigPic">
+                    <img src="./images/index/shop_pic_a.png" alt="">
+                </div>
+            </div>
+            <div v-for='p7 in p7_list' :class='p7.class'>
+                <img :src="p7.src" >
+            </div>    
+            
+            <div class="footer">
+                <div class="footer-logo"><img src="./images/index/logo_footer.png" alt=""></div>  
+                <div class="footer-left">                                      
+                    <div class='footer-policy'>
+                        <p><a href="#">隱私政策</a></p>               
+                        <p><a href="#">服務條款</a></p>
+                    </div>                        
+                </div>
+                <div class='footer-media'>
+                    <a href="#"><i class="fab fa-instagram-square"></i></a>
+                    <a href="#"><i class="fab fa-facebook-square"></i></a>
+                    <a href="#"><i class="fab fa-twitter-square"></i></a>
+                </div>
+                <div class="footer-right">
+                    <p>本網站為緯育TibaMe前端設計工程師班第68期第三組學員專題成果作品，本平台僅供學習、展示之用。參考資源:snaq.me。若有侵權疑慮，您可以私訊[TibaMe-前端設計工程師養成班]，後續會由專人協助處理</p>
+                </div>
+            </div>
+        </div>    
+    </div>
+    <script>
+        $( "#homepage" ).fullpage({
+            // 參數設定[註1]
+            navigation: true, // 顯示導行列
+            navigationPosition: "right", // 導行列位置
+            //====================================
+            // anchors: ['', '', '', '', ''],
+
+	        onLeave: function(origin, destination, direction){
+                var leavingSection = this;
+
+                //after leaving section 2
+                if(origin.index == 0 && direction =='down'){
+                   console.log('Going to section 2!')
+                //顯示覽列
+                   $('#fp-nav ul li a span').css({
+                       display: 'block',
+                        });
+                //顯示navbar
+                    $('.navbar').css({
+                        // display: 'flex',
+                        background: 'linear-gradient(rgba(255,255,255,.9), transparent)',
+                        });
+                //顯示社群bar
+                    $('.mediacolumn').css({
+                        visibility: "visible",
+                        });
+                //顯示測驗
+                    $('.psychotest').css({
+                        display: "block",
+                        });
+                //navbar改色
+                    $('.navbar .navbar-icon i').css({
+                        color: '#bb866a',
+                    })
+                
+                }
+
+                else if(origin.index == 1 && direction == 'up'){
+                    console.log("Back to section 1!");
+                //    隱藏導覽  
+                    $('#fp-nav ul li a span').css({
+                       display: 'none',
+                   });
+                //    隱藏navbar
+                    $('.navbar').css({
+                        // display: 'none',
+                        background: 'transparent',
+                    });
+                //    隱藏社群bar
+                    $('.mediacolumn').css({
+                        visibility: 'hidden',
+                    });
+                //    隱藏測驗
+                    $('.psychotest').css({
+                        display: 'none',
+                    });
+                //    navbar改色
+                    $('.navbar .navbar-icon i').css({
+                        color: '#fff',
+                    })
+                   
+                }
+            }, //導覽列提示
+            navigationTooltips: ['首頁介紹', '關於我們', '商品專區', '客製禮盒', '最新消息', '店鋪資訊'],
+                
+        });
+
+               
+    </script>
+    <script>
+        $('#fp-nav ul li a span').mouseenter(function(e){
+                $('.pagepoint').css({
+                    opacity: '1',
+            })
+        });
+        $('.pagepoint').mouseleave(function(){
+            
+            $('.pagepoint').css({
+                    opacity: '0',            
+            })
+        });
+    </script>
 </body>
 </html>

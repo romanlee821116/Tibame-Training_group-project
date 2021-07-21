@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>訂單完成</title>
+  <link href="../css/finish.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.14/vue.js"></script>
+
+</head>
+<body>
+
+  <!-- ========== header ========== -->
+  <!-- navbar -->
+  <div class="navbar">
+    <div class="navbar-logo">
+      <img src="../images/index/logo.png" alt="">
+    </div>
+    <div class="navbar-icon">
+      <p id='scrollvalue'></p>
+      <a href="#"><i class="fas fa-user"></i></a>
+      <a href="#"><i class="fas fa-shopping-cart"></i></a>
+      <a href="#"><i class="fas fa-bars"></i></a>
+    </div>
+  </div>
+
+    <!-- ========== main ========== -->
+    <div id="finish_app">
+      <div class="finish_container">
+
+      <!-- ========== 訂單處理階段 ========== -->
+      <div class="finish_stage">
+  
+        <div class="finish_step finish_orderData">
+          <div>
+            <div class="finish_check">
+              <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check fa-w-16" role="img" viewBox="0 0 512 512"><path fill="#ffffff" d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg>
+            </div>
+            <div class="finish_line1"></div>
+          </div>
+          <p>訂單資料</p>
+        </div>
+  
+        <div class="finish_step finish_payment">
+          <div>
+            <div class="finish_check">
+              <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check fa-w-16" role="img" viewBox="0 0 512 512"><path fill="#ffffff" d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg>
+            </div>
+            <div class="finish_line2"></div>
+          </div>
+          <p>付款資訊</p>
+        </div>
+  
+        <div class="finish_step finish_confirm">
+          <div>
+            <div class="finish_check">
+              <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check fa-w-16" role="img" viewBox="0 0 512 512"><path fill="#ffffff" d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg>
+            </div>
+          </div>
+          <p>訂單確認</p>
+        </div>
+  
+      </div>
+
+      <!-- ========== 訂單資料 ========== -->
+      <div class="finish_order">
+
+        <p>訂單完成！</p>
+        <p>謝謝您的訂購，我們會盡外處理您的訂單。</p>
+
+        <p>訂單編號：<span>1234567890</span></p>
+
+        <p>姓名：<span>李安</span></p>
+        <p>手機：<span>0912345678</span></p>
+        <p>地址：<span>台北市內湖區民權東路六段</span></p>
+        <p>運送方式：<span>門市自取</span></p>
+        <p>付款方式：<span>線上付款</span></p>
+
+
+      </div>
+
+      <!-- 訂購商品清單 -->
+      <div class="finish_list">
+
+        <div class="finish_title">訂購商品清單</div>
+        <div class="finish_itemTitle">
+          <div>商品名稱</div>
+          <div>數量</div>
+          <div>價格</div>
+        </div>
+
+        <!-- 商品清單 -->
+        <ul class="finish_itemList">
+
+          <li class="finish_item">
+            <div class="finish_data">
+              <div><img src="../images/finish/banner_matcha_item.png"></div>
+              <div>南投銅鑼燒</div>
+            </div>
+            <div>x 1</div>
+            <div>$480元 / 6入</div>
+          </li>
+
+          <li class="finish_item">
+            <div class="finish_data">
+              <div><img src="../images/finish/banner_matcha_item.png"></div>
+              <div>南投銅鑼燒</div>
+            </div>
+            <div>x 1</div>
+            <div>$480元 / 6入</div>
+          </li>
+
+          <li class="finish_item">
+            <div class="finish_data">
+              <div><img src="../images/finish/banner_matcha_item.png"></div>
+              <div>南投銅鑼燒</div>
+            </div>
+            <div>x 1</div>
+            <div>$480元 / 6入</div>
+          </li>
+
+          <li class="finish_item">
+            <div class="finish_data">
+              <div><img src="../images/finish/banner_matcha_item.png"></div>
+              <div>南投銅鑼燒</div>
+            </div>
+            <div>x 1</div>
+            <div>$480元 / 6入</div>
+          </li>
+
+        </ul>
+
+        <!-- 金額細項 -->
+        <div class="finish_priceDetail">
+
+          <div class="finish_itemPrice">
+            <p>商品金額</p>
+            <p>$1280元</p>
+          </div>
+
+          <div class="finish_itemPrice">
+            <p>運費</p>
+            <p>$0元</p>
+          </div>
+
+          <div class="finish_discount">
+            <p>折扣碼</p>
+            <p>-$80元</p>
+          </div>
+
+        </div>
+
+        <!-- 總金額 -->
+        <div class="finish_total">
+          <div>總金額</div>
+          <div>$1280元</div>
+        </div>
+
+      </div>
+
+
+
+
+
+      </div>
+    </div>
+
+
+
+  <script src="https://kit.fontawesome.com/8c3a8ab95b.js" crossorigin="anonymous"></script>
+</body>
+</html>

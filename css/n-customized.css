@@ -1,0 +1,273 @@
+*{
+    box-sizing: border-box;
+    font-family: '微軟正黑體';
+}
+
+body{
+    margin: 0;
+    min-width: 1199px;
+    /* border: 1px solid red; */
+}
+
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-image: url('../images/backend/loginbg.png');
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 120% 100%;
+    padding: 20px 30px;
+    margin-bottom: 30px;
+}
+
+.logo{
+    flex-grow: 2;
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+}
+
+.logo img{
+    width: 60px;
+}
+
+.logo p{
+    font-size: 30px;
+    color: #bb866a;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+
+.logout{
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    cursor: pointer;
+}
+
+.logout p{
+    font-size: 16px;
+    color: #172852;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+
+.main{
+    display: flex;
+    justify-content: flex-start;
+    padding: 0 60px;
+}
+
+.left{
+    display: flex;
+    flex-direction: column;
+    width: 15%;
+}
+
+.left > a{
+    text-decoration: none;
+    font-size: 18px;
+    color: #172852;
+    font-weight: bold;
+    margin: 0;
+    margin-bottom: 10px;
+    padding: 0;
+    width: 144px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 10px;
+    border: 1px solid #f4ece5;
+    background-color: #f4ece5;
+}
+
+.left > a:nth-child(4){
+    background-color: #f7c242;
+}
+
+.left > a:hover{
+    background-color: #f7c242;
+}
+
+.right{
+    /* border: 1px solid red; */
+    width: 85%;
+}
+
+.right > div{
+    border: 1px solid #bb866a;    
+}
+
+.right > p{
+    font-size: 22px;
+    color: #bb866a;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    border-bottom: 3px solid #b48164;   
+    width: 170px;
+    margin-bottom: 30px;
+}
+
+
+/* 調整右邊2個區域 */
+
+.card_style{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    /* grid-template-rows: 1fr 2fr 1fr; */
+    row-gap: 20px;
+    margin-bottom: 30px;
+}
+
+.card_style > p{
+    grid-area: 1/1/2/4;
+    font-size: 22px;
+    color: #172852;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+
+
+.sticker_style{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    /* grid-template-rows: 1fr 2fr 1fr; */
+    row-gap: 20px;
+    margin-bottom: 30px;
+
+}
+
+.sticker_style > p{
+    grid-area: 1/1/2/4;
+    font-size: 22px;
+    color: #172852;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+
+
+
+/* 上傳檔案樣式修改 */
+
+.group{
+    /* border: 1px solid red; */
+    position: relative;
+    width: 320px;
+}
+
+.group label{
+    /* border: 1px solid blue; */
+    font-size: 16px;
+    color: #172852;
+    font-weight: bold;
+}
+
+.group input{
+    /* border: 1px solid purple; */
+    position: absolute;
+    top: 0;
+    left: 60px;
+    opacity: 0;
+    z-index: 2;
+    width: 230px;
+}
+
+.group > p{
+    margin: 0;
+    padding: 3px;
+    position: absolute;
+    top: -3px;
+    left: 65px;    
+    border: 1.5px solid #cba89a;
+    border-radius: 5px;
+    overflow: hidden;
+    width: 230px;
+    font-size: 16px;
+    color: #172852;
+    font-weight: bold;
+
+    background-image: url("../images/backend/select.png");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+}
+
+.group div.img{
+    border: 1.5px solid #cba89a;
+    width: 260px;
+    height: 130px;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 0; 
+    margin-right: 25px; 
+    position: relative;
+}
+
+.group div.img > img{
+    max-width: 255px;
+    max-height: 125px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.group div.img > p{
+    position: absolute;
+    top: 35px;
+    left: 70px;
+    font-size: 16px;
+    color: #cba89a;
+    font-weight: bold;
+}
+
+
+
+.editbtn{
+    display: flex;
+    justify-content: center;
+    column-gap: 30px;
+    grid-area: 3/1/4/4;
+    height: 54px;
+    /* border: 1px solid red; */
+}
+
+.sticker_style .editbtn{
+    grid-area: 6/1/7/4;    
+}
+
+.editbtn button{
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #172852;
+    padding: 5px 25px;
+    margin: 0;
+    border: 1px solid #172852;
+    border-radius: 10px;
+    cursor: pointer;
+    height: 34px;
+}
+
+.editbtn .close{    
+    background-color: #a3a3a3;
+    border: 1px solid #a3a3a3;    
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小春堂</title>
+    <link rel="icon" href="../images/about/logo_footer.png">
+    <link rel="stylesheet" href="../css/about.css">
+    <script src="https://kit.fontawesome.com/8c3a8ab95b.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+
+    <script src="../js/about.js"></script>
+    <script src="../js/vue.js"></script>
+    <!-- scrollmagic -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+
+</head>
+
+<body>
+    <div class="about_wrap" id='about_wrap'>
+        <div id="keypoint1"></div>
+        <!-- ======================= about_scene1 =======================  -->       
+            <div id="about_scene1">
+                <div class='about_street'>
+                    <!-- <img src="../images/about/house.png" alt=""> -->
+                    <!-- 人 -->
+                    <div v-for='item in people_list' :class='item.class'>
+                        <img :src="item.src" >
+                    </div>
+                    <div class='about_people2 people'>
+                        <img src="../images/about/character02_1.png" >
+                        <img src="../images/about/character02_4.png" class='about_people2_leg'>
+                    </div>
+                </div>
+                <div class="about_street_end">
+                    <img src="../images/about/logo.png" alt="" class='about_street_endLogo'>
+                    <img src="../images/about/aboutUs_bg2.jpg" >
+                </div>
+            </div>  
+        <!-- ======================= about_scene2 =======================  -->
+        <div id="keypoint2"></div>
+        <div id='about_scene2'>
+            <!-- 大海背景 -->
+            <div class='about_taiwan'>
+                <!-- 台灣島 -->
+                <img class='about_island' src="../images/about/map1.png">
+                <div v-for='item in placePic' :class='item.class' class='about_spot'>
+                    <img :src="item.src">
+                </div>
+                <div v-for='item in placeDeco' :class='item.class' class='about_spotDeco'>
+                    <img :src="item.src">
+                </div>
+            </div>
+            <div class="about_taiwan_end">
+                <img src="../images/about/logo.png" class='about_taiwan_endLogo'>
+                <h2>最道地的日本風味</h2>
+                <div class='about_endBtn'>
+                    <a href="../index.html">返回首頁</a>
+                    <a href="./shopping_choose.html">前往商品頁</a>
+                </div>
+                
+            </div>
+        </div>
+        
+        <!-- 商家介紹 -->
+        <div class='about_history about_shopInfo'>
+            小春堂創立於2021年初春，是與臺灣在地小農合作所打造的日式零食點心專門店，將日本最新流行的人氣和菓子與洋菓子同步在台製作上市，在家就可以品嘗多元道地的日本風味。
+        </div>
+        <div class='about_brand about_shopInfo'>
+            小春堂堅持所有食材皆來自台灣有機栽種，並與台灣各地的小農合作，讓每個點心都健康無汙染。就讓我們來看看這些與小春堂合作的小農們吧!
+        </div>   
+        <!-- 彈窗 -->
+        <component :is="content" v-on:Box-type='changeBox' v-show='boxDisplay' @hidden='hiddenBox'></component>
+        <!-- 小農介紹 -->
+        <div v-for='(item, index) in taiwan_list' :class="item.place" class='about_taiwanPlace'>
+            <h1>{{item.country}}</h1>
+            <div>
+                <h3>{{item.title}}</h3>
+                <p>{{item.content}}</p>
+            </div>
+            <a href="#" :class='item.fruit' @click.prevent='showBox(index)'>詳細資訊</a>
+        </div>
+    </div>
+
+</body>
+
+</html>

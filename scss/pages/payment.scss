@@ -1,0 +1,477 @@
+@import '../mixin/mixin';
+
+.navbar{
+@include navbar();
+}
+
+*{
+  box-sizing: border-box;
+  font-family: "微軟正黑體";
+  color: #bb866a;
+}
+
+body{
+  margin: 0;
+  background-image: url("../../images/payment/bg.png");
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+img{
+  width: 100%;
+}
+
+.payment_container{
+  border: 1px solid black;
+  width: 80%;
+  max-width: 1200px;
+  margin: 100px auto;
+}
+
+
+
+
+/* ========== 訂單處理階段 ========== */
+
+
+.payment_stage{
+  // border: 1px solid red;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.payment_step{
+  // border: 1px solid blue;
+  text-align: center;
+  font-size: 0;
+}
+
+.payment_confirm > div{
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  font-weight: bold;
+  display: inline-block;
+  color: #a3a3a3;
+  border: solid 3px #a3a3a3;
+  background-color: #ffffff;
+  border-radius: 50%;
+  line-height: 35px;
+}
+
+.payment_confirm > p{
+  // border: 1px solid green;
+  margin: 5px 0 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: #a3a3a3;
+}
+
+.payment_payment{
+  margin: 0 100px;
+}
+
+// ========== 購物車階段 ==========
+.payment_payment > div:first-child{
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  font-weight: bold;
+  display: inline-block;
+  color: #f7c242;
+  border: solid 3px #f7c242;
+  background-color: #ffffff;
+  border-radius: 50%;
+  line-height: 35px;
+}
+
+.payment_payment > p{
+  // border: 1px solid green;
+  margin: 5px 0 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: #f7c242;
+}
+
+// 前面已完成的階段
+.payment_orderData > div{
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  border: solid 3px #f7c242;
+  background-color: #f7c242;
+  border-radius: 50%;
+}
+
+.payment_check{
+  // border: 1px solid red;
+  width: 20px;
+  margin: auto;
+}
+
+.payment_orderData > p{
+    // border: 1px solid green;
+    margin: 5px 0 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: #f7c242;
+}
+// ===== 購物車階段中間的線條 =====
+
+.payment_orderData > div:first-child, .payment_payment > div:first-child{
+  position: relative;
+}
+
+.payment_line1{
+  background-color: #f7c242;
+  width: 135px;
+  height: 2px;
+  position: absolute;
+  top: 18px;
+  right: -138px;
+}
+
+.payment_line2{
+  background-color: #a3a3a3;
+  width: 135px;
+  height: 2px;
+  position: absolute;
+  top: 18px;
+  right: -138px;
+}
+
+
+// ========== 訂單資訊 ==========
+.payment_orderContent{
+  // border: 1px solid red;
+  display: flex;
+}
+
+
+// ========== 左邊 ==========
+.payment_left{
+  // border: 1px solid green;
+  width: 60%;
+}
+
+.payment_title{
+  // border: 1px solid blue;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+
+// ========== 訂購資料 ==========
+
+.payment_same{
+  // border: 1px solid blue;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.payment_same > div:first-child{
+  // border: 1px solid red;
+  color: #172852;
+  font-size: 18px;
+  font-weight: bold;
+  margin-right: 30px;
+}
+
+.payment_same > div:last-child{
+  display: flex;
+}
+
+.payment_same > div:last-child > p{
+  // border: 1px solid green;
+  margin: 0;
+  color: #172852;
+  font-size: 16px;
+  font-weight: bold;
+  margin-left: 10px;
+  display: flex;
+}
+
+// 同會員資料按鈕
+.payment_itemCB{
+  border: solid 2px #172852;
+  background-color: #ffffff;
+  border-radius: 5px;
+  align-self: center;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.payment_choose{
+  background-color: #172852;
+}
+
+
+
+// 姓名、電話、地址
+.payment_data{
+  // border: 1px solid green;
+  display: flex;
+  margin-top: 15px;
+}
+
+.payment_data > div{
+  // border: 1px solid red;
+  color: #172852;
+  font-size: 16px;
+  font-weight: bold;
+  margin-right: 68px;
+  display: flex;
+  align-items: center;
+}
+
+.payment_data > input{
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  background-color:#f0ebe9;
+  width: 400px;
+  height: 35px;
+  padding: 15px;
+  font-size: 14px;
+  color: #172852;
+}
+
+::placeholder {
+  color: #cba89a;
+}
+
+.payment_transport, .payment_payMoney{
+  // border: 1px solid blue;
+  display: flex;
+  margin: 20px 0;
+  align-items: flex-start;
+}
+
+.payment_transport > div:first-child, .payment_payMoney > div:first-child{
+    // border: 1px solid red;
+    color: #172852;
+    font-size: 16px;
+    font-weight: bold;
+    margin-right: 32px;
+    display: flex;
+    align-items: center;
+}
+
+.payment_transport > div:last-child{
+  // border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+}
+
+.payment_transport label{
+  color: #cba89a;
+}
+
+.payment_transport label:nth-child(2){
+  // border: 1px solid blue;
+  margin: 5px 0;
+}
+
+.payment_payMoney label{
+  // border: 1px solid red;
+  font-weight: bold;
+  color: #cba89a;
+  margin-right: 30px;
+}
+
+
+
+
+
+
+
+
+
+// ========== 右邊 ==========
+.payment_right{
+  // border: 1px solid green;
+  background-color: #ffffff;
+  box-shadow: 0 0 24px 0 rgba(25, 28, 54, 0.15);
+  width: 40%;
+  margin-left: 30px;
+  padding: 20px 15px;
+}
+
+// ========== 明細標題 ==========
+.payment_cartTitle{
+  // border: 1px solid red;
+  font-weight: bold;
+  font-size: 18px;
+  color: #cba89a;
+}
+
+// ========== 明細 ==========
+
+.payment_detail{
+  border-top: 1.5px solid #cba89a;
+  border-bottom: 1.5px solid #cba89a;
+  list-style: none;
+  margin: 10px 0;
+  height: 300px;
+  padding: 0;
+  overflow: auto;
+}
+
+.payment_item{
+  border-bottom: 2px dashed #cba89a;
+  display: flex;
+  padding: 10px 0;
+}
+
+.payment_itemImg{
+  // border: 1px solid green;
+  width: 50px;
+  height: 50px;
+  margin: 0 10px;
+}
+
+.payment_itemData{
+  // border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.payment_itemData > p{
+  margin: 0;
+  color: #172852;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.payment_itemQuantity{
+  // border: 1px solid green;
+  margin-right: 10px;
+  font-weight: bold;
+  margin: auto;
+  color: #172852;
+}
+
+// ========== 金額明細 ==========
+
+.payment_moneyDetail, .payment_discount{
+  // border: 1px solid green;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.payment_moneyDetail > div:first-child, .payment_discount > div:first-child{
+  color: #cba89a;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.payment_moneyDetail > div:last-child{
+  color: #172852;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.payment_discount > div:last-child{
+  color: #dc3838;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+
+
+// ========== 總金額 ==========
+.payment_totalPrice{
+  border-top: 1.5px solid #cba89a;
+  padding-top: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.payment_totalPrice > div:first-child{
+  // border: 1px solid green;
+  color: #cba89a;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.payment_totalPrice > div:last-child, .payment_totalPrice span{
+  // border: 1px solid green;
+  color: #172852;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+
+
+
+// ========== 上、下一頁數 ==========
+
+.payment_page{
+  // border: 1px solid green;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 5px;
+  margin-top: 100px;
+}
+
+// 上一頁
+.payment_previous{
+  // border: 1px solid red;
+  display: flex;
+  margin-right: 100px;
+  text-decoration: none;
+}
+
+.payment_previousImg{
+  // border: 1px solid blue;
+  width: 10px;
+  height: 15px;
+  margin-right: 10px;
+  display: flex;
+  margin-top: 5px;
+}
+
+.payment_previousText{
+  border-bottom: 1.5px solid #a3a3a3;
+  padding-bottom: 5px;
+  color: #a3a3a3;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+// 下一頁
+.payment_next{
+  display: flex;
+  border-radius: 25px;
+  background-color: #172852;
+  width: 130px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+
+.payment_nextText{
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.payment_nextImg{
+    // border: 1px solid red;
+    width: 10px;
+    height: 15px;
+    margin-left: 10px;
+    display: flex;
+    margin-top: 3px;
+}

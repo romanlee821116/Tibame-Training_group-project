@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小春堂</title>
+    <link rel="icon" href="../images/customized/logo_footer.png">
+    <link rel="stylesheet" href="../css/customized.css"> 
+    <link rel="stylesheet" href="../css/jquery-ui.css">
+    <script src="https://kit.fontawesome.com/8c3a8ab95b.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="../js/jquery-ui.js"></script>  
+    <script src="../js/vue.js"></script>
+    <script src="../js/customized.js"></script>
+    
+</head>
+<body>
+    <!-- navbar -->
+    <div class="navbar">
+        <div class="navbar-logo">
+            <img src="../images/customized/logo.png" alt="">
+        </div>
+        <div class="navbar-icon">
+            <p id='scrollvalue'></p>
+            <a href="#"><i class="fas fa-user"></i></a>
+            <a href="#"><i class="fas fa-shopping-cart"></i></a>
+            <a href="#"><i class="fas fa-bars"></i></a>
+        </div>
+    </div>
+    <!-- media -->
+    <div class='mediacolumn'>
+        <a href="#"><i class="fab fa-instagram-square"></i></a>
+        <a href="#"><i class="fab fa-facebook-square"></i></a>
+        <a href="#"><i class="fab fa-twitter-square"></i></a>
+    </div>
+    <!-- watermark -->
+    <div class='custom_waterMark waterMark1'>
+        <img src="../images/customized/product_watercolor_c.png" alt="">
+    </div>
+    <div class='custom_waterMark waterMark2'>
+        <img src="../images/customized/product_watercolor_a.png" alt="">
+    </div>
+    <div class='custom_waterMark waterMark3'>
+        <img src="../images/customized/product_watercolor_b.png" alt="">
+    </div>
+    <!-- 跳窗背景 -->
+    <div class='custom_popUp_bg'></div>
+
+    <!-- ====================================客製化內容==================================== -->
+    <div class="cus_wrap" id='cus_wrap'>
+        <!-- 側邊節點 -->
+        <div class="custom_sideNode">            
+            <div class='custom_sideNode_backBar sideBar'></div>
+            <div class='custom_sideNode_frontBar sideBar'></div>
+            <!-- <div v-for='node in 5' class='custom_sideNode_node'></div> -->
+        </div>
+        <!-- ======== 第一步 ======== -->
+        <div class="cus_step1" id='step1'>
+            <div class="cus_step1_txt">
+                <h3>第一步</h3>
+                <h2>選擇禮盒規格</h2>
+                <div class='cus_step1_btn'>
+                    <a href="#" @click='p1_to_p2' class='custom_btn custom_btn_p1Next'>下一步 <i class="fas fa-chevron-right"></i></a>
+                </div>
+            </div>
+            <div class="cus_step1-box">
+                <div v-for='box in boxImg' class='cus_box_container'>
+                    <img  :src="box.src" alt="" :class='box.class'>                
+                    <p>{{box.txt}}</p>
+                    <p>{{box.price}}</p>
+                </div>                              
+            </div>            
+        </div>
+        <!-- ======== 第二步 ======== -->
+        <div class="cus_step2" id='step2'>
+            <!-- ========標題與按鈕======== -->
+            <div class="cus_step2_txt">
+                <h3>第二步</h3>
+                <h2>選擇禮盒內容</h2>
+                <a href="#" class='custom_btn s2_prestep prep' @click='p2_to_p1'><i class="fas fa-chevron-left"></i>上一步</a>
+                <a href="#" class='custom_btn s2_nextstep next'>下一步<i class="fas fa-chevron-right"></i></a>
+                <!-- 禮盒確認按鈕 -->
+                <div class='cus_confirm_btn'>
+                    <a href="#" class=' custom_btn cus_confirm_prestep prep'><i class="fas fa-chevron-left"></i>上一步</a>
+                    <a href="#" class='custom_btn cus_confirm_nextstep next' @click='content="checkBox"'>確認<i class="fas fa-chevron-right"></i></a>
+                </div>
+                <!-- 禮卡確認 -->
+                <div class='custom_chooseCard_btn'>
+                    <a href="#" class=' custom_btn custom_chooseCard_prep prep'><i class="fas fa-chevron-left"></i>上一步</a>
+                    <a href="#" class='custom_btn custom_chooseCard_next next' @click='content="checkCard"'>確認<i class="fas fa-chevron-right"></i></a>
+                </div>
+                <!-- 卡片內容按鈕 -->
+                <div class='cus-cardcontent-btn'>
+                    <a href="#" class=' custom_btn cus_cardcontent_prestep prep'><i class="fas fa-chevron-left"></i>上一步</a>
+                    <a href="#" class='custom_btn cus_cardcontent_nextstep next'>下一步<i class="fas fa-chevron-right"></i></a>
+                </div>
+                <!-- 確認卡片圖案 -->
+                <div class='cus-cardIcon-btn'>
+                    <a href="#" class=' custom_btn cus_cardIcon_prestep prep'><i class="fas fa-chevron-left"></i>上一步</a>
+                    <a href="#" class='custom_btn cus_cardIcon_nextstep next'>確認卡片<i class="fas fa-chevron-right"></i></a>
+                </div>
+                <!-- 確認禮物卡 -->
+                <div class='cus-cardConfirm-btn'>
+                    <a href="#" class=' custom_btn cus_cardConfirm_prestep prep'><i class="fas fa-chevron-left"></i>上一步</a>
+                    <a href="#" class='custom_btn cus_cardConfirm_nextstep next'>完成<i class="fas fa-chevron-right"></i></a>
+                </div>
+            </div>
+            <!-- ========禮盒格子======== -->
+            <!-- 四格 -->
+            <div class='four_grid cus_box' container-id='4'>  
+                <div v-for='(box, index) in 4' class='custom_gridBox' :box-id='index+1'>
+                    <img src="../images/customized/boxIn.png" alt="" class='custom_boxBody'>
+                    <img src="../images/customized/transparent.png" class='selected_item' data-itemName=''>
+                </div>        
+            </div>
+            <!-- 六格 -->
+            <div class='six_grid cus_box' container-id='6'>     
+                <div v-for='(box, index) in 6' class='custom_gridBox' :box-id='index+1'>
+                    <img src="../images/customized/boxIn.png" alt="" class='custom_boxBody'>
+                    <img src="../images/customized/transparent.png" class='selected_item' data-itemName=''>
+                </div>   
+            </div>
+            <!-- 九格 -->
+            <div class='nine_grid cus_box' container-id='9'>   
+                <div v-for='(box, index) in 9' class='custom_gridBox' :box-id='index+1'>
+                    <img src="../images/customized/boxIn.png" alt="" class='custom_boxBody'>
+                    <img src="../images/customized/transparent.png" class='selected_item' data-itemName=''>
+                </div>    
+            </div>
+            <!-- 分類 -->
+            <div class="cus_product_category">
+                <a href="#" v-for='cat in category' :class='cat.class' :data-cat='cat.id'>{{cat.type}}</a>
+            </div>
+            <!--  商品列表  -->
+            <div class="cus_product_contianer"> 
+                <!--商品 -->
+                <div :class='item.class' v-for='item in cus_item' :data-itemType='item.type'>
+                    <div class='cus_item_img'>
+                        <img :src="item.img" alt="">                        
+                    </div>                    
+                    <div class='cus_item_txt' >
+                        <p>{{item.txt}}</p>
+                        <a href="#" class='cus_add'><i class="fas fa-plus"></i></a>
+                    </div>
+                </div>     
+            </div>
+            <!-- 確認禮盒清單列 -->
+            <div class='custom_itemConfirm_List'>
+                <h2>四格小資組合 $480</h2>                
+            </div>
+            <!-- 客製禮卡按鈕 -->
+            <div class='cus_giftcard_btn'>
+                <a href="#" class=' custom_btn cus_giftcard_stop prep'>不需要</a>
+                <a href="#" class='custom_btn cus_giftcard_nextstep next'>需要</a>
+            </div>
+            <!-- 禮盒蓋子 -->
+            <div class='cus_giftbox'></div>
+            <!-- 袋子或卡片 -->
+            <div class='cus_bag_card' id='dragbasic'>       
+                <img  v-for='img in bagCard' :src="img.src" :class='img.class' :data-cardId='img.id'>
+                <pre>{{message}}</pre>
+            </div>
+            
+            <!-- 卡片內容填寫框 -->
+            <div class='custom_card_textArea'>
+                <form action="" method="post">
+                    <textarea name="" id="custom_cardText" v-model='message' v-on:keyup='countWord'></textarea>
+                </form>
+                <div class="custom_card_iconList">
+                    <div v-for='icon in iconList' >
+                        <img :src="icon.src" :data-icon='icon.id' class='custom_card_icon'>                        
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <!-- 購物車 -->
+        <div class="custom_popUp_cart">
+            <div class="custom_cart">
+                <img src="../images/customized/customized_step_a.png" alt="">
+                <h2>客製禮盒成功</h2>
+                <p>您的商品已添加至購物車!</p>
+                <div>
+                    <a href="#"class='custom_btn custom_backHome'>返回首頁</a>
+                    <a href="#" class='custom_btn custom_goCart'>前往購物車</a>                
+                </div>
+            </div>
+        </div>
+        <!-- 購物袋 -->
+        <div class='custom_bag'>
+            <img src="" alt="">
+        </div>
+        <!-- 功能彈窗 -->        
+        <component :is="content"></component>
+    </div>
+</body>
+</html>
