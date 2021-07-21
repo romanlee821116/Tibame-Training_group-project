@@ -6,8 +6,12 @@
   top: 0px;
   left: 0;
   padding-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   z-index: 900;
 }
 
@@ -23,8 +27,13 @@
 }
 
 .navbar .navbar-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  margin-right: 10px;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin: 0 20px 0 0px;
 }
 
 .navbar .navbar-icon a {
@@ -41,7 +50,8 @@
 }
 
 * {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   font-family: "微軟正黑體";
   color: #bb866a;
 }
@@ -77,6 +87,8 @@ img {
 #contact_contactBorder {
   /* border: 1px solid green; */
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -106,6 +118,8 @@ img {
 /* ========== 來電聯繫 ========== */
 .contact_call, .contact_line {
   /* border: 1px solid blue; */
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
   margin-top: 50px;
 }
@@ -150,7 +164,8 @@ img {
   /* border: 1px solid red; */
   width: 110px;
   border-radius: 10px;
-  box-shadow: 0px 7px 14.6px 1.4px rgba(187, 134, 106, 0.34);
+  -webkit-box-shadow: 0px 7px 14.6px 1.4px rgba(187, 134, 106, 0.34);
+          box-shadow: 0px 7px 14.6px 1.4px rgba(187, 134, 106, 0.34);
   background-color: #ffffff;
   overflow: hidden;
 }
@@ -160,7 +175,8 @@ img {
   /* border: 1px solid red; */
   width: 50%;
   padding: 36px;
-  box-shadow: 9.5px 14.1px 26.4px 2.6px rgba(187, 134, 106, 0.44);
+  -webkit-box-shadow: 9.5px 14.1px 26.4px 2.6px rgba(187, 134, 106, 0.44);
+          box-shadow: 9.5px 14.1px 26.4px 2.6px rgba(187, 134, 106, 0.44);
   background-color: #ffffff;
 }
 
@@ -184,6 +200,18 @@ img {
   padding: 16px;
   font-size: 14px;
   color: #172852;
+}
+
+::-webkit-input-placeholder {
+  color: #cba89a;
+}
+
+:-ms-input-placeholder {
+  color: #cba89a;
+}
+
+::-ms-input-placeholder {
+  color: #cba89a;
 }
 
 ::placeholder {
