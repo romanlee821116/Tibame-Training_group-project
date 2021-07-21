@@ -724,18 +724,13 @@ body {
 
 .memberOrderDetail tr:nth-child(2) td:nth-child(2) {
   width: 210px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 .memberOrderDetail tr:nth-child(2) td:nth-child(3) {
   width: 100px;
-}
-
-.word-sp1 {
-  vertical-align: bottom;
-}
-
-.word-sp2 {
-  vertical-align: top;
 }
 
 /* 收件人詳細資訊============= */

@@ -485,9 +485,7 @@ body {
     background-color: #647bb5;
 }
 
-
 /* 訂單明細==================== */
-
 .memberOrderDetail {
     width: 100%;
     border: solid 2px #c4c4c4;
@@ -496,53 +494,44 @@ body {
     margin: 0;
 }
 
-
 /* 第一行 */
-
 .memberOrderDetail tr:first-child {
     background-color: #c4c4c4;
     color: #fff;
     padding: 20px 0 20px 0;
 }
-
 .memberOrderDetail tr:first-child td {
     padding: 5px 0 5px 0;
 }
-
 .memberOrderDetail tr:first-child td:first-child {
     padding-left: 10px;
 }
 
-
 /* 第二行 */
-
 .memberOrderDetail tr td img {
     max-width: 50px;
     /* margin: 5px; */
 }
-
 .memberOrderDetail tr:nth-child(2) td:first-child {
     width: 80px;
     /* border: 1px solid red; */
     padding-left: 10px;
+    
 }
-
 .memberOrderDetail tr:nth-child(2) td:nth-child(2) {
     width: 210px;
+    align-self: center;
 }
-
 .memberOrderDetail tr:nth-child(2) td:nth-child(3) {
     width: 100px;
 }
 
-.word-sp1 {
-    vertical-align: bottom;
-}
-
-.word-sp2 {
-    vertical-align: top;
-}
-
+// .word-sp1 {
+//     vertical-align: center;
+// }
+// .word-sp2 {
+//     vertical-align: center;
+// }
 
 /* 收件人詳細資訊============= */
 
