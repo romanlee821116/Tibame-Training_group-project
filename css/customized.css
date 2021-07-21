@@ -63,10 +63,11 @@ table {
   box-sizing: border-box;
 }
 
-html, body {
+body {
   width: 100%;
   background-image: url("../images/customized/bg.png");
   background-size: cover;
+  overflow-y: hidden;
   position: relative;
 }
 
@@ -273,15 +274,9 @@ html, body {
   font-size: 32px;
 }
 
-@media (max-width: 800px) {
-  .cus_step1 .cus_step1_txt {
-    margin-top: 80px;
-  }
-}
-
 @media (max-width: 575px) {
   .cus_step1 .cus_step1_txt {
-    padding-top: 0px;
+    padding-top: 80px;
     width: 100%;
   }
   .cus_step1 .cus_step1_txt h3 {
@@ -306,6 +301,7 @@ html, body {
   transform: translateY(-50%);
   justify-items: center;
   align-items: center;
+  z-index: 5;
 }
 
 .cus_step1-box p {
@@ -463,6 +459,12 @@ html, body {
   padding: 15px;
 }
 
+@media (max-width: 575px) {
+  .four_grid {
+    margin-top: 40px;
+  }
+}
+
 .six_grid {
   background-image: url("../images/customized/six_boxBody.png");
   background-size: contain;
@@ -478,6 +480,12 @@ html, body {
   padding: 15px;
 }
 
+@media (max-width: 575px) {
+  .six_grid {
+    margin-top: 40px;
+  }
+}
+
 .nine_grid {
   background-image: url("../images/customized/nine_boxBody.png");
   background-size: contain;
@@ -491,6 +499,12 @@ html, body {
   justify-self: center;
   transition: .3s;
   padding: 15px;
+}
+
+@media (max-width: 575px) {
+  .nine_grid {
+    margin-top: 40px;
+  }
 }
 
 .fa-chevron-right {
@@ -524,15 +538,9 @@ html, body {
   font-size: 32px;
 }
 
-@media (max-width: 800px) {
-  .cus_step2 .cus_step2_txt {
-    margin-top: 80px;
-  }
-}
-
 @media (max-width: 575px) {
   .cus_step2 .cus_step2_txt {
-    padding-top: 0px;
+    padding-top: 80px;
     width: 100%;
   }
   .cus_step2 .cus_step2_txt h3 {
@@ -647,6 +655,7 @@ html, body {
 @media (max-width: 800px) {
   .cus_step2 .cus_product_contianer {
     grid-template-columns: 1fr 1fr 1fr;
+    padding: 0 15px;
   }
 }
 
@@ -664,14 +673,14 @@ html, body {
 }
 
 .cus_step2 .cus_product_contianer .cus-item .cus_item_img {
-  width: 180px;
+  width: 150px;
   margin: 0 auto;
   position: relative;
 }
 
 @media (max-width: 400px) {
   .cus_step2 .cus_product_contianer .cus-item .cus_item_img {
-    width: 160px;
+    width: 130px;
   }
 }
 
@@ -683,15 +692,16 @@ html, body {
 .cus_step2 .cus_product_contianer .cus-item .cus_item_txt {
   position: absolute;
   left: 50%;
-  top: 180px;
-  width: 180px;
-  height: 180px;
+  top: 150px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   margin: 0 auto;
-  background-color: #999;
+  background-color: #cba89a;
   text-align: center;
-  transform: translate(-50%, -40px);
+  transform: translate(-50%, -70px);
   display: none;
+  padding-top: 20px;
 }
 
 .cus_step2 .cus_product_contianer .cus-item .cus_item_txt p {
@@ -712,11 +722,12 @@ html, body {
 
 .cus_step2 .cus_product_contianer .cus-item .cus_item_txt a.cus_add i.fa-plus {
   font-size: 22px;
+  color: #fff;
 }
 
 @media (max-width: 400px) {
   .cus_step2 .cus_product_contianer .cus-item .cus_item_txt {
-    transform: translate(-50%, -60px);
+    transform: translate(-50%, -90px);
   }
 }
 
@@ -811,6 +822,7 @@ html, body {
   transform: translate(-50%, 0%);
   transition: .5s;
   display: none;
+  border-radius: 15px;
 }
 
 @media (max-width: 976px) {
@@ -826,6 +838,7 @@ html, body {
   display: none;
   position: absolute;
   cursor: pointer;
+  border-radius: 15px;
 }
 
 .cus_step2 .cus_bag_card pre {
@@ -834,17 +847,19 @@ html, body {
   opacity: 0;
   transform: scaleX(-1);
   position: absolute;
+  border-radius: 25px;
   top: 0;
   left: 0;
-  padding: 30px;
+  padding: 15px;
   line-height: 40px;
   white-space: pre-wrap !important;
   word-wrap: break-word;
-  font-size: 18px;
-  border: 2px solid pink;
+  font-size: 16px;
+  color: #bb866a;
 }
 
 .cus_step2 .cus_bag_card .choose-bag {
+  height: 180%;
   top: 0;
   left: 0;
   display: none;
@@ -886,15 +901,29 @@ html, body {
 
 .cus_step2 .custom_card_textArea {
   width: 35%;
-  height: 60%;
+  height: 70%;
+  min-width: 280px;
   border: 2px solid blue;
-  padding: 10px;
   position: absolute;
-  top: 55%;
-  right: 5%;
+  top: 60%;
+  right: 10%;
   transform: translate(0%, -50%);
   display: none;
-  background-color: #fff;
+  background: url("../../images/customized/letter.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding: 10px;
+}
+
+@media (max-width: 575px) {
+  .cus_step2 .custom_card_textArea {
+    position: absolute;
+    top: 85%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    background-position: top;
+  }
 }
 
 .cus_step2 .custom_card_textArea form {
@@ -904,12 +933,14 @@ html, body {
 
 .cus_step2 .custom_card_textArea textarea {
   width: 100%;
-  height: 100%;
+  height: 90%;
   line-height: 45px;
   background-color: transparent;
   font-family: '微軟正黑體';
-  font-size: 22px;
+  font-size: 18px;
+  color: #bb866a;
   border: 0;
+  padding: 20px;
   resize: none;
 }
 
@@ -918,11 +949,12 @@ html, body {
 }
 
 .cus_step2 .custom_card_textArea .custom_card_iconList {
-  width: 100%;
+  padding: 20px;
+  width: auto;
   height: 100%;
-  border: 2px solid red;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 70px 70px 70px;
   gap: 10px;
   padding: 10px;
   overflow-y: scroll;
@@ -930,8 +962,8 @@ html, body {
 }
 
 .cus_step2 .custom_card_textArea .custom_card_iconList img {
-  width: 100%;
-  height: auto;
+  width: auto;
+  height: 100%;
   background-color: transparent;
   border-radius: 10px;
   cursor: pointer;
@@ -939,6 +971,14 @@ html, body {
 
 .cus_step2 .custom_card_textArea .custom_card_iconList .choosen_icon {
   border: 2px solid #cba89a;
+}
+
+@media (max-width: 575px) {
+  .cus_step2 .custom_card_textArea .custom_card_iconList {
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: 50px 50px 50px 50px;
+    padding: 20px 20px 20px 30px;
+  }
 }
 
 .cus_step2 .cus-cardcontent-btn {
@@ -998,6 +1038,12 @@ html, body {
   color: #172852;
 }
 
+@media (max-width: 575px) {
+  .cus_step2 .cus-cardConfirm-btn .cus_cardConfirm_nextstep::before {
+    top: 120%;
+  }
+}
+
 .custom_backHome {
   background-color: #a3a3a3;
   border: 3px solid #a3a3a3;
@@ -1008,15 +1054,19 @@ html, body {
   height: 45%;
   max-width: 400px;
   max-height: 300px;
+  min-width: 300px;
+  min-height: 225px;
   position: absolute;
   left: 50%;
   bottom: -50%;
-  background: url("../images/customized/testBag.png");
-  background-position: center;
-  background-size: 120% cover;
-  transition: 2s;
   display: none;
   transform: translate(-50%, 50%);
+  transition: 1s;
+}
+
+.custom_bag img {
+  width: 100%;
+  height: auto;
 }
 
 .custom_popUp {

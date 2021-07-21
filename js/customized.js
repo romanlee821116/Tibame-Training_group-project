@@ -57,42 +57,45 @@ $(function(){
             ],
 
             cus_item: [
-                {txt: '這是第1個產品',class:'1 cus-item', img: '../images/customized/product_small.png', type:''},
-                {txt: '這是第2個產品',class:'2 cus-item', img: '../images/customized/product_small.png', type:''},
-                {txt: '這是第3個產品',class:'3 cus-item', img: '../images/customized/product_small.png', type:''},
-                {txt: '這是第4個產品',class:'4 cus-item', img: '../images/customized/product_small.png', type:''},
-                {txt: '這是第5個產品',class:'5 cus-item', img: '../images/customized/product_small.png', type:''},
-                {txt: '這是第6個產品',class:'6 cus-item', img: '../images/customized/product_small.png', type:''},
-                {txt: '這是第7個產品',class:'7 cus-item', img: '../images/customized/product_small.png', type:''},
-                {txt: '這是第8個產品',class:'8 cus-item', img: '../images/customized/product_small.png', type:''},
-                {txt: '這是第9個產品',class:'9 cus-item', img: '../images/customized/product_small.png', type:''},
-                {txt: '這是第10個產品',class:'10 cus-item', img: '../images/customized/product_small.png', type:''},
-                {txt: '這是第11個產品',class:'11 cus-item', img: '../images/customized/product_small.png', type:''},
-                {txt: '這是第12個產品',class:'12 cus-item', img: '../images/customized/product_small.png', type:''},
-                {txt: '這是第13個產品',class:'13 cus-item', img: '../images/customized/product_small.png', type:''},
-                {txt: '這是第14個產品',class:'14 cus-item', img: '../images/customized/product_small.png', type:''},
-                {txt: '這是第15個產品',class:'15 cus-item', img: '../images/customized/product_small.png', type:''},
-                {txt: '這是第16個產品',class:'16 cus-item', img: '../images/customized/product_small.png', type:''},
-                {txt: '這是第17個產品',class:'17 cus-item', img: '../images/customized/product_small.png', type:''},
-                {txt: '這是第18個產品',class:'18 cus-item', img: '../images/customized/product_small.png', type:''},
-                {txt: '這是第19個產品',class:'19 cus-item', img: '../images/customized/product_small.png', type:''},
+                {txt: '這是第1個產品',class:'1 cus-item', img: '../images/customized/customizedPic.png', type:''},
+                {txt: '這是第2個產品',class:'2 cus-item', img: '../images/customized/customizedPic.png', type:''},
+                {txt: '這是第3個產品',class:'3 cus-item', img: '../images/customized/customizedPic.png', type:''},
+                {txt: '這是第4個產品',class:'4 cus-item', img: '../images/customized/customizedPic.png', type:''},
+                {txt: '這是第5個產品',class:'5 cus-item', img: '../images/customized/customizedPic.png', type:''},
+                {txt: '這是第6個產品',class:'6 cus-item', img: '../images/customized/customizedPic.png', type:''},
+                {txt: '這是第7個產品',class:'7 cus-item', img: '../images/customized/customizedPic.png', type:''},
+                {txt: '這是第8個產品',class:'8 cus-item', img: '../images/customized/customizedPic.png', type:''},
+                {txt: '這是第9個產品',class:'9 cus-item', img: '../images/customized/customizedPic.png', type:''},
+                {txt: '這是第10個產品',class:'10 cus-item', img: '../images/customized/customizedPic.png', type:''},
+                {txt: '這是第11個產品',class:'11 cus-item', img: '../images/customized/customizedPic.png', type:''},
+                {txt: '這是第12個產品',class:'12 cus-item', img: '../images/customized/customizedPic.png', type:''},
+                {txt: '這是第13個產品',class:'13 cus-item', img: '../images/customized/customizedPic.png', type:''},
+                {txt: '這是第14個產品',class:'14 cus-item', img: '../images/customized/customizedPic.png', type:''},
+                {txt: '這是第15個產品',class:'15 cus-item', img: '../images/customized/customizedPic.png', type:''},
+                {txt: '這是第16個產品',class:'16 cus-item', img: '../images/customized/customizedPic.png', type:''},
+                {txt: '這是第17個產品',class:'17 cus-item', img: '../images/customized/customizedPic.png', type:''},
+                {txt: '這是第18個產品',class:'18 cus-item', img: '../images/customized/customizedPic.png', type:''},
+                {txt: '這是第19個產品',class:'19 cus-item', img: '../images/customized/customizedPic.png', type:''},
             ],
             bagCard: [
-                {src: '../images/customized/testCard1.jpg', class:'choose-card card2', id:'2'},
-                {src: '../images/customized/testCard1.jpg', class:'choose-card card3', id:'3'},
-                {src: '../images/customized/testCard1.jpg', class:'choose-card card1', id:'1'},
-                {src: '../images/customized/testBag.png', class:'choose-bag', id:''},
+                {src: '../images/customized/card_back02.png', class:'choose-card card2', id:'2'},
+                {src: '../images/customized/card_back03.png', class:'choose-card card3', id:'3'},
+                {src: '../images/customized/card_back01.png', class:'choose-card card1', id:'1'},
+                {src: '../images/customized/bag.png', class:'choose-bag', id:'0'},
             ],            
             iconList: [
-                {src: '../images/customized/meme1.png', id:'1'},
-                {src: '../images/customized/meme1.png', id:'2'},
-                {src: '../images/customized/meme1.png', id:'3'},
-                {src: '../images/customized/meme2.png', id:'4'},
-                {src: '../images/customized/meme2.png', id:'5'},
-                {src: '../images/customized/meme2.png', id:'6'},
-                {src: '../images/customized/meme3.png', id:'7'},
-                {src: '../images/customized/meme3.png', id:'8'},
-                {src: '../images/customized/meme3.png', id:'9'},
+                {src: '../images/customized/sticker01.png', id:'1'},
+                {src: '../images/customized/sticker02.png', id:'2'},
+                {src: '../images/customized/sticker03.png', id:'3'},
+                {src: '../images/customized/sticker04.png', id:'4'},
+                {src: '../images/customized/sticker05.png', id:'5'},
+                {src: '../images/customized/sticker06.png', id:'6'},
+                {src: '../images/customized/sticker07.png', id:'7'},
+                {src: '../images/customized/sticker08.png', id:'8'},
+                {src: '../images/customized/sticker09.png', id:'9'},
+                {src: '../images/customized/sticker10.png', id:'10'},
+                {src: '../images/customized/sticker11.png', id:'11'},
+                {src: '../images/customized/sticker13.png', id:'12'},
             ],                 
             message: '',
             content: 'checkBox',
@@ -147,7 +150,7 @@ $(function(){
             countWord(){
                 let curLength = $("#custom_cardText").val().length;
                 if (curLength > 80) {
-                    var num = $("#custom_cardText").val().substr(0, 80);
+                    var num = $("#custom_cardText").val().substr(0, 60);
                     $("#custom_cardText").val(num);
                     alert("超過字數限制，多出的字將被移除！");
                 } else {
@@ -213,8 +216,9 @@ $(function(){
     //商品添加到格子中
     $('.fa-plus').click(function(e){
         let itemPic = $(this).closest('div').prev('div').find('img').attr('src');
+        let picSrc = itemPic.replace('.png','Top.png');
         let itemTxt = $(this).closest('div').find('p').text();
-        $('.selected .choosenBox').find('.selected_item').attr('src', itemPic).addClass('haveItem');
+        $('.selected .choosenBox').find('.selected_item').attr('src', picSrc).addClass('haveItem');
         $('.selected .choosenBox').find('.selected_item').attr('data-itemName', itemTxt);
         e.preventDefault();      
         //自動將選到的格子換成下一格
@@ -259,10 +263,8 @@ $(function(){
             $('body').css({
                 // overflowY: 'hidden',
             })
-            //在清單秀出禮盒內容
-            
+            //在清單秀出禮盒內容            
             let total_box = $('.selected  img:nth-child(even)')
-            // let box_amount = $('.selected  img').length;
             let content = '';  
             console.log(boxSize);
             if(boxSize==4){
@@ -347,7 +349,8 @@ $(function(){
             width: '130px',
             height: 'auto',
         });
-        let boxTop = $('.cus_box').offset().top;
+        let boxTop = $('.selected').offset().top;
+        console.log(boxTop);
         //蓋子掉下來
         $('.cus_giftbox').animate({
             top: `${boxTop-5}px`,
@@ -403,6 +406,8 @@ $(function(){
     })
 // ==================是否製作卡片(結帳)==================
     $('.cus_giftcard_stop').click(function(){
+        let boxTop = parseInt($('.selected').offset().top);
+        let bagUp = parseInt($(window).height())-boxTop;
         //取消原本按鈕的hover事件
         $('.cus_giftcard_nextstep').unbind('mouseenter mouseleave');
         $('.cus_giftcard_stop').unbind('mouseenter mouseleave');
@@ -411,14 +416,13 @@ $(function(){
         $('.cus_giftcard_btn').fadeOut();
         $('.choose-bag').fadeIn();
         $('.cus_bag_card').css({
-            bottom: '50%',
-            transform: 'translate(-50%, 50%)',
-            transition: '2s',
+            bottom: '52%',
+            transform: 'translate(-50%, 0%)',
+            transition: '1s',
         });
         setTimeout(function(){
             $('.custom_cart').css('display','flex').fadeIn();            
-        },3300);
-
+        },2300);
     })
 
 
@@ -526,16 +530,17 @@ $(function(){
     })
 //==================卡片確認按鈕==================
     $('.custom_chooseCard_next').click(function(){
+        let winWidth = $(window).width();
         if($('.choosenCard').length!=0){
 
             let cardType = $('.choosenCard').attr('data-cardId');
             console.log(cardType);
             if(cardType==1){
-                $('.cus_bag_card > pre').css('backgroundColor','orange');
+                $('.cus_bag_card > pre').css('backgroundColor','#FFF1F4');
             }else if(cardType==2){
-                $('.cus_bag_card > pre').css('backgroundColor','pink');
+                $('.cus_bag_card > pre').css('backgroundColor','#FFF8EB');
             }else{
-                $('.cus_bag_card > pre').css('backgroundColor', '#999');
+                $('.cus_bag_card > pre').css('backgroundColor','#EBFFEB');
             }
 
             // 先取消所有卡片顯示
@@ -559,25 +564,46 @@ $(function(){
                 $('.custom_chooseCard_btn').fadeOut();
             },1000);
             //標題回歸，卡片左移，填寫欄位出現
-            setTimeout(function(){
-                $('.cus_step2_txt>h3').text('第四步');
-                $('.cus_step2_txt>h2').text('填寫卡片內容');
-                $('.custom_chooseCard_btn').css('display','flex').fadeIn();
-                $('.cus_step2_txt').fadeIn();
-                $('.custom_card_textArea').fadeIn();
-                $('.cus_bag_card').css({
-                    bottom: '50%',
-                    left: '10%',
-                    width: '45%',
-                    height: '45%',
-                    transform: 'translate(0%, 50%)',
-                });
-                $('.choosenCard').css({
-                    width:'100%',
-                    top: '-10px',                
-                });           
-            },1500);
-
+            if(winWidth<576){
+                setTimeout(function(){
+                    $('.cus_step2_txt>h3').text('第四步');
+                    $('.cus_step2_txt>h2').text('填寫卡片內容');
+                    $('.custom_chooseCard_btn').css('display','flex').fadeIn();
+                    $('.cus_step2_txt').fadeIn();
+                    $('.custom_card_textArea').fadeIn();
+                    $('.cus_bag_card').css({
+                        bottom: '64%',
+                        left: '50%',
+                        width: '280px',
+                        height: '160px',
+                        transform: 'translate(-50%, 50%)',
+                    });
+                    $('.choosenCard').css({
+                        width:'100%',
+                        top: '-10px',                
+                    });           
+                },1500);
+            }else{
+                setTimeout(function(){
+                    $('.cus_step2_txt>h3').text('第四步');
+                    $('.cus_step2_txt>h2').text('填寫卡片內容');
+                    $('.custom_chooseCard_btn').css('display','flex').fadeIn();
+                    $('.cus_step2_txt').fadeIn();
+                    $('.custom_card_textArea').fadeIn();
+                    $('.cus_bag_card').css({
+                        bottom: '50%',
+                        left: '10%',
+                        width: '360px',
+                        height: '210px',
+                        transform: 'translate(0%, 50%)',
+                    });
+                    $('.choosenCard').css({
+                        width:'100%',
+                        top: '-10px',                
+                    });           
+                },1500);
+            }
+            
             setTimeout(function(){
                 $('.choosenCard').css({
                     transform: 'scaleX(-1)',
@@ -596,7 +622,6 @@ $(function(){
             //卡片內容按鈕出現
             $('.cus-cardcontent-btn').css('display','flex').fadeIn();
         }else{
-
             $('.custom_popUp').fadeIn();
             $('.custom_popUp_bg').fadeIn();
         }
@@ -619,8 +644,10 @@ $(function(){
 
         }else{
             $('.cus_bag_card').css({
-                width: '345px',
-                height: '210px',
+                // width: '345px',
+                // height: '210px',
+                width: '280px',
+                height: '160px',
                 bottom: '45%',
                 left: '50%',
                 transform: 'translate(-50%, 0%)',
@@ -696,7 +723,7 @@ $(function(){
             // icon_id = $(this).attr('data-icon');
             icon_body = `            
                 <div id='drag' class="custom_card_IconOnCard drag" >
-                    <img src='${icon_src}'  data-icon='${icon_id}' class='test'>
+                    <img src='${icon_src}'  data-icon='${icon_id}'>
                 </div>             
             `;           
             $('.cus_bag_card').append(icon_body);
@@ -794,7 +821,7 @@ $(function(){
             })          
         },1200);
         setTimeout(function(){
-            $('.custom_bag').css({                
+            $('.custom_bag').fadeIn().css({  
                 bottom: '50%',
                 left: '50%',
                 transform: 'translate(-50%, 50%)',
@@ -803,7 +830,7 @@ $(function(){
         setTimeout(function(){
             $('.custom_cart').fadeIn();
             $('.custom_popUp_bg').fadeIn();
-        },4800)        
+        },3000)        
     })
 
     //挑窗關閉
@@ -813,14 +840,41 @@ $(function(){
         console.log('close');
     })
 
+
+    // ===================================
+    init();
+    // function init() {
+    //     document.addEventListener("touchstart", touchHandler, true);
+    //     document.addEventListener("touchmove", touchHandler, true);
+    //     document.addEventListener("touchend", touchHandler, true);
+    //     document.addEventListener("touchcancel", touchHandler, true);
+    // }
 });
+
+
+
+function touchHandler(event) {
+    var touch = event.changedTouches[0];
+    var simulatedEvent = document.createEvent("MouseEvent");
+        simulatedEvent.initMouseEvent({
+        touchstart: "mousedown",
+        touchmove: "mousemove",
+        touchend: "mouseup"
+    }[event.type], true, true, window, 1,
+        touch.screenX, touch.screenY,
+        touch.clientX, touch.clientY, false,
+        false, false, false, 0, null);
+
+    touch.target.dispatchEvent(simulatedEvent);
+    event.preventDefault();
+}
 
 function drag(){
      /* basic */
      $("#dragbasic div[id^='drag']").draggable({
         containment: "#dragbasic",
         stack: ".drag"
-});
+    });
 }
 
 //滑鼠滾動判斷navbar出現/消失
@@ -838,3 +892,6 @@ function navshow(){
         };
     })
 }
+
+// 
+
