@@ -22,7 +22,8 @@
     }
     .navbar-icon{
         display: flex;
-        margin-right: 10px;
+        justify-content: flex-start;
+        margin: 0 20px 0 0px;
         a{
             display: block;
             width: 60px;

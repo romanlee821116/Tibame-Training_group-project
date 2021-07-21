@@ -367,10 +367,11 @@ body::-webkit-scrollbar {
         position: absolute;
         top: 10%;
         left: 5%;
+        @include rwd(76)
     }
     .about_spot{
         transform: scaleY(.7);
-        position: absolute;
+        position: fixed;
         width: 10%;
         height: 10%;
         min-width: 120px;
@@ -393,7 +394,7 @@ body::-webkit-scrollbar {
 }  
 .about_taiwanSpot1{
     left: 45vw;    
-    top: 5vh;
+    top: 7vh;
 }
 .about_taiwanSpot2{
     left: 35vw;    
@@ -439,7 +440,7 @@ body::-webkit-scrollbar {
 .about_spotDeco4{    
     left: 70vw;
     top: 70vh;
-    animation: jump 12s .3s linear infinite;
+    animation: jump 12s linear infinite;
     img{
         height: 110%;
     }
@@ -447,9 +448,9 @@ body::-webkit-scrollbar {
 .about_spotDeco5{
     left: 65vw;
     top: 72vh;
-    animation: jump 12s .3s linear infinite;
+    animation: jump 12s .5s linear infinite;
     img{
-        height: 110%;
+        height: 100%;
     }
 }
 .about_spotDeco6{
@@ -648,7 +649,7 @@ body::-webkit-scrollbar {
             }
             p{
                 margin-top: 10px;
-                font-size: 18px;
+                font-size: 16px;
                 color: $darkBlue;
             }
         }
@@ -670,7 +671,7 @@ body::-webkit-scrollbar {
                 color: $darkBlue;
                 left: 0;
                 bottom: 0;
-                font-size: 18px;
+                font-size: 16px;
                 line-height: 35px;
                 font-weight: 900;
             }
@@ -685,8 +686,8 @@ body::-webkit-scrollbar {
         }
         .about_farmerDetail_text{
             color: $darkBlue;
-            padding-top: 50px;
-            font-size: 18px;
+            padding-top: 20px;
+            font-size: 16px;
             line-height: 30px;
         }
     }

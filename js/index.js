@@ -79,7 +79,7 @@ $(function () {
 
     ticker();
     newsCarousel();
-    // navbar();
+    navbar();
 })
 
 
@@ -112,6 +112,7 @@ function ticker() {
 
 //商品輪播
 function newsCarousel() {
+    console.log('run carousel');
     let winWidth = $(window).width();
     if (winWidth < 767) {
         console.log("小於767");
@@ -140,6 +141,12 @@ function newsCarousel() {
             $(point).css('backgroundColor', '#172852');
         })
     }
+}
+
+function navbar(){
+    $('.ham_bar').css({
+        backgroundColor: '#fff',
+    })
 }
 
 
