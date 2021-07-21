@@ -1,14 +1,14 @@
 $(document).ready(function() {
-    $(".container").click(function() {
+    $(".ham_container").click(function() {
        
-        $(".select").find("a").css({ opacity: "1" });
+        $(".ham_select").find("a").css({ opacity: "1" });
         $(this).toggleClass("ham_change");
         if ($(this).hasClass("ham_change")) {
-            $("#myNav").css({ width: "100%" });
+            $("#ham_myNav").css({ width: "100%" });
         } else {
-            $(".select").find("a").css({ opacity: "0" });
+            $(".ham_select").find("a").css({ opacity: "0" });
           
-            $("#myNav").css({ width: "0%" });
+            $("#ham_myNav").css({ width: "0%" });
         }
     })
 });

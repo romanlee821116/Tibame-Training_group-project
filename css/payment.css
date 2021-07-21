@@ -6,12 +6,8 @@
   top: 0px;
   left: 0;
   padding-top: 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
   z-index: 900;
 }
 
@@ -27,10 +23,9 @@
 }
 
 .navbar .navbar-icon {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  margin-right: 10px;
+  justify-content: flex-start;
+  margin: 0 20px 0 0px;
 }
 
 .navbar .navbar-icon a {
@@ -47,8 +42,7 @@
 }
 
 * {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   font-family: "微軟正黑體";
   color: #bb866a;
 }
@@ -73,12 +67,8 @@ img {
 
 /* ========== 訂單處理階段 ========== */
 .payment_stage {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   margin-bottom: 30px;
 }
 
@@ -134,8 +124,6 @@ img {
 .payment_orderData > div {
   width: 40px;
   height: 40px;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
   display: inline-flex;
   border: solid 3px #f7c242;
   background-color: #f7c242;
@@ -178,8 +166,6 @@ img {
 
 .payment_orderContent {
   border: 1px solid red;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 
@@ -198,12 +184,8 @@ img {
 }
 
 .payment_same {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
 
 .payment_same > div:first-child {
@@ -214,8 +196,6 @@ img {
 }
 
 .payment_same > div:last-child {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 
@@ -225,8 +205,6 @@ img {
   font-size: 16px;
   font-weight: bold;
   margin-left: 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 
@@ -234,9 +212,7 @@ img {
   border: solid 2px #172852;
   background-color: #ffffff;
   border-radius: 5px;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  align-self: center;
   width: 20px;
   height: 20px;
   cursor: pointer;
