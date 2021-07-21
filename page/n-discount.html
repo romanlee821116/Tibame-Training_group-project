@@ -115,53 +115,13 @@
 
             <div class="discount_bot">
 
-                <div class="group">
-                    <label for="group1">右上圖:</label>
-                    <input type="file" id="group1" @change='upload_img'>
-                    <p>{{group1_name}}</p>
+                <div class="group" v-for='(img_name, index) in img_names'>
+                    <label :for='index'>{{img_name}}:</label>
+                    <input type="file" :id="index" @change='upload_img'>
+                    <p>請選擇圖片上傳</p>
                     <div class="img">
-                        <img src="" id="g_img1">
-                        <p v-if ='group1_name == "請選擇圖片上傳"'>{{group1_name}}</p>
-                    </div>
-                </div>
-
-                <div class="group">
-                    <label for="group2">主題:</label>
-                    <input type="file" id="group2" @change='upload_img'>
-                    <p>{{group2_name}}</p>
-                    <div class="img">
-                        <img src="" id="g_img2">
-                        <p v-if ='group2_name == "請選擇圖片上傳"'>{{group2_name}}</p>
-                    </div>
-                </div>
-
-                <div class="group">
-                    <label for="group3">圖片01:</label>
-                    <input type="file" id="group3" @change='upload_img'>
-                    <p>{{group3_name}}</p>
-                    <div class="img">
-                        <img src="" id="g_img3">
-                        <p v-if ='group3_name == "請選擇圖片上傳"'>{{group3_name}}</p>
-                    </div>
-                </div>
-
-                <div class="group">
-                    <label for="group4">圖片02:</label>
-                    <input type="file" id="group4" @change='upload_img'>
-                    <p>{{group4_name}}</p>
-                    <div class="img">
-                        <img src="" id="g_img4">
-                        <p v-if ='group4_name == "請選擇圖片上傳"'>{{group4_name}}</p>
-                    </div>
-                </div>
-
-                <div class="group">
-                    <label for="group5">圖片03:</label>
-                    <input type="file" id="group5" @change='upload_img'>
-                    <p>{{group5_name}}</p>
-                    <div class="img">
-                        <img src="" id="g_img5">
-                        <p v-if ='group5_name == "請選擇圖片上傳"'>{{group5_name}}</p>
+                        <img src=''>
+                        <p>請選擇圖片上傳</p>
                     </div>
                 </div>
 
@@ -183,6 +143,9 @@
         new Vue({
             el: '#app',
             data:{
+
+                img_names:['右上圖', '主題', '圖片01', '圖片02', '圖片03'],
+
                 discount_number:'',
                 on_off_list:['上架', '下架'],
                 d_number_list:['abcdefg', 'gtrfdes'],
@@ -274,54 +237,22 @@
                     this.current_edit = null;
                 },  
 
-                upload_img(){
+                upload_img(e){
 
-                    let file1 = document.getElementById('group1').files[0];
-                    this.group1_name = file1.name;
+                    var files = e.target.files || e.dataTransfer.files;
+                    let file = files[0];
 
-                    let readFile1 = new FileReader();
-                    readFile1.readAsDataURL(file1);
-                    readFile1.addEventListener('load', function(){
-                        document.getElementById('g_img1').src = readFile1.result;
+                    e.target.nextElementSibling.innerText = file.name;
+
+                    let readFile = new FileReader();
+                    readFile.readAsDataURL(file);
+                    readFile.addEventListener("load", function () {
+
+                        e.target.nextElementSibling.nextElementSibling.querySelector('img').src = readFile.result; 
+
+                        e.target.nextElementSibling.nextElementSibling.querySelector('p').style.opacity=0;
+                    
                     });
-
-                    let file2 = document.getElementById('group2').files[0];
-                    this.group2_name = file2.name;
-
-                    let readFile2 = new FileReader();
-                    readFile2.readAsDataURL(file2);
-                    readFile2.addEventListener('load', function(){
-                        document.getElementById('g_img2').src = readFile2.result;
-                    });
-
-                    let file3 = document.getElementById('group3').files[0];
-                    this.group3_name = file3.name;
-
-                    let readFile3 = new FileReader();
-                    readFile3.readAsDataURL(file3);
-                    readFile3.addEventListener('load', function(){
-                        document.getElementById('g_img3').src = readFile3.result;
-                    });
-
-                    let file4 = document.getElementById('group4').files[0];
-                    this.group4_name = file4.name;
-
-                    let readFile4 = new FileReader();
-                    readFile4.readAsDataURL(file4);
-                    readFile4.addEventListener('load', function(){
-                        document.getElementById('g_img4').src = readFile4.result;
-                    });
-
-                    let file5 = document.getElementById('group5').files[0];
-                    this.group5_name = file5.name;
-
-                    let readFile5 = new FileReader();
-                    readFile5.readAsDataURL(file5);
-                    readFile5.addEventListener('load', function(){
-                        document.getElementById('g_img5').src = readFile5.result;
-                    });
-
-
                 },
                 
                 
