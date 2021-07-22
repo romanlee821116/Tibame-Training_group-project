@@ -1,20 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="../js/j"></script>
     <title>into</title>
     <style>
-        *{
+        * {
             box-sizing: border-box;
             font-family: '微軟正黑體';
         }
-        body{
+
+        body {
             background-color: #bb866a;
+            position: relative;
         }
-        
-        div{
+
+        .intro_container {
             /* border: 1px solid green; */
             width: 250px;
             margin: 0 auto;
@@ -22,178 +27,198 @@
             grid-template-columns: 48px 48px 48px 48px;
             column-gap: 20px;
             position: relative;
-            top: 100px;            
-        }     
-        
+            top: 15vh;
+        }
+
         p{
             /* border: 1px solid black; */
             font-size: 36px;
             margin: 0;
             padding: 0;
             color: #bb866a;
-            writing-mode: vertical-rl;            
+            writing-mode: vertical-rl;
         }
 
-        p.add{
-            animation-name: opac;
-            animation-duration: 4.5s;
-        } 
-        
-        p.add2{
+        p.intro_add {
             opacity: 0;
             animation-name: opac;
-            animation-duration: 4.5s;
-            animation-delay: 3s;
+            animation-duration: 5s;
+            /* animation-duration: 4.5s; */
+            /* animation-duration: 2.5s; */
             animation-fill-mode: forwards;
-        } 
+        }
 
-        p.add3{
+        p.intro_add2 {
             opacity: 0;
             animation-name: opac;
-            animation-duration: 3s;
-            animation-delay: 6s;
+            animation-duration: 5s;
+            /* animation-duration: 4.5s; */
+            /* animation-duration: 2.5s; */
             animation-fill-mode: forwards;
-        } 
+        }
 
-        p.add4{
+        p.intro_add3 {
             opacity: 0;
             animation-name: opac;
-            animation-duration: 3.5s;
-            animation-delay: 8s;
+            animation-duration: 5s;
+            /* animation-duration: 4.5s; */
+            /* animation-duration: 2.5s; */
             animation-fill-mode: forwards;
-        } 
-        
+        }
+
+        p.intro_add4 {
+            opacity: 0;
+            animation-name: opac;
+            animation-duration: 5s;
+            /* animation-duration: 4.5s; */
+            /* animation-duration: 2.5s; */
+            animation-fill-mode: forwards;
+        }
+
         @keyframes opac {
-            0%{
-                opacity:0
+            0% {
+                opacity: 0
             }
-            25%{
-                opacity: .25;
-            }
-            50%{
-                opacity:.5
-            }
-            75%{
-                opacity: .75;
-            }
-            100%{
+
+            100% {
                 opacity: 1;
             }
         }
 
-        
+        .ham_jelly {
+            width: 300vw;
+            height: 290vw;
+            position: absolute;
+            top: -302vw;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 45%;
+            background-color: transparent;
+            border: 2px solid #ccc;
+            animation: ham_rotate 15s linear infinite;
+        }
+
+        @keyframes ham_rotate {
+            0% {
+                transform: translate(-50%, 0) rotateZ(0deg);
+            }
+
+            50% {
+                transform: translate(-50%, -2%) rotateZ(180deg);
+            }
+
+            100% {
+                transform: translate(-50%, 0%) rotateZ(360deg);
+            }
+        }
     </style>
 </head>
+
 <body>
-    
-    <div class="container">
-        <!-- <p class="add4">ご堪能ください。</p>
-        <p class="add3">幸せな味を</p>
-        <p class="add2">台湾天然食材と組合せ。</p>
-        <p class="add">百年を伝わる和風味に</p> -->
 
-        <p class="add4"></p>
-        <p class="add3"></p>
-        <p class="add2"></p>
-        <p class="add"></p>
+    <div class="intro_container">
+        <!-- <div class='intro_bgLine'></div> -->
+        <p class="intro_add4"></p>
+        <p class="intro_add3"></p>
+        <p class="intro_add2"></p>
+        <p class="intro_add"></p>
     </div>
-
-    <script src="../js/jquery-3.6.0.js"></script>
     <script>
 
         index = 0;
         index2 = 0;
-        index3 = 0;      
+        index3 = 0;
         index4 = 0;
 
-        setInterval(function(){
+        setTimeout(function () {
+            setInterval(function () {
 
-            let slogan = '<p>百年を伝わる和風味に</p>'  
+                let slogan = '<p>百年を伝わる和風味に</p>'
 
-            if( index < slogan.length){
+                if (index < slogan.length) {
 
-                let into = $(slogan).text().slice(index,index+1);
+                    let into = $(slogan).text().slice(index, index + 1);
 
-                index += 1;
+                    index += 1;
 
-                $('.add').append(into).css('color', '#ffffff')    
-                
-            }else{
-                clearInterval()
-            }
+                    $('.intro_add').append(into).css('color', '#ffffff')
 
-        },300);   
+                } else {
+                    clearInterval()
+                }
+            }, 100);
+        }, 500)
 
 
-        setTimeout(function(){
 
-            setInterval(function(){
+        setTimeout(function () {
 
-                let slogan = '<p>台湾天然食材と組合せ。</p>'  
+            setInterval(function () {
 
-                if( index2 < slogan.length){
+                let slogan = '<p>台湾天然食材と組合せ。</p>'
 
-                    let into = $(slogan).text().slice(index2,index2+1);
+                if (index2 < slogan.length) {
+
+                    let into = $(slogan).text().slice(index2, index2 + 1);
 
                     index2 += 1;
 
-                    $('.add2').append(into).css('color', '#ffffff')    
-                    
-                }else{
+                    $('.intro_add2').append(into).css('color', '#ffffff')
+
+                } else {
                     clearInterval()
                 }
-
-            },300); 
-
-        },3000);
+            }, 100);
+        }, 1500);
 
 
-        setTimeout(function(){
+        setTimeout(function () {
 
-            setInterval(function(){
+            setInterval(function () {
 
-                let slogan = '<p>幸せな味を</p>'  
+                let slogan = '<p>幸せな味を</p>'
 
-                if( index3 < slogan.length){
+                if (index3 < slogan.length) {
 
-                    let into = $(slogan).text().slice(index3,index3+1);
+                    let into = $(slogan).text().slice(index3, index3 + 1);
 
                     index3 += 1;
 
-                    $('.add3').append(into).css('color', '#ffffff')    
-                    
-                }else{
+                    $('.intro_add3').append(into).css('color', '#ffffff')
+
+                } else {
                     clearInterval()
                 }
 
-            },300); 
+            }, 100);
 
-        },6300);
+        }, 2500);
 
 
-        setTimeout(function(){
+        setTimeout(function () {
 
-            setInterval(function(){
+            setInterval(function () {
 
-                let slogan = '<p>ご堪能ください。</p>'  
+                let slogan = '<p>ご堪能ください。</p>'
 
-                if( index4 < slogan.length){
+                if (index4 < slogan.length) {
 
-                    let into = $(slogan).text().slice(index4,index4+1);
+                    let into = $(slogan).text().slice(index4, index4 + 1);
 
                     index4 += 1;
 
-                    $('.add4').append(into).css('color', '#ffffff')    
-                    
-                }else{
+                    $('.intro_add4').append(into).css('color', '#ffffff')
+
+                } else {
                     clearInterval()
                 }
 
-            },300); 
+            }, 100);
 
-        },8000);
+        }, 3000);
 
     </script>
 
 </body>
+
 </html>
