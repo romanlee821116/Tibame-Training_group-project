@@ -4,15 +4,14 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="../css/payment.css" rel="stylesheet">
+  <link href="../css/orderConfirmation.css" rel="stylesheet">
   <link href="../css/cart.css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.14/vue.js"></script>
-  <title>付款資訊</title>
+  <title>訂單確認</title>
 
 </head>
 <body>
-
   <!-- ========== header ========== -->
   <div id="cart_app">
     
@@ -163,32 +162,34 @@
     </div>
   </div>
 
-
   <!-- ========== main ========== -->
-  <div id="payment_app">
-    <div class="payment_container">
+  <div id="OC_app">
+    <div class="OC_container">
 
       <!-- ========== 訂單處理階段 ========== -->
-      <div class="payment_stage">
+      <div class="OC_stage">
   
-        <div class="payment_step payment_orderData">
+        <div class="OC_step OC_orderData">
           <div>
-            <div class="payment_check">
+            <div class="OC_check">
               <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check fa-w-16" role="img" viewBox="0 0 512 512"><path fill="#ffffff" d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg>
             </div>
-            <div class="payment_line1"></div>
+            <div class="OC_line1"></div>
           </div>
           <p>訂單資料</p>
         </div>
   
-        <div class="payment_step payment_payment">
-          <div>2
-            <div class="payment_line2"></div>
+        <div class="OC_step OC_payment">
+          <div>
+            <div class="OC_check">
+              <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check fa-w-16" role="img" viewBox="0 0 512 512"><path fill="#ffffff" d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg>
+            </div>
+            <div class="OC_line2"></div>
           </div>
           <p>付款資訊</p>
         </div>
   
-        <div class="payment_step payment_confirm">
+        <div class="OC_step OC_confirm">
           <div>3</div>
           <p>訂單確認</p>
         </div>
@@ -196,214 +197,73 @@
       </div>
 
       <!-- ========== 訂單資訊 ========== -->
-      <div class="payment_orderContent">
+      <div class="OC_orderContent">
 
         <!-- 左邊 -->
-        <div class="payment_left">
-          <div class="payment_title">訂單資訊</div>
+        <div class="OC_left">
+          <div class="OC_title">訂單資訊</div>
 
           <!-- 填寫訂單資料區塊 -->
-          <div class="payment_orderInformation">
+          <div class="OC_orderInformation">
 
-            <!-- 同會員資料 -->
-            <div class="payment_same">
-              <div>訂購人資訊</div>
-
-              <div>
-                <div class="payment_itemCB" :class="{'payment_choose': applyData}" @click="choose">
-                  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check fa-w-16" role="img" viewBox="0 0 512 512"><path fill="#ffffff" d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/>
-                  </svg>
-                </div>
-                <p>同會員資料</p>
-              </div>
-
-            </div>
+            <div class="OC_purchaser">訂購人資訊</div>
 
             <!-- 資料填寫 -->
             <form action="#" method="post">
 
               <!-- 姓名 -->
-              <div class="payment_data">
+              <div class="OC_data">
                 <div>姓名：</div>
-                <input type="text" name="ordererName" placeholder="請輸入您的姓名" onfocus="this.placeholder=''" onblur="this.placeholder='請輸入您的姓名'" >
+                <input type="text" name="ordererName" value="李安" disabled>
               </div>
 
               <!-- 手機號碼 -->
-              <div class="payment_data">
+              <div class="OC_data">
                 <div>手機：</div>
-                <input type="text" name="ordererPhone" placeholder="請輸入您的手機號碼" onfocus="this.placeholder=''" onblur="this.placeholder='請輸入您的手機號碼'" >
+                <input type="text" name="ordererPhone" value="0912345678" disabled>
               </div>
 
               <!-- 地址 -->
-              <div class="payment_data">
+              <div class="OC_data">
                 <div>地址：</div>
-                <input type="text" name="ordererAddress" placeholder="請輸入您的地址" onfocus="this.placeholder=''" onblur="this.placeholder='請輸入您的地址'" >
+                <input type="text" name="ordererAddress" value="台北市內湖區明權東路六段" disabled>
               </div>
 
               <!-- 運送方式 -->
-              <div class="payment_transport">
+              <div class="OC_transport">
                 <div>運送方式：</div>
-
-                <div class="payment_radioBorder">
-
-                  <div class="payment_home">
-                    <div class="payment_radio payment_radio1">
-                      <input type="radio" name="transport" id="payment_home">
-                      <label for="payment_home">宅配到府（運費$80TWD）</label>
-                      <div class="payment_fake1"><div class="payment_fakeClick1"></div></div>
-                    </div>
-
-                    <!-- 收件人資訊 -->
-                    <div class="payment_receiver">
-                      <p>收件人資訊</p>
-                      <div class="payment_receiverData">
-                        <div>姓名：</div>
-                        <input type="text" name="receiverName" placeholder="請輸入收件人姓名" onfocus="this.placeholder=''" onblur="this.placeholder='請輸入收件人姓名'" >
-                      </div>
-                      <div class="payment_receiverData">
-                        <div>手機：</div>
-                        <input type="text" name="receiverName" placeholder="請輸入收件人手機號碼" onfocus="this.placeholder=''" onblur="this.placeholder='請輸入收件人手機號碼'" >
-                      </div>
-                      <div class="payment_receiverData">
-                        <div>地址：</div>
-                        <input type="text" name="receiverName" placeholder="請輸入收件人地址" onfocus="this.placeholder=''" onblur="this.placeholder='請輸入收件人地址'" >
-                      </div>
-                    </div>
-
-                  </div>
-
-                  <div class="payment_711">
-                    <div class="payment_radio payment_radio2">
-                      <input type="radio" name="transport" id="payment_seven">
-                      <label for="payment_seven">7-11取貨（運費$60TWD）</label>
-                      <div class="payment_fake2"><div class="payment_fakeClick2"></div></div>
-                    </div>
-
-                    <!-- 選擇門市 -->
-                    <div class="payment_shop">
-                      <p>選擇門市</p>
-                      <div class="payment_shopMap">門市電子地圖</div>
-                      <div class="payment_shopMapData">
-                        <div class="payment_shopData">
-                          <div>門市名稱：</div>
-                          <input type="text" name="shopName" placeholder="門市名稱">
-                        </div>
-                        <div class="payment_shopData">
-                          <div>門市地址：</div>
-                          <input type="text" name="shopName" placeholder="門市地址">
-                        </div>
-                        <div class="payment_shopData">
-                          <div>門市電話：</div>
-                          <input type="text" name="shopName" placeholder="門市電話">
-                        </div>
-                      </div>
-                    </div>
-
-
-                  </div>
-
-                  <div class="payment_radio payment_radio3">
-                    <input type="radio" name="transport" id="payment_shop">
-                    <label for="payment_shop">門市自取</label>
-                    <div class="payment_fake3"><div class="payment_fakeClick3"></div></div>
-                  </div>
-
-                </div>
+                <div>門市自取</div>
               </div>
 
               <!-- 付款方式 -->
-              <div class="payment_payMoney">
+              <div class="OC_payMoney">
                 <div>付款方式：</div>
-
-                <div class="payment_radioBorder2">
-
-                  <div class="payment_radio payment_radio4">
-                    <input type="radio" name="payment" id="payment_online">
-                    <label for="payment_online">線上付款</label>
-                    <div class="payment_fake4"><div class="payment_fakeClick4"></div></div>
-                  </div>
-
-                  <div class="payment_radio payment_radio5">
-                    <input type="radio" name="payment" id="payment_cash">
-                    <label for="payment_cash">取貨付款</label>
-                    <div class="payment_fake5"><div class="payment_fakeClick5"></div></div>
-                  </div>
-
-                </div>
-
+                <div>信用卡付款</div>
               </div>
 
               <!-- 信用卡填寫 -->
-              <div class="payment_credit">
+              <div class="OC_credit">
 
                 <!-- 卡號 -->
-                <div class="payment_cardNumber">
-                  <div class="payment_00">信用卡卡號：</div>
-                  <input type="text" maxlength="4" v-model="cardNumber1" class="payment_enterCard">-
-                  <input type="text" maxlength="4" v-model="cardNumber2" class="payment_enterCard">-
-                  <input type="text" maxlength="4" v-model="cardNumber3" class="payment_enterCard">-
-                  <input type="text" maxlength="4" v-model="cardNumber4" class="payment_enterCard">
+                <div class="OC_cardNumber">
+                  <div class="OC_00">信用卡卡號：</div>
+                  <input type="text"  value="1234" disabled>-
+                  <input type="text"  value="5678" disabled>-
+                  <input type="text"  value="1234" disabled>-
+                  <input type="text"  value="5678" disabled>
                 </div>
 
                 <!-- 有效期限 -->
-                <div class="payment_cardDate">
-                  <div class="payment_01">卡片有效期限：</div>
-                  <select class="payment_year" name="year" v-model="cardYear">
-                    <option selected disabled>年份</option>
-                    <option>21</option>
-                    <option>22</option>
-                    <option>23</option>
-                    <option>24</option>
-                    <option>25</option>
-                    <option>26</option>
-                  </select>
-
-                  <select class="payment_month" name="month" v-model="cardDate">
-                    <option selected disabled>月份</option>
-                    <option>1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                    <option value="11">11</option>
-                    <option value="12">12</option>
-                  </select>
+                <div class="OC_cardDate">
+                  <div class="OC_01">卡片有效期限：</div>
+                  <div>25 / 12</div>
                 </div>
 
                 <!-- 認證碼 -->
-                <div class="payment_cardNumber">
-                  <div class="payment_00">卡片認證碼：</div>
-                  <input type="text" maxlength="3" class="payment_turn" v-model="cardCertification">
+                <div class="OC_cardNumber">
+                  <div class="OC_00">卡片認證碼：</div>
+                  <input type="text"  value="123" disabled>
                 </div>
-
-                <!-- 信用卡圖片 -->
-                <div class="payment_cardImg">
-
-                  <div class="payment_cardFront">
-                    <div class="payment_certification">{{cardCertification}}</div>
-
-                    <div class="payment_number">
-                      <div>{{cardNumber1}}</div>-
-                      <div>{{cardNumber2}}</div>-
-                      <div>{{cardNumber3}}</div>-
-                      <div>{{cardNumber4}}</div>
-                    </div>
-
-                    <div class="payment_date">
-                      <div>{{cardYear}}</div> /
-                      <div>{{cardDate}}</div>
-                    </div>
-
-                  </div>
-
-                  <div class="payment_cardBack"></div>
-                </div>
-
 
               </div>
 
@@ -414,86 +274,98 @@
 
         </div>
 
-
         <!-- 右邊 -->
-        <div class="payment_right">
+        <div class="OC_right">
 
           <!-- 金額細項 -->
-          <div class="payment_cartTitle">購物車明細</div>
+          <div class="OC_cartTitle">購物車明細</div>
 
           <!-- 明細清單 -->
-          <ul class="payment_detail">
+          <ul class="OC_detail">
 
             <!-- 一般商品 -->
-            <li class="payment_item" v-for="(item, index) in itemList" id="item.id">
-              <div class="payment_itemImg"><img :src="item.img"></div>
+            <li class="OC_item" v-for="(item, index) in itemList" id="item.id">
+              <div class="OC_itemImg"><img :src="item.img"></div>
 
-              <div class="payment_itemData">
+              <div class="OC_itemData">
                 <p>{{item.itemName}}</p>
                 <p>${{item.price}}元 / {{item.item_Quantity}}入</p>
               </div>
 
-              <div class="payment_itemQuantity">x {{item.quantity}}</div>
+              <div class="OC_itemQuantity">x {{item.quantity}}</div>
             </li>
 
             <!-- 禮盒 -->
-            <li class="payment_item" v-for="(item, index) in customization" id="item.id">
-              <div class="payment_itemImg"><img :src="item.img"></div>
+            <li class="OC_item" v-for="(item, index) in customization" id="item.id">
+              <div class="OC_itemImg"><img :src="item.img"></div>
 
-              <div class="payment_itemData">
+              <div class="OC_itemData">
                 <p>{{item.itemName}}</p>
                 <p>${{item.price}}元 / {{item.item_Quantity}}入</p>
               </div>
 
-              <div class="payment_itemQuantity">x {{item.quantity}}</div>
+              <div class="OC_itemQuantity">x {{item.quantity}}</div>
             </li>
 
 
           </ul>
 
           <!-- 金額明細 -->
-          <div class="payment_moneyDetail">
+          <div class="OC_moneyDetail">
             <div>商品金額</div>
             <div>${{itemPrice}}元</div>
           </div>
 
-          <div class="payment_moneyDetail">
+          <div class="OC_moneyDetail">
             <div>運費</div>
             <div>$0元</div>
           </div>
 
-          <div class="payment_discount">
+          <div class="OC_discount">
             <div>折扣碼</div>
             <div>-$80元</div>
           </div>
 
           <!-- 商品總金額 -->
-          <div class="payment_totalPrice">
+          <div class="OC_totalPrice">
             <div>總金額</div>
             <div>${{totalPrice}}元</div>
           </div>
 
         </div>
-  
+
+
+
 
 
       </div>
 
+
+      <!-- 服務條款、退換貨規則 -->
+      <div class="OC_terms">
+        <div class="OC_itemCB" :class="{'OC_choose': terms}" @click="choose">
+          <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check fa-w-16" role="img" viewBox="0 0 512 512"><path fill="#ffffff" d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/>
+          </svg>
+        </div>
+        <p>我同意本網站的<a href="#">服務條款</a>與<a href="#">退換貨規則</a></p>
+      </div>
+
+
       <!-- ========== 上、下一步 ========== -->
-      <div class="payment_page">
+      <div class="OC_page">
 
         <!-- 上一頁 -->
-        <a href="./checkout.html" class="payment_previous">
-          <div class="payment_previousImg">
+        <a href="./payment.html" class="OC_previous">
+          <div class="OC_previousImg">
             <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-left" class="svg-inline--fa fa-chevron-left fa-w-10" role="img" viewBox="0 0 320 512"><path fill="#a3a3a3" d="M34.52 239.03L228.87 44.69c9.37-9.37 24.57-9.37 33.94 0l22.67 22.67c9.36 9.36 9.37 24.52.04 33.9L131.49 256l154.02 154.75c9.34 9.38 9.32 24.54-.04 33.9l-22.67 22.67c-9.37 9.37-24.57 9.37-33.94 0L34.52 272.97c-9.37-9.37-9.37-24.57 0-33.94z"/></svg>
           </div>
-          <div class="payment_previousText">上一頁</div>
+          <div class="OC_previousText">上一頁</div>
         </a>
 
         <!-- 下一頁 -->
-        <a href="./orderConfirmation.html" class="payment_next">
-          <div class="payment_nextText">下一頁</div>
-          <div class="payment_nextImg">
+        <a href="./finish.html" class="OC_next">
+          <div class="OC_nextText">下一頁</div>
+          <div class="OC_nextImg">
             <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right" class="svg-inline--fa fa-chevron-right fa-w-10" role="img" viewBox="0 0 320 512"><path fill="#ffffff" d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg>
           </div>
         </a>
@@ -527,8 +399,10 @@
     </div>
   </div>
 
-  <script src="../js/payment.js"></script>
-  <script src="../js/payment_vue.js"></script>
+
+
+  <script src="../js/orderConfirmation.js"></script>
+  <script src="../js/orderConfirmation_vue.js"></script>
   <script src="../js/cart.js"></script>
   <script src="../js/cart_vue.js"></script>
   <script src="https://kit.fontawesome.com/8c3a8ab95b.js" crossorigin="anonymous"></script>

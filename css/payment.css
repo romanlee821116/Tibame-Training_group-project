@@ -41,6 +41,7 @@
   font-size: 28px;
 }
 
+<<<<<<< HEAD
 .navbar .ham_container {
   display: inline-block;
   cursor: pointer;
@@ -152,6 +153,105 @@
   margin: 0 20px;
   background-color: transparent;
   transition: all .3s;
+=======
+.footer {
+  width: 100%;
+  max-width: 1400px;
+  display: flex;
+  position: relative;
+  margin: 50px auto 0 auto;
+  padding: 60px 0 20px 0;
+}
+
+.footer a, .footer p {
+  color: #bb866a;
+}
+
+.footer .footer-logo {
+  display: none;
+}
+
+.footer .footer-media {
+  display: none;
+}
+
+.footer .footer-left {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding-left: 200px;
+}
+
+.footer .footer-left a {
+  font-weight: 900;
+  margin: 0px 10px;
+}
+
+.footer .footer-left .footer-policy {
+  display: flex;
+  justify-content: center;
+  min-width: 200px;
+}
+
+.footer .footer-right {
+  width: 60%;
+  display: flex;
+  align-items: center;
+  padding-right: 100px;
+}
+
+.footer .footer-right p {
+  font-size: 8px !important;
+  opacity: .8;
+}
+
+@media (max-width: 960px) {
+  .footer .footer-left {
+    padding-left: 100px;
+  }
+}
+
+@media (max-width: 767px) {
+  .footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer .footer-left {
+    padding-left: 0px;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  .footer .footer-right {
+    width: 90%;
+    padding-right: 0px;
+  }
+}
+
+@media (max-width: 575px) {
+  .footer {
+    padding-top: 25px;
+    background-color: #bb866a;
+  }
+  .footer a, .footer p {
+    color: #fff;
+  }
+  .footer .footer-media {
+    display: block;
+    margin-bottom: 10px;
+  }
+  .footer .footer-media a {
+    margin: 0 5px;
+  }
+  .footer .footer-media i {
+    font-size: 20px;
+  }
+  .footer .footer-right {
+    opacity: .6;
+    line-height: 12px;
+  }
+>>>>>>> mypage
 }
 
 * {
@@ -172,10 +272,9 @@ img {
 }
 
 .payment_container {
-  border: 1px solid black;
   width: 80%;
   max-width: 1200px;
-  margin: 100px auto;
+  margin: auto;
 }
 
 /* ========== 訂單處理階段 ========== */
@@ -201,6 +300,7 @@ img {
   background-color: #ffffff;
   border-radius: 50%;
   line-height: 35px;
+  position: relative;
 }
 
 .payment_confirm > p {
@@ -537,7 +637,6 @@ input[type="radio"]:checked + label {
 }
 
 .payment_credit {
-  border: 1px solid red;
   display: none;
 }
 
@@ -569,6 +668,7 @@ input[type="radio"]:checked + label {
   height: 35px;
   border: none;
   outline: none;
+  text-align: center;
 }
 
 .payment_cardNumber > input:focus, .payment_cardCode > input:focus {
@@ -586,6 +686,7 @@ input[type="radio"]:checked + label {
   margin-right: 10px;
   color: #172852;
   font-weight: bold;
+  padding: 0 15px;
 }
 
 .payment_cardDate > select > option {
@@ -757,5 +858,59 @@ input[type="radio"]:checked + label {
   margin-left: 10px;
   display: flex;
   margin-top: 3px;
+}
+
+.payment_cardImg {
+  display: flex;
+  margin-top: 20px;
+  position: relative;
+}
+
+.payment_cardFront {
+  background-image: url("../images/payment/card-front.png");
+  width: 250px;
+  height: 150px;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  overflow: hidden;
+  margin-left: 95px;
+  z-index: 1;
+  transition: all 0.5s ease;
+}
+
+.payment_cardFront > div {
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 15px;
+  height: 20px;
+}
+
+.payment_number {
+  display: flex;
+  margin-top: 15px;
+  margin-left: 35px;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.payment_number > div, .payment_date > div {
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.payment_date {
+  display: flex;
+  margin-left: 170px;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.payment_certification {
+  width: 50px;
+  margin-left: 55px;
+  margin-top: 55px;
+  visibility: hidden;
 }
 /*# sourceMappingURL=payment.css.map */

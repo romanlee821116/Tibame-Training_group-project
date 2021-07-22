@@ -41,6 +41,7 @@
   font-size: 28px;
 }
 
+<<<<<<< HEAD
 .navbar .ham_container {
   display: inline-block;
   cursor: pointer;
@@ -152,6 +153,105 @@
   margin: 0 20px;
   background-color: transparent;
   transition: all .3s;
+=======
+.footer {
+  width: 100%;
+  max-width: 1400px;
+  display: flex;
+  position: relative;
+  margin: 50px auto 0 auto;
+  padding: 60px 0 20px 0;
+}
+
+.footer a, .footer p {
+  color: #bb866a;
+}
+
+.footer .footer-logo {
+  display: none;
+}
+
+.footer .footer-media {
+  display: none;
+}
+
+.footer .footer-left {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding-left: 200px;
+}
+
+.footer .footer-left a {
+  font-weight: 900;
+  margin: 0px 10px;
+}
+
+.footer .footer-left .footer-policy {
+  display: flex;
+  justify-content: center;
+  min-width: 200px;
+}
+
+.footer .footer-right {
+  width: 60%;
+  display: flex;
+  align-items: center;
+  padding-right: 100px;
+}
+
+.footer .footer-right p {
+  font-size: 8px !important;
+  opacity: .8;
+}
+
+@media (max-width: 960px) {
+  .footer .footer-left {
+    padding-left: 100px;
+  }
+}
+
+@media (max-width: 767px) {
+  .footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer .footer-left {
+    padding-left: 0px;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  .footer .footer-right {
+    width: 90%;
+    padding-right: 0px;
+  }
+}
+
+@media (max-width: 575px) {
+  .footer {
+    padding-top: 25px;
+    background-color: #bb866a;
+  }
+  .footer a, .footer p {
+    color: #fff;
+  }
+  .footer .footer-media {
+    display: block;
+    margin-bottom: 10px;
+  }
+  .footer .footer-media a {
+    margin: 0 5px;
+  }
+  .footer .footer-media i {
+    font-size: 20px;
+  }
+  .footer .footer-right {
+    opacity: .6;
+    line-height: 12px;
+  }
+>>>>>>> mypage
 }
 
 * {
@@ -174,7 +274,25 @@ img {
 .checkout_container {
   width: 80%;
   max-width: 1200px;
-  margin: 100px auto;
+  margin: auto;
+}
+
+@media screen and (max-width: 1200px) {
+  .checkout_container {
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .checkout_container {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .checkout_container {
+    width: 95%;
+  }
 }
 
 /* ========== 訂單處理階段 ========== */
@@ -200,6 +318,7 @@ img {
   background-color: #ffffff;
   border-radius: 50%;
   line-height: 35px;
+  position: relative;
 }
 
 .checkout_payment > p, .checkout_confirm > p {
@@ -267,9 +386,21 @@ img {
   display: flex;
 }
 
+@media screen and (max-width: 992px) {
+  .checkout_orderContent {
+    flex-direction: column;
+  }
+}
+
 /* ========== 左邊 ========== */
 .checkout_left {
   width: 60%;
+}
+
+@media screen and (max-width: 992px) {
+  .checkout_left {
+    width: 100%;
+  }
 }
 
 /* 標題 */
@@ -504,6 +635,13 @@ img {
   margin-left: 30px;
 }
 
+@media screen and (max-width: 992px) {
+  .checkout_right {
+    width: 80%;
+    margin: 50px auto;
+  }
+}
+
 .checkout_discountBorder {
   box-shadow: 0 0 24px 0 rgba(25, 28, 54, 0.15);
   background-color: #ffffff;
@@ -719,5 +857,17 @@ img {
   font-size: 0;
   margin-left: calc(100% - 25px);
   cursor: pointer;
+}
+
+@media screen and (max-width: 576px) {
+  .checkout_maybe {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .checkout_pushItemBorder {
+    display: none;
+  }
 }
 /*# sourceMappingURL=checkout.css.map */
