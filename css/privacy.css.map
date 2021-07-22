@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../scss/pages/privacy.scss"
+    ],
+    "names": [],
+    "file": "privacy.css"
+}

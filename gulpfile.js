@@ -20,8 +20,21 @@ exports.css = mini_css;
 
 //=============gulp sass=============
 const sass = require('gulp-sass')(require('sass'));
-function sass() {
+function sassStyle() {
     return src('./sass/*.scss')
         .pipe(sass.sync({outputStyle: 'compressed'}).on('error', sass.logError))
         .pipe(dest('dist/css'));
 } 
+exports.style = sassStyle; 
+
+//=================gulp-sourceMap=======================================
+const sourcemaps = require('gulp-sourcemaps');
+
+function sourceMap() {
+    return src('scss/*.scss')
+        .pipe(sourcemaps.init())
+        .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+        .pipe(sourcemaps.write())
+        .pipe(dest('css'));
+}
+exports.sourceMap = sourceMap;
