@@ -18,20 +18,70 @@
             /* border: 1px solid green; */
             width: 250px;
             margin: 0 auto;
-            display: flex;
+            display: grid;
+            grid-template-columns: 48px 48px 48px 48px;
             column-gap: 20px;
             position: relative;
-            top: 100px;
-        }
-
+            top: 100px;            
+        }     
+        
         p{
             /* border: 1px solid black; */
             font-size: 36px;
             margin: 0;
             padding: 0;
             color: #bb866a;
-            writing-mode: vertical-rl;
+            writing-mode: vertical-rl;            
         }
+
+        p.add{
+            animation-name: opac;
+            animation-duration: 4.5s;
+        } 
+        
+        p.add2{
+            opacity: 0;
+            animation-name: opac;
+            animation-duration: 4.5s;
+            animation-delay: 3s;
+            animation-fill-mode: forwards;
+        } 
+
+        p.add3{
+            opacity: 0;
+            animation-name: opac;
+            animation-duration: 3s;
+            animation-delay: 6s;
+            animation-fill-mode: forwards;
+        } 
+
+        p.add4{
+            opacity: 0;
+            animation-name: opac;
+            animation-duration: 3.5s;
+            animation-delay: 8s;
+            animation-fill-mode: forwards;
+        } 
+        
+        @keyframes opac {
+            0%{
+                opacity:0
+            }
+            25%{
+                opacity: .25;
+            }
+            50%{
+                opacity:.5
+            }
+            75%{
+                opacity: .75;
+            }
+            100%{
+                opacity: 1;
+            }
+        }
+
+        
     </style>
 </head>
 <body>
@@ -58,90 +108,90 @@
 
         setInterval(function(){
 
-            let bb = '<p>百年を伝わる和風味に</p>'  
+            let slogan = '<p>百年を伝わる和風味に</p>'  
 
-            if( index < bb.length){
+            if( index < slogan.length){
 
-                let ac = $(bb).text().slice(index,index+1);
+                let into = $(slogan).text().slice(index,index+1);
 
                 index += 1;
 
-                $('.add').append(ac).css('color', '#ffffff')    
+                $('.add').append(into).css('color', '#ffffff')    
                 
             }else{
                 clearInterval()
             }
 
-        },500);   
+        },300);   
 
 
         setTimeout(function(){
 
             setInterval(function(){
 
-                let bb = '<p>台湾天然食材と組合せ。</p>'  
+                let slogan = '<p>台湾天然食材と組合せ。</p>'  
 
-                if( index2 < bb.length){
+                if( index2 < slogan.length){
 
-                    let ac = $(bb).text().slice(index2,index2+1);
+                    let into = $(slogan).text().slice(index2,index2+1);
 
                     index2 += 1;
 
-                    $('.add2').append(ac).css('color', '#ffffff')    
+                    $('.add2').append(into).css('color', '#ffffff')    
                     
                 }else{
                     clearInterval()
                 }
 
-            },500); 
+            },300); 
 
-        },5000);
+        },3000);
 
 
         setTimeout(function(){
 
             setInterval(function(){
 
-                let bb = '<p>幸せな味を</p>'  
+                let slogan = '<p>幸せな味を</p>'  
 
-                if( index3 < bb.length){
+                if( index3 < slogan.length){
 
-                    let ac = $(bb).text().slice(index3,index3+1);
+                    let into = $(slogan).text().slice(index3,index3+1);
 
                     index3 += 1;
 
-                    $('.add3').append(ac).css('color', '#ffffff')    
+                    $('.add3').append(into).css('color', '#ffffff')    
                     
                 }else{
                     clearInterval()
                 }
 
-            },500); 
+            },300); 
 
-        },10000);
+        },6300);
 
 
         setTimeout(function(){
 
             setInterval(function(){
 
-                let bb = '<p>ご堪能ください。</p>'  
+                let slogan = '<p>ご堪能ください。</p>'  
 
-                if( index4 < bb.length){
+                if( index4 < slogan.length){
 
-                    let ac = $(bb).text().slice(index4,index4+1);
+                    let into = $(slogan).text().slice(index4,index4+1);
 
                     index4 += 1;
 
-                    $('.add4').append(ac).css('color', '#ffffff')    
+                    $('.add4').append(into).css('color', '#ffffff')    
                     
                 }else{
                     clearInterval()
                 }
 
-            },500); 
+            },300); 
 
-        },12500);
+        },8000);
 
     </script>
 
