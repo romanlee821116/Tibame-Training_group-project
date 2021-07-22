@@ -137,7 +137,7 @@ $(document).ready(function(){
         getRandom();
     });
 
-    // 表單錯誤資訊反饋========================
+    // ================ 表單錯誤資訊反饋 ==================
     // 沒輸入按送出會跳出提示框
     $('.loginButton').click(function(e){
         // 清空重來
@@ -177,10 +177,14 @@ $(document).ready(function(){
             $('.loginAccount').css('border','2px solid #dc3838');
             $('.loginAccount').next().css('display','inline-block');
             $('.loginAccount').next().children('p').text('請輸入資訊');
+            $('.loginAccount').addClass('loginWrong');   //給忘記密碼的彈窗判斷
         }else if(!mailRight.test(account)){
             e.preventDefault();
             $('.loginAccount').css('border','2px solid #dc3838');
             $('.loginAccount').next().css('display','inline-block');
+            $('.loginAccount').addClass('loginWrong');   //給忘記密碼的彈窗判斷
+        }else{
+            $('.loginAccount').removeClass('loginWrong');   //給忘記密碼的彈窗判斷
         }
 
         if(password == ""){
@@ -238,20 +242,26 @@ $(document).ready(function(){
             $('.loginCodeEnter').css('border','2px solid #dc3838');
             $('.loginCodeEnter').next().css('display','inline-block');
             $('.loginCodeEnter').next().children('p').text('請輸入資訊');
+            $('.loginCodeEnter').addClass('loginWrong');   //給忘記密碼的彈窗判斷
         }else if( code != codeRight ){
             e.preventDefault();
+            console.log(code);
             $('.loginCodeEnter').css('border','2px solid #dc3838');
             $('.loginCodeEnter').next().css('display','inline-block');
             $('.loginCodeEnter').next().children('p').text('驗證碼錯誤');
+            $('.loginCodeEnter').addClass('loginWrong');    //給忘記密碼的彈窗判斷
         }else{
-            
+            $('.loginCodeEnter').removeClass('loginWrong');    //給忘記密碼的彈窗判斷
         }
         
         // 如果點擊的是傳送新密碼，則跳出視窗
-        if( $(this).hasClass('loginSendPSW')){
-            $('.loginpopBG').show();
-            console.log('show');
-        };
+        // if( $(this).hasClass('loginSendPSW')){
+        //     if( $('.loginAccount').hasClass('loginWrong') && $('.loginCodeEnter').hasClass('loginWrong')){
+        //         console.log('nok');
+        //     }else{
+        //         $('.loginpopBG').show();
+        //     }
+        // };
 
     });
 

@@ -98,9 +98,9 @@ $(function () {
                     <h2>讓老鷹再次高飛</h2>
                     <h3>屏東 - 老鷹紅豆</h3>   
                     <div class='about_farmerDetail_text'>
-                        2013年，屏科大鳥類研究人員發現少數農友使用農藥以防鳥害，老鷹誤食被毒死的小鳥而間接死亡。在研究團隊努力下，農友採用機械波種、自然熟成、安全管理方式種植，以保護台灣老鷹生態及土地環境的永續健全，並在2016以「老鷹紅豆」品牌成為東港鎮農會銷售產品之一。
+                        2013年，屏科大鳥類研究人員發現少數農友使用農藥以防鳥害，而讓老鷹誤食毒死小鳥而間接死亡。在研究團隊努力下，改善以自然熟成、安全管理方式種植，達到保護台灣老鷹生態及土地的永續健全，並在2016以「老鷹紅豆」品牌成為東港鎮農會銷售產品之一。
                         <br>
-                        小春堂對此理念深感認同，我們提供的所有紅豆物料皆購自於東港鎮農會之老鷹紅豆，在提供優良產品的同時也為台灣的土地盡一份心力。
+                        小春堂提供的所有紅豆物料皆購自於東港鎮農會之老鷹紅豆，在提供優良產品的同時也為台灣的土地盡一份心力。
                     </div>                 
                 </div> 
             <i class="fas fa-times" @click.prevent='hidden'></i>    
@@ -237,17 +237,18 @@ $(function () {
         .to('.about_island, .about_spot, .about_spotDeco', 2, { scaleY: '1' })
         .to('.about_spot, .about_spotDeco', .5, { opacity: '1' })
         .to('.about_spot, .about_spotDeco', 3, { opacity: '1' })
+        // 苗栗
         .to('.about_taiwan', 5, { scale: '3.5%', top: '120%', left: '-20%' })
         .to('.about_taiwan', 4, { scale: '3.5%', top: '120%', left: '-20%' })
-
+        // 台南
         .to('.about_taiwan', 5, { top: '40%', left: '30%' })
         .to('.about_taiwan', 3, { top: '40%', left: '30%' })
-
-        .to('.about_taiwan', 5, { top: '-100%', left: '-5%' })
-        .to('.about_taiwan', 3, { top: '-100%', left: '-5%' })
-
-        .to('.about_taiwan', 5, { top: '10%', left: '-20%' })
-        .to('.about_taiwan', 5, { top: '10%', left: '-20%' })
+        // 屏東
+        .to('.about_taiwan', 5, { top: '-125%', left: '10%' })
+        .to('.about_taiwan', 3, { top: '-125%', left: '10%' })
+        // 台東
+        .to('.about_taiwan', 5, { top: '-30%', left: '-30vw' })
+        .to('.about_taiwan', 5, { top: '-30%', left: '-30vw' })
 
         .to('.about_taiwan', 2, { top: '50%', left: '0%' })
 

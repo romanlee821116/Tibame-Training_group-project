@@ -4,6 +4,10 @@
 @include navbar();
 }
 
+.footer{
+	@include footer();
+}
+
 *{
   box-sizing: border-box;
   font-family: "微軟正黑體";
@@ -25,7 +29,25 @@ img{
   // border: 1px solid black;
   width: 80%;
   max-width: 1200px;
-  margin: 100px auto;
+  margin: auto;
+}
+
+@media screen and (max-width: 1200px){
+  .checkout_container{
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 992px){
+  .checkout_container{
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 768px){
+  .checkout_container{
+    width: 95%;
+  }
 }
 
 
@@ -56,6 +78,7 @@ img{
   background-color: #ffffff;
   border-radius: 50%;
   line-height: 35px;
+  position: relative;
 }
 
 .checkout_payment > p, .checkout_confirm > p{
@@ -135,11 +158,23 @@ img{
   display: flex;
 }
 
+@media screen and (max-width: 992px){
+  .checkout_orderContent{
+    flex-direction: column;
+  }
+}
+
 /* ========== 左邊 ========== */
 
 .checkout_left{
   // border: 1px solid blue;
   width: 60%;
+}
+
+@media screen and (max-width: 992px){
+  .checkout_left{
+    width: 100%;
+  }
 }
 
 /* 標題 */
@@ -404,6 +439,14 @@ img{
   margin-left: 30px;
 }
 
+@media screen and (max-width: 992px){
+  .checkout_right{
+    // border: 1px solid blue;
+    width: 80%;
+    margin: 50px auto;
+  }
+}
+
 // ========== 折扣碼 ==========
 
 .checkout_discountBorder{
@@ -665,4 +708,17 @@ img{
   font-size: 0;
   margin-left: calc(100% - 25px);
   cursor: pointer;
+}
+
+
+@media screen and (max-width: 576px){
+  .checkout_maybe{
+    display: none;
+  }
+}
+
+@media screen and (max-width: 576px){
+  .checkout_pushItemBorder{
+    display: none;
+  }
 }

@@ -1,7 +1,12 @@
 @import '../mixin/mixin';
+@import '../page/cart.scss';
 
 .navbar{
 @include navbar();
+}
+
+.footer{
+	@include footer();
 }
 
 *{
@@ -25,7 +30,13 @@ img{
   /* border: 1px solid black; */
   width: 80%;
   max-width: 1200px;
-  margin: 100px auto;
+  margin: auto;
+}
+
+@media screen and (max-width: 576px){
+  .FAQ_container{
+    width: 90%;
+  }
 }
 
 /* ========== 標題 ========== */
@@ -72,6 +83,12 @@ img{
   margin: 20px 0;
 }
 
+@media screen and (max-width: 576px){
+  .FAQ_QBtn > p{
+    margin: 15px 0;
+  }
+}
+
 #FAQ_transaction > p{
   color: #172852;
 }
@@ -82,6 +99,12 @@ img{
   width: 65px;
   display: inline-block;
   /* margin-bottom: 12px; */
+}
+
+@media screen and (max-width: 576px){
+  .FAQ_imgBtn{
+    width: 45px;
+  }
 }
 
 /* 分類底線切換 */

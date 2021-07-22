@@ -22,7 +22,7 @@ body {
 }
 
 .psycho_beginScreen>article {
-    margin:auto;
+    margin: auto;
 }
 
 .psycho_beginpic {
@@ -85,7 +85,7 @@ body {
     text-align: center;
     color: white;
     margin: 0px;
-    margin-top: 10vh;
+    margin-top: 8vh;
     font-size: 20px;
     font-weight: bold;
 }
@@ -104,21 +104,23 @@ body {
 }
 
 /* 選項 */
-.psychoQuestionAnsRange{
+
+.psychoQuestionAnsRange {
     /* border: solid 1px red; */
     display: flex;
     justify-content: center;
 }
 
-.psychoQuestionAns{
+.psychoQuestionAns {
     /* border: solid 1px red; */
     margin: 0px 25px 0px 25px;
     text-decoration: none;
 }
 
-.psychoQuestionAns>div{
+.psychoQuestionAns>div {
     width: 22vh;
     height: 22vh;
+    padding: 15px;
     border-radius: 10px;
     background-color: white;
     box-shadow: 0px 7px 13.8px 2.2px rgba(65, 31, 19, 0.18);
@@ -126,7 +128,7 @@ body {
     display: flex;
 }
 
-.psychoQuestionAns>div>span{
+.psychoQuestionAns>div>span {
     margin: auto;
     font-size: 14px;
     font-weight: bold;
@@ -134,22 +136,42 @@ body {
     color: #bb866a;
 }
 
-.psychoQuestionAns>div:hover{
-    transform:scale(1.1,1.1);
+.psychoQuestionAns>div:hover, .psychoQuestionAns>div.active {
+    transform: scale(1.1, 1.1);
     border-radius: 10px;
     background-color: white;
     box-shadow: 0px 7px 13.8px 2.2px rgba(65, 31, 19, 0.18);
 }
 
-.psychoQuestionAns>div:hover > span{
+.psychoQuestionAns>div:hover>span {
     font-size: 14px;
     font-weight: bold;
     text-align: center;
-    color: #172852; 
-    
+    color: #172852;
+}
+
+/* 下一題 */
+
+.psycho_nextbtndisplay {
+    display: none;
+}
+
+.psycho_nextbtn>a {
+    margin: 3vh auto;
+    background-color: #172852;
+    color: rgb(255, 255, 255);
+    padding: 10px 20px;
+    border-radius: 50px;
+    display: block;
+    width: 140px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
 }
 
 /* 進度條 */
+
 .psychoSchedule01>div:first-child {
     width: 0%;
     height: 10px;
@@ -168,4 +190,195 @@ body {
     border-radius: 50px;
     position: absolute;
     bottom: 2vh;
+}
+
+/* 結算中畫面 */
+
+.psycho_loadingScreen {
+    display: none;
+}
+
+.psycho_loadingSetIn {
+    height: 100vh;
+    /* border: solid 1px red; */
+    display: flex;
+}
+
+.psycho_loadingSetIn>div {
+    margin: auto;
+}
+
+.psycho_loadingSetIn>div>h3 {
+    text-align: center;
+    color: white;
+    margin: 0px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.psycho_loadingpic>img {
+    width: 280px;
+}
+
+/* 結果畫面 */
+
+.psycho_resultScreen {
+    display: none;
+    position: relative;
+}
+
+.psycho_resultBg {
+    position: fixed;
+    width: 100%;
+    height: 0vh;
+    background-color: hsla(16, 55%, 16%, 0.3);
+    mix-blend-mode: multiply;
+    transition: height .5s ease-in-out;
+}
+
+.psycho_resultContent {
+    width: 100%;
+    margin: auto;
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    display: none;
+}
+
+.psycho_resultContent>h3 {
+    text-align: center;
+    color: white;
+    margin: 0px auto;
+    margin-top: 8vh;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.psycho_elvesContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.psycho_resultContent>div>p {
+    margin: 0px;
+    margin-top: 40px;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}
+
+.psycho_elves_name {
+    margin: 0px;
+    margin-top: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}
+
+.psycho_elves_name+span {
+    margin: 0px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}
+
+/* 翻轉卡片 */
+
+.psycho_cardRange {
+    /* border: solid 1px red; */
+    width: 210px;
+    height: 343px;
+    position: relative;
+}
+
+.psycho_cardRange>div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    -webkit-filter: drop-shadow(0px 21px 10px rgba(65, 31, 19, 0.3));
+    filter: drop-shadow(0px 21px 10px rgba(65, 31, 19, 0.3));
+}
+
+/* .psycho_cardRange>div:hover>div {
+    transform: rotateY(360deg);
+} */
+
+.psycho_cardFront {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url(../images/psycho/card_front_fire.png) no-repeat center center;
+    background-size: cover;
+    transition: .8s ease-in-out;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+}
+
+.psycho_cardBack {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url(../images/psycho/card_back.png) no-repeat center center;
+    background-size: cover;
+    /* backface-visibility: hidden; */
+    transition: .8s ease-in-out;
+    transform: rotateY(180deg);
+}
+
+/* 收藏商品 */
+
+.psycho_collectScreen {
+    font-size: 14px;
+    color: #172852;
+    width: 80%;
+    margin: 50px auto;
+}
+
+.psycho_collectScreen .psychoLikeImg {
+    width: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+.psycho_collectScreen .psychoLikePack {
+    position: relative;
+    display: inline-block;
+    width: calc((100% - 95px)/5);
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.psychoLikePack:nth-child(5n+1) {
+    margin-left: 0;
+}
+
+.psychoLikeHeart {
+    position: absolute;
+    top: 2%;
+    right: 2%;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.psycho_againbtn>a {
+    margin: 50px auto 90px;
+    background-color: #172852;
+    color: rgb(255, 255, 255);
+    padding: 10px 20px;
+    border-radius: 50px;
+    display: block;
+    width: 140px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
 }

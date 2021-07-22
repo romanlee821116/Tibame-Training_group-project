@@ -4,6 +4,10 @@
 @include navbar();
 }
 
+.footer{
+	@include footer();
+}
+
 *{
   box-sizing: border-box;
   font-family: "微軟正黑體";
@@ -25,8 +29,13 @@ img{
   /* border: 1px solid black; */
   width: 80%;
   max-width: 1200px;
-  margin: 100px auto;
+  margin: auto;
+}
 
+@media screen and (max-width: 992px){
+  .contact_container{
+    width: 90%;
+  }
 }
 
 /* ========== 標題&外框 ========== */
@@ -46,6 +55,13 @@ img{
   display: flex;
 }
 
+@media screen and (max-width: 768px){
+  #contact_contactBorder{
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
 
 /* ========== 左邊部分 ========== */
 
@@ -53,6 +69,12 @@ img{
   /* border: 1px solid red; */
   width: 50%;
   margin-right: 60px;
+}
+
+@media screen and (max-width: 768px){
+  .contact_left{
+    width: 70%;
+  }
 }
 
 /* ========== 聯絡我們 ========== */
@@ -137,6 +159,20 @@ img{
   padding: 36px;
   box-shadow: 9.5px 14.1px 26.4px 2.6px rgba(187, 134, 106, 0.44);
   background-color: #ffffff;
+}
+
+@media screen and (max-width: 768px){
+  .contact_right{
+    width: 80%;
+    margin-top: 100px;
+  }
+}
+
+@media screen and (max-width: 576px){
+  .contact_right{
+    width: 90%;
+    margin-top: 100px;
+  }
 }
 
 /* ========== 姓名、電話、信箱 ========== */
