@@ -1,8 +1,18 @@
 $(document).ready(function(){
 
-    navbar();
+    // navbar();
 
     // ======================== vue ===========================
+    // 變更密碼反饋
+    Vue.component('member-error',{
+        template:`
+        <div class="memberError">
+            <p>資料格式不正確</p>
+            <div></div>
+        </div>
+        `,
+    }),
+
     // 訂單查詢的收件人詳細資訊
     Vue.component('receiver-detail',{
         data(){
@@ -42,14 +52,28 @@ $(document).ready(function(){
     });
 
     // ===================== vue結束ㄌ =======================
+    
 
-    // ==============標題點擊效果=================
+    // ===================== 標題點擊效果 ========================
+    // 標題下底線
+    $('.memberTitle>h4').click(function(){
+        $(this).addClass('mClicked');
+        $(this).siblings().removeClass('mClicked');
+
+        // 清空變更密碼的表單
+        memberForm0();
+    });
+
+    // 各分頁的點擊調整
     $('#memberId').click(function(){
         $('.choosenBar2').css('left','0%');
         $(this).css('color','#172852');
         $(this).siblings().css('color','#cba89a');
         $('.memberPart1').fadeIn(700);
         $('.memberPart1 ~ div').not('.memberPart1').hide();
+        // 改底線顏色
+        // $(this).css('border-bottom','2px solid #172852');
+        // $('.memberTitle>h4').not(this).css('border-bottom','2px solid #cba89a');
     });
 
     $('#memberPsw').click(function(){
@@ -83,7 +107,71 @@ $(document).ready(function(){
         $('.memberPart5').fadeIn(700);
         $('.memberLine ~ div').not('.memberPart5').hide();
     });
-    // ================訂單查詢===================
+
+    // =============== 密碼反饋 ===================
+    $('.memberChangePSW').click(function(e){
+        // 清空重來
+        $('.memberError').css('display','none');
+        // $('.memberError').next().children('p').text('資料格式不正確');
+        $('input').css('border','2px solid transparent');
+
+        // 設定變數
+        let oldPSW = $('.memberOldPSW').val();
+        let newPSW = $('.memberNewPSW').val();
+        let newPSW2 = $('.memberNewPSW2').val();
+        // 正規表示法密碼格式
+        let passwordCorrect = /^.{8,16}$/;
+
+        console.log(oldPSW);
+        console.log(newPSW);
+        console.log(newPSW2);
+
+        if(oldPSW == ""){
+            e.preventDefault();
+            $('.memberOldPSW').css('border','2px solid #dc3838');
+            $('.memberOldPSW').next().css('display','inline-block');
+            $('.memberOldPSW').next().children('p').text('請輸入資訊');
+        }else if(!passwordCorrect.test(oldPSW)){
+            e.preventDefault();
+            $('.memberOldPSW').css('border','2px solid #dc3838');
+            $('.memberOldPSW').next().css('display','inline-block');
+            $('.memberOldPSW').next().children('p').text('資料格式不正確');
+        }
+
+        if(newPSW == ""){
+            e.preventDefault();
+            $('.memberNewPSW').css('border','2px solid #dc3838');
+            $('.memberNewPSW').next().css('display','inline-block');
+            $('.memberNewPSW').next().children('p').text('請輸入資訊');
+        }else if(!passwordCorrect.test(newPSW)){
+            e.preventDefault();
+            $('.memberNewPSW').css('border','2px solid #dc3838');
+            $('.memberNewPSW').next().css('display','inline-block');
+            $('.memberNewPSW').next().children('p').text('資料格式不正確');
+        }
+
+        if(newPSW2 == ""){
+            e.preventDefault();
+            $('.memberNewPSW2').css('border','2px solid #dc3838');
+            $('.memberNewPSW2').next().css('display','inline-block');
+            $('.memberNewPSW2').next().children('p').text('請輸入資訊');
+        }else if(!passwordCorrect.test(newPSW2)){
+            e.preventDefault();
+            $('.memberNewPSW2').css('border','2px solid #dc3838');
+            $('.memberNewPSW2').next().css('display','inline-block');
+            $('.memberNewPSW2').next().children('p').text('資料格式不正確');
+        }else if(newPSW2 != newPSW ){
+            e.preventDefault();
+            $('.memberNewPSW2').css('border','2px solid #dc3838');
+            $('.memberNewPSW2').next().css('display','inline-block');
+            $('.memberNewPSW2').next().children('p').text('兩次輸入密碼不同');
+        }
+
+
+    });
+
+
+    // ================ 訂單查詢 ===================
     // 查看明細 & 收合明細
     $('.memberOrderDetailAll').hide();
     $('.memberOpenDetail').click(function(){
@@ -114,7 +202,7 @@ $(document).ready(function(){
     //     $('body').removeClass('stopScroll');
     // });
 
-    // ==================收藏管理==================
+    // ================== 收藏管理 ==================
     $('.memberLikeHeart').click(function(){
         let deleItem = this;
         $(deleItem).attr('src','../images/member/unfavorite.png')
@@ -127,6 +215,15 @@ $(document).ready(function(){
 
 
 });
+
+// 清空表單反饋-------------------
+function memberForm0(){
+    $('.memberError').css('display','none');
+    $('.memberError').children('p').text('資料格式不正確');
+    $('input').css('border','2px solid transparent');
+    // 清除所有input的值
+    $('input').val('');
+};
 
 // navbar-------------------
 function navbar(){

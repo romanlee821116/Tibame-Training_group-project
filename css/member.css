@@ -398,6 +398,7 @@ body {
   background-color: #f0ebe9;
   border: none;
   color: #172852;
+  border: 2px solid transparent;
 }
 
 /* 送出鈕 */
@@ -419,6 +420,44 @@ body {
   background-color: #2e447c;
   color: #fff;
   border: 3px solid #2e447c;
+}
+
+.memberErrorWrap {
+  position: relative;
+}
+
+.memberError {
+  display: none;
+  background-color: #dc3838;
+  border-radius: 5px;
+  width: 120px;
+  height: 25px;
+  padding: 5px 10px;
+  font-size: 12px;
+  text-align: center;
+  position: absolute;
+  right: 10px;
+  top: 20px;
+  z-index: 1;
+}
+
+.memberError > p {
+  display: inline-block;
+  margin: 0;
+  color: #ffffff;
+  padding: 2px;
+}
+
+.memberError > div {
+  border-top: 1px solid transparent;
+  border-right: 8px solid transparent;
+  border-left: 8px solid transparent;
+  border-bottom: 13px solid #dc3838;
+  position: relative;
+  width: 15px;
+  height: 18px;
+  top: -36px;
+  right: -85px;
 }
 
 /* 訂單查詢================================== */
@@ -899,11 +938,27 @@ body {
   }
   body .memberLine {
     overflow-x: auto;
+    height: 40px;
   }
   body .memberLine h4 {
     white-space: nowrap;
+    border-bottom: 2px solid #cba89a;
     padding-bottom: 7px;
     margin-right: 15px;
+    margin-left: 5%;
+    margin-right: 5%;
+    -webkit-box-flex: 0;
+        -ms-flex: 0;
+            flex: 0;
+  }
+  body .memberLine h4:first-child {
+    margin-left: 0;
+  }
+  body .memberLine .underLine {
+    display: none;
+  }
+  body .memberLine .mClicked {
+    border-bottom: 2px solid #172852;
   }
   body .memberLine::-webkit-scrollbar {
     display: none;

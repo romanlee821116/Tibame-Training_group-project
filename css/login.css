@@ -423,6 +423,7 @@ input {
   border: none;
   height: 35px;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .loginButton span {
@@ -481,6 +482,7 @@ input {
 
 #forgetFormPage .loginButton {
   margin-top: 15px;
+  cursor: pointer;
 }
 
 /* 三角形 */

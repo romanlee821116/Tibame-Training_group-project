@@ -326,6 +326,7 @@ input{
 
     height: 35px;
     overflow: hidden;
+    cursor: pointer;
 }
 
 .loginButton span{
@@ -378,6 +379,7 @@ input{
 // 送出按鈕
 #forgetFormPage .loginButton{
     margin-top: 15px;
+    cursor: pointer;
 }
 /* 三角形 */
 #loginArrow2 {

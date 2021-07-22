@@ -109,7 +109,6 @@ body {
     color: #172852;
 }
 
-
 /* 標題下方選擇提示條 */
 
 .underLine {
@@ -234,11 +233,9 @@ body {
     background-color: #f0ebe9;
     border: none;
     color: #172852;
+    border: 2px solid transparent;
 }
-
-
 /* 送出鈕 */
-
 .memberPart2 button {
     margin: 0 auto;
     // display: block;
@@ -251,6 +248,45 @@ body {
     // border: none;
     margin-top: 40px;
     @include btn();
+}
+
+// ---------- 使用者輸入資訊錯誤反饋
+.memberErrorWrap{
+    position: relative;
+}
+.memberError{ 
+    display: none;
+    background-color: #dc3838;
+    border-radius: 5px;
+    width: 120px;
+    height: 25px;
+    padding: 5px 10px;
+   
+    font-size: 12px;
+    text-align: center;
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    z-index: 1;
+}
+  
+.memberError > p{
+    display: inline-block;
+    margin: 0;
+    color: #ffffff;
+    padding: 2px;
+}
+  
+.memberError > div{
+    border-top: 1px solid transparent;
+    border-right: 8px solid transparent;
+    border-left: 8px solid transparent;
+    border-bottom: 13px solid #dc3838;
+    position: relative;
+    width: 15px;
+    height: 18px;
+    top: -36px;
+    right: -85px;
 }
 
 
@@ -545,44 +581,6 @@ body {
 } 
 
 
-
-// .memberOrderDetail tr{
-//     vertical-align: middle;
-// }
-
-// /* 第一行 */
-// .memberOrderDetail tr:first-child {
-//     background-color: #c4c4c4;
-//     color: #fff;
-//     padding: 20px 0 20px 0;
-// }
-// .memberOrderDetail tr:first-child td {
-//     padding: 5px 0 5px 0;
-// }
-// .memberOrderDetail tr:first-child td:first-child {
-//     padding-left: 10px;
-// }
-
-// /* 第二行 */
-// .memberOrderDetail tr td img {
-//     max-width: 50px;
-//     /* margin: 5px; */
-// }
-// .memberOrderDetail tr:nth-child(2) td:first-child {
-//     width: 80px;
-//     /* border: 1px solid red; */
-//     padding-left: 10px;
-    
-// }
-// .memberOrderDetail tr:nth-child(2) td:nth-child(2) {
-//     width: 210px;
-//     align-self: center;
-// }
-// .memberOrderDetail tr:nth-child(2) td:nth-child(3) {
-//     width: 100px;
-// }
-
-
 /* 收件人詳細資訊============= */
 
 .receiverDetail {
@@ -790,11 +788,25 @@ body {
         // 標題改為滑動的方式
         .memberLine {
             overflow-x: auto;
+            height: 40px;
             h4 {
                 white-space: nowrap;
-                // border-bottom: 2px solid #172852;
+                border-bottom: 2px solid #cba89a;
                 padding-bottom: 7px;
                 margin-right: 15px;
+                margin-left: 5%;
+                margin-right: 5%;
+                flex: 0;
+            }
+            h4:first-child {
+                margin-left: 0;
+            }
+            .underLine{
+                display: none;
+            }
+            // 點擊後底線變色
+            .mClicked{
+                border-bottom: 2px solid #172852;
             }
         }
         .memberLine::-webkit-scrollbar {

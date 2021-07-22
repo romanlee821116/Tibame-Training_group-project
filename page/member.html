@@ -36,7 +36,7 @@
         <h2>會員中心</h2>
         <div class='memberLine'>
             <div class='memberTitle'>
-                <h4 id='memberId'>會員資料</h4>
+                <h4 id='memberId' class='mClicked'>會員資料</h4>
                 <h4 id='memberPsw'>修改密碼</h4>
                 <h4 id='memberOrder'>訂單查詢</h4>
                 <h4 id='memberRefund'>取消/退款查詢</h4>
@@ -49,27 +49,36 @@
         </div>
         <!-- ==================會員資料=================== -->
         <div class='memberPart1'>
-            <label>姓名：<input class='memberLeft memberTop' type="text" value='李安'></label><br>
+            <label>姓名：<input class='memberLeft memberTop' type="text"></label><br>
             <div class='gender'>性別：
-                <input class='memberLeft' name='gender' type="radio" id="male" value='male' checked>
+                <input class='memberLeft' name='gender' type="radio" id="male" value='male'>
                 <label for="male">男性</label>
                 <input name='gender' type="radio" id="female" value='male'>
                 <label for="female">女性</label>
                 <input name='gender' type="radio" id="other" value='male'>
                 <label for="other">第三性</label>
             </div>
-            <label>信箱：<input class='memberLeft' type="email" value='karuhodou2020@gmail.com'></label><br>
-            <label>連絡電話：<input type="text" value='0912345678'></label><br>
-            <label>地址：<input class='memberLeft' type="text" value="台北市南京東路三段219號4-5F"></label><br>
+            <label>信箱：<input class='memberLeft' type="email"></label><br>
+            <label>連絡電話：<input type="text"></label><br>
+            <label>地址：<input class='memberLeft' type="text"></label><br>
             <button type="submit">儲存</button>
         </div>
 
         <!-- ==================修改密碼=================== -->
         <div class='memberPart2'>
-            <input class='memberTop' type='password' placeholder="請輸入您的舊密碼">
-            <input type='password' placeholder="請輸入您的新密碼 (數字+英文字母8-16位)">
-            <input type='password' placeholder="再次輸入您的新密碼">
-            <button type="submit">修改</button>
+            <div class='memberErrorWrap'>
+                <input class='memberOldPSW' type='password' placeholder="請輸入您的舊密碼">
+                <member-error></member-error>
+            </div>
+            <div class='memberErrorWrap'>
+                <input class='memberNewPSW' type='password' placeholder="請輸入您的新密碼 (數字+英文字母8-16位)">
+                <member-error></member-error>
+            </div>
+            <div class='memberErrorWrap'>
+                <input class='memberNewPSW2' type='password' placeholder="再次輸入您的新密碼">
+                <member-error></member-error>
+            </div>
+            <button class='memberChangePSW' type="submit">修改</button>
         </div>
 
         <!-- ==================訂單查詢=================== -->
@@ -159,7 +168,7 @@
                                 <div>$350</div>
                             </div>
                         </div>
-                    </div>  
+                    </div> 
                     <!-- 收件人詳細資訊 -->
                     <receiver-detail></receiver-detail>
                     
@@ -363,8 +372,8 @@
                             </div>
                             <div class='memberProgressWord'>
                                 <span>收到訂單</span>
-                                <span>訂單確認</span>
-                                <span class='memberWordCheck'>商品出貨</span>
+                                <span class='memberWordCheck'>訂單確認</span>
+                                <span>商品出貨</span>
                                 <span>商品送達</span>
                             </div>
                         </div>
@@ -406,7 +415,7 @@
                                 <div>$350</div>
                             </div>
                         </div>
-                    </div> 
+                    </div>
                     <!-- 收件人詳細資訊 -->
                     <receiver-detail></receiver-detail>
                     
@@ -476,9 +485,6 @@
         </div>
     </div>
 
-    <script>
-        
-    </script>
 
 </body>
 </html>
