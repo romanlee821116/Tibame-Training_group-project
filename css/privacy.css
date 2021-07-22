@@ -61,6 +61,11 @@ h1, h2, p, ul, li {
   color: #172852;
 }
 
+body {
+  background: url("../../images/index/bg.png");
+  position: relative;
+}
+
 .navbar {
   width: 100%;
   height: 100px;
@@ -216,23 +221,62 @@ h1, h2, p, ul, li {
   transition: all .3s;
 }
 
-.privacy_title, .privacy_content {
+.privacy_wrap {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.privacy_wrap .privacy_title, .privacy_wrap .privacy_content {
   width: 80%;
   margin: 50px auto;
 }
 
-.privacy_title h1, .privacy_content h1 {
+.privacy_wrap .privacy_title h1, .privacy_wrap .privacy_content h1 {
   text-align: center;
   font-size: 22px;
   margin: 10px 0 50px 0;
 }
 
-section {
+.privacy_wrap .privacy_title section, .privacy_wrap .privacy_content section {
   margin: 50px 0;
 }
 
-section ul {
+.privacy_wrap .privacy_title section ul, .privacy_wrap .privacy_content section ul {
   margin: 10px 0 0 20px;
+}
+
+.privacy_wrap .privacy_waterMark img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 35vw;
+  height: 35vw;
+}
+
+.privacy_wrap .privacy_waterMark img:nth-child(1) {
+  left: 80%;
+  top: 30%;
+}
+
+.privacy_wrap .privacy_waterMark img:nth-child(2) {
+  left: 10%;
+  top: 50%;
+}
+
+.privacy_wrap .privacy_waterMark img:nth-child(3) {
+  left: 90%;
+  top: 60%;
+}
+
+.privacy_wrap .privacy_waterMark img:nth-child(4) {
+  left: -10%;
+  top: 90%;
+}
+
+.privacy_wrap .privacy_waterMark img:nth-child(5) {
+  left: -10%;
+  top: 0%;
 }
 
 .footer {
