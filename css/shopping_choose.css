@@ -383,7 +383,7 @@ body {
   transform: translateY(15px);
 }
 
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 991px) {
   .choose_select_area {
     width: 100%;
   }
