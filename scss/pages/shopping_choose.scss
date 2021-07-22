@@ -51,7 +51,7 @@ body {
     display: none;
 }
 
-.choose_items:nth-child(1) {
+.choose_select_area a:nth-child(1) {
     width: 90px;
     height: 100%;
     transition: all .5s;
@@ -62,14 +62,14 @@ body {
     opacity: .7;
 }
 
-.choose_items:nth-child(1):hover {
+.choose_select_area a:nth-child(1):hover {
     width: 150px;
     opacity: 1;
     cursor: pointer;
     background-image: url("../images/shopping_choose/1.png");
 }
 
-.choose_items:nth-child(2) {
+.choose_select_area a:nth-child(2) {
     width: 90px;
     height: 100%;
     transition: all .5s;
@@ -80,14 +80,14 @@ body {
     transform: translateY(20px);
 }
 
-.choose_items:nth-child(2):hover {
+.choose_select_area a:nth-child(2):hover {
     width: 150px;
     opacity: 1;
     cursor: pointer;
     background-image: url("../images/shopping_choose/2.png");
 }
 
-.choose_items:nth-child(3) {
+.choose_select_area a:nth-child(3) {
     width: 90px;
     height: 100%;
     transition: all .5s;
@@ -98,14 +98,14 @@ body {
     opacity: .7;
 }
 
-.choose_items:nth-child(3):hover {
+.choose_select_area a:nth-child(3):hover {
     width: 150px;
     opacity: 1;
     cursor: pointer;
     background-image: url("../images/shopping_choose/3.png");
 }
 
-.choose_items:nth-child(4) {
+.choose_select_area a:nth-child(4) {
     width: 90px;
     height: 100%;
     transition: all .5s;
@@ -117,14 +117,14 @@ body {
     transform: translateY(-20px);
 }
 
-.choose_items:nth-child(4):hover {
+.choose_select_area a:nth-child(4):hover {
     width: 150px;
     opacity: 1;
     cursor: pointer;
     background-image: url("../images/shopping_choose/4.png");
 }
 
-.choose_items:nth-child(5) {
+.choose_select_area a:nth-child(5) {
     width: 90px;
     height: 100%;
     transition: all .5s;
@@ -136,14 +136,14 @@ body {
     transform: translateY(20px);
 }
 
-.choose_items:nth-child(5):hover {
+.choose_select_area a:nth-child(5):hover {
     width: 150px;
     opacity: 1;
     cursor: pointer;
     background-image: url("../images/shopping_choose/5.png");
 }
 
-.choose_items:nth-child(6) {
+.choose_select_area a:nth-child(6) {
     width: 90px;
     height: 100%;
     transition: all .5s;
@@ -154,14 +154,14 @@ body {
     opacity: .7;
 }
 
-.choose_items:nth-child(6):hover {
+.choose_select_area a:nth-child(6):hover {
     width: 150px;
     opacity: 1;
     cursor: pointer;
     background-image: url("../images/shopping_choose/6.png");
 }
 
-.choose_items:nth-child(7) {
+.choose_select_area a:nth-child(7) {
     width: 90px;
     height: 100%;
     transition: all .5s;
@@ -173,7 +173,7 @@ body {
     transform: translateY(-20px);
 }
 
-.choose_items:nth-child(7):hover {
+.choose_select_area a:nth-child(7):hover {
     width: 150px;
     opacity: 1;
     cursor: pointer;
@@ -222,7 +222,7 @@ body {
     .choose_items span {
         display: block;
     }
-    .choose_items:nth-child(1) {
+    .choose_select_area a:nth-child(1) {
         width: 100%;
         height: 100px;
         background-image: url("../images/shopping_choose/11.png");
@@ -232,11 +232,11 @@ body {
         opacity: 1;
         transform: translateY(0);
     }
-    .choose_items:nth-child(1):hover {
+    .choose_select_area a:nth-child(1):hover {
         background-image: url("../images/shopping_choose/11.png");
         width: 100%;
     }
-    .choose_items:nth-child(2) {
+    .choose_select_area a:nth-child(2) {
         width: 100%;
         height: 100px;
         transition: all .5s;
@@ -247,11 +247,11 @@ body {
         opacity: 1;
         transform: translateY(0);
     }
-    .choose_items:nth-child(2):hover {
+    .choose_select_area a:nth-child(2):hover {
         background-image: url("../images/shopping_choose/22.png");
         width: 100%;
     }
-    .choose_items:nth-child(3) {
+    .choose_select_area a:nth-child(3) {
         width: 100%;
         height: 100px;
         transition: all .5s;
@@ -262,11 +262,11 @@ body {
         opacity: 1;
         transform: translateY(0);
     }
-    .choose_items:nth-child(3):hover {
+    .choose_select_area a:nth-child(3):hover {
         background-image: url("../images/shopping_choose/33.png");
         width: 100%;
     }
-    .choose_items:nth-child(4) {
+    .choose_select_area a:nth-child(4) {
         width: 100%;
         height: 100px;
         transition: all .5s;
@@ -277,11 +277,11 @@ body {
         opacity: 1;
         transform: translateY(0);
     }
-    .choose_items:nth-child(4):hover {
+    .choose_select_area a:nth-child(4):hover {
         background-image: url("../images/shopping_choose/44.png");
         width: 100%;
     }
-    .choose_items:nth-child(5) {
+    .choose_select_area a:nth-child(5) {
         width: 100%;
         height: 100px;
         transition: all .5s;
@@ -292,11 +292,11 @@ body {
         opacity: 1;
         transform: translateY(0);
     }
-    .choose_items:nth-child(5):hover {
+    .choose_select_area a:nth-child(5):hover {
         background-image: url("../images/shopping_choose/55.png");
         width: 100%;
     }
-    .choose_items:nth-child(6) {
+    .choose_select_area a:nth-child(6) {
         width: 100%;
         height: 100px;
         transition: all .5s;
@@ -307,11 +307,11 @@ body {
         opacity: 1;
         transform: translateY(0);
     }
-    .choose_items:nth-child(6):hover {
+    .choose_select_area a:nth-child(6):hover {
         background-image: url("../images/shopping_choose/66.png");
         width: 100%;
     }
-    .choose_items:nth-child(7) {
+    .choose_select_area a:nth-child(7) {
         width: 100%;
         height: 100px;
         transition: all .5s;
@@ -322,7 +322,7 @@ body {
         opacity: 1;
         transform: translateY(0);
     }
-    .choose_items:nth-child(7):hover {
+    .choose_select_area a:nth-child(7):hover {
         background-image: url("../images/shopping_choose/77.png");
         width: 100%;
     }

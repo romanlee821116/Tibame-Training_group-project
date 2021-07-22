@@ -2,7 +2,7 @@
 @import '../base/reset.scss';
 * {
     box-sizing: border-box;
-    // border: solid 1px red;
+    border: solid 1px red;
     font-family: '微軟正黑體';
 }
 
@@ -332,6 +332,7 @@ body {
         transform: translateX(0);
     }
     .product_right {
+        width: 100%;
         margin: 30px 0;
         text-align: center;
         display: flex;
@@ -340,6 +341,13 @@ body {
     }
     .product_right_title {
         margin-bottom: 10px;
+    }
+    .product_right_name {
+        text-align: center;
+    }
+    .product_right .product_main_content {
+        width: 300px;
+        text-align: center;
     }
     .product_price {
         text-align: center;
@@ -350,5 +358,65 @@ body {
         display: block;
         font-size: 28px;
         margin-right: 0;
+    }
+    .product_select_area {
+        right: 20px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .product_main {
+        width: 80%;
+    }
+    .product_product {
+        width: 100%;
+    }
+    .product_title {
+        transform: translateY(-20px);
+    }
+    .product_item {
+        width: 100%;
+        margin: 30px auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transform: translateX(0);
+    }
+    .product_right {
+        margin: 30px 0;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .product_right_title {
+        margin-bottom: 10px;
+    }
+    .product_right .product_main_content {
+        width: 300px;
+        text-align: center;
+    }
+    .product_heart {
+        position: relative;
+        top: 45px;
+        left: 90px;
+    }
+    .product_heart_red {
+        position: relative;
+        top: 45px;
+        left: 90px;
+    }
+    .product_price {
+        text-align: center;
+        letter-spacing: 2px;
+        line-height: 30px;
+    }
+    .product_price span {
+        display: block;
+        font-size: 28px;
+        margin-right: 0;
+    }
+    .product_select_area {
+        right: 0px;
     }
 }
