@@ -79,7 +79,6 @@ $(function () {
 
     ticker();
     newsCarousel();
-    navbar();
 })
 
 
@@ -143,11 +142,7 @@ function newsCarousel() {
     }
 }
 
-function navbar(){
-    $('.ham_bar').css({
-        backgroundColor: '#fff',
-    })
-}
+
 
 
 
