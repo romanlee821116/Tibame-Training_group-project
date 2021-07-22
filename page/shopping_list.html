@@ -5,9 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/shopping_list.css">
+    <link rel="stylesheet" href="../css/hamburger.css">
     <script src="https://kit.fontawesome.com/8c3a8ab95b.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
     <script src="../js/shopping_list.js"></script>
+    <script src="../js/hamburger.js"></script>
     <title>SHOPPING LIST</title>
 </head>
 
@@ -18,11 +20,31 @@
             <img src="../images/index/logo.png" alt="">
         </div>
         <div class="navbar-icon">
-            <p id='scrollvalue'></p>
             <a href="#"><i class="fas fa-user"></i></a>
-            <a href="#"><i class="fas fa-shopping-cart"></i></a>
-            <a href="#"><i class="fas fa-bars"></i></a>
+            <a href="#"><span id="product_counter">1</span><i class="fas fa-shopping-cart"></i></a>
+            <a href="#"></a>
         </div>
+        <!-- 漢堡 -->
+        <div class="ham_container">
+            <div class="ham_bar1 ham_bar"></div>
+            <div class="ham_bar2 ham_bar"></div>
+            <div class="ham_bar3 ham_bar"></div>
+        </div>
+        <div id="ham_myNav" class="ham_overlay">
+            <div class="ham_overlay-content">
+                <div class='ham_jelly'></div>
+                <div class="ham_select">
+                    <a href="../index.html">首頁</a>
+                    <a href="./about.html">關於我們</a>
+                    <a href="./news.html">最新消息</a>
+                    <a href="./shopping_choose.html">商品專區</a>
+                    <a href="./customized.html">客製化禮盒</a>
+                    <a href="./FAQ.html">Q&A</a>
+                    <a href="./login.html">會員中心</a>
+                </div>
+            </div>
+        </div>
+        <!-- 漢堡結束 -->
     </div>
     <!-- media -->
     <div class='mediacolumn'>
@@ -39,22 +61,22 @@
                 <h1 id="product_big_title">商品列表</h1>
             </div>
             <div class="product_item">
+                <div class="product_heart"></div>
                 <div class="product_left">
                     <div class="product_img">
                         <img src="../images/shopping_list/product_big.png" alt="">
-                        <img src="../images/shopping_list/product-img1.jpg" alt="">
-                        <img src="../images/shopping_list/sec2_item5_1.png" alt="">
+                        <img src="../images/shopping_list/shop1.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
                     </div>
                     <div class="product_circle">
-                        <div></div>
-                        <div></div>
-                        <div></div>
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
                     </div>
                 </div>
                 <div class="product_right" data-id="100000">
-                    <div class="product_heart"></div>
                     <p class="product_right_title">期間限定商品111</p>
-                    <h3 class="product_right_name">ねぎかりんとう焦がし醬油風味</h3>
+                    <h3 class="product_right_name">ねぎりう焦がし醬油風味</h3>
                     <p class="product_main_content">焦がし醤油の風味とねぎの香りが良く合うかりんとうに仕上げました。焦がし醤油の風味とねぎの香りが良く合うかりんとうに仕上げました
                     </p>
                     <p class="product_ingredients">成分 : 米、糖、白豆沙、水飴、柚子陳</p>
@@ -75,22 +97,22 @@
                 </div>
             </div>
             <div class="product_item">
+                <div class="product_heart"></div>
                 <div class="product_left">
                     <div class="product_img">
                         <img src="../images/shopping_list/product_big.png" alt="">
-                        <img src="../images/shopping_list/product-img1.jpg" alt="">
-                        <img src="../images/shopping_list/sec2_item5_1.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
                     </div>
                     <div class="product_circle">
-                        <div></div>
-                        <div></div>
-                        <div></div>
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
                     </div>
                 </div>
                 <div class="product_right" data-id="100000">
-                    <div class="product_heart"></div>
                     <p class="product_right_title">期間限定商品</p>
-                    <h3 class="product_right_name">ねぎかりんとう焦がし醬油風味</h3>
+                    <h3 class="product_right_name">ねぎりう焦がし醬油風味</h3>
                     <p class="product_main_content">焦がし醤油の風味とねぎの香りが良く合うかりんとうに仕上げました。焦がし醤油の風味とねぎの香りが良く合うかりんとうに仕上げました
                     </p>
                     <p class="product_ingredients">成分 : 米、糖、白豆沙、水飴、柚子陳皮</p>
@@ -111,22 +133,22 @@
                 </div>
             </div>
             <div class="product_item">
+                <div class="product_heart"></div>
                 <div class="product_left">
                     <div class="product_img">
-                        <img src="../images/shopping_list//product_big.png" alt="">
-                        <img src="../images/shopping_list//product-img1.jpg" alt="">
-                        <img src="../images/shopping_list//sec2_item5_1.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
                     </div>
                     <div class="product_circle">
-                        <div></div>
-                        <div></div>
-                        <div></div>
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
                     </div>
                 </div>
                 <div class="product_right" data-id="100000">
-                    <div class="product_heart"></div>
                     <p class="product_right_title">期間限定商品</p>
-                    <h3 class="product_right_name">ねぎかりんとう焦がし醬油風味</h3>
+                    <h3 class="product_right_name">ねぎりう焦がし醬油風味</h3>
                     <p class="product_main_content">焦がし醤油の風味とねぎの香りが良く合うかりんとうに仕上げました。焦がし醤油の風味とねぎの香りが良く合うかりんとうに仕上げました
                     </p>
                     <p class="product_ingredients">成分 : 米、糖、白豆沙、水飴、柚子陳皮</p>
@@ -153,22 +175,22 @@
                 <h1 id="product_big_title">商品列表</h1>
             </div>
             <div class="product_item">
+                <div class="product_heart"></div>
                 <div class="product_left">
                     <div class="product_img">
-                        <img src="../images/shopping_list//product_big.png" alt="">
-                        <img src="../images/shopping_list//product-img1.jpg" alt="">
-                        <img src="../images/shopping_list//sec2_item5_1.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
                     </div>
                     <div class="product_circle">
-                        <div></div>
-                        <div></div>
-                        <div></div>
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
                     </div>
                 </div>
                 <div class="product_right" data-id="100000">
-                    <div class="product_heart"></div>
                     <p class="product_right_title">期間限定商品222</p>
-                    <h3 class="product_right_name">ねぎかりんとう焦がし醬油風味</h3>
+                    <h3 class="product_right_name">ねぎりう焦がし醬油風味</h3>
                     <p class="product_main_content">焦がし醤油の風味とねぎの香りが良く合うかりんとうに仕上げました。焦がし醤油の風味とねぎの香りが良く合うかりんとうに仕上げました
                     </p>
                     <p class="product_ingredients">成分 : 米、糖、白豆沙、水飴、柚子陳皮</p>
@@ -189,22 +211,22 @@
                 </div>
             </div>
             <div class="product_item">
+                <div class="product_heart"></div>
                 <div class="product_left">
                     <div class="product_img">
-                        <img src="../images/shopping_list//product_big.png" alt="">
-                        <img src="../images/shopping_list//product-img1.jpg" alt="">
-                        <img src="../images/shopping_list//sec2_item5_1.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
                     </div>
                     <div class="product_circle">
-                        <div></div>
-                        <div></div>
-                        <div></div>
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
                     </div>
                 </div>
                 <div class="product_right" data-id="100000">
-                    <div class="product_heart"></div>
                     <p class="product_right_title">期間限定商品</p>
-                    <h3 class="product_right_name">ねぎかりんとう焦がし醬油風味</h3>
+                    <h3 class="product_right_name">ねぎりう焦がし醬油風味</h3>
                     <p class="product_main_content">焦がし醤油の風味とねぎの香りが良く合うかりんとうに仕上げました。焦がし醤油の風味とねぎの香りが良く合うかりんとうに仕上げました
                     </p>
                     <p class="product_ingredients">成分 : 米、糖、白豆沙、水飴、柚子陳皮</p>
@@ -225,22 +247,22 @@
                 </div>
             </div>
             <div class="product_item">
+                <div class="product_heart"></div>
                 <div class="product_left">
                     <div class="product_img">
-                        <img src="../images/shopping_list//product_big.png" alt="">
-                        <img src="../images/shopping_list//product-img1.jpg" alt="">
-                        <img src="../images/shopping_list//sec2_item5_1.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
                     </div>
                     <div class="product_circle">
-                        <div></div>
-                        <div></div>
-                        <div></div>
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
                     </div>
                 </div>
                 <div class="product_right" data-id="100000">
-                    <div class="product_heart"></div>
                     <p class="product_right_title">期間限定商品</p>
-                    <h3 class="product_right_name">ねぎかりんとう焦がし醬油風味</h3>
+                    <h3 class="product_right_name">ねぎりう焦がし醬油風味</h3>
                     <p class="product_main_content">焦がし醤油の風味とねぎの香りが良く合うかりんとうに仕上げました。焦がし醤油の風味とねぎの香りが良く合うかりんとうに仕上げました
                     </p>
                     <p class="product_ingredients">成分 : 米、糖、白豆沙、水飴、柚子陳皮</p>
@@ -267,22 +289,22 @@
                 <h1 id="product_big_title">商品列表</h1>
             </div>
             <div class="product_item">
+                <div class="product_heart"></div>
                 <div class="product_left">
                     <div class="product_img">
-                        <img src="../images/shopping_list//product_big.png" alt="">
-                        <img src="../images/shopping_list//product-img1.jpg" alt="">
-                        <img src="../images/shopping_list//sec2_item5_1.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
                     </div>
                     <div class="product_circle">
-                        <div></div>
-                        <div></div>
-                        <div></div>
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
                     </div>
                 </div>
                 <div class="product_right" data-id="100000">
-                    <div class="product_heart"></div>
                     <p class="product_right_title">期間限定商品333</p>
-                    <h3 class="product_right_name">ねぎかりんとう焦がし醬油風味</h3>
+                    <h3 class="product_right_name">ねぎりう焦がし醬油風味</h3>
                     <p class="product_main_content">焦がし醤油の風味とねぎの香りが良く合うかりんとうに仕上げました。焦がし醤油の風味とねぎの香りが良く合うかりんとうに仕上げました
                     </p>
                     <p class="product_ingredients">成分 : 米、糖、白豆沙、水飴、柚子陳皮</p>
@@ -303,22 +325,22 @@
                 </div>
             </div>
             <div class="product_item">
+                <div class="product_heart"></div>
                 <div class="product_left">
                     <div class="product_img">
-                        <img src="../images/shopping_list//product_big.png" alt="">
-                        <img src="../images/shopping_list//product-img1.jpg" alt="">
-                        <img src="../images/shopping_list//sec2_item5_1.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
                     </div>
                     <div class="product_circle">
-                        <div></div>
-                        <div></div>
-                        <div></div>
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
                     </div>
                 </div>
                 <div class="product_right" data-id="100000">
-                    <div class="product_heart"></div>
                     <p class="product_right_title">期間限定商品</p>
-                    <h3 class="product_right_name">ねぎかりんとう焦がし醬油風味</h3>
+                    <h3 class="product_right_name">ねぎりう焦がし醬油風味</h3>
                     <p class="product_main_content">焦がし醤油の風味とねぎの香りが良く合うかりんとうに仕上げました。焦がし醤油の風味とねぎの香りが良く合うかりんとうに仕上げました
                     </p>
                     <p class="product_ingredients">成分 : 米、糖、白豆沙、水飴、柚子陳皮</p>
@@ -339,22 +361,22 @@
                 </div>
             </div>
             <div class="product_item">
+                <div class="product_heart"></div>
                 <div class="product_left">
                     <div class="product_img">
-                        <img src="../images/shopping_list//product_big.png" alt="">
-                        <img src="../images/shopping_list//product-img1.jpg" alt="">
-                        <img src="../images/shopping_list//sec2_item5_1.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
                     </div>
                     <div class="product_circle">
-                        <div></div>
-                        <div></div>
-                        <div></div>
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
                     </div>
                 </div>
                 <div class="product_right" data-id="100000">
-                    <div class="product_heart"></div>
                     <p class="product_right_title">期間限定商品</p>
-                    <h3 class="product_right_name">ねぎかりんとう焦がし醬油風味</h3>
+                    <h3 class="product_right_name">ねぎりう焦がし醬油風味</h3>
                     <p class="product_main_content">焦がし醤油の風味とねぎの香りが良く合うかりんとうに仕上げました。焦がし醤油の風味とねぎの香りが良く合うかりんとうに仕上げました
                     </p>
                     <p class="product_ingredients">成分 : 米、糖、白豆沙、水飴、柚子陳皮</p>
@@ -381,22 +403,22 @@
                 <h1 id="product_big_title">商品列表</h1>
             </div>
             <div class="product_item">
+                <div class="product_heart"></div>
                 <div class="product_left">
                     <div class="product_img">
-                        <img src="../images/shopping_list//product_big.png" alt="">
-                        <img src="../images/shopping_list//product-img1.jpg" alt="">
-                        <img src="../images/shopping_list//sec2_item5_1.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
                     </div>
                     <div class="product_circle">
-                        <div></div>
-                        <div></div>
-                        <div></div>
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
                     </div>
                 </div>
                 <div class="product_right" data-id="100000">
-                    <div class="product_heart"></div>
                     <p class="product_right_title">期間限定商品444</p>
-                    <h3 class="product_right_name">ねぎかりんとう焦がし醬油風味</h3>
+                    <h3 class="product_right_name">ねぎりう焦がし醬油風味</h3>
                     <p class="product_main_content">焦がし醤油の風味とねぎの香りが良く合うかりんとうに仕上げました。焦がし醤油の風味とねぎの香りが良く合うかりんとうに仕上げました
                     </p>
                     <p class="product_ingredients">成分 : 米、糖、白豆沙、水飴、柚子陳皮</p>
@@ -417,22 +439,22 @@
                 </div>
             </div>
             <div class="product_item">
+                <div class="product_heart"></div>
                 <div class="product_left">
                     <div class="product_img">
-                        <img src="../images/shopping_list//product_big.png" alt="">
-                        <img src="../images/shopping_list//product-img1.jpg" alt="">
-                        <img src="../images/shopping_list//sec2_item5_1.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
                     </div>
                     <div class="product_circle">
-                        <div></div>
-                        <div></div>
-                        <div></div>
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
                     </div>
                 </div>
                 <div class="product_right" data-id="100000">
-                    <div class="product_heart"></div>
                     <p class="product_right_title">期間限定商品</p>
-                    <h3 class="product_right_name">ねぎかりんとう焦がし醬油風味</h3>
+                    <h3 class="product_right_name">ねぎりう焦がし醬油風味</h3>
                     <p class="product_main_content">焦がし醤油の風味とねぎの香りが良く合うかりんとうに仕上げました。焦がし醤油の風味とねぎの香りが良く合うかりんとうに仕上げました
                     </p>
                     <p class="product_ingredients">成分 : 米、糖、白豆沙、水飴、柚子陳皮</p>
@@ -453,22 +475,22 @@
                 </div>
             </div>
             <div class="product_item">
+                <div class="product_heart"></div>
                 <div class="product_left">
                     <div class="product_img">
-                        <img src="../images/shopping_list//product_big.png" alt="">
-                        <img src="../images/shopping_list//product-img1.jpg" alt="">
-                        <img src="../images/shopping_list//sec2_item5_1.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
                     </div>
                     <div class="product_circle">
-                        <div></div>
-                        <div></div>
-                        <div></div>
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
                     </div>
                 </div>
                 <div class="product_right" data-id="100000">
-                    <div class="product_heart"></div>
                     <p class="product_right_title">期間限定商品</p>
-                    <h3 class="product_right_name">ねぎかりんとう焦がし醬油風味</h3>
+                    <h3 class="product_right_name">ねぎりう焦がし醬油風味</h3>
                     <p class="product_main_content">焦がし醤油の風味とねぎの香りが良く合うかりんとうに仕上げました。焦がし醤油の風味とねぎの香りが良く合うかりんとうに仕上げました
                     </p>
                     <p class="product_ingredients">成分 : 米、糖、白豆沙、水飴、柚子陳皮</p>
@@ -495,22 +517,22 @@
                 <h1 id="product_big_title">商品列表</h1>
             </div>
             <div class="product_item">
+                <div class="product_heart"></div>
                 <div class="product_left">
                     <div class="product_img">
-                        <img src="../images/shopping_list//product_big.png" alt="">
-                        <img src="../images/shopping_list//product-img1.jpg" alt="">
-                        <img src="../images/shopping_list//sec2_item5_1.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
                     </div>
                     <div class="product_circle">
-                        <div></div>
-                        <div></div>
-                        <div></div>
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
                     </div>
                 </div>
                 <div class="product_right" data-id="100000">
-                    <div class="product_heart"></div>
                     <p class="product_right_title">期間限定商品555</p>
-                    <h3 class="product_right_name">ねぎかりんとう焦がし醬油風味</h3>
+                    <h3 class="product_right_name">ねぎりう焦がし醬油風味</h3>
                     <p class="product_main_content">焦がし醤油の風味とねぎの香りが良く合うかりんとうに仕上げました。焦がし醤油の風味とねぎの香りが良く合うかりんとうに仕上げました
                     </p>
                     <p class="product_ingredients">成分 : 米、糖、白豆沙、水飴、柚子陳皮</p>
@@ -531,22 +553,22 @@
                 </div>
             </div>
             <div class="product_item">
+                <div class="product_heart"></div>
                 <div class="product_left">
                     <div class="product_img">
-                        <img src="../images/shopping_list//product_big.png" alt="">
-                        <img src="../images/shopping_list//product-img1.jpg" alt="">
-                        <img src="../images/shopping_list//sec2_item5_1.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
                     </div>
                     <div class="product_circle">
-                        <div></div>
-                        <div></div>
-                        <div></div>
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
                     </div>
                 </div>
                 <div class="product_right" data-id="100000">
-                    <div class="product_heart"></div>
                     <p class="product_right_title">期間限定商品</p>
-                    <h3 class="product_right_name">ねぎかりんとう焦がし醬油風味</h3>
+                    <h3 class="product_right_name">ねぎりう焦がし醬油風味</h3>
                     <p class="product_main_content">焦がし醤油の風味とねぎの香りが良く合うかりんとうに仕上げました。焦がし醤油の風味とねぎの香りが良く合うかりんとうに仕上げました
                     </p>
                     <p class="product_ingredients">成分 : 米、糖、白豆沙、水飴、柚子陳皮</p>
@@ -567,22 +589,22 @@
                 </div>
             </div>
             <div class="product_item">
+                <div class="product_heart"></div>
                 <div class="product_left">
                     <div class="product_img">
-                        <img src="../images/shopping_list//product_big.png" alt="">
-                        <img src="../images/shopping_list//product-img1.jpg" alt="">
-                        <img src="../images/shopping_list//sec2_item5_1.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
                     </div>
                     <div class="product_circle">
-                        <div></div>
-                        <div></div>
-                        <div></div>
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
                     </div>
                 </div>
                 <div class="product_right" data-id="100000">
-                    <div class="product_heart"></div>
                     <p class="product_right_title">期間限定商品</p>
-                    <h3 class="product_right_name">ねぎかりんとう焦がし醬油風味</h3>
+                    <h3 class="product_right_name">ねぎりう焦がし醬油風味</h3>
                     <p class="product_main_content">焦がし醤油の風味とねぎの香りが良く合うかりんとうに仕上げました。焦がし醤油の風味とねぎの香りが良く合うかりんとうに仕上げました
                     </p>
                     <p class="product_ingredients">成分 : 米、糖、白豆沙、水飴、柚子陳皮</p>
@@ -609,22 +631,22 @@
                 <h1 id="product_big_title">商品列表</h1>
             </div>
             <div class="product_item">
+                <div class="product_heart"></div>
                 <div class="product_left">
                     <div class="product_img">
-                        <img src="../images/shopping_list//product_big.png" alt="">
-                        <img src="../images/shopping_list//product-img1.jpg" alt="">
-                        <img src="../images/shopping_list//sec2_item5_1.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
                     </div>
                     <div class="product_circle">
-                        <div></div>
-                        <div></div>
-                        <div></div>
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
                     </div>
                 </div>
                 <div class="product_right" data-id="100000">
-                    <div class="product_heart"></div>
                     <p class="product_right_title">期間限定商品666</p>
-                    <h3 class="product_right_name">ねぎかりんとう焦がし醬油風味</h3>
+                    <h3 class="product_right_name">ねぎりう焦がし醬油風味</h3>
                     <p class="product_main_content">焦がし醤油の風味とねぎの香りが良く合うかりんとうに仕上げました。焦がし醤油の風味とねぎの香りが良く合うかりんとうに仕上げました
                     </p>
                     <p class="product_ingredients">成分 : 米、糖、白豆沙、水飴、柚子陳皮</p>
@@ -645,22 +667,22 @@
                 </div>
             </div>
             <div class="product_item">
+                <div class="product_heart"></div>
                 <div class="product_left">
                     <div class="product_img">
-                        <img src="../images/shopping_list//product_big.png" alt="">
-                        <img src="../images/shopping_list//product-img1.jpg" alt="">
-                        <img src="../images/shopping_list//sec2_item5_1.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
                     </div>
                     <div class="product_circle">
-                        <div></div>
-                        <div></div>
-                        <div></div>
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
                     </div>
                 </div>
                 <div class="product_right" data-id="100000">
-                    <div class="product_heart"></div>
                     <p class="product_right_title">期間限定商品</p>
-                    <h3 class="product_right_name">ねぎかりんとう焦がし醬油風味</h3>
+                    <h3 class="product_right_name">ねぎりう焦がし醬油風味</h3>
                     <p class="product_main_content">焦がし醤油の風味とねぎの香りが良く合うかりんとうに仕上げました。焦がし醤油の風味とねぎの香りが良く合うかりんとうに仕上げました
                     </p>
                     <p class="product_ingredients">成分 : 米、糖、白豆沙、水飴、柚子陳皮</p>
@@ -681,22 +703,22 @@
                 </div>
             </div>
             <div class="product_item">
+                <div class="product_heart"></div>
                 <div class="product_left">
                     <div class="product_img">
-                        <img src="../images/shopping_list//product_big.png" alt="">
-                        <img src="../images/shopping_list//product-img1.jpg" alt="">
-                        <img src="../images/shopping_list//sec2_item5_1.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
                     </div>
                     <div class="product_circle">
-                        <div></div>
-                        <div></div>
-                        <div></div>
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
                     </div>
                 </div>
                 <div class="product_right" data-id="100000">
-                    <div class="product_heart"></div>
                     <p class="product_right_title">期間限定商品</p>
-                    <h3 class="product_right_name">ねぎかりんとう焦がし醬油風味</h3>
+                    <h3 class="product_right_name">ねぎりう焦がし醬油風味</h3>
                     <p class="product_main_content">焦がし醤油の風味とねぎの香りが良く合うかりんとうに仕上げました。焦がし醤油の風味とねぎの香りが良く合うかりんとうに仕上げました
                     </p>
                     <p class="product_ingredients">成分 : 米、糖、白豆沙、水飴、柚子陳皮</p>
@@ -723,22 +745,22 @@
                 <h1 id="product_big_title">商品列表</h1>
             </div>
             <div class="product_item">
+                <div class="product_heart"></div>
                 <div class="product_left">
                     <div class="product_img">
-                        <img src="../images/shopping_list//product_big.png" alt="">
-                        <img src="../images/shopping_list//product-img1.jpg" alt="">
-                        <img src="../images/shopping_list//sec2_item5_1.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
                     </div>
                     <div class="product_circle">
-                        <div></div>
-                        <div></div>
-                        <div></div>
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
                     </div>
                 </div>
                 <div class="product_right" data-id="100000">
-                    <div class="product_heart"></div>
                     <p class="product_right_title">期間限定商品777</p>
-                    <h3 class="product_right_name">ねぎかりんとう焦がし醬油風味</h3>
+                    <h3 class="product_right_name">ねぎりう焦がし醬油風味</h3>
                     <p class="product_main_content">焦がし醤油の風味とねぎの香りが良く合うかりんとうに仕上げました。焦がし醤油の風味とねぎの香りが良く合うかりんとうに仕上げました
                     </p>
                     <p class="product_ingredients">成分 : 米、糖、白豆沙、水飴、柚子陳皮</p>
@@ -759,22 +781,22 @@
                 </div>
             </div>
             <div class="product_item">
+                <div class="product_heart"></div>
                 <div class="product_left">
                     <div class="product_img">
-                        <img src="../images/shopping_list//product_big.png" alt="">
-                        <img src="../images/shopping_list//product-img1.jpg" alt="">
-                        <img src="../images/shopping_list//sec2_item5_1.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
                     </div>
                     <div class="product_circle">
-                        <div></div>
-                        <div></div>
-                        <div></div>
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
                     </div>
                 </div>
                 <div class="product_right" data-id="100000">
-                    <div class="product_heart"></div>
                     <p class="product_right_title">期間限定商品</p>
-                    <h3 class="product_right_name">ねぎかりんとう焦がし醬油風味</h3>
+                    <h3 class="product_right_name">ねぎりう焦がし醬油風味</h3>
                     <p class="product_main_content">焦がし醤油の風味とねぎの香りが良く合うかりんとうに仕上げました。焦がし醤油の風味とねぎの香りが良く合うかりんとうに仕上げました
                     </p>
                     <p class="product_ingredients">成分 : 米、糖、白豆沙、水飴、柚子陳皮</p>
@@ -795,22 +817,22 @@
                 </div>
             </div>
             <div class="product_item">
+                <div class="product_heart"></div>
                 <div class="product_left">
                     <div class="product_img">
-                        <img src="../images/shopping_list//product_big.png" alt="">
-                        <img src="../images/shopping_list//product-img1.jpg" alt="">
-                        <img src="../images/shopping_list//sec2_item5_1.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
                     </div>
                     <div class="product_circle">
-                        <div></div>
-                        <div></div>
-                        <div></div>
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
                     </div>
                 </div>
                 <div class="product_right" data-id="100000">
-                    <div class="product_heart"></div>
                     <p class="product_right_title">期間限定商品</p>
-                    <h3 class="product_right_name">ねぎかりんとう焦がし醬油風味</h3>
+                    <h3 class="product_right_name">ねぎりう焦がし醬油風味</h3>
                     <p class="product_main_content">焦がし醤油の風味とねぎの香りが良く合うかりんとうに仕上げました。焦がし醤油の風味とねぎの香りが良く合うかりんとうに仕上げました
                     </p>
                     <p class="product_ingredients">成分 : 米、糖、白豆沙、水飴、柚子陳皮</p>
@@ -873,7 +895,7 @@
     <!-- =============footer============== -->
     <div class="footer">
         <div class="footer-left">
-            <div class="footer-logo"><img src="./images/index/logo_footer.png" alt=""></div>
+            <div class="footer-logo"><img src="../images/index/logo_footer.png" alt=""></div>
             <p><a href="#">隱私政策</a></p>
             <p><a href="#">服務條款</a></p>
         </div>
