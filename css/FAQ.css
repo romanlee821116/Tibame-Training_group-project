@@ -6,8 +6,12 @@
   top: 0px;
   left: 0;
   padding-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   z-index: 900;
 }
 
@@ -23,8 +27,12 @@
 }
 
 .navbar .navbar-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   margin: 0 20px 0 0px;
 }
 
@@ -42,7 +50,8 @@
 }
 
 * {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   font-family: "微軟正黑體";
   color: #bb866a;
 }
@@ -85,6 +94,8 @@ img {
 /* ========== 問題類別按鈕 ========== */
 .FAQ_titleBtn {
   /* border-bottom: 1px solid #172852; */
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   position: relative;
 }
@@ -126,6 +137,7 @@ img {
   width: calc(100% / 3);
   bottom: 0;
   left: 0;
+  -webkit-transition: 0.2s all linear;
   transition: 0.2s all linear;
 }
 
@@ -136,6 +148,7 @@ img {
   width: calc(100% / 3);
   bottom: 0;
   left: calc(100% / 3);
+  -webkit-transition: 0.2s all linear;
   transition: 0.2s all linear;
 }
 
@@ -147,6 +160,7 @@ img {
   bottom: 0;
   left: calc(100% / 3 * 2);
   /* right: 0; */
+  -webkit-transition: 0.2s all linear;
   transition: 0.2s all linear;
 }
 
@@ -160,7 +174,9 @@ img {
   position: absolute;
   left: calc(100% / 6);
   bottom: 0;
-  transform: translateY(25%);
+  -webkit-transform: translateY(25%);
+          transform: translateY(25%);
+  -webkit-transition: 0.2s all linear;
   transition: 0.2s all linear;
 }
 
@@ -173,7 +189,9 @@ img {
   position: absolute;
   left: calc(100% / 2);
   bottom: 0;
-  transform: translateY(25%);
+  -webkit-transform: translateY(25%);
+          transform: translateY(25%);
+  -webkit-transition: 0.2s all linear;
   transition: 0.2s all linear;
 }
 
@@ -186,7 +204,9 @@ img {
   position: absolute;
   left: calc(100% / 6 * 5);
   bottom: 0;
-  transform: translateY(25%);
+  -webkit-transform: translateY(25%);
+          transform: translateY(25%);
+  -webkit-transition: 0.2s all linear;
   transition: 0.2s all linear;
 }
 
@@ -206,6 +226,8 @@ img {
 
 .FAQ_question {
   /* border: 1px solid green; */
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   padding: 15px 0;
   cursor: pointer;
@@ -234,9 +256,15 @@ img {
   margin: 0;
   font-weight: 700;
   font-size: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  flex-grow: 1;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
 }
 
 .FAQ_openAnsBtn {
@@ -244,7 +272,9 @@ img {
   width: 20px;
   height: 20px;
   position: relative;
-  align-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 .FAQ_minus {
@@ -265,12 +295,15 @@ img {
   position: absolute;
   top: 0;
   left: calc((18px - 5px) / 2);
+  -webkit-transition: 0.2s all linear;
   transition: 0.2s all linear;
 }
 
 /* 打開+變成- */
 .FAQ_spin {
-  transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  -webkit-transition: 0.2s all linear;
   transition: 0.2s all linear;
 }
 
@@ -281,6 +314,8 @@ img {
 .FAQ_answer {
   /* border: 1px solid green; */
   padding: 15px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   position: relative;
 }

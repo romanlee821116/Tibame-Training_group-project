@@ -6,8 +6,12 @@
   top: 0px;
   left: 0;
   padding-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   z-index: 900;
 }
 
@@ -23,8 +27,12 @@
 }
 
 .navbar .navbar-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   margin: 0 20px 0 0px;
 }
 
@@ -42,7 +50,8 @@
 }
 
 * {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   font-family: "微軟正黑體";
   color: #bb866a;
 }
@@ -67,8 +76,12 @@ img {
 
 /* ========== 訂單處理階段 ========== */
 .payment_stage {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin-bottom: 30px;
 }
 
@@ -124,6 +137,8 @@ img {
 .payment_orderData > div {
   width: 40px;
   height: 40px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
   border: solid 3px #f7c242;
   background-color: #f7c242;
@@ -165,6 +180,8 @@ img {
 }
 
 .payment_orderContent {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -179,8 +196,12 @@ img {
 }
 
 .payment_same {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-bottom: 20px;
 }
 
@@ -192,6 +213,8 @@ img {
 }
 
 .payment_same > div:last-child {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -201,6 +224,8 @@ img {
   font-size: 16px;
   font-weight: bold;
   margin-left: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -208,7 +233,9 @@ img {
   border: solid 2px #172852;
   background-color: #ffffff;
   border-radius: 5px;
-  align-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
   width: 20px;
   height: 20px;
   cursor: pointer;
@@ -219,6 +246,8 @@ img {
 }
 
 .payment_data {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin-top: 15px;
 }
@@ -228,8 +257,12 @@ img {
   font-size: 16px;
   font-weight: bold;
   margin-right: 68px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .payment_data > input {
@@ -243,6 +276,18 @@ img {
   font-size: 14px;
   font-weight: bold;
   color: #172852;
+}
+
+::-webkit-input-placeholder {
+  color: #cba89a;
+}
+
+:-ms-input-placeholder {
+  color: #cba89a;
+}
+
+::-ms-input-placeholder {
+  color: #cba89a;
 }
 
 ::placeholder {
@@ -270,6 +315,8 @@ img {
 }
 
 .payment_receiverData {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin-top: 15px;
 }
@@ -278,8 +325,12 @@ img {
   color: #172852;
   font-weight: bold;
   margin-right: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .payment_receiverData > input[type="text"] {
@@ -319,9 +370,13 @@ img {
   padding: 5px;
   width: 110px;
   font-size: 14px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   text-align: center;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   cursor: pointer;
 }
 
@@ -330,6 +385,8 @@ img {
 }
 
 .payment_shopData {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin-top: 15px;
 }
@@ -338,8 +395,12 @@ img {
   color: #172852;
   font-weight: bold;
   margin-right: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .payment_shopData > input[type="text"] {
@@ -356,9 +417,13 @@ img {
 }
 
 .payment_transport, .payment_payMoney {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin: 20px 0 10px;
-  align-items: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
 .payment_transport > div:first-child, .payment_payMoney > div:first-child {
@@ -366,19 +431,30 @@ img {
   font-size: 16px;
   font-weight: bold;
   margin-right: 32px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .payment_radioBorder {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   font-weight: bold;
 }
 
 .payment_radioBorder2 {
   font-weight: bold;
   color: #cba89a;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -429,11 +505,15 @@ input[type="radio"]:checked + label {
 }
 
 .payment_cardNumber, .payment_cardDate, .payment_cardCode {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin-bottom: 10px;
   font-size: 25px;
   color: #172852;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .payment_00 {
@@ -441,8 +521,12 @@ input[type="radio"]:checked + label {
   font-size: 16px;
   font-weight: bold;
   margin-right: 18px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .payment_cardNumber > input, .payment_cardCode > input {
@@ -485,13 +569,18 @@ input[type="radio"]:checked + label {
   font-size: 16px;
   font-weight: bold;
   margin-right: 1px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .payment_right {
   background-color: #ffffff;
-  box-shadow: 0 0 24px 0 rgba(25, 28, 54, 0.15);
+  -webkit-box-shadow: 0 0 24px 0 rgba(25, 28, 54, 0.15);
+          box-shadow: 0 0 24px 0 rgba(25, 28, 54, 0.15);
   width: 40%;
   height: 540px;
   margin-left: 30px;
@@ -516,6 +605,8 @@ input[type="radio"]:checked + label {
 
 .payment_item {
   border-bottom: 2px dashed #cba89a;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   padding: 10px 0;
 }
@@ -527,10 +618,19 @@ input[type="radio"]:checked + label {
 }
 
 .payment_itemData {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  flex-grow: 1;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
 }
 
 .payment_itemData > p {
@@ -548,8 +648,12 @@ input[type="radio"]:checked + label {
 }
 
 .payment_moneyDetail, .payment_discount {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   margin-bottom: 10px;
 }
 
@@ -574,8 +678,12 @@ input[type="radio"]:checked + label {
 .payment_totalPrice {
   border-top: 1.5px solid #cba89a;
   padding-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .payment_totalPrice > div:first-child {
@@ -591,14 +699,22 @@ input[type="radio"]:checked + label {
 }
 
 .payment_page {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
   padding-bottom: 5px;
   margin-top: 100px;
 }
 
 .payment_previous {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin-right: 100px;
   text-decoration: none;
@@ -608,6 +724,8 @@ input[type="radio"]:checked + label {
   width: 10px;
   height: 15px;
   margin-right: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin-top: 5px;
 }
@@ -621,14 +739,20 @@ input[type="radio"]:checked + label {
 }
 
 .payment_next {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   border-radius: 25px;
   background-color: #172852;
   width: 130px;
   height: 35px;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   text-decoration: none;
 }
 
@@ -642,6 +766,8 @@ input[type="radio"]:checked + label {
   width: 10px;
   height: 15px;
   margin-left: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin-top: 3px;
 }
