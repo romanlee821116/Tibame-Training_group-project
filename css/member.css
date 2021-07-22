@@ -1,58 +1,4 @@
 @charset "UTF-8";
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: bold inherit '微軟正黑體';
-  vertical-align: baseline;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  text-decoration: none;
-  font-weight: 900;
-}
-
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-  display: block;
-}
-
-body {
-  line-height: 1;
-}
-
-ol, ul {
-  list-style: none;
-}
-
-blockquote, q {
-  quotes: none;
-}
-
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: '';
-  content: none;
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
 .navbar {
   width: 100%;
   height: 100px;
@@ -414,15 +360,22 @@ body {
 /* 送出鈕 */
 .memberPart1 button {
   margin: 0 auto;
-  display: block;
-  width: 120px;
-  height: 30px;
-  padding: 0 10px 0 10px;
-  border-radius: 25px;
-  background-color: #172852;
-  color: #f0ebe9;
-  border: none;
   margin-top: 40px;
+  display: block;
+  padding: 8px 10px;
+  width: 120px;
+  border-radius: 25px;
+  background: #172852;
+  border: 3px solid #172852;
+  color: #fff;
+  text-align: center;
+  font-weight: 900;
+}
+
+.memberPart1 button:hover {
+  background-color: #2e447c;
+  color: #fff;
+  border: 3px solid #2e447c;
 }
 
 /* 修改密碼================================ */
@@ -450,15 +403,22 @@ body {
 /* 送出鈕 */
 .memberPart2 button {
   margin: 0 auto;
-  display: block;
-  width: 120px;
-  height: 30px;
-  padding: 0 10px 0 10px;
-  border-radius: 25px;
-  background-color: #172852;
-  color: #f0ebe9;
-  border: none;
   margin-top: 40px;
+  display: block;
+  padding: 8px 10px;
+  width: 120px;
+  border-radius: 25px;
+  background: #172852;
+  border: 3px solid #172852;
+  color: #fff;
+  text-align: center;
+  font-weight: 900;
+}
+
+.memberPart2 button:hover {
+  background-color: #2e447c;
+  color: #fff;
+  border: 3px solid #2e447c;
 }
 
 /* 訂單查詢================================== */
@@ -609,7 +569,7 @@ body {
 }
 
 .memberProgressAll div .memberProgressDot div:nth-child(2n) {
-  width: 30%;
+  width: 33%;
   height: 2px;
   background-color: #c4c4c4;
 }
@@ -698,42 +658,47 @@ body {
   margin: 0;
 }
 
-/* 第一行 */
-.memberOrderDetail tr:first-child {
+.memberOrderDetail .memberOrderD1 {
   background-color: #c4c4c4;
   color: #fff;
-  padding: 20px 0 20px 0;
+  padding: 5px 0 5px 10px;
 }
 
-.memberOrderDetail tr:first-child td {
-  padding: 5px 0 5px 0;
+.memberOrderDetail .memberOrderD1 span:nth-child(1) {
+  width: 260px;
+  min-width: 150px;
+  display: inline-block;
 }
 
-.memberOrderDetail tr:first-child td:first-child {
-  padding-left: 10px;
-}
-
-/* 第二行 */
-.memberOrderDetail tr td img {
-  max-width: 50px;
-  /* margin: 5px; */
-}
-
-.memberOrderDetail tr:nth-child(2) td:first-child {
-  width: 80px;
-  /* border: 1px solid red; */
-  padding-left: 10px;
-}
-
-.memberOrderDetail tr:nth-child(2) td:nth-child(2) {
-  width: 210px;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-}
-
-.memberOrderDetail tr:nth-child(2) td:nth-child(3) {
+.memberOrderDetail .memberOrderD1 span:nth-child(2) {
   width: 100px;
+  display: inline-block;
+}
+
+.memberOrderDetail .memberOrderD2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 5px 5px 5px 10px;
+}
+
+.memberOrderDetail .memberOrderD2 img {
+  max-width: 50px;
+}
+
+.memberOrderDetail .memberOrderD2 div:nth-child(2) {
+  padding-top: 13px;
+  padding-left: 10px;
+  padding-right: 145px;
+}
+
+.memberOrderDetail .memberOrderD2 div:nth-child(3) {
+  padding-top: 19px;
+  padding-right: 85px;
+}
+
+.memberOrderDetail .memberOrderD2 div:nth-child(4) {
+  padding-top: 19px;
 }
 
 /* 收件人詳細資訊============= */
@@ -780,19 +745,27 @@ body {
   color: #647bb5;
   font-size: 12px;
   text-align: center;
+  padding: 10px 0 10px 0;
 }
 
 .receiverDetail > button {
   margin: 0 auto;
   display: block;
+  padding: 8px 10px;
   width: 120px;
-  height: 30px;
-  padding: 0 10px 0 10px;
   border-radius: 25px;
-  background-color: #172852;
-  color: #f0ebe9;
-  border: none;
-  cursor: pointer;
+  background: #172852;
+  border: 3px solid #172852;
+  color: #fff;
+  text-align: center;
+  font-weight: 900;
+  margin-top: 5px;
+}
+
+.receiverDetail > button:hover {
+  background-color: #2e447c;
+  color: #fff;
+  border: 3px solid #2e447c;
 }
 
 /* 取消/退款查詢================================ */
@@ -881,13 +854,6 @@ body {
 }
 
 /* ================= R W D =================== */
-@media (max-width: 1199px) {
-  body .memberAll {
-    width: 80%;
-    margin: 0 auto;
-  }
-}
-
 @media (max-width: 767px) {
   body .memberAll {
     width: 75%;
@@ -968,6 +934,21 @@ body {
   }
   body .memberAll .memberProgressAll div .memberProgressDot {
     margin-left: 25px;
+  }
+  body .memberAll .memberOrderDetail .memberOrderD1 span:nth-child(1) {
+    width: 200px;
+    min-width: 150px;
+    display: inline-block;
+  }
+  body .memberAll .memberOrderDetail .memberOrderD1 span:nth-child(2) {
+    width: 60px;
+    display: inline-block;
+  }
+  body .memberAll .memberOrderDetail .memberOrderD2 div:nth-child(2) {
+    padding-right: 85px;
+  }
+  body .memberAll .memberOrderDetail .memberOrderD2 div:nth-child(3) {
+    padding-right: 45px;
   }
   body .memberAll .memberPart5 .memberLikePack {
     width: calc((100% - 25px)/2);

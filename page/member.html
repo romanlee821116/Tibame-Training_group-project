@@ -49,18 +49,18 @@
         </div>
         <!-- ==================會員資料=================== -->
         <div class='memberPart1'>
-            <label>姓名：<input class='memberLeft memberTop' type="text"></label><br>
+            <label>姓名：<input class='memberLeft memberTop' type="text" value='李安'></label><br>
             <div class='gender'>性別：
-                <input class='memberLeft' name='gender' type="radio" id="male" value='male'>
+                <input class='memberLeft' name='gender' type="radio" id="male" value='male' checked>
                 <label for="male">男性</label>
                 <input name='gender' type="radio" id="female" value='male'>
                 <label for="female">女性</label>
                 <input name='gender' type="radio" id="other" value='male'>
                 <label for="other">第三性</label>
             </div>
-            <label>信箱：<input class='memberLeft' type="email"></label><br>
-            <label>連絡電話：<input type="text"></label><br>
-            <label>地址：<input class='memberLeft' type="text"></label><br>
+            <label>信箱：<input class='memberLeft' type="email" value='karuhodou2020@gmail.com'></label><br>
+            <label>連絡電話：<input type="text" value='0912345678'></label><br>
+            <label>地址：<input class='memberLeft' type="text" value="台北市南京東路三段219號4-5F"></label><br>
             <button type="submit">儲存</button>
         </div>
 
@@ -127,39 +127,39 @@
                         </div>
                     </div>
                     <div class='memberOrderDetailAll'>
-                        <table class='memberOrderDetail'>
-                            <tr>
-                                <td colspan="2">商品名稱</td>
-                                <td>數量</td>
-                                <td>價格</td>
-                            </tr>
-                            <tr>
-                                <td rowspan="2"><img src="../images/member/cookie.jpg"></td>
-                                <td class='word-sp1'>南投銅鑼燒</td>
-                                <td rowspan="2">5件</td>
-                                <td rowspan="2">$70</td>
-                            </tr>
-                            <tr>
-                                <td class='word-sp2'>五入</td>
-                            </tr>
-                        </table>
-                        <table class='memberOrderDetail'>
-                            <tr>
-                                <td colspan="2">商品名稱</td>
-                                <td>數量</td>
-                                <td>價格</td>
-                            </tr>
-                            <tr>
-                                <td rowspan="2"><img src="../images/member/cookie.jpg"></td>
-                                <td class='word-sp1'>南投銅鑼燒</td>
-                                <td rowspan="2">5件</td>
-                                <td rowspan="2">$70</td>
-                            </tr>
-                            <tr>
-                                <td class='word-sp2'>五入</td>
-                            </tr>
-                        </table>
-                    </div> 
+                        <div class='memberOrderDetail'>
+                            <div class='memberOrderD1'>
+                                <span>商品名稱</span>
+                                <span>數量</span>
+                                <span>價格</span>
+                            </div>
+                            <div class='memberOrderD2'>
+                                <img src="../images/member/cookie.jpg">
+                                <div>
+                                    <p>南投銅鑼燒</p>
+                                    <p>五入</p>
+                                </div>
+                                <div>5件</div>
+                                <div>$350</div>
+                            </div>
+                        </div>
+                        <div class='memberOrderDetail'>
+                            <div class='memberOrderD1'>
+                                <span>商品名稱</span>
+                                <span>數量</span>
+                                <span>價格</span>
+                            </div>
+                            <div class='memberOrderD2'>
+                                <img src="../images/member/cookie.jpg">
+                                <div>
+                                    <p>南投銅鑼燒</p>
+                                    <p>五入</p>
+                                </div>
+                                <div>5件</div>
+                                <div>$350</div>
+                            </div>
+                        </div>
+                    </div>  
                     <!-- 收件人詳細資訊 -->
                     <receiver-detail></receiver-detail>
                     
@@ -211,38 +211,22 @@
                         </div>
                     </div>
                     <div class='memberOrderDetailAll'>
-                        <table class='memberOrderDetail'>
-                            <tr>
-                                <td colspan="2">商品名稱</td>
-                                <td>數量</td>
-                                <td>價格</td>
-                            </tr>
-                            <tr>
-                                <td rowspan="2"><img src="../images/member/cookie.jpg"></td>
-                                <td class='word-sp1'>南投銅鑼燒</td>
-                                <td rowspan="2">5件</td>
-                                <td rowspan="2">$70</td>
-                            </tr>
-                            <tr>
-                                <td class='word-sp2'>五入</td>
-                            </tr>
-                        </table>
-                        <table class='memberOrderDetail'>
-                            <tr>
-                                <td colspan="2">商品名稱</td>
-                                <td>數量</td>
-                                <td>價格</td>
-                            </tr>
-                            <tr>
-                                <td rowspan="2"><img src="../images/member/cookie.jpg"></td>
-                                <td class='word-sp1'>南投銅鑼燒</td>
-                                <td rowspan="2">5件</td>
-                                <td rowspan="2">$70</td>
-                            </tr>
-                            <tr>
-                                <td class='word-sp2'>五入</td>
-                            </tr>
-                        </table>
+                        <div class='memberOrderDetail'>
+                            <div class='memberOrderD1'>
+                                <span>商品名稱</span>
+                                <span>數量</span>
+                                <span>價格</span>
+                            </div>
+                            <div class='memberOrderD2'>
+                                <img src="../images/member/cookie.jpg">
+                                <div>
+                                    <p>南投銅鑼燒</p>
+                                    <p>五入</p>
+                                </div>
+                                <div>5件</div>
+                                <div>$350</div>
+                            </div>
+                        </div>
                     </div>  
                     <!-- 收件人詳細資訊 -->
                     <receiver-detail></receiver-detail>
@@ -296,38 +280,38 @@
                         </div>
                     </div>
                     <div class='memberOrderDetailAll'>
-                        <table class='memberOrderDetail'>
-                            <tr>
-                                <td colspan="2">商品名稱</td>
-                                <td>數量</td>
-                                <td>價格</td>
-                            </tr>
-                            <tr>
-                                <td rowspan="2"><img src="../images/member/cookie.jpg"></td>
-                                <td class='word-sp1'>南投銅鑼燒</td>
-                                <td rowspan="2">5件</td>
-                                <td rowspan="2">$70</td>
-                            </tr>
-                            <tr>
-                                <td class='word-sp2'>五入</td>
-                            </tr>
-                        </table>
-                        <table class='memberOrderDetail'>
-                            <tr>
-                                <td colspan="2">商品名稱</td>
-                                <td>數量</td>
-                                <td>價格</td>
-                            </tr>
-                            <tr>
-                                <td rowspan="2"><img src="../images/member/cookie.jpg"></td>
-                                <td class='word-sp1'>南投銅鑼燒</td>
-                                <td rowspan="2">5件</td>
-                                <td rowspan="2">$70</td>
-                            </tr>
-                            <tr>
-                                <td class='word-sp2'>五入</td>
-                            </tr>
-                        </table>
+                        <div class='memberOrderDetail'>
+                            <div class='memberOrderD1'>
+                                <span>商品名稱</span>
+                                <span>數量</span>
+                                <span>價格</span>
+                            </div>
+                            <div class='memberOrderD2'>
+                                <img src="../images/member/cookie.jpg">
+                                <div>
+                                    <p>南投銅鑼燒</p>
+                                    <p>五入</p>
+                                </div>
+                                <div>5件</div>
+                                <div>$350</div>
+                            </div>
+                        </div>
+                        <div class='memberOrderDetail'>
+                            <div class='memberOrderD1'>
+                                <span>商品名稱</span>
+                                <span>數量</span>
+                                <span>價格</span>
+                            </div>
+                            <div class='memberOrderD2'>
+                                <img src="../images/member/cookie.jpg">
+                                <div>
+                                    <p>南投銅鑼燒</p>
+                                    <p>五入</p>
+                                </div>
+                                <div>5件</div>
+                                <div>$350</div>
+                            </div>
+                        </div>
                     </div>  
                     <!-- 收件人詳細資訊 -->
                     <receiver-detail></receiver-detail>
@@ -390,38 +374,38 @@
                         </div>
                     </div>
                     <div class='memberOrderDetailAll'>
-                        <table class='memberOrderDetail'>
-                            <tr>
-                                <td colspan="2">商品名稱</td>
-                                <td>數量</td>
-                                <td>價格</td>
-                            </tr>
-                            <tr>
-                                <td rowspan="2"><img src="../images/member/cookie.jpg"></td>
-                                <td class='word-sp1'>南投銅鑼燒</td>
-                                <td rowspan="2">5件</td>
-                                <td rowspan="2">$70</td>
-                            </tr>
-                            <tr>
-                                <td class='word-sp2'>五入</td>
-                            </tr>
-                        </table>
-                        <table class='memberOrderDetail'>
-                            <tr>
-                                <td colspan="2">商品名稱</td>
-                                <td>數量</td>
-                                <td>價格</td>
-                            </tr>
-                            <tr>
-                                <td rowspan="2"><img src="../images/member/cookie.jpg"></td>
-                                <td class='word-sp1'>南投銅鑼燒</td>
-                                <td rowspan="2">5件</td>
-                                <td rowspan="2">$70</td>
-                            </tr>
-                            <tr>
-                                <td class='word-sp2'>五入</td>
-                            </tr>
-                        </table>
+                        <div class='memberOrderDetail'>
+                            <div class='memberOrderD1'>
+                                <span>商品名稱</span>
+                                <span>數量</span>
+                                <span>價格</span>
+                            </div>
+                            <div class='memberOrderD2'>
+                                <img src="../images/member/cookie.jpg">
+                                <div>
+                                    <p>南投銅鑼燒</p>
+                                    <p>五入</p>
+                                </div>
+                                <div>5件</div>
+                                <div>$350</div>
+                            </div>
+                        </div>
+                        <div class='memberOrderDetail'>
+                            <div class='memberOrderD1'>
+                                <span>商品名稱</span>
+                                <span>數量</span>
+                                <span>價格</span>
+                            </div>
+                            <div class='memberOrderD2'>
+                                <img src="../images/member/cookie.jpg">
+                                <div>
+                                    <p>南投銅鑼燒</p>
+                                    <p>五入</p>
+                                </div>
+                                <div>5件</div>
+                                <div>$350</div>
+                            </div>
+                        </div>
                     </div> 
                     <!-- 收件人詳細資訊 -->
                     <receiver-detail></receiver-detail>
