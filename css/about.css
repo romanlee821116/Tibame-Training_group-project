@@ -139,11 +139,11 @@ body::-webkit-scrollbar {
 }
 
 #about_scene1 .about_people2 {
-  bottom: 5%;
+  bottom: 8%;
   right: 30vw;
   height: 25%;
   z-index: 8;
-  animation: bike 15s linear infinite;
+  animation: bike 10s linear infinite;
 }
 
 #about_scene1 .about_people2::before {
@@ -157,7 +157,7 @@ body::-webkit-scrollbar {
   background: url("../../images/about/character02_2.png");
   background-size: contain;
   background-repeat: no-repeat;
-  animation: wheel 3s linear infinite;
+  animation: wheel 2s linear infinite;
 }
 
 #about_scene1 .about_people2::after {
@@ -171,7 +171,7 @@ body::-webkit-scrollbar {
   background: url("../../images/about/character02_3.png");
   background-size: contain;
   background-repeat: no-repeat;
-  animation: wheel 3s linear infinite;
+  animation: wheel 2s linear infinite;
 }
 
 #about_scene1 .about_people2 .about_people2_leg {
@@ -457,11 +457,24 @@ body::-webkit-scrollbar {
   position: absolute;
   width: 15vw;
   height: auto;
-  min-width: 170px;
-  min-height: 170px;
   top: 56vh;
   left: 50%;
   transform: translate(-45%, -60%);
+}
+
+@media (max-width: 768px) {
+  #about_scene1 .about_street_end .about_street_endLogo {
+    min-width: 250px;
+    min-height: 250px;
+    transform: translate(-45%, -100%);
+  }
+}
+
+@media (max-width: 575px) {
+  #about_scene1 .about_street_end .about_street_endLogo {
+    min-width: 200px;
+    min-height: 200px;
+  }
 }
 
 #about_scene1 .about_street_end .about_cloud {
@@ -607,12 +620,13 @@ body::-webkit-scrollbar {
   width: 100%;
   height: 100%;
   position: absolute;
-  background: url("../../images/about/aboutUs_bgA02.png");
-  background-position: top;
-  background-size: cover;
-  background-repeat: no-repeat;
   top: 0;
   left: 0;
+}
+
+.about_taiwan .about_scene2Bg {
+  width: 100%;
+  height: 100%;
 }
 
 .about_taiwan .about_island {
@@ -622,6 +636,23 @@ body::-webkit-scrollbar {
   position: absolute;
   top: 10%;
   left: 5%;
+}
+
+@media (max-width: 768px) {
+  .about_taiwan .about_island {
+    top: 7%;
+    width: 100%;
+    left: -22%;
+  }
+}
+
+@media (max-width: 575px) {
+  .about_taiwan .about_island {
+    width: 150%;
+    left: -54%;
+    height: 75%;
+    top: 15%;
+  }
 }
 
 .about_taiwan .about_spot {
@@ -639,6 +670,13 @@ body::-webkit-scrollbar {
   height: auto;
 }
 
+@media (max-width: 575px) {
+  .about_taiwan .about_spot {
+    min-width: 100px;
+    min-height: 100px;
+  }
+}
+
 .about_taiwan .about_spotDeco {
   transform: scaleY(0.7);
   opacity: 0;
@@ -652,24 +690,44 @@ body::-webkit-scrollbar {
   top: 7vh;
 }
 
+@media (max-width: 575px) {
+  .about_taiwanSpot1 {
+    top: 12vh;
+  }
+}
+
 .about_taiwanSpot2 {
   left: 35vw;
   top: 30vh;
 }
 
+@media (max-width: 575px) {
+  .about_taiwanSpot2 {
+    left: 24vw;
+    top: 34vh;
+  }
+}
+
 .about_taiwanSpot3 {
-  left: 40vw;
-  top: 70vh;
+  left: 35vw;
+  top: 75vh;
 }
 
 .about_taiwanSpot4 {
-  left: 55vw;
-  top: 40vh;
+  left: 50vw;
+  top: 60vh;
+}
+
+@media (max-width: 575px) {
+  .about_taiwanSpot4 {
+    left: 50vw;
+    top: 55vh;
+  }
 }
 
 .about_spotDeco1 {
-  left: 51vw;
-  top: 61vh;
+  left: 52vw;
+  top: 48vh;
   z-index: 2;
   animation: flying 8s linear infinite;
 }
@@ -678,9 +736,16 @@ body::-webkit-scrollbar {
   height: 120%;
 }
 
+@media (max-width: 575px) {
+  .about_spotDeco1 {
+    left: 65vw;
+    top: 45vh;
+  }
+}
+
 .about_spotDeco2 {
   left: 50vw;
-  top: 57vh;
+  top: 47vh;
   animation: flying 8s .5s linear infinite;
 }
 
@@ -688,14 +753,27 @@ body::-webkit-scrollbar {
   height: 100%;
 }
 
+@media (max-width: 575px) {
+  .about_spotDeco2 {
+    left: 55vw;
+  }
+}
+
 .about_spotDeco3 {
   left: 48vw;
-  top: 60vh;
+  top: 50vh;
   animation: flying 10s .9s linear infinite;
 }
 
 .about_spotDeco3 img {
   height: 100%;
+}
+
+@media (max-width: 575px) {
+  .about_spotDeco3 {
+    left: 60vw;
+    top: 43vh;
+  }
 }
 
 .about_spotDeco4 {
@@ -707,6 +785,15 @@ body::-webkit-scrollbar {
   height: 110%;
 }
 
+@media (max-width: 575px) {
+  .about_spotDeco4 {
+    left: 85vw;
+  }
+  .about_spotDeco4 img {
+    height: 90%;
+  }
+}
+
 .about_spotDeco5 {
   left: 65vw;
   top: 72vh;
@@ -714,6 +801,16 @@ body::-webkit-scrollbar {
 
 .about_spotDeco5 img {
   height: 100%;
+}
+
+@media (max-width: 575px) {
+  .about_spotDeco5 {
+    left: 75vw;
+    top: 75vh;
+  }
+  .about_spotDeco5 img {
+    height: 75%;
+  }
 }
 
 .about_spotDeco6 {
@@ -726,6 +823,18 @@ body::-webkit-scrollbar {
   height: 110%;
 }
 
+@media (max-width: 768px) {
+  .about_spotDeco6 {
+    left: 68vw;
+  }
+}
+
+@media (max-width: 575px) {
+  .about_spotDeco6 {
+    left: 85vw;
+  }
+}
+
 .about_spotDeco7 {
   left: 57vw;
   top: 15vh;
@@ -734,6 +843,18 @@ body::-webkit-scrollbar {
 
 .about_spotDeco7 img {
   height: 100%;
+}
+
+@media (max-width: 768px) {
+  .about_spotDeco7 {
+    left: 63vw;
+  }
+}
+
+@media (max-width: 575px) {
+  .about_spotDeco7 {
+    left: 76vw;
+  }
 }
 
 .about_spotDeco8 {
@@ -746,6 +867,18 @@ body::-webkit-scrollbar {
   height: 100%;
 }
 
+@media (max-width: 768px) {
+  .about_spotDeco8 {
+    left: 64vw;
+  }
+}
+
+@media (max-width: 575px) {
+  .about_spotDeco8 {
+    left: 74vw;
+  }
+}
+
 .about_spotDeco9 {
   left: 18vw;
   top: 69vh;
@@ -753,6 +886,26 @@ body::-webkit-scrollbar {
 
 .about_spotDeco9 img {
   height: 180%;
+}
+
+@media (max-width: 768px) {
+  .about_spotDeco9 {
+    left: 6vw;
+    top: 80vh;
+  }
+  .about_spotDeco9 img {
+    height: 150%;
+  }
+}
+
+@media (max-width: 575px) {
+  .about_spotDeco9 {
+    left: 5vw;
+    top: 85vh;
+  }
+  .about_spotDeco9 img {
+    height: 110%;
+  }
 }
 
 @keyframes flying {
@@ -791,6 +944,13 @@ body::-webkit-scrollbar {
   top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
+  z-index: 5;
+}
+
+@media (max-width: 575px) {
+  .about_taiwan_end .about_taiwan_endLogo {
+    top: 37vh;
+  }
 }
 
 .about_taiwan_end h2 {
@@ -799,6 +959,12 @@ body::-webkit-scrollbar {
   text-align: center;
   position: relative;
   top: 25%;
+}
+
+@media (max-width: 575px) {
+  .about_taiwan_end h2 {
+    top: 30vh;
+  }
 }
 
 .about_taiwan_end .about_endBtn {
@@ -841,6 +1007,12 @@ body::-webkit-scrollbar {
   animation: cloud 6s linear infinite;
 }
 
+@media (max-width: 575px) {
+  .about_taiwan_end .about_cloud1 {
+    width: 65vw;
+  }
+}
+
 .about_taiwan_end .about_cloud2 {
   width: 45vw;
   left: -5vw;
@@ -858,7 +1030,7 @@ body::-webkit-scrollbar {
 
 @media (max-width: 575px) {
   .about_taiwan_end .about_cloud3 {
-    max-height: 80px;
+    height: 20vh;
   }
 }
 
@@ -899,7 +1071,7 @@ body::-webkit-scrollbar {
   width: 25vw;
   right: -10vw;
   top: 25vh;
-  animation: cloud 6s 1s linear infinite reverse;
+  animation: cloud 8s 1s linear infinite reverse;
 }
 
 .about_place1, .about_place2, .about_place3, .about_place4 {
@@ -907,9 +1079,17 @@ body::-webkit-scrollbar {
   top: 50%;
   width: 60%;
   max-width: 800px;
-  transform: translateY(-50%);
+  transform: translate(0, -50%);
   padding: 40px 50px;
   display: none;
+}
+
+@media (max-width: 575px) {
+  .about_place1, .about_place2, .about_place3, .about_place4 {
+    width: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
 
 .about_place1 h1, .about_place2 h1, .about_place3 h1, .about_place4 h1 {
@@ -962,6 +1142,12 @@ body::-webkit-scrollbar {
   left: 35%;
 }
 
+@media (max-width: 575px) {
+  .about_place1 {
+    left: 50%;
+  }
+}
+
 .about_place2 {
   right: 10%;
 }
@@ -972,6 +1158,12 @@ body::-webkit-scrollbar {
 
 .about_place4 {
   left: 25%;
+}
+
+@media (max-width: 575px) {
+  .about_place4 {
+    left: 50%;
+  }
 }
 
 .about_farmerDetail_bg {
@@ -994,8 +1186,23 @@ body::-webkit-scrollbar {
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 20px;
-  padding: 50px;
+  padding: 40px;
   display: flex;
+}
+
+@media (max-width: 768px) {
+  .about_farmerDetail_bg .about_farmerDetail_box {
+    width: 80%;
+  }
+}
+
+@media (max-width: 565px) {
+  .about_farmerDetail_bg .about_farmerDetail_box {
+    width: 90%;
+    height: 90%;
+    display: block;
+    padding: 20px;
+  }
 }
 
 .about_farmerDetail_bg .about_farmerDetail_box .about_farmerDetail_farmer {
@@ -1011,6 +1218,18 @@ body::-webkit-scrollbar {
   margin-top: 10px;
   font-size: 16px;
   color: #172852;
+}
+
+@media (max-width: 575px) {
+  .about_farmerDetail_bg .about_farmerDetail_box .about_farmerDetail_farmer {
+    width: 63%;
+    margin: 0 auto 20px auto;
+  }
+  .about_farmerDetail_bg .about_farmerDetail_box .about_farmerDetail_farmer p {
+    font-size: 14px;
+    margin-top: 5px;
+    text-align: center;
+  }
 }
 
 .about_farmerDetail_bg .about_farmerDetail_box .about_farmerDetail_title {
@@ -1039,18 +1258,34 @@ body::-webkit-scrollbar {
   font-weight: 900;
 }
 
+.about_farmerDetail_bg .about_farmerDetail_box .about_farmerDetail_title .about_farmerDetail_text {
+  color: #172852;
+  padding-top: 20px;
+  font-size: 16px;
+  line-height: 30px;
+}
+
+@media (max-width: 565px) {
+  .about_farmerDetail_bg .about_farmerDetail_box .about_farmerDetail_title {
+    width: 100%;
+    padding-left: 0px;
+    line-height: 25px;
+  }
+  .about_farmerDetail_bg .about_farmerDetail_box .about_farmerDetail_title h2 {
+    font-size: 22px;
+  }
+  .about_farmerDetail_bg .about_farmerDetail_box .about_farmerDetail_title .about_farmerDetail_text {
+    padding-top: 10px;
+    font-size: 16px;
+    line-height: 25px;
+  }
+}
+
 .about_farmerDetail_bg .about_farmerDetail_box i.fa-times {
   font-size: 24px;
   position: absolute;
   top: 20px;
   right: 30px;
   cursor: pointer;
-}
-
-.about_farmerDetail_bg .about_farmerDetail_box .about_farmerDetail_text {
-  color: #172852;
-  padding-top: 20px;
-  font-size: 16px;
-  line-height: 30px;
 }
 /*# sourceMappingURL=about.css.map */

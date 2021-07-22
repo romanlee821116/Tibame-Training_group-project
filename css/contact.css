@@ -41,6 +41,119 @@
   font-size: 28px;
 }
 
+.navbar .ham_container {
+  display: inline-block;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  z-index: 10;
+}
+
+.navbar .ham_container .ham_bar {
+  width: 30px;
+  height: 4px;
+  background-color: #bb866a;
+  border-radius: 10px;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.navbar .ham_change .ham_bar1 {
+  background-color: white;
+  transform: rotate(-45deg) translate(-6px, 5px);
+}
+
+.navbar .ham_change .ham_bar2 {
+  opacity: 0;
+}
+
+.navbar .ham_change .ham_bar3 {
+  background-color: white;
+  transform: rotate(45deg) translate(-8px, -8px);
+}
+
+.navbar .ham_overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 0;
+  top: 0;
+  right: 0;
+  background-color: #b48164;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+.navbar .ham_overlay .ham_overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin: 10px auto;
+}
+
+.navbar .ham_overlay .ham_jelly {
+  width: 300vw;
+  height: 290vw;
+  position: absolute;
+  top: -302vw;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 45%;
+  background-color: #cba89a;
+  animation: rotate 15s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: translate(-50%, 0) rotateZ(0deg);
+  }
+  50% {
+    transform: translate(-50%, -2%) rotateZ(180deg);
+  }
+  100% {
+    transform: translate(-50%, 0%) rotateZ(360deg);
+  }
+}
+
+.navbar .ham_overlay .ham_select {
+  margin: 0 auto;
+  text-align: left;
+  width: 200px;
+}
+
+.navbar .ham_overlay a {
+  padding: 10px;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  display: block;
+  letter-spacing: 2px;
+  opacity: 0;
+  transition: all .5s;
+}
+
+.navbar .ham_overlay a:hover {
+  color: #fad689;
+}
+
+.navbar .ham_overlay a:hover:before {
+  background-color: #fad689;
+}
+
+.navbar .ham_overlay a::before {
+  content: "\A";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 20px;
+  background-color: transparent;
+  transition: all .3s;
+}
+
 * {
   box-sizing: border-box;
   font-family: "微軟正黑體";

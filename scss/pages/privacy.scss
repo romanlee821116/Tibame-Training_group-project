@@ -1,0 +1,32 @@
+@import '../mixin/mixin';
+@import '../base/reset.scss';
+@import '../base/color.scss';
+*{
+    list-style: disc;
+    font-family: '微軟正黑體';
+}
+h1, h2, p ,ul, li{
+    color: $darkBlue;
+}
+.navbar{
+    @include navbar();
+}
+.privacy_title, .privacy_content{
+    width: 80%;
+    margin: 50px auto;
+    h1{
+        text-align: center;
+        font-size: 22px;
+        margin: 10px 0 50px 0;
+    }
+}
+section{
+    margin: 50px 0;
+    ul{
+        margin: 10px 0 0 20px;
+    }
+}
+
+.footer{
+    @include footer();
+}
