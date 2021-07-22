@@ -1,8 +1,6 @@
 new Vue ({
-  el: "#payment_app",
+  el: "#OC_app",
   data: {
-    applyData: false,
-    // 單項商品
     itemList:[
       {
         id: 'item_1',
@@ -49,18 +47,12 @@ new Vue ({
     total_item: 0,
     shipping: 0,
     total_price: 0,
-    cardNumber1: "",
-    cardNumber2: "",
-    cardNumber3: "",
-    cardNumber4: "",
-    cardYear: "",
-    cardDate: "",
-    cardCertification: "",
+    terms: false,
   },
   methods: {
     choose(){
       // checkbox
-      this.applyData=!this.applyData;
+      this.terms=!this.terms;
     },
   },
   computed: {

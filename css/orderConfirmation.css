@@ -148,7 +148,7 @@
 
 body {
   margin: 0;
-  background-image: url("../../images/payment/bg.png");
+  background-image: url("../../images/orderConfirmation/bg.png");
   background-size: cover;
   background-attachment: fixed;
 }
@@ -157,50 +157,29 @@ img {
   width: 100%;
 }
 
-.payment_container {
+.OC_container {
   width: 80%;
   max-width: 1200px;
   margin: auto;
 }
 
 /* ========== 訂單處理階段 ========== */
-.payment_stage {
+.OC_stage {
   display: flex;
   justify-content: center;
   margin-bottom: 30px;
 }
 
-.payment_step {
+.OC_step {
   text-align: center;
   font-size: 0;
 }
 
-.payment_confirm > div {
-  width: 40px;
-  height: 40px;
-  font-size: 20px;
-  font-weight: bold;
-  display: inline-block;
-  color: #a3a3a3;
-  border: solid 3px #a3a3a3;
-  background-color: #ffffff;
-  border-radius: 50%;
-  line-height: 35px;
-  position: relative;
-}
-
-.payment_confirm > p {
-  margin: 5px 0 0;
-  font-size: 18px;
-  font-weight: bold;
-  color: #a3a3a3;
-}
-
-.payment_payment {
+.OC_payment {
   margin: 0 100px;
 }
 
-.payment_payment > div:first-child {
+.OC_confirm > div:first-child {
   width: 40px;
   height: 40px;
   font-size: 20px;
@@ -211,16 +190,17 @@ img {
   background-color: #ffffff;
   border-radius: 50%;
   line-height: 35px;
+  position: relative;
 }
 
-.payment_payment > p {
+.OC_confirm > p {
   margin: 5px 0 0;
   font-size: 18px;
   font-weight: bold;
   color: #f7c242;
 }
 
-.payment_orderData > div {
+.OC_orderData > div, .OC_payment > div {
   width: 40px;
   height: 40px;
   display: inline-flex;
@@ -229,23 +209,23 @@ img {
   border-radius: 50%;
 }
 
-.payment_check {
+.OC_check {
   width: 20px;
   margin: auto;
 }
 
-.payment_orderData > p {
+.OC_orderData > p, .OC_payment > p {
   margin: 5px 0 0;
   font-size: 18px;
   font-weight: bold;
   color: #f7c242;
 }
 
-.payment_orderData > div:first-child, .payment_payment > div:first-child {
+.OC_orderData > div:first-child, .OC_payment > div:first-child {
   position: relative;
 }
 
-.payment_line1 {
+.OC_line1 {
   background-color: #f7c242;
   width: 135px;
   height: 2px;
@@ -254,75 +234,42 @@ img {
   right: -138px;
 }
 
-.payment_line2 {
-  background-color: #a3a3a3;
+.OC_line2 {
+  background-color: #f7c242;
   width: 135px;
   height: 2px;
   position: absolute;
   top: 18px;
-  right: -138px;
+  right: -137px;
 }
 
-.payment_orderContent {
+.OC_orderContent {
   display: flex;
 }
 
-.payment_left {
+.OC_left {
   width: 60%;
 }
 
-.payment_title {
+.OC_title {
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 30px;
 }
 
-.payment_same {
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.payment_same > div:first-child {
+.OC_purchaser {
   color: #172852;
   font-size: 18px;
   font-weight: bold;
   margin-right: 30px;
 }
 
-.payment_same > div:last-child {
-  display: flex;
-}
-
-.payment_same > div:last-child > p {
-  margin: 0;
-  color: #172852;
-  font-size: 16px;
-  font-weight: bold;
-  margin-left: 10px;
-  display: flex;
-}
-
-.payment_itemCB {
-  border: solid 2px #172852;
-  background-color: #ffffff;
-  border-radius: 5px;
-  align-self: center;
-  width: 20px;
-  height: 20px;
-  cursor: pointer;
-}
-
-.payment_choose {
-  background-color: #172852;
-}
-
-.payment_data {
+.OC_data {
   display: flex;
   margin-top: 15px;
 }
 
-.payment_data > div {
+.OC_data > div {
   color: #172852;
   font-size: 16px;
   font-weight: bold;
@@ -331,7 +278,7 @@ img {
   align-items: center;
 }
 
-.payment_data > input {
+.OC_data > input {
   border: none;
   outline: none;
   border-radius: 5px;
@@ -344,189 +291,31 @@ img {
   color: #172852;
 }
 
-::placeholder {
-  color: #cba89a;
-}
-
-.payment_data > input:focus {
-  border: 2px solid #172852;
-}
-
-.payment_receiver {
-  border: solid 2px #d6ceca;
-  background-color: #ffffff;
-  border-radius: 5px;
-  padding: 15px;
-  width: 400px;
-  margin-bottom: 20px;
-  display: none;
-}
-
-.payment_receiver > p {
-  margin: 0;
-  color: #172852;
-  font-weight: bold;
-}
-
-.payment_receiverData {
-  display: flex;
-  margin-top: 15px;
-}
-
-.payment_receiverData > div {
-  color: #172852;
-  font-weight: bold;
-  margin-right: 10px;
-  display: flex;
-  align-items: center;
-}
-
-.payment_receiverData > input[type="text"] {
-  border: none;
-  outline: none;
-  border-radius: 5px;
-  background-color: #f0ebe9;
-  width: 305px;
-  height: 35px;
-  padding: 15px;
-  font-size: 14px;
-  font-weight: bold;
-  color: #172852;
-}
-
-.payment_shop {
-  border: solid 2px #d6ceca;
-  background-color: #ffffff;
-  border-radius: 5px;
-  padding: 15px;
-  width: 400px;
-  margin-bottom: 20px;
-  display: none;
-}
-
-.payment_shop > p {
-  margin: 0;
-  color: #172852;
-  font-weight: bold;
-}
-
-.payment_shop > div:nth-child(2) {
-  background-color: #bb866a;
-  border-radius: 15px;
-  color: #ffffff;
-  margin-top: 15px;
-  padding: 5px;
-  width: 110px;
-  font-size: 14px;
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  cursor: pointer;
-}
-
-.payment_shopMapData {
-  display: none;
-}
-
-.payment_shopData {
-  display: flex;
-  margin-top: 15px;
-}
-
-.payment_shopData > div {
-  color: #172852;
-  font-weight: bold;
-  margin-right: 10px;
-  display: flex;
-  align-items: center;
-}
-
-.payment_shopData > input[type="text"] {
-  border: none;
-  outline: none;
-  border-radius: 5px;
-  background-color: #f0ebe9;
-  width: 276px;
-  height: 35px;
-  padding: 15px;
-  font-size: 14px;
-  font-weight: bold;
-  color: #172852;
-}
-
-.payment_transport, .payment_payMoney {
+.OC_transport, .OC_payMoney {
   display: flex;
   margin: 20px 0 10px;
-  align-items: flex-start;
 }
 
-.payment_transport > div:first-child, .payment_payMoney > div:first-child {
+.OC_transport > div:first-child, .OC_payMoney > div:first-child {
   color: #172852;
   font-size: 16px;
   font-weight: bold;
-  margin-right: 32px;
+  margin-right: 35px;
   display: flex;
   align-items: center;
 }
 
-.payment_radioBorder {
-  display: flex;
-  flex-direction: column;
-  font-weight: bold;
-}
-
-.payment_radioBorder2 {
-  font-weight: bold;
-  color: #cba89a;
-  display: flex;
-}
-
-.payment_radio label {
-  color: #cba89a;
-  cursor: pointer;
-}
-
-.payment_radio4 > label {
-  margin-right: 40px;
-}
-
-input[type="radio"] {
-  opacity: 0;
-  position: relative;
-  z-index: 1;
-  cursor: pointer;
-}
-
-input[type="radio"]:checked + label {
+.OC_transport > div:last-child, .OC_payMoney > div:last-child {
   color: #172852;
+  font-size: 16px;
+  font-weight: bold;
 }
 
-/* ========== 假的按鈕顏色 ========== */
-.payment_fake1, .payment_fake2, .payment_fake3, .payment_fake4, .payment_fake5 {
-  border: 1.5px solid #bb866a;
-  border-radius: 50%;
-  width: 13px;
-  height: 13px;
-  position: relative;
-  top: -17px;
-  left: 4.5px;
+.OC_credit {
+  margin-top: 20px;
 }
 
-/* 中間點點顏色 */
-.payment_fakeClick1, .payment_fakeClick2, .payment_fakeClick3, .payment_fakeClick4, .payment_fakeClick5 {
-  background-color: #172852;
-  border-radius: 50%;
-  width: 7px;
-  height: 7px;
-  margin: 1.5px auto;
-  display: none;
-}
-
-.payment_credit {
-  display: none;
-}
-
-.payment_cardNumber, .payment_cardDate, .payment_cardCode {
+.OC_cardNumber, .OC_cardDate, .OC_cardCode {
   display: flex;
   margin-bottom: 10px;
   font-size: 25px;
@@ -534,7 +323,7 @@ input[type="radio"]:checked + label {
   align-items: center;
 }
 
-.payment_00 {
+.OC_00 {
   color: #172852;
   font-size: 16px;
   font-weight: bold;
@@ -543,7 +332,22 @@ input[type="radio"]:checked + label {
   align-items: center;
 }
 
-.payment_cardNumber > input, .payment_cardCode > input {
+.OC_01 {
+  color: #172852;
+  font-size: 16px;
+  font-weight: bold;
+  margin-right: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.OC_cardDate > div:last-child {
+  color: #172852;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.OC_cardNumber > input, .OC_cardCode > input {
   background-color: #f0ebe9;
   border-radius: 5px;
   font-size: 14px;
@@ -557,39 +361,7 @@ input[type="radio"]:checked + label {
   text-align: center;
 }
 
-.payment_cardNumber > input:focus, .payment_cardCode > input:focus {
-  border: 2px solid #172852;
-}
-
-.payment_cardDate > select {
-  border: none;
-  border-radius: 5px;
-  background-color: #f0ebe9;
-  width: 95px;
-  height: 35px;
-  border: none;
-  outline: none;
-  margin-right: 10px;
-  color: #172852;
-  font-weight: bold;
-  padding: 0 15px;
-}
-
-.payment_cardDate > select > option {
-  color: #172852;
-  font-weight: bold;
-}
-
-.payment_01 {
-  color: #172852;
-  font-size: 16px;
-  font-weight: bold;
-  margin-right: 1px;
-  display: flex;
-  align-items: center;
-}
-
-.payment_right {
+.OC_right {
   background-color: #ffffff;
   box-shadow: 0 0 24px 0 rgba(25, 28, 54, 0.15);
   width: 40%;
@@ -598,13 +370,13 @@ input[type="radio"]:checked + label {
   padding: 20px 15px;
 }
 
-.payment_cartTitle {
+.OC_cartTitle {
   font-weight: bold;
   font-size: 18px;
   color: #cba89a;
 }
 
-.payment_detail {
+.OC_detail {
   border-top: 1.5px solid #cba89a;
   border-bottom: 1.5px solid #cba89a;
   list-style: none;
@@ -614,97 +386,97 @@ input[type="radio"]:checked + label {
   overflow: auto;
 }
 
-.payment_item {
+.OC_item {
   border-bottom: 2px dashed #cba89a;
   display: flex;
   padding: 10px 0;
 }
 
-.payment_itemImg {
+.OC_itemImg {
   width: 50px;
   height: 50px;
   margin: 0 10px;
 }
 
-.payment_itemData {
+.OC_itemData {
   display: flex;
   flex-direction: column;
   justify-content: center;
   flex-grow: 1;
 }
 
-.payment_itemData > p {
+.OC_itemData > p {
   margin: 0;
   color: #172852;
   font-size: 14px;
   font-weight: bold;
 }
 
-.payment_itemQuantity {
+.OC_itemQuantity {
   margin-right: 10px;
   font-weight: bold;
   margin: auto;
   color: #172852;
 }
 
-.payment_moneyDetail, .payment_discount {
+.OC_moneyDetail, .OC_discount {
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
 }
 
-.payment_moneyDetail > div:first-child, .payment_discount > div:first-child {
+.OC_moneyDetail > div:first-child, .OC_discount > div:first-child {
   color: #cba89a;
   font-weight: bold;
   font-size: 14px;
 }
 
-.payment_moneyDetail > div:last-child {
+.OC_moneyDetail > div:last-child {
   color: #172852;
   font-weight: bold;
   font-size: 14px;
 }
 
-.payment_discount > div:last-child {
+.OC_discount > div:last-child {
   color: #dc3838;
   font-weight: bold;
   font-size: 14px;
 }
 
-.payment_totalPrice {
+.OC_totalPrice {
   border-top: 1.5px solid #cba89a;
   padding-top: 30px;
   display: flex;
   justify-content: space-between;
 }
 
-.payment_totalPrice > div:first-child {
+.OC_totalPrice > div:first-child {
   color: #cba89a;
   font-size: 18px;
   font-weight: bold;
 }
 
-.payment_totalPrice > div:last-child, .payment_totalPrice span {
+.OC_totalPrice > div:last-child, .OC_totalPrice span {
   color: #172852;
   font-size: 18px;
   font-weight: bold;
 }
 
-.payment_page {
+.OC_page {
   display: flex;
   justify-content: center;
   align-items: flex-end;
   padding-bottom: 5px;
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
-.payment_previous {
+.OC_previous {
   display: flex;
   margin-right: 100px;
   text-decoration: none;
 }
 
-.payment_previousImg {
+.OC_previousImg {
   width: 10px;
   height: 15px;
   margin-right: 10px;
@@ -712,7 +484,7 @@ input[type="radio"]:checked + label {
   margin-top: 5px;
 }
 
-.payment_previousText {
+.OC_previousText {
   border-bottom: 1.5px solid #a3a3a3;
   padding-bottom: 5px;
   color: #a3a3a3;
@@ -720,7 +492,7 @@ input[type="radio"]:checked + label {
   font-weight: bold;
 }
 
-.payment_next {
+.OC_next {
   display: flex;
   border-radius: 25px;
   background-color: #172852;
@@ -732,13 +504,13 @@ input[type="radio"]:checked + label {
   text-decoration: none;
 }
 
-.payment_nextText {
+.OC_nextText {
   color: #ffffff;
   font-size: 18px;
   font-weight: bold;
 }
 
-.payment_nextImg {
+.OC_nextImg {
   width: 10px;
   height: 15px;
   margin-left: 10px;
@@ -746,57 +518,37 @@ input[type="radio"]:checked + label {
   margin-top: 3px;
 }
 
-.payment_cardImg {
+.OC_terms {
   display: flex;
-  margin-top: 20px;
-  position: relative;
+  justify-content: center;
+  margin-top: 100px;
 }
 
-.payment_cardFront {
-  background-image: url("../images/payment/card-front.png");
-  width: 250px;
-  height: 150px;
-  background-repeat: no-repeat;
-  background-size: 100%;
-  overflow: hidden;
-  margin-left: 95px;
-  z-index: 1;
-  transition: all 0.5s ease;
-}
-
-.payment_cardFront > div {
-  color: #ffffff;
-  font-weight: bold;
-  font-size: 15px;
+.OC_itemCB {
+  border: solid 2px #172852;
+  background-color: #ffffff;
+  border-radius: 5px;
+  align-self: center;
+  width: 20px;
   height: 20px;
+  cursor: pointer;
+  margin-right: 5px;
 }
 
-.payment_number {
-  display: flex;
-  margin-top: 15px;
-  margin-left: 35px;
+.OC_choose {
+  background-color: #172852;
+}
+
+.OC_terms > p {
+  margin: 0;
   font-weight: bold;
-  font-size: 15px;
+  color: #172852;
 }
 
-.payment_number > div, .payment_date > div {
-  color: #ffffff;
+.OC_terms a {
+  color: #dc3838;
   font-weight: bold;
-  font-size: 15px;
+  text-decoration: none;
+  margin: 0 5px;
 }
-
-.payment_date {
-  display: flex;
-  margin-left: 170px;
-  color: #ffffff;
-  font-weight: bold;
-  font-size: 15px;
-}
-
-.payment_certification {
-  width: 50px;
-  margin-left: 55px;
-  margin-top: 55px;
-  visibility: hidden;
-}
-/*# sourceMappingURL=payment.css.map */
+/*# sourceMappingURL=orderConfirmation.css.map */

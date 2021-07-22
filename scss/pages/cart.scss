@@ -34,10 +34,22 @@ img{
   transition: .5s all linear;
 }
 
+@media screen and (max-width: 600px){
+  .cart_cartBoard{
+    width: 100%;
+  }
+}
+
 .cart_cart{
   /* border: 1px solid red; */
   margin: 0 auto;
   width: 500px;
+}
+
+@media screen and (max-width: 600px){
+  .cart_cart{
+    width: 90%;
+  }
 }
 
 .cart_cartTitle{
@@ -382,15 +394,11 @@ img{
 
 /* ========== 前往結帳 ========== */
 
-.cart_checkout{
-  /* border: 1px solid red; */
-  width: 600px;
-  height: 60px;
-  position: relative;
-}
 
 .cart_checkout{
   background-color: #172852;
+  width: 600px;
+  height: 60px;
   color: #ffffff;
   font-size: 18px;
   font-weight: bold;
@@ -398,20 +406,24 @@ img{
   line-height: 60px;
   cursor: pointer;
   text-decoration: none;
-  position: absolute;
+  display: inline-block;
 }
 
 
-
+@media screen and (max-width: 600px){
+  .cart_checkout{
+    width: 100%;
+  }
+}
 
 
 
 
 /* ================================== 不用複製 =================================== */
 
-.noCopy{
-  border: 1px solid red;
-  width: 25px;
-  cursor: pointer;
-  margin-top: 100px; 
-}
+// .noCopy{
+//   border: 1px solid red;
+//   width: 25px;
+//   cursor: pointer;
+//   margin-top: 100px; 
+// }

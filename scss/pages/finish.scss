@@ -4,6 +4,10 @@
 @include navbar();
 }
 
+.footer{
+	@include footer();
+}
+
 *{
   box-sizing: border-box;
   font-family: "微軟正黑體";
@@ -25,7 +29,7 @@ img{
   // border: 1px solid black;
   width: 80%;
   max-width: 1200px;
-  margin: 100px auto;
+  margin: auto;
 }
 
 /* ========== 訂單處理階段 ========== */
@@ -56,6 +60,7 @@ img{
   border: solid 3px #f7c242;
   background-color: #f7c242;
   border-radius: 50%;
+  position: relative;
 }
 
 .finish_check{
