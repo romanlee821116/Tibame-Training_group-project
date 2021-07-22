@@ -80,7 +80,7 @@ body::-webkit-scrollbar {
         }
     }
     .about_people2{
-        bottom: 5%;
+        bottom: 8%;
         right: 30vw;
         height: 25%;
         z-index: 8;
@@ -96,7 +96,7 @@ body::-webkit-scrollbar {
             background: url('../../images/about/character02_2.png');  
             background-size: contain;
             background-repeat: no-repeat; 
-            animation: wheel 3s linear infinite; 
+            animation: wheel 2s linear infinite; 
             // z-index: -1; 
         }
         &::after{
@@ -110,7 +110,7 @@ body::-webkit-scrollbar {
             background: url('../../images/about/character02_3.png');  
             background-size: contain;
             background-repeat: no-repeat;  
-            animation: wheel 3s linear infinite;
+            animation: wheel 2s linear infinite;
         }
         .about_people2_leg{
             position: absolute;
@@ -125,7 +125,7 @@ body::-webkit-scrollbar {
                 width: auto;
             }
         }
-        animation: bike 15s linear infinite ;
+        animation: bike 10s linear infinite ;
     }
     .about_people3{
         height: 23%;
@@ -161,7 +161,6 @@ body::-webkit-scrollbar {
             transform-origin: center top;
             animation: Leg 8s 1s linear infinite;
         }
-        
         animation: walk1 30s linear infinite ;
         // animation: walk2 28s linear infinite ;     
     }
@@ -299,11 +298,18 @@ body::-webkit-scrollbar {
             position: absolute;
             width: 15vw;
             height: auto;
-            min-width: 170px;
-            min-height: 170px;
             top: 56vh;
             left: 50%;
             transform: translate(-45%, -60%);
+            @include rwd(768px){
+                min-width: 250px;
+                min-height: 250px;
+                transform: translate(-45%, -100%);
+            }
+            @include rwd(575px){
+                min-width: 200px;
+                min-height: 200px;
+            }
         }
         .about_cloud{
             position: absolute;
@@ -430,12 +436,12 @@ body::-webkit-scrollbar {
     width: 100%;
     height: 100%;
     position: absolute;
-    background: url('../../images/about/aboutUs_bgA02.png');
-    background-position: top;
-    background-size: cover;
-    background-repeat: no-repeat;
     top: 0;
     left: 0;
+    .about_scene2Bg{
+        width: 100%;
+        height: 100%;
+    }
     .about_island{
         transform: scaleY(.7);
         // border: 1px solid red;
@@ -444,7 +450,17 @@ body::-webkit-scrollbar {
         position: absolute;
         top: 10%;
         left: 5%;
-        @include rwd(76)
+        @include rwd(768px){
+            top: 7%;
+            width: 100%;
+            left: -22%;    
+        }
+        @include rwd(575px){
+            width: 150%;
+            left: -54%;  
+            height: 75%;  
+            top: 15%;
+        }
     }
     .about_spot{
         transform: scaleY(.7);
@@ -459,6 +475,10 @@ body::-webkit-scrollbar {
             width: 100%;
             height: auto;
         }
+        @include rwd(575px){
+            min-width: 100px;
+            min-height: 100px;
+        }
     }
     .about_spotDeco{
         transform: scaleY(.7);
@@ -471,62 +491,95 @@ body::-webkit-scrollbar {
 .about_taiwanSpot1{
     left: 45vw;    
     top: 7vh;
+    @include rwd(575px){
+        top: 12vh;
+    }
 }
 .about_taiwanSpot2{
     left: 35vw;    
     top: 30vh;
+    @include rwd(575px){
+        left: 24vw;    
+        top: 34vh;
+    }
 }
 .about_taiwanSpot3{
-    left: 40vw;    
-    top: 70vh;
+    left: 35vw;    
+    top: 75vh;
 }
 .about_taiwanSpot4{
-    left: 55vw;    
-    top: 40vh;
+    left: 50vw;    
+    top: 60vh;
+    @include rwd(575px){
+        left: 50vw;    
+        top: 55vh;
+    }
 }
 
 .about_spotDeco1{
     //熱氣球
-    left: 51vw;
-    top: 61vh;
+    left: 52vw;
+    top: 48vh;
     z-index: 2;
     animation: flying 8s linear infinite;
     img{
         height: 120%;
     }
+    @include rwd(575px){
+        left: 65vw;    
+        top: 45vh;
+    }
 }
 .about_spotDeco2{
     //小熱氣球1
     left: 50vw;
-    top: 57vh;
+    top: 47vh;
     animation: flying 8s .5s linear infinite;
     img{
         height: 100%;
+    }
+    @include rwd(575px){
+        left: 55vw; 
     }
 }
 .about_spotDeco3{
     //小熱氣球2
     left: 48vw;
-    top: 60vh;
+    top: 50vh;
     animation: flying 10s .9s linear infinite;
     img{
         height: 100%;
+    }
+    @include rwd(575px){
+        left: 60vw;
+        top: 43vh; 
     }
 }
 .about_spotDeco4{    
     left: 70vw;
     top: 70vh;
-    // animation: jump 12s linear infinite;
     img{
         height: 110%;
+    }
+    @include rwd(575px){
+        left: 85vw;
+        img{
+            height: 90%;
+        }
     }
 }
 .about_spotDeco5{
     left: 65vw;
     top: 72vh;
-    // animation: jump 12s .5s linear infinite;
     img{
         height: 100%;
+    }
+    @include rwd(575px){
+        left: 75vw;
+        top: 75vh;
+        img{
+            height: 75%;
+        }
     }
 }
 .about_spotDeco6{
@@ -536,6 +589,12 @@ body::-webkit-scrollbar {
     img{
         height: 110%;
     }
+    @include rwd(768px){
+        left: 68vw;
+    }
+    @include rwd(575px){
+        left: 85vw;
+    }
 }
 .about_spotDeco7{
     left: 57vw;
@@ -543,6 +602,12 @@ body::-webkit-scrollbar {
     animation: flying 12s .3s linear infinite;
     img{
         height: 100%;
+    }
+    @include rwd(768px){
+        left: 63vw;
+    }
+    @include rwd(575px){
+        left: 76vw;
     }
 }
 .about_spotDeco8{
@@ -552,13 +617,32 @@ body::-webkit-scrollbar {
     img{
         height: 100%;
     }
+    @include rwd(768px){
+        left: 64vw;
+    }
+    @include rwd(575px){
+        left: 74vw;
+    }
 }
 .about_spotDeco9{
     left: 18vw;
     top: 69vh;
-    // animation: swim 15s linear  infinite reverse;
     img{
         height: 180%;
+    }
+    @include rwd(768px){
+        img{
+            height: 150%;
+        }
+        left: 6vw;
+        top: 80vh;
+    }
+    @include rwd(575px){
+        left: 5vw;
+        top: 85vh;
+        img{
+            height: 110%;
+        }
     }
 }
 @keyframes flying {
@@ -568,21 +652,6 @@ body::-webkit-scrollbar {
     75%{transform: translateY(10px);}
     100%{transform: translateY(-10px);}
 }
-// @keyframes swim {
-//     0%{transform: translate(-10px, 5px);}
-//     25%{transform: translate(10px,0);}
-//     50%{transform: translate(-10px, -5px);}
-//     75%{transform: translate(10px, 0);}
-//     100%{transform: translate(-10px, 5px);}
-// }
-
-// @keyframes jump {
-//     0%{transform: rotate(30deg);}
-//     33%{transform: rotate(-20deg);}
-//     66%{transform: rotate(30deg);}
-//     100%{transform: rotate(-20deg);}
-// }
-
 .about_taiwan_end{
     opacity: 1;
     width: 100%;
@@ -598,17 +667,23 @@ body::-webkit-scrollbar {
         min-height: 170px;
         top: 30%;
         left: 50%;
-        transform: translate(-50%, -50%);        
+        transform: translate(-50%, -50%); 
+        z-index: 5; 
+        @include rwd(575px){
+            top: 37vh;
+        }      
     }
     h2{
         color: #fff;
         font-size: 24px;
         text-align: center;
         position: relative;
-        top: 25%;    
+        top: 25%; 
+        @include rwd(575px){
+            top: 30vh;
+        }      
     }
     .about_endBtn{
-        // border: 1px solid red;
         text-align: center;
         position: relative;
         top: 35%;        
@@ -629,6 +704,9 @@ body::-webkit-scrollbar {
         top: 5vh;
         left: -3vw;
         animation: cloud 6s linear infinite;
+        @include rwd(575px){
+            width: 65vw;
+        }
     }
     .about_cloud2{
         width: 45vw;
@@ -641,10 +719,10 @@ body::-webkit-scrollbar {
         width: auto;        
         left: -10vw;
         bottom: 5vh;
-        animation: cloud 6s 1s linear infinite;
+        animation: cloud 6s 1s linear infinite; 
         @include rwd(575px){
-            max-height: 80px;
-        }
+            height:20vh;
+        }       
     }
     .about_cloud4{
         height: auto;
@@ -679,7 +757,7 @@ body::-webkit-scrollbar {
         width: 25vw;
         right: -10vw;
         top: 25vh;
-        animation: cloud 6s 1s linear infinite reverse;
+        animation: cloud 8s 1s linear infinite reverse;
     }
     
 } 
@@ -688,9 +766,14 @@ body::-webkit-scrollbar {
     top: 50%;
     width: 60%;
     max-width: 800px;
-    transform: translateY(-50%);
+    transform: translate(0, -50%);
     padding: 40px 50px;
     display: none;
+    @include rwd(575px){
+        width: 100%;
+        left:50%;
+        transform: translate(-50%, -50%);
+    }
     h1{
         width: 150px;
         height: 40px;
@@ -736,6 +819,9 @@ body::-webkit-scrollbar {
 }
 .about_place1{
     left: 35%;
+    @include rwd(575px){
+        left: 50%;
+    }
 }
 .about_place2{
     right: 10%;
@@ -745,6 +831,9 @@ body::-webkit-scrollbar {
 }
 .about_place4{
     left: 25%;
+    @include rwd(575px){
+        left: 50%;
+    }
 }
 .about_farmerDetail_bg{
     width: 100%;
@@ -764,8 +853,17 @@ body::-webkit-scrollbar {
         left: 50%;
         transform: translate(-50%, -50%);
         border-radius: 20px;
-        padding: 50px;
+        padding: 40px;
         display: flex;
+        @include rwd(768px){
+            width: 80%;
+        }
+        @include rwd(565px){
+            width: 90%;
+            height: 90%;
+            display: block;
+            padding: 20px;
+        }
         .about_farmerDetail_farmer{
             width: 35%;
             height: auto;
@@ -777,6 +875,15 @@ body::-webkit-scrollbar {
                 font-size: 16px;
                 color: $darkBlue;
             }
+            @include rwd(575px){
+                width: 63%;
+                margin: 0 auto 20px auto;
+                p{
+                    font-size: 14px;
+                    margin-top: 5px;
+                    text-align: center;
+                }
+            }
         }
         .about_farmerDetail_title{
             width: 60%;
@@ -785,7 +892,6 @@ body::-webkit-scrollbar {
             h2{
                 font-size: 28px;
                 color: $darkBrown;
-                // color: red;
                 margin-bottom: 10px;
             }
             h3{
@@ -800,6 +906,25 @@ body::-webkit-scrollbar {
                 line-height: 35px;
                 font-weight: 900;
             }
+            .about_farmerDetail_text{
+                color: $darkBlue;
+                padding-top: 20px;
+                font-size: 16px;
+                line-height: 30px;
+            }
+            @include rwd(565px){
+                width: 100%;
+                padding-left: 0px;
+                line-height: 25px;
+                h2{
+                    font-size: 22px;
+                }
+                .about_farmerDetail_text{
+                    padding-top: 10px;
+                    font-size: 16px;
+                    line-height: 25px;
+                }
+            }
         }
         i.fa-times{
             font-size: 24px;
@@ -808,11 +933,6 @@ body::-webkit-scrollbar {
             right: 30px;
             cursor: pointer;
         }
-        .about_farmerDetail_text{
-            color: $darkBlue;
-            padding-top: 20px;
-            font-size: 16px;
-            line-height: 30px;
-        }
+        
     }
 }

@@ -49,6 +49,13 @@ new Vue ({
     total_item: 0,
     shipping: 0,
     total_price: 0,
+    cardNumber1: "",
+    cardNumber2: "",
+    cardNumber3: "",
+    cardNumber4: "",
+    cardYear: "",
+    cardDate: "",
+    cardCertification: "",
   },
   methods: {
     choose(){

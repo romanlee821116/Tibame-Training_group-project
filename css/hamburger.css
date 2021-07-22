@@ -129,11 +129,11 @@ body {
           transform: translateX(-50%);
   border-radius: 45%;
   background-color: #cba89a;
-  -webkit-animation: rotate 15s linear infinite;
-          animation: rotate 15s linear infinite;
+  -webkit-animation: ham_rotate 15s linear infinite;
+          animation: ham_rotate 15s linear infinite;
 }
 
-@-webkit-keyframes rotate {
+@-webkit-keyframes ham_rotate {
   0% {
     -webkit-transform: translate(-50%, 0) rotateZ(0deg);
             transform: translate(-50%, 0) rotateZ(0deg);
@@ -148,7 +148,7 @@ body {
   }
 }
 
-@keyframes rotate {
+@keyframes ham_rotate {
   0% {
     -webkit-transform: translate(-50%, 0) rotateZ(0deg);
             transform: translate(-50%, 0) rotateZ(0deg);

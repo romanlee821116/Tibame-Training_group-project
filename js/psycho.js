@@ -26,12 +26,24 @@ function chgQuestion() {
     tmpQ++;
 
     if (tmpQ == 6) {
+        // var turn = function () {
+        //     $('.psycho_resultContent').fadeIn(700);
+        //     $('.psycho_cardRange>div>div').css('transform', 'rotateY(360deg)');
+        // }
+        var Down = function () {
+            $('.psycho_resultScreen').fadeIn();
+            $('.psycho_resultBg').css('height', '100vh');
+        }
         var Close = function () {
             $('.psycho_loadingScreen').fadeIn(700);
             $('.psycho_questionScreen').hide();
         }
         $('.psycho_question01Screen').hide();
-        setTimeout(Close, 500)
+        setTimeout(Close, 200)
+        setTimeout("$('.psycho_loadingScreen').fadeOut(700);", 2500)
+        setTimeout(Down, 3300)
+        setTimeout("$('.psycho_resultContent').fadeIn(700);", 3900)
+        setTimeout("$('.psycho_cardRange>div>div').css('transform', 'rotateY(360deg)');", 4200)
     } else {
         $('#psycho_title')[0].innerHTML = 文案[tmpQ][0];
         $('#content1')[0].innerHTML = 文案[tmpQ][1];
@@ -39,7 +51,6 @@ function chgQuestion() {
         $('#content3')[0].innerHTML = 文案[tmpQ][3];
 
         $('.psychoQuestion01').css("background-image", "url(../images/psycho/question0" + tmpQ + "_topic.jpg)");
-        // console.log((tmpQ-1) * 20+"%");
 
     }
     $(".psychoScheduleTop").css("width", (tmpQ - 1) * 20 + "%");
@@ -49,7 +60,20 @@ function beginQuestion() {
     $('.psycho_questionScreen').fadeIn(700);
     $('.psycho_beginScreen').hide();
 }
+function psychoLikeHeart(tar) {
+    x = $(tar).attr("src");
+    if (x == "../images/psycho/favorites_icon_n.png") {
+        $(tar).attr("src","../images/psycho/favorites_icon_h.png");
+    } else {
+        $(tar).attr("src","../images/psycho/favorites_icon_n.png");
+    }
+}
 
+
+function clickAns() {
+    $('.psycho_nextbtndisplay').fadeIn(700);
+    $(this).addClass('active');
+}
 
 
 文案 = new Array();

@@ -115,7 +115,45 @@ $(function(){
     if(str.length == 4){
       $(this).next().focus();
     }
-    
   });
+
+
+  // 信用卡轉背面
+  $('.payment_turn').focus(function(){
+    // console.log('a');
+    $('.payment_cardFront').css('transform','rotateY(180deg)');
+    $('.payment_cardFront').css('background-image','url("../images/payment/card-back.png")');
+    $('.payment_certification').css('visibility','visible');
+    $('.payment_certification').css('transform','rotateY(-180deg)');
+    $('.payment_number').css('display','none');
+    $('.payment_date').css('display','none');
+  })
+
+  // 信用卡轉正面
+
+  $('.payment_enterCard').focus(function(){
+    // console.log('a');
+    $('.payment_cardFront').css('transform','rotateY(0deg)');
+    $('.payment_cardFront').css('background-image','url("../images/payment/card-front.png")');
+    $('.payment_number').css('display','flex');
+    $('.payment_date').css('display','flex');
+    $('.payment_certification').css('visibility','hidden');
+  })
+
+  $('.payment_year').focus(function(){
+    $('.payment_cardFront').css('transform','rotateY(0deg)');
+    $('.payment_cardFront').css('background-image','url("../images/payment/card-front.png")');
+    $('.payment_number').css('display','flex');
+    $('.payment_date').css('display','flex');
+    $('.payment_certification').css('visibility','hidden');
+  })
+
+  $('.payment_month').focus(function(){
+    $('.payment_cardFront').css('transform','rotateY(0deg)');
+    $('.payment_cardFront').css('background-image','url("../images/payment/card-front.png")');
+    $('.payment_number').css('display','flex');
+    $('.payment_date').css('display','flex');
+    $('.payment_certification').css('visibility','hidden');
+  })
 
 })
