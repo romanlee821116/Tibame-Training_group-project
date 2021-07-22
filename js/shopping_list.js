@@ -54,20 +54,26 @@ $(document).ready(function() {
     })
 
     // 商品數量增減 
-    $(".min").attr("disabled", true);
+
+    $(".min").attr("disabled", true).css({ backgroundColor: "#ccc" });
     $(".add").click(function() {
         var t = $(this).siblings(".num");
         t.val(parseInt(t.val()) + 1);
-        $(".min").removeAttr("disabled");
+        $(".min").removeAttr("disabled").css({ backgroundColor: "white", color: "#172852" });
     });
     $(".min").click(function() {
         var t = $(this).siblings(".num");
         if (parseInt(t.val()) > 1) {
             t.val(parseInt(t.val()) - 1)
         } else {
-            $(".min").attr("disabled", "disabled")
+            $(".min").attr("disabled", "disabled").css({ backgroundColor: "#ccc", color: "black" });
         }
 
+    });
+    $(".product_num_btn").find("button").mouseenter(function() {
+        $(this).css({ backgroundColor: "#172852", color: "white" })
+    }).mouseleave(function() {
+        $(this).css({ backgroundColor: "white", color: "#172852" })
     });
 
     // 加入購物車計算總金額
@@ -88,6 +94,6 @@ $(document).ready(function() {
 
     });
     // 照片slider
-    $("")
+
 
 });

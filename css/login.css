@@ -18,7 +18,6 @@ time, mark, audio, video {
   font-size: 100%;
   font: bold inherit '微軟正黑體';
   vertical-align: baseline;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   text-decoration: none;
   font-weight: 900;
@@ -54,8 +53,7 @@ table {
 }
 
 * {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   font-family: Calibri;
   font-weight: bold;
 }
@@ -70,14 +68,10 @@ body {
 }
 
 .loginAll {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 
 .loginSignup {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   margin-left: 10%;
   margin-top: 3%;
@@ -88,7 +82,6 @@ body {
 
 /* 滑動效果 */
 .loginLeft, .forgetPWD, #loginIcon, #signupIcon, .loginWrapper, #loginArrow, .loginGender, select, .loginCode, .loginButton, .loginUnderline, span, .loginChoosenBar {
-  -webkit-transition: all 0.8s cubic-bezier(0.6, 0, 0.4, 1);
   transition: all 0.8s cubic-bezier(0.6, 0, 0.4, 1);
 }
 
@@ -103,8 +96,7 @@ body {
   width: 100%;
   height: 100%;
   /* border: 1px solid pink; */
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 /* 右邊表單=========================== */
@@ -138,8 +130,6 @@ body {
 
 /* 調整標題 */
 .loginFormTitle {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   /* border: 1px solid blue; */
   margin-bottom: 8px;
@@ -149,9 +139,7 @@ body {
 
 .loginFormTitle h4 {
   /* border: 1px solid black; */
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  flex: 1;
   text-align: center;
   padding-bottom: 5px;
   border-bottom: 2px solid #cba89a;
@@ -182,8 +170,7 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 input {
@@ -195,7 +182,6 @@ input {
 .loginWrapper {
   height: 150px;
   overflow: hidden;
-  -webkit-transition: all 0.5s cubic-bezier(0.6, 0, 0.4, 1);
   transition: all 0.5s cubic-bezier(0.6, 0, 0.4, 1);
   position: relative;
   /* 給眼睛定位 */
@@ -214,15 +200,6 @@ input {
 }
 
 /* 預設文字色彩 */
-::-webkit-input-placeholder {
-  color: #cba89a;
-}
-:-ms-input-placeholder {
-  color: #cba89a;
-}
-::-ms-input-placeholder {
-  color: #cba89a;
-}
 ::placeholder {
   color: #cba89a;
 }
@@ -277,8 +254,6 @@ input {
 }
 
 .loginOther2 {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 
@@ -302,9 +277,7 @@ input {
   border-radius: 5px;
   color: white;
   /* margin-left: 5px; */
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  flex: 1;
   text-align: center;
 }
 
@@ -376,8 +349,6 @@ input {
 
 /* 驗證碼 */
 .loginCode {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 
@@ -407,9 +378,7 @@ input {
   height: 15px;
   cursor: pointer;
   margin-bottom: 10px;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  align-self: center;
 }
 
 /* 按鈕 */
@@ -429,8 +398,7 @@ input {
   display: block;
   line-height: 40px;
   position: relative;
-  -webkit-transform: translate3d(0, 0, 0);
-          transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
 }
 
 /* 忘記密碼================================= */
@@ -475,8 +443,7 @@ input {
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 #forgetFormPage .loginButton {
@@ -536,19 +503,12 @@ input {
   position: fixed;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   border-radius: 20px;
   background-color: rgba(255, 255, 255, 0.95);
-  -webkit-box-shadow: 0px 10px 32px rgba(23, 40, 82, 0.6);
-          box-shadow: 0px 10px 32px rgba(23, 40, 82, 0.6);
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  box-shadow: 0px 10px 32px rgba(23, 40, 82, 0.6);
+  flex-direction: column;
+  align-items: center;
   text-align: center;
   padding: 40px;
   z-index: 999;
@@ -574,12 +534,8 @@ input {
 }
 
 .type2 div {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
 }
 
 @media (max-width: 575px) {

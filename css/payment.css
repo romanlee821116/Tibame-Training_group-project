@@ -6,12 +6,8 @@
   top: 0px;
   left: 0;
   padding-top: 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
   z-index: 900;
 }
 
@@ -27,12 +23,8 @@
 }
 
 .navbar .navbar-icon {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  justify-content: flex-start;
   margin: 0 20px 0 0px;
 }
 
@@ -50,8 +42,7 @@
 }
 
 * {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   font-family: "微軟正黑體";
   color: #bb866a;
 }
@@ -76,12 +67,8 @@ img {
 
 /* ========== 訂單處理階段 ========== */
 .payment_stage {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   margin-bottom: 30px;
 }
 
@@ -137,8 +124,6 @@ img {
 .payment_orderData > div {
   width: 40px;
   height: 40px;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
   display: inline-flex;
   border: solid 3px #f7c242;
   background-color: #f7c242;
@@ -180,8 +165,6 @@ img {
 }
 
 .payment_orderContent {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 
@@ -196,12 +179,8 @@ img {
 }
 
 .payment_same {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   margin-bottom: 20px;
 }
 
@@ -213,8 +192,6 @@ img {
 }
 
 .payment_same > div:last-child {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 
@@ -224,8 +201,6 @@ img {
   font-size: 16px;
   font-weight: bold;
   margin-left: 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 
@@ -233,9 +208,7 @@ img {
   border: solid 2px #172852;
   background-color: #ffffff;
   border-radius: 5px;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  align-self: center;
   width: 20px;
   height: 20px;
   cursor: pointer;
@@ -246,8 +219,6 @@ img {
 }
 
 .payment_data {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   margin-top: 15px;
 }
@@ -257,12 +228,8 @@ img {
   font-size: 16px;
   font-weight: bold;
   margin-right: 68px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
 
 .payment_data > input {
@@ -277,30 +244,14 @@ img {
   color: #172852;
 }
 
-::-webkit-input-placeholder {
-  color: #cba89a;
-}
-
-:-ms-input-placeholder {
-  color: #cba89a;
-}
-
-::-ms-input-placeholder {
-  color: #cba89a;
-}
-
 ::placeholder {
   color: #cba89a;
 }
 
 .payment_transport, .payment_payMoney {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   margin: 20px 0;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  align-items: flex-start;
 }
 
 .payment_transport > div:first-child, .payment_payMoney > div:first-child {
@@ -308,22 +259,13 @@ img {
   font-size: 16px;
   font-weight: bold;
   margin-right: 32px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
 
 .payment_transport > div:last-child {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   font-weight: bold;
 }
 
@@ -343,8 +285,7 @@ img {
 
 .payment_right {
   background-color: #ffffff;
-  -webkit-box-shadow: 0 0 24px 0 rgba(25, 28, 54, 0.15);
-          box-shadow: 0 0 24px 0 rgba(25, 28, 54, 0.15);
+  box-shadow: 0 0 24px 0 rgba(25, 28, 54, 0.15);
   width: 40%;
   margin-left: 30px;
   padding: 20px 15px;
@@ -368,8 +309,6 @@ img {
 
 .payment_item {
   border-bottom: 2px dashed #cba89a;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   padding: 10px 0;
 }
@@ -381,19 +320,10 @@ img {
 }
 
 .payment_itemData {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 1;
 }
 
 .payment_itemData > p {
@@ -411,12 +341,8 @@ img {
 }
 
 .payment_moneyDetail, .payment_discount {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
   margin-bottom: 10px;
 }
 
@@ -441,12 +367,8 @@ img {
 .payment_totalPrice {
   border-top: 1.5px solid #cba89a;
   padding-top: 30px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
 }
 
 .payment_totalPrice > div:first-child {
@@ -462,22 +384,14 @@ img {
 }
 
 .payment_page {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  justify-content: center;
+  align-items: flex-end;
   padding-bottom: 5px;
   margin-top: 100px;
 }
 
 .payment_previous {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   margin-right: 100px;
   text-decoration: none;
@@ -487,8 +401,6 @@ img {
   width: 10px;
   height: 15px;
   margin-right: 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   margin-top: 5px;
 }
@@ -502,20 +414,14 @@ img {
 }
 
 .payment_next {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   border-radius: 25px;
   background-color: #172852;
   width: 130px;
   height: 35px;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   text-decoration: none;
 }
 
@@ -529,8 +435,6 @@ img {
   width: 10px;
   height: 15px;
   margin-left: 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   margin-top: 3px;
 }
