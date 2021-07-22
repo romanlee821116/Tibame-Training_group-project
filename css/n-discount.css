@@ -146,14 +146,14 @@ body{
 }
 
 .discountbtn .delete::before{
-    content: url('../images/delete.png');
+    content: url('../images/backend/delete.png');
     position: relative;
     right: 5px;
     top: 2px;
 }
 
 .discountbtn .add::before{
-    content: url('../images/add.png');
+    content: url('../images/backend/add.png');
     position: relative;
     right: 5px;
     top: 2px;
@@ -355,7 +355,7 @@ body{
     appearance: none;  
     outline: none;
     background: none;
-    background-image: url("../images/select.png");
+    background-image: url("../images/backend/select.png");
     background-repeat: no-repeat;
     background-position: right;
     background-size: contain;
@@ -426,7 +426,7 @@ body{
     color: #172852;
     font-weight: bold;
 
-    background-image: url("../images/select.png");
+    background-image: url("../images/backend/select.png");
     background-repeat: no-repeat;
     background-position: right;
     background-size: contain;

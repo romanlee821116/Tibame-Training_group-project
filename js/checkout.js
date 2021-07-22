@@ -90,6 +90,26 @@ $(function(){
 
   });
 
+  // 輸入折扣碼有值時按鈕會變色
+  $('#checkout_discountNumber').on("keypress keyup blur", function(){
+    if($(this).val() !== ""){
+      $('.checkout_send').css('background-color', '#172852');
+      $('.checkout_send').css('cursor', 'pointer');
+    }else if($(this).val() == ""){
+      $('.checkout_send').css('background-color', '#a3a3a3');
+      $('.checkout_send').css('cursor', 'default');
+    };
+  });
+
+  $('.checkout_pushItemBtnL').click(function(){
+    if($('.checkout_pushItemList').css('left') < '0px'){
+      $('.checkout_pushItemList').css('left', '0');
+    }
+  })
+
+  $('.checkout_pushItemBtnR').click(function(){
+    $('.checkout_pushItemList').css('left', '-195px');
+  })
 
 })
 

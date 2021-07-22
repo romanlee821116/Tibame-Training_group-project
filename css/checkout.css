@@ -409,7 +409,7 @@ img {
   justify-content: space-between;
 }
 
-.checkout_discount > input {
+#checkout_discountNumber {
   border: none;
   border-radius: 5px;
   background-color: #f0ebe9;
@@ -425,7 +425,11 @@ img {
   color: #cba89a;
 }
 
-.checkout_discount > button {
+.checkout_discount > input:focus {
+  border: 2px solid #172852;
+}
+
+.checkout_send {
   border: none;
   background-color: #a3a3a3;
   border-radius: 5px;
@@ -433,6 +437,7 @@ img {
   width: 70px;
   height: 30px;
   font-weight: bold;
+  cursor: default;
 }
 
 .checkout_moneyDetail {
@@ -472,6 +477,11 @@ img {
 .checkout_removeDiscount {
   display: flex;
   justify-content: flex-end;
+  cursor: pointer;
+}
+
+.checkout_none {
+  display: none;
 }
 
 .checkout_removeDiscount > div {

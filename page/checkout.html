@@ -181,8 +181,8 @@
           <div class="checkout_discountBorder">
             <p>使用折扣碼</p>
             <div class="checkout_discount">
-              <input type="text" placeholder="請輸入折扣碼" onfocus="this.placeholder=''" onblur="this.placeholder='請輸入折扣碼'">
-              <button>提交</button>
+              <input type="text" id="checkout_discountNumber" placeholder="請輸入折扣碼" onfocus="this.placeholder=''" onblur="this.placeholder='請輸入折扣碼'">
+              <button class="checkout_send" @click="sendDiscount">提交</button>
             </div>
           </div>
   
@@ -195,12 +195,12 @@
               <p>$<span>{{itemPrice}}</span>元</p>
             </div>
   
-            <div class="checkout_discountMoney">
+            <div class="checkout_discountMoney checkout_none">
               <p>折扣碼</p>
-              <p>-$<span>80</span>元</p>
+              <p>-$<span>{{discount}}</span>元</p>
             </div>
   
-            <div class="checkout_removeDiscount">
+            <div class="checkout_removeDiscount checkout_none" @click="deleteDiscount">
               <div>移除折扣碼</div>
             </div>
   

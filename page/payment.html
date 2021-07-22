@@ -72,7 +72,7 @@
               <div>訂購人資訊</div>
 
               <div>
-                <div class="payment_itemCB" :class="{'payment_choose': item.status}" @click="choose(item)">
+                <div class="payment_itemCB" :class="{'payment_choose': applyData}" @click="choose">
                   <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check fa-w-16" role="img" viewBox="0 0 512 512"><path fill="#ffffff" d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/>
                   </svg>
                 </div>
@@ -84,51 +84,165 @@
             <!-- 資料填寫 -->
             <form action="#" method="post">
 
+              <!-- 姓名 -->
               <div class="payment_data">
                 <div>姓名：</div>
-                <input type="text" name="name" placeholder="請輸入您的姓名">
+                <input type="text" name="ordererName" placeholder="請輸入您的姓名" onfocus="this.placeholder=''" onblur="this.placeholder='請輸入您的姓名'" >
               </div>
 
+              <!-- 手機號碼 -->
               <div class="payment_data">
                 <div>手機：</div>
-                <input type="text" name="phone" placeholder="請輸入您的手機號碼">
+                <input type="text" name="ordererPhone" placeholder="請輸入您的手機號碼" onfocus="this.placeholder=''" onblur="this.placeholder='請輸入您的手機號碼'" >
               </div>
 
+              <!-- 地址 -->
               <div class="payment_data">
                 <div>地址：</div>
-                <input type="text" name="address" placeholder="請輸入您的地址">
+                <input type="text" name="ordererAddress" placeholder="請輸入您的地址" onfocus="this.placeholder=''" onblur="this.placeholder='請輸入您的地址'" >
               </div>
 
+              <!-- 運送方式 -->
               <div class="payment_transport">
                 <div>運送方式：</div>
-                <div>
-                  <label>
-                    <input type="radio" name="transport">
-                    宅配到府（運費$80TWD）
-                  </label>
-                  <label>
-                    <input type="radio" name="transport">
-                    7-11取貨（運費$60TWD）
-                  </label>
-                  <label>
-                    <input type="radio" name="transport">
-                    門市自取
-                  </label>
+
+                <div class="payment_radioBorder">
+
+                  <div class="payment_home">
+                    <div class="payment_radio payment_radio1">
+                      <input type="radio" name="transport" id="payment_home">
+                      <label for="payment_home">宅配到府（運費$80TWD）</label>
+                      <div class="payment_fake1"><div class="payment_fakeClick1"></div></div>
+                    </div>
+
+                    <!-- 收件人資訊 -->
+                    <div class="payment_receiver">
+                      <p>收件人資訊</p>
+                      <div class="payment_receiverData">
+                        <div>姓名：</div>
+                        <input type="text" name="receiverName" placeholder="請輸入收件人姓名" onfocus="this.placeholder=''" onblur="this.placeholder='請輸入收件人姓名'" >
+                      </div>
+                      <div class="payment_receiverData">
+                        <div>手機：</div>
+                        <input type="text" name="receiverName" placeholder="請輸入收件人手機號碼" onfocus="this.placeholder=''" onblur="this.placeholder='請輸入收件人手機號碼'" >
+                      </div>
+                      <div class="payment_receiverData">
+                        <div>地址：</div>
+                        <input type="text" name="receiverName" placeholder="請輸入收件人地址" onfocus="this.placeholder=''" onblur="this.placeholder='請輸入收件人地址'" >
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <div class="payment_711">
+                    <div class="payment_radio payment_radio2">
+                      <input type="radio" name="transport" id="payment_seven">
+                      <label for="payment_seven">7-11取貨（運費$60TWD）</label>
+                      <div class="payment_fake2"><div class="payment_fakeClick2"></div></div>
+                    </div>
+
+                    <!-- 選擇門市 -->
+                    <div class="payment_shop">
+                      <p>選擇門市</p>
+                      <div class="payment_shopMap">門市電子地圖</div>
+                      <div class="payment_shopMapData">
+                        <div class="payment_shopData">
+                          <div>門市名稱：</div>
+                          <input type="text" name="shopName" placeholder="門市名稱">
+                        </div>
+                        <div class="payment_shopData">
+                          <div>門市地址：</div>
+                          <input type="text" name="shopName" placeholder="門市地址">
+                        </div>
+                        <div class="payment_shopData">
+                          <div>門市電話：</div>
+                          <input type="text" name="shopName" placeholder="門市電話">
+                        </div>
+                      </div>
+                    </div>
+
+
+                  </div>
+
+                  <div class="payment_radio payment_radio3">
+                    <input type="radio" name="transport" id="payment_shop">
+                    <label for="payment_shop">門市自取</label>
+                    <div class="payment_fake3"><div class="payment_fakeClick3"></div></div>
+                  </div>
+
                 </div>
               </div>
 
+              <!-- 付款方式 -->
               <div class="payment_payMoney">
                 <div>付款方式：</div>
-                <div>
-                  <label>
-                    <input type="radio" name="payment">
-                    線上付款
-                  </label>
-                  <label>
-                    <input type="radio" name="payment">
-                    取貨付款
-                  </label>
+
+                <div class="payment_radioBorder2">
+
+                  <div class="payment_radio payment_radio4">
+                    <input type="radio" name="payment" id="payment_online">
+                    <label for="payment_online">線上付款</label>
+                    <div class="payment_fake4"><div class="payment_fakeClick4"></div></div>
+                  </div>
+
+                  <div class="payment_radio payment_radio5">
+                    <input type="radio" name="payment" id="payment_cash">
+                    <label for="payment_cash">取貨付款</label>
+                    <div class="payment_fake5"><div class="payment_fakeClick5"></div></div>
+                  </div>
+
                 </div>
+
+              </div>
+
+              <!-- 信用卡填寫 -->
+              <div class="payment_credit">
+
+                <!-- 卡號 -->
+                <div class="payment_cardNumber">
+                  <div class="payment_00">信用卡卡號：</div>
+                  <input type="text" maxlength="4">-
+                  <input type="text" maxlength="4">-
+                  <input type="text" maxlength="4">-
+                  <input type="text" maxlength="4">
+                </div>
+
+                <!-- 有效期限 -->
+                <div class="payment_cardDate">
+                  <div class="payment_01">卡片有效期限：</div>
+                  <select name="year">
+                    <option selected disabled>年份</option>
+                    <option value="1">21</option>
+                    <option value="2">22</option>
+                    <option value="3">23</option>
+                    <option value="4">24</option>
+                    <option value="5">25</option>
+                    <option value="6">26</option>
+                  </select>
+
+                  <select name="month">
+                    <option selected disabled>月份</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                  </select>
+                </div>
+
+                <!-- 認證碼 -->
+                <div class="payment_cardNumber">
+                  <div class="payment_00">卡片認證碼：</div>
+                  <input type="text" maxlength="3">
+                </div>
+
               </div>
 
             </form>
@@ -148,45 +262,37 @@
           <!-- 明細清單 -->
           <ul class="payment_detail">
 
-            <li class="payment_item">
-              <div class="payment_itemImg"><img src="../images/payment/banner_matcha_item.png"></div>
+            <!-- 一般商品 -->
+            <li class="payment_item" v-for="(item, index) in itemList" id="item.id">
+              <div class="payment_itemImg"><img :src="item.img"></div>
 
               <div class="payment_itemData">
-                <p>南投銅鑼燒</p>
-                <p>$480元 / 6入</p>
+                <p>{{item.itemName}}</p>
+                <p>${{item.price}}元 / {{item.item_Quantity}}入</p>
               </div>
 
-              <div class="payment_itemQuantity">x 1</div>
+              <div class="payment_itemQuantity">x {{item.quantity}}</div>
             </li>
 
-            <li class="payment_item">
-              <div class="payment_itemImg"><img src="../images/payment/banner_matcha_item.png"></div>
+            <!-- 禮盒 -->
+            <li class="payment_item" v-for="(item, index) in customization" id="item.id">
+              <div class="payment_itemImg"><img :src="item.img"></div>
 
               <div class="payment_itemData">
-                <p>南投銅鑼燒</p>
-                <p>$480元 / 6入</p>
+                <p>{{item.itemName}}</p>
+                <p>${{item.price}}元 / {{item.item_Quantity}}入</p>
               </div>
 
-              <div class="payment_itemQuantity">x 1</div>
+              <div class="payment_itemQuantity">x {{item.quantity}}</div>
             </li>
-            
-            <li class="payment_item">
-              <div class="payment_itemImg"><img src="../images/payment/banner_matcha_item.png"></div>
 
-              <div class="payment_itemData">
-                <p>南投銅鑼燒</p>
-                <p>$480元 / 6入</p>
-              </div>
-
-              <div class="payment_itemQuantity">x 1</div>
-            </li>
 
           </ul>
 
           <!-- 金額明細 -->
           <div class="payment_moneyDetail">
             <div>商品金額</div>
-            <div>$1280元</div>
+            <div>${{itemPrice}}元</div>
           </div>
 
           <div class="payment_moneyDetail">
@@ -202,7 +308,7 @@
           <!-- 商品總金額 -->
           <div class="payment_totalPrice">
             <div>總金額</div>
-            <div>$1280元</div>
+            <div>${{totalPrice}}元</div>
           </div>
 
         </div>
@@ -239,6 +345,8 @@
     </div>
   </div>
 
+  <script src="../js/payment.js"></script>
+  <script src="../js/payment_vue.js"></script>
   <script src="https://kit.fontawesome.com/8c3a8ab95b.js" crossorigin="anonymous"></script>
 
 </body>

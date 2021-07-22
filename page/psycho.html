@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../css/psycho.css">
     <script src="https://kit.fontawesome.com/8c3a8ab95b.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="../js/psycho.js"></script>
 </head>
 
 <body>
@@ -20,10 +21,41 @@
             </div>
             <h3>你和菓子的距離</h3>
             <h4>一分鐘心理測驗，看看你是哪種菓子精靈 !</h4>
-            <div class="psycho_startbtn"><a href="#" class='mainbtn'>開始測驗</a></div>
+            <div class="psycho_startbtn"><a href="#" class='mainbtn' onclick="return beginQuestion();">開始測驗</a></div>
         </article>
     </section>
-    <div class="question01"></div>
+    <section class="psycho_questionScreen">
+        <div class="psycho_question01Screen">
+            <h3 id="psycho_title" tabindex="5">1 . 此時的你在家享受著美好的假日，你認為此時窗外的景色是?</h3>
+            <div class="psychoQuestion01"></div>
+            <div class="psychoQuestionAnsRange">
+                <a href="#" class="psychoQuestion01Asn01 psychoQuestionAns" onclick="return chgQuestion();">
+                    <div><span id="content1">晴朗的豔陽早晨</span></div>
+                </a>
+                <a href="#" class="psychoQuestion01Asn02 psychoQuestionAns" onclick="return chgQuestion();">
+                    <div><span id="content2">浪漫的魔幻黃昏</span></div>
+                </a>
+                <a href="#" class="psychoQuestion01Asn03 psychoQuestionAns" onclick="return chgQuestion();">
+                    <div><span id="content3">多雨的涼爽夜晚</span></div>
+                </a>
+            </div>
+        </div>
+        <div class="psychoSchedule01">
+            <div class="psychoScheduleTop"></div>
+            <div></div>
+        </div>
+    </section>
+    <section class="psycho_loadingScreen">
+        <article>
+            <div class="psycho_beginpic">
+                <img src="../images/psycho/psycho_start_bookitem.png">
+            </div>
+            <h3>你和菓子的距離</h3>
+            <h4>一分鐘心理測驗，看看你是哪種菓子精靈 !</h4>
+            <div class="psycho_startbtn"><a href="#" class='mainbtn' onclick="return beginQuestion();">開始測驗</a></div>
+        </article>
+    </section>
+
 
 
 </body>

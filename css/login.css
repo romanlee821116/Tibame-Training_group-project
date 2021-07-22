@@ -81,7 +81,7 @@ body {
 }
 
 /* 滑動效果 */
-.loginLeft, .forgetPWD, #loginIcon, #signupIcon, .loginWrapper, #loginArrow, input, .loginGender, select, .loginCode, .loginButton, .loginUnderline, span, .loginChoosenBar {
+.loginLeft, .forgetPWD, #loginIcon, #signupIcon, .loginWrapper, #loginArrow, .loginGender, select, .loginCode, .loginButton, .loginUnderline, span, .loginChoosenBar {
   transition: all 0.8s cubic-bezier(0.6, 0, 0.4, 1);
 }
 
@@ -173,6 +173,10 @@ body {
   transform: translate(-50%, -50%);
 }
 
+input {
+  border: 2px solid transparent;
+}
+
 /* 登入註冊============================== */
 /* 決定顯示範圍 */
 .loginWrapper {
@@ -216,7 +220,7 @@ body {
 #loginFormPage .loginWrapper .loginErrorWrap > input {
   width: 100%;
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   padding: 10px;
   border-radius: 5px;
   background-color: #f0ebe9;
