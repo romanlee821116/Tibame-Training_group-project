@@ -48,6 +48,7 @@ new Vue ({
     ],
     total_item: 0,
     shipping: 0,
+    discount: 0,
     total_price: 0,
     cardNumber1: "",
     cardNumber2: "",
@@ -62,6 +63,15 @@ new Vue ({
       // checkbox
       this.applyData=!this.applyData;
     },
+    countShipping(){
+      this.shipping = 80;
+    },
+    count711(){
+      this.shipping = 60;
+    },
+    countShop(){
+      this.shipping = 0;
+    }
   },
   computed: {
     itemPrice(){
@@ -81,7 +91,7 @@ new Vue ({
     },
     // 訂單總金額
     totalPrice(){
-      total_price = this.total_item - 80;
+      total_price = this.total_item - this.shipping - this.discount;
       return total_price;
     }
   }

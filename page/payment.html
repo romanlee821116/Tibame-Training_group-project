@@ -5,7 +5,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="../css/payment.css" rel="stylesheet">
-  <link href="../css/cart.css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.14/vue.js"></script>
   <title>付款資訊</title>
@@ -248,7 +247,7 @@
 
                   <div class="payment_home">
                     <div class="payment_radio payment_radio1">
-                      <input type="radio" name="transport" id="payment_home">
+                      <input type="radio" name="transport" id="payment_home" @click="countShipping">
                       <label for="payment_home">宅配到府（運費$80TWD）</label>
                       <div class="payment_fake1"><div class="payment_fakeClick1"></div></div>
                     </div>
@@ -274,7 +273,7 @@
 
                   <div class="payment_711">
                     <div class="payment_radio payment_radio2">
-                      <input type="radio" name="transport" id="payment_seven">
+                      <input type="radio" name="transport" id="payment_seven" @click="count711">
                       <label for="payment_seven">7-11取貨（運費$60TWD）</label>
                       <div class="payment_fake2"><div class="payment_fakeClick2"></div></div>
                     </div>
@@ -303,7 +302,7 @@
                   </div>
 
                   <div class="payment_radio payment_radio3">
-                    <input type="radio" name="transport" id="payment_shop">
+                    <input type="radio" name="transport" id="payment_shop" @click="countShop">
                     <label for="payment_shop">門市自取</label>
                     <div class="payment_fake3"><div class="payment_fakeClick3"></div></div>
                   </div>
@@ -459,12 +458,12 @@
 
           <div class="payment_moneyDetail">
             <div>運費</div>
-            <div>$0元</div>
+            <div>${{shipping}}元</div>
           </div>
 
           <div class="payment_discount">
             <div>折扣碼</div>
-            <div>-$80元</div>
+            <div>-${{discount}}元</div>
           </div>
 
           <!-- 商品總金額 -->

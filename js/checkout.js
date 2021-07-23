@@ -101,15 +101,32 @@ $(function(){
     };
   });
 
+
+  // 輪播圖左右按鈕
+  // 左邊按鈕
   $('.checkout_pushItemBtnL').click(function(){
-    if($('.checkout_pushItemList').css('left') < '0px'){
+    let a = parseInt($('.checkout_pushItemList').css('left'));
+    let b = a + 195;
+    if(a < 0){
+      $('.checkout_pushItemList').css('left', b+'px');
+    }else if(a > 0){
       $('.checkout_pushItemList').css('left', '0');
     }
   })
 
+  // 右邊按鈕
   $('.checkout_pushItemBtnR').click(function(){
-    $('.checkout_pushItemList').css('left', '-195px');
+    let a = parseInt($('.checkout_pushItemList').css('left'));
+    let b = a - 195;
+    if(a < -780){
+      $('.checkout_pushItemList').css('left', '0');
+    }else{
+      $('.checkout_pushItemList').css('left', b+'px');
+    }
   })
+
+
+
 
 })
 
