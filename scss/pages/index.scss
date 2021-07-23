@@ -47,8 +47,7 @@
     transition: .2s;
     opacity: 0;
     display: none;
-}
-    .pagepoint a{
+    a{
         display: block;
         font-size: 14px;
         color: $darkBrown;
@@ -56,14 +55,67 @@
         transform: translateY(11px);
         margin: 8px;
     }
-
-.navbar a>i:hover, .mediacolumn a>i:hover, .language a>i:hover{
-    color: $yellow;
 }
+    
+
 
 /* ==================第一面================== */
-.page1{
-    display: none;
+.index_intro{
+    width: 100vw;
+    height: 100vh;
+    background-color: $darkBrown;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1200;
+    .intro_container {
+        width: 250px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 48px 48px 48px 48px;
+        column-gap: 20px;
+        position: relative;
+        top: 15vh;
+        .intro_word{
+            font-size: 36px;
+            margin: 0;
+            padding: 0;
+            color: #bb866a;
+            writing-mode: vertical-rl;
+        }
+        p.intro_add {
+            opacity: 0;
+            animation-name: intro_opac;
+            animation-duration: 5s;
+            animation-fill-mode: forwards;
+        }
+        p.intro_add2 {
+            opacity: 0;
+            animation-name: intro_opac;
+            animation-duration: 5s;
+            animation-fill-mode: forwards;
+        }
+        p.intro_add3 {
+            opacity: 0;
+            animation-name: intro_opac;
+            animation-duration: 5s;
+            animation-fill-mode: forwards;
+        }
+        p.intro_add4 {
+            opacity: 0;
+            animation-name: intro_opac;
+            animation-duration: 5s;
+            animation-fill-mode: forwards;
+        }
+    }
+}
+@keyframes intro_opac {
+    0% {
+        opacity: 0
+    }
+    100% {
+        opacity: 1;
+    }
 }
 /* ==================第二面================== */
 .index_p2_container{
@@ -72,7 +124,7 @@
     display: flex;
     position: relative;
     z-index: 2;
-}
+
     .iindex_p2_right{
         width: 50%;
         height: 100%;
@@ -97,12 +149,12 @@
         left: 50%;
         width: 280px;
         height: 260px;
-        transform: translate(-50%, -50%);        
-    }
-        .index_p2_pic img{
+        transform: translate(-50%, -50%);
+        img{
             width: 100%;
             height: 100%;
-        }
+        }        
+    }
         
     .index_p2_button{
         position: absolute;
@@ -112,8 +164,7 @@
         height: 100%;
         text-align: center;
         overflow: hidden;
-    }
-        .index_p2_button h2{
+        h2{
             color: #fff;
             margin-top: 15px;
             font-size: 36px;
@@ -122,7 +173,7 @@
                 margin-top: 90px;
             }
         }
-        .index_p2_button a{
+        a{
             color: #fff;
             border: 2px solid #fff;
             padding: 5px 20px;
@@ -133,8 +184,11 @@
             bottom: 80px;
             font-weight: 900;
             width: 140px;
+            &:hover{
+                background-color: $lightBlue;
+            }
         }
-        
+    }    
     .index_p2_ticker{
         position: absolute;
         top: 45%;
@@ -143,14 +197,14 @@
         width: 100%;
         height: 40px;
     }
-        .index_p2_ticker marquee{
-            color: #fff;
-            font-size: 100px;
-            height: 150px;
-            font-weight: 900;
-            text-align: center;
-            display: inline-block;
-        }
+        // .index_p2_ticker marquee{
+        //     color: #fff;
+        //     font-size: 100px;
+        //     height: 150px;
+        //     font-weight: 900;
+        //     text-align: center;
+        //     display: inline-block;
+        // }
     .index_p2-progress{
         position: absolute;
         left: 0;
@@ -158,12 +212,14 @@
         width: 100%;
         height: 5px;
         background-color: #fff;
-    }
         .iindex_p2-progressSolid{
             width: 60%;
             height: 5px;
             background-color: $darkBrown;
         }
+    }
+        
+}
 
 /* ==================GAP================== */
 .gap{
@@ -223,6 +279,9 @@
                 height: 35px;
                 z-index: 2;
                 position: relative;
+                &:hover{
+                    background-color: $lightBlue;
+                }
             }
             @include rwd(767px){
                 width: 70%;
@@ -348,6 +407,9 @@
                 text-align: center;
                 line-height: 15px;
                 font-weight: 900;
+                &:hover{
+                    background-color: $lightBlue;
+                }
             }
             @include rwd(900px){
                 padding-left: 0%; 
@@ -538,6 +600,9 @@
                 text-align: center;
                 line-height: 15px;
                 font-weight: 900;
+                &:hover{
+                    background-color: $lightBlue;
+                }
             }
             
             @include rwd(767px){
@@ -868,10 +933,7 @@
     }
     .index_p6-btn{
         width: 100%;
-        // position: absolute;
-        // bottom: 10%;
-    }
-        .index_p6-btn a{
+        a{
             background-color: $darkBlue;
             color: #fff;
             padding: 10px 20px;
@@ -885,7 +947,11 @@
             position: relative;
             left: 50%;
             transform: translateX(-50%);
+            &:hover{
+                background-color: $lightBlue;
+            }
         }
+    }    
     .p6-watermark{
         position: absolute;
     }
@@ -1026,6 +1092,9 @@
                             line-height: 10px;
                             font-weight: 900;
                             margin-top: 5px;
+                            &:hover{
+                                background-color: $lightBlue;
+                            } 
                         }  
                     }               
                 } 
@@ -1044,7 +1113,10 @@
                     background-color: $darkBlue;
                     border-radius: 50%;            
                     text-align: center; 
-                    margin-left: 10px;           
+                    margin-left: 10px;  
+                    &:hover{
+                        background-color: $lightBlue;
+                    }          
                 }
                 .index_p7_shopBtn-left{
                     background-color: #fff;
@@ -1053,6 +1125,9 @@
                         font-size: 20px;
                         color: $darkBlue;
                         line-height: 60px;
+                    }
+                    &:hover{
+                        background-color: $lightBlue;
                     }             
                 } 
                 .fa-chevron-right{
@@ -1168,8 +1243,11 @@
     right: -120px;
     bottom: -50px;
 }
-    .mainbtn:hover{
-    background-color: $lightBlue;
+
+.index_p5btn, .index_p3btn, .index_p4btn{
+    &:hover{
+        background-color: $lightBlue;
+    }
 }
 
 /* ==================footer================== */  

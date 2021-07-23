@@ -9,7 +9,7 @@ $(function () {
         },
         methods: {
             hidden: function () {
-                this.$emit('hidden')
+                this.$emit('hidden');
             }
         },
         template: `
@@ -46,7 +46,7 @@ $(function () {
         },
         methods: {
             hidden: function () {
-                this.$emit('hidden')
+                this.$emit('hidden');
             }
         },
         template: `
@@ -63,7 +63,7 @@ $(function () {
                     <div class='about_farmerDetail_text'>
                         「要用好的心態跟芒果說話，它會聽的到，就會乖乖長大。」瑞林有機農場不使用任何農藥與化學肥料，李順序夫婦抱著「惜福」的心態，用心對待每棵芒果樹，雖然辛苦換得的收入不多，但卻得到心靈上的富足。
                         <br>
-                         小春堂與瑞林有機農場合作，同樣秉持所有商品不額外添加任何化學物料，提供最天然的物料給每位消費者。
+                        小春堂與瑞林有機農場合作，同樣秉持所有商品不額外添加任何化學物料，提供最天然的物料給每位消費者。
                     </div>                 
                 </div> 
 
@@ -83,7 +83,7 @@ $(function () {
         },
         methods: {
             hidden: function () {
-                this.$emit('hidden')
+                this.$emit('hidden');
             }
         },
         template: `
@@ -118,7 +118,7 @@ $(function () {
         },
         methods: {
             hidden: function () {
-                this.$emit('hidden')
+                this.$emit('hidden');
             }
         },
         template: `
@@ -204,13 +204,15 @@ $(function () {
                 this.boxDisplay = true;
                 this.content = 'place' + (index);
                 console.log("目前place=" + this.content);
+                // ======禁止滾動
+                
             },
             changeBox(item) {
                 console.log('changeBox');
                 this.content = item;
             },
             hiddenBox: function () {
-                this.boxDisplay = false;
+                this.boxDisplay = false; 
             }
         },
     })

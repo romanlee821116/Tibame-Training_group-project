@@ -1,5 +1,6 @@
 @import '../mixin/mixin';
-@import '../page/cart.scss';
+@import '../base/reset.scss';
+@import '../pages/cart.scss';
 
 .navbar{
 @include navbar();
@@ -20,6 +21,11 @@ body{
   background-image: url("../images/FAQ/bg.png");
   background-size: cover;
   background-attachment: fixed;
+  position: relative;
+}
+
+.psychotest{
+  @include psycoBtn(#fff);
 }
 
 img{

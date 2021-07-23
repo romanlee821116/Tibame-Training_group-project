@@ -100,9 +100,17 @@ body {
   line-height: 60px;
 }
 
+.navbar .navbar-icon a:hover {
+  color: #f7c242;
+}
+
 .navbar .navbar-icon i {
   color: #bb866a;
   font-size: 28px;
+}
+
+.navbar .navbar-icon i:hover {
+  color: #f7c242;
 }
 
 .navbar .ham_container {
@@ -121,6 +129,10 @@ body {
   border-radius: 10px;
   margin: 6px 0;
   transition: 0.4s;
+}
+
+.navbar .ham_container .ham_bar:hover {
+  background-color: #f7c242;
 }
 
 .navbar .ham_change .ham_bar1 {

@@ -79,8 +79,78 @@ $(function () {
 
     ticker();
     newsCarousel();
+    indexIntro();
+    $('.ham_bar').css('background-color','#fff');
+    // $('#homepage').css('opacity','0');
 })
 
+//進場動畫
+function indexIntro(){
+    // $('body').css('overflow','hidden');
+    $('.navbar').css('opacity','0');
+    index = 0;
+    index2 = 0;
+    index3 = 0;
+    index4 = 0;
+    setTimeout(function () {
+        setInterval(function () {
+            let slogan = '<p>百年を伝わる和風味に</p>'
+            if (index < slogan.length) {
+                let into = $(slogan).text().slice(index, index + 1);
+                index += 1;
+                $('.intro_add').append(into).css('color', '#ffffff');
+            } else {
+                clearInterval();
+            }
+        }, 100);
+    }, 500)
+
+    setTimeout(function () {
+        setInterval(function () {
+            let slogan = '<p>台湾天然食材と組合せ。</p>'
+            if (index2 < slogan.length) {
+                let into = $(slogan).text().slice(index2, index2 + 1);
+                index2 += 1;
+                $('.intro_add2').append(into).css('color', '#ffffff');
+            } else {
+                clearInterval();
+            }
+        }, 100);
+    }, 1500);
+
+
+    setTimeout(function () {
+        setInterval(function () {
+            let slogan = '<p>幸せな味を</p>';
+            if (index3 < slogan.length) {
+                let into = $(slogan).text().slice(index3, index3 + 1);
+                index3 += 1;
+                $('.intro_add3').append(into).css('color', '#ffffff');
+            } else {
+                clearInterval();
+            }
+        }, 100);
+    }, 2500);
+
+
+    setTimeout(function () {
+        setInterval(function () {
+            let slogan = '<p>ご堪能ください。</p>';
+            if (index4 < slogan.length) {
+                let into = $(slogan).text().slice(index4, index4 + 1);
+                index4 += 1;
+                $('.intro_add4').append(into).css('color', '#ffffff');
+            } else {
+                clearInterval();
+                setTimeout(function(){
+                    $('.index_intro').fadeOut(1000);
+                    $('.navbar').css('opacity','1');
+                    // $('body').css('overflow','auto');
+                })
+            }
+        }, 100);
+    }, 3000);
+}
 
 // 跑馬燈替換
 function ticker() {
@@ -111,7 +181,6 @@ function ticker() {
 
 //商品輪播
 function newsCarousel() {
-    console.log('run carousel');
     let winWidth = $(window).width();
     if (winWidth < 767) {
         console.log("小於767");

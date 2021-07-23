@@ -29,8 +29,7 @@
             position: relative;
             top: 15vh;
         }
-
-        p{
+        .intro_word{
             /* border: 1px solid black; */
             font-size: 36px;
             margin: 0;
@@ -38,7 +37,6 @@
             color: #bb866a;
             writing-mode: vertical-rl;
         }
-
         p.intro_add {
             opacity: 0;
             animation-name: opac;
@@ -47,7 +45,6 @@
             /* animation-duration: 2.5s; */
             animation-fill-mode: forwards;
         }
-
         p.intro_add2 {
             opacity: 0;
             animation-name: opac;
@@ -56,7 +53,6 @@
             /* animation-duration: 2.5s; */
             animation-fill-mode: forwards;
         }
-
         p.intro_add3 {
             opacity: 0;
             animation-name: opac;
@@ -65,7 +61,6 @@
             /* animation-duration: 2.5s; */
             animation-fill-mode: forwards;
         }
-
         p.intro_add4 {
             opacity: 0;
             animation-name: opac;
@@ -74,7 +69,7 @@
             /* animation-duration: 2.5s; */
             animation-fill-mode: forwards;
         }
-
+        
         @keyframes opac {
             0% {
                 opacity: 0
@@ -84,20 +79,6 @@
                 opacity: 1;
             }
         }
-
-        .ham_jelly {
-            width: 300vw;
-            height: 290vw;
-            position: absolute;
-            top: -302vw;
-            left: 50%;
-            transform: translateX(-50%);
-            border-radius: 45%;
-            background-color: transparent;
-            border: 2px solid #ccc;
-            animation: ham_rotate 15s linear infinite;
-        }
-
         @keyframes ham_rotate {
             0% {
                 transform: translate(-50%, 0) rotateZ(0deg);
@@ -115,13 +96,14 @@
 </head>
 
 <body>
-
-    <div class="intro_container">
-        <!-- <div class='intro_bgLine'></div> -->
-        <p class="intro_add4"></p>
-        <p class="intro_add3"></p>
-        <p class="intro_add2"></p>
-        <p class="intro_add"></p>
+    <div class='index_intro'>
+        <div class="intro_container">
+            <!-- <div class='intro_bgLine'></div> -->
+            <p class="intro_word intro_add4"></p>
+            <p class="intro_word intro_add3"></p>
+            <p class="intro_word intro_add2"></p>
+            <p class="intro_word intro_add"></p>
+        </div>
     </div>
     <script>
 
@@ -148,8 +130,6 @@
                 }
             }, 100);
         }, 500)
-
-
 
         setTimeout(function () {
 

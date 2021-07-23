@@ -1201,7 +1201,7 @@ body::-webkit-scrollbar {
     width: 90%;
     height: 90%;
     display: block;
-    padding: 20px;
+    padding: 30px;
   }
 }
 

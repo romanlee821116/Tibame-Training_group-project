@@ -49,9 +49,17 @@
   line-height: 60px;
 }
 
+.navbar .navbar-icon a:hover {
+  color: #f7c242;
+}
+
 .navbar .navbar-icon i {
   color: #bb866a;
   font-size: 28px;
+}
+
+.navbar .navbar-icon i:hover {
+  color: #f7c242;
 }
 
 .navbar .ham_container {
@@ -70,6 +78,10 @@
   border-radius: 10px;
   margin: 6px 0;
   transition: 0.4s;
+}
+
+.navbar .ham_container .ham_bar:hover {
+  background-color: #f7c242;
 }
 
 .navbar .ham_change .ham_bar1 {
@@ -222,6 +234,10 @@
   font-size: 28px;
 }
 
+.mediacolumn a i:hover {
+  color: #f7c242;
+}
+
 @media (max-width: 575px) {
   .mediacolumn {
     display: none;
@@ -236,7 +252,6 @@
   bottom: 30px;
   z-index: 2;
   cursor: pointer;
-  display: none;
   display: none;
 }
 
@@ -295,13 +310,70 @@
   margin: 8px;
 }
 
-.navbar a > i:hover, .mediacolumn a > i:hover, .language a > i:hover {
-  color: #f7c242;
+/* ==================第一面================== */
+.index_intro {
+  width: 100vw;
+  height: 100vh;
+  background-color: #bb866a;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1200;
 }
 
-/* ==================第一面================== */
-.page1 {
-  display: none;
+.index_intro .intro_container {
+  width: 250px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 48px 48px 48px 48px;
+  column-gap: 20px;
+  position: relative;
+  top: 15vh;
+}
+
+.index_intro .intro_container .intro_word {
+  font-size: 36px;
+  margin: 0;
+  padding: 0;
+  color: #bb866a;
+  writing-mode: vertical-rl;
+}
+
+.index_intro .intro_container p.intro_add {
+  opacity: 0;
+  animation-name: intro_opac;
+  animation-duration: 5s;
+  animation-fill-mode: forwards;
+}
+
+.index_intro .intro_container p.intro_add2 {
+  opacity: 0;
+  animation-name: intro_opac;
+  animation-duration: 5s;
+  animation-fill-mode: forwards;
+}
+
+.index_intro .intro_container p.intro_add3 {
+  opacity: 0;
+  animation-name: intro_opac;
+  animation-duration: 5s;
+  animation-fill-mode: forwards;
+}
+
+.index_intro .intro_container p.intro_add4 {
+  opacity: 0;
+  animation-name: intro_opac;
+  animation-duration: 5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes intro_opac {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 /* ==================第二面================== */
@@ -313,7 +385,7 @@
   z-index: 2;
 }
 
-.iindex_p2_right {
+.index_p2_container .iindex_p2_right {
   width: 50%;
   height: 100%;
   background: url("../images/index/banner_monaka_bg.png");
@@ -322,19 +394,19 @@
   background-position: center;
 }
 
-.iindex_p2_right-mask {
+.index_p2_container .iindex_p2_right-mask {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-.index_p2_left {
+.index_p2_container .index_p2_left {
   width: 50%;
   height: 100%;
   background-color: #f1ca96;
 }
 
-.index_p2_pic {
+.index_p2_container .index_p2_pic {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -343,12 +415,12 @@
   transform: translate(-50%, -50%);
 }
 
-.index_p2_pic img {
+.index_p2_container .index_p2_pic img {
   width: 100%;
   height: 100%;
 }
 
-.index_p2_button {
+.index_p2_container .index_p2_button {
   position: absolute;
   top: 0;
   left: 50%;
@@ -358,7 +430,7 @@
   overflow: hidden;
 }
 
-.index_p2_button h2 {
+.index_p2_container .index_p2_button h2 {
   color: #fff;
   margin-top: 15px;
   font-size: 36px;
@@ -366,12 +438,12 @@
 }
 
 @media (max-width: 575px) {
-  .index_p2_button h2 {
+  .index_p2_container .index_p2_button h2 {
     margin-top: 90px;
   }
 }
 
-.index_p2_button a {
+.index_p2_container .index_p2_button a {
   color: #fff;
   border: 2px solid #fff;
   padding: 5px 20px;
@@ -384,7 +456,11 @@
   width: 140px;
 }
 
-.index_p2_ticker {
+.index_p2_container .index_p2_button a:hover {
+  background-color: #2e447c;
+}
+
+.index_p2_container .index_p2_ticker {
   position: absolute;
   top: 45%;
   right: 0;
@@ -393,16 +469,7 @@
   height: 40px;
 }
 
-.index_p2_ticker marquee {
-  color: #fff;
-  font-size: 100px;
-  height: 150px;
-  font-weight: 900;
-  text-align: center;
-  display: inline-block;
-}
-
-.index_p2-progress {
+.index_p2_container .index_p2-progress {
   position: absolute;
   left: 0;
   bottom: 0;
@@ -411,7 +478,7 @@
   background-color: #fff;
 }
 
-.iindex_p2-progressSolid {
+.index_p2_container .index_p2-progress .iindex_p2-progressSolid {
   width: 60%;
   height: 5px;
   background-color: #bb866a;
@@ -485,6 +552,10 @@
   height: 35px;
   z-index: 2;
   position: relative;
+}
+
+.index_page3 .index_p3_container .index_p3_txt a:hover {
+  background-color: #2e447c;
 }
 
 @media (max-width: 767px) {
@@ -631,6 +702,10 @@
   text-align: center;
   line-height: 15px;
   font-weight: 900;
+}
+
+.index_page4 .index_p4_container .p4-txt a:hover {
+  background-color: #2e447c;
 }
 
 @media (max-width: 900px) {
@@ -869,6 +944,10 @@
   text-align: center;
   line-height: 15px;
   font-weight: 900;
+}
+
+.index_page5 .index_p5_container .index_p5_txt a:hover {
+  background-color: #2e447c;
 }
 
 @media (max-width: 767px) {
@@ -1272,6 +1351,10 @@
   transform: translateX(-50%);
 }
 
+.index_p6-btn a:hover {
+  background-color: #2e447c;
+}
+
 .p6-watermark {
   position: absolute;
 }
@@ -1431,6 +1514,10 @@
   margin-top: 5px;
 }
 
+.index_page7 .index_p7_container .index_p7_info .index_p7_shopInfo .index_p7_address .index_p7_address_detailed a:hover {
+  background-color: #2e447c;
+}
+
 .index_page7 .index_p7_container .index_p7_info .index_p7_shopBtn {
   width: 360px;
   padding-top: 10px;
@@ -1449,6 +1536,10 @@
   margin-left: 10px;
 }
 
+.index_page7 .index_p7_container .index_p7_info .index_p7_shopBtn a:hover {
+  background-color: #2e447c;
+}
+
 .index_page7 .index_p7_container .index_p7_info .index_p7_shopBtn .index_p7_shopBtn-left {
   background-color: #fff;
   border: 2px solid #172852;
@@ -1458,6 +1549,10 @@
   font-size: 20px;
   color: #172852;
   line-height: 60px;
+}
+
+.index_page7 .index_p7_container .index_p7_info .index_p7_shopBtn .index_p7_shopBtn-left:hover {
+  background-color: #2e447c;
 }
 
 .index_page7 .index_p7_container .index_p7_info .index_p7_shopBtn .fa-chevron-right {
@@ -1585,7 +1680,7 @@
   bottom: -50px;
 }
 
-.mainbtn:hover {
+.index_p5btn:hover, .index_p3btn:hover, .index_p4btn:hover {
   background-color: #2e447c;
 }
 
