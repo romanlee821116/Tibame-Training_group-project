@@ -5,7 +5,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="../css/orderConfirmation.css" rel="stylesheet">
-  <link href="../css/cart.css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.14/vue.js"></script>
   <title>訂單確認</title>
@@ -318,12 +317,12 @@
 
           <div class="OC_moneyDetail">
             <div>運費</div>
-            <div>$0元</div>
+            <div>${{shipping}}元</div>
           </div>
 
           <div class="OC_discount">
             <div>折扣碼</div>
-            <div>-$80元</div>
+            <div>-${{discount}}元</div>
           </div>
 
           <!-- 商品總金額 -->
@@ -363,7 +362,7 @@
         </a>
 
         <!-- 下一頁 -->
-        <a href="./finish.html" class="OC_next">
+        <a href="./finish.html" class="OC_next" @click="checkOK">
           <div class="OC_nextText">下一頁</div>
           <div class="OC_nextImg">
             <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right" class="svg-inline--fa fa-chevron-right fa-w-10" role="img" viewBox="0 0 320 512"><path fill="#ffffff" d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg>

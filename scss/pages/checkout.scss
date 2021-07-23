@@ -1,4 +1,5 @@
 @import '../mixin/mixin';
+@import '../pages/cart.scss';
 
 .navbar{
 @include navbar();
@@ -139,9 +140,6 @@ img{
   right: -138px;
 }
 
-
-
-
 /* ========== 訂單內容大標 ========== */
 
 .checkout_orderTitle{
@@ -149,6 +147,12 @@ img{
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 20px;
+}
+
+@media screen and (max-width: 576px){
+  .checkout_orderTitle{
+    text-align: center;
+  }
 }
 
 /* ========== 訂單內容 ========== */
@@ -184,6 +188,12 @@ img{
   font-size: 0;
 }
 
+@media screen and (max-width: 576px){
+  .checkout_contentTitle{
+    display: none;
+  }
+}
+
 .checkout_contentTitle > p{
   // border: 1px solid green;
   display: inline-block;
@@ -200,6 +210,21 @@ img{
 .checkout_contentTitle > p:nth-child(2), .checkout_contentTitle > p:nth-child(3){
   width: 25%;
 }
+
+@media screen and (max-width: 992px){
+  .checkout_contentTitle > p:nth-child(1){
+    width: 38%;
+  }
+  
+  .checkout_contentTitle > p:nth-child(2){
+    width: 20%;
+  }
+
+  .checkout_contentTitle > p:nth-child(3){
+    width: 42%;
+  }
+}
+
 
 /* 商品細項 */
 
@@ -252,6 +277,18 @@ img{
   margin: 0 20px;
   display: flex;
 }
+
+#checkout_mobile{
+  display: flex;
+}
+
+@media screen and (max-width: 700px){
+  #checkout_mobile{
+    flex-direction: column;
+    justify-content: space-around;
+  }
+}
+
 
 .checkout_itemName{
   // border: 1px solid red;
@@ -326,6 +363,13 @@ img{
   
 }
 
+@media screen and (max-width: 700px){
+  .checkout_quantity{
+    order: 2;
+    margin: 0;
+  }
+}
+
 .checkout_quantity > input[type="text"]{
   border: 1.5px solid #172852;
   border-right: none;
@@ -337,6 +381,12 @@ img{
   color: #172852;
   text-align: center;
   outline: none;
+}
+
+@media screen and (max-width: 700px){
+  .checkout_quantity > input[type="text"]{
+    order: 1;
+  }
 }
 
 .checkout_quantity > button:nth-child(1){
@@ -365,6 +415,12 @@ img{
   padding: 0px 1px 2px;
 }
 
+@media screen and (max-width: 700px){
+  .checkout_quantity > button:nth-child(3){
+    order: 2;
+  }
+}
+
 .checkout_unitPrice{
   // border: 1px solid red;
   width: 110px;
@@ -372,6 +428,13 @@ img{
   font-size: 14px;
   font-weight: bold;
   color: #172852;
+}
+
+@media screen and (max-width: 700px){
+  .checkout_unitPrice{
+    order: 1;
+    margin: 0;
+  }
 }
 
 .checkout_unitPrice > span{
@@ -546,6 +609,9 @@ img{
   // border: 1px solid green;
   display: flex;
   justify-content: flex-end;
+}
+
+.checkout_removeDiscount > div{
   cursor: pointer;
 }
 
@@ -654,8 +720,10 @@ img{
   list-style: none;
   padding: 0;
   margin: 0;
-  width: 1365px;
+  width: 1950px;
   position: relative;
+  left: 0;
+  transition: all 1s ease;
 }
 
 // li

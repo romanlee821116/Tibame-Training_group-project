@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>購物車清單</title>
   <link href="../css/checkout.css" rel="stylesheet">
-  <link href="../css/cart.css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.14/vue.js"></script>
 
@@ -216,27 +215,32 @@
   
             <!-- 一般商品 -->
             <li class="checkout_item"  v-for="(item,index) in itemList" :id="item.id">
-  
+
               <div class="checkout_itemCB" :class="{'checkout_choose': item.status}" @click="choose(item)">
                 <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check fa-w-16" role="img" viewBox="0 0 512 512"><path fill="#ffffff" d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/>
                 </svg>
               </div>
-      
+
               <div class="checkout_itemImg">
                 <img :src="item.img">
               </div>
-  
-              <div class="checkout_itemName">
-                <p>{{item.itemName}}</p>
+
+
+              <div id="checkout_mobile">
+                
+                <div class="checkout_itemName">
+                  <p>{{item.itemName}}</p>
+                </div>
+    
+                <div class="checkout_quantity">
+                  <button class="checkout_less mainbtn" @click="sub(item)">-</button>
+                  <input class="checkout_quantity" type="text" v-model="item.quantity">
+                  <button class="checkout_add mainbtn" @click="add(item)">+</button>
+                </div>
+    
+                <div class="checkout_unitPrice">$<span>{{item.price}}</span>元 / <span>{{item.item_Quantity}}</span>入</div>
+              
               </div>
-  
-              <div class="checkout_quantity">
-                <button class="checkout_less mainbtn" @click="sub(item)">-</button>
-                <input class="checkout_quantity" type="text" v-model="item.quantity">
-                <button class="checkout_add mainbtn" @click="add(item)">+</button>
-              </div>
-  
-              <div class="checkout_unitPrice">$<span>{{item.price}}</span>元 / <span>{{item.item_Quantity}}</span>入</div>
 
               <div class="checkout_delete" @click="delete_Item(index)">
                 <div class="checkout_leftD"></div>
@@ -338,8 +342,8 @@
               <p>-$<span>{{discount}}</span>元</p>
             </div>
   
-            <div class="checkout_removeDiscount checkout_none" @click="deleteDiscount">
-              <div>移除折扣碼</div>
+            <div class="checkout_removeDiscount checkout_none">
+              <div @click="deleteDiscount">移除折扣碼</div>
             </div>
   
             <div class="checkout_Total">
@@ -381,52 +385,10 @@
         <div class="checkout_pushItemSlider">
           <ul class="checkout_pushItemList">
   
-            <li class="checkout_pushItem">
-              <img src="../images/checkout/banner_matcha_item.png">
-              <p>南投銅鑼燒</p>
-              <p>$480元/6入</p>
-              <div>加入購物車</div>
-            </li>
-  
-            <li class="checkout_pushItem">
-              <img src="../images/checkout/banner_matcha_item.png">
-              <p>南投銅鑼燒</p>
-              <p>$480元/6入</p>
-              <div>加入購物車</div>
-            </li>
-  
-            <li class="checkout_pushItem">
-              <img src="../images/checkout/banner_matcha_item.png">
-              <p>南投銅鑼燒</p>
-              <p>$480元/6入</p>
-              <div>加入購物車</div>
-            </li>
-  
-            <li class="checkout_pushItem">
-              <img src="../images/checkout/banner_matcha_item.png">
-              <p>南投銅鑼燒</p>
-              <p>$480元/6入</p>
-              <div>加入購物車</div>
-            </li>
-  
-            <li class="checkout_pushItem">
-              <img src="../images/checkout/banner_matcha_item.png">
-              <p>南投銅鑼燒</p>
-              <p>$480元/6入</p>
-              <div>加入購物車</div>
-            </li>
-  
-            <li class="checkout_pushItem">
-              <img src="../images/checkout/banner_strawberry_item.png">
-              <p>南投銅鑼燒</p>
-              <p>$480元/6入</p>
-              <div>加入購物車</div>
-            </li>
-  
-            <li class="checkout_pushItem">
-              <img src="../images/checkout/banner_strawberry_item.png">
-              <p>南投銅鑼燒</p>
-              <p>$480元/6入</p>
+            <li class="checkout_pushItem" v-for="(item,index) in recommend">
+              <img :src="item.img">
+              <p>{{item.name}}</p>
+              <p>{{item.price}}</p>
               <div>加入購物車</div>
             </li>
   
