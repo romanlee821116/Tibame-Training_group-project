@@ -16,9 +16,38 @@
     @include navbar();
     position: fixed;
     ;
-    .navbar-icon i{
-        color: #fff;
+    .navbar-icon{
+        .fas{
+            color: #fff;
+        &:hover{
+            color: $yellow;
+            }
+        }
+        .index_navChange{
+            color:$darkBrown;
+            &:hover{
+                color: $yellow;
+            }
+        }
     }
+    .ham_container{
+        .ham_bar{
+            background-color: #fff;
+            &:hover{
+                background-color: $yellow;
+            }
+        }
+    }
+    .index_hamChange{
+        .ham_bar{
+            background-color: $darkBrown;
+            &:hover{
+                background-color: $yellow;
+            }
+        }
+        
+    }
+    
 }
     
 .mediacolumn{  

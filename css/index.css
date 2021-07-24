@@ -71,17 +71,16 @@
   z-index: 10;
 }
 
+.navbar .ham_container:hover .ham_bar {
+  background-color: #f7c242;
+}
+
 .navbar .ham_container .ham_bar {
   width: 30px;
   height: 4px;
   background-color: #bb866a;
   border-radius: 10px;
   margin: 6px 0;
-  transition: 0.4s;
-}
-
-.navbar .ham_container .ham_bar:hover {
-  background-color: #f7c242;
 }
 
 .navbar .ham_change .ham_bar1 {
@@ -179,8 +178,36 @@
   transition: all .3s;
 }
 
-.navbar .navbar-icon i {
+.navbar .navbar-icon .fas {
   color: #fff;
+}
+
+.navbar .navbar-icon .fas:hover {
+  color: #f7c242;
+}
+
+.navbar .navbar-icon .index_navChange {
+  color: #bb866a;
+}
+
+.navbar .navbar-icon .index_navChange:hover {
+  color: #f7c242;
+}
+
+.navbar .ham_container .ham_bar {
+  background-color: #fff;
+}
+
+.navbar .ham_container .ham_bar:hover {
+  background-color: #f7c242;
+}
+
+.navbar .index_hamChange .ham_bar {
+  background-color: #bb866a;
+}
+
+.navbar .index_hamChange .ham_bar:hover {
+  background-color: #f7c242;
 }
 
 .mediacolumn {

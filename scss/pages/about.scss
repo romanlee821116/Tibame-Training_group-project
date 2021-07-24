@@ -132,10 +132,26 @@ body::-webkit-scrollbar {
         bottom: 8%;
         right: 25vw;
         z-index: 7;
-        // border: 2px solid red;
+        div{
+            &::before{
+                content: '';
+                width: 80%;
+                height: 40%;
+                top: 20%;
+                left: 0%;   
+                position: absolute;
+                border: 1px solid blue;       
+                background: url('../../images/about/character03_2.png');
+                background-size: contain;
+                background-repeat: no-repeat; 
+                transform-origin: top left;
+                animation: hand1 15s linear infinite;
+                z-index: 6;
+            }
+        }
         &::before{
             content: '';
-            width: 90%;
+            width: 80%;
             height: 30%;
             bottom: -15%;
             left: 10%;
@@ -144,22 +160,22 @@ body::-webkit-scrollbar {
             background: url('../../images/about/character03_3.png');  
             background-size: contain;
             background-repeat: no-repeat; 
-            transform-origin: center top;
-            animation: Leg 10s linear infinite;
+            transform-origin: center 0;
+            animation: Leg 8s linear infinite;
         }
         &::after{
             content: '';
-            width: 88%;
+            width: 80%;
             height: 30%;
             bottom: -16%;
-            right: -15%;
+            right: -12%;
             position: absolute;
             border: 1px solid green; 
             background: url('../../images/about/character03_4.png');  
             background-size: contain;
             background-repeat: no-repeat;  
-            transform-origin: center top;
-            animation: Leg 8s 1s linear infinite;
+            transform-origin: center 0;
+            animation: Leg1 8s  linear infinite;
         }
         animation: walk1 30s linear infinite ;
         // animation: walk2 28s linear infinite ;     
@@ -167,9 +183,26 @@ body::-webkit-scrollbar {
     .about_people4{
         bottom: 9%;
         right: 50vw;
-        z-index: 10;
+        z-index: 6;
         height: 22vh;
-        // border: 2px solid red;
+        border: 2px solid red;
+        div{
+            &::before{
+                content: '';
+                width: 100%;
+                height: 40%;
+                top: 18%;
+                left: -10%;   
+                position: absolute;
+                border: 1px solid blue;       
+                background: url('../../images/about/character04_2.png');
+                background-size: contain;
+                background-repeat: no-repeat; 
+                transform-origin: top right;
+                animation: hand 10s linear infinite;
+                z-index: 6;
+            }
+        }
         &::before{
             content: '';
             width: 90%;
@@ -178,26 +211,26 @@ body::-webkit-scrollbar {
             left: 0%;
             transform: rotate(-60deg);
             position: absolute;
-            border: 1px solid yellow;       
+            border: 1px solid red;       
             background: url('../../images/about/character04_3.png');  
             background-size: contain;
             background-repeat: no-repeat; 
-            transform-origin: center 0;
-            animation: Leg 10s linear infinite;
+            transform-origin: top;
+            animation: Leg1 10s linear infinite;
         }
         &::after{
             content: '';
             width: 90%;
             height: 30%;
-            bottom: -12%;
-            right: -35%;
+            bottom: -11%;
+            right: -33%;
             position: absolute;
             border: 1px solid green; 
             background: url('../../images/about/character04_4.png');  
             background-size: contain;
             background-repeat: no-repeat;  
-            transform-origin: center 0;
-            animation: Leg 8s 1s linear infinite;
+            transform-origin: top;
+            animation: Leg 10s linear infinite;
         }
         
         animation: walk2 28s linear infinite ; 
@@ -223,7 +256,7 @@ body::-webkit-scrollbar {
             background-repeat: no-repeat; 
             transform-origin: left bottom;
             z-index: 6;
-            animation: Leg 20s linear infinite;
+            animation: hand 20s linear infinite;
         }       
     }
     @keyframes bikeLeg {
@@ -240,17 +273,56 @@ body::-webkit-scrollbar {
         100%{transform: rotate(-10deg)}        
     }
     @keyframes Leg {
-        0%{transform: rotate(8deg)}
-        10%{transform: rotate(-2deg)}
-        20%{transform: rotate(8deg)}
-        30%{transform: rotate(-2deg)}
-        40%{transform: rotate(8deg)}
-        50%{transform: rotate(-2deg)}
-        60%{transform: rotate(8deg)}
-        70%{transform: rotate(-2deg)}
-        80%{transform: rotate(8deg)}
-        90%{transform: rotate(-2deg)}
-        100%{transform: rotate(8deg)}        
+        0%{transform: rotate(15deg)}
+        10%{transform: rotate(-15deg)}
+        20%{transform: rotate(15deg)}
+        30%{transform: rotate(-15deg)}
+        40%{transform: rotate(15deg)}
+        50%{transform: rotate(-15deg)}
+        60%{transform: rotate(15deg)}
+        70%{transform: rotate(-15deg)}
+        80%{transform: rotate(15deg)}
+        90%{transform: rotate(-15deg)}
+        100%{transform: rotate(15deg)}        
+    }
+    @keyframes Leg1 {
+        0%{transform: rotate(-15deg)}
+        10%{transform: rotate(15deg)}
+        20%{transform: rotate(-15deg)}
+        30%{transform: rotate(15deg)}
+        40%{transform: rotate(-15deg)}
+        50%{transform: rotate(15deg)}
+        60%{transform: rotate(-15deg)}
+        70%{transform: rotate(15deg)}
+        80%{transform: rotate(-15deg)}
+        90%{transform: rotate(15deg)}
+        100%{transform: rotate(-15deg)}       
+    }
+    @keyframes hand {
+        0%{transform: rotate(-5deg)}
+        10%{transform: rotate(5deg)}
+        20%{transform: rotate(-5deg)}
+        30%{transform: rotate(5deg)}
+        40%{transform: rotate(-5deg)}
+        50%{transform: rotate(5deg)}
+        60%{transform: rotate(-5deg)}
+        70%{transform: rotate(5deg)}
+        80%{transform: rotate(-5deg)}
+        90%{transform: rotate(5deg)}
+        100%{transform: rotate(-5deg)}       
+    }
+    @keyframes hand1 {
+        0%{transform: rotate(-5deg)}
+        10%{transform: rotate(15deg)}
+        20%{transform: rotate(-5deg)}
+        30%{transform: rotate(15deg)}
+        40%{transform: rotate(-5deg)}
+        50%{transform: rotate(15deg)}
+        60%{transform: rotate(-5deg)}
+        70%{transform: rotate(15deg)}
+        80%{transform: rotate(-5deg)}
+        90%{transform: rotate(15deg)}
+        100%{transform: rotate(-5deg)}       
     }
     @keyframes wheel {
         0%{transform: rotate(0deg)}

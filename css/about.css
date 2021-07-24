@@ -197,9 +197,25 @@ body::-webkit-scrollbar {
   animation: walk1 30s linear infinite;
 }
 
+#about_scene1 .about_people3 div::before {
+  content: '';
+  width: 80%;
+  height: 40%;
+  top: 20%;
+  left: 0%;
+  position: absolute;
+  border: 1px solid blue;
+  background: url("../../images/about/character03_2.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  transform-origin: top left;
+  animation: hand1 15s linear infinite;
+  z-index: 6;
+}
+
 #about_scene1 .about_people3::before {
   content: '';
-  width: 90%;
+  width: 80%;
   height: 30%;
   bottom: -15%;
   left: 10%;
@@ -208,31 +224,48 @@ body::-webkit-scrollbar {
   background: url("../../images/about/character03_3.png");
   background-size: contain;
   background-repeat: no-repeat;
-  transform-origin: center top;
-  animation: Leg 10s linear infinite;
+  transform-origin: center 0;
+  animation: Leg 8s linear infinite;
 }
 
 #about_scene1 .about_people3::after {
   content: '';
-  width: 88%;
+  width: 80%;
   height: 30%;
   bottom: -16%;
-  right: -15%;
+  right: -12%;
   position: absolute;
   border: 1px solid green;
   background: url("../../images/about/character03_4.png");
   background-size: contain;
   background-repeat: no-repeat;
-  transform-origin: center top;
-  animation: Leg 8s 1s linear infinite;
+  transform-origin: center 0;
+  animation: Leg1 8s  linear infinite;
 }
 
 #about_scene1 .about_people4 {
   bottom: 9%;
   right: 50vw;
-  z-index: 10;
+  z-index: 6;
   height: 22vh;
+  border: 2px solid red;
   animation: walk2 28s linear infinite;
+}
+
+#about_scene1 .about_people4 div::before {
+  content: '';
+  width: 100%;
+  height: 40%;
+  top: 18%;
+  left: -10%;
+  position: absolute;
+  border: 1px solid blue;
+  background: url("../../images/about/character04_2.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  transform-origin: top right;
+  animation: hand 10s linear infinite;
+  z-index: 6;
 }
 
 #about_scene1 .about_people4::before {
@@ -243,27 +276,27 @@ body::-webkit-scrollbar {
   left: 0%;
   transform: rotate(-60deg);
   position: absolute;
-  border: 1px solid yellow;
+  border: 1px solid red;
   background: url("../../images/about/character04_3.png");
   background-size: contain;
   background-repeat: no-repeat;
-  transform-origin: center 0;
-  animation: Leg 10s linear infinite;
+  transform-origin: top;
+  animation: Leg1 10s linear infinite;
 }
 
 #about_scene1 .about_people4::after {
   content: '';
   width: 90%;
   height: 30%;
-  bottom: -12%;
-  right: -35%;
+  bottom: -11%;
+  right: -33%;
   position: absolute;
   border: 1px solid green;
   background: url("../../images/about/character04_4.png");
   background-size: contain;
   background-repeat: no-repeat;
-  transform-origin: center 0;
-  animation: Leg 8s 1s linear infinite;
+  transform-origin: top;
+  animation: Leg 10s linear infinite;
 }
 
 #about_scene1 .about_people6 {
@@ -289,7 +322,7 @@ body::-webkit-scrollbar {
   background-repeat: no-repeat;
   transform-origin: left bottom;
   z-index: 6;
-  animation: Leg 20s linear infinite;
+  animation: hand 20s linear infinite;
 }
 
 @keyframes bikeLeg {
@@ -330,37 +363,145 @@ body::-webkit-scrollbar {
 
 @keyframes Leg {
   0% {
-    transform: rotate(8deg);
+    transform: rotate(15deg);
   }
   10% {
-    transform: rotate(-2deg);
+    transform: rotate(-15deg);
   }
   20% {
-    transform: rotate(8deg);
+    transform: rotate(15deg);
   }
   30% {
-    transform: rotate(-2deg);
+    transform: rotate(-15deg);
   }
   40% {
-    transform: rotate(8deg);
+    transform: rotate(15deg);
   }
   50% {
-    transform: rotate(-2deg);
+    transform: rotate(-15deg);
   }
   60% {
-    transform: rotate(8deg);
+    transform: rotate(15deg);
   }
   70% {
-    transform: rotate(-2deg);
+    transform: rotate(-15deg);
   }
   80% {
-    transform: rotate(8deg);
+    transform: rotate(15deg);
   }
   90% {
-    transform: rotate(-2deg);
+    transform: rotate(-15deg);
   }
   100% {
-    transform: rotate(8deg);
+    transform: rotate(15deg);
+  }
+}
+
+@keyframes Leg1 {
+  0% {
+    transform: rotate(-15deg);
+  }
+  10% {
+    transform: rotate(15deg);
+  }
+  20% {
+    transform: rotate(-15deg);
+  }
+  30% {
+    transform: rotate(15deg);
+  }
+  40% {
+    transform: rotate(-15deg);
+  }
+  50% {
+    transform: rotate(15deg);
+  }
+  60% {
+    transform: rotate(-15deg);
+  }
+  70% {
+    transform: rotate(15deg);
+  }
+  80% {
+    transform: rotate(-15deg);
+  }
+  90% {
+    transform: rotate(15deg);
+  }
+  100% {
+    transform: rotate(-15deg);
+  }
+}
+
+@keyframes hand {
+  0% {
+    transform: rotate(-5deg);
+  }
+  10% {
+    transform: rotate(5deg);
+  }
+  20% {
+    transform: rotate(-5deg);
+  }
+  30% {
+    transform: rotate(5deg);
+  }
+  40% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+  60% {
+    transform: rotate(-5deg);
+  }
+  70% {
+    transform: rotate(5deg);
+  }
+  80% {
+    transform: rotate(-5deg);
+  }
+  90% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(-5deg);
+  }
+}
+
+@keyframes hand1 {
+  0% {
+    transform: rotate(-5deg);
+  }
+  10% {
+    transform: rotate(15deg);
+  }
+  20% {
+    transform: rotate(-5deg);
+  }
+  30% {
+    transform: rotate(15deg);
+  }
+  40% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(15deg);
+  }
+  60% {
+    transform: rotate(-5deg);
+  }
+  70% {
+    transform: rotate(15deg);
+  }
+  80% {
+    transform: rotate(-5deg);
+  }
+  90% {
+    transform: rotate(15deg);
+  }
+  100% {
+    transform: rotate(-5deg);
   }
 }
 

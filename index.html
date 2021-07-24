@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./css/fullpage.css">
     <link rel="stylesheet" href="./css/rolling.css">
-    <link rel="stylesheet" href="./css/hamburger.css">
+    <!-- <link rel="stylesheet" href="./css/hamburger.css"> -->
     <!-- <link rel="stylesheet" href="./css/rolling.css">   -->
     <script src="https://kit.fontawesome.com/8c3a8ab95b.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -155,7 +155,7 @@
                 </div>
                 <div class="index_p4_bigPic">
                     <div class="index_p4_bigPic_img">
-                        <img src="./images/index/product_big.png" alt="">
+                        <img src="./images/index/product_big01.png" alt="">
                     </div>
                     <div class='index_p4_bigPic_info'>
                         <p>紅豆銅鑼燒</p>
@@ -298,7 +298,7 @@
                     </div>
                 </div>
                 <div class="index_p7_bigPic">
-                    <img src="./images/index/shop_pic_a.png" alt="">
+                    <img src="./images/index/shop_pic_0.png" alt="">
                 </div>
             </div>
             <div v-for='p7 in p7_list' :class='p7.class'>
@@ -357,13 +357,9 @@
                     $('.psychotest').css({
                         display: "block",
                     });
-                    //navbar改色
-                    $('.navbar .navbar-icon i').css({
-                        color: '#bb866a',
-                    })
-                    $('.ham_bar').css({
-                        backgroundColor: '#bb866a',
-                    })
+                    //navbar改色                    
+                    $('.navbar-icon .fas ').addClass('index_navChange');
+                    $('.ham_container').addClass('index_hamChange');
 
                 }
 
@@ -387,12 +383,8 @@
                         display: 'none',
                     });
                     //    navbar改色
-                    $('.navbar .navbar-icon i').css({
-                        color: '#fff',
-                    })
-                    $('.ham_bar').css({
-                        backgroundColor: '#fff',
-                    })
+                    $('.navbar-icon .fas ').removeClass('index_navChange');
+                    $('.ham_container').removeClass('index_hamChange');
 
                 }
             }, //導覽列提示

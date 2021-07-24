@@ -58,17 +58,16 @@
   z-index: 10;
 }
 
+.navbar .ham_container:hover .ham_bar {
+  background-color: #f7c242;
+}
+
 .navbar .ham_container .ham_bar {
   width: 30px;
   height: 4px;
   background-color: #bb866a;
   border-radius: 10px;
   margin: 6px 0;
-  transition: 0.4s;
-}
-
-.navbar .ham_container .ham_bar:hover {
-  background-color: #f7c242;
 }
 
 .navbar .ham_change .ham_bar1 {
