@@ -1,0 +1,430 @@
+*{
+    box-sizing: border-box;
+    font-family: '微軟正黑體';
+}
+
+body{
+    margin: 0;
+    min-width: 1199px;
+    /* border: 1px solid red; */
+}
+
+.n-order_header{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-image: url('../images/backend/loginbg.png');
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 120% 100%;
+    padding: 20px 30px;
+    margin-bottom: 30px;
+}
+
+.n-order_logo{
+    flex-grow: 2;
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+}
+
+.n-order_logo img{
+    width: 60px;
+}
+
+.n-order_logo p{
+    font-size: 30px;
+    color: #bb866a;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+
+.n-order_logout{
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    cursor: pointer;
+}
+
+.n-order_logout p{
+    font-size: 16px;
+    color: #172852;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+
+.n-order_main{
+    display: flex;
+    justify-content: flex-start;
+    padding: 0 60px;
+}
+
+.n-order_left{
+    display: flex;
+    flex-direction: column;
+    width: 15%;
+}
+
+.n-order_left > a{
+    text-decoration: none;
+    font-size: 18px;
+    color: #172852;
+    font-weight: bold;
+    margin: 0;
+    margin-bottom: 10px;
+    padding: 0;
+    width: 144px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 10px;
+    border: 1px solid #f4ece5;
+    background-color: #f4ece5;
+}
+
+.n-order_left > a:nth-child(2){
+    background-color: #f7c242;
+}
+
+.n-order_left > a:hover{
+    background-color: #f7c242;
+}
+
+.n-order_right{
+    /* border: 1px solid red; */
+    width: 85%;
+}
+
+.n-order_right > div{
+    border: 1px solid #bb866a;    
+}
+
+.n-order_right form{
+    /* border: 1px solid blue; */
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+.n-order_right form p{
+    font-size: 22px;
+    color: #bb866a;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    border-bottom: 3px solid #b48164;
+}
+
+.n-order_right form section{
+    flex-grow: 2;
+    display: flex;
+    justify-content: flex-end;
+    column-gap: 10px;
+    align-items: flex-end;
+}
+
+.n-order_right form section label{
+    border: 1px solid #a3a3a3;
+    width: 80px;
+    height: 28px;
+    background-color: #a3a3a3;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #ffffff;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    line-height: 28px;
+}
+
+.n-order_right form section input{
+    border: 1px solid #cba89a;
+    width: 216px;
+    height: 28px;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #cba89a;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    /* text-align: center; */
+    line-height: 28px;
+    padding-left: 5px;
+}
+
+.n-order_right form section input::placeholder{
+    color: #cba89a;
+    font-weight: bold;
+}
+
+.n-order_title{
+    /* border: 1px solid #cba89a; */
+    margin: 0;
+    padding: 10px;
+    list-style: none;
+    display: grid;
+    grid-template-columns: .8fr 1fr 2fr .8fr .8fr .8fr 1fr 1fr;
+    column-gap: 10px;
+    background-color: #cba89a;
+    font-size: 16px;
+    color: #ffffff;
+    font-weight: bold; 
+}
+
+.n-order_order{
+    /* border: 1px solid #cba89a; */
+    margin: 0;
+    padding: 10px;
+    list-style: none;
+    display: grid;
+    grid-template-columns: .8fr 1fr 2fr .8fr .8fr .8fr 1fr 1fr;
+    column-gap: 10px;
+    background-color: #ffffff;
+    font-size: 16px;
+    color: #172852;
+    font-weight: bold; 
+    align-items: center;
+}
+
+.n-order_order li:last-child{
+    background-color: #6599e8;
+    border-radius: 15px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.n-order_order li:last-child:hover{
+    cursor: pointer;
+}
+
+.n-order_footer{
+    padding-right: 60px;
+}
+
+.n-order_footer ul{
+    /* border: 1px solid #bb866a; */
+    margin: 0;
+    padding: 0px;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;    
+    margin-top: 15px;
+}
+
+.n-order_footer ul li{
+    border: 1px solid #bb866a;
+    border-left: none;
+    margin: 0;
+    padding: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #bb866a;
+}
+
+.n-order_footer ul li:hover{
+    background-color: #bb866a;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.n-order_footer ul li:nth-child(2){
+    background-color: #bb866a;
+    color: #ffffff;
+}
+
+.n-order_footer ul li:first-child{
+    border-left: 1px solid #bb866a;
+}
+
+
+
+/* 編輯區 */
+
+.n-order_edit{
+    width: 750px;
+    height: 500px;
+    /* border: 1px solid red; */    
+    border-radius: 10px;
+    overflow: hidden;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    background-color: #ffffff;
+    overflow-y: scroll;
+
+}
+
+.n-order_edit > p{
+    margin: 0;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #bb866a;    
+    position: sticky;
+    top: 0;
+}
+
+.n-order_order_search{
+    /* border: 1px solid red; */
+    padding: 20px;
+    font-size: 16px;
+    color: #172852;
+    font-weight: bold;
+}
+
+.n-order_order_search > input{
+    font-size: 16px;
+    color: #172852;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    border: 2px solid #cba89a;
+}
+
+.n-order_total_status{
+    margin: 30px;
+    margin-top: 0;
+    padding: 15px 20px;
+    list-style: none;
+    display: flex;
+    justify-content: center;  
+    column-gap: 30px;
+    color: #172852;
+    font-weight: bold;  
+    border: 2px solid #cba89a;
+}
+
+.n-order_total_status select{
+    font-size: 16px;
+    color: #172852;
+    font-weight: bold;
+    width: 120px;
+    padding-left: 10px;
+    border-radius: 3px;
+    overflow: hidden;
+    cursor: pointer;
+
+    appearance: none;  
+    outline: none;
+    background: none;
+    background-image: url("../images/backend/select.png");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+}
+
+.n-order_order_information{
+    list-style: none;
+    font-size: 16px;
+    color: #172852;
+    font-weight: bold;
+    margin: 30px;
+    padding: 15px 20px;
+    display: grid;
+    grid-template-columns: 1fr n-order_8fr;
+    row-gap: 20px;
+    border: 2px solid #cba89a;
+}
+
+.n-order_order_detail{
+    list-style: none;
+    font-size: 16px;
+    color: #172852;
+    font-weight: bold;
+    margin: 30px;
+    padding: 15px 20px;
+    border: 2px solid #cba89a;
+}
+
+.n-order_order_detail p{
+    margin: 0;
+}
+
+.n-order_detail_title{
+    margin: 10px;
+    padding: 8px 15px;
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: #f4ece5;
+    margin-bottom: 0;
+}
+
+.n-order_order_detail > section{
+    border: 2px solid #f4ece5;
+    width: 624px;
+    height: 160px;
+    overflow-y: scroll;
+    padding: 0;
+    margin: 0;
+    margin-left: 10px;
+    display: grid;
+    grid-template-columns: 1.05fr 1fr 1.05fr;
+}
+
+.n-order_detail_content{
+    margin: 0px;
+    padding: 8px 15px;
+    list-style: none;
+    display: grid;
+    grid-template-rows: 40px 40px 40px;
+    align-items: center;
+}
+
+.n-order_order_checkout{
+    margin: 0px;
+    padding: 10px 0;
+    padding-right: 145px;
+    width: 624px;
+    list-style: none;
+    text-align: right;
+}
+
+.n-order_editbtn{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    column-gap: 30px;
+    margin-bottom: 20px;
+}
+
+.n-order_editbtn button{
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #172852;
+    padding: 5px 25px;
+    margin: 0;
+    border: 1px solid #172852;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.n-order_editbtn .close{    
+    background-color: #a3a3a3;
+    border: 1px solid #a3a3a3;    
+}
+
+#hide{
+    background-color: black;
+    opacity: .5;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.n-order_right .-active{
+    background: #172852;
+}
+
+
+
+

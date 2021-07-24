@@ -46,14 +46,30 @@ new Vue ({
     ],
     total_item: 0,
     shipping: 0,
+    discount: 0,
     total_price: 0,
     terms: false,
   },
   methods: {
+    // 打勾後圖案、下一頁變底色
     choose(){
       // checkbox
       this.terms=!this.terms;
+      console.log($('.OC_next').css('background-color'));
+      if(this.terms == true){
+        $('.OC_next').css('background-color', '#172852');
+        $('.OC_next').css('cursor', 'pointer');
+      }else if(this.terms == false){
+        $('.OC_next').css('background-color', '#a3a3a3');
+        $('.OC_next').css('cursor', 'default');
+      }
     },
+    // 沒打勾就不能去下一頁
+    checkOK(e){
+      if($('.OC_next').css('background-color') == 'rgb(163, 163, 163)'){
+        e.preventDefault();
+      }
+    }
   },
   computed: {
     itemPrice(){
@@ -73,7 +89,7 @@ new Vue ({
     },
     // 訂單總金額
     totalPrice(){
-      total_price = this.total_item - 80;
+      total_price = this.total_item - this.discount;
       return total_price;
     }
   }

@@ -9,24 +9,24 @@
 </head>
 <body>
     <div id="app">
-        <header class="header">
-            <div class="logo">
+        <header class="n-member_header">
+            <div class="n-member_logo">
                 <img src="../images/backend/n_logo.png" alt="" srcset="">
                 <p>小春堂後臺管理</p>
             </div>
                
-            <div class="logout">
+            <div class="n-member_logout">
                 <p>帳號登出</p>
                 <img src="../images/backend/log-out.png" alt="" srcset="">
             </div>
         </header>
 
-        <main class="main">
-            <div class="left">
+        <main class="n-member_main">
+            <div class="n-member_left">
                 <a v-for = 'btn in mainbtn' :href="btn.url">{{btn.name}}</a>
             </div>
 
-            <div class="right">
+            <div class="n-member_right">
 
                 <form action="" method="get" id="">
                     <p>會員管理</p>
@@ -38,12 +38,12 @@
                 </form>
 
                 <div>
-                    <ul class="title">
+                    <ul class="n-member_title">
                         <li v-for = 'title in titles'>{{title}}</li>
                         <li></li>
                     </ul>
 
-                    <ul v-for='(member,key) in members' class="member">                        
+                    <ul v-for='(member,key) in members' class="n-member_member">                        
                         <li>{{member.編號}}</li>
                         <li>{{member.帳號}}</li>
                         <li>{{member.姓名}}</li>
@@ -56,21 +56,16 @@
             </div>
         </main>
 
-        <footer class="footer">
+        <footer class="n-member_footer">
             <ul>
                 <li v-for='page in pages'>{{page.page}}</li>
             </ul>
-        </footer>
+        </footer>        
 
-        <!-- <ul v-for='mem in mems'>
-            全吃
-            <li v-for='(me, index) in mem'>{{index}}--{{me}}</li>            
-        </ul> -->
-
-        <div class="edit -on" v-if='current_edit !== null'>
+        <div class="n-member_edit" v-if='current_edit !== null'>
             <p>編輯與查看</p>
 
-            <ul class="edit-member">                        
+            <ul class="n-member_edit-member">                        
                 <li>編號:{{members[current_edit].編號}}</li>
                 <li>性別:{{members[current_edit].性別}}</li>
                 <li>帳號:{{members[current_edit].帳號}}</li>
@@ -87,10 +82,9 @@
                 <li>創建時間:{{members[current_edit].創建時間}}</li> 
             </ul>
 
-            <div class="editbtn">
-                <button class="close" @click='f_close'>關閉</button>
-                <!-- <button class="save" @click='finish'>儲存</button> -->
-                <button class="save" @click='f_save'>儲存</button>
+            <div class="n-member_editbtn">
+                <button class="n-member_close" @click='f_close'>關閉</button>
+                <button class="n-member_save" @click='f_save'>儲存</button>
             </div>
         </div>
 
