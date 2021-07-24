@@ -157,7 +157,7 @@
           </div>
       </div>
     
-      <a href="#" class="cart_checkout">前往結帳</a>
+      <div class="cart_checkoutBorder"><a href="./checkout.html" class="cart_checkout">前往結帳</a></div>
     
     </div>
   </div>
@@ -226,19 +226,23 @@
               </div>
 
 
-              <div id="checkout_mobile">
+              <div class="checkout_mobile">
                 
+                <!-- 商品名 -->
                 <div class="checkout_itemName">
                   <p>{{item.itemName}}</p>
                 </div>
     
-                <div class="checkout_quantity">
-                  <button class="checkout_less mainbtn" @click="sub(item)">-</button>
-                  <input class="checkout_quantity" type="text" v-model="item.quantity">
-                  <button class="checkout_add mainbtn" @click="add(item)">+</button>
+                <!-- 數量、價格 -->
+                <div>
+                  <div class="checkout_quantity">
+                    <button class="checkout_less mainbtn" @click="sub(item)">-</button>
+                    <input class="checkout_quantity" type="text" v-model="item.quantity">
+                    <button class="checkout_add mainbtn" @click="add(item)">+</button>
+                  </div>
+      
+                  <div class="checkout_unitPrice">$<span>{{item.price}}</span>元 / <span>{{item.item_Quantity}}</span>入</div>
                 </div>
-    
-                <div class="checkout_unitPrice">$<span>{{item.price}}</span>元 / <span>{{item.item_Quantity}}</span>入</div>
               
               </div>
 
@@ -263,19 +267,23 @@
                 <div class="checkout_itemImg">
                   <img :src="item.img">
                 </div>
-    
-                <div class="checkout_itemName">
-                  <p>{{item.itemName}}</p>
-                  <div class="checkout_detailBtn">查看禮盒明細</div>
+
+                <div class="checkout_mobile">
+                  <div class="checkout_itemName">
+                    <p>{{item.itemName}}</p>
+                    <div class="checkout_detailBtn">查看禮盒明細</div>
+                  </div>
+      
+                  <div>
+                    <div class="checkout_quantity">
+                      <button class="checkout_less mainbtn" @click="sub(item)">-</button>>
+                      <input class="checkout_quantity" type="text" v-model="item.quantity">
+                      <button class="checkout_add mainbtn" @click="add(item)">+</button>>
+                    </div>
+        
+                    <div class="checkout_unitPrice">$<span>{{item.price}}</span>元</div>
+                  </div>
                 </div>
-    
-                <div class="checkout_quantity">
-                  <button class="checkout_less mainbtn" @click="sub(item)">-</button>>
-                  <input class="checkout_quantity" type="text" v-model="item.quantity">
-                  <button class="checkout_add mainbtn" @click="add(item)">+</button>>
-                </div>
-    
-                <div class="checkout_unitPrice">$<span>{{item.price}}</span>元</div>
     
                 <div class="checkout_delete" @click="delete_Customization(index)">
                   <div class="checkout_leftD"></div>

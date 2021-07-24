@@ -831,6 +831,12 @@ img {
   margin: auto;
 }
 
+@media screen and (max-width: 576px) {
+  .payment_container {
+    width: 90%;
+  }
+}
+
 /* ========== 訂單處理階段 ========== */
 .payment_stage {
   display: flex;
@@ -935,14 +941,42 @@ img {
   display: flex;
 }
 
+@media screen and (max-width: 992px) {
+  .payment_orderContent {
+    flex-direction: column;
+  }
+}
+
 .payment_left {
   width: 60%;
+}
+
+@media screen and (max-width: 992px) {
+  .payment_left {
+    width: 80%;
+    margin: 50px auto;
+    order: 1;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .payment_left {
+    width: 100%;
+    margin: 50px 0;
+    order: 1;
+  }
 }
 
 .payment_title {
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 30px;
+}
+
+@media screen and (max-width: 992px) {
+  .payment_title {
+    display: none;
+  }
 }
 
 .payment_same {
@@ -999,6 +1033,12 @@ img {
   align-items: center;
 }
 
+@media screen and (max-width: 576px) {
+  .payment_data > div {
+    display: none;
+  }
+}
+
 .payment_data > input {
   border: none;
   outline: none;
@@ -1010,6 +1050,24 @@ img {
   font-size: 14px;
   font-weight: bold;
   color: #172852;
+}
+
+@media screen and (max-width: 1200px) {
+  .payment_data > input {
+    width: 300px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .payment_data > input {
+    width: 400px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .payment_data > input {
+    width: 100%;
+  }
 }
 
 ::placeholder {
@@ -1028,6 +1086,18 @@ img {
   width: 400px;
   margin-bottom: 20px;
   display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .payment_receiver {
+    width: 350px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .payment_receiver {
+    width: 330px;
+  }
 }
 
 .payment_receiver > p {
@@ -1049,6 +1119,12 @@ img {
   align-items: center;
 }
 
+@media screen and (max-width: 576px) {
+  .payment_receiverData > div {
+    display: none;
+  }
+}
+
 .payment_receiverData > input[type="text"] {
   border: none;
   outline: none;
@@ -1062,6 +1138,18 @@ img {
   color: #172852;
 }
 
+@media screen and (max-width: 768px) {
+  .payment_receiverData > input[type="text"] {
+    width: 250px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .payment_receiverData > input[type="text"] {
+    width: 100%;
+  }
+}
+
 .payment_shop {
   border: solid 2px #d6ceca;
   background-color: #ffffff;
@@ -1070,6 +1158,18 @@ img {
   width: 400px;
   margin-bottom: 20px;
   display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .payment_shop {
+    width: 350px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .payment_shop {
+    width: 330px;
+  }
 }
 
 .payment_shop > p {
@@ -1109,6 +1209,12 @@ img {
   align-items: center;
 }
 
+@media screen and (max-width: 576px) {
+  .payment_shopData > div {
+    display: none;
+  }
+}
+
 .payment_shopData > input[type="text"] {
   border: none;
   outline: none;
@@ -1122,10 +1228,28 @@ img {
   color: #172852;
 }
 
+@media screen and (max-width: 768px) {
+  .payment_shopData > input[type="text"] {
+    width: 220px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .payment_shopData > input[type="text"] {
+    width: 300px;
+  }
+}
+
 .payment_transport, .payment_payMoney {
   display: flex;
   margin: 20px 0 10px;
   align-items: flex-start;
+}
+
+@media screen and (max-width: 576px) {
+  .payment_transport, .payment_payMoney {
+    flex-direction: column;
+  }
 }
 
 .payment_transport > div:first-child, .payment_payMoney > div:first-child {
@@ -1135,6 +1259,12 @@ img {
   margin-right: 32px;
   display: flex;
   align-items: center;
+}
+
+@media screen and (max-width: 576px) {
+  .payment_transport > div:first-child, .payment_payMoney > div:first-child {
+    margin-bottom: 10px;
+  }
 }
 
 .payment_radioBorder {
@@ -1194,12 +1324,19 @@ input[type="radio"]:checked + label {
   display: none;
 }
 
-.payment_cardNumber, .payment_cardDate, .payment_cardCode {
+.payment_cardNumber, .payment_cardDate {
   display: flex;
   margin-bottom: 10px;
   font-size: 25px;
   color: #172852;
   align-items: center;
+}
+
+@media screen and (max-width: 1200px) {
+  .payment_cardNumber, .payment_cardDate {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 .payment_00 {
@@ -1211,7 +1348,7 @@ input[type="radio"]:checked + label {
   align-items: center;
 }
 
-.payment_cardNumber > input, .payment_cardCode > input {
+.payment_cardNumber input {
   background-color: #f0ebe9;
   border-radius: 5px;
   font-size: 14px;
@@ -1225,11 +1362,17 @@ input[type="radio"]:checked + label {
   text-align: center;
 }
 
-.payment_cardNumber > input:focus, .payment_cardCode > input:focus {
+@media screen and (max-width: 576px) {
+  .payment_cardNumber input {
+    width: 70px;
+  }
+}
+
+.payment_cardNumber > input:focus {
   border: 2px solid #172852;
 }
 
-.payment_cardDate > select {
+.payment_cardDate select {
   border: none;
   border-radius: 5px;
   background-color: #f0ebe9;
@@ -1243,7 +1386,7 @@ input[type="radio"]:checked + label {
   padding: 0 15px;
 }
 
-.payment_cardDate > select > option {
+.payment_cardDate option {
   color: #172852;
   font-weight: bold;
 }
@@ -1264,6 +1407,19 @@ input[type="radio"]:checked + label {
   height: 540px;
   margin-left: 30px;
   padding: 20px 15px;
+}
+
+@media screen and (max-width: 992px) {
+  .payment_right {
+    width: 80%;
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .payment_right {
+    width: 100%;
+  }
 }
 
 .payment_cartTitle {
@@ -1430,6 +1586,12 @@ input[type="radio"]:checked + label {
   margin-left: 95px;
   z-index: 1;
   transition: all 0.5s ease;
+}
+
+@media screen and (max-width: 1200px) {
+  .payment_cardFront {
+    margin-left: 0;
+  }
 }
 
 .payment_cardFront > div {
