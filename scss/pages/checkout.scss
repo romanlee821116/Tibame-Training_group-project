@@ -41,15 +41,11 @@ img{
 
 @media screen and (max-width: 992px){
   .checkout_container{
-    width: 80%;
+    width: 85%;
   }
 }
 
-@media screen and (max-width: 768px){
-  .checkout_container{
-    width: 95%;
-  }
-}
+
 
 
 /* ========== 訂單處理階段 ========== */
@@ -149,12 +145,6 @@ img{
   margin-bottom: 20px;
 }
 
-@media screen and (max-width: 576px){
-  .checkout_orderTitle{
-    text-align: center;
-  }
-}
-
 /* ========== 訂單內容 ========== */
 
 .checkout_orderContent{
@@ -184,11 +174,11 @@ img{
 /* 標題 */
 .checkout_contentTitle{
   // border: 1px solid red;
-  padding: 10px 0 10px 40px;
+  padding: 10px 0;
   font-size: 0;
 }
 
-@media screen and (max-width: 576px){
+@media screen and (max-width: 700px){
   .checkout_contentTitle{
     display: none;
   }
@@ -204,14 +194,19 @@ img{
 }
 
 .checkout_contentTitle > p:nth-child(1){
-  width: 50%;
+  width: 325px;
+  padding-left: 40px;
 }
 
-.checkout_contentTitle > p:nth-child(2), .checkout_contentTitle > p:nth-child(3){
-  width: 25%;
+.checkout_contentTitle > p:nth-child(2){
+  width: 142px;
 }
 
-@media screen and (max-width: 992px){
+.checkout_contentTitle > p:nth-child(3){
+  max-width: 142px;
+}
+
+@media screen and (max-width: 700px){
   .checkout_contentTitle > p:nth-child(1){
     width: 38%;
   }
@@ -278,14 +273,33 @@ img{
   display: flex;
 }
 
-#checkout_mobile{
+@media screen and (max-width: 576px){
+  .checkout_itemImg{
+    width: 80px;
+    height: 80px;
+  }
+}
+
+.checkout_mobile{
+  display: flex;
+}
+
+@media screen and (max-width: 576px){
+  .checkout_mobile{
+    flex-direction: column;
+    justify-content: space-around;
+    margin: auto;
+  }
+}
+
+.checkout_mobile > div:nth-child(2){
   display: flex;
 }
 
 @media screen and (max-width: 700px){
-  #checkout_mobile{
+  .checkout_mobile > div:nth-child(2){
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
   }
 }
 
@@ -510,6 +524,13 @@ img{
   }
 }
 
+@media screen and (max-width: 576px){
+  .checkout_right{
+    // border: 1px solid blue;
+    width: 100%;
+  }
+}
+
 // ========== 折扣碼 ==========
 
 .checkout_discountBorder{
@@ -723,7 +744,7 @@ img{
   width: 1950px;
   position: relative;
   left: 0;
-  transition: all 1s ease;
+  transition: all .5s ease;
 }
 
 // li
@@ -779,13 +800,13 @@ img{
 }
 
 
-@media screen and (max-width: 576px){
+@media screen and (max-width: 768px){
   .checkout_maybe{
     display: none;
   }
 }
 
-@media screen and (max-width: 576px){
+@media screen and (max-width: 768px){
   .checkout_pushItemBorder{
     display: none;
   }
