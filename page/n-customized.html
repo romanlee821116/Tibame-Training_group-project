@@ -9,66 +9,66 @@
 </head>
 <body>
     <div id="app">
-        <header class="header">
-            <div class="logo">
+        <header class="n-customized_header">
+            <div class="n-customized_logo">
                 <img src="../images/backend/n_logo.png" alt="" srcset="">
                 <p>小春堂後臺管理</p>
             </div>
                
-            <div class="logout">
+            <div class="n-customized_logout">
                 <p>帳號登出</p>
                 <img src="../images/backend/log-out.png" alt="" srcset="">
             </div>
         </header>
 
-        <main class="main">
-            <div class="left">
+        <main class="n-customized_main">
+            <div class="n-customized_left">
                 <a v-for = 'btn in mainbtn' :href="btn.url">{{btn.name}}</a>
             </div>
 
-            <div class="right">
+            <div class="n-customized_right">
 
                 <p>客製化商品管理</p>
 
-                <div class="card_style">
+                <div class="n-customized_card_style">
 
                     <p>卡片樣式</p>
 
-                    <div class="group" v-for='img_name in img_names'>
+                    <div class="n-customized_group" v-for='img_name in img_names'>
                         <label for="group1">{{img_name}}:</label>
                         <input type="file" id="group1" @change='upload_img'>
                         <p>請選擇圖片上傳</p>
-                        <div class="img">
+                        <div class="n-customized_img">
                             <img src=''>
                             <p>請選擇圖片上傳</p>
                         </div>
                     </div>                     
 
-                    <div class="editbtn">
-                        <button class="close">關閉</button>
-                        <button class="save">儲存</button>
+                    <div class="n-customized_editbtn">
+                        <button class="n-customized_close">關閉</button>
+                        <button class="n-customized_save">儲存</button>
                     </div>
 
                 </div>
 
 
-                <div class="sticker_style"> 
+                <div class="n-customized_sticker_style"> 
                     
                     <p>貼圖樣式</p>
     
-                    <div class="group" v-for='(num,key) in 12'>
+                    <div class="n-customized_group" v-for='(num,key) in 12'>
                         <label for="group5">圖片{{key +1}}:</label>
                         <input type="file" id="group5" @change='upload_img'>
                         <p>請選擇圖片上傳</p>
-                        <div class="img">
+                        <div class="n-customized_img">
                             <img src="">
                             <p>請選擇圖片上傳</p>
                         </div>
                     </div>
     
-                    <div class="editbtn">
-                        <button class="close">關閉</button>
-                        <button class="save">儲存</button>
+                    <div class="n-customized_editbtn">
+                        <button class="n-customized_close">關閉</button>
+                        <button class="n-customized_save">儲存</button>
                     </div>
                     
                 </div>
