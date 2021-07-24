@@ -9,31 +9,30 @@
 </head>
 <body>
     <div id="app">
-        <header class="header">
-            <div class="logo">
+        <header class="n-product_header">
+            <div class="n-product_logo">
                 <img src="../images/backend/n_logo.png" alt="" srcset="">
                 <p>小春堂後臺管理</p>
             </div>
                
-            <div class="logout">
+            <div class="n-product_logout">
                 <p>帳號登出</p>
                 <img src="../images/backend/log-out.png" alt="" srcset="">
             </div>
         </header>
 
-        <main class="main">
-            <div class="left">
+        <main class="n-product_main">
+            <div class="n-product_left">
                 <a v-for = 'btn in mainbtn' :href="btn.url">{{btn.name}}</a>
             </div>
 
-            <div class="right">
+            <div class="n-product_right">
 
                 <form action="" method="get" id="">
                     <p>商品管理</p>
 
-                    <div class="productbtn">
-                        <button class="add">新增</button>
-                        <!-- <button class="delete">刪除</button> -->
+                    <div class="n-product_productbtn">
+                        <button class="n-product_add" @click='new_add()' type="button">新增</button>
                     </div>
     
                     <section>
@@ -43,12 +42,12 @@
                 </form>
 
                 <div>
-                    <ul class="title">
+                    <ul class="n-product_title">
                         <li v-for = 'title in titles'>{{title}}</li>
                         <li></li>
                     </ul>
 
-                    <ul v-for='(product,key) in products' class="product">                            
+                    <ul v-for='(product,key) in products' class="n-product_product">                            
                         <li>{{product.商品編號}}</li>
                         <li>{{p_sort_list[product.商品類別]}}</li>
                         <li>{{product.名稱}}</li>
@@ -63,23 +62,18 @@
             </div>
         </main>
 
-        <footer class="footer">
+        <footer class="n-product_footer">
             <ul>
                 <li v-for='page in pages'>{{page.page}}</li>
             </ul>
-        </footer>
+        </footer>       
 
-        <!-- <ul v-for='mem in mems'>
-            全吃
-            <li v-for='(me, index) in mem'>{{index}}--{{me}}</li>            
-        </ul> -->
-
-        <div class="edit" v-if='current_edit !== null'>
+        <div class="n-product_edit" v-if='current_edit !== null'>
         <!-- <div class="edit" v-if='true'> -->
 
             <p>編輯與查看</p>
             
-            <div class="edit_left">
+            <div class="n-product_edit_left">
                 <ul>
                     <li>
                         <label for="">商品編號:</label>
@@ -151,76 +145,195 @@
                 </ul>
             </div>
 
-            <div class="edit_right">
+            <div class="n-product_edit_right">
 
-                <div class="group">
-                    <label for="group1">圖片01:</label>
-                    <input type="file" id="group1" @change='upload_img'>
-                    <p>{{group1_name}}</p>
-                    <div class="img">
-                        <img src="" id="g_img1">
-                        <p v-if ='group1_name == "請選擇圖片上傳"'>{{group1_name}}</p>
-                    </div>
-                </div>
-
-                <div class="group">
-                    <label for="group2">圖片02:</label>
-                    <input type="file" id="group2" @change='upload_img'>
-                    <p>{{group2_name}}</p>
-                    <div class="img">
-                        <img src="" id="g_img2">
-                        <p v-if ='group2_name == "請選擇圖片上傳"'>{{group2_name}}</p>
-                    </div>
-                </div>
-
-                <div class="group">
-                    <label for="group3">圖片03:</label>
-                    <input type="file" id="group3" @change='upload_img'>
-                    <p>{{group3_name}}</p>
-                    <div class="img">
-                        <img src="" id="g_img3">
-                        <p v-if ='group3_name == "請選擇圖片上傳"'>{{group3_name}}</p>
-                    </div>
-                </div>
-
-                <div class="group">
-                    <label for="group4">俯視圖:</label>
-                    <input type="file" id="group4" @change='upload_img'>
-                    <p>{{group4_name}}</p>
-                    <div class="img">
-                        <img src="" id="g_img4">
-                        <p v-if ='group4_name == "請選擇圖片上傳"'>{{group4_name}}</p>
-                    </div>
-                </div>
-
-                <div class="group">
-                    <label for="group5">客製化用圖:</label>
-                    <input type="file" id="group5" @change='upload_img'>
-                    <p>{{group5_name}}</p>
-                    <div class="img">
-                        <img src="" id="g_img5">
-                        <p v-if ='group5_name == "請選擇圖片上傳"'>{{group5_name}}</p>
+                <div class="n-product_group" v-for='(img_name, index) in img_names'>
+                    <label :for='index'>{{img_name}}:</label>
+                    <input type="file" :id="index" @change='upload_img'>
+                    <p>請選擇圖片上傳</p>
+                    <div class="n-product_img">
+                        <img src=''>
+                        <p>請選擇圖片上傳</p>
                     </div>
                 </div>
 
             </div>
 
-            <div class="editbtn">
-                <button class="close" @click='f_close'>關閉</button>
-                <!-- <button class="save" @click='finish'>儲存</button> -->
-                <button class="save" @click='f_save'>儲存</button>
+            <div class="n-product_editbtn">
+                <button class="n-product_close" @click='p_close'>關閉</button>
+                <button class="n-product_save" @click='p_save'>儲存</button>
             </div>
         </div>
 
         <div id="hide" v-if='current_edit !== null'></div>
 
+        <product-add v-if='new_edit' @pclose='closeppp' @psave='saveppp'></product-add>
+
+
     </div>
 
     <script src="../js/vue.js"></script>
     <script>
+        Vue.component('product-add', {
+            data(){
+                return{  //組件的變數寫在這裡
+                    p_number:'', 
+                    p_sort:0, 
+                    p_name:'', 
+                    p_original:0, 
+                    p_sell:0, 
+                    p_stock:0, 
+                    p_status:0, 
+                    p_limit:0, 
+                    on_off:0, 
+                    p_exp:0, 
+                    p_customized:0, 
+                    p_ingredient:'', 
+                    p_descript:'',
+                    img_names:[ '圖片01', '圖片02', '圖片03', '俯視圖', '客製化用圖'],
+                };
+            },
+        
+            template: `
+                <div>
+                    <div class="n-product_edit" v-if='current_edit !== null'>
+
+                        <p>編輯與查看</p>
+                        
+                        <div class="n-product_edit_left">
+                            <ul>
+                                <li>
+                                    <label for="">商品編號:</label>
+                                    <input type="text" v-model='p_number'>
+                                </li>
+                                <li>
+                                    商品類別:
+                                    <select name="status" id="" v-model='p_sort'>
+                                        <option value="0">大幅</option>
+                                        <option value="1">小幅</option>
+                                    </select>
+                                </li>
+                                <li>
+                                    <label for="">商品名稱:</label>
+                                    <input type="text" v-model='p_name'>
+                                </li>
+                                <li>
+                                    <label for="">&emsp;&emsp;原價:</label>
+                                    <input type="text" v-model='p_original'>
+                                </li>
+                                <li>
+                                    <label for="">&emsp;&emsp;售價:</label>
+                                    <input type="text" v-model='p_sell'>
+                                </li>
+                                <li>
+                                    <label for="">庫存數量:</label>
+                                    <input type="text" v-model='p_stock'>
+                                </li>
+                                <li>
+                                    商品狀態:
+                                    <select name="status" id="" v-model='p_status'>
+                                        <option value="0">新品上市</option>
+                                        <option value="1">舊品出清</option>
+                                    </select>
+                                    <select name="status" id="" v-model='p_limit'>
+                                        <option value="0">期間限定商品</option>
+                                        <option value="1">常駐商品</option>
+                                    </select>
+                                </li>
+                                <li>
+                                    &emsp;上下架:
+                                    <select name="status" id="" v-model='on_off'>
+                                        <option value="0">上架</option>
+                                        <option value="1">下架</option>
+                                    </select>
+                                </li>
+                                <li>
+                                    保存期限:
+                                    <select name="status" id="" v-model='p_exp'>
+                                        <option value="0">14日</option>
+                                        <option value="1">30日</option>
+                                    </select>
+                                </li>
+                                <li>
+                                    客製化禮盒:
+                                    <select name="status" id="" v-model='p_customized'>
+                                        <option value="0">是</option>
+                                        <option value="1">否</option>
+                                    </select>
+                                </li>
+                                <li>
+                                    <label for="">&emsp;&emsp;成分:</label>
+                                    <textarea name="" id="" cols="30" rows="5" v-model='p_ingredient'></textarea>
+                                </li>
+                                <li>
+                                    <label for="">說明文字:</label>
+                                    <textarea name="" id="" cols="30" rows="5" v-model='p_descript'></textarea>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="n-product_edit_right">
+
+                            <div class="n-product_group" v-for='(img_name, index) in img_names'>
+                                <label :for='index'>{{img_name}}:</label>
+                                <input type="file" :id="index" @change='upload_img'>
+                                <p>請選擇圖片上傳</p>
+                                <div class="n-product_img">
+                                    <img src=''>
+                                    <p>請選擇圖片上傳</p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="n-product_editbtn">
+                            <button class="n-product_close" @click='p_close'>關閉</button>
+                            <button class="n-product_save" @click='p_save'>儲存</button>
+                        </div>
+                    </div>
+
+                    <div id="hide" v-if='current_edit !== null'></div>
+                </div>
+
+            `,
+            methods:{
+                p_close(){ 
+                    this.$emit('pclose');
+                },  
+                p_save(){   
+
+                    this.$emit('psave', this.p_number, this.p_sort, this.p_name, this.p_original, this.p_sell, this.p_stock, this.p_status, this.p_limit, this.on_off, this.p_exp, this.p_customized, this.p_ingredient, this.p_descript);
+
+                },
+
+                upload_img(e){
+
+                    var files = e.target.files || e.dataTransfer.files;
+                    let file = files[0];
+
+                    e.target.nextElementSibling.innerText = file.name;
+
+                    let readFile = new FileReader();
+                    readFile.readAsDataURL(file);
+                    readFile.addEventListener("load", function () {
+
+                        e.target.nextElementSibling.nextElementSibling.querySelector('img').src = readFile.result; 
+
+                        e.target.nextElementSibling.nextElementSibling.querySelector('p').style.opacity=0;
+
+                    });
+                },
+            }  
+        });
+        
+        
         new Vue({
             el: '#app',
             data:{
+
+                new_edit:false,
+                img_names:[ '圖片01', '圖片02', '圖片03', '俯視圖', '客製化用圖'],
+
                 p_number:'',
                 p_name:'',
                 p_original:null,
@@ -268,7 +381,6 @@
                         '庫存數量':333,
                         '客製化禮盒':0,
                         '上下架':1,
-                        '客製化禮盒測試': 1,
                         '保存期限':0,
                         '商品狀態上市':0,
                         '商品狀態商品':0,
@@ -284,7 +396,6 @@
                         '庫存數量':333,
                         '客製化禮盒':1,
                         '上下架':0,
-                        '客製化禮盒測試': 1,
                         '保存期限':0,
                         '商品狀態上市':0,
                         '商品狀態商品':0,
@@ -300,7 +411,6 @@
                         '庫存數量':333,
                         '客製化禮盒':0,
                         '上下架':1,
-                        '客製化禮盒測試': 1,
                         '保存期限':0,
                         '商品狀態上市':0,
                         '商品狀態商品':0,
@@ -344,10 +454,10 @@
 
 
                 },
-                f_close(){                    
+                p_close(){                    
                     this.current_edit = null;
                 },  
-                f_save(){     
+                p_save(){     
 
                     let n_index = this.$data.current_edit;
 
@@ -364,55 +474,59 @@
 
                     this.current_edit = null;
                 },  
-                upload_img(){
+                upload_img(e){
 
-                    let file1 = document.getElementById('group1').files[0];
-                    this.group1_name = file1.name;
+                    var files = e.target.files || e.dataTransfer.files;
+                    let file = files[0];
 
-                    let readFile1 = new FileReader();
-                    readFile1.readAsDataURL(file1);
-                    readFile1.addEventListener('load', function(){
-                        document.getElementById('g_img1').src = readFile1.result;
+                    e.target.nextElementSibling.innerText = file.name;
+
+                    let readFile = new FileReader();
+                    readFile.readAsDataURL(file);
+                    readFile.addEventListener("load", function () {
+
+                        e.target.nextElementSibling.nextElementSibling.querySelector('img').src = readFile.result; 
+
+                        e.target.nextElementSibling.nextElementSibling.querySelector('p').style.opacity=0;
+                    
                     });
-
-                    let file2 = document.getElementById('group2').files[0];
-                    this.group2_name = file2.name;
-
-                    let readFile2 = new FileReader();
-                    readFile2.readAsDataURL(file2);
-                    readFile2.addEventListener('load', function(){
-                        document.getElementById('g_img2').src = readFile2.result;
-                    });
-
-                    let file3 = document.getElementById('group3').files[0];
-                    this.group3_name = file3.name;
-
-                    let readFile3 = new FileReader();
-                    readFile3.readAsDataURL(file3);
-                    readFile3.addEventListener('load', function(){
-                        document.getElementById('g_img3').src = readFile3.result;
-                    });
-
-                    let file4 = document.getElementById('group4').files[0];
-                    this.group4_name = file4.name;
-
-                    let readFile4 = new FileReader();
-                    readFile4.readAsDataURL(file4);
-                    readFile4.addEventListener('load', function(){
-                        document.getElementById('g_img4').src = readFile4.result;
-                    });
-
-                    let file5 = document.getElementById('group5').files[0];
-                    this.group5_name = file5.name;
-
-                    let readFile5 = new FileReader();
-                    readFile5.readAsDataURL(file5);
-                    readFile5.addEventListener('load', function(){
-                        document.getElementById('g_img5').src = readFile5.result;
-                    });
-
-
                 },
+
+                new_add(){
+                    this.new_edit = true;
+                    // this.current_edit = "notnull";
+                },
+                closeppp(){
+                    this.new_edit = false;
+                },
+                saveppp(p_number, p_sort, p_name, p_original, p_sell, p_stock, p_status, p_limit, on_off, p_exp, p_customized, p_ingredient, p_descript){
+                    
+                    this.new_edit = false;    
+
+                    let ppp = 
+                    {                              
+                        '商品編號':p_number,
+                        '商品類別':parseInt(p_sort),
+                        '名稱':p_name,
+                        '原價':parseInt(p_original),
+                        '售價':parseInt(p_sell),
+                        '庫存數量':parseInt(p_stock),
+                        '客製化禮盒':parseInt(p_customized),
+                        '上下架':parseInt(on_off),
+                        '保存期限':parseInt(p_exp),
+                        '商品狀態上市':parseInt(p_status),
+                        '商品狀態商品':parseInt(p_limit),
+                        '成分':p_ingredient,
+                        '說明':p_descript,
+                    }
+
+                    console.log(ppp);
+
+                    this.products.unshift(ppp);
+
+                }  
+
+
                 
                 
             },

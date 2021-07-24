@@ -9,31 +9,30 @@
 </head>
 <body>
     <div id="app">
-        <header class="header">
-            <div class="logo">
+        <header class="n-discount_header">
+            <div class="n-discount_logo">
                 <img src="../images/backend/n_logo.png" alt="" srcset="">
                 <p>小春堂後臺管理</p>
             </div>
                
-            <div class="logout">
+            <div class="n-discount_logout">
                 <p>帳號登出</p>
                 <img src="../images/backend/log-out.png" alt="" srcset="">
             </div>
         </header>
 
-        <main class="main">
-            <div class="left">
+        <main class="n-discount_main">
+            <div class="n-discount_left">
                 <a v-for = 'btn in mainbtn' :href="btn.url">{{btn.name}}</a>
             </div>
 
-            <div class="right">
+            <div class="n-discount_right">
 
                 <form action="" method="get" id="">
                     <p>消息管理</p>
 
-                    <div class="discountbtn">
-                        <button class="add">新增</button>
-                        <!-- <button class="delete">刪除</button> -->
+                    <div class="n-discount_discountbtn">
+                        <button class="n-discount_add" @click='new_add()' type="button">新增</button>
                     </div>
     
                     <section>
@@ -43,12 +42,12 @@
                 </form>
 
                 <div>
-                    <ul class="title">
+                    <ul class="n-discount_title">
                         <li v-for = 'title in titles'>{{title}}</li>
                         <li></li>
                     </ul>
 
-                    <ul v-for='(discount,key) in discounts' class="discount">                              
+                    <ul v-for='(discount,key) in discounts' class="n-discount_discount">                              
                         <li>{{discount.折扣碼編號}}</li>
                         <li>{{discount.上架日期}}</li>
                         <li>{{d_number_list[discount.折扣碼號]}}</li>
@@ -61,18 +60,18 @@
             </div>
         </main>
 
-        <footer class="footer">
+        <footer class="n-discount_footer">
             <ul>
                 <li v-for='page in pages'>{{page.page}}</li>
             </ul>
         </footer>
 
-        <div class="edit" v-if='current_edit !== null'>
-        <!-- <div class="edit" v-if='true'> -->
+        <div class="n-discount_edit" v-if='current_edit !== null'>
+        <!-- <div class="n-discount_edit" v-if='true'> -->
 
             <p>編輯與查看</p>
             
-            <div class="discount_mid">
+            <div class="n-discount_discount_mid">
                 <ul>                    
                     <li>
                         <section>折扣碼號:
@@ -113,76 +112,158 @@
                 </ul>
             </div>
 
-            <div class="discount_bot">
+            <div class="n-discount_discount_bot">
 
-                <div class="group">
-                    <label for="group1">右上圖:</label>
-                    <input type="file" id="group1" @change='upload_img'>
-                    <p>{{group1_name}}</p>
-                    <div class="img">
-                        <img src="" id="g_img1">
-                        <p v-if ='group1_name == "請選擇圖片上傳"'>{{group1_name}}</p>
-                    </div>
-                </div>
-
-                <div class="group">
-                    <label for="group2">主題:</label>
-                    <input type="file" id="group2" @change='upload_img'>
-                    <p>{{group2_name}}</p>
-                    <div class="img">
-                        <img src="" id="g_img2">
-                        <p v-if ='group2_name == "請選擇圖片上傳"'>{{group2_name}}</p>
-                    </div>
-                </div>
-
-                <div class="group">
-                    <label for="group3">圖片01:</label>
-                    <input type="file" id="group3" @change='upload_img'>
-                    <p>{{group3_name}}</p>
-                    <div class="img">
-                        <img src="" id="g_img3">
-                        <p v-if ='group3_name == "請選擇圖片上傳"'>{{group3_name}}</p>
-                    </div>
-                </div>
-
-                <div class="group">
-                    <label for="group4">圖片02:</label>
-                    <input type="file" id="group4" @change='upload_img'>
-                    <p>{{group4_name}}</p>
-                    <div class="img">
-                        <img src="" id="g_img4">
-                        <p v-if ='group4_name == "請選擇圖片上傳"'>{{group4_name}}</p>
-                    </div>
-                </div>
-
-                <div class="group">
-                    <label for="group5">圖片03:</label>
-                    <input type="file" id="group5" @change='upload_img'>
-                    <p>{{group5_name}}</p>
-                    <div class="img">
-                        <img src="" id="g_img5">
-                        <p v-if ='group5_name == "請選擇圖片上傳"'>{{group5_name}}</p>
+                <div class="n-discount_group" v-for='(img_name, index) in img_names'>
+                    <label :for='index'>{{img_name}}:</label>
+                    <input type="file" :id="index" @change='upload_img'>
+                    <p>請選擇圖片上傳</p>
+                    <div class="n-discount_img">
+                        <img src=''>
+                        <p>請選擇圖片上傳</p>
                     </div>
                 </div>
 
             </div>
 
-            <div class="editbtn">
-                <button class="close" @click='f_close'>關閉</button>
-                <!-- <button class="save" @click='finish'>儲存</button> -->
-                <button class="save" @click='f_save'>儲存</button>
+            <div class="n-discount_editbtn">
+                <button class="n-discount_close" @click='d_close'>關閉</button>
+                <button class="n-discount_save" @click='d_save'>儲存</button>
             </div>
         </div>
 
         <div id="hide" v-if='current_edit !== null'></div>
 
+        <discount-add v-if='new_edit' @dclose='closeddd' @dsave='saveddd'></discount-add>
+
+
     </div>
 
     <script src="../js/vue.js"></script>
     <script>
+
+        Vue.component('discount-add', {
+            data(){
+                return{  //組件的變數寫在這裡
+                    d_number:0,
+                    on_off:0,
+                    d_main_title:'',
+                    d_sec_title:'',
+                    d_main_content:'',
+                    d_sec_content:'',
+                    img_names:['右上圖', '主題', '圖片01', '圖片02', '圖片03'],
+                };
+            },
+        
+            template: `
+                <div>
+                    <div class="n-discount_edit" v-if='current_edit !== null'>
+
+                        <p>編輯與查看</p>
+                        
+                        <div class="n-discount_discount_mid">
+                            <ul>                    
+                                <li>
+                                    <section>折扣碼號:
+                                        <select name="status" id="" v-model='d_number'>
+                                            <option value="0">abcdefg</option>
+                                            <option value="1">gtrfdes</option>
+                                        </select>
+                                    </section>
+                                
+                                    <section>上下架:
+                                        <select name="status" id="" v-model='on_off'>
+                                            <option value="0">上架</option>
+                                            <option value="1">下架</option>
+                                        </select>
+                                    </section>
+                                </li>
+
+                                <li>
+                                    <label for="">主標題:</label>
+                                    <input type="text" v-model='d_main_title'>
+                                </li>
+
+                                <li>
+                                    <label for="">副標題:</label>
+                                    <input type="text" v-model='d_sec_title'>
+                                </li>
+
+                                <li>
+                                    <label for="">內文01:</label>
+                                    <textarea name="" id="" cols="73" rows="5" v-model='d_main_content'></textarea>
+                                </li>
+                                
+                                <li>
+                                    <label for="">內文02:</label>
+                                    <textarea name="" id="" cols="73" rows="5" v-model='d_sec_content'></textarea>
+                                </li>
+
+                            </ul>
+                        </div>
+
+                        <div class="n-discount_discount_bot">
+
+                            <div class="n-discount_group" v-for='(img_name, index) in img_names'>
+                                <label :for='index'>{{img_name}}:</label>
+                                <input type="file" :id="index" @change='upload_img'>
+                                <p>請選擇圖片上傳</p>
+                                <div class="n-discount_img">
+                                    <img src=''>
+                                    <p>請選擇圖片上傳</p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="n-discount_editbtn">
+                            <button class="n-discount_close" @click='d_close'>關閉</button>
+                            <button class="n-discount_save" @click='d_save'>儲存</button>
+                        </div>
+                    </div>
+
+                    <div id="hide" v-if='current_edit !== null'></div>
+                </div>
+
+            `,
+            methods:{
+                d_close(){ 
+                    this.$emit('dclose');
+                },  
+                d_save(){   
+
+                    this.$emit('dsave', this.d_number, this.on_off, this.d_main_title, this.d_sec_title, this.d_main_content, this.d_sec_content);
+
+                },
+
+                upload_img(e){
+
+                    var files = e.target.files || e.dataTransfer.files;
+                    let file = files[0];
+
+                    e.target.nextElementSibling.innerText = file.name;
+
+                    let readFile = new FileReader();
+                    readFile.readAsDataURL(file);
+                    readFile.addEventListener("load", function () {
+
+                        e.target.nextElementSibling.nextElementSibling.querySelector('img').src = readFile.result; 
+
+                        e.target.nextElementSibling.nextElementSibling.querySelector('p').style.opacity=0;
+
+                    });
+                },
+            }  
+        });
+
+
         new Vue({
             el: '#app',
             data:{
+
+                new_edit:false,
+                img_names:['右上圖', '主題', '圖片01', '圖片02', '圖片03'],
+
                 discount_number:'',
                 on_off_list:['上架', '下架'],
                 d_number_list:['abcdefg', 'gtrfdes'],
@@ -262,10 +343,10 @@
                     this.d_sec_content = this.discounts[index].內文;
                 },
 
-                f_close(){                    
+                d_close(){                    
                     this.current_edit = null;
                 },  
-                f_save(){     
+                d_save(){     
 
                     let d_index = this.$data.current_edit;
 
@@ -274,55 +355,63 @@
                     this.current_edit = null;
                 },  
 
-                upload_img(){
+                upload_img(e){
 
-                    let file1 = document.getElementById('group1').files[0];
-                    this.group1_name = file1.name;
+                    var files = e.target.files || e.dataTransfer.files;
+                    let file = files[0];
 
-                    let readFile1 = new FileReader();
-                    readFile1.readAsDataURL(file1);
-                    readFile1.addEventListener('load', function(){
-                        document.getElementById('g_img1').src = readFile1.result;
+                    e.target.nextElementSibling.innerText = file.name;
+
+                    let readFile = new FileReader();
+                    readFile.readAsDataURL(file);
+                    readFile.addEventListener("load", function () {
+
+                        e.target.nextElementSibling.nextElementSibling.querySelector('img').src = readFile.result; 
+
+                        e.target.nextElementSibling.nextElementSibling.querySelector('p').style.opacity=0;
+                    
                     });
-
-                    let file2 = document.getElementById('group2').files[0];
-                    this.group2_name = file2.name;
-
-                    let readFile2 = new FileReader();
-                    readFile2.readAsDataURL(file2);
-                    readFile2.addEventListener('load', function(){
-                        document.getElementById('g_img2').src = readFile2.result;
-                    });
-
-                    let file3 = document.getElementById('group3').files[0];
-                    this.group3_name = file3.name;
-
-                    let readFile3 = new FileReader();
-                    readFile3.readAsDataURL(file3);
-                    readFile3.addEventListener('load', function(){
-                        document.getElementById('g_img3').src = readFile3.result;
-                    });
-
-                    let file4 = document.getElementById('group4').files[0];
-                    this.group4_name = file4.name;
-
-                    let readFile4 = new FileReader();
-                    readFile4.readAsDataURL(file4);
-                    readFile4.addEventListener('load', function(){
-                        document.getElementById('g_img4').src = readFile4.result;
-                    });
-
-                    let file5 = document.getElementById('group5').files[0];
-                    this.group5_name = file5.name;
-
-                    let readFile5 = new FileReader();
-                    readFile5.readAsDataURL(file5);
-                    readFile5.addEventListener('load', function(){
-                        document.getElementById('g_img5').src = readFile5.result;
-                    });
-
-
                 },
+
+                new_add(){
+                    this.new_edit = true;
+                    // this.current_edit = "notnull";
+                },
+                closeddd(){
+                    this.new_edit = false;
+                },
+                saveddd(d_number, on_off, d_main_title, d_sec_title, d_main_content, d_sec_content){
+                    this.new_edit = false;
+
+                    // console.log(f_sort);
+
+                    let today = new Date()
+                    let y_today = today.getFullYear()
+                    let m_today = today.getMonth()+1
+                    let d_today = today.getDate()
+                    let h_today = today.getHours()
+                    let min_today = today.getMinutes()
+                    let u_today = y_today +'/'+0+ m_today +'/'+ d_today
+                    // let last_today = y_today +'/'+ m_today +'/'+ d_today +'\r\n'+ h_today +':'+ min_today
+                    let last_today = `${y_today}/0${m_today}/${d_today} ${h_today}:${min_today}`
+                    // console.log(u_today);
+
+
+                    let ddd = 
+                    {      
+                        '折扣碼編號':'1234567890',
+                        '上架日期':u_today,   
+                        '折扣碼號':parseInt(d_number),
+                        '標題':d_main_title,
+                        '上下架':parseInt(on_off),
+                        '最後更新日期':last_today,  
+                    }
+
+                    console.log(ddd);
+
+                    this.discounts.unshift(ddd);
+
+                }  
                 
                 
             },

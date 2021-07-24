@@ -9,24 +9,24 @@
 </head>
 <body>
     <div id="app">
-        <header class="header">
-            <div class="logo">
+        <header class="n-order_header">
+            <div class="n-order_logo">
                 <img src="../images/backend/n_logo.png" alt="" srcset="">
                 <p>小春堂後臺管理</p>
             </div>
                
-            <div class="logout">
+            <div class="n-order_logout">
                 <p>帳號登出</p>
                 <img src="../images/backend/log-out.png" alt="" srcset="">
             </div>
         </header>
 
-        <main class="main">
-            <div class="left">
+        <main class="n-order_main">
+            <div class="n-order_left">
                 <a v-for = 'btn in mainbtn' :href="btn.url">{{btn.name}}</a>
             </div>
 
-            <div class="right">
+            <div class="n-order_right">
 
                 <form action="" method="get" id="">
                     <p>訂單管理</p>
@@ -38,12 +38,12 @@
                 </form>
 
                 <div>
-                    <ul class="title">
+                    <ul class="n-order_title">
                         <li v-for = 'title in titles'>{{title}}</li>
                         <li></li>
                     </ul>
 
-                    <ul v-for='(order,key) in orders' class="order">                        
+                    <ul v-for='(order,key) in orders' class="n-order_order">                        
                         <li>{{order.編號}}</li>
                         <li>{{order.訂單編號}}</li>
                         <li>{{order.帳號}}</li>
@@ -57,7 +57,7 @@
             </div>
         </main>
 
-        <footer class="footer">
+        <footer class="n-order_footer">
             <ul>
                 <li v-for='page in pages'>{{page.page}}</li>
             </ul>
@@ -65,16 +65,16 @@
 
         
 
-        <div class="edit" v-if='current_edit !== null'>
+        <div class="n-order_edit" v-if='current_edit !== null'>
 
             <p>編輯與查看</p>
            
-            <div class="order_search">
+            <div class="n-order_order_search">
                 <label for="">訂單編號:</label>
                 <input type="text" v-model='select_number'>
             </div>
 
-            <ul class="total_status">
+            <ul class="n-order_total_status">
                 <li>
                     付款狀態:
                     <select name="pay_status" id="" v-model='o_pay'>
@@ -108,7 +108,7 @@
                 </li>
             </ul>
 
-            <ul class="order_information">
+            <ul class="n-order_order_information">
                 <li>會員姓名: {{orders[current_edit].姓名}}</li>
                 <li>運送方式: {{orders[current_edit].運送方式}}</li>
                 <li>會員編號:{{orders[current_edit].會員編號}}</li>
@@ -121,19 +121,19 @@
                 <li>物流編號: {{orders[current_edit].物流編號}}</li>
             </ul>
 
-            <div class="order_detail">
+            <div class="n-order_order_detail">
                 <p>訂單商品明細</p>
-                <ul class="detail_title">
+                <ul class="n-order_detail_title">
                     <li v-for='title in order_title'>{{title}}</li>
                 </ul>
 
                 <section>
-                    <ul v-for='lists in order_list[current_edit]' class="detail_content">
+                    <ul v-for='lists in order_list[current_edit]' class="n-order_detail_content">
                         <li v-for='list in lists'>{{list}}</li>
                     </ul>
                 </section>
 
-                <ul class="order_checkout">
+                <ul class="n-order_order_checkout">
                     <li>商品金額:${{total_cost}}元</li>
                     <li>折扣碼:N/A&emsp;&nbsp;&nbsp;&nbsp;</li>
                     <li>運費:${{ship_cost[orders[current_edit].運費]}}元&nbsp;&nbsp;</li>
@@ -141,10 +141,9 @@
                 </ul>
             </div>
 
-            <div class="editbtn">
-                <button class="close" @click='f_close'>關閉</button>
-                <!-- <button class="save" @click='finish'>儲存</button> -->
-                <button class="save" @click='f_save'>儲存</button>
+            <div class="n-order_editbtn">
+                <button class="n-order_close" @click='f_close'>關閉</button>
+                <button class="n-order_save" @click='f_save'>儲存</button>
             </div>
         </div>
 

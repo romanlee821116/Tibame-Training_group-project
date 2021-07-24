@@ -62,9 +62,9 @@ body {
         transform: translateX(-50%);
         border-radius: 45%;
         background-color: $lightBrown;
-        animation: rotate 15s linear infinite;
+        animation: ham_rotate 15s linear infinite;
     }
-    @keyframes rotate {
+    @keyframes ham_rotate {
         0% {transform: translate(-50%, 0) rotateZ(0deg);}
         50% {transform: translate(-50%, -2%) rotateZ(180deg);}
         100% {transform: translate(-50%, 0%) rotateZ(360deg);}

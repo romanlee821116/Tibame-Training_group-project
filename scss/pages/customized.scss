@@ -1,5 +1,6 @@
 @import '../mixin/mixin';
 @import '../base/reset.scss';
+@import '../base/color.scss';
 
 *{
     margin: 0;
@@ -19,11 +20,11 @@ $barColor: #f7c242;
 $barBgc: #cba89a;
 
 
-html,body{
+body{
     width: 100%;
     background-image: url('../images/customized/bg.png');
     background-size: cover;
-    // overflow: hidden;
+    overflow-y: hidden;
     position: relative;
 }
 
@@ -127,11 +128,11 @@ html,body{
             font-size: 32px;
         }
         @include rwd(800px){
-            margin-top: 80px;
+            // margin-top: 80px;
         }
         @include rwd(575px){
-            // padding-top: 80px;
-            padding-top: 0px;
+            padding-top: 80px;
+            // padding-top: 0px;
             width: 100%;
             h3{
                 font-size: 20px;
@@ -154,7 +155,8 @@ html,body{
     top: 35%;
     transform: translateY(-50%);
     justify-items: center;
-    align-items: center;    
+    align-items: center;  
+    z-index: 5;  
     // border: 1px solid blue;
     p{
         margin-top: 15px;
@@ -281,6 +283,9 @@ html,body{
     justify-self: center;
     transition: .3s;
     padding: 15px;
+    @include rwd(575px){
+        margin-top: 40px;
+    }
 } 
 .six_grid{
     background-image: url('../images/customized/six_boxBody.png');
@@ -296,6 +301,9 @@ html,body{
     justify-self: center;
     transition: .3s;
     padding: 15px;
+    @include rwd(575px){
+        margin-top: 40px;
+    }
 }
 .nine_grid{
     background-image: url('../images/customized/nine_boxBody.png');
@@ -311,6 +319,9 @@ html,body{
     justify-self: center;
     transition: .3s;
     padding: 15px;
+    @include rwd(575px){
+        margin-top: 40px;
+    }
 }    
 .fa-chevron-right{
     margin-left: 10px;;
@@ -342,11 +353,11 @@ html,body{
             font-size: 32px;
         }
         @include rwd(800px){
-            margin-top: 80px;
+            // margin-top: 80px;
         }
         @include rwd(575px){
-            // padding-top: 80px;
-            padding-top: 0px;
+            padding-top: 80px;
+            // padding-top: 0px;
             width: 100%;
             h3{
                 font-size: 20px;
@@ -440,8 +451,8 @@ html,body{
     
 
     // 產品區
-    $itemWidth : 180px;
-    $rdwWidth : 160px; 
+    $itemWidth : 150px;
+    $rdwWidth : 130px; 
     .cus_product_contianer{
         display: grid;
         grid-gap: 10px;
@@ -453,6 +464,7 @@ html,body{
         }
         @include rwd(800px){
             grid-template-columns: 1fr 1fr 1fr;
+            padding: 0 15px;
         }
         @include rwd(600px){
             grid-template-columns: 1fr 1fr;
@@ -483,10 +495,11 @@ html,body{
                 height: $itemWidth;
                 border-radius: 50%;
                 margin: 0 auto;
-                background-color: #999;
+                background-color: $lightBrown;
                 text-align: center;
-                transform: translate(-50%, -40px);
+                transform: translate(-50%, -70px);
                 display: none;
+                padding-top: 20px;
                 p{
                    position: absolute;
                    left: 50%;
@@ -502,10 +515,11 @@ html,body{
                     line-height: 30px;
                     i.fa-plus{
                         font-size: 22px;
+                        color: #fff;
                     }
                 }
                 @include rwd(400px){
-                    transform: translate(-50%, -60px);
+                    transform: translate(-50%, -90px);
                 }
             }
         }        
@@ -610,6 +624,7 @@ html,body{
         transform: translate(-50%, 0%);
         transition: .5s;
         display: none;
+        border-radius: 15px;
         @include rwd(976px){
             width: $rwdBoxWidth;
             height: $rwdBoxHeight
@@ -619,7 +634,8 @@ html,body{
             height: 100%;
             display: none;
             position: absolute;
-            cursor: pointer;        
+            cursor: pointer;
+            border-radius: 15px;
         }
         pre{
             width: 100% ;
@@ -627,47 +643,41 @@ html,body{
             opacity: 0;
             transform: scaleX(-1);
             position: absolute;
+            border-radius: 25px;
             top: 0;
             left: 0;
-            padding: 30px;
+            padding: 15px;
             line-height: 40px;
             white-space: pre-wrap !important;
             word-wrap: break-word;
-            font-size: 18px;    
-            border: 2px solid pink;
+            font-size: 16px; 
+            color: $darkBrown;  
         }
         .choose-bag{
+            height: 180%;
             top: 0;
             left: 0;
             display: none;
         }
         .card1{
-            // border: 5px solid rgb(110, 18, 214);
             z-index: 2;
             top: 0;
             left: 0;
             display: none;
-            // position: relative;
         }
         .card2{
             top: 30px;
             left: -50px;
-            // border: 5px solid rgb(255, 0, 179);
             display: none;
-            // position: relative;
         }
         .card3{
             top: 30px;
             left: 50px;
-            // border: 5px solid rgb(255, 0, 179);
             display: none;
-            // position: relative;
         }
     }
     //選擇禮卡按鈕
     .custom_chooseCard_btn{
-        // border: 1px solid green;
-        // width: 90%;
         width: 100%;
         position: absolute;
         bottom: 0px;
@@ -682,55 +692,88 @@ html,body{
         box-shadow: 0px 0px 15px #555;
     } 
     //卡片內容填寫框
-    $lineMaxHeight : 8;
     .custom_card_textArea{
         width: 35%;
-        height: 60%;
+        height: 70%;
+        min-width: 280px;
         border: 2px solid blue;
-        padding: 10px;
         position: absolute;
-        top: 55%;
-        right:5%;
+        top: 60%;
+        right:10%;
         transform: translate(0%,-50%);
         display: none;
-        background-color: #fff;
+        // background: url('../../images/customized/letter.png');
+        // background-position: center;
+        // background-size: contain;
+        // background-repeat: no-repeat;
+        padding: 10px;       
+        .custom_cardBg{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0; 
+            left:0;
+            @include rwd(575px){
+                height: auto;
+            }
+        }
         form{
             width: 100%;
             height: 100%;
-        }
-        textarea{
-            width: 100%;
-            height: 100%;
-            line-height: 45px;
-            background-color: transparent;
-            font-family: '微軟正黑體';
-            font-size: 22px;
-            border: 0;
-            resize: none;
-            &:focus{
-                outline: 0;
+            position: relative;
+            z-index: 5;
+            textarea{
+                width: 100%;
+                height: 90%;
+                line-height: 45px;
+                background-color: transparent;
+                font-family: '微軟正黑體';
+                font-size: 18px;
+                color: $darkBrown;
+                border: 0;
+                padding: 40px;
+                resize: none;
+                &:focus{
+                    outline: 0;
+                }
             }
-        }
+        }        
         .custom_card_iconList{
-            width: 100%;
+            padding: 20px;
+            width: auto;
             height: 100%;
-            border: 2px solid red;
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 70px 70px 70px 70px;
             gap: 10px;
             padding: 10px;
             overflow-y: scroll;
             display: none;
+            position: relative;
+            z-index: 5;
+            padding: 30px 0 0 30px;
             img{
-                width: 100%;
-                height: auto;
+                width: auto;
+                height: 100%;
                 background-color: transparent;
                 border-radius: 10px;
                 cursor: pointer;
             }
             .choosen_icon{
-                border: 2px solid $barBgc;
+                border: 2px solid $lightBrown;
             }
+            @include rwd(575px){
+                grid-template-columns: 33% 33% 33%;
+                grid-template-rows: 50px 50px 50px 50px;
+                padding: 20px 20px 20px 30px;
+            }
+        }
+        @include rwd(575px){
+            position: absolute;
+            top: 85%;
+            right:50%;
+            transform: translate(50%,-50%);
+            background-position: top;            
         }
         
     }
@@ -788,6 +831,11 @@ html,body{
                 transform: translateX(-50%);
                 color: $btnBgc                
             }
+            @include rwd(575px){
+                &::before{
+                    top: 120%;
+                }
+            }
         }
     }
 }
@@ -802,15 +850,18 @@ html,body{
     height: 45%;
     max-width: 400px;
     max-height: 300px;
+    min-width: 300px;
+    min-height: 225px;
     position: absolute;
     left: 50%;
     bottom: -50%;
-    background: url('../images/customized/testBag.png');
-    background-position: center;
-    background-size: 120% cover;
-    transition: 2s;
     display: none;
-    transform: translate(-50%, 50%); 
+    transform: translate(-50%, 50%);
+    transition: 1s;
+    img{
+        width: 100%;
+        height: auto;
+    } 
 }
 .custom_popUp{
     @include popUp_oneBtn();

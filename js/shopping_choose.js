@@ -1,9 +1,9 @@
 $(function() {
     // hover 效果
-    $('.choose_items').mouseover(function() {
+    $('.choose_select_area a').mouseover(function() {
 
         // 加字串到.text
-        $('.choose_text').html('<h1>' + $(this).data('hover-text') + '</h1>' + '<p>' + $(this).data('text') + '</p>')
+        $("#animate_text").html('<h1>' + $(this).find('div').data('hover-text') + '</h1>' + '<p>' + $(this).find('div').data('text') + '</p>')
 
         // .text動畫
 
