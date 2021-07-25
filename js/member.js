@@ -213,7 +213,6 @@ $(document).ready(function(){
         // $(this).parent().remove();
     });
 
-
 });
 
 // 清空表單反饋-------------------
@@ -222,7 +221,7 @@ function memberForm0(){
     $('.memberError').children('p').text('資料格式不正確');
     $('input').css('border','2px solid transparent');
     // 清除所有input的值
-    $('input').val('');
+    $('.memberPart2 input').val('');
 };
 
 // navbar-------------------
