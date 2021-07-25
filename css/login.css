@@ -69,14 +69,21 @@ body {
 
 .loginAll {
   display: flex;
+  margin-bottom: 500px;
 }
 
 .loginSignup {
   display: flex;
   margin-left: 10%;
-  margin-top: 3%;
+  margin-top: 8vh;
   /* border: 2px solid red; */
   width: 270px;
+  overflow: hidden;
+}
+
+/* 禁止滑動卷軸 */
+.stopScroll {
+  height: 100%;
   overflow: hidden;
 }
 
@@ -105,7 +112,7 @@ body {
   width: 15px;
   height: 15px;
   position: absolute;
-  top: 7%;
+  top: 40px;
   right: 5%;
   cursor: pointer;
 }
@@ -229,7 +236,7 @@ input {
 }
 
 /* 開眼睛看密碼 */
-.eye1 {
+.loginAll .eye1 {
   position: absolute;
   right: 10px;
   top: 10px;
@@ -237,7 +244,7 @@ input {
   cursor: pointer;
 }
 
-.eye2 {
+.loginAll .eye2 {
   position: absolute;
   right: 10px;
   top: 10px;
@@ -265,7 +272,7 @@ input {
   margin-right: 5px;
 }
 
-.loginFB a {
+.loginFB a, .loginLine a {
   text-decoration: none;
   outline: none;
   color: white;
@@ -366,11 +373,11 @@ input {
   border-radius: 5px;
   border: 2px solid #172852;
   width: 78px;
-  height: 35.5px;
+  height: 40px;
   margin: 0 5px 0 5px;
   text-align: center;
   font-size: 18px;
-  padding: 6px 0 6px 0;
+  padding: 8px 0 8px 0;
 }
 
 .loginCode i {
@@ -515,6 +522,7 @@ input {
   padding: 40px;
   z-index: 999;
   position: relative;
+  top: 15%;
 }
 
 .type2 img {
@@ -602,36 +610,46 @@ input {
   right: -85px;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 991px) {
   body .loginSignup {
     margin-left: 5%;
   }
 }
 
 @media (max-width: 768px) {
-  body #loginImg {
-    display: none;
-  }
   body body {
     background-image: url(../images/login/login.png);
     background-repeat: no-repeat;
   }
+  body .loginAll {
+    flex-direction: column;
+  }
+  body #loginImg {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+  }
+  body #loginImg img {
+    width: 130%;
+    height: 100%;
+  }
   body .loginSignup {
     margin: 0 auto;
-    margin-top: 15%;
+    margin-top: 8vh;
     margin-bottom: 5%;
   }
   body .loginClose {
     right: 10%;
+    top: 350px;
   }
 }
 
-@media (max-width: 576px) {
-  body .loginSignup {
-    margin-top: 20%;
+@media (max-width: 575px) {
+  body #loginImg {
+    display: none;
   }
   body .loginClose {
-    top: 5%;
+    top: 40px;
   }
 }
 /*# sourceMappingURL=login.css.map */

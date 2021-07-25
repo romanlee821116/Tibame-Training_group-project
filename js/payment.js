@@ -106,7 +106,7 @@ $(function(){
   });
 
   // 信用卡卡號自動換下一行
-  $(".payment_cardNumber > input").on("keyup", function(e){
+  $(".payment_cardNumber input").on("keyup", function(e){
     let str = (e.target.value).replace(/\D/g, "");
 
     $(this).val(str);

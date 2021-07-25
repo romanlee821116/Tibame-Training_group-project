@@ -34,6 +34,12 @@ img{
   margin: auto;
 }
 
+@media screen and (max-width: 576px){
+  .OC_container{
+    width: 90%;
+  }
+}
+
 /* ========== 訂單處理階段 ========== */
 
 
@@ -131,6 +137,12 @@ img{
   display: flex;
 }
 
+@media screen and (max-width: 992px){
+  .OC_orderContent{
+    flex-direction: column;
+  }
+}
+
 
 // ========== 左邊 ==========
 .OC_left{
@@ -138,11 +150,31 @@ img{
   width: 60%;
 }
 
+@media screen and (max-width: 992px){
+  .OC_left{
+    width: 80%;
+    margin: 50px auto;
+    order: 1;
+  }
+}
+
+@media screen and (max-width: 576px){
+  .OC_left{
+    width: 100%;
+  }
+}
+
 .OC_title{
   // border: 1px solid blue;
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 30px;
+}
+
+@media screen and (max-width: 992px){
+  .OC_title{
+    display: none;
+  }
 }
 
 .OC_purchaser{
@@ -171,6 +203,12 @@ img{
   align-items: center;
 }
 
+@media screen and (max-width: 576px){
+  .OC_data > div{
+    display: none;
+  }
+}
+
 .OC_data > input{
   border: none;
   outline: none;
@@ -184,6 +222,18 @@ img{
   color: #172852;
 }
 
+@media screen and (max-width: 1200px){
+  .OC_data > input{
+    width: 300px;
+  }
+}
+
+@media screen and (max-width: 576px){
+  .OC_data > input{
+    width: 100%;
+  }
+}
+
 
 // 運送方式、付款方式
 .OC_transport, .OC_payMoney{
@@ -191,6 +241,12 @@ img{
   display: flex;
   margin: 20px 0 10px;
   // align-items: flex-start;
+}
+
+@media screen and (max-width: 576px){
+  .OC_transport, .OC_payMoney{
+    margin: 25px 0;
+  }
 }
 
 .OC_transport > div:first-child, .OC_payMoney > div:first-child{
@@ -228,6 +284,19 @@ img{
   align-items: center;
 }
 
+@media screen and (max-width: 768px){
+  .OC_cardNumber1{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media screen and (max-width: 576px){
+  .OC_cardNumber, .OC_cardDate, .OC_cardCode{
+    margin-bottom: 25px;
+  }
+}
+
 .OC_00{
   color: #172852;
   font-size: 16px;
@@ -235,6 +304,12 @@ img{
   margin-right: 18px;
   display: flex;
   align-items: center;
+}
+
+@media screen and (max-width: 768px){
+  .OC_001{
+    margin-bottom: 5px;
+  }
 }
 
 .OC_01{
@@ -252,7 +327,7 @@ img{
   font-weight: bold;
 }
 
-.OC_cardNumber > input, .OC_cardCode > input{
+.OC_cardNumber input, .OC_cardCode input{
   background-color: #f0ebe9;
   border-radius: 5px;
   font-size: 14px;
@@ -266,8 +341,11 @@ img{
   text-align: center;
 }
 
-
-
+@media screen and (max-width: 576px){
+  .OC_cardNumber input, .OC_cardCode input{
+    width: 70px;
+  }
+}
 
 // ========== 右邊 ==========
 .OC_right{
@@ -279,6 +357,20 @@ img{
   margin-left: 30px;
   padding: 20px 15px;
 }
+
+@media screen and (max-width: 992px){
+  .OC_right{
+    width: 80%;
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 576px){
+  .OC_right{
+    width: 100%;
+  }
+}
+
 
 // ========== 明細標題 ==========
 .OC_cartTitle{
@@ -462,6 +554,12 @@ img{
   display: flex;
   justify-content: center;
   margin-top: 100px;
+}
+
+@media screen and (max-width: 768px){
+  .OC_terms{
+    margin-top: 50px;
+  }
 }
 
 .OC_itemCB{

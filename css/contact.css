@@ -928,6 +928,12 @@ img {
   }
 }
 
+@media screen and (max-width: 576px) {
+  .contact_left {
+    width: 80%;
+  }
+}
+
 /* ========== 聯絡我們 ========== */
 .contact_title {
   /* border: 1px solid blue; */
@@ -1014,7 +1020,7 @@ img {
 
 @media screen and (max-width: 576px) {
   .contact_right {
-    width: 90%;
+    width: 100%;
     margin-top: 100px;
   }
 }

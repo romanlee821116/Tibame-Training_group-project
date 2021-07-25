@@ -157,7 +157,7 @@
           </div>
       </div>
     
-      <div class="cart_checkoutBorder"><a href="#" class="cart_checkout">前往結帳</a></div>
+      <div class="cart_checkoutBorder"><a href="./checkout.html" class="cart_checkout">前往結帳</a></div>
     
     </div>
   </div>
@@ -337,41 +337,50 @@
 
                 <!-- 卡號 -->
                 <div class="payment_cardNumber">
+
                   <div class="payment_00">信用卡卡號：</div>
-                  <input type="text" maxlength="4" v-model="cardNumber1" class="payment_enterCard">-
-                  <input type="text" maxlength="4" v-model="cardNumber2" class="payment_enterCard">-
-                  <input type="text" maxlength="4" v-model="cardNumber3" class="payment_enterCard">-
-                  <input type="text" maxlength="4" v-model="cardNumber4" class="payment_enterCard">
+
+                  <div>
+                    <input type="text" maxlength="4" v-model="cardNumber1" class="payment_enterCard">-
+                    <input type="text" maxlength="4" v-model="cardNumber2" class="payment_enterCard">-
+                    <input type="text" maxlength="4" v-model="cardNumber3" class="payment_enterCard">-
+                    <input type="text" maxlength="4" v-model="cardNumber4" class="payment_enterCard">
+                  </div>
+
                 </div>
 
                 <!-- 有效期限 -->
                 <div class="payment_cardDate">
                   <div class="payment_01">卡片有效期限：</div>
-                  <select class="payment_year" name="year" v-model="cardYear">
-                    <option selected disabled>年份</option>
-                    <option>21</option>
-                    <option>22</option>
-                    <option>23</option>
-                    <option>24</option>
-                    <option>25</option>
-                    <option>26</option>
-                  </select>
 
-                  <select class="payment_month" name="month" v-model="cardDate">
-                    <option selected disabled>月份</option>
-                    <option>1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                    <option value="11">11</option>
-                    <option value="12">12</option>
-                  </select>
+                  <div>
+                    <select class="payment_year" name="year" v-model="cardYear">
+                      <option selected disabled>年份</option>
+                      <option>21</option>
+                      <option>22</option>
+                      <option>23</option>
+                      <option>24</option>
+                      <option>25</option>
+                      <option>26</option>
+                    </select>
+  
+                    <select class="payment_month" name="month" v-model="cardDate">
+                      <option selected disabled>月份</option>
+                      <option>1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
+                      <option value="11">11</option>
+                      <option value="12">12</option>
+                    </select>
+                  </div>
+                  
                 </div>
 
                 <!-- 認證碼 -->
@@ -399,8 +408,7 @@
                     </div>
 
                   </div>
-
-                  <div class="payment_cardBack"></div>
+                  
                 </div>
 
 

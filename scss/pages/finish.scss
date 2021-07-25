@@ -31,6 +31,12 @@ img{
   margin: auto;
 }
 
+@media screen and (max-width: 576px){
+  .finish_container{
+    width: 90%;
+  }
+}
+
 /* ========== 訂單處理階段 ========== */
 
 
@@ -229,6 +235,13 @@ img{
   height: 90px;
   margin-right: 15px;
   display: flex;
+}
+
+@media screen and (max-width: 576px){
+  .finish_data > div:first-child{
+    width: 50px;
+    height: 50px;
+  }
 }
 
 .finish_data > div:last-child{

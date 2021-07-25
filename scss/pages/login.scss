@@ -19,14 +19,21 @@ body{
 
 .loginAll{
     display: flex;
+    margin-bottom: 500px;
 }
 .loginSignup{
     display: flex;
     margin-left: 10%;
-    margin-top: 3%;
+    margin-top: 8vh;
 
     /* border: 2px solid red; */
     width: 270px;
+    overflow: hidden;
+}
+
+/* 禁止滑動卷軸 */
+.stopScroll {
+    height: 100%;
     overflow: hidden;
 }
 
@@ -55,7 +62,7 @@ body{
     width: 15px;
     height: 15px;
     position: absolute;
-    top: 7%;
+    top: 40px;
     right: 5%;
     cursor: pointer;
 }
@@ -171,14 +178,14 @@ input{
     color: #172852;
 }
 /* 開眼睛看密碼 */
-.eye1{
+.loginAll .eye1{
     position: absolute;
     right: 10px;
     top: 10px;
     color: #cba89a;
     cursor: pointer;
 }
-.eye2{
+.loginAll .eye2{
     position: absolute;
     right: 10px;
     top: 10px;
@@ -205,7 +212,7 @@ input{
     color: white;
     margin-right: 5px;
 }
-.loginFB a{
+.loginFB a, .loginLine a{
     text-decoration: none;
     outline: none;
     color: white;
@@ -299,11 +306,11 @@ input{
     border: 2px solid #172852;
 
     width: 78px;
-    height: 35.5px;
+    height: 40px;
     margin: 0 5px 0 5px;
     text-align: center;
     font-size: 18px;
-    padding: 6px 0 6px 0;
+    padding: 8px 0 8px 0;
 }
 
 .loginCode i{
@@ -422,6 +429,7 @@ input{
 .type2{
 	@include popUp_oneBtn();
 	position: relative; //預設是fixed
+    top: 15%;
 }
 .mainBtn{
 	@include btn(); //按鈕樣式
@@ -471,35 +479,54 @@ input{
 // ----------- R W D ------------
 
 body{
-    @include rwd(992px){
+    @include rwd(991px){
         .loginSignup{
             margin-left: 5%;
         }
     }
     @include rwd(768px){
-        #loginImg{
-            display: none;
-        }
+        
         body{
             background-image: url(../images/login/login.png);
             background-repeat: no-repeat;
             
         }
+        .loginAll{
+            flex-direction: column;
+        }
+
+        #loginImg{
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+        }
+
+        #loginImg img{
+            width: 130%;
+            height: 100%;
+            // transform:rotate(90deg);
+        }
+        
         .loginSignup{
             margin: 0 auto;
-            margin-top: 15%;
+            // margin-top: 15%;
+            margin-top: 8vh;
             margin-bottom: 5%;
         }
         .loginClose {
             right: 10%;
+            top: 350px;
         }      
     }
-    @include rwd(576px){
-        .loginSignup{
-            margin-top: 20%;
+    @include rwd(575px){
+        // .loginSignup{
+        //     margin-top: 20%;
+        // }
+        #loginImg{
+            display: none;
         }
         .loginClose {
-            top:5%;
+            top: 40px;
         }
         
     }

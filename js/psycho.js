@@ -1,28 +1,27 @@
 $(document).ready(function () {
+    tmpQ = 1;
+    a = detectmob();
 
-    setPicture();
+    $('.psychoQuestionAsn_a').hover(function(){setPicture(true,"a");},function(){setPicture()});
+    $('.psychoQuestionAsn_b').hover(function(){setPicture(true,"b");},function(){setPicture()});
+    $('.psychoQuestionAsn_c').hover(function(){setPicture(true,"c");},function(){setPicture()});
 });
 
-function setPicture() {
-    tmpQ = 1;
-    $('.psychoQuestion01Asn01').hover(function () {
-        $('.psychoQuestion01').css("background-image", "url(../images/psycho/question0" + tmpQ + "_a.jpg)");
-    }, function () {
+function setPicture(key,type) {
+    if(key){
+        $('.psychoQuestion01').css("background-image", "url(../images/psycho/question0" + tmpQ + "_" + type +".jpg)");
+    }else{
         $('.psychoQuestion01').css("background-image", "url(../images/psycho/question0" + tmpQ + "_topic.jpg)");
-    });
-    $('.psychoQuestion01Asn02').hover(function () {
-        $('.psychoQuestion01').css("background-image", "url(../images/psycho/question0" + tmpQ + "_b.jpg)");
-    }, function () {
-        $('.psychoQuestion01').css("background-image", "url(../images/psycho/question0" + tmpQ + "_topic.jpg)");
-    });
-    $('.psychoQuestion01Asn03').hover(function () {
-        $('.psychoQuestion01').css("background-image", "url(../images/psycho/question0" + tmpQ + "_c.jpg)");
-    }, function () {
-        $('.psychoQuestion01').css("background-image", "url(../images/psycho/question0" + tmpQ + "_topic.jpg)");
-    });
+    }
 }
 
-function chgQuestion() {
+function chgQuestion(key,type) {
+    $(".psychoQuestionAns").css("opacity","1");
+    if (a == true && key){
+        $(".psycho_nextbtndisplay").css("display","unset");
+        $(".psychoQuestionAns").not(".psychoQuestionAsn_"+type).css("opacity",".5");
+        return;
+    }
     tmpQ++;
 
     if (tmpQ == 6) {
@@ -51,9 +50,11 @@ function chgQuestion() {
         $('#content3')[0].innerHTML = 文案[tmpQ][3];
 
         $('.psychoQuestion01').css("background-image", "url(../images/psycho/question0" + tmpQ + "_topic.jpg)");
+        $(".psychoScheduleTop")[0].focus();
 
     }
     $(".psychoScheduleTop").css("width", (tmpQ - 1) * 20 + "%");
+    
 }
 
 function beginQuestion() {
@@ -81,3 +82,20 @@ function clickAns() {
 文案[3] = ["3 . 桌面上擺放著幾個精緻小巧的花瓶，你覺得裡面放的是什麼花?", "白綠色的小雛菊與桔梗", "藍色的玫瑰與繡球花", "色彩繽紛的康乃馨與鳥尾花"];
 文案[4] = ["4 . 晚餐時間到了，一個人獨處的你，此刻享用的餐點是?", "迷迭香嫩煎牛排", "黑松露德式香腸", "義式檸檬燉鮮蝦"];
 文案[5] = ["5 . 漫長的一天結束了，躺在床上的你做了一個好夢，夢中的場景發生在哪裡呢?", "陽光揮灑的森林小徑", "一望無際的白沙海灘", "夜晚湖畔的星空下"];
+
+function detectmob() { 
+
+    if( navigator.userAgent.match(/Android/i)
+    || navigator.userAgent.match(/webOS/i)
+    || navigator.userAgent.match(/iPhone/i)
+    || navigator.userAgent.match(/iPad/i)
+    || navigator.userAgent.match(/iPod/i)
+    || navigator.userAgent.match(/BlackBerry/i)
+    || navigator.userAgent.match(/Windows Phone/i)
+    ){
+       return true;
+     }
+    else {
+       return false;
+     }
+   }

@@ -1,20 +1,48 @@
-$(function() {
-    // ------引入登入註冊頁面------
-    // 載入會員頁面
-    $('.memberShow').load('login.html').hide();
+$(document).ready(function() {
+    // 儲存人頭為會員中心
+    // window.onload = function (){
+    //     if($('#loginFormPage .loginButton').hasClass('loginOK')){
+    //         $('.navbar-icon>a:first').addClass('loginOK');
+    //         console.log('have');
+    //     }
+    // };
+    
     // 點擊打開
     $('.navbar-icon>a:first').click(function(){
-        $('.memberAll').hide();
+        // ----------嘗試用load寫-----------
+        // // 隱藏所有頁面
         $('.footer').hide();
-        $('.navbar').hide();
-        $('.memberShow').load('login.html').fadeIn(700);
+        $('.navbar').hide();    
+        
+        // // 開啟登入註冊or會員中心
+        if($('#loginFormPage .loginButton').hasClass('loginOK') || $('.navbar-icon>a:first').hasClass('loginOK')){
+            window.location.href = 'member.html';
+            console.log('haveclass');
+        }else{
+            $('.memberShow').load('login.html').fadeIn(700);
+            $('body').addClass('stopScroll');
+            console.log('noclass');
+        };
+        // ---------------------------------
+        
+        
+        
+        // 全部用跳轉頁面寫------------
+        // if($('.navbar-icon>a:first').hasClass('loginOK')){
+        //     window.location.href = 'member.html';
+        // }else{
+        //     window.location.href = 'login.html';
+        // };
+
+        
+        
     });
     // 點擊關閉
     $('body').on('click','.loginClose',function(){
         $('.memberShow').fadeOut(500);
-        $('.memberAll').show();
         $('.footer').show();
         $('.navbar').show();
+        $('body').removeClass('stopScroll');
     });
 
 });
