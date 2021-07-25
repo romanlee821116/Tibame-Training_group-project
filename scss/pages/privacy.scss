@@ -1,0 +1,74 @@
+@import '../mixin/mixin';
+@import '../base/reset.scss';
+@import '../base/color.scss';
+*{
+    list-style: disc;
+    font-family: '微軟正黑體';
+}
+h1, h2, p ,ul, li{
+    color: $darkBlue;
+}
+body{
+    background: url('../../images/index/bg.png');    
+    position: relative;
+    // overflow: hidden;
+}
+.navbar{
+    @include navbar();
+}
+.privacy_wrap{
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    .privacy_title, .privacy_content{
+        width: 80%;
+        margin: 50px auto;
+        h1{
+            text-align: center;
+            font-size: 22px;
+            margin: 10px 0 50px 0;
+        }
+        section{
+            margin: 50px 0;
+            ul{
+                margin: 10px 0 0 20px;
+            }
+        }
+    }
+    .privacy_waterMark{
+        img{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 35vw;
+            height: 35vw;
+            &:nth-child(1){
+                left: 80%;
+                top: 30%;
+            }
+            &:nth-child(2){
+                left: 10%;
+                top: 50%;
+            }
+            &:nth-child(3){
+                left: 90%;
+                top: 60%;
+            }
+            &:nth-child(4){
+                left: -10%;
+                top: 90%;
+            }
+            &:nth-child(5){
+                left: -10%;
+                top: 0%;
+            }
+        }
+        
+    }
+}
+
+
+
+.footer{
+    @include footer();
+}

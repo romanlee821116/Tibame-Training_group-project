@@ -18,7 +18,6 @@ time, mark, audio, video {
   font-size: 100%;
   font: bold inherit '微軟正黑體';
   vertical-align: baseline;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   text-decoration: none;
   font-weight: 900;
@@ -134,20 +133,17 @@ body::-webkit-scrollbar {
   background: url("../../images/about/character01_3.png");
   background-size: contain;
   background-repeat: no-repeat;
-  -webkit-transform-origin: right 0;
-          transform-origin: right 0;
-  -webkit-animation: Leg 20s .5s linear infinite;
-          animation: Leg 20s .5s linear infinite;
+  transform-origin: right 0;
+  animation: Leg 20s .5s linear infinite;
   z-index: 5;
 }
 
 #about_scene1 .about_people2 {
-  bottom: 5%;
+  bottom: 8%;
   right: 30vw;
   height: 25%;
   z-index: 8;
-  -webkit-animation: bike 15s linear infinite;
-          animation: bike 15s linear infinite;
+  animation: bike 10s linear infinite;
 }
 
 #about_scene1 .about_people2::before {
@@ -161,8 +157,7 @@ body::-webkit-scrollbar {
   background: url("../../images/about/character02_2.png");
   background-size: contain;
   background-repeat: no-repeat;
-  -webkit-animation: wheel 3s linear infinite;
-          animation: wheel 3s linear infinite;
+  animation: wheel 2s linear infinite;
 }
 
 #about_scene1 .about_people2::after {
@@ -176,8 +171,7 @@ body::-webkit-scrollbar {
   background: url("../../images/about/character02_3.png");
   background-size: contain;
   background-repeat: no-repeat;
-  -webkit-animation: wheel 3s linear infinite;
-          animation: wheel 3s linear infinite;
+  animation: wheel 2s linear infinite;
 }
 
 #about_scene1 .about_people2 .about_people2_leg {
@@ -186,10 +180,8 @@ body::-webkit-scrollbar {
   height: 45%;
   left: 30%;
   top: 50%;
-  -webkit-transform-origin: right 0;
-          transform-origin: right 0;
-  -webkit-animation: bikeLeg 10s linear infinite;
-          animation: bikeLeg 10s linear infinite;
+  transform-origin: right 0;
+  animation: bikeLeg 10s linear infinite;
 }
 
 #about_scene1 .about_people2 .about_people2_leg img {
@@ -202,13 +194,28 @@ body::-webkit-scrollbar {
   bottom: 8%;
   right: 25vw;
   z-index: 7;
-  -webkit-animation: walk1 30s linear infinite;
-          animation: walk1 30s linear infinite;
+  animation: walk1 30s linear infinite;
+}
+
+#about_scene1 .about_people3 div::before {
+  content: '';
+  width: 80%;
+  height: 40%;
+  top: 20%;
+  left: 0%;
+  position: absolute;
+  border: 1px solid blue;
+  background: url("../../images/about/character03_2.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  transform-origin: top left;
+  animation: hand1 15s linear infinite;
+  z-index: 6;
 }
 
 #about_scene1 .about_people3::before {
   content: '';
-  width: 90%;
+  width: 80%;
   height: 30%;
   bottom: -15%;
   left: 10%;
@@ -217,36 +224,48 @@ body::-webkit-scrollbar {
   background: url("../../images/about/character03_3.png");
   background-size: contain;
   background-repeat: no-repeat;
-  -webkit-transform-origin: center top;
-          transform-origin: center top;
-  -webkit-animation: Leg 10s linear infinite;
-          animation: Leg 10s linear infinite;
+  transform-origin: center 0;
+  animation: Leg 8s linear infinite;
 }
 
 #about_scene1 .about_people3::after {
   content: '';
-  width: 88%;
+  width: 80%;
   height: 30%;
   bottom: -16%;
-  right: -15%;
+  right: -12%;
   position: absolute;
   border: 1px solid green;
   background: url("../../images/about/character03_4.png");
   background-size: contain;
   background-repeat: no-repeat;
-  -webkit-transform-origin: center top;
-          transform-origin: center top;
-  -webkit-animation: Leg 8s 1s linear infinite;
-          animation: Leg 8s 1s linear infinite;
+  transform-origin: center 0;
+  animation: Leg1 8s  linear infinite;
 }
 
 #about_scene1 .about_people4 {
   bottom: 9%;
   right: 50vw;
-  z-index: 10;
+  z-index: 6;
   height: 22vh;
-  -webkit-animation: walk2 28s linear infinite;
-          animation: walk2 28s linear infinite;
+  border: 2px solid red;
+  animation: walk2 28s linear infinite;
+}
+
+#about_scene1 .about_people4 div::before {
+  content: '';
+  width: 100%;
+  height: 40%;
+  top: 18%;
+  left: -10%;
+  position: absolute;
+  border: 1px solid blue;
+  background: url("../../images/about/character04_2.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  transform-origin: top right;
+  animation: hand 10s linear infinite;
+  z-index: 6;
 }
 
 #about_scene1 .about_people4::before {
@@ -255,34 +274,29 @@ body::-webkit-scrollbar {
   height: 30%;
   bottom: -10%;
   left: 0%;
-  -webkit-transform: rotate(-60deg);
-          transform: rotate(-60deg);
+  transform: rotate(-60deg);
   position: absolute;
-  border: 1px solid yellow;
+  border: 1px solid red;
   background: url("../../images/about/character04_3.png");
   background-size: contain;
   background-repeat: no-repeat;
-  -webkit-transform-origin: center 0;
-          transform-origin: center 0;
-  -webkit-animation: Leg 10s linear infinite;
-          animation: Leg 10s linear infinite;
+  transform-origin: top;
+  animation: Leg1 10s linear infinite;
 }
 
 #about_scene1 .about_people4::after {
   content: '';
   width: 90%;
   height: 30%;
-  bottom: -12%;
-  right: -35%;
+  bottom: -11%;
+  right: -33%;
   position: absolute;
   border: 1px solid green;
   background: url("../../images/about/character04_4.png");
   background-size: contain;
   background-repeat: no-repeat;
-  -webkit-transform-origin: center 0;
-          transform-origin: center 0;
-  -webkit-animation: Leg 8s 1s linear infinite;
-          animation: Leg 8s 1s linear infinite;
+  transform-origin: top;
+  animation: Leg 10s linear infinite;
 }
 
 #about_scene1 .about_people6 {
@@ -306,231 +320,197 @@ body::-webkit-scrollbar {
   background: url("../../images/about/character07_2.png");
   background-size: contain;
   background-repeat: no-repeat;
-  -webkit-transform-origin: left bottom;
-          transform-origin: left bottom;
+  transform-origin: left bottom;
   z-index: 6;
-  -webkit-animation: Leg 20s linear infinite;
-          animation: Leg 20s linear infinite;
-}
-
-@-webkit-keyframes bikeLeg {
-  0% {
-    -webkit-transform: rotate(-10deg);
-            transform: rotate(-10deg);
-  }
-  10% {
-    -webkit-transform: rotate(10deg);
-            transform: rotate(10deg);
-  }
-  20% {
-    -webkit-transform: rotate(-10deg);
-            transform: rotate(-10deg);
-  }
-  30% {
-    -webkit-transform: rotate(10deg);
-            transform: rotate(10deg);
-  }
-  40% {
-    -webkit-transform: rotate(-10deg);
-            transform: rotate(-10deg);
-  }
-  50% {
-    -webkit-transform: rotate(10deg);
-            transform: rotate(10deg);
-  }
-  60% {
-    -webkit-transform: rotate(-10deg);
-            transform: rotate(-10deg);
-  }
-  70% {
-    -webkit-transform: rotate(10deg);
-            transform: rotate(10deg);
-  }
-  80% {
-    -webkit-transform: rotate(-10deg);
-            transform: rotate(-10deg);
-  }
-  90% {
-    -webkit-transform: rotate(10deg);
-            transform: rotate(10deg);
-  }
-  100% {
-    -webkit-transform: rotate(-10deg);
-            transform: rotate(-10deg);
-  }
+  animation: hand 20s linear infinite;
 }
 
 @keyframes bikeLeg {
   0% {
-    -webkit-transform: rotate(-10deg);
-            transform: rotate(-10deg);
+    transform: rotate(-10deg);
   }
   10% {
-    -webkit-transform: rotate(10deg);
-            transform: rotate(10deg);
+    transform: rotate(10deg);
   }
   20% {
-    -webkit-transform: rotate(-10deg);
-            transform: rotate(-10deg);
+    transform: rotate(-10deg);
   }
   30% {
-    -webkit-transform: rotate(10deg);
-            transform: rotate(10deg);
+    transform: rotate(10deg);
   }
   40% {
-    -webkit-transform: rotate(-10deg);
-            transform: rotate(-10deg);
+    transform: rotate(-10deg);
   }
   50% {
-    -webkit-transform: rotate(10deg);
-            transform: rotate(10deg);
+    transform: rotate(10deg);
   }
   60% {
-    -webkit-transform: rotate(-10deg);
-            transform: rotate(-10deg);
+    transform: rotate(-10deg);
   }
   70% {
-    -webkit-transform: rotate(10deg);
-            transform: rotate(10deg);
+    transform: rotate(10deg);
   }
   80% {
-    -webkit-transform: rotate(-10deg);
-            transform: rotate(-10deg);
+    transform: rotate(-10deg);
   }
   90% {
-    -webkit-transform: rotate(10deg);
-            transform: rotate(10deg);
+    transform: rotate(10deg);
   }
   100% {
-    -webkit-transform: rotate(-10deg);
-            transform: rotate(-10deg);
-  }
-}
-
-@-webkit-keyframes Leg {
-  0% {
-    -webkit-transform: rotate(8deg);
-            transform: rotate(8deg);
-  }
-  10% {
-    -webkit-transform: rotate(-2deg);
-            transform: rotate(-2deg);
-  }
-  20% {
-    -webkit-transform: rotate(8deg);
-            transform: rotate(8deg);
-  }
-  30% {
-    -webkit-transform: rotate(-2deg);
-            transform: rotate(-2deg);
-  }
-  40% {
-    -webkit-transform: rotate(8deg);
-            transform: rotate(8deg);
-  }
-  50% {
-    -webkit-transform: rotate(-2deg);
-            transform: rotate(-2deg);
-  }
-  60% {
-    -webkit-transform: rotate(8deg);
-            transform: rotate(8deg);
-  }
-  70% {
-    -webkit-transform: rotate(-2deg);
-            transform: rotate(-2deg);
-  }
-  80% {
-    -webkit-transform: rotate(8deg);
-            transform: rotate(8deg);
-  }
-  90% {
-    -webkit-transform: rotate(-2deg);
-            transform: rotate(-2deg);
-  }
-  100% {
-    -webkit-transform: rotate(8deg);
-            transform: rotate(8deg);
+    transform: rotate(-10deg);
   }
 }
 
 @keyframes Leg {
   0% {
-    -webkit-transform: rotate(8deg);
-            transform: rotate(8deg);
+    transform: rotate(15deg);
   }
   10% {
-    -webkit-transform: rotate(-2deg);
-            transform: rotate(-2deg);
+    transform: rotate(-15deg);
   }
   20% {
-    -webkit-transform: rotate(8deg);
-            transform: rotate(8deg);
+    transform: rotate(15deg);
   }
   30% {
-    -webkit-transform: rotate(-2deg);
-            transform: rotate(-2deg);
+    transform: rotate(-15deg);
   }
   40% {
-    -webkit-transform: rotate(8deg);
-            transform: rotate(8deg);
+    transform: rotate(15deg);
   }
   50% {
-    -webkit-transform: rotate(-2deg);
-            transform: rotate(-2deg);
+    transform: rotate(-15deg);
   }
   60% {
-    -webkit-transform: rotate(8deg);
-            transform: rotate(8deg);
+    transform: rotate(15deg);
   }
   70% {
-    -webkit-transform: rotate(-2deg);
-            transform: rotate(-2deg);
+    transform: rotate(-15deg);
   }
   80% {
-    -webkit-transform: rotate(8deg);
-            transform: rotate(8deg);
+    transform: rotate(15deg);
   }
   90% {
-    -webkit-transform: rotate(-2deg);
-            transform: rotate(-2deg);
+    transform: rotate(-15deg);
   }
   100% {
-    -webkit-transform: rotate(8deg);
-            transform: rotate(8deg);
+    transform: rotate(15deg);
   }
 }
 
-@-webkit-keyframes wheel {
+@keyframes Leg1 {
   0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+    transform: rotate(-15deg);
+  }
+  10% {
+    transform: rotate(15deg);
+  }
+  20% {
+    transform: rotate(-15deg);
+  }
+  30% {
+    transform: rotate(15deg);
+  }
+  40% {
+    transform: rotate(-15deg);
+  }
+  50% {
+    transform: rotate(15deg);
+  }
+  60% {
+    transform: rotate(-15deg);
+  }
+  70% {
+    transform: rotate(15deg);
+  }
+  80% {
+    transform: rotate(-15deg);
+  }
+  90% {
+    transform: rotate(15deg);
   }
   100% {
-    -webkit-transform: rotate(-360deg);
-            transform: rotate(-360deg);
+    transform: rotate(-15deg);
+  }
+}
+
+@keyframes hand {
+  0% {
+    transform: rotate(-5deg);
+  }
+  10% {
+    transform: rotate(5deg);
+  }
+  20% {
+    transform: rotate(-5deg);
+  }
+  30% {
+    transform: rotate(5deg);
+  }
+  40% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+  60% {
+    transform: rotate(-5deg);
+  }
+  70% {
+    transform: rotate(5deg);
+  }
+  80% {
+    transform: rotate(-5deg);
+  }
+  90% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(-5deg);
+  }
+}
+
+@keyframes hand1 {
+  0% {
+    transform: rotate(-5deg);
+  }
+  10% {
+    transform: rotate(15deg);
+  }
+  20% {
+    transform: rotate(-5deg);
+  }
+  30% {
+    transform: rotate(15deg);
+  }
+  40% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(15deg);
+  }
+  60% {
+    transform: rotate(-5deg);
+  }
+  70% {
+    transform: rotate(15deg);
+  }
+  80% {
+    transform: rotate(-5deg);
+  }
+  90% {
+    transform: rotate(15deg);
+  }
+  100% {
+    transform: rotate(-5deg);
   }
 }
 
 @keyframes wheel {
   0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+    transform: rotate(0deg);
   }
   100% {
-    -webkit-transform: rotate(-360deg);
-            transform: rotate(-360deg);
-  }
-}
-
-@-webkit-keyframes bike {
-  0% {
-    right: -10vw;
-    bottom: 40px;
-  }
-  100% {
-    right: 110vw;
-    bottom: 40px;
+    transform: rotate(-360deg);
   }
 }
 
@@ -542,33 +522,6 @@ body::-webkit-scrollbar {
   100% {
     right: 110vw;
     bottom: 40px;
-  }
-}
-
-@-webkit-keyframes walk1 {
-  0% {
-    right: 60vw;
-  }
-  8% {
-    opacity: 1;
-  }
-  10% {
-    opacity: 0;
-  }
-  20% {
-    opacity: 1;
-  }
-  58% {
-    opacity: 1;
-  }
-  60% {
-    opacity: 0;
-  }
-  70% {
-    opacity: 1;
-  }
-  100% {
-    right: -10vw;
   }
 }
 
@@ -596,33 +549,6 @@ body::-webkit-scrollbar {
   }
   100% {
     right: -10vw;
-  }
-}
-
-@-webkit-keyframes walk2 {
-  0% {
-    right: 30vw;
-  }
-  8% {
-    opacity: 1;
-  }
-  10% {
-    opacity: 0;
-  }
-  20% {
-    opacity: 1;
-  }
-  58% {
-    opacity: 1;
-  }
-  60% {
-    opacity: 0;
-  }
-  70% {
-    opacity: 1;
-  }
-  100% {
-    right: 110vw;
   }
 }
 
@@ -672,12 +598,24 @@ body::-webkit-scrollbar {
   position: absolute;
   width: 15vw;
   height: auto;
-  min-width: 170px;
-  min-height: 170px;
   top: 56vh;
   left: 50%;
-  -webkit-transform: translate(-45%, -60%);
-          transform: translate(-45%, -60%);
+  transform: translate(-45%, -60%);
+}
+
+@media (max-width: 768px) {
+  #about_scene1 .about_street_end .about_street_endLogo {
+    min-width: 250px;
+    min-height: 250px;
+    transform: translate(-45%, -100%);
+  }
+}
+
+@media (max-width: 575px) {
+  #about_scene1 .about_street_end .about_street_endLogo {
+    min-width: 200px;
+    min-height: 200px;
+  }
 }
 
 #about_scene1 .about_street_end .about_cloud {
@@ -691,16 +629,14 @@ body::-webkit-scrollbar {
   width: 45vw;
   top: 5vh;
   left: -3vw;
-  -webkit-animation: cloud 6s linear infinite;
-          animation: cloud 6s linear infinite;
+  animation: cloud 6s linear infinite;
 }
 
 #about_scene1 .about_street_end .about_cloud2 {
   width: 45vw;
   left: -5vw;
   bottom: 25vh;
-  -webkit-animation: cloud 8s .5s linear infinite;
-          animation: cloud 8s .5s linear infinite;
+  animation: cloud 8s .5s linear infinite;
 }
 
 #about_scene1 .about_street_end .about_cloud3 {
@@ -708,8 +644,7 @@ body::-webkit-scrollbar {
   width: auto;
   left: -10vw;
   bottom: 5vh;
-  -webkit-animation: cloud 6s 1s linear infinite;
-          animation: cloud 6s 1s linear infinite;
+  animation: cloud 6s 1s linear infinite;
 }
 
 @media (max-width: 575px) {
@@ -758,33 +693,15 @@ body::-webkit-scrollbar {
   animation: cloud 6s 1s linear infinite reverse;
 }
 
-@-webkit-keyframes cloud {
-  0% {
-    -webkit-transform: translateX(-5%);
-            transform: translateX(-5%);
-  }
-  50% {
-    -webkit-transform: translateX(5%);
-            transform: translateX(5%);
-  }
-  100% {
-    -webkit-transform: translateX(-5%);
-            transform: translateX(-5%);
-  }
-}
-
 @keyframes cloud {
   0% {
-    -webkit-transform: translateX(-5%);
-            transform: translateX(-5%);
+    transform: translateX(-5%);
   }
   50% {
-    -webkit-transform: translateX(5%);
-            transform: translateX(5%);
+    transform: translateX(5%);
   }
   100% {
-    -webkit-transform: translateX(-5%);
-            transform: translateX(-5%);
+    transform: translateX(-5%);
   }
 }
 
@@ -796,14 +713,12 @@ body::-webkit-scrollbar {
   color: #172852;
   position: fixed;
   top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  transform: translateY(-50%);
   background-color: rgba(255, 255, 255, 0.9);
   font-weight: 900;
   line-height: 30px;
   font-size: 16px;
-  -webkit-box-shadow: 0px 0px 20px #555;
-          box-shadow: 0px 0px 20px #555;
+  box-shadow: 0px 0px 20px #555;
   display: none;
 }
 
@@ -829,8 +744,7 @@ body::-webkit-scrollbar {
   position: fixed;
   top: 50%;
   left: 50%;
-  -webkit-transform: transalte(-50%, -50%);
-          transform: transalte(-50%, -50%);
+  transform: transalte(-50%, -50%);
 }
 
 .about_transition {
@@ -847,17 +761,17 @@ body::-webkit-scrollbar {
   width: 100%;
   height: 100%;
   position: absolute;
-  background: url("../../images/about/aboutUs_bgA02.png");
-  background-position: top;
-  background-size: cover;
-  background-repeat: no-repeat;
   top: 0;
   left: 0;
 }
 
+.about_taiwan .about_scene2Bg {
+  width: 100%;
+  height: 100%;
+}
+
 .about_taiwan .about_island {
-  -webkit-transform: scaleY(0.7);
-          transform: scaleY(0.7);
+  transform: scaleY(0.7);
   width: 60%;
   height: 90%;
   position: absolute;
@@ -865,9 +779,25 @@ body::-webkit-scrollbar {
   left: 5%;
 }
 
+@media (max-width: 768px) {
+  .about_taiwan .about_island {
+    top: 7%;
+    width: 100%;
+    left: -22%;
+  }
+}
+
+@media (max-width: 575px) {
+  .about_taiwan .about_island {
+    width: 150%;
+    left: -54%;
+    height: 75%;
+    top: 15%;
+  }
+}
+
 .about_taiwan .about_spot {
-  -webkit-transform: scaleY(0.7);
-          transform: scaleY(0.7);
+  transform: scaleY(0.7);
   position: fixed;
   width: 10%;
   height: 10%;
@@ -881,9 +811,15 @@ body::-webkit-scrollbar {
   height: auto;
 }
 
+@media (max-width: 575px) {
+  .about_taiwan .about_spot {
+    min-width: 100px;
+    min-height: 100px;
+  }
+}
+
 .about_taiwan .about_spotDeco {
-  -webkit-transform: scaleY(0.7);
-          transform: scaleY(0.7);
+  transform: scaleY(0.7);
   opacity: 0;
   position: absolute;
   width: 50px;
@@ -895,53 +831,90 @@ body::-webkit-scrollbar {
   top: 7vh;
 }
 
+@media (max-width: 575px) {
+  .about_taiwanSpot1 {
+    top: 12vh;
+  }
+}
+
 .about_taiwanSpot2 {
   left: 35vw;
   top: 30vh;
 }
 
+@media (max-width: 575px) {
+  .about_taiwanSpot2 {
+    left: 24vw;
+    top: 34vh;
+  }
+}
+
 .about_taiwanSpot3 {
-  left: 40vw;
-  top: 70vh;
+  left: 35vw;
+  top: 75vh;
 }
 
 .about_taiwanSpot4 {
-  left: 55vw;
-  top: 40vh;
+  left: 50vw;
+  top: 60vh;
+}
+
+@media (max-width: 575px) {
+  .about_taiwanSpot4 {
+    left: 50vw;
+    top: 55vh;
+  }
 }
 
 .about_spotDeco1 {
-  left: 51vw;
-  top: 61vh;
+  left: 52vw;
+  top: 48vh;
   z-index: 2;
-  -webkit-animation: flying 8s linear infinite;
-          animation: flying 8s linear infinite;
+  animation: flying 8s linear infinite;
 }
 
 .about_spotDeco1 img {
   height: 120%;
 }
 
+@media (max-width: 575px) {
+  .about_spotDeco1 {
+    left: 65vw;
+    top: 45vh;
+  }
+}
+
 .about_spotDeco2 {
   left: 50vw;
-  top: 57vh;
-  -webkit-animation: flying 8s .5s linear infinite;
-          animation: flying 8s .5s linear infinite;
+  top: 47vh;
+  animation: flying 8s .5s linear infinite;
 }
 
 .about_spotDeco2 img {
   height: 100%;
 }
 
+@media (max-width: 575px) {
+  .about_spotDeco2 {
+    left: 55vw;
+  }
+}
+
 .about_spotDeco3 {
   left: 48vw;
-  top: 60vh;
-  -webkit-animation: flying 10s .9s linear infinite;
-          animation: flying 10s .9s linear infinite;
+  top: 50vh;
+  animation: flying 10s .9s linear infinite;
 }
 
 .about_spotDeco3 img {
   height: 100%;
+}
+
+@media (max-width: 575px) {
+  .about_spotDeco3 {
+    left: 60vw;
+    top: 43vh;
+  }
 }
 
 .about_spotDeco4 {
@@ -953,6 +926,15 @@ body::-webkit-scrollbar {
   height: 110%;
 }
 
+@media (max-width: 575px) {
+  .about_spotDeco4 {
+    left: 85vw;
+  }
+  .about_spotDeco4 img {
+    height: 90%;
+  }
+}
+
 .about_spotDeco5 {
   left: 65vw;
   top: 72vh;
@@ -962,26 +944,58 @@ body::-webkit-scrollbar {
   height: 100%;
 }
 
+@media (max-width: 575px) {
+  .about_spotDeco5 {
+    left: 75vw;
+    top: 75vh;
+  }
+  .about_spotDeco5 img {
+    height: 75%;
+  }
+}
+
 .about_spotDeco6 {
   left: 60vw;
   top: 15vh;
-  -webkit-animation: flying 14s  linear infinite;
-          animation: flying 14s  linear infinite;
+  animation: flying 14s  linear infinite;
 }
 
 .about_spotDeco6 img {
   height: 110%;
 }
 
+@media (max-width: 768px) {
+  .about_spotDeco6 {
+    left: 68vw;
+  }
+}
+
+@media (max-width: 575px) {
+  .about_spotDeco6 {
+    left: 85vw;
+  }
+}
+
 .about_spotDeco7 {
   left: 57vw;
   top: 15vh;
-  -webkit-animation: flying 12s .3s linear infinite;
-          animation: flying 12s .3s linear infinite;
+  animation: flying 12s .3s linear infinite;
 }
 
 .about_spotDeco7 img {
   height: 100%;
+}
+
+@media (max-width: 768px) {
+  .about_spotDeco7 {
+    left: 63vw;
+  }
+}
+
+@media (max-width: 575px) {
+  .about_spotDeco7 {
+    left: 76vw;
+  }
 }
 
 .about_spotDeco8 {
@@ -994,6 +1008,18 @@ body::-webkit-scrollbar {
   height: 100%;
 }
 
+@media (max-width: 768px) {
+  .about_spotDeco8 {
+    left: 64vw;
+  }
+}
+
+@media (max-width: 575px) {
+  .about_spotDeco8 {
+    left: 74vw;
+  }
+}
+
 .about_spotDeco9 {
   left: 18vw;
   top: 69vh;
@@ -1003,49 +1029,41 @@ body::-webkit-scrollbar {
   height: 180%;
 }
 
-@-webkit-keyframes flying {
-  0% {
-    -webkit-transform: translateY(-10px);
-            transform: translateY(-10px);
+@media (max-width: 768px) {
+  .about_spotDeco9 {
+    left: 6vw;
+    top: 80vh;
   }
-  25% {
-    -webkit-transform: translateY(10px);
-            transform: translateY(10px);
+  .about_spotDeco9 img {
+    height: 150%;
   }
-  50% {
-    -webkit-transform: translateY(-10px);
-            transform: translateY(-10px);
+}
+
+@media (max-width: 575px) {
+  .about_spotDeco9 {
+    left: 5vw;
+    top: 85vh;
   }
-  75% {
-    -webkit-transform: translateY(10px);
-            transform: translateY(10px);
-  }
-  100% {
-    -webkit-transform: translateY(-10px);
-            transform: translateY(-10px);
+  .about_spotDeco9 img {
+    height: 110%;
   }
 }
 
 @keyframes flying {
   0% {
-    -webkit-transform: translateY(-10px);
-            transform: translateY(-10px);
+    transform: translateY(-10px);
   }
   25% {
-    -webkit-transform: translateY(10px);
-            transform: translateY(10px);
+    transform: translateY(10px);
   }
   50% {
-    -webkit-transform: translateY(-10px);
-            transform: translateY(-10px);
+    transform: translateY(-10px);
   }
   75% {
-    -webkit-transform: translateY(10px);
-            transform: translateY(10px);
+    transform: translateY(10px);
   }
   100% {
-    -webkit-transform: translateY(-10px);
-            transform: translateY(-10px);
+    transform: translateY(-10px);
   }
 }
 
@@ -1066,8 +1084,14 @@ body::-webkit-scrollbar {
   min-height: 170px;
   top: 30%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  z-index: 5;
+}
+
+@media (max-width: 575px) {
+  .about_taiwan_end .about_taiwan_endLogo {
+    top: 37vh;
+  }
 }
 
 .about_taiwan_end h2 {
@@ -1076,6 +1100,12 @@ body::-webkit-scrollbar {
   text-align: center;
   position: relative;
   top: 25%;
+}
+
+@media (max-width: 575px) {
+  .about_taiwan_end h2 {
+    top: 30vh;
+  }
 }
 
 .about_taiwan_end .about_endBtn {
@@ -1115,16 +1145,20 @@ body::-webkit-scrollbar {
   width: 45vw;
   top: 5vh;
   left: -3vw;
-  -webkit-animation: cloud 6s linear infinite;
-          animation: cloud 6s linear infinite;
+  animation: cloud 6s linear infinite;
+}
+
+@media (max-width: 575px) {
+  .about_taiwan_end .about_cloud1 {
+    width: 65vw;
+  }
 }
 
 .about_taiwan_end .about_cloud2 {
   width: 45vw;
   left: -5vw;
   bottom: 25vh;
-  -webkit-animation: cloud 8s .5s linear infinite;
-          animation: cloud 8s .5s linear infinite;
+  animation: cloud 8s .5s linear infinite;
 }
 
 .about_taiwan_end .about_cloud3 {
@@ -1132,13 +1166,12 @@ body::-webkit-scrollbar {
   width: auto;
   left: -10vw;
   bottom: 5vh;
-  -webkit-animation: cloud 6s 1s linear infinite;
-          animation: cloud 6s 1s linear infinite;
+  animation: cloud 6s 1s linear infinite;
 }
 
 @media (max-width: 575px) {
   .about_taiwan_end .about_cloud3 {
-    max-height: 80px;
+    height: 20vh;
   }
 }
 
@@ -1179,7 +1212,7 @@ body::-webkit-scrollbar {
   width: 25vw;
   right: -10vw;
   top: 25vh;
-  animation: cloud 6s 1s linear infinite reverse;
+  animation: cloud 8s 1s linear infinite reverse;
 }
 
 .about_place1, .about_place2, .about_place3, .about_place4 {
@@ -1187,10 +1220,17 @@ body::-webkit-scrollbar {
   top: 50%;
   width: 60%;
   max-width: 800px;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  transform: translate(0, -50%);
   padding: 40px 50px;
   display: none;
+}
+
+@media (max-width: 575px) {
+  .about_place1, .about_place2, .about_place3, .about_place4 {
+    width: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
 
 .about_place1 h1, .about_place2 h1, .about_place3 h1, .about_place4 h1 {
@@ -1212,8 +1252,7 @@ body::-webkit-scrollbar {
   width: 100%;
   background-color: rgba(255, 255, 255, 0.9);
   padding: 30px 20px;
-  -webkit-box-shadow: 0px 0px 20px #555;
-          box-shadow: 0px 0px 20px #555;
+  box-shadow: 0px 0px 20px #555;
 }
 
 .about_place1 div h3, .about_place2 div h3, .about_place3 div h3, .about_place4 div h3 {
@@ -1244,6 +1283,12 @@ body::-webkit-scrollbar {
   left: 35%;
 }
 
+@media (max-width: 575px) {
+  .about_place1 {
+    left: 50%;
+  }
+}
+
 .about_place2 {
   right: 10%;
 }
@@ -1254,6 +1299,12 @@ body::-webkit-scrollbar {
 
 .about_place4 {
   left: 25%;
+}
+
+@media (max-width: 575px) {
+  .about_place4 {
+    left: 50%;
+  }
 }
 
 .about_farmerDetail_bg {
@@ -1274,13 +1325,25 @@ body::-webkit-scrollbar {
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   border-radius: 20px;
-  padding: 50px;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  padding: 40px;
   display: flex;
+}
+
+@media (max-width: 768px) {
+  .about_farmerDetail_bg .about_farmerDetail_box {
+    width: 80%;
+  }
+}
+
+@media (max-width: 565px) {
+  .about_farmerDetail_bg .about_farmerDetail_box {
+    width: 90%;
+    height: 90%;
+    display: block;
+    padding: 30px;
+  }
 }
 
 .about_farmerDetail_bg .about_farmerDetail_box .about_farmerDetail_farmer {
@@ -1296,6 +1359,18 @@ body::-webkit-scrollbar {
   margin-top: 10px;
   font-size: 16px;
   color: #172852;
+}
+
+@media (max-width: 575px) {
+  .about_farmerDetail_bg .about_farmerDetail_box .about_farmerDetail_farmer {
+    width: 63%;
+    margin: 0 auto 20px auto;
+  }
+  .about_farmerDetail_bg .about_farmerDetail_box .about_farmerDetail_farmer p {
+    font-size: 14px;
+    margin-top: 5px;
+    text-align: center;
+  }
 }
 
 .about_farmerDetail_bg .about_farmerDetail_box .about_farmerDetail_title {
@@ -1324,18 +1399,34 @@ body::-webkit-scrollbar {
   font-weight: 900;
 }
 
+.about_farmerDetail_bg .about_farmerDetail_box .about_farmerDetail_title .about_farmerDetail_text {
+  color: #172852;
+  padding-top: 20px;
+  font-size: 16px;
+  line-height: 30px;
+}
+
+@media (max-width: 565px) {
+  .about_farmerDetail_bg .about_farmerDetail_box .about_farmerDetail_title {
+    width: 100%;
+    padding-left: 0px;
+    line-height: 25px;
+  }
+  .about_farmerDetail_bg .about_farmerDetail_box .about_farmerDetail_title h2 {
+    font-size: 22px;
+  }
+  .about_farmerDetail_bg .about_farmerDetail_box .about_farmerDetail_title .about_farmerDetail_text {
+    padding-top: 10px;
+    font-size: 16px;
+    line-height: 25px;
+  }
+}
+
 .about_farmerDetail_bg .about_farmerDetail_box i.fa-times {
   font-size: 24px;
   position: absolute;
   top: 20px;
   right: 30px;
   cursor: pointer;
-}
-
-.about_farmerDetail_bg .about_farmerDetail_box .about_farmerDetail_text {
-  color: #172852;
-  padding-top: 20px;
-  font-size: 16px;
-  line-height: 30px;
 }
 /*# sourceMappingURL=about.css.map */

@@ -79,9 +79,76 @@ $(function () {
 
     ticker();
     newsCarousel();
-    navbar();
+    indexIntro();
+    // $('.ham_bar').css('background-color','#fff');
+    shopPicChange();
+    productPicChange();
 })
 
+//進場動畫
+function indexIntro(){
+    $('.navbar').css('opacity','0');
+    index = 0;
+    index2 = 0;
+    index3 = 0;
+    index4 = 0;
+    setTimeout(function () {
+        setInterval(function () {
+            let slogan = '<p>百年を伝わる和風味に</p>'
+            if (index < slogan.length) {
+                let into = $(slogan).text().slice(index, index + 1);
+                index += 1;
+                $('.intro_add').append(into).css('color', '#ffffff');
+            } else {
+                clearInterval();
+            }
+        }, 100);
+    }, 500)
+
+    setTimeout(function () {
+        setInterval(function () {
+            let slogan = '<p>台湾天然食材と組合せ。</p>'
+            if (index2 < slogan.length) {
+                let into = $(slogan).text().slice(index2, index2 + 1);
+                index2 += 1;
+                $('.intro_add2').append(into).css('color', '#ffffff');
+            } else {
+                clearInterval();
+            }
+        }, 100);
+    }, 1500);
+
+    setTimeout(function () {
+        setInterval(function () {
+            let slogan = '<p>幸せな味を</p>';
+            if (index3 < slogan.length) {
+                let into = $(slogan).text().slice(index3, index3 + 1);
+                index3 += 1;
+                $('.intro_add3').append(into).css('color', '#ffffff');
+            } else {
+                clearInterval();
+            }
+        }, 100);
+    }, 2500);
+
+    setTimeout(function () {
+        setInterval(function () {
+            let slogan = '<p>ご堪能ください。</p>';
+            if (index4 < slogan.length) {
+                let into = $(slogan).text().slice(index4, index4 + 1);
+                index4 += 1;
+                $('.intro_add4').append(into).css('color', '#ffffff');
+            } else {
+                clearInterval();
+                setTimeout(function(){
+                    $('.index_intro').fadeOut(1000);
+                    $('.navbar').css('opacity','1');
+                    // $('body').css('overflow','auto');
+                })
+            }
+        }, 100);
+    }, 3000);
+}
 
 // 跑馬燈替換
 function ticker() {
@@ -112,10 +179,9 @@ function ticker() {
 
 //商品輪播
 function newsCarousel() {
-    console.log('run carousel');
     let winWidth = $(window).width();
     if (winWidth < 767) {
-        console.log("小於767");
+        // console.log("小於767");
         $('.index_p6_carousel').show();
         let index = 0;
         setInterval(function () {
@@ -143,11 +209,44 @@ function newsCarousel() {
     }
 }
 
-function navbar(){
-    $('.ham_bar').css({
-        backgroundColor: '#fff',
+function productPicChange(){
+    let index = 0;
+    let productPic_list = [
+        {src: './images/index/product_big01.png', name: '紅豆銅鑼燒', price:'6入 $480'},
+        {src: './images/index/product_big01.png', name: '紅豆銅鑼燒1', price:'6入 $580'},
+        {src: './images/index/product_big01.png', name: '紅豆銅鑼燒2', price:'6入 $680'},
+        {src: './images/index/product_big01.png', name: '紅豆銅鑼燒3', price:'6入 $780'},
+    ];
+    setInterval(() => {
+        index = (index+1) % 4;
+        let newSrc = productPic_list[index].src;
+        let newName = productPic_list[index].name;
+        let newPrice = productPic_list[index].price;
+        $('.index_p4_itemPic>img').attr('src', newSrc);
+        $('.index_p4_bigPic_info > p:first-child').text(newName);
+        $('.index_p4_bigPic_info > p:last-child').text(newPrice);
+    }, 3000);
+}
+
+//店鋪資訊照片
+function shopPicChange(){    
+    $('.index_p7_shopBtn-right').click(function(){
+        let currentSrc = $('.index_p7_bigPic > img').attr('src');
+        let srcIndex = currentSrc.substr(-5,1);
+        newIndex = (srcIndex+1) % 3;
+        let newSrc = `./images/index/shop_pic_${newIndex}.png`;
+        $('.index_p7_bigPic > img').attr('src', newSrc);
+    })
+    $('.index_p7_shopBtn-left').click(function(){
+        let currentSrc = $('.index_p7_bigPic > img').attr('src');
+        let srcIndex = currentSrc.substr(-5,1);
+        newIndex = (srcIndex+2) % 3;
+        let newSrc = `./images/index/shop_pic_${newIndex}.png`;
+        $('.index_p7_bigPic > img').attr('src', newSrc);
     })
 }
+
+
 
 
 

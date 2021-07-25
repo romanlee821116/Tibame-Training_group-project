@@ -1,7 +1,12 @@
 @import '../mixin/mixin';
+@import '../pages/cart.scss';
 
 .navbar{
 @include navbar();
+}
+
+.footer{
+	@include footer();
 }
 
 *{
@@ -25,7 +30,13 @@ img{
   // border: 1px solid black;
   width: 80%;
   max-width: 1200px;
-  margin: 100px auto;
+  margin: auto;
+}
+
+@media screen and (max-width: 576px){
+  .finish_container{
+    width: 90%;
+  }
 }
 
 /* ========== 訂單處理階段 ========== */
@@ -56,6 +67,7 @@ img{
   border: solid 3px #f7c242;
   background-color: #f7c242;
   border-radius: 50%;
+  position: relative;
 }
 
 .finish_check{
@@ -168,6 +180,30 @@ img{
   width: 30%;
 }
 
+@media screen and (max-width: 992px){
+  .finish_itemTitle > div:nth-child(1){
+    width: 58%;
+  }
+  
+  .finish_itemTitle > div:nth-child(2), .finish_itemTitle > div:nth-child(3){
+    width: 21%;
+  }
+}
+
+@media screen and (max-width: 768px){
+  .finish_itemTitle > div:nth-child(1){
+    width: 48%;
+  }
+  
+  .finish_itemTitle > div:nth-child(2){
+    width: 22%;
+  }
+
+  .finish_itemTitle > div:nth-child(3){
+    width: 30%;
+  }
+}
+
 
 
 // 商品清單
@@ -203,6 +239,13 @@ img{
   display: flex;
 }
 
+@media screen and (max-width: 576px){
+  .finish_data > div:first-child{
+    width: 50px;
+    height: 50px;
+  }
+}
+
 .finish_data > div:last-child{
   // border: 1px solid red;
   display: flex;
@@ -233,6 +276,34 @@ img{
   font-size: 16px;
 }
 
+@media screen and (max-width: 992px){
+  .finish_data{
+    width: 60%;
+  }
+
+  .finish_item > div:nth-child(2){
+    width: 20%;
+  }
+
+  .finish_item > div:nth-child(3){
+    width: 20%;
+  }
+  
+}
+
+@media screen and (max-width: 768px){
+  .finish_data{
+    width: 50%;
+  }
+
+  .finish_item > div:nth-child(2){
+    width: 20%;
+  }
+
+  .finish_item > div:nth-child(3){
+    width: 30%;
+  }
+}
 
 
 // ========== 金額細項 ==========

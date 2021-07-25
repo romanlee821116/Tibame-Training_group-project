@@ -6,12 +6,8 @@
   top: 0px;
   left: 0;
   padding-top: 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
   z-index: 900;
 }
 
@@ -27,12 +23,8 @@
 }
 
 .navbar .navbar-icon {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  justify-content: flex-start;
   margin: 0 20px 0 0px;
 }
 
@@ -44,14 +36,137 @@
   line-height: 60px;
 }
 
+.navbar .navbar-icon a:hover {
+  color: #f7c242;
+}
+
 .navbar .navbar-icon i {
   color: #bb866a;
   font-size: 28px;
 }
 
+.navbar .navbar-icon i:hover {
+  color: #f7c242;
+}
+
+.navbar .ham_container {
+  display: inline-block;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  z-index: 10;
+}
+
+.navbar .ham_container:hover .ham_bar {
+  background-color: #f7c242;
+}
+
+.navbar .ham_container .ham_bar {
+  width: 30px;
+  height: 4px;
+  background-color: #bb866a;
+  border-radius: 10px;
+  margin: 6px 0;
+}
+
+.navbar .ham_change .ham_bar1 {
+  background-color: white;
+  transform: rotate(-45deg) translate(-6px, 5px);
+}
+
+.navbar .ham_change .ham_bar2 {
+  opacity: 0;
+}
+
+.navbar .ham_change .ham_bar3 {
+  background-color: white;
+  transform: rotate(45deg) translate(-8px, -8px);
+}
+
+.navbar .ham_overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 0;
+  top: 0;
+  right: 0;
+  background-color: #b48164;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+.navbar .ham_overlay .ham_overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin: 10px auto;
+}
+
+.navbar .ham_overlay .ham_jelly {
+  width: 300vw;
+  height: 290vw;
+  position: absolute;
+  top: -302vw;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 45%;
+  background-color: #cba89a;
+  animation: rotate 15s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: translate(-50%, 0) rotateZ(0deg);
+  }
+  50% {
+    transform: translate(-50%, -2%) rotateZ(180deg);
+  }
+  100% {
+    transform: translate(-50%, 0%) rotateZ(360deg);
+  }
+}
+
+.navbar .ham_overlay .ham_select {
+  margin: 0 auto;
+  text-align: left;
+  width: 200px;
+}
+
+.navbar .ham_overlay a {
+  padding: 10px;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  display: block;
+  letter-spacing: 2px;
+  opacity: 0;
+  transition: all .5s;
+}
+
+.navbar .ham_overlay a:hover {
+  color: #fad689;
+}
+
+.navbar .ham_overlay a:hover:before {
+  background-color: #fad689;
+}
+
+.navbar .ham_overlay a::before {
+  content: "\A";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 20px;
+  background-color: transparent;
+  transition: all .3s;
+}
+
 * {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   font-family: "微軟正黑體";
   color: #bb866a;
 }
@@ -77,8 +192,13 @@ img {
   position: fixed;
   right: -600px;
   top: 0;
-  -webkit-transition: .5s all linear;
   transition: .5s all linear;
+}
+
+@media screen and (max-width: 600px) {
+  .cart_cartBoard {
+    width: 100%;
+  }
 }
 
 .cart_cart {
@@ -87,14 +207,16 @@ img {
   width: 500px;
 }
 
+@media screen and (max-width: 600px) {
+  .cart_cart {
+    width: 90%;
+  }
+}
+
 .cart_cartTitle {
   /* border: 1px solid green; */
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
   padding: 30px 0 18px;
 }
 
@@ -110,9 +232,7 @@ img {
   /* border: 1px solid blue; */
   width: 25px;
   height: 25px;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  align-self: center;
   /* margin-right: 18px; */
   cursor: pointer;
   position: relative;
@@ -126,8 +246,7 @@ img {
   position: absolute;
   top: calc((25px - 4px) / 2);
   left: 0;
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 
 .cart_right {
@@ -138,8 +257,7 @@ img {
   position: absolute;
   top: calc((25px - 4px) / 2);
   left: 0;
-  -webkit-transform: rotate(135deg);
-          transform: rotate(135deg);
+  transform: rotate(135deg);
 }
 
 /* ========== 商品細項 ========== */
@@ -156,8 +274,6 @@ img {
 .cart_item {
   border-bottom: 2px dashed #bb866a;
   padding: 30px 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 
@@ -167,8 +283,6 @@ img {
 }
 
 .cart_customizationItem {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 
@@ -176,9 +290,7 @@ img {
   border: solid 2px #172852;
   background-color: #ffffff;
   border-radius: 5px;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  align-self: center;
   width: 20px;
   height: 20px;
   cursor: pointer;
@@ -193,16 +305,12 @@ img {
   width: 70px;
   height: 70px;
   margin: auto 30px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 
 .cart_itemText {
   /* border: 1px solid red; */
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
+  flex-grow: 1;
 }
 
 .cart_itemText > p {
@@ -223,8 +331,6 @@ img {
 .cart_itemQuantity {
   /* border: 1px solid red; */
   margin-top: 20px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 
@@ -269,19 +375,10 @@ img {
 
 .cart_itemRight {
   /* border: 1px solid blue; */
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
 }
 
 .cart_itemDelete {
@@ -300,8 +397,7 @@ img {
   position: absolute;
   top: calc((20px - 3px) / 2);
   left: 0;
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 
 .cart_rightD {
@@ -312,27 +408,20 @@ img {
   position: absolute;
   top: calc((20px - 3px) / 2);
   left: 0;
-  -webkit-transform: rotate(135deg);
-          transform: rotate(135deg);
+  transform: rotate(135deg);
 }
 
 .cart_detailBtn {
   border-radius: 15px;
   background-color: #bb866a;
   color: #ffffff;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   width: 120px;
   height: 30px;
   font-size: 12px;
   font-weight: bold;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
 }
 
@@ -344,11 +433,7 @@ img {
 .cart_detail {
   /* border: 1px solid red; */
   margin-top: 15px;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  justify-content: center;
   display: flex;
 }
 
@@ -407,12 +492,8 @@ img {
 /* ========== 小計 ========== */
 .cart_total {
   /* border: 1px solid blue; */
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
   margin-bottom: 15px;
 }
 
@@ -426,11 +507,8 @@ img {
 
 .cart_total > p:nth-child(1) {
   font-size: 18px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-item-align: center;
-      align-self: center;
+  align-self: center;
 }
 
 .cart_total > p:nth-child(2) {
@@ -443,14 +521,9 @@ img {
 
 /* ========== 前往結帳 ========== */
 .cart_checkout {
-  /* border: 1px solid red; */
+  background-color: #172852;
   width: 600px;
   height: 60px;
-  position: relative;
-}
-
-.cart_checkout {
-  background-color: #172852;
   color: #ffffff;
   font-size: 18px;
   font-weight: bold;
@@ -458,14 +531,14 @@ img {
   line-height: 60px;
   cursor: pointer;
   text-decoration: none;
-  position: absolute;
+  display: inline-block;
+}
+
+@media screen and (max-width: 600px) {
+  .cart_checkout {
+    width: 100%;
+  }
 }
 
 /* ================================== 不用複製 =================================== */
-.noCopy {
-  border: 1px solid red;
-  width: 25px;
-  cursor: pointer;
-  margin-top: 100px;
-}
 /*# sourceMappingURL=cart.css.map */

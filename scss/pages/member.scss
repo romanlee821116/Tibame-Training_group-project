@@ -24,6 +24,9 @@ body {
     background-image: url(../images/member/member_bg.png);
     background-repeat: no-repeat;
 }
+.psychotest{
+    @include psycoBtn(#fff);
+}
 
 .memberAll {
     width: 80%;

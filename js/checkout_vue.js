@@ -45,10 +45,62 @@ new Vue({
         status: false,
       },
     ],
+    recommend:[
+      {
+        img: '../images/checkout/banner_matcha_item.png',
+        name: '南投銅鑼燒',
+        price: '$480元/6入',
+      },
+      {
+        img: '../images/checkout/banner_strawberry_item.png',
+        name: '苗栗草莓大福',
+        price: '$480元/6入',
+      },
+      {
+        img: '../images/checkout/banner_matcha_item.png',
+        name: '南投銅鑼燒',
+        price: '$480元/6入',
+      },
+      {
+        img: '../images/checkout/banner_strawberry_item.png',
+        name: '苗栗草莓大福',
+        price: '$480元/6入',
+      },
+      {
+        img: '../images/checkout/banner_matcha_item.png',
+        name: '南投銅鑼燒',
+        price: '$480元/6入',
+      },
+      {
+        img: '../images/checkout/banner_strawberry_item.png',
+        name: '苗栗草莓大福',
+        price: '$480元/6入',
+      },
+      {
+        img: '../images/checkout/banner_matcha_item.png',
+        name: '南投銅鑼燒',
+        price: '$480元/6入',
+      },
+      {
+        img: '../images/checkout/banner_strawberry_item.png',
+        name: '苗栗草莓大福',
+        price: '$480元/6入',
+      },
+      {
+        img: '../images/checkout/banner_matcha_item.png',
+        name: '南投銅鑼燒',
+        price: '$480元/6入',
+      },
+      {
+        img: '../images/checkout/banner_strawberry_item.png',
+        name: '苗栗草莓大福',
+        price: '$480元/6入',
+      },
+    ],
     delete_bgc: '#a3a3a3',
     delete_cursor: 'default',
     total_item: 0,
-    discount: 80,
+    discount: 0,
     total_price: 0,
   },
   methods: {
@@ -146,14 +198,14 @@ new Vue({
       if($('#checkout_discountNumber').val() !== ""){
         $('.checkout_discountMoney').removeClass('checkout_none');
         $('.checkout_removeDiscount').removeClass('checkout_none');
-        this.total_price -= 80;
+        this.discount = 80;
       }  
     },
     // 移除折扣
     deleteDiscount(){
       $('.checkout_discountMoney').addClass('checkout_none');
       $('.checkout_removeDiscount').addClass('checkout_none');
-      this.total_price += 80;
+      this.discount = 0;
     }
   },
   computed: {
@@ -175,7 +227,7 @@ new Vue({
     },
     // 訂單總金額
     totalPrice(){
-      this.total_price = this.total_item;
+      this.total_price = this.total_item - this.discount;
       return this.total_price;
     }
   },

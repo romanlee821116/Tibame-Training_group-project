@@ -1,0 +1,591 @@
+@import '../mixin/mixin';
+@import '../pages/cart.scss';
+
+.navbar{
+@include navbar();
+}
+
+.footer{
+	@include footer();
+}
+
+*{
+  box-sizing: border-box;
+  font-family: "微軟正黑體";
+  color: #bb866a;
+}
+
+body{
+  margin: 0;
+  background-image: url("../../images/orderConfirmation/bg.png");
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+img{
+  width: 100%;
+}
+
+.OC_container{
+  // border: 1px solid black;
+  width: 80%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+@media screen and (max-width: 576px){
+  .OC_container{
+    width: 90%;
+  }
+}
+
+/* ========== 訂單處理階段 ========== */
+
+
+.OC_stage{
+  // border: 1px solid red;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.OC_step{
+  // border: 1px solid blue;
+  text-align: center;
+  font-size: 0;
+}
+
+.OC_payment{
+  margin: 0 100px;
+}
+
+// ========== 購物車階段 ==========
+.OC_confirm > div:first-child{
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  font-weight: bold;
+  display: inline-block;
+  color: #f7c242;
+  border: solid 3px #f7c242;
+  background-color: #ffffff;
+  border-radius: 50%;
+  line-height: 35px;
+  position: relative;
+}
+
+.OC_confirm > p{
+  // border: 1px solid green;
+  margin: 5px 0 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: #f7c242;
+}
+
+// 前面已完成的階段
+.OC_orderData > div, .OC_payment > div{
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  border: solid 3px #f7c242;
+  background-color: #f7c242;
+  border-radius: 50%;
+}
+
+.OC_check{
+  // border: 1px solid red;
+  width: 20px;
+  margin: auto;
+}
+
+.OC_orderData > p, .OC_payment > p{
+    // border: 1px solid green;
+    margin: 5px 0 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: #f7c242;
+}
+// ===== 購物車階段中間的線條 =====
+
+.OC_orderData > div:first-child, .OC_payment > div:first-child{
+  position: relative;
+}
+
+.OC_line1{
+  background-color: #f7c242;
+  width: 135px;
+  height: 2px;
+  position: absolute;
+  top: 18px;
+  right: -138px;
+}
+
+.OC_line2{
+  background-color: #f7c242;
+  width: 135px;
+  height: 2px;
+  position: absolute;
+  top: 18px;
+  right: -137px;
+}
+
+
+// ========== 訂單資訊 ==========
+.OC_orderContent{
+  // border: 1px solid red;
+  display: flex;
+}
+
+@media screen and (max-width: 992px){
+  .OC_orderContent{
+    flex-direction: column;
+  }
+}
+
+
+// ========== 左邊 ==========
+.OC_left{
+  // border: 1px solid green;
+  width: 60%;
+}
+
+@media screen and (max-width: 992px){
+  .OC_left{
+    width: 80%;
+    margin: 50px auto;
+    order: 1;
+  }
+}
+
+@media screen and (max-width: 576px){
+  .OC_left{
+    width: 100%;
+  }
+}
+
+.OC_title{
+  // border: 1px solid blue;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+@media screen and (max-width: 992px){
+  .OC_title{
+    display: none;
+  }
+}
+
+.OC_purchaser{
+  // border: 1px solid red;
+  color: #172852;
+  font-size: 18px;
+  font-weight: bold;
+  margin-right: 30px;
+}
+
+
+// 姓名、電話、地址
+.OC_data{
+  // border: 1px solid green;
+  display: flex;
+  margin-top: 15px;
+}
+
+.OC_data > div{
+  // border: 1px solid red;
+  color: #172852;
+  font-size: 16px;
+  font-weight: bold;
+  margin-right: 68px;
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (max-width: 576px){
+  .OC_data > div{
+    display: none;
+  }
+}
+
+.OC_data > input{
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  background-color:#f0ebe9;
+  width: 400px;
+  height: 35px;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #172852;
+}
+
+@media screen and (max-width: 1200px){
+  .OC_data > input{
+    width: 300px;
+  }
+}
+
+@media screen and (max-width: 576px){
+  .OC_data > input{
+    width: 100%;
+  }
+}
+
+
+// 運送方式、付款方式
+.OC_transport, .OC_payMoney{
+  // border: 1px solid blue;
+  display: flex;
+  margin: 20px 0 10px;
+  // align-items: flex-start;
+}
+
+@media screen and (max-width: 576px){
+  .OC_transport, .OC_payMoney{
+    margin: 25px 0;
+  }
+}
+
+.OC_transport > div:first-child, .OC_payMoney > div:first-child{
+  // border: 1px solid red;
+  color: #172852;
+  font-size: 16px;
+  font-weight: bold;
+  margin-right: 35px;
+  display: flex;
+  align-items: center;
+}
+
+.OC_transport > div:last-child, .OC_payMoney > div:last-child{
+  color: #172852;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+
+// ========== 信用卡填寫 ==========
+
+.OC_credit{
+  // border: 1px solid red;
+  margin-top: 20px;
+}
+
+
+// 信用卡卡號
+.OC_cardNumber, .OC_cardDate, .OC_cardCode{
+  // border: 1px solid green;
+  display: flex;
+  margin-bottom: 10px;
+  font-size: 25px;
+  color: #172852;
+  align-items: center;
+}
+
+@media screen and (max-width: 768px){
+  .OC_cardNumber1{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media screen and (max-width: 576px){
+  .OC_cardNumber, .OC_cardDate, .OC_cardCode{
+    margin-bottom: 25px;
+  }
+}
+
+.OC_00{
+  color: #172852;
+  font-size: 16px;
+  font-weight: bold;
+  margin-right: 18px;
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (max-width: 768px){
+  .OC_001{
+    margin-bottom: 5px;
+  }
+}
+
+.OC_01{
+  color: #172852;
+  font-size: 16px;
+  font-weight: bold;
+  margin-right: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.OC_cardDate > div:last-child{
+  color: #172852;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.OC_cardNumber input, .OC_cardCode input{
+  background-color: #f0ebe9;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #172852;
+  padding: 10px;
+  width: 95px;
+  height: 35px;
+  border: none;
+  outline: none;
+  text-align: center;
+}
+
+@media screen and (max-width: 576px){
+  .OC_cardNumber input, .OC_cardCode input{
+    width: 70px;
+  }
+}
+
+// ========== 右邊 ==========
+.OC_right{
+  // border: 1px solid green;
+  background-color: #ffffff;
+  box-shadow: 0 0 24px 0 rgba(25, 28, 54, 0.15);
+  width: 40%;
+  height: 540px;
+  margin-left: 30px;
+  padding: 20px 15px;
+}
+
+@media screen and (max-width: 992px){
+  .OC_right{
+    width: 80%;
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 576px){
+  .OC_right{
+    width: 100%;
+  }
+}
+
+
+// ========== 明細標題 ==========
+.OC_cartTitle{
+  // border: 1px solid red;
+  font-weight: bold;
+  font-size: 18px;
+  color: #cba89a;
+}
+
+// ========== 明細 ==========
+
+.OC_detail{
+  border-top: 1.5px solid #cba89a;
+  border-bottom: 1.5px solid #cba89a;
+  list-style: none;
+  margin: 10px 0;
+  height: 300px;
+  padding: 0;
+  overflow: auto;
+}
+
+.OC_item{
+  border-bottom: 2px dashed #cba89a;
+  display: flex;
+  padding: 10px 0;
+}
+
+.OC_itemImg{
+  // border: 1px solid green;
+  width: 50px;
+  height: 50px;
+  margin: 0 10px;
+}
+
+.OC_itemData{
+  // border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.OC_itemData > p{
+  margin: 0;
+  color: #172852;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.OC_itemQuantity{
+  // border: 1px solid green;
+  margin-right: 10px;
+  font-weight: bold;
+  margin: auto;
+  color: #172852;
+}
+
+// ========== 金額明細 ==========
+
+.OC_moneyDetail, .OC_discount{
+  // border: 1px solid green;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.OC_moneyDetail > div:first-child, .OC_discount > div:first-child{
+  color: #cba89a;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.OC_moneyDetail > div:last-child{
+  color: #172852;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.OC_discount > div:last-child{
+  color: #dc3838;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+
+
+// ========== 總金額 ==========
+.OC_totalPrice{
+  border-top: 1.5px solid #cba89a;
+  padding-top: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.OC_totalPrice > div:first-child{
+  // border: 1px solid green;
+  color: #cba89a;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.OC_totalPrice > div:last-child, .OC_totalPrice span{
+  // border: 1px solid green;
+  color: #172852;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+
+
+// ========== 上、下一頁數 ==========
+
+.OC_page{
+  // border: 1px solid green;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 5px;
+  margin-top: 50px;
+}
+
+// 上一頁
+.OC_previous{
+  // border: 1px solid red;
+  display: flex;
+  margin-right: 100px;
+  text-decoration: none;
+}
+
+.OC_previousImg{
+  // border: 1px solid blue;
+  width: 10px;
+  height: 15px;
+  margin-right: 10px;
+  display: flex;
+  margin-top: 5px;
+}
+
+.OC_previousText{
+  border-bottom: 1.5px solid #a3a3a3;
+  padding-bottom: 5px;
+  color: #a3a3a3;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+// 下一頁
+.OC_next{
+  display: flex;
+  border-radius: 25px;
+  background-color: #a3a3a3;
+  width: 130px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  cursor: default;
+}
+
+.OC_nextText{
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.OC_nextImg{
+    // border: 1px solid red;
+    width: 10px;
+    height: 15px;
+    margin-left: 10px;
+    display: flex;
+    margin-top: 3px;
+}
+
+
+
+// ========== 服務條款與退換貨規則 ==========
+.OC_terms{
+  // border: 1px solid red;
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+@media screen and (max-width: 768px){
+  .OC_terms{
+    margin-top: 50px;
+  }
+}
+
+.OC_itemCB{
+  border: solid 2px #172852;
+  background-color: #ffffff;
+  border-radius: 5px;
+  align-self: center;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.OC_choose{
+  background-color: #172852;
+}
+
+.OC_terms > p{
+  // border: 1px solid blue;
+  margin: 0;
+  font-weight: bold;
+  color: #172852;
+}
+
+.OC_terms a{
+  color: #dc3838;
+  font-weight: bold;
+  text-decoration: none;
+  margin: 0 5px;
+}

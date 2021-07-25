@@ -1,7 +1,12 @@
 @import '../mixin/mixin';
+@import '../pages/cart.scss';
 
 .navbar{
 @include navbar();
+}
+
+.footer{
+	@include footer();
 }
 
 *{
@@ -22,13 +27,17 @@ img{
 }
 
 .payment_container{
-  border: 1px solid black;
+  // border: 1px solid black;
   width: 80%;
   max-width: 1200px;
-  margin: 100px auto;
+  margin: auto;
 }
 
-
+@media screen and (max-width: 576px){
+  .payment_container{
+    width: 90%;
+  }
+}
 
 
 /* ========== 訂單處理階段 ========== */
@@ -58,6 +67,7 @@ img{
   background-color: #ffffff;
   border-radius: 50%;
   line-height: 35px;
+  position: relative;
 }
 
 .payment_confirm > p{
@@ -148,11 +158,33 @@ img{
   display: flex;
 }
 
+@media screen and (max-width: 992px){
+  .payment_orderContent{
+    flex-direction: column;
+  }
+}
+
 
 // ========== 左邊 ==========
 .payment_left{
   // border: 1px solid green;
   width: 60%;
+}
+
+@media screen and (max-width: 992px){
+  .payment_left{
+    width: 80%;
+    margin: 50px auto;
+    order: 1;
+  }
+}
+
+@media screen and (max-width: 576px){
+  .payment_left{
+    width: 100%;
+    margin: 50px 0;
+    order: 1;
+  }
 }
 
 .payment_title{
@@ -162,9 +194,16 @@ img{
   margin-bottom: 30px;
 }
 
+@media screen and (max-width: 992px){
+  .payment_title{
+    display: none;
+  }
+}
+
 
 // ========== 訂購資料 ==========
 
+// 同會員資料
 .payment_same{
   // border: 1px solid blue;
   display: flex;
@@ -228,6 +267,12 @@ img{
   align-items: center;
 }
 
+@media screen and (max-width: 576px){
+  .payment_data > div{
+    display: none;
+  }
+}
+
 .payment_data > input{
   border: none;
   outline: none;
@@ -240,6 +285,25 @@ img{
   font-weight: bold;
   color: #172852;
 }
+
+@media screen and (max-width: 1200px){
+  .payment_data > input{
+    width: 300px;
+  }
+}
+
+@media screen and (max-width: 992px){
+  .payment_data > input{
+    width: 400px;
+  }
+}
+
+@media screen and (max-width: 768px){
+  .payment_data > input{
+    width: 100%;
+  }
+}
+
 
 ::placeholder {
   color: #cba89a;
@@ -260,6 +324,19 @@ img{
   margin-bottom: 20px;
   display: none;
 }
+
+@media screen and (max-width: 768px){
+  .payment_receiver{
+    width: 350px;
+  }
+}
+
+@media screen and (max-width: 576px){
+  .payment_receiver{
+    width: 330px;
+  }
+}
+
 
 .payment_receiver > p{
   // border: 1px solid blue;
@@ -282,6 +359,12 @@ img{
   align-items: center;
 }
 
+@media screen and (max-width: 576px){
+  .payment_receiverData > div{
+    display: none;
+  }
+}
+
 .payment_receiverData > input[type="text"]{
   border: none;
   outline: none;
@@ -295,6 +378,18 @@ img{
   color: #172852;
 }
 
+@media screen and (max-width: 768px){
+  .payment_receiverData > input[type="text"]{
+    width: 250px;
+  }
+}
+
+@media screen and (max-width: 576px){
+  .payment_receiverData > input[type="text"]{
+    width: 100%;
+  }
+}
+
 
 // 選擇門市
 .payment_shop{
@@ -305,6 +400,18 @@ img{
   width: 400px;
   margin-bottom: 20px;
   display: none;
+}
+
+@media screen and (max-width: 768px){
+  .payment_shop{
+    width: 350px;
+  }
+}
+
+@media screen and (max-width: 576px){
+  .payment_shop{
+    width: 330px;
+  }
 }
 
 .payment_shop > p{
@@ -346,6 +453,12 @@ img{
   align-items: center;
 }
 
+@media screen and (max-width: 576px){
+  .payment_shopData > div{
+    display: none;
+  }
+}
+
 .payment_shopData > input[type="text"]{
   border: none;
   outline: none;
@@ -359,6 +472,18 @@ img{
   color: #172852;
 }
 
+@media screen and (max-width: 768px){
+  .payment_shopData > input[type="text"]{
+    width: 220px;
+  }
+}
+
+@media screen and (max-width: 576px){
+  .payment_shopData > input[type="text"]{
+    width: 300px;
+  }
+}
+
 
 // 運送方式、付款方式
 .payment_transport, .payment_payMoney{
@@ -366,6 +491,12 @@ img{
   display: flex;
   margin: 20px 0 10px;
   align-items: flex-start;
+}
+
+@media screen and (max-width: 576px){
+  .payment_transport, .payment_payMoney{
+    flex-direction: column;
+  }
 }
 
 .payment_transport > div:first-child, .payment_payMoney > div:first-child{
@@ -376,6 +507,12 @@ img{
   margin-right: 32px;
   display: flex;
   align-items: center;
+}
+
+@media screen and (max-width: 576px){
+  .payment_transport > div:first-child, .payment_payMoney > div:first-child{
+    margin-bottom: 10px;
+  }
 }
 
 .payment_radioBorder{
@@ -444,19 +581,26 @@ input[type="radio"]:checked + label{
 // ========== 信用卡填寫 ==========
 
 .payment_credit{
-  border: 1px solid red;
+  // border: 1px solid red;
   display: none;
 }
 
 
 // 信用卡卡號
-.payment_cardNumber, .payment_cardDate, .payment_cardCode{
+.payment_cardNumber, .payment_cardDate{
   // border: 1px solid green;
   display: flex;
   margin-bottom: 10px;
   font-size: 25px;
   color: #172852;
   align-items: center;
+}
+
+@media screen and (max-width: 1200px){
+  .payment_cardNumber, .payment_cardDate{
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 .payment_00{
@@ -468,7 +612,7 @@ input[type="radio"]:checked + label{
   align-items: center;
 }
 
-.payment_cardNumber > input, .payment_cardCode > input{
+.payment_cardNumber input{
   background-color: #f0ebe9;
   border-radius: 5px;
   font-size: 14px;
@@ -479,16 +623,23 @@ input[type="radio"]:checked + label{
   height: 35px;
   border: none;
   outline: none;
+  text-align: center;
 }
 
-.payment_cardNumber > input:focus, .payment_cardCode > input:focus{
+@media screen and (max-width: 576px){
+  .payment_cardNumber input{
+    width: 70px;
+  }
+}
+
+.payment_cardNumber > input:focus{
   border: 2px solid #172852;
 }
 
 
 // 卡片有效期限
 
-.payment_cardDate > select{
+.payment_cardDate select{
   border: none;
   border-radius: 5px;
   background-color: #f0ebe9;
@@ -499,9 +650,10 @@ input[type="radio"]:checked + label{
   margin-right: 10px;
   color: #172852;
   font-weight: bold;
+  padding: 0 15px;
 }
 
-.payment_cardDate > select > option{
+.payment_cardDate option{
   color: #172852;
   font-weight: bold;
 }
@@ -525,6 +677,19 @@ input[type="radio"]:checked + label{
   height: 540px;
   margin-left: 30px;
   padding: 20px 15px;
+}
+
+@media screen and (max-width: 992px){
+  .payment_right{
+    width: 80%;
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 576px){
+  .payment_right{
+    width: 100%;
+  }
 }
 
 // ========== 明細標題 ==========
@@ -699,4 +864,74 @@ input[type="radio"]:checked + label{
     margin-left: 10px;
     display: flex;
     margin-top: 3px;
+}
+
+
+
+
+
+// ============ 信用卡圖片 ============
+
+.payment_cardImg{
+  // border: 1px solid green;
+  display: flex;
+  margin-top: 20px;
+  position: relative;
+}
+
+.payment_cardFront{
+  // border: 1px solid red;
+  background-image: url("../images/payment/card-front.png");
+  width: 250px;
+  height: 150px;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  overflow: hidden;
+  margin-left: 95px;
+  z-index: 1;
+  transition: all 0.5s ease;
+}
+
+@media screen and (max-width: 1200px){
+  .payment_cardFront{
+    margin-left: 0;
+  }
+}
+
+.payment_cardFront > div{
+  // border: 1px solid blue;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 15px;
+  height: 20px;
+}
+
+.payment_number{
+  display: flex;
+  margin-top: 15px;
+  margin-left: 35px;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.payment_number > div, .payment_date > div{
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.payment_date{
+  display: flex;
+  margin-left: 170px;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.payment_certification{
+  // border: 1px solid red;
+  width: 50px;
+  margin-left: 55px;
+  margin-top: 55px;
+  visibility: hidden;
 }

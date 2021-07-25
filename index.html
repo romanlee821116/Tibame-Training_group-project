@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./css/fullpage.css">
     <link rel="stylesheet" href="./css/rolling.css">
-    <link rel="stylesheet" href="./css/hamburger.css">
+    <!-- <link rel="stylesheet" href="./css/hamburger.css"> -->
     <!-- <link rel="stylesheet" href="./css/rolling.css">   -->
     <script src="https://kit.fontawesome.com/8c3a8ab95b.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -21,15 +21,13 @@
     <script src="./js/index.js"></script>
     <script src="./js/vue.js"></script>
     <script src="./js/hamburger.js"></script>
-
-
 </head>
 
 <body>
     <!-- navbar -->
     <div class="navbar">
         <div class="navbar-logo">
-            <img src="./images/index/logo.png" alt="">
+            <a href=""><img src="./images/index/logo.png" alt=""></a>
         </div>
         <div class="navbar-icon">
             <a href="#"><i class="fas fa-user"></i></a>
@@ -46,18 +44,18 @@
             <div class="ham_overlay-content">
                 <div class='ham_jelly'></div>
                 <div class="ham_select">
-                    <a href="../index.html">首頁</a>
-                    <a href="./about.html">關於我們</a>
-                    <a href="./news.html">最新消息</a>
-                    <a href="./shopping_choose.html">商品專區</a>
-                    <a href="./customized.html">客製化禮盒</a>
-                    <a href="./FAQ.html">Q&A</a>
-                    <a href="./login.html">會員中心</a>
+                    <a href="./index.html">首頁</a>
+                    <a href="./page/about.html">關於我們</a>
+                    <a href="./page/news.html">最新消息</a>
+                    <a href="./page/shopping_choose.html">商品專區</a>
+                    <a href="./page/customized.html">客製化禮盒</a>
+                    <a href="./page/FAQ.html">Q&A</a>
+                    <a href="./page/login.html">會員中心</a>
                 </div>
             </div>
-        </div>
-        <!-- 漢堡結束 -->
+        </div>    
     </div>
+    <!-- nav結束 -->
     <!-- media -->
     <div class='mediacolumn'>
         <a href="#"><i class="fab fa-instagram-square"></i></a>
@@ -76,14 +74,22 @@
         <a href="">最新消息</a>
         <a href="">店鋪資訊</a>
     </div>
-    <!-- ====================================首頁內容====================================  -->
-    <div id="homepage">
-        <!-- ==================第一頁進場動畫================== -->
-        <!-- <div class="section page1"> -->
 
-        <!-- </div> -->
+    
+
+    <div id="homepage">
         <!-- ==================第二頁首屏跑馬==================-->
         <div class="section index_page2">
+            <!-- =============================== -->
+            <div class='index_intro'>
+                <div class="intro_container">
+                    <p class="intro_word intro_add4"></p>
+                    <p class="intro_word intro_add3"></p>
+                    <p class="intro_word intro_add2"></p>
+                    <p class="intro_word intro_add"></p>
+                </div>
+            </div>
+            <!-- =============================== -->           
             <div class="index_p2_container">
                 <div class="index_p2_left">
                 </div>
@@ -149,7 +155,7 @@
                 </div>
                 <div class="index_p4_bigPic">
                     <div class="index_p4_bigPic_img">
-                        <img src="./images/index/product_big.png" alt="">
+                        <img src="./images/index/product_big01.png" alt="">
                     </div>
                     <div class='index_p4_bigPic_info'>
                         <p>紅豆銅鑼燒</p>
@@ -219,7 +225,6 @@
         <!-- ==================第六頁最新消息================== -->
         <div class="section index_page6">
             <!-- watermark -->
-
             <div v-for='p6 in p6_list' :class='p6.class'>
                 <img :src="p6.src">
             </div>
@@ -279,7 +284,7 @@
                             <p>地址</p>
                             <div class="index_p7_address_detailed">
                                 <p>台北市南京東路三段219號4-5F</p>
-                                <a href="#">Google Map</a>
+                                <a href="https://goo.gl/maps/krEwCQajxQR8aGXx5">Google Map</a>
                             </div>
                         </div>
                         <div v-for='item in shop_info' :class='item.class'>
@@ -293,7 +298,7 @@
                     </div>
                 </div>
                 <div class="index_p7_bigPic">
-                    <img src="./images/index/shop_pic_a.png" alt="">
+                    <img src="./images/index/shop_pic_0.png" alt="">
                 </div>
             </div>
             <div v-for='p7 in p7_list' :class='p7.class'>
@@ -352,13 +357,9 @@
                     $('.psychotest').css({
                         display: "block",
                     });
-                    //navbar改色
-                    $('.navbar .navbar-icon i').css({
-                        color: '#bb866a',
-                    })
-                    $('.ham_bar').css({
-                        backgroundColor: '#bb866a',
-                    })
+                    //navbar改色                    
+                    $('.navbar-icon .fas ').addClass('index_navChange');
+                    $('.ham_container').addClass('index_hamChange');
 
                 }
 
@@ -382,12 +383,8 @@
                         display: 'none',
                     });
                     //    navbar改色
-                    $('.navbar .navbar-icon i').css({
-                        color: '#fff',
-                    })
-                    $('.ham_bar').css({
-                        backgroundColor: '#fff',
-                    })
+                    $('.navbar-icon .fas ').removeClass('index_navChange');
+                    $('.ham_container').removeClass('index_hamChange');
 
                 }
             }, //導覽列提示

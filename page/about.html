@@ -29,6 +29,7 @@
                     <!-- 人 -->
                     <div v-for='item in people_list' :class='item.class'>
                         <img :src="item.src" >
+                        <div></div>
                     </div>
                     <div class='about_people2 people'>
                         <img src="../images/about/character02_1.png" >
@@ -45,6 +46,7 @@
         <div id='about_scene2'>
             <!-- 大海背景 -->
             <div class='about_taiwan'>
+                <img src="../images/about/aboutUs_bgA02.png" class='about_scene2Bg'>
                 <!-- 台灣島 -->
                 <img class='about_island' src="../images/about/map1.png">
                 <div v-for='item in placePic' :class='item.class' class='about_spot'>
@@ -59,7 +61,6 @@
                 <img v-for='(item, index) in scene1End' :src="item.src"  :class='item.class' v-if='index!=0'>
                 <h2>最道地的日本風味</h2>
                 <div class='about_endBtn'>
-                    
                     <a href="../index.html">返回首頁</a>
                     <a href="./shopping_choose.html">前往商品頁</a>
                 </div>
