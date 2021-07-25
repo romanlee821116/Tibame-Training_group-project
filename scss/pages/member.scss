@@ -24,20 +24,27 @@ body {
     background-image: url(../images/member/member_bg.png);
     background-repeat: no-repeat;
 }
+
+html, body{
+    height: 100%;
+}
 .psychotest{
     @include psycoBtn(#fff);
 }
 
+.memberWrapper{
+    height: 100%;
+}
+
 .memberAll {
+    min-height: 70%;
     width: 80%;
     max-width: 1200px;
     margin: 0 auto;
-    // border: 1px solid red; 
 }
 
 
 /* 彈出視窗時禁止滑動 */
-
 .stopScroll {
     height: 100%;
     overflow: hidden;
@@ -251,6 +258,14 @@ body {
     // border: none;
     margin-top: 40px;
     @include btn();
+}
+/* 開眼睛看密碼 */
+.memberPart2 .eye1{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    color: #cba89a;
+    cursor: pointer;
 }
 
 // ---------- 使用者輸入資訊錯誤反饋
@@ -580,6 +595,9 @@ body {
         padding-top: 19px;
 
     }
+    div p{
+        margin:0;
+    }
 
 } 
 
@@ -627,7 +645,8 @@ body {
     color: #647bb5;
     font-size: 12px;
     text-align: center;
-    padding: 10px 0 10px 0;
+    padding: 5px 0 5px 0;
+    margin: 0;
 }
 
 .receiverDetail>button {
@@ -741,10 +760,6 @@ body {
 
 body {
     @include rwd(1199px) {
-        // .memberAll {
-        //     width: 80%;
-        //     margin: 0 auto;
-        // }
     }
     @include rwd(991px) {}
     @include rwd(767px) {

@@ -1,4 +1,5 @@
 $(document).ready(function(){
+    
     console.log('ready');
     getRandom();        //驗證碼亂數
     $('.eye2').hide();  //開眼睛看密碼
@@ -85,7 +86,7 @@ $(document).ready(function(){
     });
 
     // 開眼睛看密碼==========================
-    $('.eye').click(function(){
+    $('.loginAll .eye').click(function(){
         let type = $(this).prev().attr('type');
         if( type == 'text'){
             $(this).prev().attr('type','password');
@@ -141,11 +142,7 @@ $(document).ready(function(){
     // ================ 表單錯誤資訊反饋 ==================
     // 沒輸入按送出會跳出提示框
     $('.loginButton').click(function(e){
-        // console.log(this);
-        // 暫時做登入註冊/會員中心判斷--------
-        // if($(this).hasClass('loginYes')){
-        //     $(this).addClass('loginOK');
-        // }
+        
         // ----------------------------------
         // 清空重來
         $('.loginError').css('display','none');
@@ -170,7 +167,6 @@ $(document).ready(function(){
         // 亂數碼
         let code = $('.loginCodeEnter').val();
         let codeRight = $('.loginCodeNew').text().substr(0,4);
-        console.log(codeRight);
 
 
         // 正規表示法
@@ -186,10 +182,14 @@ $(document).ready(function(){
             $('.loginAccount').css('border','2px solid #dc3838');
             $('.loginAccount').next().css('display','inline-block');
             $('.loginAccount').next().children('p').text('請輸入資訊');
+            $('.loginAccount').addClass('loginFalse');    //給登入註冊切換判斷
         }else if(!mailRight.test(account)){
             e.preventDefault();
             $('.loginAccount').css('border','2px solid #dc3838');
             $('.loginAccount').next().css('display','inline-block');
+            $('.loginAccount').addClass('loginFalse');    //給登入註冊切換判斷
+        }else{
+            $('.loginAccount').removeClass('loginFalse');    //給登入註冊切換判斷
         }
 
         if(password == ""){
@@ -197,10 +197,14 @@ $(document).ready(function(){
             $('#loginPassword').css('border','2px solid #dc3838');
             $('#loginPassword').next().next().css('display','inline-block');
             $('#loginPassword').next().next().children('p').text('請輸入資訊');
+            $('#loginPassword').addClass('loginFalse');    //給登入註冊切換判斷
         }else if(!passwordRight.test(password)){
             e.preventDefault();
             $('#loginPassword').css('border','2px solid #dc3838');
             $('#loginPassword').next().next().css('display','inline-block');
+            $('#loginPassword').addClass('loginFalse');    //給登入註冊切換判斷
+        }else{
+            $('#loginPassword').removeClass('loginFalse');    //給登入註冊切換判斷
         }
 
         if(password2 == ""){
@@ -255,7 +259,15 @@ $(document).ready(function(){
             $('.loginCodeEnter').next().children('p').text('驗證碼錯誤');
         }
 
-        
+        // 做登入註冊/會員中心判斷--------
+        if( !$('.loginAccount').hasClass('loginFalse') || !$('#loginPassword').hasClass('loginFalse')){
+            $(this).addClass('loginOK');
+            $('.memberShow').fadeOut(500);
+            $('.footer').show();
+            $('.navbar').show();
+            // window.history.back(-1);
+            // $('.navbar-icon>a:first').hasClass('loginOK');
+        }
 
     });
 
@@ -280,15 +292,14 @@ $(document).ready(function(){
             $('.loginAccountForget').css('border','2px solid #dc3838');
             $('.loginAccountForget').next().css('display','inline-block');
             $('.loginAccountForget').next().children('p').text('請輸入資訊');
-            // $('.loginAccountForget').addClass('loginWrong');   //給忘記密碼的彈窗判斷
+            $('.loginAccountForget').addClass('loginWrong');   //給忘記密碼的彈窗判斷
         }else if(!mailRight.test(accountForget)){
             e.preventDefault();
             $('.loginAccountForget').css('border','2px solid #dc3838');
             $('.loginAccountForget').next().css('display','inline-block');
-            // $('.loginAccountForget').addClass('loginWrong');   //給忘記密碼的彈窗判斷
+            $('.loginAccountForget').addClass('loginWrong');   //給忘記密碼的彈窗判斷
         }else{
-            // $('.loginAccountForget').removeClass('loginWrong');   //給忘記密碼的彈窗判斷
-            console.log('ok');
+            $('.loginAccountForget').removeClass('loginWrong');   //給忘記密碼的彈窗判斷
         }
 
         if(codeForget == ""){
@@ -296,32 +307,30 @@ $(document).ready(function(){
             $('.loginCodeEnterForget').css('border','2px solid #dc3838');
             $('.loginCodeEnterForget').next().css('display','inline-block');
             $('.loginCodeEnterForget').next().children('p').text('請輸入資訊');
-            // $('.loginCodeEnterForget').addClass('loginWrong');   //給忘記密碼的彈窗判斷
+            $('.loginCodeEnterForget').addClass('loginWrong');   //給忘記密碼的彈窗判斷
         }else if( codeForget != codeRightForget ){
             e.preventDefault();
             $('.loginCodeEnterForget').css('border','2px solid #dc3838');
             $('.loginCodeEnterForget').next().css('display','inline-block');
             $('.loginCodeEnterForget').next().children('p').text('驗證碼錯誤');
-            // $('.loginCodeEnterForget').addClass('loginWrong');    //給忘記密碼的彈窗判斷
+            $('.loginCodeEnterForget').addClass('loginWrong');    //給忘記密碼的彈窗判斷
         }else{
-            // $('.loginCodeEnterForget').removeClass('loginWrong');    //給忘記密碼的彈窗判斷
-            console.log('okk');
+            $('.loginCodeEnterForget').removeClass('loginWrong');    //給忘記密碼的彈窗判斷
         };
         
-        // 如果點擊的是傳送新密碼，則跳出視窗
-        // if( $(this).hasClass('loginSendPSW')){
-        //     if( $('.loginAccount').hasClass('loginWrong') && $('.loginCodeEnter').hasClass('loginWrong')){
-        //         console.log('nok');
-        //     }else{
-        //         $('.loginpopBG').show();
-        //     }
-        // };
+        // 如果點擊時，沒有錯誤通知，則跳出送出密碼視窗
+        if( $('.loginAccountForget').hasClass('loginWrong') || $('.loginCodeEnterForget').hasClass('loginWrong')){
+            console.log('nok');
+        }else{
+            $('.loginpopBG').show();
+            console.log('ok');
+        };
     });
 
     // 忘記密碼 關閉彈窗---------------
     $('.loginSendPSWclose').click(function(){
         $('.loginpopBG').hide();
-        console.log('me');
+        $('.loginAll input').val('');
     });
 
     // 清空表單反饋-------------------
@@ -333,8 +342,11 @@ $(document).ready(function(){
         $('.loginAll input').val('');
     };
 
-
-
+    // 點擊關閉回到上一頁-----------
+    // $('body').on('click','.loginClose',function(){
+        // window.history.back(-1);
+    // });
+});
 
 
     // 註冊會員表單的縣市下拉市選單==============
@@ -430,4 +442,3 @@ $(document).ready(function(){
 
 
 
-});

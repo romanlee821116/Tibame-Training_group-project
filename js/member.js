@@ -122,52 +122,57 @@ $(document).ready(function(){
         // 正規表示法密碼格式
         let passwordCorrect = /^.{8,16}$/;
 
-        console.log(oldPSW);
-        console.log(newPSW);
-        console.log(newPSW2);
-
         if(oldPSW == ""){
             e.preventDefault();
             $('.memberOldPSW').css('border','2px solid #dc3838');
-            $('.memberOldPSW').next().css('display','inline-block');
-            $('.memberOldPSW').next().children('p').text('請輸入資訊');
+            $('.memberOldPSW').next().next().css('display','inline-block');
+            $('.memberOldPSW').next().next().children('p').text('請輸入資訊');
         }else if(!passwordCorrect.test(oldPSW)){
             e.preventDefault();
             $('.memberOldPSW').css('border','2px solid #dc3838');
-            $('.memberOldPSW').next().css('display','inline-block');
-            $('.memberOldPSW').next().children('p').text('資料格式不正確');
+            $('.memberOldPSW').next().next().css('display','inline-block');
+            $('.memberOldPSW').next().next().children('p').text('資料格式不正確');
         }
 
         if(newPSW == ""){
             e.preventDefault();
             $('.memberNewPSW').css('border','2px solid #dc3838');
-            $('.memberNewPSW').next().css('display','inline-block');
-            $('.memberNewPSW').next().children('p').text('請輸入資訊');
+            $('.memberNewPSW').next().next().css('display','inline-block');
+            $('.memberNewPSW').next().next().children('p').text('請輸入資訊');
         }else if(!passwordCorrect.test(newPSW)){
             e.preventDefault();
             $('.memberNewPSW').css('border','2px solid #dc3838');
-            $('.memberNewPSW').next().css('display','inline-block');
-            $('.memberNewPSW').next().children('p').text('資料格式不正確');
+            $('.memberNewPSW').next().next().css('display','inline-block');
+            $('.memberNewPSW').next().next().children('p').text('資料格式不正確');
         }
 
         if(newPSW2 == ""){
             e.preventDefault();
             $('.memberNewPSW2').css('border','2px solid #dc3838');
-            $('.memberNewPSW2').next().css('display','inline-block');
-            $('.memberNewPSW2').next().children('p').text('請輸入資訊');
+            $('.memberNewPSW2').next().next().css('display','inline-block');
+            $('.memberNewPSW2').next().next().children('p').text('請輸入資訊');
         }else if(!passwordCorrect.test(newPSW2)){
             e.preventDefault();
             $('.memberNewPSW2').css('border','2px solid #dc3838');
-            $('.memberNewPSW2').next().css('display','inline-block');
-            $('.memberNewPSW2').next().children('p').text('資料格式不正確');
+            $('.memberNewPSW2').next().next().css('display','inline-block');
+            $('.memberNewPSW2').next().next().children('p').text('資料格式不正確');
         }else if(newPSW2 != newPSW ){
             e.preventDefault();
             $('.memberNewPSW2').css('border','2px solid #dc3838');
-            $('.memberNewPSW2').next().css('display','inline-block');
-            $('.memberNewPSW2').next().children('p').text('兩次輸入密碼不同');
+            $('.memberNewPSW2').next().next().css('display','inline-block');
+            $('.memberNewPSW2').next().next().children('p').text('兩次輸入密碼不同');
         }
 
 
+    });
+    // 開眼睛看密碼
+    $('.memberPart2 .eye').click(function(){
+        let type = $(this).prev().attr('type');
+        if( type == 'text'){
+            $(this).prev().attr('type','password');
+        }else{
+            $(this).prev().attr('type','text');
+        };
     });
 
 

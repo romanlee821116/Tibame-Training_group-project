@@ -38,7 +38,7 @@
                         </div>
                         <div class="loginLine">
                             <i class="fab fa-line"></i>
-                            <a>使用Line登入</a>
+                            <a href="###">使用Line登入</a>
                         </div>
                     </div>
                 </div>
@@ -48,11 +48,11 @@
                         <div class='loginWrapper'>
                             <div id="loginArrow"></div>
                             <div class='loginErrorWrap'>
-                                <input class='loginAccount' type="text" placeholder="請輸入您的信箱">
+                                <input class='loginAccount loginWrong' type="text" placeholder="請輸入您的信箱">
                                 <member-error></member-error>
                             </div>
                             <div class='loginErrorWrap'>
-                                <input id='loginPassword' class='psw' type="password" placeholder="請輸入密碼"><i class="eye eye1 fas fa-eye"></i>
+                                <input id='loginPassword' class='psw loginWrong' type="password" placeholder="請輸入密碼"><i class="eye eye1 fas fa-eye"></i>
                                 <member-error></member-error>
                             </div>
                             
@@ -69,9 +69,9 @@
                                 <div class='loginGender'>
                                     <input name='loginGender' type="radio" id="loginMale" value='male'>
                                     <label for="male">男性</label>
-                                    <input name='loginGender' type="radio" id="loginFemale" value='male'>
+                                    <input name='loginGender' type="radio" id="loginFemale" value='female'>
                                     <label for="female">女性</label>
-                                    <input name='loginGender' type="radio" id="loginOther" value='male'>
+                                    <input name='loginGender' type="radio" id="loginOther" value='other'>
                                     <label for="other">第三性</label>
                                 </div>
                                 <member-error></member-error>
@@ -101,7 +101,7 @@
                                 <i class="fas fa-sync-alt loginRefresh"></i>
                             </div>
                         </div>
-                        <button class='loginButton loginYes' type='submit'>
+                        <button class='loginButton' type='submit'>
                             <span>
                             登入
                             <br/>
@@ -121,12 +121,12 @@
                     <form id='forgetFormPage' action="">
                         <div id="loginArrow2"></div>
                         <div class='loginErrorWrap'>
-                            <input class='loginAccount loginAccountForget' type="text" placeholder="請輸入您的信箱">
+                            <input class='loginAccountForget' type="text" placeholder="請輸入您的信箱">
                             <member-error></member-error>
                         </div>
                         <div class='loginCode'>
                             <div class='loginErrorWrap'>
-                                <input class='loginCodeEnter loginCodeEnterForget' type="text" placeholder="請輸入右方數字">
+                                <input class='loginCodeEnterForget' type="text" placeholder="請輸入右方數字">
                                 <member-error></member-error>
                             </div>
                                 

@@ -7,488 +7,501 @@
     <link rel="stylesheet" href="../css/member.css">
     <!-- fontawesome -->
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-    crossorigin="anonymous"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>  
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     
     <title>Member Center</title>
 </head>
 <body>
-    <!-- 聯絡我們 -->
-    <div class='psychotest'>
-        <a href="./contact.html"><img src="../images/contact/mail_icon.png" alt=""></a>
-        <p>聯絡我們</p>
-    </div>
-    <!-- navbar -->
-    <div class="navbar">
-        <div class="navbar-logo">
-            <img src="../images/index/logo.png" alt="">
+    <div class='memberWrapper'>
+        <!-- 聯絡我們 -->
+        <div class='psychotest'>
+            <a href="./contact.html"><img src="../images/contact/mail_icon.png" alt=""></a>
+            <p>聯絡我們</p>
         </div>
-        <div class="navbar-icon">
-            <p id='scrollvalue'></p>
-            <a href="#"><i class="fas fa-user"></i></a>
-            <a href="#"><i class="fas fa-shopping-cart"></i></a>
-            <a href="#"><i class="fas fa-bars"></i></a>
-        </div>
-    </div>
-
-    <!-- 載入會員頁 -->
-    <div class='memberShow'></div>
-
-    <div class='memberAll'>
-        <p>ACCOUNT</p>
-        <h2>會員中心</h2>
-        <div class='memberLine'>
-            <div class='memberTitle'>
-                <h4 id='memberId' class='mClicked'>會員資料</h4>
-                <h4 id='memberPsw'>修改密碼</h4>
-                <h4 id='memberOrder'>訂單查詢</h4>
-                <h4 id='memberRefund'>取消/退款查詢</h4>
-                <h4 id='memberLike'>收藏管理</h4>
+        <!-- navbar -->
+        <div class="navbar">
+            <div class="navbar-logo">
+                <img src="../images/index/logo.png" alt="">
             </div>
-            <div class='underLine'>
-                <div class='choosenBar'></div>
-                <div class='choosenBar2'></div>
+            <div class="navbar-icon">
+                <p id='scrollvalue'></p>
+                <a href="#"><i class="fas fa-user"></i></a>
+                <a href="#"><i class="fas fa-shopping-cart"></i></a>
+                <a href="#"><i class="fas fa-bars"></i></a>
             </div>
         </div>
-        <!-- ==================會員資料=================== -->
-        <div class='memberPart1'>
-            <label>姓名：<input class='memberLeft memberTop' type="text" value='李安'></label><br>
-            <div class='gender'>性別：
-                <input class='memberLeft' name='gender' type="radio" id="male" value='male' checked>
-                <label for="male">男性</label>
-                <input name='gender' type="radio" id="female" value='female'>
-                <label for="female">女性</label>
-                <input name='gender' type="radio" id="other" value='other'>
-                <label for="other">第三性</label>
-            </div>
-            <label>信箱：<input class='memberLeft' type="email" value='karuhodou2020@gmail.com'></label><br>
-            <label>連絡電話：<input type="text" value='0912345678'></label><br>
-            <label>地址：<input class='memberLeft' type="text" value="台北市南京東路三段219號4-5F"></label><br>
-            <button type="submit">儲存</button>
-        </div>
 
-        <!-- ==================修改密碼=================== -->
-        <div class='memberPart2'>
-            <div class='memberErrorWrap'>
-                <input class='memberOldPSW' type='password' placeholder="請輸入您的舊密碼">
-                <member-error></member-error>
-            </div>
-            <div class='memberErrorWrap'>
-                <input class='memberNewPSW' type='password' placeholder="請輸入您的新密碼 (數字+英文字母8-16位)">
-                <member-error></member-error>
-            </div>
-            <div class='memberErrorWrap'>
-                <input class='memberNewPSW2' type='password' placeholder="再次輸入您的新密碼">
-                <member-error></member-error>
-            </div>
-            <button class='memberChangePSW' type="submit">修改</button>
-        </div>
+        <!-- 載入會員頁 -->
+        <div class='memberShow'></div>
 
-        <!-- ==================訂單查詢=================== -->
-        <div class='memberPart3'>
-            <div class='orderSearch'>
-                <input type="text" placeholder="請輸入您的訂單編號">
-                <button type='submit'>搜尋</button>
-            </div>
-            <p class='clearBoth'></p>
-            <div>
-                <!-- 訂單1 -->
-                <div class='memberOrder'>
-                    <div class='memberOrderContent' style="table-layout:fixed">
-                        <div class="memberGrid">
-                            <div class='memberGrid1'>訂單編號</div>
-                            <div class='memberGrid2'>日期</div>
-                            <div class='memberGrid3'>金額</div>
-                            <div class='memberGrid4'>付款方式</div>
-                            <div class='memberGrid5'>付款狀態</div>
-                            <div class='memberGrid6'>貨運狀態</div>
-                            <div class='memberGrid7'>訂單狀態</div>
-                            <div class='memberGrid8'>收件人資訊</div>
-                            <div class='memberGrid9'>123456789</div>
-                            <div class='memberGrid10'>2021-04-26</div>
-                            <div class='memberGrid11'>$7000</div>
-                            <div class='memberGrid12'>貨到付款</div>
-                            <div class='memberGrid13'>未付款</div>
-                            <div class='memberGrid14'>已出貨</div>
-                            <div class='memberGrid15'>已確認</div>
-                            <div class='memberGrid16 memberReceiverID'>詳細資訊</div>
-                        </div>
-                    </div>
-
-                    <div class='memberProgressAll'>
-                        <div>
-                            <div class='memberProgressDot'>
-                                <div></div>
-                                <div class='memberLineCheck'></div>
-                                <div></div>
-                                <div class='memberLineCheck'></div>
-                                <div></div>
-                                <div></div>
-                                <div class='memberUnchecked'></div>
-                            </div>
-                            <div class='memberProgressWord'>
-                                <span>收到訂單</span>
-                                <span>訂單確認</span>
-                                <span class='memberWordCheck'>商品出貨</span>
-                                <span>商品送達</span>
-                            </div>
-                        </div>
-                        <div>
-                            <button class='memberOpenDetail'>查看明細</button>
-                            <button class='memberBuyAgain noshow'>再次購買</button>
-                        </div>
-                    </div>
-                    <div class='memberOrderDetailAll'>
-                        <div class='memberOrderDetail'>
-                            <div class='memberOrderD1'>
-                                <span>商品名稱</span>
-                                <span>數量</span>
-                                <span>價格</span>
-                            </div>
-                            <div class='memberOrderD2'>
-                                <img src="../images/member/cookie.jpg">
-                                <div>
-                                    <p>南投銅鑼燒</p>
-                                    <p>五入</p>
-                                </div>
-                                <div>5件</div>
-                                <div>$350</div>
-                            </div>
-                        </div>
-                        <div class='memberOrderDetail'>
-                            <div class='memberOrderD1'>
-                                <span>商品名稱</span>
-                                <span>數量</span>
-                                <span>價格</span>
-                            </div>
-                            <div class='memberOrderD2'>
-                                <img src="../images/member/cookie.jpg">
-                                <div>
-                                    <p>南投銅鑼燒</p>
-                                    <p>五入</p>
-                                </div>
-                                <div>5件</div>
-                                <div>$350</div>
-                            </div>
-                        </div>
-                    </div> 
-                    <!-- 收件人詳細資訊 -->
-                    <receiver-detail></receiver-detail>
-                    
+        <div class='memberAll'>
+            <p>ACCOUNT</p>
+            <h2>會員中心</h2>
+            <div class='memberLine'>
+                <div class='memberTitle'>
+                    <h4 id='memberId' class='mClicked'>會員資料</h4>
+                    <h4 id='memberPsw'>修改密碼</h4>
+                    <h4 id='memberOrder'>訂單查詢</h4>
+                    <h4 id='memberRefund'>取消/退款查詢</h4>
+                    <h4 id='memberLike'>收藏管理</h4>
                 </div>
-                <!-- 訂單1結束====== -->
-                <!-- 訂單2 -->
-                <div class='memberOrder'>
-                    <div class='memberOrderContent' style="table-layout:fixed">
-                        <div class="memberGrid">
-                            <div class='memberGrid1'>訂單編號</div>
-                            <div class='memberGrid2'>日期</div>
-                            <div class='memberGrid3'>金額</div>
-                            <div class='memberGrid4'>付款方式</div>
-                            <div class='memberGrid5'>付款狀態</div>
-                            <div class='memberGrid6'>貨運狀態</div>
-                            <div class='memberGrid7'>訂單狀態</div>
-                            <div class='memberGrid8'>收件人資訊</div>
-                            <div class='memberGrid9'>123456789</div>
-                            <div class='memberGrid10'>2021-04-26</div>
-                            <div class='memberGrid11'>$7000</div>
-                            <div class='memberGrid12'>貨到付款</div>
-                            <div class='memberGrid13'>未付款</div>
-                            <div class='memberGrid14'>已出貨</div>
-                            <div class='memberGrid15'>已確認</div>
-                            <div class='memberGrid16 memberReceiverID'>詳細資訊</div>
-                        </div>
-                    </div>
-                    <div class='memberProgressAll'>
-                        <div>
-                            <div class='memberProgressDot'>
-                                <div></div>
-                                <div></div>
-                                <div class='memberUnchecked'></div>
-                                <div></div>
-                                <div class='memberUnchecked'></div>
-                                <div></div>
-                                <div class='memberUnchecked'></div>
-                            </div>
-                            <div class='memberProgressWord'>
-                                <span class='memberWordCheck'>收到訂單</span>
-                                <span>訂單確認</span>
-                                <span>商品出貨</span>
-                                <span>商品送達</span>
-                            </div>
-                        </div>
-                        <div>
-                            <button class='memberOpenDetail'>查看明細</button>
-                            <button class='memberBuyAgain noshow'>再次購買</button>
-                        </div>
-                    </div>
-                    <div class='memberOrderDetailAll'>
-                        <div class='memberOrderDetail'>
-                            <div class='memberOrderD1'>
-                                <span>商品名稱</span>
-                                <span>數量</span>
-                                <span>價格</span>
-                            </div>
-                            <div class='memberOrderD2'>
-                                <img src="../images/member/cookie.jpg">
-                                <div>
-                                    <p>南投銅鑼燒</p>
-                                    <p>五入</p>
-                                </div>
-                                <div>5件</div>
-                                <div>$350</div>
-                            </div>
-                        </div>
-                    </div>  
-                    <!-- 收件人詳細資訊 -->
-                    <receiver-detail></receiver-detail>
-                    
+                <div class='underLine'>
+                    <div class='choosenBar'></div>
+                    <div class='choosenBar2'></div>
                 </div>
-                <!-- 訂單2結束====== -->
-
-                <!-- 訂單3 -->
-                <div class='memberOrder'>
-                    <div class='memberOrderContent' style="table-layout:fixed">
-                        <div class="memberGrid">
-                            <div class='memberGrid1'>訂單編號</div>
-                            <div class='memberGrid2'>日期</div>
-                            <div class='memberGrid3'>金額</div>
-                            <div class='memberGrid4'>付款方式</div>
-                            <div class='memberGrid5'>付款狀態</div>
-                            <div class='memberGrid6'>貨運狀態</div>
-                            <div class='memberGrid7'>訂單狀態</div>
-                            <div class='memberGrid8'>收件人資訊</div>
-                            <div class='memberGrid9'>123456789</div>
-                            <div class='memberGrid10'>2021-04-26</div>
-                            <div class='memberGrid11'>$7000</div>
-                            <div class='memberGrid12'>貨到付款</div>
-                            <div class='memberGrid13'>未付款</div>
-                            <div class='memberGrid14'>已出貨</div>
-                            <div class='memberGrid15'>已確認</div>
-                            <div class='memberGrid16 memberReceiverID'>詳細資訊</div>
-                        </div>
-                    </div>
-                    <div class='memberProgressAll'>
-                        <div>
-                            <div class='memberProgressDot'>
-                                <div></div>
-                                <div class='memberLineCheck'></div>
-                                <div></div>
-                                <div class='memberLineCheck'></div>
-                                <div></div>
-                                <div class='memberLineCheck'></div>
-                                <div></div>
-                            </div>
-                            <div class='memberProgressWord'>
-                                <span>收到訂單</span>
-                                <span>訂單確認</span>
-                                <span>商品出貨</span>
-                                <span class='memberWordCheck'>商品送達</span>
-                            </div>
-                        </div>
-                        <div>
-                            <button class='memberOpenDetail'>查看明細</button>
-                            <button class='memberBuyAgain'>再次購買</button>
-                        </div>
-                    </div>
-                    <div class='memberOrderDetailAll'>
-                        <div class='memberOrderDetail'>
-                            <div class='memberOrderD1'>
-                                <span>商品名稱</span>
-                                <span>數量</span>
-                                <span>價格</span>
-                            </div>
-                            <div class='memberOrderD2'>
-                                <img src="../images/member/cookie.jpg">
-                                <div>
-                                    <p>南投銅鑼燒</p>
-                                    <p>五入</p>
-                                </div>
-                                <div>5件</div>
-                                <div>$350</div>
-                            </div>
-                        </div>
-                        <div class='memberOrderDetail'>
-                            <div class='memberOrderD1'>
-                                <span>商品名稱</span>
-                                <span>數量</span>
-                                <span>價格</span>
-                            </div>
-                            <div class='memberOrderD2'>
-                                <img src="../images/member/cookie.jpg">
-                                <div>
-                                    <p>南投銅鑼燒</p>
-                                    <p>五入</p>
-                                </div>
-                                <div>5件</div>
-                                <div>$350</div>
-                            </div>
-                        </div>
-                    </div>  
-                    <!-- 收件人詳細資訊 -->
-                    <receiver-detail></receiver-detail>
-                    
+            </div>
+            <!-- ==================會員資料=================== -->
+            <div class='memberPart1'>
+                <label>姓名：<input class='memberLeft memberTop' type="text" value='李安'></label><br>
+                <div class='gender'>性別：
+                    <input class='memberLeft' name='gender' type="radio" id="male" value='male' checked>
+                    <label for="male">男性</label>
+                    <input name='gender' type="radio" id="female" value='female'>
+                    <label for="female">女性</label>
+                    <input name='gender' type="radio" id="other" value='other'>
+                    <label for="other">第三性</label>
                 </div>
-                <!-- 訂單3結束====== -->             
-            </div>          
-        </div>
-
-        <!-- ==================取消/退款查詢=================== -->
-        <div class='memberPart4 vueOrder'>
-            <div class='orderSearch'>
-                <input type="text" placeholder="請輸入您的訂單編號">
-                <button type='submit'>搜尋</button>
+                <label>信箱：<input class='memberLeft' type="email" value='karuhodou2020@gmail.com'></label><br>
+                <label>連絡電話：<input type="text" value='0912345678'></label><br>
+                <label>地址：<input class='memberLeft' type="text" value="台北市南京東路三段219號4-5F"></label><br>
+                <button type="submit">儲存</button>
             </div>
-            <p class='clearBoth'></p>
-            <div>
-                <div class='memberOrder'>
-                    <div class='memberOrderContent' style="table-layout:fixed">
-                        <div class="memberGrid">
-                            <div class='memberGrid1'>訂單編號</div>
-                            <div class='memberGrid2'>日期</div>
-                            <div class='memberGrid3'>金額</div>
-                            <div class='memberGrid4'>付款方式</div>
-                            <div class='memberGrid5'>付款狀態</div>
-                            <div class='memberGrid6'>貨運狀態</div>
-                            <div class='memberGrid7'>訂單狀態</div>
-                            <div class='memberGrid8'>收件人資訊</div>
-                            <div class='memberGrid9'>123456789</div>
-                            <div class='memberGrid10'>2021-04-26</div>
-                            <div class='memberGrid11'>$7000</div>
-                            <div class='memberGrid12'>貨到付款</div>
-                            <div class='memberGrid13'>未付款</div>
-                            <div class='memberGrid14'>已出貨</div>
-                            <div class='memberGrid15'>已確認</div>
-                            <div class='memberGrid16 memberReceiverID'>詳細資訊</div>
-                        </div>
-                    </div>
-                    <div class='memberProgressAll'>
-                        <div>
-                            <div class='memberProgressDot'>
-                                <div></div>
-                                <div class='memberLineCheck'></div>
-                                <div></div>
-                                <div></div>
-                                <div class='memberUnchecked'></div>
-                                <div></div>
-                                <div class='memberUnchecked'></div>
-                            </div>
-                            <div class='memberProgressWord'>
-                                <span>收到訂單</span>
-                                <span class='memberWordCheck'>訂單確認</span>
-                                <span>商品出貨</span>
-                                <span>商品送達</span>
-                            </div>
-                        </div>
-                        <div>
-                            <button class='memberOpenDetail'>查看明細</button>
-                            <button class='memberBuyAgain noshow'>再次購買</button>
-                        </div>
-                    </div>
-                    <div class='memberOrderDetailAll'>
-                        <div class='memberOrderDetail'>
-                            <div class='memberOrderD1'>
-                                <span>商品名稱</span>
-                                <span>數量</span>
-                                <span>價格</span>
-                            </div>
-                            <div class='memberOrderD2'>
-                                <img src="../images/member/cookie.jpg">
-                                <div>
-                                    <p>南投銅鑼燒</p>
-                                    <p>五入</p>
-                                </div>
-                                <div>5件</div>
-                                <div>$350</div>
-                            </div>
-                        </div>
-                        <div class='memberOrderDetail'>
-                            <div class='memberOrderD1'>
-                                <span>商品名稱</span>
-                                <span>數量</span>
-                                <span>價格</span>
-                            </div>
-                            <div class='memberOrderD2'>
-                                <img src="../images/member/cookie.jpg">
-                                <div>
-                                    <p>南投銅鑼燒</p>
-                                    <p>五入</p>
-                                </div>
-                                <div>5件</div>
-                                <div>$350</div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- 收件人詳細資訊 -->
-                    <receiver-detail></receiver-detail>
-                    
+
+            <!-- ==================修改密碼=================== -->
+            <div class='memberPart2'>
+                <div class='memberErrorWrap'>
+                    <input class='memberOldPSW' type='password' placeholder="請輸入舊密碼"><i class="eye eye1 fas fa-eye"></i>
+                    <member-error></member-error>
                 </div>
-                <!-- 訂單1結束====== -->
+                <div class='memberErrorWrap'>
+                    <input class='memberNewPSW' type='password' placeholder="請輸入新密碼 (數字+英文字母8-16位)"><i class="eye eye1 fas fa-eye"></i>
+                    <member-error></member-error>
+                </div>
+                <div class='memberErrorWrap'>
+                    <input class='memberNewPSW2' type='password' placeholder="再次輸入新密碼"><i class="eye eye1 fas fa-eye"></i>
+                    <member-error></member-error>
+                </div>
+                <button class='memberChangePSW' type="submit">修改</button>
             </div>
+
+            <!-- ==================訂單查詢=================== -->
+            <div class='memberPart3'>
+                <div class='orderSearch'>
+                    <input type="text" placeholder="請輸入您的訂單編號">
+                    <button type='submit'>搜尋</button>
+                </div>
+                <p class='clearBoth'></p>
+                <div>
+                    <!-- 訂單1 -->
+                    <div class='memberOrder'>
+                        <div class='memberOrderContent' style="table-layout:fixed">
+                            <div class="memberGrid">
+                                <div class='memberGrid1'>訂單編號</div>
+                                <div class='memberGrid2'>日期</div>
+                                <div class='memberGrid3'>金額</div>
+                                <div class='memberGrid4'>付款方式</div>
+                                <div class='memberGrid5'>付款狀態</div>
+                                <div class='memberGrid6'>貨運狀態</div>
+                                <div class='memberGrid7'>訂單狀態</div>
+                                <div class='memberGrid8'>收件人資訊</div>
+                                <div class='memberGrid9'>123456789</div>
+                                <div class='memberGrid10'>2021-04-26</div>
+                                <div class='memberGrid11'>$7000</div>
+                                <div class='memberGrid12'>貨到付款</div>
+                                <div class='memberGrid13'>未付款</div>
+                                <div class='memberGrid14'>已出貨</div>
+                                <div class='memberGrid15'>已確認</div>
+                                <div class='memberGrid16 memberReceiverID'>詳細資訊</div>
+                            </div>
+                        </div>
+
+                        <div class='memberProgressAll'>
+                            <div>
+                                <div class='memberProgressDot'>
+                                    <div></div>
+                                    <div class='memberLineCheck'></div>
+                                    <div></div>
+                                    <div class='memberLineCheck'></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div class='memberUnchecked'></div>
+                                </div>
+                                <div class='memberProgressWord'>
+                                    <span>收到訂單</span>
+                                    <span>訂單確認</span>
+                                    <span class='memberWordCheck'>商品出貨</span>
+                                    <span>商品送達</span>
+                                </div>
+                            </div>
+                            <div>
+                                <button class='memberOpenDetail'>查看明細</button>
+                                <button class='memberBuyAgain noshow'>再次購買</button>
+                            </div>
+                        </div>
+                        <div class='memberOrderDetailAll'>
+                            <div class='memberOrderDetail'>
+                                <div class='memberOrderD1'>
+                                    <span>商品名稱</span>
+                                    <span>數量</span>
+                                    <span>價格</span>
+                                </div>
+                                <div class='memberOrderD2'>
+                                    <img src="../images/member/cookie.jpg">
+                                    <div>
+                                        <p>南投銅鑼燒</p>
+                                        <p>五入</p>
+                                    </div>
+                                    <div>5件</div>
+                                    <div>$350</div>
+                                </div>
+                            </div>
+                            <div class='memberOrderDetail'>
+                                <div class='memberOrderD1'>
+                                    <span>商品名稱</span>
+                                    <span>數量</span>
+                                    <span>價格</span>
+                                </div>
+                                <div class='memberOrderD2'>
+                                    <img src="../images/member/cookie.jpg">
+                                    <div>
+                                        <p>南投銅鑼燒</p>
+                                        <p>五入</p>
+                                    </div>
+                                    <div>5件</div>
+                                    <div>$350</div>
+                                </div>
+                            </div>
+                        </div> 
+                        <!-- 收件人詳細資訊 -->
+                        <receiver-detail></receiver-detail>
+                        
+                    </div>
+                    <!-- 訂單1結束====== -->
+                    <!-- 訂單2 -->
+                    <div class='memberOrder'>
+                        <div class='memberOrderContent' style="table-layout:fixed">
+                            <div class="memberGrid">
+                                <div class='memberGrid1'>訂單編號</div>
+                                <div class='memberGrid2'>日期</div>
+                                <div class='memberGrid3'>金額</div>
+                                <div class='memberGrid4'>付款方式</div>
+                                <div class='memberGrid5'>付款狀態</div>
+                                <div class='memberGrid6'>貨運狀態</div>
+                                <div class='memberGrid7'>訂單狀態</div>
+                                <div class='memberGrid8'>收件人資訊</div>
+                                <div class='memberGrid9'>123456789</div>
+                                <div class='memberGrid10'>2021-04-26</div>
+                                <div class='memberGrid11'>$7000</div>
+                                <div class='memberGrid12'>貨到付款</div>
+                                <div class='memberGrid13'>未付款</div>
+                                <div class='memberGrid14'>已出貨</div>
+                                <div class='memberGrid15'>已確認</div>
+                                <div class='memberGrid16 memberReceiverID'>詳細資訊</div>
+                            </div>
+                        </div>
+                        <div class='memberProgressAll'>
+                            <div>
+                                <div class='memberProgressDot'>
+                                    <div></div>
+                                    <div></div>
+                                    <div class='memberUnchecked'></div>
+                                    <div></div>
+                                    <div class='memberUnchecked'></div>
+                                    <div></div>
+                                    <div class='memberUnchecked'></div>
+                                </div>
+                                <div class='memberProgressWord'>
+                                    <span class='memberWordCheck'>收到訂單</span>
+                                    <span>訂單確認</span>
+                                    <span>商品出貨</span>
+                                    <span>商品送達</span>
+                                </div>
+                            </div>
+                            <div>
+                                <button class='memberOpenDetail'>查看明細</button>
+                                <button class='memberBuyAgain noshow'>再次購買</button>
+                            </div>
+                        </div>
+                        <div class='memberOrderDetailAll'>
+                            <div class='memberOrderDetail'>
+                                <div class='memberOrderD1'>
+                                    <span>商品名稱</span>
+                                    <span>數量</span>
+                                    <span>價格</span>
+                                </div>
+                                <div class='memberOrderD2'>
+                                    <img src="../images/member/cookie.jpg">
+                                    <div>
+                                        <p>南投銅鑼燒</p>
+                                        <p>五入</p>
+                                    </div>
+                                    <div>5件</div>
+                                    <div>$350</div>
+                                </div>
+                            </div>
+                        </div>  
+                        <!-- 收件人詳細資訊 -->
+                        <receiver-detail></receiver-detail>
+                        
+                    </div>
+                    <!-- 訂單2結束====== -->
+
+                    <!-- 訂單3 -->
+                    <div class='memberOrder'>
+                        <div class='memberOrderContent' style="table-layout:fixed">
+                            <div class="memberGrid">
+                                <div class='memberGrid1'>訂單編號</div>
+                                <div class='memberGrid2'>日期</div>
+                                <div class='memberGrid3'>金額</div>
+                                <div class='memberGrid4'>付款方式</div>
+                                <div class='memberGrid5'>付款狀態</div>
+                                <div class='memberGrid6'>貨運狀態</div>
+                                <div class='memberGrid7'>訂單狀態</div>
+                                <div class='memberGrid8'>收件人資訊</div>
+                                <div class='memberGrid9'>123456789</div>
+                                <div class='memberGrid10'>2021-04-26</div>
+                                <div class='memberGrid11'>$7000</div>
+                                <div class='memberGrid12'>貨到付款</div>
+                                <div class='memberGrid13'>未付款</div>
+                                <div class='memberGrid14'>已出貨</div>
+                                <div class='memberGrid15'>已確認</div>
+                                <div class='memberGrid16 memberReceiverID'>詳細資訊</div>
+                            </div>
+                        </div>
+                        <div class='memberProgressAll'>
+                            <div>
+                                <div class='memberProgressDot'>
+                                    <div></div>
+                                    <div class='memberLineCheck'></div>
+                                    <div></div>
+                                    <div class='memberLineCheck'></div>
+                                    <div></div>
+                                    <div class='memberLineCheck'></div>
+                                    <div></div>
+                                </div>
+                                <div class='memberProgressWord'>
+                                    <span>收到訂單</span>
+                                    <span>訂單確認</span>
+                                    <span>商品出貨</span>
+                                    <span class='memberWordCheck'>商品送達</span>
+                                </div>
+                            </div>
+                            <div>
+                                <button class='memberOpenDetail'>查看明細</button>
+                                <button class='memberBuyAgain'>再次購買</button>
+                            </div>
+                        </div>
+                        <div class='memberOrderDetailAll'>
+                            <div class='memberOrderDetail'>
+                                <div class='memberOrderD1'>
+                                    <span>商品名稱</span>
+                                    <span>數量</span>
+                                    <span>價格</span>
+                                </div>
+                                <div class='memberOrderD2'>
+                                    <img src="../images/member/cookie.jpg">
+                                    <div>
+                                        <p>南投銅鑼燒</p>
+                                        <p>五入</p>
+                                    </div>
+                                    <div>5件</div>
+                                    <div>$350</div>
+                                </div>
+                            </div>
+                            <div class='memberOrderDetail'>
+                                <div class='memberOrderD1'>
+                                    <span>商品名稱</span>
+                                    <span>數量</span>
+                                    <span>價格</span>
+                                </div>
+                                <div class='memberOrderD2'>
+                                    <img src="../images/member/cookie.jpg">
+                                    <div>
+                                        <p>南投銅鑼燒</p>
+                                        <p>五入</p>
+                                    </div>
+                                    <div>5件</div>
+                                    <div>$350</div>
+                                </div>
+                            </div>
+                        </div>  
+                        <!-- 收件人詳細資訊 -->
+                        <receiver-detail></receiver-detail>
+                        
+                    </div>
+                    <!-- 訂單3結束====== -->             
+                </div>          
+            </div>
+
+            <!-- ==================取消/退款查詢=================== -->
+            <div class='memberPart4 vueOrder'>
+                <div class='orderSearch'>
+                    <input type="text" placeholder="請輸入您的訂單編號">
+                    <button type='submit'>搜尋</button>
+                </div>
+                <p class='clearBoth'></p>
+                <div>
+                    <div class='memberOrder'>
+                        <div class='memberOrderContent' style="table-layout:fixed">
+                            <div class="memberGrid">
+                                <div class='memberGrid1'>訂單編號</div>
+                                <div class='memberGrid2'>日期</div>
+                                <div class='memberGrid3'>金額</div>
+                                <div class='memberGrid4'>付款方式</div>
+                                <div class='memberGrid5'>付款狀態</div>
+                                <div class='memberGrid6'>貨運狀態</div>
+                                <div class='memberGrid7'>訂單狀態</div>
+                                <div class='memberGrid8'>收件人資訊</div>
+                                <div class='memberGrid9'>123456789</div>
+                                <div class='memberGrid10'>2021-04-26</div>
+                                <div class='memberGrid11'>$7000</div>
+                                <div class='memberGrid12'>貨到付款</div>
+                                <div class='memberGrid13'>未付款</div>
+                                <div class='memberGrid14'>已出貨</div>
+                                <div class='memberGrid15'>已確認</div>
+                                <div class='memberGrid16 memberReceiverID'>詳細資訊</div>
+                            </div>
+                        </div>
+                        <div class='memberProgressAll'>
+                            <div>
+                                <div class='memberProgressDot'>
+                                    <div></div>
+                                    <div class='memberLineCheck'></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div class='memberUnchecked'></div>
+                                    <div></div>
+                                    <div class='memberUnchecked'></div>
+                                </div>
+                                <div class='memberProgressWord'>
+                                    <span>收到訂單</span>
+                                    <span class='memberWordCheck'>訂單確認</span>
+                                    <span>商品出貨</span>
+                                    <span>商品送達</span>
+                                </div>
+                            </div>
+                            <div>
+                                <button class='memberOpenDetail'>查看明細</button>
+                                <button class='memberBuyAgain noshow'>再次購買</button>
+                            </div>
+                        </div>
+                        <div class='memberOrderDetailAll'>
+                            <div class='memberOrderDetail'>
+                                <div class='memberOrderD1'>
+                                    <span>商品名稱</span>
+                                    <span>數量</span>
+                                    <span>價格</span>
+                                </div>
+                                <div class='memberOrderD2'>
+                                    <img src="../images/member/cookie.jpg">
+                                    <div>
+                                        <p>南投銅鑼燒</p>
+                                        <p>五入</p>
+                                    </div>
+                                    <div>5件</div>
+                                    <div>$350</div>
+                                </div>
+                            </div>
+                            <div class='memberOrderDetail'>
+                                <div class='memberOrderD1'>
+                                    <span>商品名稱</span>
+                                    <span>數量</span>
+                                    <span>價格</span>
+                                </div>
+                                <div class='memberOrderD2'>
+                                    <img src="../images/member/cookie.jpg">
+                                    <div>
+                                        <p>南投銅鑼燒</p>
+                                        <p>五入</p>
+                                    </div>
+                                    <div>5件</div>
+                                    <div>$350</div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 收件人詳細資訊 -->
+                        <receiver-detail></receiver-detail>
+                        
+                    </div>
+                    <!-- 訂單1結束====== -->
+                </div>
+            </div>
+
+            <!-- ============================================ -->
+
+            <!-- ==================收藏管理=================== -->
+            <div class='memberPart5'>
+                <div class='memberLikePack'>
+                    <img class='memberLikeImg' src="../images/member/cookie.jpg">
+                    <img class='memberLikeHeart' src="../images/member/favorite.png">
+                </div>
+                <div class='memberLikePack'>
+                    <img class='memberLikeImg' src="../images/member/cookie2.jpg">
+                    <img class='memberLikeHeart' src="../images/member/favorite.png">
+                </div>
+                <div class='memberLikePack'>
+                    <img class='memberLikeImg' src="../images/member/cookie.jpg">
+                    <img class='memberLikeHeart' src="../images/member/favorite.png">
+                </div>
+                <div class='memberLikePack'>
+                    <img class='memberLikeImg' src="../images/member/cookie2.jpg">
+                    <img class='memberLikeHeart' src="../images/member/favorite.png">
+                </div>
+                <div class='memberLikePack'>
+                    <img class='memberLikeImg' src="../images/member/cookie.jpg">
+                    <img class='memberLikeHeart' src="../images/member/favorite.png">
+                </div>
+                <div class='memberLikePack'>
+                    <img class='memberLikeImg' src="../images/member/cookie2.jpg">
+                    <img class='memberLikeHeart' src="../images/member/favorite.png">
+                </div>
+                <div class='memberLikePack'>
+                    <img class='memberLikeImg' src="../images/member/cookie.jpg">
+                    <img class='memberLikeHeart' src="../images/member/favorite.png">
+                </div>
+                <div class='memberLikePack'>
+                    <img class='memberLikeImg' src="../images/member/cookie2.jpg">
+                    <img class='memberLikeHeart' src="../images/member/favorite.png">
+                </div>
+                <div class='memberLikePack'>
+                    <img class='memberLikeImg' src="../images/member/cookie.jpg">
+                    <img class='memberLikeHeart' src="../images/member/favorite.png">
+                </div>
+                <div class='memberLikePack'>
+                    <img class='memberLikeImg' src="../images/member/cookie2.jpg">
+                    <img class='memberLikeHeart' src="../images/member/favorite.png">
+                </div>
+            </div>
+
+            <!-- ============================================ -->
+
         </div>
-
-        <!-- ============================================ -->
-
-        <!-- ==================收藏管理=================== -->
-        <div class='memberPart5'>
-            <div class='memberLikePack'>
-                <img class='memberLikeImg' src="../images/member/cookie.jpg">
-                <img class='memberLikeHeart' src="../images/member/favorite.png">
-            </div>
-            <div class='memberLikePack'>
-                <img class='memberLikeImg' src="../images/member/cookie2.jpg">
-                <img class='memberLikeHeart' src="../images/member/favorite.png">
-            </div>
-            <div class='memberLikePack'>
-                <img class='memberLikeImg' src="../images/member/cookie.jpg">
-                <img class='memberLikeHeart' src="../images/member/favorite.png">
-            </div>
-            <div class='memberLikePack'>
-                <img class='memberLikeImg' src="../images/member/cookie2.jpg">
-                <img class='memberLikeHeart' src="../images/member/favorite.png">
-            </div>
-            <div class='memberLikePack'>
-                <img class='memberLikeImg' src="../images/member/cookie.jpg">
-                <img class='memberLikeHeart' src="../images/member/favorite.png">
-            </div>
-            <div class='memberLikePack'>
-                <img class='memberLikeImg' src="../images/member/cookie2.jpg">
-                <img class='memberLikeHeart' src="../images/member/favorite.png">
-            </div>
-            <div class='memberLikePack'>
-                <img class='memberLikeImg' src="../images/member/cookie.jpg">
-                <img class='memberLikeHeart' src="../images/member/favorite.png">
-            </div>
-            <div class='memberLikePack'>
-                <img class='memberLikeImg' src="../images/member/cookie2.jpg">
-                <img class='memberLikeHeart' src="../images/member/favorite.png">
-            </div>
-            <div class='memberLikePack'>
-                <img class='memberLikeImg' src="../images/member/cookie.jpg">
-                <img class='memberLikeHeart' src="../images/member/favorite.png">
-            </div>
-            <div class='memberLikePack'>
-                <img class='memberLikeImg' src="../images/member/cookie2.jpg">
-                <img class='memberLikeHeart' src="../images/member/favorite.png">
-            </div>
-        </div>
-
-        <!-- ============================================ -->
-
-    </div>
-    <!-- =============footer============== -->
-    <div class="footer">
-        <div class="footer-left">
+        <!-- =============footer============== -->
+        <div class="footer">
             <div class="footer-logo"><img src="./images/index/logo_footer.png" alt=""></div>
-            <p><a href="#">隱私政策</a></p>                        
-            <p><a href="#">服務條款</a></p>                        
+            <div class="footer-left">
+            <div class='footer-policy'>
+            <p><a href="#">隱私政策</a></p>
+            <p><a href="#">服務條款</a></p>
+            </div>
+            </div>
+            <div class='footer-media'>
+                <a href="#"><i class="fab fa-instagram-square"></i></a>
+                <a href="#"><i class="fab fa-facebook-square"></i></a>
+                <a href="#"><i class="fab fa-twitter-square"></i></a>
+            </div>
+            <div class="footer-right">
+            <p>本網站為緯育TibaMe前端設計工程師班第68期第三組學員專題成果作品，本平台僅供學習、展示之用。參考資源:snaq.me。若有侵權疑慮，您可以私訊[TibaMe-前端設計工程師養成班]，後續會由專人協助處理
+            </p>
+            </div>
         </div>
-        <div class="footer-right">
-            <p>本網站為緯育TibaMe前端設計工程師班第66期第__組學員專題成果作品，本平台僅供學習、展示之用。參考資源:XXXXXXXXXXXXX。若有侵權疑慮，您可以私訊[TibaMe-前端設計工程師養成班]，後續會由專人協助處理</p>
-        </div>
-    </div>
 
+
+
+    </div>
 
 
     <script src='../js/member.js'></script>
