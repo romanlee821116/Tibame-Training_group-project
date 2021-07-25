@@ -23,7 +23,7 @@ body {
 
 /* 滑動效果 */
 
-.choosenBar2, .newsAll_classificationTitle h4 {
+.newsChoosenBar2, .newsAll_classificationTitle h4 {
     -webkit-transition: all 0.8s cubic-bezier(0.6, 0, 0.4, 1);
     transition: all 0.8s cubic-bezier(0.6, 0, 0.4, 1);
 }
@@ -72,18 +72,18 @@ body {
 
 /* 標題下方選擇提示條 */
 
-.underLine {
+.newsUnderLine {
     position: relative;
 }
 
-.underLine .choosenBar {
+.newsUnderLine .newsChoosenBar {
     width: 100%;
     height: 2px;
     background-color: #cba89a;
     /* display: block; */
 }
 
-.underLine .choosenBar2 {
+.newsUnderLine .newsChoosenBar2 {
     width: 20%;
     height: 2px;
     background-color: #172852;
@@ -92,7 +92,7 @@ body {
     left: 0;
 }
 
-.underLine .choosenBar2::before {
+.newsUnderLine .newsChoosenBar2::before {
     content: '';
     display: inline-block;
     width: 6px;
@@ -268,21 +268,56 @@ body {
     background-color: #2e447c;
 }
 
-@media (max-width: 1380px){
+@media (max-width: 1380px) {
     .news_blockarray {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
     }
 }
 
-@media (max-width: 1010px){
+@media (max-width: 1010px) {
     .news_blockarray {
         display: grid;
         grid-template-columns: 1fr 1fr;
     }
 }
 
-@media (max-width: 700px){
+@media (max-width: 767px) {
+    .newsAll_classification {
+        overflow-x: auto;
+        height: 40px;
+        width: 100%;
+    }
+    .newsAll_classification>div>h4 {
+        white-space: nowrap;
+        border-bottom: 2px solid #cba89a;
+        padding-bottom: 7px;
+        margin-right: 15px;
+        margin-left: 5%;
+        margin-right: 5%;
+        -webkit-box-flex: 0;
+            -ms-flex: 0;
+                flex: 0;
+      }
+      .newsAll_classification h4:first-child {
+        margin-left: 10%;
+      }
+      .newsAll_classification h4:last-child {
+        margin-right: 10%;
+      }
+
+      .newsAll_classification .newsUnderLine {
+        display: none;
+      }
+      .newsAll_classification .thisClicked {
+        border-bottom: 2px solid #172852;
+      }
+      .newsAll_classification::-webkit-scrollbar {
+        display: none;
+      }
+}
+
+@media (max-width: 700px) {
     .news_blockarray {
         display: grid;
         grid-template-columns: 1fr;
