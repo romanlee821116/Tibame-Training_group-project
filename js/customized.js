@@ -162,18 +162,31 @@ $(function(){
     });
     //========================================jquery========================================
     var boxSize = 0;
+    // var customized= {
+    //     "boxType":"",
+    //     "productId":[],
+    //     "price":[],
+    //     "card":"",
+    //     "cardType":"",
+    //     "cardContent": "",
+    //     "iconType":[],
+    //     "time": new Date(),        
+    // };
     var customized= {
+        "id": new Date(),
         "boxType":"",
+        "itemName": '',
         "productId":[],
-        "price":[],
+        "price": '',
+        "quantity": 1,
+        "detail": [],
+        "detail_Quantity": [],
         "card":"",
         "cardType":"",
         "cardContent": "",
         "iconType":[],
-        "time": new Date(),        
+        "status": false,       
     };
-    // let winWidth = $(window).width();
-    
 
     //判斷選到四格六格九格
     $('.cus_step1-box > div').click(function(e){
@@ -187,14 +200,17 @@ $(function(){
                 boxSize = 4;
                 $('.cus_box').css('display','none');
                 $('.four_grid').css('display', 'grid').addClass('selected');
+                customized['itemName'] = '四格小資組合';
             }else if(boxType=='box2'){
                 boxSize = 6;
                 $('.cus_box').css('display','none');
                 $('.six_grid').css('display', 'grid').addClass('selected');
+                customized['itemName'] = '六格家庭組合';
             }else{
                 boxSize = 9;
                 $('.cus_box').css('display','none');
                 $('.nine_grid').css('display', 'grid').addClass('selected');
+                customized['itemName'] = '九格派對組合';
             }        
     })
 
@@ -244,9 +260,9 @@ $(function(){
 
 //==================選擇內容下一步==================
     $('.s2_nextstep').click(function(){
-        console.log($('.selected .haveItem').length);
+        // console.log($('.selected .haveItem').length);
         customized['boxType'] = $('.selected .haveItem').length;
-        console.log(customized);
+        // console.log(customized);
         if($('.selected .haveItem').length==boxSize){
             //商品清單出現
             $('.custom_itemConfirm_List').fadeIn();
@@ -273,8 +289,8 @@ $(function(){
                 // overflowY: 'hidden',
             })
             //在清單秀出禮盒內容            
-            let total_box = $('.selected  img:nth-child(even)')
-            let content = '';  
+            // let total_box = $('.selected  img:nth-child(even)')
+            let total_box = $('.haveItem');
             console.log(boxSize);
             if(boxSize==4){
                 $('.custom_itemConfirm_List > h2').html('四格小資組合 &nbsp $480');
@@ -287,20 +303,61 @@ $(function(){
                 customized['price']=980;
             }
             //把資料帶入表格中
+            let item_array=[]; //商品陣列
+            let txt = '';
+            let content={
+                'name':[],
+                'url': [],
+                'num': [],
+            }
             $(total_box).each(function(){
                 let img_url = $(this).attr('src');
                 let item_name = $(this).attr('data-itemName');
+                
                 //若當前這項產品沒有在item_list中的話就加上去
-                let txt =`
-                    <div> 
-                        <img src="${img_url}" alt="">
-                        <p>${item_name}</p>
-                        <!-- <p>x1</p> -->
-                    </div>
-                `;
-                content += txt;
+                if(item_array.indexOf(item_name)==-1){
+                    item_array.push(item_name);
+                    // console.log('沒這項產品內');
+                    // console.log(item_array);
+                    // let txt =`
+                    // <div data-id=> 
+                    //     <img src="${img_url}" alt="">
+                    //     <p>${item_name}</p>
+                    //     <p>x 1</p>
+                    // </div>
+                    // `;
+                    // content += txt;
+                    content['name'].push(item_name);
+                    content['url'].push(img_url);
+                    content['num'].push('1');
+                    // console.log(content);
+                }else{
+                    // console.log('產品重複了啦');
+                    // console.log(item_array);
+                    let index = content['name'].indexOf(item_name);
+                    let this_num = content['num'][index];
+                    content['num'][index] = parseInt(this_num) + 1;
+                }
             })
-            $('.custom_itemConfirm_List').append(content);
+            console.log(content);
+            let content_length = content['name'].length;
+            for(let i=0; i<content_length; i++){
+                itemName = content['name'][i];
+                imgUrl = content['url'][i];
+                itemNum = content['num'][i];
+                let html =`
+                    <div data-id=> 
+                        <img src="${imgUrl}" alt="">
+                        <p>${itemName}</p>
+                        <p>x ${itemNum}</p>
+                    </div>
+                    `;
+                    txt+=html;
+
+            }
+            $('.custom_itemConfirm_List').append(txt);
+            customized['detail'] = content['name'];
+            customized['detail_Quantity'] = content['num'];
             //節點替換
             $('.custom_sideNode_node:nth-child(4)').addClass('before_node');
             $('.custom_sideNode_node:nth-child(5)').addClass('current_node');
@@ -349,8 +406,7 @@ $(function(){
     $('.cus_confirm_nextstep').click(function(){  
         for(i=0; i<boxSize; i++){
             let item= document.getElementsByClassName('haveItem')[i];
-            customized['productId'].push(item.getAttribute('data-id'))
-            console.log(customized);
+            customized['productId'].push(item.getAttribute('data-id'));
         }
         //固定Y軸
         $('body').css('overflow','hidden');    
@@ -364,6 +420,7 @@ $(function(){
             height: 'auto',
         });
         let boxTop = $('.selected').offset().top;
+        
         console.log(boxTop);
         //蓋子掉下來
         $('.cus_giftbox').animate({
@@ -839,28 +896,29 @@ $(function(){
                 transition: '.5s',
             })          
         },1200);
-        setTimeout(function(){
+        setTimeout(function(){            
             $('.custom_bag').fadeIn().css({  
-                bottom: '50%',
+                bottom: '55%',
                 left: '50%',
                 transform: 'translate(-50%, 50%)',
             })
-        },2000)
+        },2200)
         setTimeout(function(){
             $('.custom_cart').fadeIn();
             $('.custom_popUp_bg').fadeIn();
-        },3000) 
+        },3700) 
         //=================================== local storage ======================================================   
         // let storage = localStorage;
         if(localStorage['customized_List'] == null){
-            let customized_array=[];
-            customized_array.push(customized);
+            let customized_newArray=[];
+            customized_newArray.push(customized);
             localStorage['customized_List'] = [];
-            localStorage.setItem('customized_List', JSON.stringify(customized_array));
+            localStorage.setItem('customized_List', JSON.stringify(customized_newArray));
         }else{
             let customized_total = JSON.parse(localStorage.getItem('customized_List'));
             console.log(customized_total);
-            customized_total.push(customized);            
+            customized_total.push(customized); 
+            localStorage.setItem('customized_List', JSON.stringify(customized_total));           
         };
         
     })

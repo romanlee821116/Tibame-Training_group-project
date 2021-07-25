@@ -1,9 +1,6 @@
 @import '../mixin/mixin';
-<<<<<<< HEAD
-@import '../base/reset.scss';
-=======
->>>>>>> mypage
 @import '../pages/cart.scss';
+@import '../base/reset.scss';
 
 .navbar{
 @include navbar();

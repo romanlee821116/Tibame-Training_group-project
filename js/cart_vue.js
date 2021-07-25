@@ -185,7 +185,10 @@ new Vue({
         let item2 = this.customization[a];
         total += item2.price * item2.quantity;
       };
-
+      //=====local storage新增總金額=====
+      localStorage['totalPrice'] = '';
+      localStorage.setItem('totalPrice', total);
+      //================================
       return total.toString().replace(/\B(?=(\d{3})+$)/g, ',');
     },
   },

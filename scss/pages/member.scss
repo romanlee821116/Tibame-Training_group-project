@@ -4,9 +4,7 @@
     @include navbar();
 }
 
-.footer {
-    @include footer();
-}
+
 
 * {
     box-sizing: border-box;
@@ -881,4 +879,8 @@ body {
             }
         }
     }
+}
+
+.footer {
+    @include footer();
 }

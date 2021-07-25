@@ -1,13 +1,11 @@
-@import '../mixin/mixin';
 @import '../pages/cart.scss';
+@import '../base/reset.scss';
+@import '../mixin/mixin';
 
 .navbar{
 @include navbar();
 }
 
-.footer{
-	@include footer();
-}
 
 *{
   box-sizing: border-box;
@@ -353,4 +351,8 @@ img{
   color: #172852;
   font-size: 16px;
   font-weight: bold;
+}
+
+.footer{
+	@include footer();
 }
