@@ -1,3 +1,7 @@
+@import '../mixin/mixin';
+@import '../base/reset.scss';
+@import '../base/color.scss';
+
 * {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;

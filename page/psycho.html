@@ -30,29 +30,35 @@
     <!-- ==================心理測驗題目=================== -->
     <section class="psycho_questionScreen">
         <div class="psycho_question01Screen">
-            <h3 id="psycho_title" tabindex="5">1 . 此時的你在家享受著美好的假日，你認為此時窗外的景色是?</h3>
-            <div class="psychoQuestion01"></div>
+            <div class="psycho_titleRange">
+                <h3 id="psycho_title">1 . 此時的你在家享受著美好的假日，你認為此時窗外的景色是?</h3>
+            </div>
+            <div class="psychoQuestion01Range">
+                <div class="psychoQuestion01"></div>
+            </div>
             <div class="psychoQuestionAnsRange">
-                <a href="#" class="psychoQuestion01Asn01 psychoQuestionAns" onclick="return chgQuestion();">
+                <a href="#" class="psychoQuestionAsn_a psychoQuestionAns" onclick="return chgQuestion(true,'a');">
                     <div><span id="content1">晴朗的豔陽早晨</span></div>
                 </a>
-                <a href="#" class="psychoQuestion01Asn02 psychoQuestionAns" onclick="return chgQuestion();">
+                <a href="#" class="psychoQuestionAsn_b psychoQuestionAns" onclick="return chgQuestion(true,'b');">
                     <div><span id="content2">浪漫的魔幻黃昏</span></div>
                 </a>
-                <a href="#" class="psychoQuestion01Asn03 psychoQuestionAns" onclick="return chgQuestion();">
+                <a href="#" class="psychoQuestionAsn_c psychoQuestionAns" onclick="return chgQuestion(true,'c');">
                     <div><span id="content3">多雨的涼爽夜晚</span></div>
                 </a>
+
+            </div>
+            <div class="psycho_nextbtndisplay">
+                <div class="psycho_nextbtn" onclick="return chgQuestion();"><a href="#" class='mainbtn'>下一題</a></div>
+            </div>
+            <div class="psychoSchedule01">
+                <div class="psychoScheduleTop" tabindex="3"></div>
+                <div></div>
             </div>
         </div>
-        <div class="psycho_nextbtndisplay">
-            <div class="psycho_nextbtn"><a href="#" class='mainbtn'>下一題</a></div>
-        </div>
 
-        <div class="psychoSchedule01">
-            <div class="psychoScheduleTop"></div>
 
-            <div></div>
-        </div>
+
     </section>
     <!-- ============================================ -->
 
@@ -92,43 +98,53 @@
             <div class='psycho_collectScreen'>
                 <div class='psychoLikePack'>
                     <img class='psychoLikeImg' src="../images/psycho/product_small.png">
-                    <img class='psychoLikeHeart' onclick="return psychoLikeHeart(this);" src="../images/psycho/favorites_icon_n.png">
+                    <img class='psychoLikeHeart' onclick="return psychoLikeHeart(this);"
+                        src="../images/psycho/favorites_icon_n.png">
                 </div>
                 <div class='psychoLikePack'>
                     <img class='psychoLikeImg' src="../images/psycho/product_small.png">
-                    <img class='psychoLikeHeart' onclick="return psychoLikeHeart(this);" src="../images/psycho/favorites_icon_n.png">
+                    <img class='psychoLikeHeart' onclick="return psychoLikeHeart(this);"
+                        src="../images/psycho/favorites_icon_n.png">
                 </div>
                 <div class='psychoLikePack'>
                     <img class='psychoLikeImg' src="../images/psycho/product_small.png">
-                    <img class='psychoLikeHeart' onclick="return psychoLikeHeart(this);" src="../images/psycho/favorites_icon_n.png">
+                    <img class='psychoLikeHeart' onclick="return psychoLikeHeart(this);"
+                        src="../images/psycho/favorites_icon_n.png">
                 </div>
                 <div class='psychoLikePack'>
                     <img class='psychoLikeImg' src="../images/psycho/product_small.png">
-                    <img class='psychoLikeHeart' onclick="return psychoLikeHeart(this);" src="../images/psycho/favorites_icon_n.png">
+                    <img class='psychoLikeHeart' onclick="return psychoLikeHeart(this);"
+                        src="../images/psycho/favorites_icon_n.png">
                 </div>
                 <div class='psychoLikePack'>
                     <img class='psychoLikeImg' src="../images/psycho/product_small.png">
-                    <img class='psychoLikeHeart' onclick="return psychoLikeHeart(this);" src="../images/psycho/favorites_icon_n.png">
+                    <img class='psychoLikeHeart' onclick="return psychoLikeHeart(this);"
+                        src="../images/psycho/favorites_icon_n.png">
                 </div>
                 <div class='psychoLikePack'>
                     <img class='psychoLikeImg' src="../images/psycho/product_small.png">
-                    <img class='psychoLikeHeart' onclick="return psychoLikeHeart(this);" src="../images/psycho/favorites_icon_n.png">
+                    <img class='psychoLikeHeart' onclick="return psychoLikeHeart(this);"
+                        src="../images/psycho/favorites_icon_n.png">
                 </div>
                 <div class='psychoLikePack'>
                     <img class='psychoLikeImg' src="../images/psycho/product_small.png">
-                    <img class='psychoLikeHeart' onclick="return psychoLikeHeart(this);" src="../images/psycho/favorites_icon_n.png">
+                    <img class='psychoLikeHeart' onclick="return psychoLikeHeart(this);"
+                        src="../images/psycho/favorites_icon_n.png">
                 </div>
                 <div class='psychoLikePack'>
                     <img class='psychoLikeImg' src="../images/psycho/product_small.png">
-                    <img class='psychoLikeHeart' onclick="return psychoLikeHeart(this);" src="../images/psycho/favorites_icon_n.png">
+                    <img class='psychoLikeHeart' onclick="return psychoLikeHeart(this);"
+                        src="../images/psycho/favorites_icon_n.png">
                 </div>
                 <div class='psychoLikePack'>
                     <img class='psychoLikeImg' src="../images/psycho/product_small.png">
-                    <img class='psychoLikeHeart' onclick="return psychoLikeHeart(this);" src="../images/psycho/favorites_icon_n.png">
+                    <img class='psychoLikeHeart' onclick="return psychoLikeHeart(this);"
+                        src="../images/psycho/favorites_icon_n.png">
                 </div>
                 <div class='psychoLikePack'>
                     <img class='psychoLikeImg' src="../images/psycho/product_small.png">
-                    <img class='psychoLikeHeart' onclick="return psychoLikeHeart(this);" src="../images/psycho/favorites_icon_n.png">
+                    <img class='psychoLikeHeart' onclick="return psychoLikeHeart(this);"
+                        src="../images/psycho/favorites_icon_n.png">
                 </div>
             </div>
 
