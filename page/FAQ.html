@@ -174,545 +174,125 @@
   
 
   <!-- ========== main ========== -->
-  <div class="FAQ_container">
+  <div id="FAQ_app">
+    <div class="FAQ_container">
+  
+      <p id="FAQ_QA">Q&A</p>
+      <p id="FAQ_QTitle">常見問題</p>
+  
+      <!-- ========== 問題類別按鈕 ========== -->
+      <div class="FAQ_titleBtn" id="FAQ_a">
+  
+        <div class="FAQ_QBtn" id="FAQ_transaction">
+          <div class="FAQ_imgBtn"><img id="FAQ_transactionBtn" src="../images/FAQ/transaction_h.png"></div>
+          <p>交易相關問題</p>
+        </div>
+  
+  
+        <div class="FAQ_QBtn" id="FAQ_ingredients">
+          <div class="FAQ_imgBtn"><img id="FAQ_ingredientsBtn" src="../images/FAQ/Ingredients_n.png"></div>
+          <p>食材相關問題</p>
+        </div>
+      
+  
+        <div class="FAQ_QBtn" id="FAQ_transport">
+          <div class="FAQ_imgBtn"><img id="FAQ_transportBtn" src="../images/FAQ/transport_n.png"></div>
+          <p>運輸相關問題</p>
+        </div>
+  
+      </div>
+  
+  
+  
+      <!-- ========== Q&A區域 ========== -->
+  
+      <div class="FAQ_classification FAQ_on">
 
-    <p id="FAQ_QA">Q&A</p>
-    <p id="FAQ_QTitle">常見問題</p>
+        <div class="FAQ_QAList"  v-for="(item,index) in trade">
+          <!-- Q -->
+          <div class="FAQ_question">
+            <p>Q</p>
+            <p>{{item.Q}}</p>
+            <div class="FAQ_openAnsBtn">
+              <div class="FAQ_minus"></div>
+              <div class="FAQ_plus"></div>
+            </div>  
+          </div>
 
-    <!-- ========== 問題類別按鈕 ========== -->
-    <div class="FAQ_titleBtn" id="FAQ_a">
+          <!-- A -->
+          <div class="FAQ_outBorder">
+            <div class="FAQ_answer">
+              <p>A</p>
+              <p>{{item.A}}</p>
+            </div>
+          </div>
 
-      <div class="FAQ_QBtn" id="FAQ_transaction">
-        <div class="FAQ_imgBtn"><img id="FAQ_transactionBtn" src="../images/FAQ/transaction_h.png"></div>
-        <p>交易相關問題</p>
+        </div>
+      
+      </div>
+  
+      <div class="FAQ_classification">
+
+        <div class="FAQ_QAList"  v-for="(item,index) in ingredients">
+          <!-- Q -->
+          <div class="FAQ_question">
+            <p>Q</p>
+            <p>{{item.Q}}</p>
+            <div class="FAQ_openAnsBtn">
+              <div class="FAQ_minus"></div>
+              <div class="FAQ_plus"></div>
+            </div>  
+          </div>
+
+          <!-- A -->
+          <div class="FAQ_outBorder">
+            <div class="FAQ_answer">
+              <p>A</p>
+              <p>{{item.A}}</p>
+            </div>
+          </div>
+
+        </div>
+      
       </div>
 
+      <div class="FAQ_classification">
 
-      <div class="FAQ_QBtn" id="FAQ_ingredients">
-        <div class="FAQ_imgBtn"><img id="FAQ_ingredientsBtn" src="../images/FAQ/Ingredients_n.png"></div>
-        <p>食材相關問題</p>
+        <div class="FAQ_QAList"  v-for="(item,index) in transportation">
+          <!-- Q -->
+          <div class="FAQ_question">
+            <p>Q</p>
+            <p>{{item.Q}}</p>
+            <div class="FAQ_openAnsBtn">
+              <div class="FAQ_minus"></div>
+              <div class="FAQ_plus"></div>
+            </div>  
+          </div>
+
+          <!-- A -->
+          <div class="FAQ_outBorder">
+            <div class="FAQ_answer">
+              <p>A</p>
+              <p>{{item.A}}</p>
+            </div>
+          </div>
+
+        </div>
+      
       </div>
-    
 
-      <div class="FAQ_QBtn" id="FAQ_transport">
-        <div class="FAQ_imgBtn"><img id="FAQ_transportBtn" src="../images/FAQ/transport_n.png"></div>
-        <p>運輸相關問題</p>
-      </div>
-
+  
+  
+  
+  
+      <!-- ========== 聯絡我們 ========== -->
+  
+  
+  
+  
+      
+  
     </div>
-
-
-
-    <!-- ========== Q&A區域 ========== -->
-
-    <div class="FAQ_classification FAQ_on">
-
-      <div class="FAQ_QAList">
-        <div class="FAQ_question">
-          <p>Q</p>
-          <p>は何歳くらいから食べられますか？</p>
-          <div class="FAQ_openAnsBtn">
-            <div class="FAQ_minus"></div>
-            <div class="FAQ_plus"></div>
-          </div>  
-        </div>
-        
-        <div class="FAQ_outBorder">
-          <div class="FAQ_answer">
-            <p>A</p>
-            <p>特に年齢は決まっておりませんが、乳歯が生えそろう頃からあげてみてください。また、お口がいっぱいにならないよう、少しずつちぎって食べさせてください。</p>
-          </div>
-        </div>
-      </div>
-  
-      <div class="FAQ_QAList">
-        <div class="FAQ_question">
-          <p>Q</p>
-          <p>は何歳くらいから食べられますか？</p>
-          <div class="FAQ_openAnsBtn">
-            <div class="FAQ_minus"></div>
-            <div class="FAQ_plus"></div>
-          </div>  
-        </div>
-        
-        <div class="FAQ_outBorder">
-          <div class="FAQ_answer">
-            <p>A</p>
-            <p>特に年齢は決まっておりませんが、乳歯が生えそろう頃からあげてみてください。また、お口がいっぱいにならないよう、少しずつちぎって食べさせてください。</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="FAQ_QAList">
-        <div class="FAQ_question">
-          <p>Q</p>
-          <p>は何歳くらいから食べられますか？</p>
-          <div class="FAQ_openAnsBtn">
-            <div class="FAQ_minus"></div>
-            <div class="FAQ_plus"></div>
-          </div>  
-        </div>
-        
-        <div class="FAQ_outBorder">
-          <div class="FAQ_answer">
-            <p>A</p>
-            <p>特に年齢は決まっておりませんが、乳歯が生えそろう頃からあげてみてください。また、お口がいっぱいにならないよう、少しずつちぎって食べさせてください。</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="FAQ_QAList">
-        <div class="FAQ_question">
-          <p>Q</p>
-          <p>は何歳くらいから食べられますか？</p>
-          <div class="FAQ_openAnsBtn">
-            <div class="FAQ_minus"></div>
-            <div class="FAQ_plus"></div>
-          </div>  
-        </div>
-        
-        <div class="FAQ_outBorder">
-          <div class="FAQ_answer">
-            <p>A</p>
-            <p>特に年齢は決まっておりませんが、乳歯が生えそろう頃からあげてみてください。また、お口がいっぱいにならないよう、少しずつちぎって食べさせてください。</p>
-          </div>
-        </div>
-      </div>
-  
-      <div class="FAQ_QAList">
-        <div class="FAQ_question">
-          <p>Q</p>
-          <p>は何歳くらいから食べられますか？</p>
-          <div class="FAQ_openAnsBtn">
-            <div class="FAQ_minus"></div>
-            <div class="FAQ_plus"></div>
-          </div>  
-        </div>
-        
-        <div class="FAQ_outBorder">
-          <div class="FAQ_answer">
-            <p>A</p>
-            <p>特に年齢は決まっておりませんが、乳歯が生えそろう頃からあげてみてください。また、お口がいっぱいにならないよう、少しずつちぎって食べさせてください。</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="FAQ_QAList">
-        <div class="FAQ_question">
-          <p>Q</p>
-          <p>は何歳くらいから食べられますか？</p>
-          <div class="FAQ_openAnsBtn">
-            <div class="FAQ_minus"></div>
-            <div class="FAQ_plus"></div>
-          </div>  
-        </div>
-        
-        <div class="FAQ_outBorder">
-          <div class="FAQ_answer">
-            <p>A</p>
-            <p>特に年齢は決まっておりませんが、乳歯が生えそろう頃からあげてみてください。また、お口がいっぱいにならないよう、少しずつちぎって食べさせてください。</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="FAQ_QAList">
-        <div class="FAQ_question">
-          <p>Q</p>
-          <p>は何歳くらいから食べられますか？</p>
-          <div class="FAQ_openAnsBtn">
-            <div class="FAQ_minus"></div>
-            <div class="FAQ_plus"></div>
-          </div>  
-        </div>
-        
-        <div class="FAQ_outBorder">
-          <div class="FAQ_answer">
-            <p>A</p>
-            <p>特に年齢は決まっておりませんが、乳歯が生えそろう頃からあげてみてください。また、お口がいっぱいにならないよう、少しずつちぎって食べさせてください。</p>
-          </div>
-        </div>
-      </div>
-  
-      <div class="FAQ_QAList">
-        <div class="FAQ_question">
-          <p>Q</p>
-          <p>は何歳くらいから食べられますか？</p>
-          <div class="FAQ_openAnsBtn">
-            <div class="FAQ_minus"></div>
-            <div class="FAQ_plus"></div>
-          </div>  
-        </div>
-        
-        <div class="FAQ_outBorder">
-          <div class="FAQ_answer">
-            <p>A</p>
-            <p>特に年齢は決まっておりませんが、乳歯が生えそろう頃からあげてみてください。また、お口がいっぱいにならないよう、少しずつちぎって食べさせてください。</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="FAQ_QAList">
-        <div class="FAQ_question">
-          <p>Q</p>
-          <p>は何歳くらいから食べられますか？</p>
-          <div class="FAQ_openAnsBtn">
-            <div class="FAQ_minus"></div>
-            <div class="FAQ_plus"></div>
-          </div>  
-        </div>
-        
-        <div class="FAQ_outBorder">
-          <div class="FAQ_answer">
-            <p>A</p>
-            <p>特に年齢は決まっておりませんが、乳歯が生えそろう頃からあげてみてください。また、お口がいっぱいにならないよう、少しずつちぎって食べさせてください。</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="FAQ_classification">
-
-      <div class="FAQ_QAList">
-        <div class="FAQ_question">
-          <p>Q</p>
-          <p>は何歳くらいから食べられますか？</p>
-          <div class="FAQ_openAnsBtn">
-            <div class="FAQ_minus"></div>
-            <div class="FAQ_plus"></div>
-          </div>  
-        </div>
-        
-        <div class="FAQ_outBorder">
-          <div class="FAQ_answer">
-            <p>A</p>
-            <p>特に年齢は決まっておりませんが、乳歯が生えそろう頃からあげてみてください。また、お口がいっぱいにならないよう、少しずつちぎって食べさせてください。</p>
-          </div>
-        </div>
-      </div>
-  
-      <div class="FAQ_QAList">
-        <div class="FAQ_question">
-          <p>Q</p>
-          <p>は何歳くらいから食べられますか？</p>
-          <div class="FAQ_openAnsBtn">
-            <div class="FAQ_minus"></div>
-            <div class="FAQ_plus"></div>
-          </div>  
-        </div>
-        
-        <div class="FAQ_outBorder">
-          <div class="FAQ_answer">
-            <p>A</p>
-            <p>特に年齢は決まっておりませんが、乳歯が生えそろう頃からあげてみてください。また、お口がいっぱいにならないよう、少しずつちぎって食べさせてください。</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="FAQ_QAList">
-        <div class="FAQ_question">
-          <p>Q</p>
-          <p>は何歳くらいから食べられますか？</p>
-          <div class="FAQ_openAnsBtn">
-            <div class="FAQ_minus"></div>
-            <div class="FAQ_plus"></div>
-          </div>  
-        </div>
-        
-        <div class="FAQ_outBorder">
-          <div class="FAQ_answer">
-            <p>A</p>
-            <p>特に年齢は決まっておりませんが、乳歯が生えそろう頃からあげてみてください。また、お口がいっぱいにならないよう、少しずつちぎって食べさせてください。</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="FAQ_QAList">
-        <div class="FAQ_question">
-          <p>Q</p>
-          <p>は何歳くらいから食べられますか？</p>
-          <div class="FAQ_openAnsBtn">
-            <div class="FAQ_minus"></div>
-            <div class="FAQ_plus"></div>
-          </div>  
-        </div>
-        
-        <div class="FAQ_outBorder">
-          <div class="FAQ_answer">
-            <p>A</p>
-            <p>特に年齢は決まっておりませんが、乳歯が生えそろう頃からあげてみてください。また、お口がいっぱいにならないよう、少しずつちぎって食べさせてください。</p>
-          </div>
-        </div>
-      </div>
-  
-      <div class="FAQ_QAList">
-        <div class="FAQ_question">
-          <p>Q</p>
-          <p>は何歳くらいから食べられますか？</p>
-          <div class="FAQ_openAnsBtn">
-            <div class="FAQ_minus"></div>
-            <div class="FAQ_plus"></div>
-          </div>  
-        </div>
-        
-        <div class="FAQ_outBorder">
-          <div class="FAQ_answer">
-            <p>A</p>
-            <p>特に年齢は決まっておりませんが、乳歯が生えそろう頃からあげてみてください。また、お口がいっぱいにならないよう、少しずつちぎって食べさせてください。</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="FAQ_QAList">
-        <div class="FAQ_question">
-          <p>Q</p>
-          <p>は何歳くらいから食べられますか？</p>
-          <div class="FAQ_openAnsBtn">
-            <div class="FAQ_minus"></div>
-            <div class="FAQ_plus"></div>
-          </div>  
-        </div>
-        
-        <div class="FAQ_outBorder">
-          <div class="FAQ_answer">
-            <p>A</p>
-            <p>特に年齢は決まっておりませんが、乳歯が生えそろう頃からあげてみてください。また、お口がいっぱいにならないよう、少しずつちぎって食べさせてください。</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="FAQ_QAList">
-        <div class="FAQ_question">
-          <p>Q</p>
-          <p>は何歳くらいから食べられますか？</p>
-          <div class="FAQ_openAnsBtn">
-            <div class="FAQ_minus"></div>
-            <div class="FAQ_plus"></div>
-          </div>  
-        </div>
-        
-        <div class="FAQ_outBorder">
-          <div class="FAQ_answer">
-            <p>A</p>
-            <p>特に年齢は決まっておりませんが、乳歯が生えそろう頃からあげてみてください。また、お口がいっぱいにならないよう、少しずつちぎって食べさせてください。</p>
-          </div>
-        </div>
-      </div>
-  
-      <div class="FAQ_QAList">
-        <div class="FAQ_question">
-          <p>Q</p>
-          <p>は何歳くらいから食べられますか？</p>
-          <div class="FAQ_openAnsBtn">
-            <div class="FAQ_minus"></div>
-            <div class="FAQ_plus"></div>
-          </div>  
-        </div>
-        
-        <div class="FAQ_outBorder">
-          <div class="FAQ_answer">
-            <p>A</p>
-            <p>特に年齢は決まっておりませんが、乳歯が生えそろう頃からあげてみてください。また、お口がいっぱいにならないよう、少しずつちぎって食べさせてください。</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="FAQ_QAList">
-        <div class="FAQ_question">
-          <p>Q</p>
-          <p>は何歳くらいから食べられますか？</p>
-          <div class="FAQ_openAnsBtn">
-            <div class="FAQ_minus"></div>
-            <div class="FAQ_plus"></div>
-          </div>  
-        </div>
-        
-        <div class="FAQ_outBorder">
-          <div class="FAQ_answer">
-            <p>A</p>
-            <p>特に年齢は決まっておりませんが、乳歯が生えそろう頃からあげてみてください。また、お口がいっぱいにならないよう、少しずつちぎって食べさせてください。</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="FAQ_classification">
-
-      <div class="FAQ_QAList">
-        <div class="FAQ_question">
-          <p>Q</p>
-          <p>は何歳くらいから食べられますか？</p>
-          <div class="FAQ_openAnsBtn">
-            <div class="FAQ_minus"></div>
-            <div class="FAQ_plus"></div>
-          </div>  
-        </div>
-        
-        <div class="FAQ_outBorder">
-          <div class="FAQ_answer">
-            <p>A</p>
-            <p>特に年齢は決まっておりませんが、乳歯が生えそろう頃からあげてみてください。また、お口がいっぱいにならないよう、少しずつちぎって食べさせてください。</p>
-          </div>
-        </div>
-      </div>
-  
-      <div class="FAQ_QAList">
-        <div class="FAQ_question">
-          <p>Q</p>
-          <p>は何歳くらいから食べられますか？</p>
-          <div class="FAQ_openAnsBtn">
-            <div class="FAQ_minus"></div>
-            <div class="FAQ_plus"></div>
-          </div>  
-        </div>
-        
-        <div class="FAQ_outBorder">
-          <div class="FAQ_answer">
-            <p>A</p>
-            <p>特に年齢は決まっておりませんが、乳歯が生えそろう頃からあげてみてください。また、お口がいっぱいにならないよう、少しずつちぎって食べさせてください。</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="FAQ_QAList">
-        <div class="FAQ_question">
-          <p>Q</p>
-          <p>は何歳くらいから食べられますか？</p>
-          <div class="FAQ_openAnsBtn">
-            <div class="FAQ_minus"></div>
-            <div class="FAQ_plus"></div>
-          </div>  
-        </div>
-        
-        <div class="FAQ_outBorder">
-          <div class="FAQ_answer">
-            <p>A</p>
-            <p>特に年齢は決まっておりませんが、乳歯が生えそろう頃からあげてみてください。また、お口がいっぱいにならないよう、少しずつちぎって食べさせてください。</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="FAQ_QAList">
-        <div class="FAQ_question">
-          <p>Q</p>
-          <p>は何歳くらいから食べられますか？</p>
-          <div class="FAQ_openAnsBtn">
-            <div class="FAQ_minus"></div>
-            <div class="FAQ_plus"></div>
-          </div>  
-        </div>
-        
-        <div class="FAQ_outBorder">
-          <div class="FAQ_answer">
-            <p>A</p>
-            <p>特に年齢は決まっておりませんが、乳歯が生えそろう頃からあげてみてください。また、お口がいっぱいにならないよう、少しずつちぎって食べさせてください。</p>
-          </div>
-        </div>
-      </div>
-  
-      <div class="FAQ_QAList">
-        <div class="FAQ_question">
-          <p>Q</p>
-          <p>は何歳くらいから食べられますか？</p>
-          <div class="FAQ_openAnsBtn">
-            <div class="FAQ_minus"></div>
-            <div class="FAQ_plus"></div>
-          </div>  
-        </div>
-        
-        <div class="FAQ_outBorder">
-          <div class="FAQ_answer">
-            <p>A</p>
-            <p>特に年齢は決まっておりませんが、乳歯が生えそろう頃からあげてみてください。また、お口がいっぱいにならないよう、少しずつちぎって食べさせてください。</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="FAQ_QAList">
-        <div class="FAQ_question">
-          <p>Q</p>
-          <p>は何歳くらいから食べられますか？</p>
-          <div class="FAQ_openAnsBtn">
-            <div class="FAQ_minus"></div>
-            <div class="FAQ_plus"></div>
-          </div>  
-        </div>
-        
-        <div class="FAQ_outBorder">
-          <div class="FAQ_answer">
-            <p>A</p>
-            <p>特に年齢は決まっておりませんが、乳歯が生えそろう頃からあげてみてください。また、お口がいっぱいにならないよう、少しずつちぎって食べさせてください。</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="FAQ_QAList">
-        <div class="FAQ_question">
-          <p>Q</p>
-          <p>は何歳くらいから食べられますか？</p>
-          <div class="FAQ_openAnsBtn">
-            <div class="FAQ_minus"></div>
-            <div class="FAQ_plus"></div>
-          </div>  
-        </div>
-        
-        <div class="FAQ_outBorder">
-          <div class="FAQ_answer">
-            <p>A</p>
-            <p>特に年齢は決まっておりませんが、乳歯が生えそろう頃からあげてみてください。また、お口がいっぱいにならないよう、少しずつちぎって食べさせてください。</p>
-          </div>
-        </div>
-      </div>
-  
-      <div class="FAQ_QAList">
-        <div class="FAQ_question">
-          <p>Q</p>
-          <p>は何歳くらいから食べられますか？</p>
-          <div class="FAQ_openAnsBtn">
-            <div class="FAQ_minus"></div>
-            <div class="FAQ_plus"></div>
-          </div>  
-        </div>
-        
-        <div class="FAQ_outBorder">
-          <div class="FAQ_answer">
-            <p>A</p>
-            <p>特に年齢は決まっておりませんが、乳歯が生えそろう頃からあげてみてください。また、お口がいっぱいにならないよう、少しずつちぎって食べさせてください。</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="FAQ_QAList">
-        <div class="FAQ_question">
-          <p>Q</p>
-          <p>は何歳くらいから食べられますか？</p>
-          <div class="FAQ_openAnsBtn">
-            <div class="FAQ_minus"></div>
-            <div class="FAQ_plus"></div>
-          </div>  
-        </div>
-        
-        <div class="FAQ_outBorder">
-          <div class="FAQ_answer">
-            <p>A</p>
-            <p>特に年齢は決まっておりませんが、乳歯が生えそろう頃からあげてみてください。また、お口がいっぱいにならないよう、少しずつちぎって食べさせてください。</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-
-
-
-    <!-- ========== 聯絡我們 ========== -->
-
-
-
-
-    
-
   </div>
 
 
@@ -741,6 +321,7 @@
 
 
   <script src="../js/FAQ.js"></script>
+  <script src="../js/FAQ_vue.js"></script>
   <script src="../js/cart.js"></script>
   <script src="../js/cart_vue.js"></script>
   <script src="https://kit.fontawesome.com/8c3a8ab95b.js" crossorigin="anonymous"></script>
