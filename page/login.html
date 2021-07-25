@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
-    <script src='../js/login.js'></script>
     <title>log in / sign up</title>
 </head>
 <body>
@@ -98,11 +97,11 @@
                                     <input class='loginCodeEnter' type="text" placeholder="請輸入右方數字">
                                     <member-error></member-error>
                                 </div>
-                                <span class='loginCodeNew'></span>
+                                <span class='loginC loginCodeNew'></span>
                                 <i class="fas fa-sync-alt loginRefresh"></i>
                             </div>
                         </div>
-                        <button class='loginButton' type='submit'>
+                        <button class='loginButton loginYes' type='submit'>
                             <span>
                             登入
                             <br/>
@@ -122,16 +121,16 @@
                     <form id='forgetFormPage' action="">
                         <div id="loginArrow2"></div>
                         <div class='loginErrorWrap'>
-                            <input class='loginAccount' type="text" placeholder="請輸入您的信箱">
+                            <input class='loginAccount loginAccountForget' type="text" placeholder="請輸入您的信箱">
                             <member-error></member-error>
                         </div>
                         <div class='loginCode'>
                             <div class='loginErrorWrap'>
-                                <input class='loginCodeEnter' type="text" placeholder="請輸入右方數字">
+                                <input class='loginCodeEnter loginCodeEnterForget' type="text" placeholder="請輸入右方數字">
                                 <member-error></member-error>
                             </div>
                                 
-                            <span class='loginCodeNew'></span>
+                            <span class='loginC loginCodeNewForget'></span>
                             <i class="fas fa-sync-alt loginRefresh"></i>
                         </div>
                         <button class='loginButton loginSendPSW' type="submit">
@@ -160,7 +159,7 @@
     <!-- 跳窗結束 -->
 
 
-
+    <script src='../js/login.js'></script>
     <script>
         Vue.component('member-error',{
             template:`
