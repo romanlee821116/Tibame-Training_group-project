@@ -108,7 +108,7 @@ body {
 
 /* 消息區域 */
 
-.newsPart1{
+.newsPart1 {
     /* border: solid 1px red; */
     width: 80%;
     max-width: 1200px;
@@ -116,7 +116,7 @@ body {
     margin-top: 50px;
 }
 
-.newsPart2,.newsPart3,.newsPart4,.newsPart5 {
+.newsPart2, .newsPart3, .newsPart4, .newsPart5 {
     /* border: solid 1px red; */
     width: 80%;
     max-width: 1200px;
@@ -128,11 +128,9 @@ body {
 /* 消息佈局 */
 
 .news_blockarray {
-       /* border: solid 1px blue; */
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    padding: 0px 30px 0px 30px;
+    /* border: solid 1px blue; */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 /* 消息樣式 */
@@ -228,7 +226,8 @@ body {
     width: 250px;
     height: 320px;
     position: relative;
-    margin: 0px 15px 30px 15px;
+    margin: auto;
+    margin-bottom: 30px;
 }
 
 .news_blocklink>img {
@@ -267,4 +266,25 @@ body {
 
 .mainbtn:hover {
     background-color: #2e447c;
-  }
+}
+
+@media (max-width: 1380px){
+    .news_blockarray {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media (max-width: 1010px){
+    .news_blockarray {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 700px){
+    .news_blockarray {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
