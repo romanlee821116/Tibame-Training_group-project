@@ -2,6 +2,7 @@
 @import '../base/reset.scss';
 @import '../base/color.scss';
 
+
 * {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -33,6 +34,9 @@ body {
             background-color: #fff;
         }
     }
+}
+.psychotest{
+    @include psycoBtn(#fff);
 }
 
 /* 開場心理測驗圖片加文字 */
@@ -513,7 +517,4 @@ body {
         /* opacity:.5; */
     }
 
-    .psychoSchedule01{
-        /* height: 5vh; */
-    }
 }
