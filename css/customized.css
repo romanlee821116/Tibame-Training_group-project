@@ -645,6 +645,7 @@ body {
   align-items: center;
   position: relative;
   min-height: 100vh;
+  padding-bottom: 50px;
 }
 
 .cus_step2 .cus_step2_txt {
@@ -745,6 +746,11 @@ body {
   color: #fff;
 }
 
+.cus_step2 .cus_product_category .categoryChoose {
+  background-color: #bb866a;
+  color: #fff;
+}
+
 @media (max-width: 800px) {
   .cus_step2 .cus_product_category {
     width: 100%;
@@ -835,8 +841,9 @@ body {
 .cus_step2 .cus_product_contianer .cus-item .cus_item_txt p {
   position: absolute;
   left: 50%;
-  top: 30px;
+  top: 60px;
   transform: translateX(-50%);
+  color: #fff;
 }
 
 .cus_step2 .cus_product_contianer .cus-item .cus_item_txt a.cus_add {

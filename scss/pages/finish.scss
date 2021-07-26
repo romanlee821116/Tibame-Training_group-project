@@ -10,7 +10,7 @@
 *{
   box-sizing: border-box;
   font-family: "微軟正黑體";
-  color: #bb866a;
+  // color: #bb866a;
 }
 
 body{
@@ -20,15 +20,24 @@ body{
   background-attachment: fixed;
 }
 
-img{
-  width: 100%;
-}
+
 
 .finish_container{
   // border: 1px solid black;
   width: 80%;
   max-width: 1200px;
   margin: auto;
+  img{
+    width: 100%;
+  }
+  .finish_btn{
+    @include btn();
+    text-align: center;
+    margin: 30px auto 0 auto;
+    a{
+      color: #fff;
+    }
+  }
 }
 
 @media screen and (max-width: 576px){

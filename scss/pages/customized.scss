@@ -335,7 +335,7 @@ body{
     align-items: center;
     position: relative;
     min-height: 100vh;
-
+    padding-bottom: 50px;
     .cus_step2_txt{
         text-align: center;
         padding-top: 50px;
@@ -429,6 +429,10 @@ body{
                 color: #fff;
             }
         }
+        .categoryChoose{
+            background-color: $darkBrown;
+            color: #fff;
+        }
         @include rwd(800px){
             width: 100%;
             margin-top: 10px;
@@ -501,10 +505,11 @@ body{
                 display: none;
                 padding-top: 20px;
                 p{
-                   position: absolute;
-                   left: 50%;
-                   top: 30px;
-                   transform: translateX(-50%);
+                    position: absolute;
+                    left: 50%;
+                    top: 60px;
+                    transform: translateX(-50%);
+                    color: #fff;
                 }
                 a.cus_add{
                     position: absolute;
