@@ -76,6 +76,7 @@ $(document).ready(function() {
     });
 
     // 加入購物車計算總金額
+
     // function setTotal() {
     //     $(".product_add_cart").click(function() {
     //         let m = $(this).prev().prev().find("span").html().replace(/[^0-9]/g, "");
@@ -85,6 +86,11 @@ $(document).ready(function() {
     // }
     // setTotal();
 
+    // 購物車icon加數字
+    let count = 0;
+    $(".product_add_cart").click(function() {
+        $("#product_counter").html(count += 1).addClass("animated-count");
+    })
 
     //愛心點擊
     $('.product_heart').click(function() {
@@ -94,7 +100,7 @@ $(document).ready(function() {
     });
     // 照片slider
     let index = 0;
-    let divWidth = $('.product_left').width();
+    let divWidth = $('.product_img').width();
     $(".product_circle div").click(function() {
         index = ($(this).index());
         $(this).parent().prev('.product_img').animate({

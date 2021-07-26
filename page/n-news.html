@@ -15,7 +15,7 @@
                 <p>小春堂後臺管理</p>
             </div>
                
-            <div class="n-news_logout">
+            <div class="n-news_logout" @click='log_out'>
                 <p>帳號登出</p>
                 <img src="../images/backend/log-out.png" alt="" srcset="">
             </div>
@@ -156,7 +156,7 @@
         
             template: `
                 <div>
-                    <div class="n-news_edit" v-if='current_edit !== null'>
+                    <div class="n-news_edit">
 
                         <p>編輯與查看</p>
                             
@@ -222,7 +222,7 @@
 
                     </div>
 
-                    <div id="hide" v-if='current_edit !== null'></div>
+                    <div id="hide"></div>
                 </div>
 
             `,
@@ -350,6 +350,8 @@
 
                     this.newss[n_index].上下架 = this.on_off;
                     this.newss[n_index].文章分類 = this.n_sort;
+                    this.newss[n_index].標題 = this.n_main_title;
+
 
                     this.current_edit = null;
                 },  
@@ -387,13 +389,20 @@
                     let today = new Date()
                     let y_today = today.getFullYear()
                     let m_today = today.getMonth()+1
+                    if(m_today < 10 ){
+                        m_today = '0'+m_today
+                    }
                     let d_today = today.getDate()
                     let h_today = today.getHours()
+                    if(h_today < 10 ){
+                        h_today = '0'+h_today
+                    }
                     let min_today = today.getMinutes()
-                    let u_today = y_today +'/'+0+ m_today +'/'+ d_today
-                    // let last_today = y_today +'/'+ m_today +'/'+ d_today +'\r\n'+ h_today +':'+ min_today
-                    let last_today = `${y_today}/0${m_today}/${d_today} ${h_today}:${min_today}`
-                    // console.log(u_today);
+                    if(min_today < 10 ){
+                        min_today = '0'+min_today
+                    }
+                    let u_today = y_today +'/'+ m_today +'/'+ d_today      
+                    let last_today = `${y_today}/${m_today}/${d_today} ${h_today}:${min_today}`
 
 
                     let nnn = 
@@ -407,11 +416,13 @@
                         '內文':'這就是內文',
                     }
 
-                    console.log(nnn);
+                    // console.log(nnn);
 
                     this.newss.unshift(nnn);
-
-                }  
+                },
+                log_out(){
+                    location.href = "./n-login.html"
+                }
                 
                 
             },

@@ -15,7 +15,7 @@
                 <p>小春堂後臺管理</p>
             </div>
                
-            <div class="n-member_logout">
+            <div class="n-member_logout" @click='log_out'>
                 <p>帳號登出</p>
                 <img src="../images/backend/log-out.png" alt="" srcset="">
             </div>
@@ -173,7 +173,10 @@
 
                     this.current_edit = null;
 
-                },             
+                },          
+                log_out(){
+                    location.href = "./n-login.html"
+                }
                 
             },
             
