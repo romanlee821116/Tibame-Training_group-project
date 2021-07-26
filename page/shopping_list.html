@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/shopping_list.css">
-    <link rel="stylesheet" href="../css/cart.css" >
+    <link rel="stylesheet" href="../css/cart.css">
     <script src="https://kit.fontawesome.com/8c3a8ab95b.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
     <script src="../js/shopping_list.js"></script>
@@ -14,162 +14,158 @@
 
     <script src="../js/vue.js"></script>
     <script src="../js/cart.js"></script>
-	<script src="../js/cart_vue.js"></script>
+    <script src="../js/cart_vue.js"></script>
     <script src="../js/hamburger.js"></script>
     <script src="../js/navbar.js"></script>
 </head>
 
 <body>
     <div class="memberShow"></div>
-    <!-- navbar -->
-	<div id="cart_app">
-		<div class="navbar">
-			<div class="navbar-logo">
-				<a href="../index.html"><img src="../images/index/logo.png" alt=""></a>
-			</div>
-			<div class="navbar-icon">
-				<a href="#"><i class="fas fa-user"></i></a>
-				<a href="#" @click="open()"><i class="fas fa-shopping-cart"></i></a>
-				<a href="#"></a>
-			</div>
-			<!-- 漢堡 -->
-			<div class="ham_container">
-				<div class="ham_bar1 ham_bar"></div>
-				<div class="ham_bar2 ham_bar"></div>
-				<div class="ham_bar3 ham_bar"></div>
-			</div>
-			<div id="ham_myNav" class="ham_overlay">
-				<div class="ham_overlay-content">
-					<div class='ham_jelly'></div>
-					<div class="ham_select">
-						<a href="./index.html">首頁</a>
-						<a href="./page/about.html">關於我們</a>
-						<a href="./page/news.html">最新消息</a>
-						<a href="./page/shopping_choose.html">商品專區</a>
-						<a href="./page/customized.html">客製化禮盒</a>
-						<a href="./page/FAQ.html">Q&A</a>
-						<a href="./page/login.html">會員中心</a>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="cart_cartBoard">
-			<div class="cart_cart">
-				<div class="cart_cartTitle">
-					<p>購物車</p>
-					<div class="cart_close" @click="close()">
-						<div class="cart_left"></div>
-						<div class="cart_right"></div>
-					</div>
-				</div>
-				<!-- ========== 商品細項 ========== -->
-				<ul class="cart_itemList">
-					<!-- 購物車空值顯示 -->
-					<div class="cart_NoItem">
-						<div>
-							<img src="../images/cart/shoppingcart_empty.png">
-						</div>
-						<p>購物車還是空的哦！</p>
-					</div>
-					<!-- 一般商品 -->
-					<li class="cart_item" v-for="(item,index) in itemList" :id="item.id">
-						<div class="cart_itemCB" :class="{'cart_choose': item.status}" @click="choose(item)">
-							<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"
-								data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check fa-w-16" role="img"
-								viewBox="0 0 512 512">
+
+    <div id="cart_app">
+        <div class="navbar">
+            <div class="navbar-logo">
+                <a href="../index.html"><img src="../images/index/logo.png" alt=""></a>
+            </div>
+            <div class="navbar-icon">
+                <a href="#"><i class="fas fa-user"></i></a>
+                <a href="#" @click="open()"><i class="fas fa-shopping-cart"></i></a>
+                <a href="#"></a>
+                <div id="product_counter">1</div>
+            </div>
+            <!-- 漢堡 -->
+            <div class="ham_container">
+                <div class="ham_bar1 ham_bar"></div>
+                <div class="ham_bar2 ham_bar"></div>
+                <div class="ham_bar3 ham_bar"></div>
+            </div>
+            <div id="ham_myNav" class="ham_overlay">
+                <div class="ham_overlay-content">
+                    <div class='ham_jelly'></div>
+                    <div class="ham_select">
+                        <a href="./index.html">首頁</a>
+                        <a href="./page/about.html">關於我們</a>
+                        <a href="./page/news.html">最新消息</a>
+                        <a href="./page/shopping_choose.html">商品專區</a>
+                        <a href="./page/customized.html">客製化禮盒</a>
+                        <a href="./page/FAQ.html">Q&A</a>
+                        <a href="./page/login.html">會員中心</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cart_cartBoard">
+            <div class="cart_cart">
+                <div class="cart_cartTitle">
+                    <p>購物車</p>
+                    <div class="cart_close" @click="close()">
+                        <div class="cart_left"></div>
+                        <div class="cart_right"></div>
+                    </div>
+                </div>
+                <!-- ========== 商品細項 ========== -->
+                <ul class="cart_itemList">
+                    <!-- 購物車空值顯示 -->
+                    <div class="cart_NoItem">
+                        <div>
+                            <img src="../images/cart/shoppingcart_empty.png">
+                        </div>
+                        <p>購物車還是空的哦！</p>
+                    </div>
+                    <!-- 一般商品 -->
+                    <li class="cart_item" v-for="(item,index) in itemList" :id="item.id">
+                        <div class="cart_itemCB" :class="{'cart_choose': item.status}" @click="choose(item)">
+                            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check fa-w-16" role="img" viewBox="0 0 512 512">
 								<path fill="#ffffff"
 									d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z" />
 							</svg>
-						</div>
-						<div class="cart_itemImg">
-							<img :src="item.img">
-						</div>
-						<div class="cart_itemText">
-							<p class="cart_itemName">{{item.itemName}}</p>
-							<br>
-							<p class="cart_itemAmount">$<span class="cart_price">{{item.price}}</span>元 /
-								<span>{{item.item_Quantity}}</span>入
-							</p>
-							<div class="cart_itemQuantity">
-								<button class="cart_less mainbtn" @click="sub(item)">&#45;</button>
-								<input class="cart_quantity" type="text" v-model="item.quantity">
-								<button class="cart_add mainbtn" @click="add(item)">&#43;</button>
-							</div>
-						</div>
-						<div class="cart_itemDelete" @click="delete_Item(index)">
-							<div class="cart_leftD"></div>
-							<div class="cart_rightD"></div>
-						</div>
-					</li>
+                        </div>
+                        <div class="cart_itemImg">
+                            <img :src="item.img">
+                        </div>
+                        <div class="cart_itemText">
+                            <p class="cart_itemName">{{item.itemName}}</p>
+                            <br>
+                            <p class="cart_itemAmount">$<span class="cart_price">{{item.price}}</span>元 /
+                                <span>{{item.item_Quantity}}</span>入
+                            </p>
+                            <div class="cart_itemQuantity">
+                                <button class="cart_less mainbtn" @click="sub(item)">&#45;</button>
+                                <input class="cart_quantity" type="text" v-model="item.quantity">
+                                <button class="cart_add mainbtn" @click="add(item)">&#43;</button>
+                            </div>
+                        </div>
+                        <div class="cart_itemDelete" @click="delete_Item(index)">
+                            <div class="cart_leftD"></div>
+                            <div class="cart_rightD"></div>
+                        </div>
+                    </li>
 
-					<!-- 客制禮盒 -->
-					<li class="cart_customization" v-for="(item,index) in customization" :id="item.id">
-						<!-- 商品 -->
-						<div class="cart_customizationItem">
-							<div class="cart_itemCB" :class="{'cart_choose': item.status}" @click="choose(item)">
-								<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"
-									data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check fa-w-16"
-									role="img" viewBox="0 0 512 512">
+                    <!-- 客制禮盒 -->
+                    <li class="cart_customization" v-for="(item,index) in customization" :id="item.id">
+                        <!-- 商品 -->
+                        <div class="cart_customizationItem">
+                            <div class="cart_itemCB" :class="{'cart_choose': item.status}" @click="choose(item)">
+                                <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check fa-w-16" role="img" viewBox="0 0 512 512">
 									<path fill="#ffffff"
 										d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z" />
 								</svg>
-							</div>
+                            </div>
 
-							<div class="cart_itemImg">
-								<img :src="item.img">
-							</div>
+                            <div class="cart_itemImg">
+                                <img :src="item.img">
+                            </div>
 
-							<div class="cart_itemText">
-								<p class="cart_itemName">{{item.itemName}}</p>
-								<br>
-								<p class="cart_itemAmount">$<span>{{item.price}}</span>元</p>
-								<div class="cart_itemQuantity">
-									<button class="cart_less mainbtn" @click="sub(item)">-</button>
-									<input class="cart_quantity" type="text" v-model="item.quantity">
-									<button class="cart_add mainbtn" @click="add(item)">+</button>
-								</div>
-							</div>
+                            <div class="cart_itemText">
+                                <p class="cart_itemName">{{item.itemName}}</p>
+                                <br>
+                                <p class="cart_itemAmount">$<span>{{item.price}}</span>元</p>
+                                <div class="cart_itemQuantity">
+                                    <button class="cart_less mainbtn" @click="sub(item)">-</button>
+                                    <input class="cart_quantity" type="text" v-model="item.quantity">
+                                    <button class="cart_add mainbtn" @click="add(item)">+</button>
+                                </div>
+                            </div>
 
-							<div class="cart_itemRight">
-								<div class="cart_itemDelete" @click="delete_Customization(index)">
-									<div class="cart_leftD"></div>
-									<div class="cart_rightD"></div>
-								</div>
-								<div class="cart_detailBtn">查看禮盒明細</div>
-							</div>
-						</div>
+                            <div class="cart_itemRight">
+                                <div class="cart_itemDelete" @click="delete_Customization(index)">
+                                    <div class="cart_leftD"></div>
+                                    <div class="cart_rightD"></div>
+                                </div>
+                                <div class="cart_detailBtn">查看禮盒明細</div>
+                            </div>
+                        </div>
 
-						<!-- 展開禮盒明細 -->
-						<div class="cart_detailBorder">
-							<div class="cart_detail">
-								<div>
-									<div class="cart_detailItem" v-for="item in item.detail">
-										- {{item}}
-									</div>
-								</div>
-								<div>
-									<div class="cart_detailQuantity" v-for="item in item.detail_Quantity">
-										x {{item}}
-									</div>
-								</div>
-							</div>
-						</div>
-					</li>
-				</ul>
+                        <!-- 展開禮盒明細 -->
+                        <div class="cart_detailBorder">
+                            <div class="cart_detail">
+                                <div>
+                                    <div class="cart_detailItem" v-for="item in item.detail">
+                                        - {{item}}
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="cart_detailQuantity" v-for="item in item.detail_Quantity">
+                                        x {{item}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
 
-				<div id="cart_deleteMany" @click="delete_All()"
-					:style="{'background-color': delete_bgc, cursor: delete_cursor}">刪除多個</div>
+                <div id="cart_deleteMany" @click="delete_All()" :style="{'background-color': delete_bgc, cursor: delete_cursor}">刪除多個</div>
 
-				<div class="cart_total">
-					<p>小計</p>
-					<p>$<span>{{total_Price}}</span></p>
-				</div>
-			</div>
+                <div class="cart_total">
+                    <p>小計</p>
+                    <p>$<span>{{total_Price}}</span></p>
+                </div>
+            </div>
 
-			<div class="cart_checkoutBorder"><a href="../page/checkout.html" class="cart_checkout">前往結帳</a></div>
+            <div class="cart_checkoutBorder"><a href="../page/checkout.html" class="cart_checkout">前往結帳</a></div>
 
-		</div>
-	</div>
+        </div>
+    </div>
     <!-- nav結束 -->
     <!-- media -->
     <div class='mediacolumn'>
@@ -180,6 +176,7 @@
 
 
     <main class="product_main">
+        <!-- 1.銅鑼燒 -->
         <div class="product_product">
             <div class="product_title">
                 <h2 id="product_small_title">PRODUCT</h2>
@@ -189,9 +186,9 @@
                 <div class="product_heart"></div>
                 <div class="product_left">
                     <div class="product_img">
-                        <img src="../images/shopping_list/product_big.png" alt="">
-                        <img src="../images/shopping_list/shop1.png" alt="">
-                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_pic1/1-3.jpg" alt="">
+                        <img src="../images/shopping_list/product_pic1/1-1.jpg" alt="">
+                        <img src="../images/shopping_list/product_pic1/1-2.jpg" alt="">
                     </div>
                     <div class="product_circle">
                         <div class="circle_grey"></div>
@@ -200,13 +197,568 @@
                     </div>
                 </div>
                 <div class="product_right" data-id="100000">
-                    <p class="product_right_title">期間限定商品111</p>
-                    <h3 class="product_right_name">ねぎりう焦がし醬油風味</h3>
-                    <p class="product_main_content">焦がし醤油の風味とねぎの香りが良く合うかりんとうに仕上げました。焦がし醤油の風味とねぎの香りが良く合うかりんとうに仕上げました
+                    <p class="product_right_title">期間限定商品</p>
+                    <h3 class="product_right_name">草莓銅鑼燒</h3>
+                    <p class="product_main_content">濕潤富彈性的銅鑼燒餅皮，採用新鮮酸甜的苗栗吉光有機草莓，餡料飽滿，口感清爽
                     </p>
-                    <p class="product_ingredients">成分 : 米、糖、白豆沙、水飴、柚子陳</p>
+                    <p class="product_ingredients">成分 : 米、糖、草莓</p>
                     <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>4,000円</span>(稅達)/1000g</p>
+                    <p class="product_price"><span>95円</span>(稅達)/1000g</p>
+                    <div class="product_product_num">
+                        <div class="product_num_btn">
+                            <button class="min">-</button>
+                            <input type="text" class="num" value="1">
+                            <button class="add">+</button>
+                        </div>
+                        <p class="product_item_num">尚有庫存</p>
+                    </div>
+                    <button class="product_add_cart">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="cart-plus" class="product_svg_cart" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M504.717 320H211.572l6.545 32h268.418c15.401 0 26.816 14.301 23.403 29.319l-5.517 24.276C523.112 414.668 536 433.828 536 456c0 31.202-25.519 56.444-56.824 55.994-29.823-.429-54.35-24.631-55.155-54.447-.44-16.287 6.085-31.049 16.803-41.548H231.176C241.553 426.165 248 440.326 248 456c0 31.813-26.528 57.431-58.67 55.938-28.54-1.325-51.751-24.385-53.251-52.917-1.158-22.034 10.436-41.455 28.051-51.586L93.883 64H24C10.745 64 0 53.255 0 40V24C0 10.745 10.745 0 24 0h102.529c11.401 0 21.228 8.021 23.513 19.19L159.208 64H551.99c15.401 0 26.816 14.301 23.403 29.319l-47.273 208C525.637 312.246 515.923 320 504.717 320zM408 168h-48v-40c0-8.837-7.163-16-16-16h-16c-8.837 0-16 7.163-16 16v40h-48c-8.837 0-16 7.163-16 16v16c0 8.837 7.163 16 16 16h48v40c0 8.837 7.163 16 16 16h16c8.837 0 16-7.163 16-16v-40h48c8.837 0 16-7.163 16-16v-16c0-8.837-7.163-16-16-16z"></path></svg>
+                        加入購物車
+                    </button>
+                </div>
+            </div>
+            <div class="product_item">
+                <div class="product_heart"></div>
+                <div class="product_left">
+                    <div class="product_img">
+                        <img src="../images/shopping_list/product_pic1/2-3.jpg" alt="">
+                        <img src="../images/shopping_list/product_pic1/2-1.jpeg" alt="">
+                        <img src="../images/shopping_list/product_pic1/2-2.jpeg" alt="">
+                    </div>
+                    <div class="product_circle">
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
+                    </div>
+
+                </div>
+                <div class="product_right" data-id="100000">
+                    <p class="product_right_title">期間限定商品</p>
+                    <h3 class="product_right_name">芋泥銅鑼燒</h3>
+                    <p class="product_main_content">濕潤富彈性的銅鑼燒餅皮，配上嚴選大甲芋頭熬煮10小時製成香濃滑順的芋泥，另外添加芋頭顆粒，口感層次豐富
+                    </p>
+                    <p class="product_ingredients">成分 : 米、糖、芋頭</p>
+                    <p class="product_save_days">保存期限:5日</p>
+                    <p class="product_price"><span>95円</span>(稅達)/1000g</p>
+                    <div class="product_product_num">
+                        <div class="product_num_btn">
+                            <button class="min">-</button>
+                            <input type="text" class="num" value="1">
+                            <button class="add">+</button>
+                        </div>
+                        <p class="product_item_num">尚有庫存</p>
+                    </div>
+                    <button class="product_add_cart">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="cart-plus" class="product_svg_cart" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M504.717 320H211.572l6.545 32h268.418c15.401 0 26.816 14.301 23.403 29.319l-5.517 24.276C523.112 414.668 536 433.828 536 456c0 31.202-25.519 56.444-56.824 55.994-29.823-.429-54.35-24.631-55.155-54.447-.44-16.287 6.085-31.049 16.803-41.548H231.176C241.553 426.165 248 440.326 248 456c0 31.813-26.528 57.431-58.67 55.938-28.54-1.325-51.751-24.385-53.251-52.917-1.158-22.034 10.436-41.455 28.051-51.586L93.883 64H24C10.745 64 0 53.255 0 40V24C0 10.745 10.745 0 24 0h102.529c11.401 0 21.228 8.021 23.513 19.19L159.208 64H551.99c15.401 0 26.816 14.301 23.403 29.319l-47.273 208C525.637 312.246 515.923 320 504.717 320zM408 168h-48v-40c0-8.837-7.163-16-16-16h-16c-8.837 0-16 7.163-16 16v40h-48c-8.837 0-16 7.163-16 16v16c0 8.837 7.163 16 16 16h48v40c0 8.837 7.163 16 16 16h16c8.837 0 16-7.163 16-16v-40h48c8.837 0 16-7.163 16-16v-16c0-8.837-7.163-16-16-16z"></path></svg>
+                        加入購物車
+                    </button>
+                </div>
+            </div>
+            <div class="product_item">
+                <div class="product_heart"></div>
+                <div class="product_left">
+                    <div class="product_img">
+                        <img src="../images/shopping_list/product_pic1/3-3.jpg" alt="">
+                        <img src="../images/shopping_list/product_pic1/3-2.jpg" alt="">
+                        <img src="../images/shopping_list/product_pic1/3-1.jpg" alt="">
+                    </div>
+                    <div class="product_circle">
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
+                    </div>
+                </div>
+                <div class="product_right" data-id="100000">
+                    <p class="product_right_title">期間限定商品</p>
+                    <h3 class="product_right_name">抹茶銅鑼燒</h3>
+                    <p class="product_main_content">抹茶控必吃，濕潤富彈性的銅鑼燒餅皮，配上靜岡抹茶與阿里山台茶12號的黃金比例調配，夠濃夠美味
+                    </p>
+                    <p class="product_ingredients">成分 : 米、糖、抹茶</p>
+                    <p class="product_save_days">保存期限:5日</p>
+                    <p class="product_price"><span>95円</span>(稅達)/1000g</p>
+                    <div class="product_product_num">
+                        <div class="product_num_btn">
+                            <button class="min">-</button>
+                            <input type="text" class="num" value="1">
+                            <button class="add">+</button>
+                        </div>
+                        <p class="product_item_num" id="none">沒有庫存</p>
+                    </div>
+                    <button class="product_add_cart" id="grey">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="cart-plus" class="product_svg_cart" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M504.717 320H211.572l6.545 32h268.418c15.401 0 26.816 14.301 23.403 29.319l-5.517 24.276C523.112 414.668 536 433.828 536 456c0 31.202-25.519 56.444-56.824 55.994-29.823-.429-54.35-24.631-55.155-54.447-.44-16.287 6.085-31.049 16.803-41.548H231.176C241.553 426.165 248 440.326 248 456c0 31.813-26.528 57.431-58.67 55.938-28.54-1.325-51.751-24.385-53.251-52.917-1.158-22.034 10.436-41.455 28.051-51.586L93.883 64H24C10.745 64 0 53.255 0 40V24C0 10.745 10.745 0 24 0h102.529c11.401 0 21.228 8.021 23.513 19.19L159.208 64H551.99c15.401 0 26.816 14.301 23.403 29.319l-47.273 208C525.637 312.246 515.923 320 504.717 320zM408 168h-48v-40c0-8.837-7.163-16-16-16h-16c-8.837 0-16 7.163-16 16v40h-48c-8.837 0-16 7.163-16 16v16c0 8.837 7.163 16 16 16h48v40c0 8.837 7.163 16 16 16h16c8.837 0 16-7.163 16-16v-40h48c8.837 0 16-7.163 16-16v-16c0-8.837-7.163-16-16-16z"></path></svg>
+                        加入購物車
+                    </button>
+                </div>
+            </div>
+            <div class="product_item">
+                <div class="product_heart"></div>
+                <div class="product_left">
+                    <div class="product_img">
+                        <img src="../images/shopping_list/product_pic1/4-3.jpg" alt="">
+                        <img src="../images/shopping_list/product_pic1/4-1.jpg" alt="">
+                        <img src="../images/shopping_list/product_pic1/4-2.jpg" alt="">
+                    </div>
+                    <div class="product_circle">
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
+                    </div>
+                </div>
+                <div class="product_right" data-id="100000">
+                    <p class="product_right_title">期間限定商品</p>
+                    <h3 class="product_right_name">巧克力銅鑼燒</h3>
+                    <p class="product_main_content">濕潤富彈性的銅鑼燒餅皮，與100% 台灣一號屏東巧克力與牛奶製成內餡，可可味濃厚不甜膩，喜歡巧克力的首選
+                    </p>
+                    <p class="product_ingredients">成分 : 米、糖、巧克力、牛奶</p>
+                    <p class="product_save_days">保存期限:5日</p>
+                    <p class="product_price"><span>95円</span>(稅達)/1000g</p>
+                    <div class="product_product_num">
+                        <div class="product_num_btn">
+                            <button class="min">-</button>
+                            <input type="text" class="num" value="1">
+                            <button class="add">+</button>
+                        </div>
+                        <p class="product_item_num">尚有庫存</p>
+                    </div>
+                    <button class="product_add_cart">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="cart-plus" class="product_svg_cart" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M504.717 320H211.572l6.545 32h268.418c15.401 0 26.816 14.301 23.403 29.319l-5.517 24.276C523.112 414.668 536 433.828 536 456c0 31.202-25.519 56.444-56.824 55.994-29.823-.429-54.35-24.631-55.155-54.447-.44-16.287 6.085-31.049 16.803-41.548H231.176C241.553 426.165 248 440.326 248 456c0 31.813-26.528 57.431-58.67 55.938-28.54-1.325-51.751-24.385-53.251-52.917-1.158-22.034 10.436-41.455 28.051-51.586L93.883 64H24C10.745 64 0 53.255 0 40V24C0 10.745 10.745 0 24 0h102.529c11.401 0 21.228 8.021 23.513 19.19L159.208 64H551.99c15.401 0 26.816 14.301 23.403 29.319l-47.273 208C525.637 312.246 515.923 320 504.717 320zM408 168h-48v-40c0-8.837-7.163-16-16-16h-16c-8.837 0-16 7.163-16 16v40h-48c-8.837 0-16 7.163-16 16v16c0 8.837 7.163 16 16 16h48v40c0 8.837 7.163 16 16 16h16c8.837 0 16-7.163 16-16v-40h48c8.837 0 16-7.163 16-16v-16c0-8.837-7.163-16-16-16z"></path></svg>
+                        加入購物車
+                    </button>
+                </div>
+            </div>
+            <div class="product_item">
+                <div class="product_heart"></div>
+                <div class="product_left">
+                    <div class="product_img">
+                        <img src="../images/shopping_list/product_pic1/5-1.jpg" alt="">
+                        <img src="../images/shopping_list/product_pic1/5-3.jpg" alt="">
+                        <img src="../images/shopping_list/product_pic1/5-2.png" alt="">
+                    </div>
+                    <div class="product_circle">
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
+                    </div>
+                </div>
+                <div class="product_right" data-id="100000">
+                    <p class="product_right_title">期間限定商品</p>
+                    <h3 class="product_right_name">布丁銅鑼燒</h3>
+                    <p class="product_main_content">把大人小孩都喜歡的布丁放進銅鑼燒中，濕潤富彈性的銅鑼燒餅皮與香濃布丁的組合，重現記憶中的經典美味
+                    </p>
+                    <p class="product_ingredients">成分 : 米、糖、布丁</p>
+                    <p class="product_save_days">保存期限:5日</p>
+                    <p class="product_price"><span>95円</span>(稅達)/1000g</p>
+                    <div class="product_product_num">
+                        <div class="product_num_btn">
+                            <button class="min">-</button>
+                            <input type="text" class="num" value="1">
+                            <button class="add">+</button>
+                        </div>
+                        <p class="product_item_num">尚有庫存</p>
+                    </div>
+                    <button class="product_add_cart">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="cart-plus" class="product_svg_cart" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M504.717 320H211.572l6.545 32h268.418c15.401 0 26.816 14.301 23.403 29.319l-5.517 24.276C523.112 414.668 536 433.828 536 456c0 31.202-25.519 56.444-56.824 55.994-29.823-.429-54.35-24.631-55.155-54.447-.44-16.287 6.085-31.049 16.803-41.548H231.176C241.553 426.165 248 440.326 248 456c0 31.813-26.528 57.431-58.67 55.938-28.54-1.325-51.751-24.385-53.251-52.917-1.158-22.034 10.436-41.455 28.051-51.586L93.883 64H24C10.745 64 0 53.255 0 40V24C0 10.745 10.745 0 24 0h102.529c11.401 0 21.228 8.021 23.513 19.19L159.208 64H551.99c15.401 0 26.816 14.301 23.403 29.319l-47.273 208C525.637 312.246 515.923 320 504.717 320zM408 168h-48v-40c0-8.837-7.163-16-16-16h-16c-8.837 0-16 7.163-16 16v40h-48c-8.837 0-16 7.163-16 16v16c0 8.837 7.163 16 16 16h48v40c0 8.837 7.163 16 16 16h16c8.837 0 16-7.163 16-16v-40h48c8.837 0 16-7.163 16-16v-16c0-8.837-7.163-16-16-16z"></path></svg>
+                        加入購物車
+                    </button>
+                </div>
+            </div>
+            <div class="product_item">
+                <div class="product_heart"></div>
+                <div class="product_left">
+                    <div class="product_img">
+                        <img src="../images/shopping_list/product_pic1/6-1.jpg" alt="">
+                        <img src="../images/shopping_list/product_pic1/6-2.jpg" alt="">
+                        <img src="../images/shopping_list/product_pic1/6-3.jpg" alt="">
+                    </div>
+                    <div class="product_circle">
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
+                    </div>
+                </div>
+                <div class="product_right" data-id="100000">
+                    <p class="product_right_title">期間限定商品</p>
+                    <h3 class="product_right_name">紅豆銅鑼燒</h3>
+                    <p class="product_main_content">濕潤富彈性的銅鑼燒餅皮，配上特製牛奶餡加上熬煮八小時的屏東老鷹紅豆，製作成不甜不膩的牛奶紅豆
+                    </p>
+                    <p class="product_ingredients">成分 : 米、糖、紅豆、牛奶</p>
+                    <p class="product_save_days">保存期限:5日</p>
+                    <p class="product_price"><span>95円</span>(稅達)/1000g</p>
+                    <div class="product_product_num">
+                        <div class="product_num_btn">
+                            <button class="min">-</button>
+                            <input type="text" class="num" value="1">
+                            <button class="add">+</button>
+                        </div>
+                        <p class="product_item_num">尚有庫存</p>
+                    </div>
+                    <button class="product_add_cart">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="cart-plus" class="product_svg_cart" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M504.717 320H211.572l6.545 32h268.418c15.401 0 26.816 14.301 23.403 29.319l-5.517 24.276C523.112 414.668 536 433.828 536 456c0 31.202-25.519 56.444-56.824 55.994-29.823-.429-54.35-24.631-55.155-54.447-.44-16.287 6.085-31.049 16.803-41.548H231.176C241.553 426.165 248 440.326 248 456c0 31.813-26.528 57.431-58.67 55.938-28.54-1.325-51.751-24.385-53.251-52.917-1.158-22.034 10.436-41.455 28.051-51.586L93.883 64H24C10.745 64 0 53.255 0 40V24C0 10.745 10.745 0 24 0h102.529c11.401 0 21.228 8.021 23.513 19.19L159.208 64H551.99c15.401 0 26.816 14.301 23.403 29.319l-47.273 208C525.637 312.246 515.923 320 504.717 320zM408 168h-48v-40c0-8.837-7.163-16-16-16h-16c-8.837 0-16 7.163-16 16v40h-48c-8.837 0-16 7.163-16 16v16c0 8.837 7.163 16 16 16h48v40c0 8.837 7.163 16 16 16h16c8.837 0 16-7.163 16-16v-40h48c8.837 0 16-7.163 16-16v-16c0-8.837-7.163-16-16-16z"></path></svg>
+                        加入購物車
+                    </button>
+                </div>
+            </div>
+            <div class="product_item">
+                <div class="product_heart"></div>
+                <div class="product_left">
+                    <div class="product_img">
+                        <img src="../images/shopping_list/product_pic1/7-1.jpg" alt="">
+                        <img src="../images/shopping_list/product_pic1/7-2.jpg" alt="">
+                        <img src="../images/shopping_list/product_pic1/7-3.jpg" alt="">
+                    </div>
+                    <div class="product_circle">
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
+                    </div>
+                </div>
+                <div class="product_right" data-id="100000">
+                    <p class="product_right_title">期間限定商品</p>
+                    <h3 class="product_right_name">栗子銅鑼燒</h3>
+                    <p class="product_main_content">濕潤富彈性的銅鑼燒餅皮，放入鬆軟香甜的甘栗，配上綿密紅豆泥，讓人一口接一口想再吃
+                    </p>
+                    <p class="product_ingredients">成分 : 米、糖、紅豆、栗</p>
+                    <p class="product_save_days">保存期限:5日</p>
+                    <p class="product_price"><span>95円</span>(稅達)/1000g</p>
+                    <div class="product_product_num">
+                        <div class="product_num_btn">
+                            <button class="min">-</button>
+                            <input type="text" class="num" value="1">
+                            <button class="add">+</button>
+                        </div>
+                        <p class="product_item_num">尚有庫存</p>
+                    </div>
+                    <button class="product_add_cart">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="cart-plus" class="product_svg_cart" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M504.717 320H211.572l6.545 32h268.418c15.401 0 26.816 14.301 23.403 29.319l-5.517 24.276C523.112 414.668 536 433.828 536 456c0 31.202-25.519 56.444-56.824 55.994-29.823-.429-54.35-24.631-55.155-54.447-.44-16.287 6.085-31.049 16.803-41.548H231.176C241.553 426.165 248 440.326 248 456c0 31.813-26.528 57.431-58.67 55.938-28.54-1.325-51.751-24.385-53.251-52.917-1.158-22.034 10.436-41.455 28.051-51.586L93.883 64H24C10.745 64 0 53.255 0 40V24C0 10.745 10.745 0 24 0h102.529c11.401 0 21.228 8.021 23.513 19.19L159.208 64H551.99c15.401 0 26.816 14.301 23.403 29.319l-47.273 208C525.637 312.246 515.923 320 504.717 320zM408 168h-48v-40c0-8.837-7.163-16-16-16h-16c-8.837 0-16 7.163-16 16v40h-48c-8.837 0-16 7.163-16 16v16c0 8.837 7.163 16 16 16h48v40c0 8.837 7.163 16 16 16h16c8.837 0 16-7.163 16-16v-40h48c8.837 0 16-7.163 16-16v-16c0-8.837-7.163-16-16-16z"></path></svg>
+                        加入購物車
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- 2. 鯛魚燒 -->
+        <div class="product_product">
+            <div class="product_title">
+                <h2 id="product_small_title">PRODUCT</h2>
+                <h1 id="product_big_title">商品列表</h1>
+            </div>
+            <div class="product_item">
+                <div class="product_heart"></div>
+                <div class="product_left">
+                    <div class="product_img">
+                        <img src="../images/shopping_list/product_pic2/1-2.jpg" alt="">
+                        <img src="../images/shopping_list/product_pic2/1-1.jpg" alt="">
+                        <img src="../images/shopping_list/product_pic2/1-3.jpg" alt="">
+                    </div>
+                    <div class="product_circle">
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
+                    </div>
+                </div>
+                <div class="product_right" data-id="100000">
+                    <p class="product_right_title">期間限定商品</p>
+                    <h3 class="product_right_name">奶油鯛魚燒</h3>
+                    <p class="product_main_content">嚴選台灣本地硬紅春麥製成的小麥粉製作餅皮，入口可以嚐到糯米與牛奶香氣，多層次的滋味使幸福感油然而生
+                    </p>
+                    <p class="product_ingredients">成分 : 小麥、糖、奶油、牛奶</p>
+                    <p class="product_save_days">保存期限:5日</p>
+                    <p class="product_price"><span>95円</span>(稅達)/1000g</p>
+                    <div class="product_product_num">
+                        <div class="product_num_btn">
+                            <button class="min">-</button>
+                            <input type="text" class="num" value="1">
+                            <button class="add">+</button>
+                        </div>
+                        <p class="product_item_num">尚有庫存</p>
+                    </div>
+                    <button class="product_add_cart">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="cart-plus" class="product_svg_cart" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M504.717 320H211.572l6.545 32h268.418c15.401 0 26.816 14.301 23.403 29.319l-5.517 24.276C523.112 414.668 536 433.828 536 456c0 31.202-25.519 56.444-56.824 55.994-29.823-.429-54.35-24.631-55.155-54.447-.44-16.287 6.085-31.049 16.803-41.548H231.176C241.553 426.165 248 440.326 248 456c0 31.813-26.528 57.431-58.67 55.938-28.54-1.325-51.751-24.385-53.251-52.917-1.158-22.034 10.436-41.455 28.051-51.586L93.883 64H24C10.745 64 0 53.255 0 40V24C0 10.745 10.745 0 24 0h102.529c11.401 0 21.228 8.021 23.513 19.19L159.208 64H551.99c15.401 0 26.816 14.301 23.403 29.319l-47.273 208C525.637 312.246 515.923 320 504.717 320zM408 168h-48v-40c0-8.837-7.163-16-16-16h-16c-8.837 0-16 7.163-16 16v40h-48c-8.837 0-16 7.163-16 16v16c0 8.837 7.163 16 16 16h48v40c0 8.837 7.163 16 16 16h16c8.837 0 16-7.163 16-16v-40h48c8.837 0 16-7.163 16-16v-16c0-8.837-7.163-16-16-16z"></path></svg>
+                        加入購物車
+                    </button>
+                </div>
+            </div>
+            <div class="product_item">
+                <div class="product_heart"></div>
+                <div class="product_left">
+                    <div class="product_img">
+                        <img src="../images/shopping_list/product_pic2/2-1.jpg" alt="">
+                        <img src="../images/shopping_list/product_pic2/2-3.jpg" alt="">
+                        <img src="../images/shopping_list/product_pic2/2-2.jpg" alt="">
+                    </div>
+                    <div class="product_circle">
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
+                    </div>
+                </div>
+                <div class="product_right" data-id="100000">
+                    <p class="product_right_title">期間限定商品</p>
+                    <h3 class="product_right_name">抹茶鯛魚燒</h3>
+                    <p class="product_main_content">抹茶控必吃，嚴選台灣本地硬紅春麥製成的小麥粉製作餅皮，配上靜岡抹茶與阿里山台茶12號的黃金比例調配，夠濃夠美味
+                    </p>
+                    <p class="product_ingredients">成分 : 小麥、糖、抹茶</p>
+                    <p class="product_save_days">保存期限:5日</p>
+                    <p class="product_price"><span>95円</span>(稅達)/1000g</p>
+                    <div class="product_product_num">
+                        <div class="product_num_btn">
+                            <button class="min">-</button>
+                            <input type="text" class="num" value="1">
+                            <button class="add">+</button>
+                        </div>
+                        <p class="product_item_num">尚有庫存</p>
+                    </div>
+                    <button class="product_add_cart">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="cart-plus" class="product_svg_cart" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M504.717 320H211.572l6.545 32h268.418c15.401 0 26.816 14.301 23.403 29.319l-5.517 24.276C523.112 414.668 536 433.828 536 456c0 31.202-25.519 56.444-56.824 55.994-29.823-.429-54.35-24.631-55.155-54.447-.44-16.287 6.085-31.049 16.803-41.548H231.176C241.553 426.165 248 440.326 248 456c0 31.813-26.528 57.431-58.67 55.938-28.54-1.325-51.751-24.385-53.251-52.917-1.158-22.034 10.436-41.455 28.051-51.586L93.883 64H24C10.745 64 0 53.255 0 40V24C0 10.745 10.745 0 24 0h102.529c11.401 0 21.228 8.021 23.513 19.19L159.208 64H551.99c15.401 0 26.816 14.301 23.403 29.319l-47.273 208C525.637 312.246 515.923 320 504.717 320zM408 168h-48v-40c0-8.837-7.163-16-16-16h-16c-8.837 0-16 7.163-16 16v40h-48c-8.837 0-16 7.163-16 16v16c0 8.837 7.163 16 16 16h48v40c0 8.837 7.163 16 16 16h16c8.837 0 16-7.163 16-16v-40h48c8.837 0 16-7.163 16-16v-16c0-8.837-7.163-16-16-16z"></path></svg>
+                        加入購物車
+                    </button>
+                </div>
+            </div>
+            <div class="product_item">
+                <div class="product_heart"></div>
+                <div class="product_left">
+                    <div class="product_img">
+                        <img src="../images/shopping_list/product_pic2/3-3.jpg" alt="">
+                        <img src="../images/shopping_list/product_pic2/3-2.jpg" alt="">
+                        <img src="../images/shopping_list/product_pic2/3-1.jpg" alt="">
+                    </div>
+                    <div class="product_circle">
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
+                    </div>
+                </div>
+                <div class="product_right" data-id="100000">
+                    <p class="product_right_title">期間限定商品</p>
+                    <h3 class="product_right_name">紅豆鯛魚燒</h3>
+                    <p class="product_main_content">嚴選台灣本地硬紅春麥製成的小麥粉製作餅皮，配上特製牛奶餡加上熬煮八小時的屏東老鷹紅豆，製作成不甜不膩的牛奶紅豆
+                    </p>
+                    <p class="product_ingredients">成分 : 小麥、糖、紅豆、牛奶</p>
+                    <p class="product_save_days">保存期限:5日</p>
+                    <p class="product_price"><span>95円</span>(稅達)/1000g</p>
+                    <div class="product_product_num">
+                        <div class="product_num_btn">
+                            <button class="min">-</button>
+                            <input type="text" class="num" value="1">
+                            <button class="add">+</button>
+                        </div>
+                        <p class="product_item_num" id="none">沒有庫存</p>
+                    </div>
+                    <button class="product_add_cart" id="grey">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="cart-plus" class="product_svg_cart" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M504.717 320H211.572l6.545 32h268.418c15.401 0 26.816 14.301 23.403 29.319l-5.517 24.276C523.112 414.668 536 433.828 536 456c0 31.202-25.519 56.444-56.824 55.994-29.823-.429-54.35-24.631-55.155-54.447-.44-16.287 6.085-31.049 16.803-41.548H231.176C241.553 426.165 248 440.326 248 456c0 31.813-26.528 57.431-58.67 55.938-28.54-1.325-51.751-24.385-53.251-52.917-1.158-22.034 10.436-41.455 28.051-51.586L93.883 64H24C10.745 64 0 53.255 0 40V24C0 10.745 10.745 0 24 0h102.529c11.401 0 21.228 8.021 23.513 19.19L159.208 64H551.99c15.401 0 26.816 14.301 23.403 29.319l-47.273 208C525.637 312.246 515.923 320 504.717 320zM408 168h-48v-40c0-8.837-7.163-16-16-16h-16c-8.837 0-16 7.163-16 16v40h-48c-8.837 0-16 7.163-16 16v16c0 8.837 7.163 16 16 16h48v40c0 8.837 7.163 16 16 16h16c8.837 0 16-7.163 16-16v-40h48c8.837 0 16-7.163 16-16v-16c0-8.837-7.163-16-16-16z"></path></svg>
+                        加入購物車
+                    </button>
+                </div>
+            </div>
+            <div class="product_item">
+                <div class="product_heart"></div>
+                <div class="product_left">
+                    <div class="product_img">
+                        <img src="../images/shopping_list/product_pic2/4-3.jpg" alt="">
+                        <img src="../images/shopping_list/product_pic2/4-2.jpg" alt="">
+                        <img src="../images/shopping_list/product_pic2/4-1.jpg" alt="">
+                    </div>
+                    <div class="product_circle">
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
+                    </div>
+                </div>
+                <div class="product_right" data-id="100000">
+                    <p class="product_right_title">期間限定商品</p>
+                    <h3 class="product_right_name">綠豆鯛魚燒</h3>
+                    <p class="product_main_content">嚴選台灣本地硬紅春麥製成的小麥粉製作餅皮，配上熬煮八小時的嘉義朴子粉綠豆，口感綿密，讓人一口接一口想再吃
+                    </p>
+                    <p class="product_ingredients">成分 : 小麥、糖、綠豆</p>
+                    <p class="product_save_days">保存期限:5日</p>
+                    <p class="product_price"><span>95円</span>(稅達)/1000g</p>
+                    <div class="product_product_num">
+                        <div class="product_num_btn">
+                            <button class="min">-</button>
+                            <input type="text" class="num" value="1">
+                            <button class="add">+</button>
+                        </div>
+                        <p class="product_item_num">尚有庫存</p>
+                    </div>
+                    <button class="product_add_cart">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="cart-plus" class="product_svg_cart" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M504.717 320H211.572l6.545 32h268.418c15.401 0 26.816 14.301 23.403 29.319l-5.517 24.276C523.112 414.668 536 433.828 536 456c0 31.202-25.519 56.444-56.824 55.994-29.823-.429-54.35-24.631-55.155-54.447-.44-16.287 6.085-31.049 16.803-41.548H231.176C241.553 426.165 248 440.326 248 456c0 31.813-26.528 57.431-58.67 55.938-28.54-1.325-51.751-24.385-53.251-52.917-1.158-22.034 10.436-41.455 28.051-51.586L93.883 64H24C10.745 64 0 53.255 0 40V24C0 10.745 10.745 0 24 0h102.529c11.401 0 21.228 8.021 23.513 19.19L159.208 64H551.99c15.401 0 26.816 14.301 23.403 29.319l-47.273 208C525.637 312.246 515.923 320 504.717 320zM408 168h-48v-40c0-8.837-7.163-16-16-16h-16c-8.837 0-16 7.163-16 16v40h-48c-8.837 0-16 7.163-16 16v16c0 8.837 7.163 16 16 16h48v40c0 8.837 7.163 16 16 16h16c8.837 0 16-7.163 16-16v-40h48c8.837 0 16-7.163 16-16v-16c0-8.837-7.163-16-16-16z"></path></svg>
+                        加入購物車
+                    </button>
+                </div>
+            </div>
+            <div class="product_item">
+                <div class="product_heart"></div>
+                <div class="product_left">
+                    <div class="product_img">
+                        <img src="../images/shopping_list/product_pic2/5-2.jpg" alt="">
+                        <img src="../images/shopping_list/product_pic2/5-3.jpg" alt="">
+                        <img src="../images/shopping_list/product_pic2/5-1.jpg" alt="">
+                    </div>
+                    <div class="product_circle">
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
+                    </div>
+                </div>
+                <div class="product_right" data-id="100000">
+                    <p class="product_right_title">期間限定商品</p>
+                    <h3 class="product_right_name">櫻花鯛魚燒</h3>
+                    <p class="product_main_content">嚴選台灣本地硬紅春麥製成的小麥粉製作餅皮，獨門製法醃制櫻花瓣，加上熬煮八小時的屏東老鷹紅豆，飽滿的紅豆餡中蘊含櫻花香
+                    </p>
+                    <p class="product_ingredients">成分 : 小麥、糖、櫻花、紅豆</p>
+                    <p class="product_save_days">保存期限:5日</p>
+                    <p class="product_price"><span>115円</span>(稅達)/1000g</p>
+                    <div class="product_product_num">
+                        <div class="product_num_btn">
+                            <button class="min">-</button>
+                            <input type="text" class="num" value="1">
+                            <button class="add">+</button>
+                        </div>
+                        <p class="product_item_num">尚有庫存</p>
+                    </div>
+                    <button class="product_add_cart">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="cart-plus" class="product_svg_cart" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M504.717 320H211.572l6.545 32h268.418c15.401 0 26.816 14.301 23.403 29.319l-5.517 24.276C523.112 414.668 536 433.828 536 456c0 31.202-25.519 56.444-56.824 55.994-29.823-.429-54.35-24.631-55.155-54.447-.44-16.287 6.085-31.049 16.803-41.548H231.176C241.553 426.165 248 440.326 248 456c0 31.813-26.528 57.431-58.67 55.938-28.54-1.325-51.751-24.385-53.251-52.917-1.158-22.034 10.436-41.455 28.051-51.586L93.883 64H24C10.745 64 0 53.255 0 40V24C0 10.745 10.745 0 24 0h102.529c11.401 0 21.228 8.021 23.513 19.19L159.208 64H551.99c15.401 0 26.816 14.301 23.403 29.319l-47.273 208C525.637 312.246 515.923 320 504.717 320zM408 168h-48v-40c0-8.837-7.163-16-16-16h-16c-8.837 0-16 7.163-16 16v40h-48c-8.837 0-16 7.163-16 16v16c0 8.837 7.163 16 16 16h48v40c0 8.837 7.163 16 16 16h16c8.837 0 16-7.163 16-16v-40h48c8.837 0 16-7.163 16-16v-16c0-8.837-7.163-16-16-16z"></path></svg>
+                        加入購物車
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- 3.大福 -->
+        <div class="product_product">
+            <div class="product_title">
+                <h2 id="product_small_title">PRODUCT</h2>
+                <h1 id="product_big_title">商品列表</h1>
+            </div>
+            <div class="product_item">
+                <div class="product_heart"></div>
+                <div class="product_left">
+                    <div class="product_img">
+                        <img src="../images/shopping_list/product_pic3/1-2.jpg" alt="">
+                        <img src="../images/shopping_list/product_pic3/1-3.jpg" alt="">
+                        <img src="../images/shopping_list/product_pic3/1-1.jpg" alt="">
+                    </div>
+                    <div class="product_circle">
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
+                    </div>
+                </div>
+                <div class="product_right" data-id="100000">
+                    <p class="product_right_title">期間限定商品</p>
+                    <h3 class="product_right_name">毛豆大福</h3>
+                    <p class="product_main_content">特選台東池上鄉農會的三冠米，純手工杵棒槌打製成Q彈麻糬皮，日式傳統風味，嚴選屏東有機毛豆台灣九號製成，口感香甜濕潤不膩口
+                    </p>
+                    <p class="product_ingredients">成分 : 米、糖、毛豆</p>
+                    <p class="product_save_days">保存期限:5日</p>
+                    <p class="product_price"><span>100円</span>(稅達)/1000g</p>
+                    <div class="product_product_num">
+                        <div class="product_num_btn">
+                            <button class="min">-</button>
+                            <input type="text" class="num" value="1">
+                            <button class="add">+</button>
+                        </div>
+                        <p class="product_item_num">尚有庫存</p>
+                    </div>
+                    <button class="product_add_cart">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="cart-plus" class="product_svg_cart" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M504.717 320H211.572l6.545 32h268.418c15.401 0 26.816 14.301 23.403 29.319l-5.517 24.276C523.112 414.668 536 433.828 536 456c0 31.202-25.519 56.444-56.824 55.994-29.823-.429-54.35-24.631-55.155-54.447-.44-16.287 6.085-31.049 16.803-41.548H231.176C241.553 426.165 248 440.326 248 456c0 31.813-26.528 57.431-58.67 55.938-28.54-1.325-51.751-24.385-53.251-52.917-1.158-22.034 10.436-41.455 28.051-51.586L93.883 64H24C10.745 64 0 53.255 0 40V24C0 10.745 10.745 0 24 0h102.529c11.401 0 21.228 8.021 23.513 19.19L159.208 64H551.99c15.401 0 26.816 14.301 23.403 29.319l-47.273 208C525.637 312.246 515.923 320 504.717 320zM408 168h-48v-40c0-8.837-7.163-16-16-16h-16c-8.837 0-16 7.163-16 16v40h-48c-8.837 0-16 7.163-16 16v16c0 8.837 7.163 16 16 16h48v40c0 8.837 7.163 16 16 16h16c8.837 0 16-7.163 16-16v-40h48c8.837 0 16-7.163 16-16v-16c0-8.837-7.163-16-16-16z"></path></svg>
+                        加入購物車
+                    </button>
+                </div>
+            </div>
+            <div class="product_item">
+                <div class="product_heart"></div>
+                <div class="product_left">
+                    <div class="product_img">
+                        <img src="../images/shopping_list/product_pic3/2-2.jpg" alt="">
+                        <img src="../images/shopping_list/product_pic3/2-3.jpeg" alt="">
+                        <img src="../images/shopping_list/product_pic3/2-1.jpg" alt="">
+                    </div>
+                    <div class="product_circle">
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
+                    </div>
+                </div>
+                <div class="product_right" data-id="100000">
+                    <p class="product_right_title">期間限定商品</p>
+                    <h3 class="product_right_name">奶油大福</h3>
+                    <p class="product_main_content">特選台東池上鄉農會的三冠米，純手工杵棒槌打製成Q彈麻糬皮，古法製作的奶油，入口可以嚐到糯米與牛奶香氣，多層次的滋味使幸福感油然而生
+                    </p>
+                    <p class="product_ingredients">成分 : 米、糖、奶油、牛奶</p>
+                    <p class="product_save_days">保存期限:5日</p>
+                    <p class="product_price"><span>90円</span>(稅達)/1000g</p>
+                    <div class="product_product_num">
+                        <div class="product_num_btn">
+                            <button class="min">-</button>
+                            <input type="text" class="num" value="1">
+                            <button class="add">+</button>
+                        </div>
+                        <p class="product_item_num">尚有庫存</p>
+                    </div>
+                    <button class="product_add_cart">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="cart-plus" class="product_svg_cart" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M504.717 320H211.572l6.545 32h268.418c15.401 0 26.816 14.301 23.403 29.319l-5.517 24.276C523.112 414.668 536 433.828 536 456c0 31.202-25.519 56.444-56.824 55.994-29.823-.429-54.35-24.631-55.155-54.447-.44-16.287 6.085-31.049 16.803-41.548H231.176C241.553 426.165 248 440.326 248 456c0 31.813-26.528 57.431-58.67 55.938-28.54-1.325-51.751-24.385-53.251-52.917-1.158-22.034 10.436-41.455 28.051-51.586L93.883 64H24C10.745 64 0 53.255 0 40V24C0 10.745 10.745 0 24 0h102.529c11.401 0 21.228 8.021 23.513 19.19L159.208 64H551.99c15.401 0 26.816 14.301 23.403 29.319l-47.273 208C525.637 312.246 515.923 320 504.717 320zM408 168h-48v-40c0-8.837-7.163-16-16-16h-16c-8.837 0-16 7.163-16 16v40h-48c-8.837 0-16 7.163-16 16v16c0 8.837 7.163 16 16 16h48v40c0 8.837 7.163 16 16 16h16c8.837 0 16-7.163 16-16v-40h48c8.837 0 16-7.163 16-16v-16c0-8.837-7.163-16-16-16z"></path></svg>
+                        加入購物車
+                    </button>
+                </div>
+            </div>
+            <div class="product_item">
+                <div class="product_heart"></div>
+                <div class="product_left">
+                    <div class="product_img">
+                        <img src="../images/shopping_list/product_pic3/3-3.jpg" alt="">
+                        <img src="../images/shopping_list/product_pic3/3-2.jpg" alt="">
+                        <img src="../images/shopping_list/product_pic3/3-1.jpg" alt="">
+                    </div>
+                    <div class="product_circle">
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
+                    </div>
+                </div>
+                <div class="product_right" data-id="100000">
+                    <p class="product_right_title">期間限定商品</p>
+                    <h3 class="product_right_name">巧克力大福</h3>
+                    <p class="product_main_content">特選台東池上鄉農會的三冠米，純手工杵棒槌打製成Q彈麻糬皮，採用100% 台灣一號屏東巧克力與牛奶製成內餡，可可味濃厚但不甜膩，喜歡巧克力的首選
+                    </p>
+                    <p class="product_ingredients">成分 : 米、糖、巧克力、牛奶</p>
+                    <p class="product_save_days">保存期限:5日</p>
+                    <p class="product_price"><span>90円</span>(稅達)/1000g</p>
+                    <div class="product_product_num">
+                        <div class="product_num_btn">
+                            <button class="min">-</button>
+                            <input type="text" class="num" value="1">
+                            <button class="add">+</button>
+                        </div>
+                        <p class="product_item_num" id="none">沒有庫存</p>
+                    </div>
+                    <button class="product_add_cart" id="grey">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="cart-plus" class="product_svg_cart" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M504.717 320H211.572l6.545 32h268.418c15.401 0 26.816 14.301 23.403 29.319l-5.517 24.276C523.112 414.668 536 433.828 536 456c0 31.202-25.519 56.444-56.824 55.994-29.823-.429-54.35-24.631-55.155-54.447-.44-16.287 6.085-31.049 16.803-41.548H231.176C241.553 426.165 248 440.326 248 456c0 31.813-26.528 57.431-58.67 55.938-28.54-1.325-51.751-24.385-53.251-52.917-1.158-22.034 10.436-41.455 28.051-51.586L93.883 64H24C10.745 64 0 53.255 0 40V24C0 10.745 10.745 0 24 0h102.529c11.401 0 21.228 8.021 23.513 19.19L159.208 64H551.99c15.401 0 26.816 14.301 23.403 29.319l-47.273 208C525.637 312.246 515.923 320 504.717 320zM408 168h-48v-40c0-8.837-7.163-16-16-16h-16c-8.837 0-16 7.163-16 16v40h-48c-8.837 0-16 7.163-16 16v16c0 8.837 7.163 16 16 16h48v40c0 8.837 7.163 16 16 16h16c8.837 0 16-7.163 16-16v-40h48c8.837 0 16-7.163 16-16v-16c0-8.837-7.163-16-16-16z"></path></svg>
+                        加入購物車
+                    </button>
+                </div>
+            </div>
+            <div class="product_item">
+                <div class="product_heart"></div>
+                <div class="product_left">
+                    <div class="product_img">
+                        <img src="../images/shopping_list/product_pic3/4-3.jpg" alt="">
+                        <img src="../images/shopping_list/product_pic3/4-2.jpg" alt="">
+                        <img src="../images/shopping_list/product_pic3/4-1.png" alt="">
+                    </div>
+                    <div class="product_circle">
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
+                    </div>
+                </div>
+                <div class="product_right" data-id="100000">
+                    <p class="product_right_title">期間限定商品</p>
+                    <h3 class="product_right_name">布丁大福</h3>
+                    <p class="product_main_content">特選台東池上鄉農會的三冠米，純手工杵棒槌打製成Q彈麻糬皮，把大人小孩都喜歡的布丁放進大福中，成為絕妙好滋味
+                    </p>
+                    <p class="product_ingredients">成分 : 米、糖、布丁</p>
+                    <p class="product_save_days">保存期限:5日</p>
+                    <p class="product_price"><span>90円</span>(稅達)/1000g</p>
                     <div class="product_product_num">
                         <div class="product_num_btn">
                             <button class="min">-</button>
@@ -231,9 +783,9 @@
                 <div class="product_heart"></div>
                 <div class="product_left">
                     <div class="product_img">
-                        <img src="../images/shopping_list/product_big.png" alt="">
-                        <img src="../images/shopping_list/product_big.png" alt="">
-                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_pic3/5-1.jpg" alt="">
+                        <img src="../images/shopping_list/product_pic3/5-2.jpeg" alt="">
+                        <img src="../images/shopping_list/product_pic3/5-3.jpg" alt="">
                     </div>
                     <div class="product_circle">
                         <div class="circle_grey"></div>
@@ -243,12 +795,12 @@
                 </div>
                 <div class="product_right" data-id="100000">
                     <p class="product_right_title">期間限定商品</p>
-                    <h3 class="product_right_name">ねぎりう焦がし醬油風味</h3>
-                    <p class="product_main_content">焦がし醤油の風味とねぎの香りが良く合うかりんとうに仕上げました。焦がし醤油の風味とねぎの香りが良く合うかりんとうに仕上げました
+                    <h3 class="product_right_name">芒果大福</h3>
+                    <p class="product_main_content">特選台東池上鄉農會的三冠米，純手工杵棒槌打製成Q彈麻糬皮，特選夏雪芒果，內餡滿滿清甜香滑的芒果醬與鮮切芒果，夏日消暑的甜點首選
                     </p>
-                    <p class="product_ingredients">成分 : 米、糖、白豆沙、水飴、柚子陳皮</p>
+                    <p class="product_ingredients">成分 : 米、糖、芒果</p>
                     <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>5,000円</span>(稅達)/1000g</p>
+                    <p class="product_price"><span>100円</span>(稅達)/1000g</p>
                     <div class="product_product_num">
                         <div class="product_num_btn">
                             <button class="min">-</button>
@@ -273,9 +825,9 @@
                 <div class="product_heart"></div>
                 <div class="product_left">
                     <div class="product_img">
-                        <img src="../images/shopping_list/product_big.png" alt="">
-                        <img src="../images/shopping_list/product_big.png" alt="">
-                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_pic3/6-3.jpg" alt="">
+                        <img src="../images/shopping_list/product_pic3/6-2.jpg" alt="">
+                        <img src="../images/shopping_list/product_pic3/6-1.jpg" alt="">
                     </div>
                     <div class="product_circle">
                         <div class="circle_grey"></div>
@@ -285,12 +837,174 @@
                 </div>
                 <div class="product_right" data-id="100000">
                     <p class="product_right_title">期間限定商品</p>
-                    <h3 class="product_right_name">ねぎりう焦がし醬油風味</h3>
-                    <p class="product_main_content">焦がし醤油の風味とねぎの香りが良く合うかりんとうに仕上げました。焦がし醤油の風味とねぎの香りが良く合うかりんとうに仕上げました
+                    <h3 class="product_right_name">抹茶大福</h3>
+                    <p class="product_main_content">抹茶控必吃，特選台東池上鄉農會的三冠米，純手工杵棒槌打製成Q彈麻糬皮，靜岡抹茶與阿里山台茶12號的黃金比例調配，夠濃夠美味
                     </p>
-                    <p class="product_ingredients">成分 : 米、糖、白豆沙、水飴、柚子陳皮</p>
+                    <p class="product_ingredients">成分 : 米、糖、抹茶</p>
                     <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>4,104円</span>(稅達)/1000g</p>
+                    <p class="product_price"><span>90円</span>(稅達)/1000g</p>
+                    <div class="product_product_num">
+                        <div class="product_num_btn">
+                            <button class="min">-</button>
+                            <input type="text" class="num" value="1">
+                            <button class="add">+</button>
+                        </div>
+                        <p class="product_item_num">尚有庫存</p>
+                    </div>
+                    <button class="product_add_cart">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="cart-plus"
+                            class="product_svg_cart" role="img" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 576 512">
+                            <path fill="currentColor"
+                                d="M504.717 320H211.572l6.545 32h268.418c15.401 0 26.816 14.301 23.403 29.319l-5.517 24.276C523.112 414.668 536 433.828 536 456c0 31.202-25.519 56.444-56.824 55.994-29.823-.429-54.35-24.631-55.155-54.447-.44-16.287 6.085-31.049 16.803-41.548H231.176C241.553 426.165 248 440.326 248 456c0 31.813-26.528 57.431-58.67 55.938-28.54-1.325-51.751-24.385-53.251-52.917-1.158-22.034 10.436-41.455 28.051-51.586L93.883 64H24C10.745 64 0 53.255 0 40V24C0 10.745 10.745 0 24 0h102.529c11.401 0 21.228 8.021 23.513 19.19L159.208 64H551.99c15.401 0 26.816 14.301 23.403 29.319l-47.273 208C525.637 312.246 515.923 320 504.717 320zM408 168h-48v-40c0-8.837-7.163-16-16-16h-16c-8.837 0-16 7.163-16 16v40h-48c-8.837 0-16 7.163-16 16v16c0 8.837 7.163 16 16 16h48v40c0 8.837 7.163 16 16 16h16c8.837 0 16-7.163 16-16v-40h48c8.837 0 16-7.163 16-16v-16c0-8.837-7.163-16-16-16z">
+                            </path>
+                        </svg>
+                        加入購物車
+                    </button>
+                </div>
+            </div>
+            <div class="product_item">
+                <div class="product_heart"></div>
+                <div class="product_left">
+                    <div class="product_img">
+                        <img src="../images/shopping_list/product_pic3/7-2.jpg" alt="">
+                        <img src="../images/shopping_list/product_pic3/7-3.jpg" alt="">
+                        <img src="../images/shopping_list/product_pic3/7-1.jpg" alt="">
+                    </div>
+                    <div class="product_circle">
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
+                    </div>
+                </div>
+                <div class="product_right" data-id="100000">
+                    <p class="product_right_title">期間限定商品</p>
+                    <h3 class="product_right_name">柳橙大福</h3>
+                    <p class="product_main_content">特選台東池上鄉農會的三冠米，純手工杵棒槌打製成Q彈麻糬皮，清爽的柳橙與減糖配方製成的卡士達醬，香甜不膩口
+                    </p>
+                    <p class="product_ingredients">成分 : 米、糖、柳橙、卡士達</p>
+                    <p class="product_save_days">保存期限:5日</p>
+                    <p class="product_price"><span>100円</span>(稅達)/1000g</p>
+                    <div class="product_product_num">
+                        <div class="product_num_btn">
+                            <button class="min">-</button>
+                            <input type="text" class="num" value="1">
+                            <button class="add">+</button>
+                        </div>
+                        <p class="product_item_num">尚有庫存</p>
+                    </div>
+                    <button class="product_add_cart">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="cart-plus" class="product_svg_cart" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M504.717 320H211.572l6.545 32h268.418c15.401 0 26.816 14.301 23.403 29.319l-5.517 24.276C523.112 414.668 536 433.828 536 456c0 31.202-25.519 56.444-56.824 55.994-29.823-.429-54.35-24.631-55.155-54.447-.44-16.287 6.085-31.049 16.803-41.548H231.176C241.553 426.165 248 440.326 248 456c0 31.813-26.528 57.431-58.67 55.938-28.54-1.325-51.751-24.385-53.251-52.917-1.158-22.034 10.436-41.455 28.051-51.586L93.883 64H24C10.745 64 0 53.255 0 40V24C0 10.745 10.745 0 24 0h102.529c11.401 0 21.228 8.021 23.513 19.19L159.208 64H551.99c15.401 0 26.816 14.301 23.403 29.319l-47.273 208C525.637 312.246 515.923 320 504.717 320zM408 168h-48v-40c0-8.837-7.163-16-16-16h-16c-8.837 0-16 7.163-16 16v40h-48c-8.837 0-16 7.163-16 16v16c0 8.837 7.163 16 16 16h48v40c0 8.837 7.163 16 16 16h16c8.837 0 16-7.163 16-16v-40h48c8.837 0 16-7.163 16-16v-16c0-8.837-7.163-16-16-16z"></path></svg>
+                        加入購物車
+                    </button>
+                </div>
+            </div>
+            <div class="product_item">
+                <div class="product_heart"></div>
+                <div class="product_left">
+                    <div class="product_img">
+                        <img src="../images/shopping_list/product_pic3/8-1.jpg" alt="">
+                        <img src="../images/shopping_list/product_pic3/8-2.jpg" alt="">
+                        <img src="../images/shopping_list/product_pic3/8-3.jpg" alt="">
+                    </div>
+                    <div class="product_circle">
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
+                    </div>
+                </div>
+                <div class="product_right" data-id="100000">
+                    <p class="product_right_title">期間限定商品</p>
+                    <h3 class="product_right_name">紅豆大福</h3>
+                    <p class="product_main_content">特選台東池上鄉農會的三冠米，純手工杵棒槌打製成Q彈麻糬皮，特製牛奶餡加上熬煮八小時的屏東老鷹紅豆，製作成不甜不膩的牛奶紅豆
+                    </p>
+                    <p class="product_ingredients">成分 : 米、糖、紅豆、牛奶</p>
+                    <p class="product_save_days">保存期限:5日</p>
+                    <p class="product_price"><span>90円</span>(稅達)/1000g</p>
+                    <div class="product_product_num">
+                        <div class="product_num_btn">
+                            <button class="min">-</button>
+                            <input type="text" class="num" value="1">
+                            <button class="add">+</button>
+                        </div>
+                        <p class="product_item_num">尚有庫存</p>
+                    </div>
+                    <button class="product_add_cart">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="cart-plus"
+                            class="product_svg_cart" role="img" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 576 512">
+                            <path fill="currentColor"
+                                d="M504.717 320H211.572l6.545 32h268.418c15.401 0 26.816 14.301 23.403 29.319l-5.517 24.276C523.112 414.668 536 433.828 536 456c0 31.202-25.519 56.444-56.824 55.994-29.823-.429-54.35-24.631-55.155-54.447-.44-16.287 6.085-31.049 16.803-41.548H231.176C241.553 426.165 248 440.326 248 456c0 31.813-26.528 57.431-58.67 55.938-28.54-1.325-51.751-24.385-53.251-52.917-1.158-22.034 10.436-41.455 28.051-51.586L93.883 64H24C10.745 64 0 53.255 0 40V24C0 10.745 10.745 0 24 0h102.529c11.401 0 21.228 8.021 23.513 19.19L159.208 64H551.99c15.401 0 26.816 14.301 23.403 29.319l-47.273 208C525.637 312.246 515.923 320 504.717 320zM408 168h-48v-40c0-8.837-7.163-16-16-16h-16c-8.837 0-16 7.163-16 16v40h-48c-8.837 0-16 7.163-16 16v16c0 8.837 7.163 16 16 16h48v40c0 8.837 7.163 16 16 16h16c8.837 0 16-7.163 16-16v-40h48c8.837 0 16-7.163 16-16v-16c0-8.837-7.163-16-16-16z">
+                            </path>
+                        </svg>
+                        加入購物車
+                    </button>
+                </div>
+            </div>
+            <div class="product_item">
+                <div class="product_heart"></div>
+                <div class="product_left">
+                    <div class="product_img">
+                        <img src="../images/shopping_list/product_pic3/9-2.jpg" alt="">
+                        <img src="../images/shopping_list/product_pic3/9-3.jfif" alt="">
+                        <img src="../images/shopping_list/product_pic3/9-1.jpg" alt="">
+                    </div>
+                    <div class="product_circle">
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
+                    </div>
+                </div>
+                <div class="product_right" data-id="100000">
+                    <p class="product_right_title">期間限定商品</p>
+                    <h3 class="product_right_name">栗子大福</h3>
+                    <p class="product_main_content">特選台東池上鄉農會的三冠米，純手工杵棒槌打製成Q彈麻糬皮，鬆軟香甜的甘栗，配上綿密紅豆泥，讓人一口接一口想再吃
+                    </p>
+                    <p class="product_ingredients">成分 : 米、糖、紅豆、栗</p>
+                    <p class="product_save_days">保存期限:5日</p>
+                    <p class="product_price"><span>90円</span>(稅達)/1000g</p>
+                    <div class="product_product_num">
+                        <div class="product_num_btn">
+                            <button class="min">-</button>
+                            <input type="text" class="num" value="1">
+                            <button class="add">+</button>
+                        </div>
+                        <p class="product_item_num">尚有庫存</p>
+                    </div>
+                    <button class="product_add_cart">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="cart-plus"
+                            class="product_svg_cart" role="img" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 576 512">
+                            <path fill="currentColor"
+                                d="M504.717 320H211.572l6.545 32h268.418c15.401 0 26.816 14.301 23.403 29.319l-5.517 24.276C523.112 414.668 536 433.828 536 456c0 31.202-25.519 56.444-56.824 55.994-29.823-.429-54.35-24.631-55.155-54.447-.44-16.287 6.085-31.049 16.803-41.548H231.176C241.553 426.165 248 440.326 248 456c0 31.813-26.528 57.431-58.67 55.938-28.54-1.325-51.751-24.385-53.251-52.917-1.158-22.034 10.436-41.455 28.051-51.586L93.883 64H24C10.745 64 0 53.255 0 40V24C0 10.745 10.745 0 24 0h102.529c11.401 0 21.228 8.021 23.513 19.19L159.208 64H551.99c15.401 0 26.816 14.301 23.403 29.319l-47.273 208C525.637 312.246 515.923 320 504.717 320zM408 168h-48v-40c0-8.837-7.163-16-16-16h-16c-8.837 0-16 7.163-16 16v40h-48c-8.837 0-16 7.163-16 16v16c0 8.837 7.163 16 16 16h48v40c0 8.837 7.163 16 16 16h16c8.837 0 16-7.163 16-16v-40h48c8.837 0 16-7.163 16-16v-16c0-8.837-7.163-16-16-16z">
+                            </path>
+                        </svg>
+                        加入購物車
+                    </button>
+                </div>
+            </div>
+            <div class="product_item">
+                <div class="product_heart"></div>
+                <div class="product_left">
+                    <div class="product_img">
+                        <img src="../images/shopping_list/product_pic3/10-3.jpg" alt="">
+                        <img src="../images/shopping_list/product_pic3/10-2.jpg" alt="">
+                        <img src="../images/shopping_list/product_pic3/10-1.jpg" alt="">
+                    </div>
+                    <div class="product_circle">
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
+                    </div>
+                </div>
+                <div class="product_right" data-id="100000">
+                    <p class="product_right_title">期間限定商品</p>
+                    <h3 class="product_right_name">草莓大福</h3>
+                    <p class="product_main_content">特選台東池上鄉農會的三冠米，純手工杵棒槌打製成Q彈麻糬皮，包覆整顆新鮮酸甜的苗栗吉光有機草莓，餡料飽滿，口感清爽
+                    </p>
+                    <p class="product_ingredients">成分 : 米、糖、草莓</p>
+                    <p class="product_save_days">保存期限:5日</p>
+                    <p class="product_price"><span>100円</span>(稅達)/1000g</p>
                     <div class="product_product_num">
                         <div class="product_num_btn">
                             <button class="min">-</button>
@@ -312,6 +1026,7 @@
                 </div>
             </div>
         </div>
+        <!-- 4.日式餅乾 -->
         <div class="product_product">
             <div class="product_title">
                 <h2 id="product_small_title">PRODUCT</h2>
@@ -332,13 +1047,13 @@
                     </div>
                 </div>
                 <div class="product_right" data-id="100000">
-                    <p class="product_right_title">期間限定商品222</p>
+                    <p class="product_right_title">期間限定商品</p>
                     <h3 class="product_right_name">ねぎりう焦がし醬油風味</h3>
                     <p class="product_main_content">焦がし醤油の風味とねぎの香りが良く合うかりんとうに仕上げました。焦がし醤油の風味とねぎの香りが良く合うかりんとうに仕上げました
                     </p>
                     <p class="product_ingredients">成分 : 米、糖、白豆沙、水飴、柚子陳皮</p>
                     <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>4,104円</span>(稅達)/1000g</p>
+                    <p class="product_price"><span>100円</span>(稅達)/1000g</p>
                     <div class="product_product_num">
                         <div class="product_num_btn">
                             <button class="min">-</button>
@@ -380,7 +1095,7 @@
                     </p>
                     <p class="product_ingredients">成分 : 米、糖、白豆沙、水飴、柚子陳皮</p>
                     <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>4,104円</span>(稅達)/1000g</p>
+                    <p class="product_price"><span>90円</span>(稅達)/1000g</p>
                     <div class="product_product_num">
                         <div class="product_num_btn">
                             <button class="min">-</button>
@@ -422,7 +1137,7 @@
                     </p>
                     <p class="product_ingredients">成分 : 米、糖、白豆沙、水飴、柚子陳皮</p>
                     <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>4,104円</span>(稅達)/1000g</p>
+                    <p class="product_price"><span>90円</span>(稅達)/1000g</p>
                     <div class="product_product_num">
                         <div class="product_num_btn">
                             <button class="min">-</button>
@@ -444,270 +1159,7 @@
                 </div>
             </div>
         </div>
-        <div class="product_product">
-            <div class="product_title">
-                <h2 id="product_small_title">PRODUCT</h2>
-                <h1 id="product_big_title">商品列表</h1>
-            </div>
-            <div class="product_item">
-                <div class="product_heart"></div>
-                <div class="product_left">
-                    <div class="product_img">
-                        <img src="../images/shopping_list/product_big.png" alt="">
-                        <img src="../images/shopping_list/product_big.png" alt="">
-                        <img src="../images/shopping_list/product_big.png" alt="">
-                    </div>
-                    <div class="product_circle">
-                        <div class="circle_grey"></div>
-                        <div class="circle_grey"></div>
-                        <div class="circle_grey"></div>
-                    </div>
-                </div>
-                <div class="product_right" data-id="100000">
-                    <p class="product_right_title">期間限定商品333</p>
-                    <h3 class="product_right_name">ねぎりう焦がし醬油風味</h3>
-                    <p class="product_main_content">焦がし醤油の風味とねぎの香りが良く合うかりんとうに仕上げました。焦がし醤油の風味とねぎの香りが良く合うかりんとうに仕上げました
-                    </p>
-                    <p class="product_ingredients">成分 : 米、糖、白豆沙、水飴、柚子陳皮</p>
-                    <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>4,104円</span>(稅達)/1000g</p>
-                    <div class="product_product_num">
-                        <div class="product_num_btn">
-                            <button class="min">-</button>
-                            <input type="text" class="num" value="1">
-                            <button class="add">+</button>
-                        </div>
-                        <p class="product_item_num">尚有庫存</p>
-                    </div>
-                    <button class="product_add_cart">
-                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="cart-plus"
-                            class="product_svg_cart" role="img" xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 576 512">
-                            <path fill="currentColor"
-                                d="M504.717 320H211.572l6.545 32h268.418c15.401 0 26.816 14.301 23.403 29.319l-5.517 24.276C523.112 414.668 536 433.828 536 456c0 31.202-25.519 56.444-56.824 55.994-29.823-.429-54.35-24.631-55.155-54.447-.44-16.287 6.085-31.049 16.803-41.548H231.176C241.553 426.165 248 440.326 248 456c0 31.813-26.528 57.431-58.67 55.938-28.54-1.325-51.751-24.385-53.251-52.917-1.158-22.034 10.436-41.455 28.051-51.586L93.883 64H24C10.745 64 0 53.255 0 40V24C0 10.745 10.745 0 24 0h102.529c11.401 0 21.228 8.021 23.513 19.19L159.208 64H551.99c15.401 0 26.816 14.301 23.403 29.319l-47.273 208C525.637 312.246 515.923 320 504.717 320zM408 168h-48v-40c0-8.837-7.163-16-16-16h-16c-8.837 0-16 7.163-16 16v40h-48c-8.837 0-16 7.163-16 16v16c0 8.837 7.163 16 16 16h48v40c0 8.837 7.163 16 16 16h16c8.837 0 16-7.163 16-16v-40h48c8.837 0 16-7.163 16-16v-16c0-8.837-7.163-16-16-16z">
-                            </path>
-                        </svg>
-                        加入購物車
-                    </button>
-                </div>
-            </div>
-            <div class="product_item">
-                <div class="product_heart"></div>
-                <div class="product_left">
-                    <div class="product_img">
-                        <img src="../images/shopping_list/product_big.png" alt="">
-                        <img src="../images/shopping_list/product_big.png" alt="">
-                        <img src="../images/shopping_list/product_big.png" alt="">
-                    </div>
-                    <div class="product_circle">
-                        <div class="circle_grey"></div>
-                        <div class="circle_grey"></div>
-                        <div class="circle_grey"></div>
-                    </div>
-                </div>
-                <div class="product_right" data-id="100000">
-                    <p class="product_right_title">期間限定商品</p>
-                    <h3 class="product_right_name">ねぎりう焦がし醬油風味</h3>
-                    <p class="product_main_content">焦がし醤油の風味とねぎの香りが良く合うかりんとうに仕上げました。焦がし醤油の風味とねぎの香りが良く合うかりんとうに仕上げました
-                    </p>
-                    <p class="product_ingredients">成分 : 米、糖、白豆沙、水飴、柚子陳皮</p>
-                    <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>4,104円</span>(稅達)/1000g</p>
-                    <div class="product_product_num">
-                        <div class="product_num_btn">
-                            <button class="min">-</button>
-                            <input type="text" class="num" value="1">
-                            <button class="add">+</button>
-                        </div>
-                        <p class="product_item_num">尚有庫存</p>
-                    </div>
-                    <button class="product_add_cart">
-                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="cart-plus"
-                            class="product_svg_cart" role="img" xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 576 512">
-                            <path fill="currentColor"
-                                d="M504.717 320H211.572l6.545 32h268.418c15.401 0 26.816 14.301 23.403 29.319l-5.517 24.276C523.112 414.668 536 433.828 536 456c0 31.202-25.519 56.444-56.824 55.994-29.823-.429-54.35-24.631-55.155-54.447-.44-16.287 6.085-31.049 16.803-41.548H231.176C241.553 426.165 248 440.326 248 456c0 31.813-26.528 57.431-58.67 55.938-28.54-1.325-51.751-24.385-53.251-52.917-1.158-22.034 10.436-41.455 28.051-51.586L93.883 64H24C10.745 64 0 53.255 0 40V24C0 10.745 10.745 0 24 0h102.529c11.401 0 21.228 8.021 23.513 19.19L159.208 64H551.99c15.401 0 26.816 14.301 23.403 29.319l-47.273 208C525.637 312.246 515.923 320 504.717 320zM408 168h-48v-40c0-8.837-7.163-16-16-16h-16c-8.837 0-16 7.163-16 16v40h-48c-8.837 0-16 7.163-16 16v16c0 8.837 7.163 16 16 16h48v40c0 8.837 7.163 16 16 16h16c8.837 0 16-7.163 16-16v-40h48c8.837 0 16-7.163 16-16v-16c0-8.837-7.163-16-16-16z">
-                            </path>
-                        </svg>
-                        加入購物車
-                    </button>
-                </div>
-            </div>
-            <div class="product_item">
-                <div class="product_heart"></div>
-                <div class="product_left">
-                    <div class="product_img">
-                        <img src="../images/shopping_list/product_big.png" alt="">
-                        <img src="../images/shopping_list/product_big.png" alt="">
-                        <img src="../images/shopping_list/product_big.png" alt="">
-                    </div>
-                    <div class="product_circle">
-                        <div class="circle_grey"></div>
-                        <div class="circle_grey"></div>
-                        <div class="circle_grey"></div>
-                    </div>
-                </div>
-                <div class="product_right" data-id="100000">
-                    <p class="product_right_title">期間限定商品</p>
-                    <h3 class="product_right_name">ねぎりう焦がし醬油風味</h3>
-                    <p class="product_main_content">焦がし醤油の風味とねぎの香りが良く合うかりんとうに仕上げました。焦がし醤油の風味とねぎの香りが良く合うかりんとうに仕上げました
-                    </p>
-                    <p class="product_ingredients">成分 : 米、糖、白豆沙、水飴、柚子陳皮</p>
-                    <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>4,104円</span>(稅達)/1000g</p>
-                    <div class="product_product_num">
-                        <div class="product_num_btn">
-                            <button class="min">-</button>
-                            <input type="text" class="num" value="1">
-                            <button class="add">+</button>
-                        </div>
-                        <p class="product_item_num" id="none">沒有庫存</p>
-                    </div>
-                    <button class="product_add_cart" id="grey">
-                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="cart-plus"
-                            class="product_svg_cart" role="img" xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 576 512">
-                            <path fill="currentColor"
-                                d="M504.717 320H211.572l6.545 32h268.418c15.401 0 26.816 14.301 23.403 29.319l-5.517 24.276C523.112 414.668 536 433.828 536 456c0 31.202-25.519 56.444-56.824 55.994-29.823-.429-54.35-24.631-55.155-54.447-.44-16.287 6.085-31.049 16.803-41.548H231.176C241.553 426.165 248 440.326 248 456c0 31.813-26.528 57.431-58.67 55.938-28.54-1.325-51.751-24.385-53.251-52.917-1.158-22.034 10.436-41.455 28.051-51.586L93.883 64H24C10.745 64 0 53.255 0 40V24C0 10.745 10.745 0 24 0h102.529c11.401 0 21.228 8.021 23.513 19.19L159.208 64H551.99c15.401 0 26.816 14.301 23.403 29.319l-47.273 208C525.637 312.246 515.923 320 504.717 320zM408 168h-48v-40c0-8.837-7.163-16-16-16h-16c-8.837 0-16 7.163-16 16v40h-48c-8.837 0-16 7.163-16 16v16c0 8.837 7.163 16 16 16h48v40c0 8.837 7.163 16 16 16h16c8.837 0 16-7.163 16-16v-40h48c8.837 0 16-7.163 16-16v-16c0-8.837-7.163-16-16-16z">
-                            </path>
-                        </svg>
-                        加入購物車
-                    </button>
-                </div>
-            </div>
-        </div>
-        <div class="product_product">
-            <div class="product_title">
-                <h2 id="product_small_title">PRODUCT</h2>
-                <h1 id="product_big_title">商品列表</h1>
-            </div>
-            <div class="product_item">
-                <div class="product_heart"></div>
-                <div class="product_left">
-                    <div class="product_img">
-                        <img src="../images/shopping_list/product_big.png" alt="">
-                        <img src="../images/shopping_list/product_big.png" alt="">
-                        <img src="../images/shopping_list/product_big.png" alt="">
-                    </div>
-                    <div class="product_circle">
-                        <div class="circle_grey"></div>
-                        <div class="circle_grey"></div>
-                        <div class="circle_grey"></div>
-                    </div>
-                </div>
-                <div class="product_right" data-id="100000">
-                    <p class="product_right_title">期間限定商品444</p>
-                    <h3 class="product_right_name">ねぎりう焦がし醬油風味</h3>
-                    <p class="product_main_content">焦がし醤油の風味とねぎの香りが良く合うかりんとうに仕上げました。焦がし醤油の風味とねぎの香りが良く合うかりんとうに仕上げました
-                    </p>
-                    <p class="product_ingredients">成分 : 米、糖、白豆沙、水飴、柚子陳皮</p>
-                    <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>4,104円</span>(稅達)/1000g</p>
-                    <div class="product_product_num">
-                        <div class="product_num_btn">
-                            <button class="min">-</button>
-                            <input type="text" class="num" value="1">
-                            <button class="add">+</button>
-                        </div>
-                        <p class="product_item_num">尚有庫存</p>
-                    </div>
-                    <button class="product_add_cart">
-                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="cart-plus"
-                            class="product_svg_cart" role="img" xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 576 512">
-                            <path fill="currentColor"
-                                d="M504.717 320H211.572l6.545 32h268.418c15.401 0 26.816 14.301 23.403 29.319l-5.517 24.276C523.112 414.668 536 433.828 536 456c0 31.202-25.519 56.444-56.824 55.994-29.823-.429-54.35-24.631-55.155-54.447-.44-16.287 6.085-31.049 16.803-41.548H231.176C241.553 426.165 248 440.326 248 456c0 31.813-26.528 57.431-58.67 55.938-28.54-1.325-51.751-24.385-53.251-52.917-1.158-22.034 10.436-41.455 28.051-51.586L93.883 64H24C10.745 64 0 53.255 0 40V24C0 10.745 10.745 0 24 0h102.529c11.401 0 21.228 8.021 23.513 19.19L159.208 64H551.99c15.401 0 26.816 14.301 23.403 29.319l-47.273 208C525.637 312.246 515.923 320 504.717 320zM408 168h-48v-40c0-8.837-7.163-16-16-16h-16c-8.837 0-16 7.163-16 16v40h-48c-8.837 0-16 7.163-16 16v16c0 8.837 7.163 16 16 16h48v40c0 8.837 7.163 16 16 16h16c8.837 0 16-7.163 16-16v-40h48c8.837 0 16-7.163 16-16v-16c0-8.837-7.163-16-16-16z">
-                            </path>
-                        </svg>
-                        加入購物車
-                    </button>
-                </div>
-            </div>
-            <div class="product_item">
-                <div class="product_heart"></div>
-                <div class="product_left">
-                    <div class="product_img">
-                        <img src="../images/shopping_list/product_big.png" alt="">
-                        <img src="../images/shopping_list/product_big.png" alt="">
-                        <img src="../images/shopping_list/product_big.png" alt="">
-                    </div>
-                    <div class="product_circle">
-                        <div class="circle_grey"></div>
-                        <div class="circle_grey"></div>
-                        <div class="circle_grey"></div>
-                    </div>
-                </div>
-                <div class="product_right" data-id="100000">
-                    <p class="product_right_title">期間限定商品</p>
-                    <h3 class="product_right_name">ねぎりう焦がし醬油風味</h3>
-                    <p class="product_main_content">焦がし醤油の風味とねぎの香りが良く合うかりんとうに仕上げました。焦がし醤油の風味とねぎの香りが良く合うかりんとうに仕上げました
-                    </p>
-                    <p class="product_ingredients">成分 : 米、糖、白豆沙、水飴、柚子陳皮</p>
-                    <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>4,104円</span>(稅達)/1000g</p>
-                    <div class="product_product_num">
-                        <div class="product_num_btn">
-                            <button class="min">-</button>
-                            <input type="text" class="num" value="1">
-                            <button class="add">+</button>
-                        </div>
-                        <p class="product_item_num">尚有庫存</p>
-                    </div>
-                    <button class="product_add_cart">
-                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="cart-plus"
-                            class="product_svg_cart" role="img" xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 576 512">
-                            <path fill="currentColor"
-                                d="M504.717 320H211.572l6.545 32h268.418c15.401 0 26.816 14.301 23.403 29.319l-5.517 24.276C523.112 414.668 536 433.828 536 456c0 31.202-25.519 56.444-56.824 55.994-29.823-.429-54.35-24.631-55.155-54.447-.44-16.287 6.085-31.049 16.803-41.548H231.176C241.553 426.165 248 440.326 248 456c0 31.813-26.528 57.431-58.67 55.938-28.54-1.325-51.751-24.385-53.251-52.917-1.158-22.034 10.436-41.455 28.051-51.586L93.883 64H24C10.745 64 0 53.255 0 40V24C0 10.745 10.745 0 24 0h102.529c11.401 0 21.228 8.021 23.513 19.19L159.208 64H551.99c15.401 0 26.816 14.301 23.403 29.319l-47.273 208C525.637 312.246 515.923 320 504.717 320zM408 168h-48v-40c0-8.837-7.163-16-16-16h-16c-8.837 0-16 7.163-16 16v40h-48c-8.837 0-16 7.163-16 16v16c0 8.837 7.163 16 16 16h48v40c0 8.837 7.163 16 16 16h16c8.837 0 16-7.163 16-16v-40h48c8.837 0 16-7.163 16-16v-16c0-8.837-7.163-16-16-16z">
-                            </path>
-                        </svg>
-                        加入購物車
-                    </button>
-                </div>
-            </div>
-            <div class="product_item">
-                <div class="product_heart"></div>
-                <div class="product_left">
-                    <div class="product_img">
-                        <img src="../images/shopping_list/product_big.png" alt="">
-                        <img src="../images/shopping_list/product_big.png" alt="">
-                        <img src="../images/shopping_list/product_big.png" alt="">
-                    </div>
-                    <div class="product_circle">
-                        <div class="circle_grey"></div>
-                        <div class="circle_grey"></div>
-                        <div class="circle_grey"></div>
-                    </div>
-                </div>
-                <div class="product_right" data-id="100000">
-                    <p class="product_right_title">期間限定商品</p>
-                    <h3 class="product_right_name">ねぎりう焦がし醬油風味</h3>
-                    <p class="product_main_content">焦がし醤油の風味とねぎの香りが良く合うかりんとうに仕上げました。焦がし醤油の風味とねぎの香りが良く合うかりんとうに仕上げました
-                    </p>
-                    <p class="product_ingredients">成分 : 米、糖、白豆沙、水飴、柚子陳皮</p>
-                    <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>4,104円</span>(稅達)/1000g</p>
-                    <div class="product_product_num">
-                        <div class="product_num_btn">
-                            <button class="min">-</button>
-                            <input type="text" class="num" value="1">
-                            <button class="add">+</button>
-                        </div>
-                        <p class="product_item_num" id="none">沒有庫存</p>
-                    </div>
-                    <button class="product_add_cart" id="grey">
-                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="cart-plus"
-                            class="product_svg_cart" role="img" xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 576 512">
-                            <path fill="currentColor"
-                                d="M504.717 320H211.572l6.545 32h268.418c15.401 0 26.816 14.301 23.403 29.319l-5.517 24.276C523.112 414.668 536 433.828 536 456c0 31.202-25.519 56.444-56.824 55.994-29.823-.429-54.35-24.631-55.155-54.447-.44-16.287 6.085-31.049 16.803-41.548H231.176C241.553 426.165 248 440.326 248 456c0 31.813-26.528 57.431-58.67 55.938-28.54-1.325-51.751-24.385-53.251-52.917-1.158-22.034 10.436-41.455 28.051-51.586L93.883 64H24C10.745 64 0 53.255 0 40V24C0 10.745 10.745 0 24 0h102.529c11.401 0 21.228 8.021 23.513 19.19L159.208 64H551.99c15.401 0 26.816 14.301 23.403 29.319l-47.273 208C525.637 312.246 515.923 320 504.717 320zM408 168h-48v-40c0-8.837-7.163-16-16-16h-16c-8.837 0-16 7.163-16 16v40h-48c-8.837 0-16 7.163-16 16v16c0 8.837 7.163 16 16 16h48v40c0 8.837 7.163 16 16 16h16c8.837 0 16-7.163 16-16v-40h48c8.837 0 16-7.163 16-16v-16c0-8.837-7.163-16-16-16z">
-                            </path>
-                        </svg>
-                        加入購物車
-                    </button>
-                </div>
-            </div>
-        </div>
+        <!-- 5.羊羹 -->
         <div class="product_product">
             <div class="product_title">
                 <h2 id="product_small_title">PRODUCT</h2>
@@ -734,7 +1186,7 @@
                     </p>
                     <p class="product_ingredients">成分 : 米、糖、白豆沙、水飴、柚子陳皮</p>
                     <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>4,104円</span>(稅達)/1000g</p>
+                    <p class="product_price"><span>80円</span>(稅達)/1000g</p>
                     <div class="product_product_num">
                         <div class="product_num_btn">
                             <button class="min">-</button>
@@ -776,7 +1228,7 @@
                     </p>
                     <p class="product_ingredients">成分 : 米、糖、白豆沙、水飴、柚子陳皮</p>
                     <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>4,104円</span>(稅達)/1000g</p>
+                    <p class="product_price"><span>80円</span>(稅達)/1000g</p>
                     <div class="product_product_num">
                         <div class="product_num_btn">
                             <button class="min">-</button>
@@ -818,7 +1270,7 @@
                     </p>
                     <p class="product_ingredients">成分 : 米、糖、白豆沙、水飴、柚子陳皮</p>
                     <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>4,104円</span>(稅達)/1000g</p>
+                    <p class="product_price"><span>220円</span>(稅達)/1000g</p>
                     <div class="product_product_num">
                         <div class="product_num_btn">
                             <button class="min">-</button>
@@ -840,6 +1292,7 @@
                 </div>
             </div>
         </div>
+        <!-- 6.生菓子 -->
         <div class="product_product">
             <div class="product_title">
                 <h2 id="product_small_title">PRODUCT</h2>
@@ -849,9 +1302,9 @@
                 <div class="product_heart"></div>
                 <div class="product_left">
                     <div class="product_img">
-                        <img src="../images/shopping_list/product_big.png" alt="">
-                        <img src="../images/shopping_list/product_big.png" alt="">
-                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_pic6/1-3.jpg" alt="">
+                        <img src="../images/shopping_list/product_pic6/1-2.jpg" alt="">
+                        <img src="../images/shopping_list/product_pic6/1-1.jpg" alt="">
                     </div>
                     <div class="product_circle">
                         <div class="circle_grey"></div>
@@ -860,13 +1313,13 @@
                     </div>
                 </div>
                 <div class="product_right" data-id="100000">
-                    <p class="product_right_title">期間限定商品666</p>
-                    <h3 class="product_right_name">ねぎりう焦がし醬油風味</h3>
-                    <p class="product_main_content">焦がし醤油の風味とねぎの香りが良く合うかりんとうに仕上げました。焦がし醤油の風味とねぎの香りが良く合うかりんとうに仕上げました
+                    <p class="product_right_title">期間限定商品</p>
+                    <h3 class="product_right_name">花火</h3>
+                    <p class="product_main_content">七彩花火，透過職人純手工製作的設計外型與色彩，將燦爛瞬間濃縮成永恆的心意，內餡嚴選靜岡抹茶與阿里山台茶12號，給你滿滿抹茶味
                     </p>
-                    <p class="product_ingredients">成分 : 米、糖、白豆沙、水飴、柚子陳皮</p>
+                    <p class="product_ingredients">成分 : 豆沙、抹茶餡</p>
                     <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>4,104円</span>(稅達)/1000g</p>
+                    <p class="product_price"><span>110円</span>(稅達)/1000g</p>
                     <div class="product_product_num">
                         <div class="product_num_btn">
                             <button class="min">-</button>
@@ -891,9 +1344,9 @@
                 <div class="product_heart"></div>
                 <div class="product_left">
                     <div class="product_img">
-                        <img src="../images/shopping_list/product_big.png" alt="">
-                        <img src="../images/shopping_list/product_big.png" alt="">
-                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_pic6/2-1.jpg" alt="">
+                        <img src="../images/shopping_list/product_pic6/2-3.jpg" alt="">
+                        <img src="../images/shopping_list/product_pic6/2-2.jpg" alt="">
                     </div>
                     <div class="product_circle">
                         <div class="circle_grey"></div>
@@ -903,12 +1356,12 @@
                 </div>
                 <div class="product_right" data-id="100000">
                     <p class="product_right_title">期間限定商品</p>
-                    <h3 class="product_right_name">ねぎりう焦がし醬油風味</h3>
-                    <p class="product_main_content">焦がし醤油の風味とねぎの香りが良く合うかりんとうに仕上げました。焦がし醤油の風味とねぎの香りが良く合うかりんとうに仕上げました
+                    <h3 class="product_right_name">桔梗</h3>
+                    <p class="product_main_content">桔梗的花語是永恆的愛，採用特選麻豆文旦與日月潭紅茶，送禮的最佳首選
                     </p>
-                    <p class="product_ingredients">成分 : 米、糖、白豆沙、水飴、柚子陳皮</p>
+                    <p class="product_ingredients">成分 : 米、豆沙、柚子紅茶餡</p>
                     <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>4,104円</span>(稅達)/1000g</p>
+                    <p class="product_price"><span>110円</span>(稅達)/1000g</p>
                     <div class="product_product_num">
                         <div class="product_num_btn">
                             <button class="min">-</button>
@@ -933,9 +1386,9 @@
                 <div class="product_heart"></div>
                 <div class="product_left">
                     <div class="product_img">
-                        <img src="../images/shopping_list/product_big.png" alt="">
-                        <img src="../images/shopping_list/product_big.png" alt="">
-                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_pic6/3-2.jpg" alt="">
+                        <img src="../images/shopping_list/product_pic6/3-1.jpg" alt="">
+                        <img src="../images/shopping_list/product_pic6/3-3.jpg" alt="">
                     </div>
                     <div class="product_circle">
                         <div class="circle_grey"></div>
@@ -945,12 +1398,12 @@
                 </div>
                 <div class="product_right" data-id="100000">
                     <p class="product_right_title">期間限定商品</p>
-                    <h3 class="product_right_name">ねぎりう焦がし醬油風味</h3>
-                    <p class="product_main_content">焦がし醤油の風味とねぎの香りが良く合うかりんとうに仕上げました。焦がし醤油の風味とねぎの香りが良く合うかりんとうに仕上げました
+                    <h3 class="product_right_name">寒牡丹</h3>
+                    <p class="product_main_content">嬌貴華麗的寒牡丹，是冬季和菓子常見的造型，配上奶味香醇的奶油餡與熬煮八小時的萬丹紅豆，
                     </p>
-                    <p class="product_ingredients">成分 : 米、糖、白豆沙、水飴、柚子陳皮</p>
+                    <p class="product_ingredients">成分 : 豆沙、奶油餡、牛奶</p>
                     <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>4,104円</span>(稅達)/1000g</p>
+                    <p class="product_price"><span>110円</span>(稅達)/1000g</p>
                     <div class="product_product_num">
                         <div class="product_num_btn">
                             <button class="min">-</button>
@@ -958,6 +1411,132 @@
                             <button class="add">+</button>
                         </div>
                         <p class="product_item_num" id="none">沒有庫存</p>
+                    </div>
+                    <button class="product_add_cart" id="grey">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="cart-plus"
+                            class="product_svg_cart" role="img" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 576 512">
+                            <path fill="currentColor"
+                                d="M504.717 320H211.572l6.545 32h268.418c15.401 0 26.816 14.301 23.403 29.319l-5.517 24.276C523.112 414.668 536 433.828 536 456c0 31.202-25.519 56.444-56.824 55.994-29.823-.429-54.35-24.631-55.155-54.447-.44-16.287 6.085-31.049 16.803-41.548H231.176C241.553 426.165 248 440.326 248 456c0 31.813-26.528 57.431-58.67 55.938-28.54-1.325-51.751-24.385-53.251-52.917-1.158-22.034 10.436-41.455 28.051-51.586L93.883 64H24C10.745 64 0 53.255 0 40V24C0 10.745 10.745 0 24 0h102.529c11.401 0 21.228 8.021 23.513 19.19L159.208 64H551.99c15.401 0 26.816 14.301 23.403 29.319l-47.273 208C525.637 312.246 515.923 320 504.717 320zM408 168h-48v-40c0-8.837-7.163-16-16-16h-16c-8.837 0-16 7.163-16 16v40h-48c-8.837 0-16 7.163-16 16v16c0 8.837 7.163 16 16 16h48v40c0 8.837 7.163 16 16 16h16c8.837 0 16-7.163 16-16v-40h48c8.837 0 16-7.163 16-16v-16c0-8.837-7.163-16-16-16z">
+                            </path>
+                        </svg>
+                        加入購物車
+                    </button>
+                </div>
+            </div>
+            <div class="product_item">
+                <div class="product_heart"></div>
+                <div class="product_left">
+                    <div class="product_img">
+                        <img src="../images/shopping_list/product_pic6/4-2.jpg" alt="">
+                        <img src="../images/shopping_list/product_pic6/4-1.jpg" alt="">
+                        <img src="../images/shopping_list/product_pic6/4-3.png" alt="">
+                    </div>
+                    <div class="product_circle">
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
+                    </div>
+                </div>
+                <div class="product_right" data-id="100000">
+                    <p class="product_right_title">期間限定商品</p>
+                    <h3 class="product_right_name">紫陽花</h3>
+                    <p class="product_main_content">採用特選麻豆文旦與日月潭紅茶，風味獨特，職人純手工製作，紫裡透粉與淡色漸層是練切的特殊製作手法，好看也好吃
+                    </p>
+                    <p class="product_ingredients">成分 : 豆沙、柚子紅茶餡</p>
+                    <p class="product_save_days">保存期限:5日</p>
+                    <p class="product_price"><span>110円</span>(稅達)/1000g</p>
+                    <div class="product_product_num">
+                        <div class="product_num_btn">
+                            <button class="min">-</button>
+                            <input type="text" class="num" value="1">
+                            <button class="add">+</button>
+                        </div>
+                        <p class="product_item_num">尚有庫存</p>
+                    </div>
+                    <button class="product_add_cart">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="cart-plus"
+                            class="product_svg_cart" role="img" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 576 512">
+                            <path fill="currentColor"
+                                d="M504.717 320H211.572l6.545 32h268.418c15.401 0 26.816 14.301 23.403 29.319l-5.517 24.276C523.112 414.668 536 433.828 536 456c0 31.202-25.519 56.444-56.824 55.994-29.823-.429-54.35-24.631-55.155-54.447-.44-16.287 6.085-31.049 16.803-41.548H231.176C241.553 426.165 248 440.326 248 456c0 31.813-26.528 57.431-58.67 55.938-28.54-1.325-51.751-24.385-53.251-52.917-1.158-22.034 10.436-41.455 28.051-51.586L93.883 64H24C10.745 64 0 53.255 0 40V24C0 10.745 10.745 0 24 0h102.529c11.401 0 21.228 8.021 23.513 19.19L159.208 64H551.99c15.401 0 26.816 14.301 23.403 29.319l-47.273 208C525.637 312.246 515.923 320 504.717 320zM408 168h-48v-40c0-8.837-7.163-16-16-16h-16c-8.837 0-16 7.163-16 16v40h-48c-8.837 0-16 7.163-16 16v16c0 8.837 7.163 16 16 16h48v40c0 8.837 7.163 16 16 16h16c8.837 0 16-7.163 16-16v-40h48c8.837 0 16-7.163 16-16v-16c0-8.837-7.163-16-16-16z">
+                            </path>
+                        </svg>
+                        加入購物車
+                    </button>
+                </div>
+            </div>
+            <div class="product_item">
+                <div class="product_heart"></div>
+                <div class="product_left">
+                    <div class="product_img">
+                        <img src="../images/shopping_list/product_pic6/5-3.png" alt="">
+                        <img src="../images/shopping_list/product_pic6/5-2.jpg" alt="">
+                        <img src="../images/shopping_list/product_pic6/5-1.jpg" alt="">
+                    </div>
+                    <div class="product_circle">
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
+                    </div>
+                </div>
+                <div class="product_right" data-id="100000">
+                    <p class="product_right_title">期間限定商品</p>
+                    <h3 class="product_right_name">菊</h3>
+                    <p class="product_main_content">剪菊雖是生菓子中基本的造型，但依照職人手作創意卻有千變萬化的可能，採用台農57號黃金地瓜與綿密萬丹紅豆，口感綿密香濃
+                    </p>
+                    <p class="product_ingredients">成分 : 豆沙、地瓜餡</p>
+                    <p class="product_save_days">保存期限:5日</p>
+                    <p class="product_price"><span>110円</span>(稅達)/1000g</p>
+                    <div class="product_product_num">
+                        <div class="product_num_btn">
+                            <button class="min">-</button>
+                            <input type="text" class="num" value="1">
+                            <button class="add">+</button>
+                        </div>
+                        <p class="product_item_num">尚有庫存</p>
+                    </div>
+                    <button class="product_add_cart">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="cart-plus"
+                            class="product_svg_cart" role="img" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 576 512">
+                            <path fill="currentColor"
+                                d="M504.717 320H211.572l6.545 32h268.418c15.401 0 26.816 14.301 23.403 29.319l-5.517 24.276C523.112 414.668 536 433.828 536 456c0 31.202-25.519 56.444-56.824 55.994-29.823-.429-54.35-24.631-55.155-54.447-.44-16.287 6.085-31.049 16.803-41.548H231.176C241.553 426.165 248 440.326 248 456c0 31.813-26.528 57.431-58.67 55.938-28.54-1.325-51.751-24.385-53.251-52.917-1.158-22.034 10.436-41.455 28.051-51.586L93.883 64H24C10.745 64 0 53.255 0 40V24C0 10.745 10.745 0 24 0h102.529c11.401 0 21.228 8.021 23.513 19.19L159.208 64H551.99c15.401 0 26.816 14.301 23.403 29.319l-47.273 208C525.637 312.246 515.923 320 504.717 320zM408 168h-48v-40c0-8.837-7.163-16-16-16h-16c-8.837 0-16 7.163-16 16v40h-48c-8.837 0-16 7.163-16 16v16c0 8.837 7.163 16 16 16h48v40c0 8.837 7.163 16 16 16h16c8.837 0 16-7.163 16-16v-40h48c8.837 0 16-7.163 16-16v-16c0-8.837-7.163-16-16-16z">
+                            </path>
+                        </svg>
+                        加入購物車
+                    </button>
+                </div>
+            </div>
+            <div class="product_item">
+                <div class="product_heart"></div>
+                <div class="product_left">
+                    <div class="product_img">
+                        <img src="../images/shopping_list/product_pic6/6-1.jpg" alt="">
+                        <img src="../images/shopping_list/product_pic6/6-3.jpg" alt="">
+                        <img src="../images/shopping_list/product_pic6/6-2.jpg" alt="">
+                    </div>
+                    <div class="product_circle">
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
+                    </div>
+                </div>
+                <div class="product_right" data-id="100000">
+                    <p class="product_right_title">期間限定商品</p>
+                    <h3 class="product_right_name">櫻</h3>
+                    <p class="product_main_content">小春堂招牌生菓子，淡淡的粉色蔓延在和菓子表面，代表櫻花滿開的春日時的幸福感，採用台農57號黃金地瓜與綿密萬丹紅豆，口感綿密香濃
+                    </p>
+                    <p class="product_ingredients">成分 : 豆沙、地瓜餡、櫻花餡</p>
+                    <p class="product_save_days">保存期限:5日</p>
+                    <p class="product_price"><span>110円</span>(稅達)/1000g</p>
+                    <div class="product_product_num">
+                        <div class="product_num_btn">
+                            <button class="min">-</button>
+                            <input type="text" class="num" value="1">
+                            <button class="add">+</button>
+                        </div>
+                        <p class="product_item_num">尚有庫存</p>
                     </div>
                     <button class="product_add_cart" id="grey">
                         <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="cart-plus"
@@ -972,6 +1551,7 @@
                 </div>
             </div>
         </div>
+        <!-- 7.最中 -->
         <div class="product_product">
             <div class="product_title">
                 <h2 id="product_small_title">PRODUCT</h2>
@@ -981,9 +1561,9 @@
                 <div class="product_heart"></div>
                 <div class="product_left">
                     <div class="product_img">
-                        <img src="../images/shopping_list/product_big.png" alt="">
-                        <img src="../images/shopping_list/product_big.png" alt="">
-                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_pic7/1-2.jpg" alt="">
+                        <img src="../images/shopping_list/product_pic7/1-1.jpg" alt="">
+                        <!-- <img src="../images/shopping_list/product_pic7/1-3.jpg" alt=""> -->
                     </div>
                     <div class="product_circle">
                         <div class="circle_grey"></div>
@@ -992,13 +1572,13 @@
                     </div>
                 </div>
                 <div class="product_right" data-id="100000">
-                    <p class="product_right_title">期間限定商品777</p>
-                    <h3 class="product_right_name">ねぎりう焦がし醬油風味</h3>
-                    <p class="product_main_content">焦がし醤油の風味とねぎの香りが良く合うかりんとうに仕上げました。焦がし醤油の風味とねぎの香りが良く合うかりんとうに仕上げました
+                    <p class="product_right_title">期間限定商品</p>
+                    <h3 class="product_right_name">牛奶最中餅</h3>
+                    <p class="product_main_content">餅殼精選台東池上鄉農會的三冠米，蒸成麻糬再用細火手工烘烤而成，香脆外殼配上濃厚牛奶風味內餡，令人回味無窮
                     </p>
-                    <p class="product_ingredients">成分 : 米、糖、白豆沙、水飴、柚子陳皮</p>
+                    <p class="product_ingredients">成分 : 米、糖、牛奶、奶油</p>
                     <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>4,104円</span>(稅達)/1000g</p>
+                    <p class="product_price"><span>100円</span>(稅達)/1000g</p>
                     <div class="product_product_num">
                         <div class="product_num_btn">
                             <button class="min">-</button>
@@ -1023,9 +1603,9 @@
                 <div class="product_heart"></div>
                 <div class="product_left">
                     <div class="product_img">
-                        <img src="../images/shopping_list/product_big.png" alt="">
-                        <img src="../images/shopping_list/product_big.png" alt="">
-                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_pic7/2-2.jpg" alt="">
+                        <img src="../images/shopping_list/product_pic7/2-1.jpg" alt="">
+                        <!-- <img src="../images/shopping_list/product_pic7/2-3.jpg" alt=""> -->
                     </div>
                     <div class="product_circle">
                         <div class="circle_grey"></div>
@@ -1035,12 +1615,12 @@
                 </div>
                 <div class="product_right" data-id="100000">
                     <p class="product_right_title">期間限定商品</p>
-                    <h3 class="product_right_name">ねぎりう焦がし醬油風味</h3>
-                    <p class="product_main_content">焦がし醤油の風味とねぎの香りが良く合うかりんとうに仕上げました。焦がし醤油の風味とねぎの香りが良く合うかりんとうに仕上げました
+                    <h3 class="product_right_name">巧克力最中餅</h3>
+                    <p class="product_main_content">餅殼精選台東池上鄉農會的三冠米，蒸成麻糬再用細火手工烘烤而成，香脆外殼配上100% 台灣一號屏東巧克力與牛奶製成內餡，可可味濃厚但不甜膩，喜歡巧克力的首選
                     </p>
-                    <p class="product_ingredients">成分 : 米、糖、白豆沙、水飴、柚子陳皮</p>
+                    <p class="product_ingredients">成分 : 米、糖、牛奶、巧克力</p>
                     <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>4,104円</span>(稅達)/1000g</p>
+                    <p class="product_price"><span>100円</span>(稅達)/1000g</p>
                     <div class="product_product_num">
                         <div class="product_num_btn">
                             <button class="min">-</button>
@@ -1065,9 +1645,9 @@
                 <div class="product_heart"></div>
                 <div class="product_left">
                     <div class="product_img">
-                        <img src="../images/shopping_list/product_big.png" alt="">
-                        <img src="../images/shopping_list/product_big.png" alt="">
-                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_pic7/3-2.jpg" alt="">
+                        <!-- <img src="../images/shopping_list/product_pic7/3-3.jpg" alt=""> -->
+                        <img src="../images/shopping_list/product_pic7/3-1.jpg" alt="">
                     </div>
                     <div class="product_circle">
                         <div class="circle_grey"></div>
@@ -1077,12 +1657,12 @@
                 </div>
                 <div class="product_right" data-id="100000">
                     <p class="product_right_title">期間限定商品</p>
-                    <h3 class="product_right_name">ねぎりう焦がし醬油風味</h3>
-                    <p class="product_main_content">焦がし醤油の風味とねぎの香りが良く合うかりんとうに仕上げました。焦がし醤油の風味とねぎの香りが良く合うかりんとうに仕上げました
+                    <h3 class="product_right_name">抹茶最中餅</h3>
+                    <p class="product_main_content">餅殼精選台東池上鄉農會的三冠米，蒸成麻糬再用細火手工烘烤而成，香脆外殼配上特選靜岡抹茶與阿里山台茶12號的黃金比例調配，抹茶味濃厚不甜膩
                     </p>
-                    <p class="product_ingredients">成分 : 米、糖、白豆沙、水飴、柚子陳皮</p>
+                    <p class="product_ingredients">成分 : 米、糖、抹茶</p>
                     <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>4,104円</span>(稅達)/1000g</p>
+                    <p class="product_price"><span>100円</span>(稅達)/1000g</p>
                     <div class="product_product_num">
                         <div class="product_num_btn">
                             <button class="min">-</button>
@@ -1099,6 +1679,78 @@
                                 d="M504.717 320H211.572l6.545 32h268.418c15.401 0 26.816 14.301 23.403 29.319l-5.517 24.276C523.112 414.668 536 433.828 536 456c0 31.202-25.519 56.444-56.824 55.994-29.823-.429-54.35-24.631-55.155-54.447-.44-16.287 6.085-31.049 16.803-41.548H231.176C241.553 426.165 248 440.326 248 456c0 31.813-26.528 57.431-58.67 55.938-28.54-1.325-51.751-24.385-53.251-52.917-1.158-22.034 10.436-41.455 28.051-51.586L93.883 64H24C10.745 64 0 53.255 0 40V24C0 10.745 10.745 0 24 0h102.529c11.401 0 21.228 8.021 23.513 19.19L159.208 64H551.99c15.401 0 26.816 14.301 23.403 29.319l-47.273 208C525.637 312.246 515.923 320 504.717 320zM408 168h-48v-40c0-8.837-7.163-16-16-16h-16c-8.837 0-16 7.163-16 16v40h-48c-8.837 0-16 7.163-16 16v16c0 8.837 7.163 16 16 16h48v40c0 8.837 7.163 16 16 16h16c8.837 0 16-7.163 16-16v-40h48c8.837 0 16-7.163 16-16v-16c0-8.837-7.163-16-16-16z">
                             </path>
                         </svg>
+                        加入購物車
+                    </button>
+                </div>
+            </div>
+            <div class="product_item">
+                <div class="product_heart"></div>
+                <div class="product_left">
+                    <div class="product_img">
+                        <img src="../images/shopping_list/product_pic7/4-1.jpg" alt="">
+                        <img src="../images/shopping_list/product_pic7/4-2.jpg" alt="">
+                        <!-- <img src="../images/shopping_list/product_pic7/4-3.jpg" alt=""> -->
+                    </div>
+                    <div class="product_circle">
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
+                    </div>
+                </div>
+                <div class="product_right" data-id="100000">
+                    <p class="product_right_title">期間限定商品</p>
+                    <h3 class="product_right_name">花生最中餅</h3>
+                    <p class="product_main_content">餅殼精選台東池上鄉農會的三冠米，蒸成麻糬再用細火手工烘烤而成，香脆外殼配上新竹福源花生醬，與花生台南18 號的花生顆粒，增添口感並降低甜度，老少咸宜的風味
+                    </p>
+                    <p class="product_ingredients">成分 : 米、糖、花生</p>
+                    <p class="product_save_days">保存期限:5日</p>
+                    <p class="product_price"><span>100円</span>(稅達)/1000g</p>
+                    <div class="product_product_num">
+                        <div class="product_num_btn">
+                            <button class="min">-</button>
+                            <input type="text" class="num" value="1">
+                            <button class="add">+</button>
+                        </div>
+                        <p class="product_item_num">尚有庫存</p>
+                    </div>
+                    <button class="product_add_cart">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="cart-plus" class="product_svg_cart" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M504.717 320H211.572l6.545 32h268.418c15.401 0 26.816 14.301 23.403 29.319l-5.517 24.276C523.112 414.668 536 433.828 536 456c0 31.202-25.519 56.444-56.824 55.994-29.823-.429-54.35-24.631-55.155-54.447-.44-16.287 6.085-31.049 16.803-41.548H231.176C241.553 426.165 248 440.326 248 456c0 31.813-26.528 57.431-58.67 55.938-28.54-1.325-51.751-24.385-53.251-52.917-1.158-22.034 10.436-41.455 28.051-51.586L93.883 64H24C10.745 64 0 53.255 0 40V24C0 10.745 10.745 0 24 0h102.529c11.401 0 21.228 8.021 23.513 19.19L159.208 64H551.99c15.401 0 26.816 14.301 23.403 29.319l-47.273 208C525.637 312.246 515.923 320 504.717 320zM408 168h-48v-40c0-8.837-7.163-16-16-16h-16c-8.837 0-16 7.163-16 16v40h-48c-8.837 0-16 7.163-16 16v16c0 8.837 7.163 16 16 16h48v40c0 8.837 7.163 16 16 16h16c8.837 0 16-7.163 16-16v-40h48c8.837 0 16-7.163 16-16v-16c0-8.837-7.163-16-16-16z"></path></svg>
+                        加入購物車
+                    </button>
+                </div>
+            </div>
+            <div class="product_item">
+                <div class="product_heart"></div>
+                <div class="product_left">
+                    <div class="product_img">
+                        <img src="../images/shopping_list/product_pic7/5-2.jpg" alt="">
+                        <img src="../images/shopping_list/product_pic7/5-1.jpg" alt="">
+                        <!-- <img src="../images/shopping_list/product_pic7/5-3.jpg" alt=""> -->
+                    </div>
+                    <div class="product_circle">
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
+                        <div class="circle_grey"></div>
+                    </div>
+                </div>
+                <div class="product_right" data-id="100000">
+                    <p class="product_right_title">期間限定商品</p>
+                    <h3 class="product_right_name">紅豆最中餅</h3>
+                    <p class="product_main_content">餅殼精選台東池上鄉農會的三冠米，蒸成麻糬再用細火手工烘烤而成，香脆外殼配上特製牛奶餡與熬煮八小時的屏東老鷹紅豆，製作成不甜不膩的牛奶紅豆
+                    </p>
+                    <p class="product_ingredients">成分 : 米、糖、紅豆、牛奶</p>
+                    <p class="product_save_days">保存期限:5日</p>
+                    <p class="product_price"><span>100円</span>(稅達)/1000g</p>
+                    <div class="product_product_num">
+                        <div class="product_num_btn">
+                            <button class="min">-</button>
+                            <input type="text" class="num" value="1">
+                            <button class="add">+</button>
+                        </div>
+                        <p class="product_item_num">尚有庫存</p>
+                    </div>
+                    <button class="product_add_cart">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="cart-plus" class="product_svg_cart" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M504.717 320H211.572l6.545 32h268.418c15.401 0 26.816 14.301 23.403 29.319l-5.517 24.276C523.112 414.668 536 433.828 536 456c0 31.202-25.519 56.444-56.824 55.994-29.823-.429-54.35-24.631-55.155-54.447-.44-16.287 6.085-31.049 16.803-41.548H231.176C241.553 426.165 248 440.326 248 456c0 31.813-26.528 57.431-58.67 55.938-28.54-1.325-51.751-24.385-53.251-52.917-1.158-22.034 10.436-41.455 28.051-51.586L93.883 64H24C10.745 64 0 53.255 0 40V24C0 10.745 10.745 0 24 0h102.529c11.401 0 21.228 8.021 23.513 19.19L159.208 64H551.99c15.401 0 26.816 14.301 23.403 29.319l-47.273 208C525.637 312.246 515.923 320 504.717 320zM408 168h-48v-40c0-8.837-7.163-16-16-16h-16c-8.837 0-16 7.163-16 16v40h-48c-8.837 0-16 7.163-16 16v16c0 8.837 7.163 16 16 16h48v40c0 8.837 7.163 16 16 16h16c8.837 0 16-7.163 16-16v-40h48c8.837 0 16-7.163 16-16v-16c0-8.837-7.163-16-16-16z"></path></svg>
                         加入購物車
                     </button>
                 </div>
@@ -1134,7 +1786,7 @@
         <div class="product_area" data-num="6">
             <i></i>
             <img src="../images/shopping_list//shop6.png" alt="">
-            <span>煉切</span>
+            <span>生菓子</span>
         </div>
         <div class="product_area" data-num="7">
             <i></i>
