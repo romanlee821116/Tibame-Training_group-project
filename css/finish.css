@@ -618,6 +618,7 @@ body {
   color: #fff;
   text-align: center;
   font-weight: 900;
+  cursor: pointer;
   text-align: center;
   margin: 30px auto 0 auto;
 }

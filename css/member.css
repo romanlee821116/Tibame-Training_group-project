@@ -446,6 +446,7 @@ html, body {
   color: #fff;
   text-align: center;
   font-weight: 900;
+  cursor: pointer;
 }
 
 .memberPart1 button:hover {
@@ -490,6 +491,7 @@ html, body {
   color: #fff;
   text-align: center;
   font-weight: 900;
+  cursor: pointer;
 }
 
 .memberPart2 button:hover {
@@ -863,6 +865,7 @@ html, body {
   color: #fff;
   text-align: center;
   font-weight: 900;
+  cursor: pointer;
   margin-top: 5px;
 }
 

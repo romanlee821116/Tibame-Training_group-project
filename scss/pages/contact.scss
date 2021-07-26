@@ -193,17 +193,19 @@ img{
   color: #172852;
 }
 
-.contact_nameBorder > input{
-  border: none;
-  outline: none;
-  border-radius: 5px;
-  background-color:#f0ebe9;
-  width: 100%;
-  height: 40px;
-  margin-bottom: 10px;
-  padding: 16px;
-  font-size: 14px;
-  color: #172852;
+.contact_nameBorder{
+  input{
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background-color:#f0ebe9;
+    width: 100%;
+    height: 40px;
+    margin-bottom: 10px;
+    padding: 16px;
+    font-size: 14px;
+    color: #172852;
+  }
 }
 
 ::placeholder {
@@ -238,7 +240,8 @@ img{
   /* font-family: MicrosoftJhengHeiBold; */
 }
 
-// 隱藏原本的radio
+.contact_radioBorder{
+  // 隱藏原本的radio
 input[type="radio"]{
   margin: 0 5px 0 0;
   opacity: 0;
@@ -250,6 +253,7 @@ input[type="radio"]{
 // 被選擇，字要變色
 input[type="radio"]:checked + label{
   color: #172852;
+}
 }
 
 

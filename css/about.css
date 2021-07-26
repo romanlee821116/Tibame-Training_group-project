@@ -1124,6 +1124,7 @@ body::-webkit-scrollbar {
   color: #fff;
   text-align: center;
   font-weight: 900;
+  cursor: pointer;
   display: inline-block;
   margin: 0 20px;
 }

@@ -488,12 +488,11 @@
     color: #fff;
     text-align: center;
     font-weight: 900;
-
+    cursor: pointer;
     &:hover {
         background-color: $lightBlue;
         color: #fff;
         border: 3px solid $lightBlue;
     }
-
     @content;
 }
