@@ -39,4 +39,9 @@ $(document).ready(function () {
         $('.newsPart5').fadeIn(700);
         $('.news_blockAll > div').not('.newsPart5').hide();
     });
+
+    $('.newsAll_classificationTitle>h4').click(function(){
+        $(this).addClass('thisClicked');
+        $(this).siblings().removeClass('thisClicked');
+    });
 })
