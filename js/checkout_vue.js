@@ -167,6 +167,7 @@ $(document).ready(function(){
         item.quantity++;
         //=============local storage =======================   
         let this_price = item.price;
+        console.log(this_price);
         let new_subtotal = parseInt(localStorage['subtotal']) + this_price;
         let new_total = parseInt(localStorage['total']) + this_price;
         let customization = this.customization;

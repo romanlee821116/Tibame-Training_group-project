@@ -63,6 +63,8 @@ table {
   font-size: 14px;
   background-image: url(../images/login/login_bg.png);
   background-repeat: no-repeat;
+  z-index: 999;
+  position: relative;
 }
 
 .loginAll {

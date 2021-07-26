@@ -698,6 +698,9 @@ body {
 }
 
 @media (max-width: 575px) {
+  #psycho_title {
+    font-size: 18px;
+  }
   .psycho_questionScreen {
     width: 80%;
   }
@@ -718,6 +721,7 @@ body {
 @media (max-width: 500px) {
   .psycho_questionScreen {
     width: 80%;
+    margin-top: 60px;
   }
   .psycho_question01Screen {
     height: 100vh;

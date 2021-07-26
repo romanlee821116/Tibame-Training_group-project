@@ -2,7 +2,6 @@ $(document).ready(function () {
     console.log('new run');
     // ==============標題點擊效果=================
     $('#newsAll_classification_all').click(function () {
-        console.log('run bar');
         $('.newsUnderLine .choosenBar2').css('left', '0%');
         $(this).css('color', '#172852');
         $(this).siblings().css('color', '#cba89a');
@@ -11,7 +10,6 @@ $(document).ready(function () {
     });
 
     $('#newsAll_classification_product').click(function () {
-        
         $('.newsUnderLine .choosenBar2').css({left: '20%'});
         console.log('run bar2');
         $(this).css('color', '#172852');
@@ -21,7 +19,6 @@ $(document).ready(function () {
     });
 
     $('#newsAll_classification_activity').click(function () {
-        console.log('run bar3');
         $('.choosenBar2').css('left', '40%');
         $(this).css('color', '#172852');
         $(this).siblings().css('color', '#cba89a');
@@ -30,7 +27,6 @@ $(document).ready(function () {
     });
 
     $('#newsAll_classification_report').click(function () {
-        console.log('run bar4');
         $('.choosenBar2').css('left', '60%');
         $(this).css('color', '#172852');
         $(this).siblings().css('color', '#cba89a');
@@ -39,7 +35,6 @@ $(document).ready(function () {
     });
 
     $('#newsAll_classification_shop').click(function () {
-        console.log('run bar5');
         $('.choosenBar2').css('left', '80%');
         $(this).css('color', '#172852');
         $(this).siblings().css('color', '#cba89a');

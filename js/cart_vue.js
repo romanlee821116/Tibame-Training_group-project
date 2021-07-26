@@ -213,8 +213,10 @@ $(document).ready(function(){
           total += item2.price * item2.quantity;
         };
         //=====local storage新增總金額=====
-        localStorage['totalPrice'] = '';
-        localStorage.setItem('totalPrice', total);
+        localStorage['subtotal'] = '';
+        localStorage['total']='';      
+        localStorage.setItem('subtotal', total);
+        localStorage.setItem('total', total);
         //================================
         return total.toString().replace(/\B(?=(\d{3})+$)/g, ',');
       },
@@ -241,16 +243,16 @@ $(document).ready(function(){
       }
   
       // 新增一般
-      let item_array = [];
-      item_array.push(item);
-      localStorage['item_List'] = [];
-      localStorage.setItem('item_List', JSON.stringify(item_array));
+      // let item_array = [];
+      // item_array.push(item);
+      // localStorage['item_List'] = [];
+      // localStorage.setItem('item_List', JSON.stringify(item_array));
   
       // 新增客製
-      let customized_array = [];
-      customized_array.push(customized);
-      localStorage['customized_List'] = [];
-      localStorage.setItem('customized_List', JSON.stringify(customized_array));
+      // let customized_array = [];
+      // customized_array.push(customized);
+      // localStorage['customized_List'] = [];
+      // localStorage.setItem('customized_List', JSON.stringify(customized_array));
   
   
       //===客製加一

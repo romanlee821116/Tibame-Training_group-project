@@ -294,11 +294,6 @@
   color: #172852;
 }
 
-
-
-
-
-
 /* ========== 刪除多個按鈕 ========== */
 
 #cart_deleteMany{
@@ -311,6 +306,7 @@
   margin: 10px 0 30px;
   font-size: 14px;
   cursor: default;
+  line-height: 20px;
 }
 
 
@@ -397,6 +393,13 @@
   cursor: pointer;
   text-decoration: none;
   display: inline-block;
+  // =================
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  &:hover{
+    color: #bb866a;
+  }
 }
 
 
