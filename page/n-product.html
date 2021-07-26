@@ -15,7 +15,7 @@
                 <p>小春堂後臺管理</p>
             </div>
                
-            <div class="n-product_logout">
+            <div class="n-product_logout" @click='log_out'>
                 <p>帳號登出</p>
                 <img src="../images/backend/log-out.png" alt="" srcset="">
             </div>
@@ -196,7 +196,7 @@
         
             template: `
                 <div>
-                    <div class="n-product_edit" v-if='current_edit !== null'>
+                    <div class="n-product_edit">
 
                         <p>編輯與查看</p>
                         
@@ -292,7 +292,7 @@
                         </div>
                     </div>
 
-                    <div id="hide" v-if='current_edit !== null'></div>
+                    <div id="hide"></div>
                 </div>
 
             `,
@@ -524,7 +524,10 @@
 
                     this.products.unshift(ppp);
 
-                }  
+                },
+                log_out(){
+                    location.href = "./n-login.html"
+                }
 
 
                 

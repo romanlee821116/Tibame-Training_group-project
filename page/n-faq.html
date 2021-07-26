@@ -15,7 +15,7 @@
                 <p>小春堂後臺管理</p>
             </div>
                
-            <div class="n-faq_logout">
+            <div class="n-faq_logout" @click='log_out'>
                 <p>帳號登出</p>
                 <img src="../images/backend/log-out.png" alt="" srcset="">
             </div>
@@ -88,7 +88,7 @@
                 
                 <li>
                     <label for="">&emsp;&emsp;回答:</label>
-                    <textarea name="" id="" cols="73" rows="8">{{f_answer}}</textarea>
+                    <textarea name="" id="" cols="73" rows="8" v-model='f_answer'></textarea>
                 </li>
             </ul>
             
@@ -153,7 +153,7 @@
                         </div>
 
                     </div>
-                    <div id="hide" v-if='current_edit !== null'></div>
+                    <div id="hide"></div>
                 </div>
 
             `,
@@ -242,6 +242,8 @@
                     let n_index = this.$data.current_edit;
 
                     this.faqs[n_index].問題分類 = this.f_sort;
+                    this.faqs[n_index].問題 = this.f_question;
+                    this.faqs[n_index].回答 = this.f_answer;
 
                     this.current_edit = null;
                 },
@@ -268,7 +270,9 @@
                     // console.log(fff);
 
                     this.faqs.unshift(fff);
-
+                },
+                log_out(){
+                    location.href = "./n-login.html"
                 }                
                 
             },
