@@ -8,7 +8,7 @@ $(document).ready(function() {
         $(this).find("i").addClass("yellow").show();
         $(this).find('span').css({ color: '#172852' });
         if ($(this).find("i").hasClass("yellow")) {
-            $(this).find("img").attr("src", `url('../images/shopping_list/shop${ index + 1}_hov.png')`);
+            // $(this).find("img").attr("src", `url('../images/shopping_list/shop${ index + 1}_hov.png')`);
             $(this).siblings().find("i").removeClass("yellow").hide();
             $(this).siblings().find('span').css({ color: '#bb866a' });
         }
