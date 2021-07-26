@@ -9,6 +9,8 @@
 *{
   box-sizing: border-box;
   font-family: "微軟正黑體";
+  text-decoration: none;
+  font-weight: 900;
   // color: #bb866a;
 }
 
@@ -157,6 +159,7 @@ body{
 .finish_title{
   background-color: #cba89a;
   color: #ffffff;
+  padding: 20px 15px;
   padding-left: 15px;
   font-size: 18px;
   font-weight: bold;
@@ -170,7 +173,7 @@ body{
   padding-left: 15px;
   font-size: 16px;
   font-weight: bold;
-  height: 25px;
+  height: 35px;
   display: flex;
   align-items: center;
 }
