@@ -46,36 +46,36 @@ $(function(){
             ],
 
             category: [
-                {type: '所有商品', class:'', id: '0'}, 
-                {type: '銅鑼燒', class:'', id: '1'}, 
-                {type: '鯛魚燒', class:'', id: '2'}, 
-                {type: '大福', class:'', id: '3'}, 
-                {type: '日式餅乾', class:'', id: '4'},
-                {type: '羊羹', class:'', id: '5'},
-                {type: '煉切', class:'', id: '6'},
-                {type: '最中', class:'', id: '7'},
+                {type: '所有商品', class:'cus_categoryBtn categoryChoose', id: '0'}, 
+                {type: '銅鑼燒', class:'cus_categoryBtn', id: '1'}, 
+                {type: '鯛魚燒', class:'cus_categoryBtn', id: '2'}, 
+                {type: '大福', class:'cus_categoryBtn', id: '3'}, 
+                {type: '日式餅乾', class:'cus_categoryBtn', id: '4'},
+                {type: '羊羹', class:'cus_categoryBtn', id: '5'},
+                {type: '煉切', class:'cus_categoryBtn', id: '6'},
+                {type: '最中', class:'cus_categoryBtn', id: '7'},
             ],
 
             cus_item: [
-                {txt: '這是第1個產品',class:'1 cus-item', img: '../images/customized/customizedPic.png', type:'', id:'1' },
-                {txt: '這是第2個產品',class:'2 cus-item', img: '../images/customized/customizedPic.png', type:'', id:'2' },
-                {txt: '這是第3個產品',class:'3 cus-item', img: '../images/customized/customizedPic.png', type:'', id:'3' },
-                {txt: '這是第4個產品',class:'4 cus-item', img: '../images/customized/customizedPic.png', type:'', id:'4' },
-                {txt: '這是第5個產品',class:'5 cus-item', img: '../images/customized/customizedPic.png', type:'', id:'5' },
-                {txt: '這是第6個產品',class:'6 cus-item', img: '../images/customized/customizedPic.png', type:'', id:'6' },
-                {txt: '這是第7個產品',class:'7 cus-item', img: '../images/customized/customizedPic.png', type:'', id:'7' },
-                {txt: '這是第8個產品',class:'8 cus-item', img: '../images/customized/customizedPic.png', type:'', id:'8' },
-                {txt: '這是第9個產品',class:'9 cus-item', img: '../images/customized/customizedPic.png', type:'', id:'9' },
-                {txt: '這是第10個產品',class:'10 cus-item', img: '../images/customized/customizedPic.png', type:'', id:'10' },
-                {txt: '這是第11個產品',class:'11 cus-item', img: '../images/customized/customizedPic.png', type:'', id:'11' },
-                {txt: '這是第12個產品',class:'12 cus-item', img: '../images/customized/customizedPic.png', type:'', id:'12' },
-                {txt: '這是第13個產品',class:'13 cus-item', img: '../images/customized/customizedPic.png', type:'', id:'13' },
-                {txt: '這是第14個產品',class:'14 cus-item', img: '../images/customized/customizedPic.png', type:'', id:'14' },
-                {txt: '這是第15個產品',class:'15 cus-item', img: '../images/customized/customizedPic.png', type:'', id:'15' },
-                {txt: '這是第16個產品',class:'16 cus-item', img: '../images/customized/customizedPic.png', type:'', id:'16' },
-                {txt: '這是第17個產品',class:'17 cus-item', img: '../images/customized/customizedPic.png', type:'', id:'17' },
-                {txt: '這是第18個產品',class:'18 cus-item', img: '../images/customized/customizedPic.png', type:'', id:'18' },
-                {txt: '這是第19個產品',class:'19 cus-item', img: '../images/customized/customizedPic.png', type:'', id:'19' },
+                {txt: '這是第1個產品',class:'1 cus-item', img: '../images/customized/customizedPic.png', type:'1', id:'1' },
+                {txt: '這是第2個產品',class:'2 cus-item', img: '../images/customized/customizedPic.png', type:'1', id:'2' },
+                {txt: '這是第3個產品',class:'3 cus-item', img: '../images/customized/customizedPic.png', type:'1', id:'3' },
+                {txt: '這是第4個產品',class:'4 cus-item', img: '../images/customized/customizedPic.png', type:'2', id:'4' },
+                {txt: '這是第5個產品',class:'5 cus-item', img: '../images/customized/customizedPic.png', type:'2', id:'5' },
+                {txt: '這是第6個產品',class:'6 cus-item', img: '../images/customized/customizedPic.png', type:'2', id:'6' },
+                {txt: '這是第7個產品',class:'7 cus-item', img: '../images/customized/customizedPic.png', type:'3', id:'7' },
+                {txt: '這是第8個產品',class:'8 cus-item', img: '../images/customized/customizedPic.png', type:'3', id:'8' },
+                {txt: '這是第9個產品',class:'9 cus-item', img: '../images/customized/customizedPic.png', type:'3', id:'9' },
+                {txt: '這是第10個產品',class:'10 cus-item', img: '../images/customized/customizedPic.png', type:'4', id:'10' },
+                {txt: '這是第11個產品',class:'11 cus-item', img: '../images/customized/customizedPic.png', type:'4', id:'11' },
+                {txt: '這是第12個產品',class:'12 cus-item', img: '../images/customized/customizedPic.png', type:'4', id:'12' },
+                {txt: '這是第13個產品',class:'13 cus-item', img: '../images/customized/customizedPic.png', type:'5', id:'13' },
+                {txt: '這是第14個產品',class:'14 cus-item', img: '../images/customized/customizedPic.png', type:'5', id:'14' },
+                {txt: '這是第15個產品',class:'15 cus-item', img: '../images/customized/customizedPic.png', type:'5', id:'15' },
+                {txt: '這是第16個產品',class:'16 cus-item', img: '../images/customized/customizedPic.png', type:'6', id:'16' },
+                {txt: '這是第17個產品',class:'17 cus-item', img: '../images/customized/customizedPic.png', type:'6', id:'17' },
+                {txt: '這是第18個產品',class:'18 cus-item', img: '../images/customized/customizedPic.png', type:'6', id:'18' },
+                {txt: '這是第19個產品',class:'19 cus-item', img: '../images/customized/customizedPic.png', type:'7', id:'19' },
             ],
             bagCard: [
                 {src: '../images/customized/card_back02.png', class:'choose-card card2', id:'2'},
@@ -235,6 +235,21 @@ $(function(){
             zIndex: '0'
         });
     });
+    //商品分類
+    $('.cus_categoryBtn').click(function(e){
+        $('.cus_categoryBtn').removeClass('categoryChoose');
+        $(this).addClass('categoryChoose');
+        let this_type = $(this).attr('data-cat');
+        let show_item = `.cus-item[data-itemtype=${this_type}]`;
+        $('.cus-item').hide();
+        $(show_item).show();
+        if(this_type==0){
+            $('.cus-item').show();
+        }
+
+        console.log(this_type);
+        e.preventDefault();
+    })
     //商品添加到格子中
     $('.fa-plus').click(function(e){
         let itemPic = $(this).closest('div').prev('div').find('img').attr('src');

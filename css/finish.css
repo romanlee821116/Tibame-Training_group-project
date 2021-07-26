@@ -674,7 +674,6 @@ table {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-family: "微軟正黑體";
-  color: #bb866a;
 }
 
 body {
@@ -684,14 +683,38 @@ body {
   background-attachment: fixed;
 }
 
-img {
-  width: 100%;
-}
-
 .finish_container {
   width: 80%;
   max-width: 1200px;
   margin: auto;
+}
+
+.finish_container img {
+  width: 100%;
+}
+
+.finish_container .finish_btn {
+  display: block;
+  padding: 8px 10px;
+  width: 120px;
+  border-radius: 25px;
+  background: #172852;
+  border: 3px solid #172852;
+  color: #fff;
+  text-align: center;
+  font-weight: 900;
+  text-align: center;
+  margin: 30px auto 0 auto;
+}
+
+.finish_container .finish_btn:hover {
+  background-color: #2e447c;
+  color: #fff;
+  border: 3px solid #2e447c;
+}
+
+.finish_container .finish_btn a {
+  color: #fff;
 }
 
 @media screen and (max-width: 576px) {
