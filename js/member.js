@@ -32,10 +32,21 @@ $(document).ready(function(){
                     <p>收件人地址：<input disabled type="text" value='******民權東路六段'></p>
                 </div>
                 <p>部分資訊打***以保護個人隱私</p>
-                <button  @click='recevierClose'>確認</button>
+                <button>確認</button>
             </div>
         `,
-        methods: {
+        // template: `
+        //     <div class='receiverDetail'>
+        //         <div>
+        //             <p>收件人姓名：<input disabled type="text" value='李* 先生/小姐'></p>
+        //             <p>收件人電話：<input disabled type="text" value='0912345678'></p>
+        //             <p>收件人地址：<input disabled type="text" value='******民權東路六段'></p>
+        //         </div>
+        //         <p>部分資訊打***以保護個人隱私</p>
+        //         <button  @click='recevierClose'>確認</button>
+        //     </div>
+        // `,
+        // methods: {
             // recevierClose(){
             //     // this.isActive = true;
             //     $('.receiverDetail').fadeOut();
@@ -43,7 +54,7 @@ $(document).ready(function(){
             //     // 可滑動卷軸
             //     $('body').removeClass('stopScroll');
             // },
-        },
+        // },
     });
 
     new Vue({

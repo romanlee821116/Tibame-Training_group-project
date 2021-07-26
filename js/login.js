@@ -1,6 +1,6 @@
 $(document).ready(function(){
     
-    console.log('ready');
+    // console.log('ready');
     getRandom();        //驗證碼亂數
     $('.eye2').hide();  //開眼睛看密碼
     $('.loginpopBG').hide();   //送出密碼彈窗關閉
@@ -86,12 +86,16 @@ $(document).ready(function(){
     });
 
     // 開眼睛看密碼==========================
-    $('.loginAll .eye').click(function(){
+    $('.loginAll .eye').off("click").click(function(){
         let type = $(this).prev().attr('type');
+        // console.log($(this).prev());
+        console.log(type);
         if( type == 'text'){
             $(this).prev().attr('type','password');
+            // console.log('eye');
         }else{
             $(this).prev().attr('type','text');
+            // console.log('eye');
         };
     });
     

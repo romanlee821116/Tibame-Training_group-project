@@ -4,7 +4,7 @@
 
 *{
     box-sizing: border-box;
-    font-family: Calibri;
+    font-family: '微軟正黑體';
     font-weight: bold;
 }
 
@@ -439,7 +439,7 @@ input{
 .type2{
 	@include popUp_oneBtn();
 	position: relative; //預設是fixed
-    top: 15%;
+    // top: 15%;
     .mainBtn{
         @include btn(); //按鈕樣式
     }
