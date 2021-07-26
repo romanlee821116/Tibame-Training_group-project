@@ -1,5 +1,4 @@
 @import '../pages/cart.scss';
-@import '../base/reset.scss';
 @import '../mixin/mixin';
 
 .navbar{
@@ -27,22 +26,24 @@ body{
   width: 80%;
   max-width: 1200px;
   margin: auto;
-  img{
-    width: 100%;
-  }
-  .finish_btn{
-    @include btn();
-    text-align: center;
-    margin: 30px auto 0 auto;
-    a{
-      color: #fff;
-    }
-  }
 }
 
 @media screen and (max-width: 576px){
   .finish_container{
     width: 90%;
+  }
+}
+
+// 返回首頁
+.finish_btn{
+  @include btn();
+  text-align: center;
+  margin: 30px auto 0 auto;
+  padding: 0;
+  a{
+    color: #fff;
+    display: block;
+    padding: 8px 10px;
   }
 }
 
