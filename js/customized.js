@@ -259,7 +259,13 @@ $(function(){
         $('.selected .choosenBox').find('.selected_item').attr('src', picSrc).addClass('haveItem');
         $('.selected .choosenBox').find('.selected_item').attr('data-id', itemId);
         $('.selected .choosenBox').find('.selected_item').attr('data-itemName', itemTxt);
-        e.preventDefault();      
+        e.preventDefault(); 
+        //顯示提示
+        $('.custom_reminder > span').text(`${boxSize-$('.haveItem').length}`)
+        $('.custom_reminder').fadeIn();
+        setTimeout(function(){
+            $('.custom_reminder').fadeOut();
+        },2000);
         //自動將選到的格子換成下一格
         let currentBox = parseInt($('.selected .choosenBox').attr('box-id'));        
         let nextBox = `.selected .custom_gridBox[box-id=${currentBox+1}]`
@@ -268,7 +274,8 @@ $(function(){
         if(currentBox == boxSize){
             $('html,body').animate({ scrollTop: 0 },1000); 
             // currentBox = 0;
-            $('.selected .custom_gridBox').addClass('choosenBox');            
+            $('.selected .custom_gridBox').addClass('choosenBox');  
+            $('.custom_reminder').remove();          
         }
     })
 
@@ -817,7 +824,7 @@ $(function(){
             let this_icon = `.custom_card_IconOnCard img[data-icon=${icon_id}]`;
             $(this_icon).closest('div').remove();
             //刪除iconType陣列中的貼圖id
-            let this_id = customized('iconType').indexOf(icon_id);
+            let this_id = customized['iconType'].indexOf(icon_id);
             customized['iconType'].slice(this_id,1);
         };
     });

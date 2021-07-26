@@ -372,6 +372,23 @@ body {
   top: 80%;
 }
 
+.custom_reminder {
+  width: 200px;
+  height: 70px;
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  border-radius: 25px;
+  background-color: #bb866a;
+  text-align: center;
+  line-height: 70px;
+  color: #fff;
+  z-index: 100;
+  display: none;
+}
+
 .cus_wrap {
   width: 90%;
   max-width: 1400px;
@@ -592,6 +609,7 @@ body {
   color: #fff;
   text-align: center;
   font-weight: 900;
+  cursor: pointer;
 }
 
 .custom_btn:hover {

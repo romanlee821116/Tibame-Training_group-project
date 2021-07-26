@@ -63,6 +63,21 @@ body{
     right: -100px;
     top: 80%;    
 }
+.custom_reminder{
+    width: 200px;
+    height: 70px;
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 25px;
+    background-color: $darkBrown;
+    text-align: center;
+    line-height: 70px;
+    color: #fff;
+    z-index: 100;
+    display: none;
+}
 
 .cus_wrap{
     // width: 80%;
