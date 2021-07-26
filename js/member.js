@@ -17,9 +17,9 @@ $(document).ready(function(){
     Vue.component('receiver-detail',{
         data(){
             return {
-                recevierName: '李* 先生/小姐',
-                recevierPhone: '0912345678',
-                recevierAddress: '******民權東路六段',
+                memberRecevierName: '李* 先生/小姐',
+                memberRecevierPhone: '0912345678',
+                memberRecevierAddress: '******民權東路六段',
 
                 // isActive: false,
             };
@@ -27,22 +27,22 @@ $(document).ready(function(){
         template: `
             <div class='receiverDetail'>
                 <div>
-                    <p>收件人姓名：<input disabled type="text" :value='recevierName'></p>
-                    <p>收件人電話：<input disabled type="text" :value='recevierPhone'></p>
-                    <p>收件人地址：<input disabled type="text" :value='recevierAddress'></p>
+                    <p>收件人姓名：<input disabled type="text" value='李* 先生/小姐'></p>
+                    <p>收件人電話：<input disabled type="text" value='0912345678'></p>
+                    <p>收件人地址：<input disabled type="text" value='******民權東路六段'></p>
                 </div>
                 <p>部分資訊打***以保護個人隱私</p>
                 <button  @click='recevierClose'>確認</button>
             </div>
         `,
         methods: {
-            recevierClose(){
-                // this.isActive = true;
-                $('.receiverDetail').fadeOut();
-                $('.greyBackground').remove();
-                // 可滑動卷軸
-                $('body').removeClass('stopScroll');
-            },
+            // recevierClose(){
+            //     // this.isActive = true;
+            //     $('.receiverDetail').fadeOut();
+            //     $('.greyBackground').remove();
+            //     // 可滑動卷軸
+            //     $('body').removeClass('stopScroll');
+            // },
         },
     });
 
@@ -53,6 +53,13 @@ $(document).ready(function(){
 
     // ===================== vue結束ㄌ =======================
     
+    // ------暫時用這個取代vue的click----------
+    $('.receiverDetail>button').click(function(){
+        $('.receiverDetail').fadeOut();
+        $('.greyBackground').remove();
+        // 可滑動卷軸
+        $('body').removeClass('stopScroll');
+    });
 
     // ===================== 標題點擊效果 ========================
     // 標題下底線
