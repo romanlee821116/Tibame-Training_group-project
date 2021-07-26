@@ -1,6 +1,6 @@
 $(function(){
 
-
+  console.log('run cart.js');
   // 按數量增加變色
   $('.cart_add').mousedown(function(){
     $(this).css('background-color','#172852');
@@ -78,6 +78,7 @@ $(function(){
   // 查看禮盒明細
 
   $('.cart_detailBtn').click(function(){
+    console.log('cusbox open');
     let open = $(this).parents('.cart_customization').children('.cart_detailBorder');
     open.slideToggle();
     // 開關按鈕變色
@@ -89,52 +90,6 @@ $(function(){
     };
 
   });
-
-
-
-
-
-
-
-  // ====================== 已在VUE寫 ======================
-
-    // 打開購物車
-  // $('.noCopy').click(function(){
-  //   $('.cart_cartBoard').css('right','0px');
-  // });
-
-
-  // 關掉購物車
-  // $('.cart_close').click(function(){
-  //   $('.cart_cartBoard').css('right','-600px');
-  //   // 禮盒細項關起來
-  //   $('.cart_detailBorder').css('display','none');
-  //   // 查看禮盒明細按鈕顏色
-  //   $('.cart_detailBtn').css('background-color','#bb866a');
-  // })
-
-
-  // 點擊checkbox會打勾，且刪除多個按鈕變顏色
-  // $('.cart_itemCB').click(function(){
-  //   $(this).toggleClass('cart_choose');
-  //   if($('.cart_itemCB').hasClass('cart_choose')){
-  //     $('#cart_deleteMany').css('background-color','#bb866a');
-  //     $('#cart_deleteMany').css('cursor','pointer');
-  //   }else{
-  //     $('#cart_deleteMany').css('background-color','#a3a3a3');
-  //     $('#cart_deleteMany').css('cursor','default');
-  //   }
-  // });
-
-
-  // 刪除多個功能，刪完變灰色
-  // $('#cart_deleteMany').click(function(){
-  //   if($('.cart_itemCB').hasClass('cart_choose')){
-  //     $('.cart_choose').parents('li').remove();
-  //     $('#cart_deleteMany').css('background-color','#a3a3a3');
-  //     $('#cart_deleteMany').css('cursor','default');
-  //   }
-  // });
 
 })
 

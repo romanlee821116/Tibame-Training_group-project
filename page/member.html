@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/member.css">
+    <link rel="stylesheet" href="../css/cart.css">
     <!-- fontawesome -->
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
@@ -14,29 +15,172 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <script src='../js/member.js'></script>
     <script src='../js/navbar.js'></script>
-    <title>小春堂</title>
+    <title>會員中心 - 小春堂</title>
     <link rel="icon" href="../images/index/logo_footer.png">
+    <script src="../js/vue.js"></script>
+    <script src="../js/cart.js"></script>
+    <script src="../js/cart_vue.js"></script>
+    <script src="../js/hamburger.js"></script>
 </head>
 
 <body>
+    <!-- 聯絡我們 -->
+    <div class='psychotest'>
+        <a href="./contact.html"><img src="../images/contact/mail_icon.png" alt=""></a>
+        <p>聯絡我們</p>
+    </div>
     <div class='memberWrapper'>
-        <!-- 聯絡我們 -->
-        <div class='psychotest'>
-            <a href="./contact.html"><img src="../images/contact/mail_icon.png" alt=""></a>
-            <p>聯絡我們</p>
-        </div>
+
         <!-- navbar -->
-        <div class="navbar">
-            <div class="navbar-logo">
-                <img src="../images/index/logo.png" alt="">
+        <div id="cart_app">
+            <div class="navbar">
+                <div class="navbar-logo">
+                    <a href="../index.html"><img src="../images/index/logo.png" alt=""></a>
+                </div>
+                <div class="navbar-icon">
+                    <a href="#"><i class="fas fa-user"></i></a>
+                    <a href="#" @click="open()"><i class="fas fa-shopping-cart"></i></a>
+                    <a href="#"></a>
+                </div>
+                <!-- 漢堡 -->
+                <div class="ham_container">
+                    <div class="ham_bar1 ham_bar"></div>
+                    <div class="ham_bar2 ham_bar"></div>
+                    <div class="ham_bar3 ham_bar"></div>
+                </div>
+                <div id="ham_myNav" class="ham_overlay">
+                    <div class="ham_overlay-content">
+                        <div class='ham_jelly'></div>
+                        <div class="ham_select">
+                            <a href="./index.html">首頁</a>
+                            <a href="./page/about.html">關於我們</a>
+                            <a href="./page/news.html">最新消息</a>
+                            <a href="./page/shopping_choose.html">商品專區</a>
+                            <a href="./page/customized.html">客製化禮盒</a>
+                            <a href="./page/FAQ.html">Q&A</a>
+                            <a href="./page/login.html">會員中心</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="navbar-icon">
-                <p id='scrollvalue'></p>
-                <a href="#"><i class="fas fa-user"></i></a>
-                <a href="#"><i class="fas fa-shopping-cart"></i></a>
-                <a href="#"><i class="fas fa-bars"></i></a>
+            <div class="cart_cartBoard">
+                <div class="cart_cart">
+                    <div class="cart_cartTitle">
+                        <p>購物車</p>
+                        <div class="cart_close" @click="close()">
+                            <div class="cart_left"></div>
+                            <div class="cart_right"></div>
+                        </div>
+                    </div>
+                    <!-- ========== 商品細項 ========== -->
+                    <ul class="cart_itemList">
+                        <!-- 購物車空值顯示 -->
+                        <div class="cart_NoItem">
+                            <div>
+                                <img src="../images/cart/shoppingcart_empty.png">
+                            </div>
+                            <p>購物車還是空的哦！</p>
+                        </div>
+                        <!-- 一般商品 -->
+                        <li class="cart_item" v-for="(item,index) in itemList" :id="item.id">
+                            <div class="cart_itemCB" :class="{'cart_choose': item.status}" @click="choose(item)">
+                                <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"
+                                    data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check fa-w-16"
+                                    role="img" viewBox="0 0 512 512">
+                                    <path fill="#ffffff"
+                                        d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z" />
+                                </svg>
+                            </div>
+                            <div class="cart_itemImg">
+                                <img :src="item.img">
+                            </div>
+                            <div class="cart_itemText">
+                                <p class="cart_itemName">{{item.itemName}}</p>
+                                <br>
+                                <p class="cart_itemAmount">$<span class="cart_price">{{item.price}}</span>元 /
+                                    <span>{{item.item_Quantity}}</span>入
+                                </p>
+                                <div class="cart_itemQuantity">
+                                    <button class="cart_less mainbtn" @click="sub(item)">&#45;</button>
+                                    <input class="cart_quantity" type="text" v-model="item.quantity">
+                                    <button class="cart_add mainbtn" @click="add(item)">&#43;</button>
+                                </div>
+                            </div>
+                            <div class="cart_itemDelete" @click="delete_Item(index)">
+                                <div class="cart_leftD"></div>
+                                <div class="cart_rightD"></div>
+                            </div>
+                        </li>
+
+                        <!-- 客制禮盒 -->
+                        <li class="cart_customization" v-for="(item,index) in customization" :id="item.id">
+                            <!-- 商品 -->
+                            <div class="cart_customizationItem">
+                                <div class="cart_itemCB" :class="{'cart_choose': item.status}" @click="choose(item)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"
+                                        data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check fa-w-16"
+                                        role="img" viewBox="0 0 512 512">
+                                        <path fill="#ffffff"
+                                            d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z" />
+                                    </svg>
+                                </div>
+
+                                <div class="cart_itemImg">
+                                    <img :src="item.img">
+                                </div>
+
+                                <div class="cart_itemText">
+                                    <p class="cart_itemName">{{item.itemName}}</p>
+                                    <br>
+                                    <p class="cart_itemAmount">$<span>{{item.price}}</span>元</p>
+                                    <div class="cart_itemQuantity">
+                                        <button class="cart_less mainbtn" @click="sub(item)">-</button>
+                                        <input class="cart_quantity" type="text" v-model="item.quantity">
+                                        <button class="cart_add mainbtn" @click="add(item)">+</button>
+                                    </div>
+                                </div>
+
+                                <div class="cart_itemRight">
+                                    <div class="cart_itemDelete" @click="delete_Customization(index)">
+                                        <div class="cart_leftD"></div>
+                                        <div class="cart_rightD"></div>
+                                    </div>
+                                    <div class="cart_detailBtn">查看禮盒明細</div>
+                                </div>
+                            </div>
+
+                            <!-- 展開禮盒明細 -->
+                            <div class="cart_detailBorder">
+                                <div class="cart_detail">
+                                    <div>
+                                        <div class="cart_detailItem" v-for="item in item.detail">
+                                            - {{item}}
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="cart_detailQuantity" v-for="item in item.detail_Quantity">
+                                            x {{item}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div id="cart_deleteMany" @click="delete_All()"
+                        :style="{'background-color': delete_bgc, cursor: delete_cursor}">刪除多個</div>
+
+                    <div class="cart_total">
+                        <p>小計</p>
+                        <p>$<span>{{total_Price}}</span></p>
+                    </div>
+                </div>
+
+                <div class="cart_checkoutBorder"><a href="../page/checkout.html" class="cart_checkout">前往結帳</a></div>
+
             </div>
         </div>
+        <!-- nav結束 -->
 
         <!-- 載入會員頁 -->
         <div class='memberShow'></div>
@@ -81,11 +225,13 @@
                     <member-error></member-error>
                 </div>
                 <div class='memberErrorWrap'>
-                    <input class='memberNewPSW' type='password' placeholder="請輸入新密碼 (數字+英文字母8-16位)"><i class="eye eye1 fas fa-eye"></i>
+                    <input class='memberNewPSW' type='password' placeholder="請輸入新密碼 (數字+英文字母8-16位)"><i
+                        class="eye eye1 fas fa-eye"></i>
                     <member-error></member-error>
                 </div>
                 <div class='memberErrorWrap'>
-                    <input class='memberNewPSW2' type='password' placeholder="再次輸入新密碼"><i class="eye eye1 fas fa-eye"></i>
+                    <input class='memberNewPSW2' type='password' placeholder="再次輸入新密碼"><i
+                        class="eye eye1 fas fa-eye"></i>
                     <member-error></member-error>
                 </div>
                 <button class='memberChangePSW' type="submit">修改</button>
@@ -178,10 +324,10 @@
                                     <div>$350</div>
                                 </div>
                             </div>
-                        </div> 
+                        </div>
                         <!-- 收件人詳細資訊 -->
                         <receiver-detail></receiver-detail>
-                        
+
                     </div>
                     <!-- 訂單1結束====== -->
                     <!-- 訂單2 -->
@@ -246,10 +392,10 @@
                                     <div>$350</div>
                                 </div>
                             </div>
-                        </div>  
+                        </div>
                         <!-- 收件人詳細資訊 -->
                         <receiver-detail></receiver-detail>
-                        
+
                     </div>
                     <!-- 訂單2結束====== -->
 
@@ -331,13 +477,13 @@
                                     <div>$350</div>
                                 </div>
                             </div>
-                        </div>  
+                        </div>
                         <!-- 收件人詳細資訊 -->
                         <receiver-detail></receiver-detail>
-                        
+
                     </div>
-                    <!-- 訂單3結束====== -->             
-                </div>          
+                    <!-- 訂單3結束====== -->
+                </div>
             </div>
 
             <!-- ==================取消/退款查詢=================== -->
@@ -428,7 +574,7 @@
                         </div>
                         <!-- 收件人詳細資訊 -->
                         <receiver-detail></receiver-detail>
-                        
+
                     </div>
                     <!-- 訂單1結束====== -->
                 </div>
@@ -483,25 +629,25 @@
             <!-- ============================================ -->
 
         </div>
-        <!-- =============footer============== -->
+        <!-- =======================footer======================= -->
         <div class="footer">
-            <div class="footer-logo"><img src="./images/index/logo_footer.png" alt=""></div>
             <div class="footer-left">
-            <div class='footer-policy'>
-            <p><a href="#">隱私政策</a></p>
-            <p><a href="#">服務條款</a></p>
-            </div>
+                <div class='footer-policy'>
+                    <p><a href="../page/privacy.html">隱私政策</a></p>
+                    <p><a href="../page/terms.html">服務條款</a></p>
+                </div>
             </div>
             <div class='footer-media'>
-                <a href="#"><i class="fab fa-instagram-square"></i></a>
-                <a href="#"><i class="fab fa-facebook-square"></i></a>
-                <a href="#"><i class="fab fa-twitter-square"></i></a>
+                <a href="https://www.instagram.com/"><i class="fab fa-instagram-square"></i></a>
+                <a href="https://www.facebook.com/"><i class="fab fa-facebook-square"></i></a>
+                <a href="https://twitter.com/?lang=zh-tw"><i class="fab fa-twitter-square"></i></a>
             </div>
             <div class="footer-right">
-            <p>本網站為緯育TibaMe前端設計工程師班第68期第三組學員專題成果作品，本平台僅供學習、展示之用。參考資源:snaq.me。若有侵權疑慮，您可以私訊[TibaMe-前端設計工程師養成班]，後續會由專人協助處理
-            </p>
+                <p>本網站為緯育TibaMe前端設計工程師班第68期第三組學員專題成果作品，本平台僅供學習、展示之用。參考資源:snaq.me。若有侵權疑慮，您可以私訊[TibaMe-前端設計工程師養成班]，後續會由專人協助處理
+                </p>
             </div>
         </div>
+        <!-- =======================footer結束======================= -->
 
 
 

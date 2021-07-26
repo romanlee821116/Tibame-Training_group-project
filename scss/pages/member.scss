@@ -1,4 +1,6 @@
 @import '../mixin/mixin';
+@import '../base/reset.scss';
+@import '../base/color.scss';
 // @import '../base/reset.scss';
 .navbar {
     @include navbar();

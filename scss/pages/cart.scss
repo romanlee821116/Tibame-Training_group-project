@@ -1,25 +1,12 @@
-@import '../mixin/mixin';
 
-.navbar{
-@include navbar();
-}
 
 *{
   box-sizing: border-box;
   font-family: "微軟正黑體";
-  color: #bb866a;
+  // color: #bb866a;
 }
 
-body{
-  margin: 0;
-  background-image: url("../../images/cart/bg.png");
-  background-size: cover;
-  background-attachment: fixed;
-}
 
-img{
-  width: 100%;
-}
 
 .cart_cartBoard{
   /* border: 1px solid red; */
@@ -32,6 +19,9 @@ img{
   right: -600px;
   top: 0;
   transition: .5s all linear;
+  img{
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 600px){

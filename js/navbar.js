@@ -8,7 +8,8 @@ $(document).ready(function() {
     // };
     
     // 點擊打開
-    $('.navbar-icon>a:first').click(function(){
+    $('.navbar-icon .fa-user').click(function(){
+        console.log('click member');
         // ----------嘗試用load寫-----------
         // // 隱藏所有頁面
         $('.footer').hide();

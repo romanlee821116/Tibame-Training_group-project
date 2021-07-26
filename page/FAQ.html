@@ -4,170 +4,177 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>小春堂</title>
+  <title>常見問題 - 小春堂</title>
   <link rel="icon" href="../images/index/logo_footer.png">
   <link href="../css/FAQ.css" rel="stylesheet">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.14/vue.js"></script></head>
+  <link rel="stylesheet" href="../css/cart.css" >
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
+  <script src="https://kit.fontawesome.com/8c3a8ab95b.js" crossorigin="anonymous"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.14/vue.js"></script>
+  <script src="../js/vue.js"></script>
+  <script src="../js/cart.js"></script>
+	<script src="../js/cart_vue.js"></script>
+  <script src="../js/hamburger.js"></script>
+  <script src="../js/navbar.js"></script>
+</head>
 <body>
-
+  <div class="memberShow"></div>
   <!-- 聯絡我們 -->
   <div class='psychotest'>
     <a href="./contact.html"><img src="../images/contact/mail_icon.png" alt=""></a>
     <p>聯絡我們</p>
   </div>
 
-  <!-- ========== header ========== -->
-  <div id="cart_app">
-    
-    <div class="navbar">
-      <div class="navbar-logo">
-        <img src="../images/index/logo.png" alt="">
-      </div>
-      <div class="navbar-icon">
-        <p id='scrollvalue'></p>
-        <a href="#"><i class="fas fa-user"></i></a>
-        <a href="#" @click="open()"><i class="fas fa-shopping-cart"></i></a>
-        <a href="#"><i class="fas fa-bars"></i></a>
-      </div>
-    </div>
+  <!-- navbar -->
+	<div id="cart_app">
+		<div class="navbar">
+			<div class="navbar-logo">
+				<a href="../index.html"><img src="../images/index/logo.png" alt=""></a>
+			</div>
+			<div class="navbar-icon">
+				<a href="#"><i class="fas fa-user"></i></a>
+				<a href="#" @click="open()"><i class="fas fa-shopping-cart"></i></a>
+				<a href="#"></a>
+			</div>
+			<!-- 漢堡 -->
+			<div class="ham_container">
+				<div class="ham_bar1 ham_bar"></div>
+				<div class="ham_bar2 ham_bar"></div>
+				<div class="ham_bar3 ham_bar"></div>
+			</div>
+			<div id="ham_myNav" class="ham_overlay">
+				<div class="ham_overlay-content">
+					<div class='ham_jelly'></div>
+					<div class="ham_select">
+						<a href="./index.html">首頁</a>
+						<a href="./page/about.html">關於我們</a>
+						<a href="./page/news.html">最新消息</a>
+						<a href="./page/shopping_choose.html">商品專區</a>
+						<a href="./page/customized.html">客製化禮盒</a>
+						<a href="./page/FAQ.html">Q&A</a>
+						<a href="./page/login.html">會員中心</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="cart_cartBoard">
+			<div class="cart_cart">
+				<div class="cart_cartTitle">
+					<p>購物車</p>
+					<div class="cart_close" @click="close()">
+						<div class="cart_left"></div>
+						<div class="cart_right"></div>
+					</div>
+				</div>
+				<!-- ========== 商品細項 ========== -->
+				<ul class="cart_itemList">
+					<!-- 購物車空值顯示 -->
+					<div class="cart_NoItem">
+						<div>
+							<img src="../images/cart/shoppingcart_empty.png">
+						</div>
+						<p>購物車還是空的哦！</p>
+					</div>
+					<!-- 一般商品 -->
+					<li class="cart_item" v-for="(item,index) in itemList" :id="item.id">
+						<div class="cart_itemCB" :class="{'cart_choose': item.status}" @click="choose(item)">
+							<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"
+								data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check fa-w-16" role="img"
+								viewBox="0 0 512 512">
+								<path fill="#ffffff"
+									d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z" />
+							</svg>
+						</div>
+						<div class="cart_itemImg">
+							<img :src="item.img">
+						</div>
+						<div class="cart_itemText">
+							<p class="cart_itemName">{{item.itemName}}</p>
+							<br>
+							<p class="cart_itemAmount">$<span class="cart_price">{{item.price}}</span>元 /
+								<span>{{item.item_Quantity}}</span>入
+							</p>
+							<div class="cart_itemQuantity">
+								<button class="cart_less mainbtn" @click="sub(item)">&#45;</button>
+								<input class="cart_quantity" type="text" v-model="item.quantity">
+								<button class="cart_add mainbtn" @click="add(item)">&#43;</button>
+							</div>
+						</div>
+						<div class="cart_itemDelete" @click="delete_Item(index)">
+							<div class="cart_leftD"></div>
+							<div class="cart_rightD"></div>
+						</div>
+					</li>
 
-    
+					<!-- 客制禮盒 -->
+					<li class="cart_customization" v-for="(item,index) in customization" :id="item.id">
+						<!-- 商品 -->
+						<div class="cart_customizationItem">
+							<div class="cart_itemCB" :class="{'cart_choose': item.status}" @click="choose(item)">
+								<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"
+									data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check fa-w-16"
+									role="img" viewBox="0 0 512 512">
+									<path fill="#ffffff"
+										d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z" />
+								</svg>
+							</div>
 
-    <!-- <div class="noCopy" @click="open()">
-      <img src="../images/cart/shopping-cart-solid.svg">
-    </div> -->
+							<div class="cart_itemImg">
+								<img :src="item.img">
+							</div>
 
-    <div class="cart_cartBoard">
-        <div class="cart_cart">
-          <div class="cart_cartTitle">
-            <p>購物車</p>
-            <div class="cart_close" @click="close()">
-              <div class="cart_left"></div>
-              <div class="cart_right"></div>
-            </div>
-          </div>
-      
+							<div class="cart_itemText">
+								<p class="cart_itemName">{{item.itemName}}</p>
+								<br>
+								<p class="cart_itemAmount">$<span>{{item.price}}</span>元</p>
+								<div class="cart_itemQuantity">
+									<button class="cart_less mainbtn" @click="sub(item)">-</button>
+									<input class="cart_quantity" type="text" v-model="item.quantity">
+									<button class="cart_add mainbtn" @click="add(item)">+</button>
+								</div>
+							</div>
 
+							<div class="cart_itemRight">
+								<div class="cart_itemDelete" @click="delete_Customization(index)">
+									<div class="cart_leftD"></div>
+									<div class="cart_rightD"></div>
+								</div>
+								<div class="cart_detailBtn">查看禮盒明細</div>
+							</div>
+						</div>
 
+						<!-- 展開禮盒明細 -->
+						<div class="cart_detailBorder">
+							<div class="cart_detail">
+								<div>
+									<div class="cart_detailItem" v-for="item in item.detail">
+										- {{item}}
+									</div>
+								</div>
+								<div>
+									<div class="cart_detailQuantity" v-for="item in item.detail_Quantity">
+										x {{item}}
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
 
-          <!-- ========== 商品細項 ========== -->
-          <ul class="cart_itemList">
+				<div id="cart_deleteMany" @click="delete_All()"
+					:style="{'background-color': delete_bgc, cursor: delete_cursor}">刪除多個</div>
 
-            <!-- 購物車空值顯示 -->
-            <div class="cart_NoItem">
-              <div>
-                <img src="../images/cart/shoppingcart_empty.png">
-              </div>
-              <p>購物車還是空的哦！</p>
-            </div>
-      
-            <!-- 一般商品 -->
-            <li class="cart_item"  v-for="(item,index) in itemList" :id="item.id">
-      
-              <div class="cart_itemCB" :class="{'cart_choose': item.status}" @click="choose(item)">
-                <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check fa-w-16" role="img" viewBox="0 0 512 512"><path fill="#ffffff" d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/>
-                </svg>
-              </div>
-      
-              <div class="cart_itemImg">
-                <img :src="item.img">
-              </div>
-      
-              <div class="cart_itemText">
-                <p class="cart_itemName">{{item.itemName}}</p>
-                <br>
-                <p class="cart_itemAmount">$<span class="cart_price">{{item.price}}</span>元 / <span>{{item.item_Quantity}}</span>入</p>
-                <div class="cart_itemQuantity">
-                  <button class="cart_less mainbtn" @click="sub(item)">&#45;</button>
-                  <input class="cart_quantity" type="text" v-model="item.quantity">
-                  <button class="cart_add mainbtn" @click="add(item)">&#43;</button>
-                </div>
-              </div>
-      
-              <div class="cart_itemDelete" @click="delete_Item(index)">
-                <div class="cart_leftD"></div>
-                <div class="cart_rightD"></div>
-              </div>
-      
-            </li>
+				<div class="cart_total">
+					<p>小計</p>
+					<p>$<span>{{total_Price}}</span></p>
+				</div>
+			</div>
 
+			<div class="cart_checkoutBorder"><a href="../page/checkout.html" class="cart_checkout">前往結帳</a></div>
 
-
-            <!-- 客制禮盒 -->
-            <li class="cart_customization"  v-for="(item,index) in customization" :id="item.id">
-              
-              <!-- 商品 -->
-              <div class="cart_customizationItem">
-                <div class="cart_itemCB" :class="{'cart_choose': item.status}" @click="choose(item)">
-                  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check fa-w-16" role="img" viewBox="0 0 512 512"><path fill="#ffffff" d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/>
-                  </svg>
-                </div>
-        
-                <div class="cart_itemImg">
-                  <img :src="item.img">
-                </div>
-        
-                <div class="cart_itemText">
-                  <p class="cart_itemName">{{item.itemName}}</p>
-                  <br>
-                  <p class="cart_itemAmount">$<span>{{item.price}}</span>元</p>
-                  <div class="cart_itemQuantity">
-                    <button class="cart_less mainbtn" @click="sub(item)">-</button>
-                    <input class="cart_quantity" type="text" v-model="item.quantity">
-                    <button class="cart_add mainbtn" @click="add(item)">+</button>
-                  </div>
-                </div>
-        
-                <div class="cart_itemRight">
-                  <div class="cart_itemDelete" @click="delete_Customization(index)">
-                    <div class="cart_leftD"></div>
-                    <div class="cart_rightD"></div>
-                  </div>
-          
-                  <div class="cart_detailBtn">查看禮盒明細</div>
-                </div>
-              </div>
-              
-              <!-- 展開禮盒明細 -->
-              <div class="cart_detailBorder">
-
-                <div class="cart_detail">
-    
-                  <div>
-                    <div class="cart_detailItem" v-for="item in item.detail">
-                      - {{item}}
-                    </div>
-                  </div>
-    
-                  <div>
-                    <div class="cart_detailQuantity" v-for="item in item.detail_Quantity">
-                      x {{item}}
-                    </div>
-                  </div>
-    
-                </div>
-
-              </div>
-
-            </li>
-    
-          </ul>
-      
-
-
-          <div id="cart_deleteMany" @click="delete_All()" :style="{'background-color': delete_bgc, cursor: delete_cursor}">刪除多個</div>
-          
-          <div class="cart_total">
-            <p>小計</p>
-            <p>$<span>{{total_Price}}</span></p>
-          </div>
-      </div>
-    
-      <div class="cart_checkoutBorder"><a href="./checkout.html" class="cart_checkout">前往結帳</a></div>
-    
-    </div>
-  </div>
+		</div>
+	</div>
+  <!-- nav結束 -->
 
 
 
@@ -324,9 +331,7 @@
 
   <script src="../js/FAQ.js"></script>
   <script src="../js/FAQ_vue.js"></script>
-  <script src="../js/cart.js"></script>
-  <script src="../js/cart_vue.js"></script>
-  <script src="https://kit.fontawesome.com/8c3a8ab95b.js" crossorigin="anonymous"></script>
+  
 
 
 

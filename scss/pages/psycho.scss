@@ -17,6 +17,23 @@ body {
     background-attachment: fixed;
     background-size: cover;
 }
+.navbar{
+    @include navbar();
+    position: fixed;
+    .navbar-icon {
+        i {
+            color: #fff;
+            &:hover{
+                color: $yellow;
+            }
+        }
+    }
+    .ham_container {
+        .ham_bar {
+            background-color: #fff;
+        }
+    }
+}
 
 /* 開場心理測驗圖片加文字 */
 

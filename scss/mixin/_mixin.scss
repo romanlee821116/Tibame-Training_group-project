@@ -40,6 +40,7 @@
         i {
             color: #bb866a;
             font-size: 28px;
+            @content;
             &:hover{
                 color: $yellow;
             }
