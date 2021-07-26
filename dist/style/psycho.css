@@ -281,6 +281,48 @@ body {
   background-color: #fff;
 }
 
+.psychotest {
+  position: fixed;
+  width: 80px;
+  height: 80px;
+  right: 30px;
+  bottom: 30px;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.psychotest:hover img {
+  -webkit-transform: scale(1.3);
+          transform: scale(1.3);
+}
+
+.psychotest:hover p {
+  font-size: 14px;
+  top: 12px;
+}
+
+.psychotest img {
+  width: 100%;
+  height: 100%;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.psychotest p {
+  position: absolute;
+  top: 16px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  color: #fff;
+  font-weight: 900;
+  width: 130px;
+  text-align: center;
+  font-size: 12px;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
 /* 開場心理測驗圖片加文字 */
 .psycho_beginScreen {
   height: 100vh;
@@ -745,6 +787,9 @@ body {
 }
 
 @media (max-width: 575px) {
+  #psycho_title {
+    font-size: 18px;
+  }
   .psycho_questionScreen {
     width: 80%;
   }
@@ -765,6 +810,7 @@ body {
 @media (max-width: 500px) {
   .psycho_questionScreen {
     width: 80%;
+    margin-top: 60px;
   }
   .psycho_question01Screen {
     height: 100vh;
@@ -797,8 +843,5 @@ body {
     margin: 1vh 0px 1vh 0px;
     padding: 0px;
     /* opacity:.5; */
-  }
-  .psychoSchedule01 {
-    /* height: 5vh; */
   }
 }

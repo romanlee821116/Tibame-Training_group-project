@@ -874,8 +874,10 @@
   height: 140px;
   bottom: -5%;
   padding: 20px;
-  background-color: #fad689;
-  /* border-radius: 46% 54% 35% 65% / 47% 37% 63% 53% ; */
+  background: url("/images/index/product_explanatorytext02.png");
+  background-size: 150%;
+  background-position: center;
+  overflow: hidden;
   -webkit-animation: resize_small 5s linear infinite;
           animation: resize_small 5s linear infinite;
   text-align: center;
@@ -1147,7 +1149,9 @@
   position: absolute;
   left: 55%;
   top: 15vh;
-  background-color: #fad689;
+  background: url("/images/index/product_explanatorytext02.png");
+  background-size: cover;
+  background-position: center;
   -webkit-animation: resize1 8s linear infinite;
           animation: resize1 8s linear infinite;
 }

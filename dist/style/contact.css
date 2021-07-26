@@ -333,6 +333,7 @@
   margin: 10px 0 30px;
   font-size: 14px;
   cursor: default;
+  line-height: 20px;
 }
 
 /* ========== 購物車無商品 ========== */
@@ -408,6 +409,13 @@
   cursor: pointer;
   text-decoration: none;
   display: inline-block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.cart_checkout:hover {
+  color: #bb866a;
 }
 
 @media screen and (max-width: 600px) {

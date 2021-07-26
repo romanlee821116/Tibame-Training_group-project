@@ -333,6 +333,7 @@
   margin: 10px 0 30px;
   font-size: 14px;
   cursor: default;
+  line-height: 20px;
 }
 
 /* ========== 購物車無商品 ========== */
@@ -408,6 +409,13 @@
   cursor: pointer;
   text-decoration: none;
   display: inline-block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.cart_checkout:hover {
+  color: #bb866a;
 }
 
 @media screen and (max-width: 600px) {
@@ -620,6 +628,8 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-family: "微軟正黑體";
+  text-decoration: none;
+  font-weight: 900;
 }
 
 body {
@@ -762,6 +772,7 @@ body {
 .finish_title {
   background-color: #cba89a;
   color: #ffffff;
+  padding: 20px 15px;
   padding-left: 15px;
   font-size: 18px;
   font-weight: bold;
@@ -779,7 +790,7 @@ body {
   padding-left: 15px;
   font-size: 16px;
   font-weight: bold;
-  height: 25px;
+  height: 35px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

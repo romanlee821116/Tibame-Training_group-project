@@ -1092,7 +1092,6 @@ body {
   height: 160px;
   max-width: 360px;
   max-height: 200px;
-  border: 3px solid green;
   position: absolute;
   bottom: -210px;
   left: 50%;
@@ -1189,7 +1188,6 @@ body {
   width: 35%;
   height: 70%;
   min-width: 280px;
-  border: 2px solid blue;
   position: absolute;
   top: 60%;
   right: 10%;

@@ -333,6 +333,7 @@
   margin: 10px 0 30px;
   font-size: 14px;
   cursor: default;
+  line-height: 20px;
 }
 
 /* ========== 購物車無商品 ========== */
@@ -408,6 +409,13 @@
   cursor: pointer;
   text-decoration: none;
   display: inline-block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.cart_checkout:hover {
+  color: #bb866a;
 }
 
 @media screen and (max-width: 600px) {
@@ -625,6 +633,7 @@
   position: relative;
   margin: 50px auto 0 auto;
   padding: 60px 0 20px 0;
+  font-weight: 900;
 }
 
 .footer a,
@@ -746,6 +755,7 @@
           box-sizing: border-box;
   font-family: "微軟正黑體";
   color: #bb866a;
+  text-decoration: none;
 }
 
 body {
@@ -798,6 +808,15 @@ body {
   transition: .2s;
 }
 
+.psychotest p {
+  top: 8px;
+}
+
+.psychotest:hover p {
+  font-size: 14px;
+  top: 3px;
+}
+
 img {
   width: 100%;
 }
@@ -817,12 +836,13 @@ img {
 
 /* ========== 標題 ========== */
 #FAQ_QA {
-  border-bottom: 3px solid #bb866a;
+  border-bottom: 2px solid #bb866a;
   border-radius: 1.5px;
   display: inline-block;
   margin: 0;
-  padding-bottom: 3px;
+  padding-bottom: 2px;
   font-size: 14px;
+  font-weight: 900;
 }
 
 #FAQ_QTitle {

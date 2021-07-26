@@ -117,7 +117,6 @@ body::-webkit-scrollbar {
   top: 12%;
   left: -10px;
   position: absolute;
-  border: 1px solid yellow;
   background: url("../../images/about/character01_2.png");
   background-size: contain;
   background-repeat: no-repeat;
@@ -130,7 +129,6 @@ body::-webkit-scrollbar {
   top: 15%;
   right: -30%;
   position: absolute;
-  border: 1px solid green;
   background: url("../../images/about/character01_3.png");
   background-size: contain;
   background-repeat: no-repeat;
@@ -157,7 +155,6 @@ body::-webkit-scrollbar {
   bottom: -15%;
   left: -7%;
   position: absolute;
-  border: 1px solid yellow;
   background: url("../../images/about/character02_2.png");
   background-size: contain;
   background-repeat: no-repeat;
@@ -172,7 +169,6 @@ body::-webkit-scrollbar {
   bottom: -15%;
   right: 0%;
   position: absolute;
-  border: 1px solid green;
   background: url("../../images/about/character02_3.png");
   background-size: contain;
   background-repeat: no-repeat;
@@ -213,7 +209,6 @@ body::-webkit-scrollbar {
   top: 20%;
   left: 0%;
   position: absolute;
-  border: 1px solid blue;
   background: url("../../images/about/character03_2.png");
   background-size: contain;
   background-repeat: no-repeat;
@@ -231,7 +226,6 @@ body::-webkit-scrollbar {
   bottom: -15%;
   left: 10%;
   position: absolute;
-  border: 1px solid yellow;
   background: url("../../images/about/character03_3.png");
   background-size: contain;
   background-repeat: no-repeat;
@@ -248,7 +242,6 @@ body::-webkit-scrollbar {
   bottom: -16%;
   right: -12%;
   position: absolute;
-  border: 1px solid green;
   background: url("../../images/about/character03_4.png");
   background-size: contain;
   background-repeat: no-repeat;
@@ -263,7 +256,6 @@ body::-webkit-scrollbar {
   right: 50vw;
   z-index: 6;
   height: 22vh;
-  border: 2px solid red;
   -webkit-animation: walk2 28s linear infinite;
           animation: walk2 28s linear infinite;
 }
@@ -275,7 +267,6 @@ body::-webkit-scrollbar {
   top: 18%;
   left: -10%;
   position: absolute;
-  border: 1px solid blue;
   background: url("../../images/about/character04_2.png");
   background-size: contain;
   background-repeat: no-repeat;
@@ -295,7 +286,6 @@ body::-webkit-scrollbar {
   -webkit-transform: rotate(-60deg);
           transform: rotate(-60deg);
   position: absolute;
-  border: 1px solid red;
   background: url("../../images/about/character04_3.png");
   background-size: contain;
   background-repeat: no-repeat;
@@ -312,7 +302,6 @@ body::-webkit-scrollbar {
   bottom: -11%;
   right: -33%;
   position: absolute;
-  border: 1px solid green;
   background: url("../../images/about/character04_4.png");
   background-size: contain;
   background-repeat: no-repeat;
@@ -339,7 +328,6 @@ body::-webkit-scrollbar {
   top: 25%;
   left: -5%;
   position: absolute;
-  border: 1px solid yellow;
   background: url("../../images/about/character07_2.png");
   background-size: contain;
   background-repeat: no-repeat;
