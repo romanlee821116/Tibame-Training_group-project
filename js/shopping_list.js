@@ -10,8 +10,8 @@ $(document).ready(function() {
         "id": new Date(),
     };
 
-    $('.product_add_cart').click(function(){
-        if($(this).attr('id')!='grey'){
+    $('.product_add_cart').click(function() {
+        if ($(this).attr('id') != 'grey') {
             let product_Id = $(this).closest('.product_right').attr('data-id');
             let this_name = $(this).closest('.product_right').find('h3').text();
             let this_price = $(this).closest('.product_right').find('.product_price').find('span').text();
@@ -22,35 +22,46 @@ $(document).ready(function() {
             cart_item.img = this_img;
             cart_item.price = parseInt(this_price);
             cart_item.quantity = this_qty;
+<<<<<<< HEAD
             // console.log(cart_item);        
             if(localStorage.item_List){
                 let local_itemList= [];
+=======
+            console.log(cart_item);
+            if (localStorage.item_List) {
+                let local_itemList = [];
+>>>>>>> wei
                 // console.log(JSON.parse(localStorage.item_List).length);
-                for(let i=0; i<JSON.parse(localStorage.item_List).length; i++){                    
+                for (let i = 0; i < JSON.parse(localStorage.item_List).length; i++) {
                     local_itemList.push(JSON.parse(localStorage.item_List)[i].itemName);
                 }
+<<<<<<< HEAD
                 // console.log(local_itemList);
                 if(local_itemList.indexOf(this_name)==-1){
+=======
+                console.log(local_itemList);
+                if (local_itemList.indexOf(this_name) == -1) {
+>>>>>>> wei
                     let new_itemList = JSON.parse(localStorage.getItem('item_List'));
                     new_itemList.push(cart_item);
                     localStorage.setItem('item_List', JSON.stringify(new_itemList));
                     $('.product_reminder').fadeIn();
-                    setTimeout(function(){
+                    setTimeout(function() {
                         $('.product_reminder').fadeOut();
-                    },1000);
-                }else{
+                    }, 1000);
+                } else {
                     alert('此產品已在購物車');
                 }
-                
-            }else{
+
+            } else {
                 let new_itemList = [];
                 new_itemList.push(cart_item);
                 localStorage['item_List'] = [];
                 localStorage.setItem('item_List', JSON.stringify(new_itemList));
                 $('.product_reminder').fadeIn();
-                    setTimeout(function(){
-                        $('.product_reminder').fadeOut();
-                },1000);
+                setTimeout(function() {
+                    $('.product_reminder').fadeOut();
+                }, 1000);
             }
         }
     })
@@ -94,7 +105,7 @@ $(document).ready(function() {
     $(".add").click(function() {
         var t = $(this).siblings(".num");
         t.val(parseInt(t.val()) + 1);
-        $(".min").removeAttr("disabled").css({ backgroundColor: "white", color: "#172852" });
+        $(this).siblings(".min").removeAttr("disabled").css({ backgroundColor: "white", color: "#172852" });
     });
     $(".min").click(function() {
         var t = $(this).siblings(".num");
@@ -132,10 +143,9 @@ $(document).ready(function() {
         $(this).parent().prev('.product_img').animate({
             left: divWidth * index * -1
         });
-        $(this).addClass("click");
-        $(".product_circle div").not(this).removeClass("click");        
+        $(this).addClass("click").siblings().removeClass("click");
     })
-    
-    
+
+
 
 });

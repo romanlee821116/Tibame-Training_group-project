@@ -17,7 +17,7 @@ body {
     @include navbar();
 }
 
-.product_reminder{
+.product_reminder {
     width: 200px;
     height: 70px;
     position: fixed;
@@ -101,7 +101,7 @@ body {
     display: flex;
     justify-content: center;
     // border: 2px solid blue;
-    .product_product{
+    .product_product {
         width: 100%;
     }
 }
@@ -179,7 +179,6 @@ body {
     display: flex;
     justify-content: space-evenly;
     margin-top: 10px;
-    
 }
 
 .circle_grey {
@@ -336,6 +335,10 @@ body {
     position: relative;
     padding: 2px;
     margin-top: 20px;
+}
+
+.product_add_cart:hover {
+    background-color: #2e447c;
 }
 
 .product_svg_cart {

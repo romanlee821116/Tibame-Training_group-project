@@ -1,5 +1,6 @@
 $(document).ready(function() {
 <<<<<<< HEAD
+<<<<<<< HEAD
     $('.memberShow').load('login.html').hide();
 =======
     console.log('navbar loading');
@@ -11,6 +12,9 @@ $(document).ready(function() {
         $('.memberShow').load('login.html').hide();
     }
 >>>>>>> c73062ca6c794710ae779da4415fd1da9b4bde32
+=======
+    $('.memberShow').load('login.html').hide();
+>>>>>>> wei
     // 儲存人頭為會員中心
     // window.onload = function (){
     //     if($('#loginFormPage .loginButton').hasClass('loginOK')){
@@ -21,11 +25,15 @@ $(document).ready(function() {
 
     // 點擊打開
 <<<<<<< HEAD
+<<<<<<< HEAD
     $('.navbar-icon .fa-user').click(function() {
 =======
     $('.navbar-icon .fa-user').click(function(){
         // console.log('navbar icon click');
 >>>>>>> c73062ca6c794710ae779da4415fd1da9b4bde32
+=======
+    $('.navbar-icon .fa-user').click(function() {
+>>>>>>> wei
         // ----------嘗試用load寫-----------
         // // 隱藏所有頁面
         $('.footer').hide();
