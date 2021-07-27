@@ -808,19 +808,22 @@ body {
 }
 
 @media (max-width: 500px) {
+  .psychotest{
+    display: none;
+  }
   .psycho_questionScreen {
     width: 80%;
-    margin-top: 60px;
   }
   .psycho_question01Screen {
     height: 100vh;
   }
   .psycho_titleRange {
-    height: 12vh;
+    height: 20vh;
+    padding-top: 80px;
   }
   #psycho_title {
     margin-top: 0px;
-    text-align: center;
+    text-align: left;
   }
   .psycho_titleRange {
     -webkit-box-align: center;
@@ -828,7 +831,8 @@ body {
             align-items: center;
   }
   .psychoQuestion01Range {
-    margin: 2vh auto 2vh;
+    margin: 1vh auto 1vh;
+    width: 85%;
   }
   .psychoQuestionAnsRange {
     -webkit-box-orient: vertical;
@@ -845,4 +849,3 @@ body {
     /* opacity:.5; */
   }
 }
-/*# sourceMappingURL=psycho.css.map */

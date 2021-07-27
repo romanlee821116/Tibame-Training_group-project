@@ -17,6 +17,22 @@ body {
     @include navbar();
 }
 
+.product_reminder{
+    width: 200px;
+    height: 70px;
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 25px;
+    background-color: $darkBrown;
+    text-align: center;
+    line-height: 70px;
+    color: #fff;
+    z-index: 100;
+    display: none;
+}
+
 .navbar-icon {
     position: relative;
 }
@@ -163,6 +179,7 @@ body {
     display: flex;
     justify-content: space-evenly;
     margin-top: 10px;
+    
 }
 
 .circle_grey {
@@ -172,6 +189,9 @@ body {
     background-color: #ccc;
     padding: 5px;
     cursor: pointer;
+    // &:first-child{
+    //     background-color: #172852;
+    // }
 }
 
 .click {
