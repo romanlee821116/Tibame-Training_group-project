@@ -100,10 +100,10 @@ $(document).ready(function(){
       ],
       delete_bgc: '#a3a3a3',
       delete_cursor: 'default',
-      total_item: 0,
-      discount: 80,
+      discount: 0,
       total_price: 0,
-      itemPrice:0,
+      itemPrice: 0,
+      shipping: 0,
     },
     methods: {
       // checkbox被選擇變色，刪除多個變色
@@ -111,7 +111,7 @@ $(document).ready(function(){
         // checkbox
         item.status=!item.status;
   
-        // 刪除多個
+        // 刪除多個變色
         x = this.itemList.length;
         for(let i = 0; i < this.itemList.length; i++){
           if(this.itemList[i].status == false){
@@ -137,8 +137,6 @@ $(document).ready(function(){
       // 刪除打勾的項目
       delete_All(){
         // 一般商品
-        // x = this.itemList.length;
-        // y = this.customization.length;
         for(let i = 0; i < this.itemList.length; i++){
           let item = this.itemList[i].status;
           if(item == true){
@@ -160,27 +158,53 @@ $(document).ready(function(){
             a--;
           };
         };
+
+        // ================= localStorage =====================
+        // 更新商品內容
+        let itemList = this.itemList;
+        let cus = this.customization;
+        localStorage.setItem('item_List', JSON.stringify(itemList));
+        localStorage.setItem('customized_List', JSON.stringify(cus));
+
+        // 商品總金額重算
+        let item_total = 0;
+        for(let i = 0; i < this.itemList.length; i++){
+          let item = this.itemList[i];
+          item_total += item.price * item.quantity;
+        };
+        for(let a = 0; a < this.customization.length; a++){
+          let item2 = this.customization[a];
+          item_total += item2.price * item2.quantity;
+        };
+        
+        localStorage.setItem('subtotal', item_total);
+        this.itemPrice = item_total;
+
+        // 總金額重算
+        let new_total = parseInt(localStorage.subtotal - localStorage.discount);
+        localStorage.setItem('total', new_total);
+        this.total_price = new_total;
+        // ===================================================
       },
       // 數量增加
       add(item){
         // console.log(item.quantity);
         item.quantity++;
         //====================== local storage =====================
-        let this_price = item.price;
-        // console.log(this_price);
+        // 更新商品內容
+        let itemList = this.itemList;
+        let cus = this.customization;
+        localStorage.setItem('item_List', JSON.stringify(itemList));
+        localStorage.setItem('customized_List', JSON.stringify(cus));
+
         // 價錢更新
-        let new_subtotal = parseInt(localStorage['subtotal']) + this_price;
-        let new_total = parseInt(localStorage['total']) + this_price;
+        let this_price = item.price;
+        let new_subtotal = parseInt(localStorage.subtotal) + this_price;
+        let new_total = parseInt(localStorage.total) + this_price;
         localStorage.setItem('subtotal', new_subtotal);
         localStorage.setItem('total', new_total);  
         this.itemPrice = new_subtotal;
         this.total_price = new_total;
-
-        // 商品內容更新
-        let customization = this.customization;
-        let itemList = this.itemList;
-        localStorage.setItem('customized_List', JSON.stringify(customization));
-        localStorage.setItem('item_List', JSON.stringify(itemList));
         // ==========================================================
       },
       // 數量減少
@@ -189,21 +213,21 @@ $(document).ready(function(){
         if(item.quantity > 1){
           item.quantity--;
           //=================== local storage =======================   
-          let this_price = item.price;
+          // 更新商品內容
+          let itemList = this.itemList;
+          let cus = this.customization;
+          localStorage.setItem('item_List', JSON.stringify(itemList));
+          localStorage.setItem('customized_List', JSON.stringify(cus));
+
           // 價錢更新
-          let new_subtotal = parseInt(localStorage['subtotal']) - this_price;
-          let new_total = parseInt(localStorage['total']) - this_price;
+          let this_price = item.price;
+          let new_subtotal = parseInt(localStorage.subtotal) - this_price;
+          let new_total = parseInt(localStorage.total) - this_price;
           localStorage.setItem('subtotal', new_subtotal);
           localStorage.setItem('total', new_total);  
           this.itemPrice = new_subtotal;
           this.total_price = new_total;
-
-          // 數量更新
-          let customization = this.customization;
-          let itemList = this.itemList;
-          localStorage.setItem('customized_List', JSON.stringify(customization));
-          localStorage.setItem('item_List', JSON.stringify(itemList));
-          // =======================================================
+          // ========================================================
         };
       },
       // 刪除(單一商品)
@@ -217,41 +241,32 @@ $(document).ready(function(){
           $('.cart_NoItem').css('display','none');
         }
 
-        //=============local storage =======================   
-        let customization = this.customization;
+        //==================== localStorage =======================   
+        // 更新商品內容
         let itemList = this.itemList;
-        localStorage.setItem('customized_List', JSON.stringify(customization));
+        let cus = this.customization;
         localStorage.setItem('item_List', JSON.stringify(itemList));
+        localStorage.setItem('customized_List', JSON.stringify(cus));
 
-        let item_length = this.itemList.length;
-        let cus_length = this.customization.length;
-        let new_itemSub=0;
-        let new_cusSub=0;
-        for(i=0; i< item_length; i++){
-          let this_price = this.itemList[i]['price'];
-          let this_qty = this.itemList[i]['quantity'];
-          let this_subtotal = this_price*this_qty;
-          new_itemSub += this_subtotal;
-        }
-        for(j=0; j<cus_length; j++){
-          let this_price = this.customization[j]['price'];
-          let this_qty = this.customization[j]['quantity'];
-          let this_subtotal = this_price*this_qty;
-          new_cusSub += this_subtotal;
-        }
-        let new_subtotal = new_itemSub + new_cusSub;
-        let new_total;
-        //若有discount
-        if(localStorage['discount']){
-          new_total = new_subtotal - parseInt(localStorage['discount']);
-        }else{
-          new_total = new_subtotal
-        }  
-        localStorage.setItem('subtotal', new_subtotal);
+        // 商品總金額重算
+        let item_total = 0;
+        for(let i = 0; i < this.itemList.length; i++){
+          let item = this.itemList[i];
+          item_total += item.price * item.quantity;
+        };
+        for(let a = 0; a < this.customization.length; a++){
+          let item2 = this.customization[a];
+          item_total += item2.price * item2.quantity;
+        };
+        
+        localStorage.setItem('subtotal', item_total);
+        this.itemPrice = item_total;
+
+        // 總金額重算
+        let new_total = parseInt(localStorage.subtotal - localStorage.discount);
         localStorage.setItem('total', new_total);
-        this.itemPrice = new_subtotal;
         this.total_price = new_total;
-        // ====================================
+        // =========================================================
       },
       // 刪除(禮盒)
       delete_Customization(index){
@@ -264,33 +279,29 @@ $(document).ready(function(){
           $('.cart_NoItem').css('display','none');
         }
         //=============local storage =======================   
-        let customization = this.customization;
+        // 更新商品內容
         let itemList = this.itemList;
-        localStorage.setItem('customized_List', JSON.stringify(customization));
+        let cus = this.customization;
         localStorage.setItem('item_List', JSON.stringify(itemList));
+        localStorage.setItem('customized_List', JSON.stringify(cus));
 
-        let item_length = this.itemList.length;
-        let cus_length = this.customization.length;
-        let new_itemSub=0;
-        let new_cusSub=0;
-        for(i=0; i< item_length; i++){
-          let this_price = this.itemList[i]['price'];
-          let this_qty = this.itemList[i]['quantity'];
-          let this_subtotal = this_price*this_qty;
-          new_itemSub += this_subtotal;
-        }
+        // 商品總金額重算
+        let item_total = 0;
+        for(let i = 0; i < this.itemList.length; i++){
+          let item = this.itemList[i];
+          item_total += item.price * item.quantity;
+        };
+        for(let a = 0; a < this.customization.length; a++){
+          let item2 = this.customization[a];
+          item_total += item2.price * item2.quantity;
+        };
+        
+        localStorage.setItem('subtotal', item_total);
+        this.itemPrice = item_total;
 
-        for(j=0; j<cus_length; j++){
-          let this_price = this.customization[j]['price'];
-          let this_qty = this.customization[j]['quantity'];
-          let this_subtotal = this_price*this_qty;
-          new_cusSub += this_subtotal;
-        }
-        let new_subtotal = new_itemSub + new_cusSub;
-        let new_total = new_subtotal - parseInt(localStorage['discount']);  
-        localStorage.setItem('subtotal', new_subtotal);
+        // 總金額重算
+        let new_total = parseInt(localStorage.subtotal - localStorage.discount);
         localStorage.setItem('total', new_total);
-        this.itemPrice = new_subtotal;
         this.total_price = new_total;
         // ====================================
       },
@@ -299,25 +310,38 @@ $(document).ready(function(){
         if($('#checkout_discountNumber').val() !== ""){
           $('.checkout_discountMoney').removeClass('checkout_none');
           $('.checkout_removeDiscount').removeClass('checkout_none');
-          //====local storage折扣======
-          let new_price = parseInt(localStorage.total)-80;
-          this.total_price = new_price.toString().replace(/\B(?=(\d{3})+$)/g, ',')
-          console.log(this.total_price);            
-          localStorage['discount']=0;
+          this.discount = 80;
+          // $('#checkout_discountNumber').val() = "";
+
+        // ========================== localStorage ==========================
+          // 折扣加進去
+          let dis = this.discount;
+          localStorage['discount'] = 0;
+          localStorage.setItem('discount', JSON.stringify(dis));
+          
+          // 總金額重算
+          let new_price = parseInt(localStorage.total) - parseInt(localStorage.discount);
           localStorage.setItem('total', JSON.stringify(new_price));
-          localStorage.setItem('discount', 80);
+          this.total_price = new_price;    
+        // ==================================================================
         }  
       },
       // 移除折扣
       deleteDiscount(){
         $('.checkout_discountMoney').addClass('checkout_none');
         $('.checkout_removeDiscount').addClass('checkout_none');
-        // this.discount = 0;
-        //====local storage折扣======
-        let new_price = parseInt(localStorage.total)+80;
-        this.total_price = new_price.toString().replace(/\B(?=(\d{3})+$)/g, ',');
+        this.discount = 0;
+
+        // ========================== localStorage ==========================
+        // 折扣減掉
+        let dis = this.discount;
+        localStorage.setItem('discount', JSON.stringify(dis));
+
+        // 總金額重算
+        let new_price = parseInt(localStorage.subtotal);
         localStorage.setItem('total', JSON.stringify(new_price));
-        localStorage.setItem('discount', 0);
+        this.total_price = new_price;
+        // ==================================================================
       }
     },
     computed: {
@@ -344,26 +368,32 @@ $(document).ready(function(){
       // }
     },
     mounted() {
-  
-      if (localStorage.customized_List) {
-        let local_customization = JSON.parse(localStorage.customized_List)
-        this.customization =local_customization;
-      };
-      if (localStorage.item_List) {
+      // 一般商品
+      if(localStorage.item_List) {
         let item = JSON.parse(localStorage.item_List)
         this.itemList =item;
       };
-      if(localStorage.subtotal){
-        let subtotal =localStorage.subtotal.toString().replace(/\B(?=(\d{3})+$)/g, ',');
-        let total=localStorage.total.toString().replace(/\B(?=(\d{3})+$)/g, ',');      
-        this.itemPrice = subtotal;
-        this.total_price = total;
+      // 禮盒
+      if(localStorage.customized_List) {
+        let local_customization = JSON.parse(localStorage.customized_List)
+        this.customization = local_customization;
       };
-      if(localStorage.discount!=0){
-        console.log(JSON.parse(localStorage.discount));
-        $('.checkout_discountMoney').removeClass('checkout_none');
-        $('.checkout_removeDiscount').removeClass('checkout_none');
-      }
+      // 折扣    
+      localStorage.setItem('discount', this.discount);
+      
+      // 商品總金額、總金額
+      if(localStorage.subtotal){     
+        this.itemPrice = localStorage.subtotal;
+        this.total_price = localStorage.total - localStorage.discount;
+      };
+
+      // 運費
+      localStorage.setItem('shipping', this.shipping);
+
+      // if(localStorage.discount != 0){
+      //   $('.checkout_discountMoney').removeClass('checkout_none');
+      //   $('.checkout_removeDiscount').removeClass('checkout_none');
+      // }
       // ====================================================
       
     },
@@ -371,7 +401,7 @@ $(document).ready(function(){
 })
 $(function(){
     // 按數量增加變色
-    console.log('jQuery run');
+    // console.log('jQuery run');
     $('.checkout_add').mousedown(function(){
       $(this).css('background-color','#172852');
       $(this).css('color','#ffffff');

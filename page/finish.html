@@ -117,7 +117,7 @@
               <div>{{item.itemName}}</div>
             </div>
             <div>x {{item.quantity}}</div>
-            <div>${{item.price}}元 / {{item.itemQuantity}}入</div>
+            <div>${{item.price}}元 / {{item.item_Quantity}}入</div>
           </li>
 
           <li class="finish_item" v-for="(item,index) in customization" id="item.id">
@@ -126,7 +126,7 @@
               <div>{{item.itemName}}</div>
             </div>
             <div>x {{item.quantity}}</div>
-            <div>${{item.price}}元 / {{item.itemQuantity}}入</div>
+            <div>${{item.price}}元</div>
           </li>
 
         </ul>
@@ -136,17 +136,17 @@
 
           <div class="finish_itemPrice">
             <p>商品金額</p>
-            <p>$1280元</p>
+            <p>${{itemPrice}}元</p>
           </div>
 
           <div class="finish_itemPrice">
             <p>運費</p>
-            <p>$0元</p>
+            <p>${{shipping}}元</p>
           </div>
 
           <div class="finish_discount">
             <p>折扣碼</p>
-            <p>-$80元</p>
+            <p>-${{discount}}元</p>
           </div>
 
         </div>
@@ -154,7 +154,7 @@
         <!-- 總金額 -->
         <div class="finish_total">
           <div>總金額</div>
-          <div>$1280元</div>
+          <div>${{total_price}}元</div>
         </div>
 
       </div>

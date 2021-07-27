@@ -45,7 +45,6 @@ $(function(){
         //   status: false,
         // },
       ],
-      total_item: 0,
       discount: 0,
       total_price: 0,
       itemPrice:0,
@@ -57,7 +56,6 @@ $(function(){
       choose(){
         // checkbox
         this.terms=!this.terms;
-        console.log($('.OC_next').css('background-color'));
         if(this.terms == true){
           $('.OC_next').css('background-color', '#172852');
           $('.OC_next').css('cursor', 'pointer');
@@ -96,25 +94,26 @@ $(function(){
       // }
     },
     mounted(){
-      if (localStorage.customized_List) {
-        let local_customization = JSON.parse(localStorage.customized_List)
-        this.customization =local_customization;
-      };
-      if (localStorage.item_List) {
+      // 一般商品
+      if(localStorage.item_List) {
         let item = JSON.parse(localStorage.item_List)
         this.itemList =item;
       };
-      if(localStorage.subtotal){
-        let subtotal =JSON.parse(localStorage.subtotal).toString().replace(/\B(?=(\d{3})+$)/g, ',');
-        let total=JSON.parse(localStorage.total).toString().replace(/\B(?=(\d{3})+$)/g, ',');      
-        this.itemPrice = subtotal;
-        this.total_price = total;
+      // 禮盒
+      if(localStorage.customized_List) {
+        let local_customization = JSON.parse(localStorage.customized_List)
+        this.customization = local_customization;
       };
-      if(localStorage.discount){
-        $('.checkout_discountMoney').removeClass('checkout_none');
-        $('.checkout_removeDiscount').removeClass('checkout_none');
-        this.discount = JSON.parse(localStorage.discount);
-      }
+      // 商品總金額
+      if(localStorage.subtotal){
+        this.itemPrice = localStorage.subtotal;
+        this.total_price = localStorage.total;
+      };
+      // 折扣    
+      this.discount = localStorage.discount;
+
+      // 運費
+      this.shipping = localStorage.shipping;
       // ====================================================
     }
   })
