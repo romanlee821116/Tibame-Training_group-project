@@ -18,7 +18,6 @@ time, mark, audio, video {
   font-size: 100%;
   font: bold inherit '微軟正黑體';
   vertical-align: baseline;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   text-decoration: none;
   font-weight: 900;
@@ -54,9 +53,8 @@ table {
 }
 
 * {
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  font-family: '微軟正黑體';
+  font-family: "微軟正黑體";
   font-weight: bold;
 }
 
@@ -76,12 +74,8 @@ body {
   top: 0px;
   left: 0;
   padding-top: 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
   z-index: 900;
   position: fixed;
 }
@@ -98,12 +92,8 @@ body {
 }
 
 .navbar .navbar-icon {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  justify-content: flex-start;
   margin: 0 20px 0 0px;
 }
 
@@ -151,8 +141,7 @@ body {
 
 .navbar .ham_change .ham_bar1 {
   background-color: white;
-  -webkit-transform: rotate(-45deg) translate(-6px, 5px);
-          transform: rotate(-45deg) translate(-6px, 5px);
+  transform: rotate(-45deg) translate(-6px, 5px);
 }
 
 .navbar .ham_change .ham_bar2 {
@@ -161,8 +150,7 @@ body {
 
 .navbar .ham_change .ham_bar3 {
   background-color: white;
-  -webkit-transform: rotate(45deg) translate(-8px, -8px);
-          transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-8px, -8px);
 }
 
 .navbar .ham_overlay {
@@ -174,7 +162,6 @@ body {
   right: 0;
   background-color: #b48164;
   overflow: hidden;
-  -webkit-transition: 0.5s;
   transition: 0.5s;
 }
 
@@ -192,41 +179,21 @@ body {
   position: absolute;
   top: -302vw;
   left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
   border-radius: 45%;
   background-color: #cba89a;
-  -webkit-animation: rotate 15s linear infinite;
-          animation: rotate 15s linear infinite;
-}
-
-@-webkit-keyframes rotate {
-  0% {
-    -webkit-transform: translate(-50%, 0) rotateZ(0deg);
-            transform: translate(-50%, 0) rotateZ(0deg);
-  }
-  50% {
-    -webkit-transform: translate(-50%, -2%) rotateZ(180deg);
-            transform: translate(-50%, -2%) rotateZ(180deg);
-  }
-  100% {
-    -webkit-transform: translate(-50%, 0%) rotateZ(360deg);
-            transform: translate(-50%, 0%) rotateZ(360deg);
-  }
+  animation: rotate 15s linear infinite;
 }
 
 @keyframes rotate {
   0% {
-    -webkit-transform: translate(-50%, 0) rotateZ(0deg);
-            transform: translate(-50%, 0) rotateZ(0deg);
+    transform: translate(-50%, 0) rotateZ(0deg);
   }
   50% {
-    -webkit-transform: translate(-50%, -2%) rotateZ(180deg);
-            transform: translate(-50%, -2%) rotateZ(180deg);
+    transform: translate(-50%, -2%) rotateZ(180deg);
   }
   100% {
-    -webkit-transform: translate(-50%, 0%) rotateZ(360deg);
-            transform: translate(-50%, 0%) rotateZ(360deg);
+    transform: translate(-50%, 0%) rotateZ(360deg);
   }
 }
 
@@ -245,7 +212,6 @@ body {
   display: block;
   letter-spacing: 2px;
   opacity: 0;
-  -webkit-transition: all .5s;
   transition: all .5s;
 }
 
@@ -265,7 +231,6 @@ body {
   display: inline-block;
   margin: 0 20px;
   background-color: transparent;
-  -webkit-transition: all .3s;
   transition: all .3s;
 }
 
@@ -292,8 +257,7 @@ body {
 }
 
 .psychotest:hover img {
-  -webkit-transform: scale(1.3);
-          transform: scale(1.3);
+  transform: scale(1.3);
 }
 
 .psychotest:hover p {
@@ -304,7 +268,6 @@ body {
 .psychotest img {
   width: 100%;
   height: 100%;
-  -webkit-transition: .2s;
   transition: .2s;
 }
 
@@ -312,22 +275,18 @@ body {
   position: absolute;
   top: 16px;
   left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
   color: #fff;
   font-weight: 900;
   width: 130px;
   text-align: center;
   font-size: 12px;
-  -webkit-transition: .2s;
   transition: .2s;
 }
 
 /* 開場心理測驗圖片加文字 */
 .psycho_beginScreen {
   height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 
@@ -391,24 +350,15 @@ body {
 }
 
 .psycho_question01Screen {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   /* border: solid 1px green; */
 }
 
 .psycho_titleRange {
   /* border: solid 1px blue; */
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
 }
 
 #psycho_title {
@@ -425,8 +375,6 @@ body {
   max-width: 48vh;
   width: 100%;
   margin: 3vh auto 3vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 
@@ -436,64 +384,49 @@ body {
 }
 
 .psychoQuestion01 {
-  -ms-flex-negative: 1;
-      flex-shrink: 1;
+  flex-shrink: 1;
   /* margin: 3vh auto 3vh; */
   width: 100%;
   max-width: 48vh;
   max-height: 48vh;
   background: url(../images/psycho/question01_topic.jpg) no-repeat center center;
   background-size: cover;
-  -webkit-mask: url(../images/psycho/picmask.png) no-repeat center center;
   mask: url(../images/psycho/picmask.png) no-repeat center center;
-  -webkit-mask-size: cover;
   mask-size: cover;
-  -webkit-transition: all .2s ease-out;
-  transition: all .2s ease-out;
+  transition: all 0.2s ease-out;
 }
 
 /* 選項 */
 .psychoQuestionAnsRange {
   /* border: solid 1px red; */
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
 }
 
 .psychoQuestionAns {
   /* border: solid 1px red; */
   margin: 0px 2% 0px 2%;
   text-decoration: none;
-  -ms-flex-negative: 1;
-      flex-shrink: 1;
+  flex-shrink: 1;
   width: 22vh;
   /* height: 22vh; */
   padding: 15px;
   border-radius: 10px;
   background-color: white;
-  -webkit-box-shadow: 0px 7px 13.8px 2.2px rgba(65, 31, 19, 0.18);
-          box-shadow: 0px 7px 13.8px 2.2px rgba(65, 31, 19, 0.18);
-  -webkit-transition: all .2s ease-out;
-  transition: all .2s ease-out;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  box-shadow: 0px 7px 13.8px 2.2px rgba(65, 31, 19, 0.18);
+  transition: all 0.2s ease-out;
   display: flex;
 }
 
 .psychoQuestionAns::after {
-  content: '';
+  content: "";
   padding-top: 100%;
 }
 
 .psychoQuestionAns > div {
   width: 100%;
   height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 
@@ -505,13 +438,12 @@ body {
   color: #bb866a;
 }
 
-.psychoQuestionAns:hover, .psychoQuestionAns:focus {
-  -webkit-transform: scale(1.1, 1.1);
-          transform: scale(1.1, 1.1);
+.psychoQuestionAns:hover,
+.psychoQuestionAns:focus {
+  transform: scale(1.1, 1.1);
   border-radius: 10px;
   background-color: white;
-  -webkit-box-shadow: 0px 7px 13.8px 2.2px rgba(65, 31, 19, 0.18);
-          box-shadow: 0px 7px 13.8px 2.2px rgba(65, 31, 19, 0.18);
+  box-shadow: 0px 7px 13.8px 2.2px rgba(65, 31, 19, 0.18);
 }
 
 .psychoQuestionAns:hover div > span {
@@ -554,8 +486,7 @@ body {
   border-radius: 50px;
   position: absolute;
   /* bottom: 2vh; */
-  -webkit-transition: all .5s ease-out;
-  transition: all .5s ease-out;
+  transition: all 0.5s ease-out;
   z-index: 1;
 }
 
@@ -576,8 +507,6 @@ body {
 .psycho_loadingSetIn {
   height: 100vh;
   /* border: solid 1px red; */
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 
@@ -609,8 +538,7 @@ body {
   height: 0vh;
   background-color: rgba(63, 30, 18, 0.3);
   mix-blend-mode: multiply;
-  -webkit-transition: height .5s ease-in-out;
-  transition: height .5s ease-in-out;
+  transition: height 0.5s ease-in-out;
 }
 
 .psycho_resultContent {
@@ -619,8 +547,7 @@ body {
   position: absolute;
   top: 0%;
   left: 50%;
-  -webkit-transform: translate(-50%, 0%);
-          transform: translate(-50%, 0%);
+  transform: translate(-50%, 0%);
   display: none;
 }
 
@@ -634,16 +561,9 @@ body {
 }
 
 .psycho_elvesContent {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .psycho_resultContent > div > p {
@@ -686,9 +606,7 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
-  -webkit-filter: drop-shadow(0px 21px 10px rgba(65, 31, 19, 0.3));
+  transform-style: preserve-3d;
   filter: drop-shadow(0px 21px 10px rgba(65, 31, 19, 0.3));
 }
 
@@ -701,12 +619,9 @@ body {
   height: 100%;
   background: url(../images/psycho/card_front_fire.png) no-repeat center center;
   background-size: cover;
-  -webkit-transition: .8s ease-in-out;
-  transition: .8s ease-in-out;
-  -webkit-transform: rotateY(180deg);
-          transform: rotateY(180deg);
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
+  transition: 0.8s ease-in-out;
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
 }
 
 .psycho_cardBack {
@@ -716,10 +631,8 @@ body {
   background: url(../images/psycho/card_back.png) no-repeat center center;
   background-size: cover;
   /* backface-visibility: hidden; */
-  -webkit-transition: .8s ease-in-out;
-  transition: .8s ease-in-out;
-  -webkit-transform: rotateY(180deg);
-          transform: rotateY(180deg);
+  transition: 0.8s ease-in-out;
+  transform: rotateY(180deg);
 }
 
 /* 收藏商品 */
@@ -732,19 +645,18 @@ body {
 
 .psycho_collectScreen .psychoLikeImg {
   width: 100%;
-  -o-object-fit: cover;
   object-fit: cover;
 }
 
 .psycho_collectScreen .psychoLikePack {
   position: relative;
   display: inline-block;
-  width: calc((100% - 95px)/5);
+  width: calc((100% - 95px) / 5);
   margin-left: 20px;
   margin-bottom: 20px;
 }
 
-.psychoLikePack:nth-child(5n+1) {
+.psychoLikePack:nth-child(5n + 1) {
   margin-left: 0;
 }
 
@@ -776,12 +688,12 @@ body {
     width: 80%;
   }
   .psycho_collectScreen .psychoLikePack {
-    width: calc((100% - 72px)/4);
+    width: calc((100% - 72px) / 4);
   }
-  .psycho_collectScreen .psychoLikePack:nth-child(5n+1) {
+  .psycho_collectScreen .psychoLikePack:nth-child(5n + 1) {
     margin-left: 20px;
   }
-  .psycho_collectScreen .psychoLikePack:nth-child(4n+1) {
+  .psycho_collectScreen .psychoLikePack:nth-child(4n + 1) {
     margin-left: 0;
   }
 }
@@ -794,21 +706,21 @@ body {
     width: 80%;
   }
   .psycho_collectScreen .psychoLikePack {
-    width: calc((100% - 25px)/2);
+    width: calc((100% - 25px) / 2);
   }
-  .psycho_collectScreen .psychoLikePack:nth-child(5n+1) {
+  .psycho_collectScreen .psychoLikePack:nth-child(5n + 1) {
     margin-left: 20px;
   }
-  .psycho_collectScreen .psychoLikePack:nth-child(4n+1) {
+  .psycho_collectScreen .psychoLikePack:nth-child(4n + 1) {
     margin-left: 20px;
   }
-  .psycho_collectScreen .psychoLikePack:nth-child(2n+1) {
+  .psycho_collectScreen .psychoLikePack:nth-child(2n + 1) {
     margin-left: 0px;
   }
 }
 
 @media (max-width: 500px) {
-  .psychotest{
+  .psychotest {
     display: none;
   }
   .psycho_questionScreen {
@@ -826,19 +738,13 @@ body {
     text-align: left;
   }
   .psycho_titleRange {
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    align-items: center;
   }
   .psychoQuestion01Range {
     margin: 1vh auto 1vh;
-    width: 85%;
   }
   .psychoQuestionAnsRange {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
     height: 26vh;
   }
   .psychoQuestionAns {
@@ -849,3 +755,4 @@ body {
     /* opacity:.5; */
   }
 }
+/*# sourceMappingURL=psycho.css.map */
