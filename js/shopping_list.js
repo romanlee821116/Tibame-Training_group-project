@@ -1,6 +1,10 @@
 $(document).ready(function() {
     var item_area = $(".product_product");
     $(item_area).first().show().siblings().hide();
+
+    function all() {
+        $(".product_area")
+    }
     // 點擊切換商品分類內容
     $(".product_area").click(function() {
         let index = $(this).index();
@@ -8,30 +12,24 @@ $(document).ready(function() {
         $(this).find("i").addClass("yellow").show();
         $(this).find('span').css({ color: '#172852' });
         if ($(this).find("i").hasClass("yellow")) {
-            // $(this).find("img").attr("src", `url('../images/shopping_list/shop${ index + 1}_hov.png')`);
+            $(this).find("img").attr("src", `../images/shopping_list/shop${index+1}_hov.png`);
             $(this).siblings().find("i").removeClass("yellow").hide();
             $(this).siblings().find('span').css({ color: '#bb866a' });
-        }
+        } else {}
     });
     // 選擇商品分類
-    // $(".product_area").mouseenter(function() {
-    //     let index = $(this).index();
-    //     if ($(this).index() != index) {
-    //         $(this).find("img").attr("src", `url("../images/shopping_list/shop${index+1}_hov.png")`);
-    //         $(this).find('span').css({ color: '#172852' });
-    //     } else {
-
-    //     }
-    // });
-    // $(".product_area").mouseleave(function() {
-    //     let index = $(this).index();
-    //     if ($(this).index() == index) {
-    //         $(this).find("i").removeClass("yellow").hide();
-    //         $(this).find('span').css({ color: '#bb866a' });
-    //     } else {
-    //         $(this).find("img").attr("src", `url("../images/shopping_list/shop${index+1}.png")`);
-    //     }
-    // });
+    $(".product_area").mouseenter(function() {
+        let index = $(this).index();
+        $(this).find("img").attr("src", `../images/shopping_list/shop${index+1}_hov.png`);
+        $(this).find('span').css({ color: '#172852' });
+    });
+    $(".product_area").mouseleave(function() {
+        let index = $(this).index();
+        if (!$(this).find("i").hasClass("yellow")) {
+            $(this).siblings().find('span').css({ color: '#bb866a' });
+            $(this).find("img").attr("src", `../images/shopping_list/shop${index+1}.png`);
+        }
+    });
 
     // 商品數量增減 
 
