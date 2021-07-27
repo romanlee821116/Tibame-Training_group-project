@@ -1,6 +1,5 @@
 $(document).ready(function () {
     tmpQ = 1;
-    a = detectmob();
 
     $('.psychoQuestionAsn_a').hover(function(){setPicture(true,"a");},function(){setPicture()});
     $('.psychoQuestionAsn_b').hover(function(){setPicture(true,"b");},function(){setPicture()});
@@ -17,7 +16,7 @@ function setPicture(key,type) {
 
 function chgQuestion(key,type) {
     $(".psychoQuestionAns").css("opacity","1");
-    if (a == true && key){
+    if (detectmob() == true && key){
         $(".psycho_nextbtndisplay").css("display","unset");
         $(".psychoQuestionAns").not(".psychoQuestionAsn_"+type).css("opacity",".5");
         return;

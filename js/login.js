@@ -35,12 +35,12 @@ window.onload = function () {
         // 清空表單反饋
         memberFormError0();
         // -----------
-        $('.loginWrapper').css('height','150px');
+        $('.loginWrapper').css('height','145px');
         // $('.loginWrapper').animate({height:'100px'},500);
         // FB跟LINE登入
         $('.loginOther').fadeIn(700);
         // 密碼說明
-        $('#password').attr('placeholder','請輸入密碼');
+        $('#loginPassword').attr('placeholder','請輸入密碼');
         $('.eye2').hide();
         // 小三角形移動位置
         $('#loginArrow').css('left','21%');
@@ -60,7 +60,7 @@ window.onload = function () {
         // 清空表單反饋
         memberFormError0();
         // -----------
-        $('.loginWrapper').css('height','430px');
+        $('.loginWrapper').css('height','420px');
         // $('.loginWrapper').css('height','100%');
         // var full = $('.loginWrapper').height();
         // $('.loginWrapper').animate({height: full}, 500);
@@ -73,7 +73,7 @@ window.onload = function () {
         $('#loginArrow').css('left','71%');
         // 送出按鈕
         $('button span').css({
-            transform:'translate3d(0,-40px,0)',
+            transform:'translate3d(0,-43px,0)',
         });
         // 登入註冊下底線
         $('.loginChoosenBar').css({left :'50%'});

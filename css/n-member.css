@@ -1,6 +1,7 @@
 @charset "UTF-8";
 * {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   font-family: '微軟正黑體';
 }
 
@@ -11,9 +12,15 @@ body {
 }
 
 .n-member_header {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   background-image: url("../images/backend/loginbg.png");
   background-repeat: no-repeat;
   background-position: center top;
@@ -23,10 +30,17 @@ body {
 }
 
 .n-member_logo {
-  flex-grow: 2;
+  -webkit-box-flex: 2;
+      -ms-flex-positive: 2;
+          flex-grow: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  column-gap: 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 20px;
+          column-gap: 20px;
 }
 
 .n-member_logo img {
@@ -42,9 +56,14 @@ body {
 }
 
 .n-member_logout {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  column-gap: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 10px;
+          column-gap: 10px;
   cursor: pointer;
 }
 
@@ -57,14 +76,23 @@ body {
 }
 
 .n-member_main {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   padding: 0 60px;
 }
 
 .n-member_left {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: 15%;
 }
 
@@ -104,8 +132,12 @@ body {
 
 .n-member_right form {
   /* border: 1px solid blue; */
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: flex-end;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   margin-bottom: 20px;
 }
 
@@ -119,11 +151,20 @@ body {
 }
 
 .n-member_right form section {
-  flex-grow: 2;
+  -webkit-box-flex: 2;
+      -ms-flex-positive: 2;
+          flex-grow: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: flex-end;
-  column-gap: 10px;
-  align-items: flex-end;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-column-gap: 10px;
+          column-gap: 10px;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
 }
 
 .n-member_right form section label {
@@ -156,6 +197,21 @@ body {
   padding-left: 5px;
 }
 
+.n-member_right form section input::-webkit-input-placeholder {
+  color: #cba89a;
+  font-weight: bold;
+}
+
+.n-member_right form section input:-ms-input-placeholder {
+  color: #cba89a;
+  font-weight: bold;
+}
+
+.n-member_right form section input::-ms-input-placeholder {
+  color: #cba89a;
+  font-weight: bold;
+}
+
 .n-member_right form section input::placeholder {
   color: #cba89a;
   font-weight: bold;
@@ -166,9 +222,12 @@ body {
   margin: 0;
   padding: 10px;
   list-style: none;
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: 1fr 2.5fr 1fr 1fr .8fr 1fr 1fr;
-  column-gap: 10px;
+  -ms-grid-columns: 1fr 2.5fr 1fr 1fr .8fr 1fr 1fr;
+      grid-template-columns: 1fr 2.5fr 1fr 1fr .8fr 1fr 1fr;
+  -webkit-column-gap: 10px;
+          column-gap: 10px;
   background-color: #cba89a;
   font-size: 16px;
   color: #ffffff;
@@ -180,14 +239,19 @@ body {
   margin: 0;
   padding: 10px;
   list-style: none;
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: 1fr 2.5fr 1fr 1fr .8fr 1fr 1fr;
-  column-gap: 10px;
+  -ms-grid-columns: 1fr 2.5fr 1fr 1fr .8fr 1fr 1fr;
+      grid-template-columns: 1fr 2.5fr 1fr 1fr .8fr 1fr 1fr;
+  -webkit-column-gap: 10px;
+          column-gap: 10px;
   background-color: #ffffff;
   font-size: 16px;
   color: #172852;
   font-weight: bold;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .n-member_member li {
@@ -219,8 +283,12 @@ body {
   margin: 0;
   padding: 0px;
   list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: flex-end;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   margin-top: 15px;
 }
 
@@ -253,14 +321,20 @@ body {
   width: 750px;
   height: 300px;
   /* border: 1px solid red; */
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   border-radius: 10px;
   overflow: hidden;
   position: fixed;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   z-index: 2;
   background-color: #ffffff;
   /* display: none; */
@@ -279,8 +353,10 @@ body {
   margin: 0;
   padding: 0px;
   list-style: none;
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: 1fr .9fr;
+  -ms-grid-columns: 1fr .9fr;
+      grid-template-columns: 1fr .9fr;
   padding: 15px 30px;
   row-gap: 20px;
 }
@@ -302,7 +378,9 @@ body {
   border-radius: 3px;
   overflow: hidden;
   cursor: pointer;
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   outline: none;
   background: none;
   background-image: url("../images/backend/select.png");
@@ -313,9 +391,14 @@ body {
 
 .n-member_editbtn {
   margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  column-gap: 30px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-column-gap: 30px;
+          column-gap: 30px;
 }
 
 .n-member_editbtn button {

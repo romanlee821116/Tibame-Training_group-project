@@ -28,7 +28,8 @@ $(document).ready(function() {
             window.location.href = 'member.html';
             // console.log('haveclass');
         }else{
-            $('.memberShow').fadeIn(700);
+            // $('.memberShow').fadeIn(700);
+            $('.memberShow').load('login.html').fadeIn(700);
             $('body').addClass('stopScroll');
             // console.log('noclass');
         };
