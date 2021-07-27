@@ -561,6 +561,10 @@ body {
   margin: auto;
 }
 
+.finish_container img {
+  width: 100%;
+}
+
 @media screen and (max-width: 576px) {
   .finish_container {
     width: 90%;

@@ -656,14 +656,14 @@ body {
   background-attachment: fixed;
 }
 
-img {
-  width: 100%;
-}
-
 .checkout_container {
   width: 80%;
   max-width: 1200px;
   margin: auto;
+}
+
+.checkout_container img {
+  width: 100%;
 }
 
 @media screen and (max-width: 1200px) {

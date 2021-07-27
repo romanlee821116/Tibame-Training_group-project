@@ -706,15 +706,15 @@ body {
   top: 3px;
 }
 
-img {
-  width: 100%;
-}
-
 .FAQ_container {
   /* border: 1px solid black; */
   width: 80%;
   max-width: 1200px;
   margin: auto;
+}
+
+.FAQ_container img {
+  width: 100%;
 }
 
 @media screen and (max-width: 576px) {

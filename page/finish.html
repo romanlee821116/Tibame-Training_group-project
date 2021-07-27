@@ -11,8 +11,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.14/vue.js"></script>
   <script src="https://kit.fontawesome.com/8c3a8ab95b.js" crossorigin="anonymous"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.14/vue.js"></script>
+  <script src="../js/finish_vue.js"></script>
 
 </head>
 
@@ -112,40 +111,22 @@
         <!-- 商品清單 -->
         <ul class="finish_itemList">
 
-          <li class="finish_item">
+          <li class="finish_item" v-for="(item,index) in itemList" id="item.id">
             <div class="finish_data">
-              <div><img src="../images/finish/banner_matcha_item.png"></div>
-              <div>南投銅鑼燒</div>
+              <div><img :src="item.img"></div>
+              <div>{{item.itemName}}</div>
             </div>
-            <div>x 1</div>
-            <div>$480元 / 6入</div>
+            <div>x {{item.quantity}}</div>
+            <div>${{item.price}}元 / {{item.itemQuantity}}入</div>
           </li>
 
-          <li class="finish_item">
+          <li class="finish_item" v-for="(item,index) in customization" id="item.id">
             <div class="finish_data">
-              <div><img src="../images/finish/banner_matcha_item.png"></div>
-              <div>南投銅鑼燒</div>
+              <div><img :src="item.img"></div>
+              <div>{{item.itemName}}</div>
             </div>
-            <div>x 1</div>
-            <div>$480元 / 6入</div>
-          </li>
-
-          <li class="finish_item">
-            <div class="finish_data">
-              <div><img src="../images/finish/banner_matcha_item.png"></div>
-              <div>南投銅鑼燒</div>
-            </div>
-            <div>x 1</div>
-            <div>$480元 / 6入</div>
-          </li>
-
-          <li class="finish_item">
-            <div class="finish_data">
-              <div><img src="../images/finish/banner_matcha_item.png"></div>
-              <div>南投銅鑼燒</div>
-            </div>
-            <div>x 1</div>
-            <div>$480元 / 6入</div>
+            <div>x {{item.quantity}}</div>
+            <div>${{item.price}}元 / {{item.itemQuantity}}入</div>
           </li>
 
         </ul>
@@ -208,7 +189,7 @@
   </div>
   <!-- =======================footer結束======================= -->
 
- 
+
 </body>
 
 </html>

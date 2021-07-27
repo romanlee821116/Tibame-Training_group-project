@@ -658,14 +658,14 @@ body {
   background-attachment: fixed;
 }
 
-img {
-  width: 100%;
-}
-
 .OC_container {
   width: 80%;
   max-width: 1200px;
   margin: auto;
+}
+
+.OC_container img {
+  width: 100%;
 }
 
 @media screen and (max-width: 576px) {

@@ -165,39 +165,45 @@ $(document).ready(function(){
       add(item){
         // console.log(item.quantity);
         item.quantity++;
-        //=============local storage =======================   
+        //====================== local storage =====================
         let this_price = item.price;
-        console.log(this_price);
+        // console.log(this_price);
+        // 價錢更新
         let new_subtotal = parseInt(localStorage['subtotal']) + this_price;
         let new_total = parseInt(localStorage['total']) + this_price;
-        let customization = this.customization;
-        let itemList = this.itemList;
         localStorage.setItem('subtotal', new_subtotal);
         localStorage.setItem('total', new_total);  
-        localStorage.setItem('customized_List', JSON.stringify(customization));
-        localStorage.setItem('item_List', JSON.stringify(itemList));
         this.itemPrice = new_subtotal;
         this.total_price = new_total;
-        // ====================================
+
+        // 商品內容更新
+        let customization = this.customization;
+        let itemList = this.itemList;
+        localStorage.setItem('customized_List', JSON.stringify(customization));
+        localStorage.setItem('item_List', JSON.stringify(itemList));
+        // ==========================================================
       },
       // 數量減少
       sub(item){
         // console.log(item.quantity);
         if(item.quantity > 1){
           item.quantity--;
-          //=============local storage =======================   
+          //=================== local storage =======================   
           let this_price = item.price;
+          // 價錢更新
           let new_subtotal = parseInt(localStorage['subtotal']) - this_price;
           let new_total = parseInt(localStorage['total']) - this_price;
-          let customization = this.customization;
-          let itemList = this.itemList;
           localStorage.setItem('subtotal', new_subtotal);
           localStorage.setItem('total', new_total);  
-          localStorage.setItem('customized_List', JSON.stringify(customization));
-          localStorage.setItem('item_List', JSON.stringify(itemList));
           this.itemPrice = new_subtotal;
           this.total_price = new_total;
-          // ====================================
+
+          // 數量更新
+          let customization = this.customization;
+          let itemList = this.itemList;
+          localStorage.setItem('customized_List', JSON.stringify(customization));
+          localStorage.setItem('item_List', JSON.stringify(itemList));
+          // =======================================================
         };
       },
       // 刪除(單一商品)

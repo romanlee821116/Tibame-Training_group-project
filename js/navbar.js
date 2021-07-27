@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    $('.memberShow').load('login.html').hide();
     // 儲存人頭為會員中心
     // window.onload = function (){
     //     if($('#loginFormPage .loginButton').hasClass('loginOK')){
@@ -19,7 +20,7 @@ $(document).ready(function() {
             window.location.href = 'member.html';
             // console.log('haveclass');
         }else{
-            $('.memberShow').load('login.html').fadeIn(700);
+            $('.memberShow').fadeIn(700);
             $('body').addClass('stopScroll');
             // console.log('noclass');
         };
