@@ -11,7 +11,6 @@
     <script src="../js/shopping_list.js"></script>
     <title>商品列表 - 小春堂</title>
     <link rel="icon" href="../images/index/logo_footer.png">
-
     <script src="../js/vue.js"></script>
     <script src="../js/cart_vue.js"></script>
     <script src="../js/hamburger.js"></script>
@@ -21,62 +20,60 @@
 <body>
     <div class="memberShow"></div>
     <!-- navbar -->
-	<div id="cart_app">
-		<div class="navbar">
-			<div class="navbar-logo">
-				<a href="../index.html"><img src="../images/index/logo.png" alt=""></a>
-			</div>
-			<div class="navbar-icon">
-				<a href="#"><i class="fas fa-user"></i></a>
-				<a href="#" @click="open()"><i class="fas fa-shopping-cart"></i></a>
-				<a href="#"></a>
+    <div id="cart_app">
+        <div class="navbar">
+            <div class="navbar-logo">
+                <a href="../index.html"><img src="../images/index/logo.png" alt=""></a>
+            </div>
+            <div class="navbar-icon">
+                <a href="#"><i class="fas fa-user"></i></a>
+                <a href="#" @click="open()"><i class="fas fa-shopping-cart"></i></a>
+                <a href="#"></a>
                 <div id="product_counter">1</div>
-			</div>
-			<!-- 漢堡 -->
-			<div class="ham_container">
-				<div class="ham_bar1 ham_bar"></div>
-				<div class="ham_bar2 ham_bar"></div>
-				<div class="ham_bar3 ham_bar"></div>
-			</div>
-			<div id="ham_myNav" class="ham_overlay">
-				<div class="ham_overlay-content">
-					<div class='ham_jelly'></div>
-					<div class="ham_select">
-						<a href="../index.html">首頁</a>
-						<a href="./about.html">關於我們</a>
-						<a href="./news.html">最新消息</a>
-						<a href="./shopping_choose.html">商品專區</a>
-						<a href="./customized.html">客製化禮盒</a>
-						<a href="./FAQ.html">Q&A</a>
-						<a href="./login.html">會員中心</a>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="cart_cartBoard">
-			<div class="cart_cart">
-				<div class="cart_cartTitle">
-					<p>購物車</p>
-					<div class="cart_close" @click="close()">
-						<div class="cart_left"></div>
-						<div class="cart_right"></div>
-					</div>
-				</div>
-				<!-- ========== 商品細項 ========== -->
-				<ul class="cart_itemList">
-					<!-- 購物車空值顯示 -->
-					<div class="cart_NoItem">
-						<div>
-							<img src="../images/cart/shoppingcart_empty.png">
-						</div>
-						<p>購物車還是空的哦！</p>
-					</div>
-					<!-- 一般商品 -->
-					<li class="cart_item" v-for="(item,index) in itemList" :id="item.id">
-						<div class="cart_itemCB" :class="{'cart_choose': item.status}" @click="choose(item)">
-							<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"
-								data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check fa-w-16" role="img"
-								viewBox="0 0 512 512">
+            </div>
+            <!-- 漢堡 -->
+            <div class="ham_container">
+                <div class="ham_bar1 ham_bar"></div>
+                <div class="ham_bar2 ham_bar"></div>
+                <div class="ham_bar3 ham_bar"></div>
+            </div>
+            <div id="ham_myNav" class="ham_overlay">
+                <div class="ham_overlay-content">
+                    <div class='ham_jelly'></div>
+                    <div class="ham_select">
+                        <a href="../index.html">首頁</a>
+                        <a href="./about.html">關於我們</a>
+                        <a href="./news.html">最新消息</a>
+                        <a href="./shopping_choose.html">商品專區</a>
+                        <a href="./customized.html">客製化禮盒</a>
+                        <a href="./FAQ.html">Q&A</a>
+                        <a href="./login.html">會員中心</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cart_cartBoard">
+            <div class="cart_cart">
+                <div class="cart_cartTitle">
+                    <p>購物車</p>
+                    <div class="cart_close" @click="close()">
+                        <div class="cart_left"></div>
+                        <div class="cart_right"></div>
+                    </div>
+                </div>
+                <!-- ========== 商品細項 ========== -->
+                <ul class="cart_itemList">
+                    <!-- 購物車空值顯示 -->
+                    <div class="cart_NoItem">
+                        <div>
+                            <img src="../images/cart/shoppingcart_empty.png">
+                        </div>
+                        <p>購物車還是空的哦！</p>
+                    </div>
+                    <!-- 一般商品 -->
+                    <li class="cart_item" v-for="(item,index) in itemList" :id="item.id">
+                        <div class="cart_itemCB" :class="{'cart_choose': item.status}" @click="choose(item)">
+                            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check fa-w-16" role="img" viewBox="0 0 512 512">
 								<path fill="#ffffff"
 									d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z" />
 							</svg>
@@ -174,8 +171,6 @@
         <a href="#"><i class="fab fa-facebook-square"></i></a>
         <a href="#"><i class="fab fa-twitter-square"></i></a>
     </div>
-
-
     <main class="product_main">
         <!-- 1.銅鑼燒 -->
         <div class="product_product">
@@ -187,9 +182,9 @@
                 <div class="product_heart"></div>
                 <div class="product_left">
                     <div class="product_img">
-                        <img src="../images/shopping_list/product_pic1/1-3.jpg" alt="">
-                        <img src="../images/shopping_list/product_pic1/1-1.jpg" alt="">
-                        <img src="../images/shopping_list/product_pic1/1-2.jpg" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
                     </div>
                     <div class="product_circle">
                         <div class="circle_grey"></div>
@@ -204,7 +199,7 @@
                     </p>
                     <p class="product_ingredients">成分 : 米、糖、草莓</p>
                     <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>95円</span>(稅達)/1000g</p>
+                    <p class="product_price"><span>95元</span>(稅達)/1000g</p>
                     <div class="product_product_num">
                         <div class="product_num_btn">
                             <button class="min">-</button>
@@ -223,9 +218,9 @@
                 <div class="product_heart"></div>
                 <div class="product_left">
                     <div class="product_img">
-                        <img src="../images/shopping_list/product_pic1/2-3.jpg" alt="">
-                        <img src="../images/shopping_list/product_pic1/2-1.jpeg" alt="">
-                        <img src="../images/shopping_list/product_pic1/2-2.jpeg" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
                     </div>
                     <div class="product_circle">
                         <div class="circle_grey"></div>
@@ -241,7 +236,7 @@
                     </p>
                     <p class="product_ingredients">成分 : 米、糖、芋頭</p>
                     <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>95円</span>(稅達)/1000g</p>
+                    <p class="product_price"><span>95元</span>(稅達)/1000g</p>
                     <div class="product_product_num">
                         <div class="product_num_btn">
                             <button class="min">-</button>
@@ -260,9 +255,9 @@
                 <div class="product_heart"></div>
                 <div class="product_left">
                     <div class="product_img">
-                        <img src="../images/shopping_list/product_pic1/3-3.jpg" alt="">
-                        <img src="../images/shopping_list/product_pic1/3-2.jpg" alt="">
-                        <img src="../images/shopping_list/product_pic1/3-1.jpg" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
                     </div>
                     <div class="product_circle">
                         <div class="circle_grey"></div>
@@ -277,7 +272,7 @@
                     </p>
                     <p class="product_ingredients">成分 : 米、糖、抹茶</p>
                     <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>95円</span>(稅達)/1000g</p>
+                    <p class="product_price"><span>95元</span>(稅達)/1000g</p>
                     <div class="product_product_num">
                         <div class="product_num_btn">
                             <button class="min">-</button>
@@ -296,9 +291,9 @@
                 <div class="product_heart"></div>
                 <div class="product_left">
                     <div class="product_img">
-                        <img src="../images/shopping_list/product_pic1/4-3.jpg" alt="">
-                        <img src="../images/shopping_list/product_pic1/4-1.jpg" alt="">
-                        <img src="../images/shopping_list/product_pic1/4-2.jpg" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
                     </div>
                     <div class="product_circle">
                         <div class="circle_grey"></div>
@@ -313,7 +308,7 @@
                     </p>
                     <p class="product_ingredients">成分 : 米、糖、巧克力、牛奶</p>
                     <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>95円</span>(稅達)/1000g</p>
+                    <p class="product_price"><span>95元</span>(稅達)/1000g</p>
                     <div class="product_product_num">
                         <div class="product_num_btn">
                             <button class="min">-</button>
@@ -332,9 +327,9 @@
                 <div class="product_heart"></div>
                 <div class="product_left">
                     <div class="product_img">
-                        <img src="../images/shopping_list/product_pic1/5-1.jpg" alt="">
-                        <img src="../images/shopping_list/product_pic1/5-3.jpg" alt="">
-                        <img src="../images/shopping_list/product_pic1/5-2.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
                     </div>
                     <div class="product_circle">
                         <div class="circle_grey"></div>
@@ -349,7 +344,7 @@
                     </p>
                     <p class="product_ingredients">成分 : 米、糖、布丁</p>
                     <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>95円</span>(稅達)/1000g</p>
+                    <p class="product_price"><span>95元</span>(稅達)/1000g</p>
                     <div class="product_product_num">
                         <div class="product_num_btn">
                             <button class="min">-</button>
@@ -368,9 +363,9 @@
                 <div class="product_heart"></div>
                 <div class="product_left">
                     <div class="product_img">
-                        <img src="../images/shopping_list/product_pic1/6-1.jpg" alt="">
-                        <img src="../images/shopping_list/product_pic1/6-2.jpg" alt="">
-                        <img src="../images/shopping_list/product_pic1/6-3.jpg" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
                     </div>
                     <div class="product_circle">
                         <div class="circle_grey"></div>
@@ -385,7 +380,7 @@
                     </p>
                     <p class="product_ingredients">成分 : 米、糖、紅豆、牛奶</p>
                     <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>95円</span>(稅達)/1000g</p>
+                    <p class="product_price"><span>95元</span>(稅達)/1000g</p>
                     <div class="product_product_num">
                         <div class="product_num_btn">
                             <button class="min">-</button>
@@ -404,9 +399,9 @@
                 <div class="product_heart"></div>
                 <div class="product_left">
                     <div class="product_img">
-                        <img src="../images/shopping_list/product_pic1/7-1.jpg" alt="">
-                        <img src="../images/shopping_list/product_pic1/7-2.jpg" alt="">
-                        <img src="../images/shopping_list/product_pic1/7-3.jpg" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
                     </div>
                     <div class="product_circle">
                         <div class="circle_grey"></div>
@@ -421,7 +416,7 @@
                     </p>
                     <p class="product_ingredients">成分 : 米、糖、紅豆、栗</p>
                     <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>95円</span>(稅達)/1000g</p>
+                    <p class="product_price"><span>95元</span>(稅達)/1000g</p>
                     <div class="product_product_num">
                         <div class="product_num_btn">
                             <button class="min">-</button>
@@ -447,9 +442,9 @@
                 <div class="product_heart"></div>
                 <div class="product_left">
                     <div class="product_img">
-                        <img src="../images/shopping_list/product_pic2/1-2.jpg" alt="">
-                        <img src="../images/shopping_list/product_pic2/1-1.jpg" alt="">
-                        <img src="../images/shopping_list/product_pic2/1-3.jpg" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
                     </div>
                     <div class="product_circle">
                         <div class="circle_grey"></div>
@@ -464,7 +459,7 @@
                     </p>
                     <p class="product_ingredients">成分 : 小麥、糖、奶油、牛奶</p>
                     <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>95円</span>(稅達)/1000g</p>
+                    <p class="product_price"><span>95元</span>(稅達)/1000g</p>
                     <div class="product_product_num">
                         <div class="product_num_btn">
                             <button class="min">-</button>
@@ -483,9 +478,9 @@
                 <div class="product_heart"></div>
                 <div class="product_left">
                     <div class="product_img">
-                        <img src="../images/shopping_list/product_pic2/2-1.jpg" alt="">
-                        <img src="../images/shopping_list/product_pic2/2-3.jpg" alt="">
-                        <img src="../images/shopping_list/product_pic2/2-2.jpg" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
                     </div>
                     <div class="product_circle">
                         <div class="circle_grey"></div>
@@ -500,7 +495,7 @@
                     </p>
                     <p class="product_ingredients">成分 : 小麥、糖、抹茶</p>
                     <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>95円</span>(稅達)/1000g</p>
+                    <p class="product_price"><span>95元</span>(稅達)/1000g</p>
                     <div class="product_product_num">
                         <div class="product_num_btn">
                             <button class="min">-</button>
@@ -519,9 +514,9 @@
                 <div class="product_heart"></div>
                 <div class="product_left">
                     <div class="product_img">
-                        <img src="../images/shopping_list/product_pic2/3-3.jpg" alt="">
-                        <img src="../images/shopping_list/product_pic2/3-2.jpg" alt="">
-                        <img src="../images/shopping_list/product_pic2/3-1.jpg" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
                     </div>
                     <div class="product_circle">
                         <div class="circle_grey"></div>
@@ -536,7 +531,7 @@
                     </p>
                     <p class="product_ingredients">成分 : 小麥、糖、紅豆、牛奶</p>
                     <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>95円</span>(稅達)/1000g</p>
+                    <p class="product_price"><span>95元</span>(稅達)/1000g</p>
                     <div class="product_product_num">
                         <div class="product_num_btn">
                             <button class="min">-</button>
@@ -555,9 +550,9 @@
                 <div class="product_heart"></div>
                 <div class="product_left">
                     <div class="product_img">
-                        <img src="../images/shopping_list/product_pic2/4-3.jpg" alt="">
-                        <img src="../images/shopping_list/product_pic2/4-2.jpg" alt="">
-                        <img src="../images/shopping_list/product_pic2/4-1.jpg" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
                     </div>
                     <div class="product_circle">
                         <div class="circle_grey"></div>
@@ -572,7 +567,7 @@
                     </p>
                     <p class="product_ingredients">成分 : 小麥、糖、綠豆</p>
                     <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>95円</span>(稅達)/1000g</p>
+                    <p class="product_price"><span>95元</span>(稅達)/1000g</p>
                     <div class="product_product_num">
                         <div class="product_num_btn">
                             <button class="min">-</button>
@@ -591,9 +586,9 @@
                 <div class="product_heart"></div>
                 <div class="product_left">
                     <div class="product_img">
-                        <img src="../images/shopping_list/product_pic2/5-2.jpg" alt="">
-                        <img src="../images/shopping_list/product_pic2/5-3.jpg" alt="">
-                        <img src="../images/shopping_list/product_pic2/5-1.jpg" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
                     </div>
                     <div class="product_circle">
                         <div class="circle_grey"></div>
@@ -608,7 +603,7 @@
                     </p>
                     <p class="product_ingredients">成分 : 小麥、糖、櫻花、紅豆</p>
                     <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>115円</span>(稅達)/1000g</p>
+                    <p class="product_price"><span>115元</span>(稅達)/1000g</p>
                     <div class="product_product_num">
                         <div class="product_num_btn">
                             <button class="min">-</button>
@@ -634,9 +629,9 @@
                 <div class="product_heart"></div>
                 <div class="product_left">
                     <div class="product_img">
-                        <img src="../images/shopping_list/product_pic3/1-2.jpg" alt="">
-                        <img src="../images/shopping_list/product_pic3/1-3.jpg" alt="">
-                        <img src="../images/shopping_list/product_pic3/1-1.jpg" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
                     </div>
                     <div class="product_circle">
                         <div class="circle_grey"></div>
@@ -651,7 +646,7 @@
                     </p>
                     <p class="product_ingredients">成分 : 米、糖、毛豆</p>
                     <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>100円</span>(稅達)/1000g</p>
+                    <p class="product_price"><span>100元</span>(稅達)/1000g</p>
                     <div class="product_product_num">
                         <div class="product_num_btn">
                             <button class="min">-</button>
@@ -670,9 +665,9 @@
                 <div class="product_heart"></div>
                 <div class="product_left">
                     <div class="product_img">
-                        <img src="../images/shopping_list/product_pic3/2-2.jpg" alt="">
-                        <img src="../images/shopping_list/product_pic3/2-3.jpeg" alt="">
-                        <img src="../images/shopping_list/product_pic3/2-1.jpg" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
                     </div>
                     <div class="product_circle">
                         <div class="circle_grey"></div>
@@ -687,7 +682,7 @@
                     </p>
                     <p class="product_ingredients">成分 : 米、糖、奶油、牛奶</p>
                     <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>90円</span>(稅達)/1000g</p>
+                    <p class="product_price"><span>90元</span>(稅達)/1000g</p>
                     <div class="product_product_num">
                         <div class="product_num_btn">
                             <button class="min">-</button>
@@ -706,9 +701,9 @@
                 <div class="product_heart"></div>
                 <div class="product_left">
                     <div class="product_img">
-                        <img src="../images/shopping_list/product_pic3/3-3.jpg" alt="">
-                        <img src="../images/shopping_list/product_pic3/3-2.jpg" alt="">
-                        <img src="../images/shopping_list/product_pic3/3-1.jpg" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
                     </div>
                     <div class="product_circle">
                         <div class="circle_grey"></div>
@@ -723,7 +718,7 @@
                     </p>
                     <p class="product_ingredients">成分 : 米、糖、巧克力、牛奶</p>
                     <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>90円</span>(稅達)/1000g</p>
+                    <p class="product_price"><span>90元</span>(稅達)/1000g</p>
                     <div class="product_product_num">
                         <div class="product_num_btn">
                             <button class="min">-</button>
@@ -742,9 +737,9 @@
                 <div class="product_heart"></div>
                 <div class="product_left">
                     <div class="product_img">
-                        <img src="../images/shopping_list/product_pic3/4-3.jpg" alt="">
-                        <img src="../images/shopping_list/product_pic3/4-2.jpg" alt="">
-                        <img src="../images/shopping_list/product_pic3/4-1.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
                     </div>
                     <div class="product_circle">
                         <div class="circle_grey"></div>
@@ -759,7 +754,7 @@
                     </p>
                     <p class="product_ingredients">成分 : 米、糖、布丁</p>
                     <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>90円</span>(稅達)/1000g</p>
+                    <p class="product_price"><span>90元</span>(稅達)/1000g</p>
                     <div class="product_product_num">
                         <div class="product_num_btn">
                             <button class="min">-</button>
@@ -784,9 +779,9 @@
                 <div class="product_heart"></div>
                 <div class="product_left">
                     <div class="product_img">
-                        <img src="../images/shopping_list/product_pic3/5-1.jpg" alt="">
-                        <img src="../images/shopping_list/product_pic3/5-2.jpeg" alt="">
-                        <img src="../images/shopping_list/product_pic3/5-3.jpg" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
                     </div>
                     <div class="product_circle">
                         <div class="circle_grey"></div>
@@ -801,7 +796,7 @@
                     </p>
                     <p class="product_ingredients">成分 : 米、糖、芒果</p>
                     <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>100円</span>(稅達)/1000g</p>
+                    <p class="product_price"><span>100元</span>(稅達)/1000g</p>
                     <div class="product_product_num">
                         <div class="product_num_btn">
                             <button class="min">-</button>
@@ -826,9 +821,9 @@
                 <div class="product_heart"></div>
                 <div class="product_left">
                     <div class="product_img">
-                        <img src="../images/shopping_list/product_pic3/6-3.jpg" alt="">
-                        <img src="../images/shopping_list/product_pic3/6-2.jpg" alt="">
-                        <img src="../images/shopping_list/product_pic3/6-1.jpg" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
                     </div>
                     <div class="product_circle">
                         <div class="circle_grey"></div>
@@ -843,7 +838,7 @@
                     </p>
                     <p class="product_ingredients">成分 : 米、糖、抹茶</p>
                     <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>90円</span>(稅達)/1000g</p>
+                    <p class="product_price"><span>90元</span>(稅達)/1000g</p>
                     <div class="product_product_num">
                         <div class="product_num_btn">
                             <button class="min">-</button>
@@ -868,9 +863,9 @@
                 <div class="product_heart"></div>
                 <div class="product_left">
                     <div class="product_img">
-                        <img src="../images/shopping_list/product_pic3/7-2.jpg" alt="">
-                        <img src="../images/shopping_list/product_pic3/7-3.jpg" alt="">
-                        <img src="../images/shopping_list/product_pic3/7-1.jpg" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
                     </div>
                     <div class="product_circle">
                         <div class="circle_grey"></div>
@@ -885,7 +880,7 @@
                     </p>
                     <p class="product_ingredients">成分 : 米、糖、柳橙、卡士達</p>
                     <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>100円</span>(稅達)/1000g</p>
+                    <p class="product_price"><span>100元</span>(稅達)/1000g</p>
                     <div class="product_product_num">
                         <div class="product_num_btn">
                             <button class="min">-</button>
@@ -904,9 +899,9 @@
                 <div class="product_heart"></div>
                 <div class="product_left">
                     <div class="product_img">
-                        <img src="../images/shopping_list/product_pic3/8-1.jpg" alt="">
-                        <img src="../images/shopping_list/product_pic3/8-2.jpg" alt="">
-                        <img src="../images/shopping_list/product_pic3/8-3.jpg" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
                     </div>
                     <div class="product_circle">
                         <div class="circle_grey"></div>
@@ -921,7 +916,7 @@
                     </p>
                     <p class="product_ingredients">成分 : 米、糖、紅豆、牛奶</p>
                     <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>90円</span>(稅達)/1000g</p>
+                    <p class="product_price"><span>90元</span>(稅達)/1000g</p>
                     <div class="product_product_num">
                         <div class="product_num_btn">
                             <button class="min">-</button>
@@ -946,9 +941,9 @@
                 <div class="product_heart"></div>
                 <div class="product_left">
                     <div class="product_img">
-                        <img src="../images/shopping_list/product_pic3/9-2.jpg" alt="">
-                        <img src="../images/shopping_list/product_pic3/9-3.jfif" alt="">
-                        <img src="../images/shopping_list/product_pic3/9-1.jpg" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
                     </div>
                     <div class="product_circle">
                         <div class="circle_grey"></div>
@@ -963,7 +958,7 @@
                     </p>
                     <p class="product_ingredients">成分 : 米、糖、紅豆、栗</p>
                     <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>90円</span>(稅達)/1000g</p>
+                    <p class="product_price"><span>90元</span>(稅達)/1000g</p>
                     <div class="product_product_num">
                         <div class="product_num_btn">
                             <button class="min">-</button>
@@ -988,9 +983,9 @@
                 <div class="product_heart"></div>
                 <div class="product_left">
                     <div class="product_img">
-                        <img src="../images/shopping_list/product_pic3/10-3.jpg" alt="">
-                        <img src="../images/shopping_list/product_pic3/10-2.jpg" alt="">
-                        <img src="../images/shopping_list/product_pic3/10-1.jpg" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
                     </div>
                     <div class="product_circle">
                         <div class="circle_grey"></div>
@@ -1005,7 +1000,7 @@
                     </p>
                     <p class="product_ingredients">成分 : 米、糖、草莓</p>
                     <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>100円</span>(稅達)/1000g</p>
+                    <p class="product_price"><span>100元</span>(稅達)/1000g</p>
                     <div class="product_product_num">
                         <div class="product_num_btn">
                             <button class="min">-</button>
@@ -1054,7 +1049,7 @@
                     </p>
                     <p class="product_ingredients">成分 : 米、糖、白豆沙、水飴、柚子陳皮</p>
                     <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>100円</span>(稅達)/1000g</p>
+                    <p class="product_price"><span>100元</span>(稅達)/1000g</p>
                     <div class="product_product_num">
                         <div class="product_num_btn">
                             <button class="min">-</button>
@@ -1096,7 +1091,7 @@
                     </p>
                     <p class="product_ingredients">成分 : 米、糖、白豆沙、水飴、柚子陳皮</p>
                     <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>90円</span>(稅達)/1000g</p>
+                    <p class="product_price"><span>90元</span>(稅達)/1000g</p>
                     <div class="product_product_num">
                         <div class="product_num_btn">
                             <button class="min">-</button>
@@ -1138,7 +1133,7 @@
                     </p>
                     <p class="product_ingredients">成分 : 米、糖、白豆沙、水飴、柚子陳皮</p>
                     <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>90円</span>(稅達)/1000g</p>
+                    <p class="product_price"><span>90元</span>(稅達)/1000g</p>
                     <div class="product_product_num">
                         <div class="product_num_btn">
                             <button class="min">-</button>
@@ -1187,7 +1182,7 @@
                     </p>
                     <p class="product_ingredients">成分 : 米、糖、白豆沙、水飴、柚子陳皮</p>
                     <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>80円</span>(稅達)/1000g</p>
+                    <p class="product_price"><span>80元</span>(稅達)/1000g</p>
                     <div class="product_product_num">
                         <div class="product_num_btn">
                             <button class="min">-</button>
@@ -1229,7 +1224,7 @@
                     </p>
                     <p class="product_ingredients">成分 : 米、糖、白豆沙、水飴、柚子陳皮</p>
                     <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>80円</span>(稅達)/1000g</p>
+                    <p class="product_price"><span>80元</span>(稅達)/1000g</p>
                     <div class="product_product_num">
                         <div class="product_num_btn">
                             <button class="min">-</button>
@@ -1271,7 +1266,7 @@
                     </p>
                     <p class="product_ingredients">成分 : 米、糖、白豆沙、水飴、柚子陳皮</p>
                     <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>220円</span>(稅達)/1000g</p>
+                    <p class="product_price"><span>220元</span>(稅達)/1000g</p>
                     <div class="product_product_num">
                         <div class="product_num_btn">
                             <button class="min">-</button>
@@ -1303,9 +1298,9 @@
                 <div class="product_heart"></div>
                 <div class="product_left">
                     <div class="product_img">
-                        <img src="../images/shopping_list/product_pic6/1-3.jpg" alt="">
-                        <img src="../images/shopping_list/product_pic6/1-2.jpg" alt="">
-                        <img src="../images/shopping_list/product_pic6/1-1.jpg" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
                     </div>
                     <div class="product_circle">
                         <div class="circle_grey"></div>
@@ -1320,7 +1315,7 @@
                     </p>
                     <p class="product_ingredients">成分 : 豆沙、抹茶餡</p>
                     <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>110円</span>(稅達)/1000g</p>
+                    <p class="product_price"><span>110元</span>(稅達)/1000g</p>
                     <div class="product_product_num">
                         <div class="product_num_btn">
                             <button class="min">-</button>
@@ -1345,9 +1340,9 @@
                 <div class="product_heart"></div>
                 <div class="product_left">
                     <div class="product_img">
-                        <img src="../images/shopping_list/product_pic6/2-1.jpg" alt="">
-                        <img src="../images/shopping_list/product_pic6/2-3.jpg" alt="">
-                        <img src="../images/shopping_list/product_pic6/2-2.jpg" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
                     </div>
                     <div class="product_circle">
                         <div class="circle_grey"></div>
@@ -1362,7 +1357,7 @@
                     </p>
                     <p class="product_ingredients">成分 : 米、豆沙、柚子紅茶餡</p>
                     <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>110円</span>(稅達)/1000g</p>
+                    <p class="product_price"><span>110元</span>(稅達)/1000g</p>
                     <div class="product_product_num">
                         <div class="product_num_btn">
                             <button class="min">-</button>
@@ -1387,9 +1382,9 @@
                 <div class="product_heart"></div>
                 <div class="product_left">
                     <div class="product_img">
-                        <img src="../images/shopping_list/product_pic6/3-2.jpg" alt="">
-                        <img src="../images/shopping_list/product_pic6/3-1.jpg" alt="">
-                        <img src="../images/shopping_list/product_pic6/3-3.jpg" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
                     </div>
                     <div class="product_circle">
                         <div class="circle_grey"></div>
@@ -1404,7 +1399,7 @@
                     </p>
                     <p class="product_ingredients">成分 : 豆沙、奶油餡、牛奶</p>
                     <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>110円</span>(稅達)/1000g</p>
+                    <p class="product_price"><span>110元</span>(稅達)/1000g</p>
                     <div class="product_product_num">
                         <div class="product_num_btn">
                             <button class="min">-</button>
@@ -1429,9 +1424,9 @@
                 <div class="product_heart"></div>
                 <div class="product_left">
                     <div class="product_img">
-                        <img src="../images/shopping_list/product_pic6/4-2.jpg" alt="">
-                        <img src="../images/shopping_list/product_pic6/4-1.jpg" alt="">
-                        <img src="../images/shopping_list/product_pic6/4-3.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
                     </div>
                     <div class="product_circle">
                         <div class="circle_grey"></div>
@@ -1446,7 +1441,7 @@
                     </p>
                     <p class="product_ingredients">成分 : 豆沙、柚子紅茶餡</p>
                     <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>110円</span>(稅達)/1000g</p>
+                    <p class="product_price"><span>110元</span>(稅達)/1000g</p>
                     <div class="product_product_num">
                         <div class="product_num_btn">
                             <button class="min">-</button>
@@ -1471,9 +1466,9 @@
                 <div class="product_heart"></div>
                 <div class="product_left">
                     <div class="product_img">
-                        <img src="../images/shopping_list/product_pic6/5-3.png" alt="">
-                        <img src="../images/shopping_list/product_pic6/5-2.jpg" alt="">
-                        <img src="../images/shopping_list/product_pic6/5-1.jpg" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
                     </div>
                     <div class="product_circle">
                         <div class="circle_grey"></div>
@@ -1488,7 +1483,7 @@
                     </p>
                     <p class="product_ingredients">成分 : 豆沙、地瓜餡</p>
                     <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>110円</span>(稅達)/1000g</p>
+                    <p class="product_price"><span>110元</span>(稅達)/1000g</p>
                     <div class="product_product_num">
                         <div class="product_num_btn">
                             <button class="min">-</button>
@@ -1513,9 +1508,9 @@
                 <div class="product_heart"></div>
                 <div class="product_left">
                     <div class="product_img">
-                        <img src="../images/shopping_list/product_pic6/6-1.jpg" alt="">
-                        <img src="../images/shopping_list/product_pic6/6-3.jpg" alt="">
-                        <img src="../images/shopping_list/product_pic6/6-2.jpg" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
                     </div>
                     <div class="product_circle">
                         <div class="circle_grey"></div>
@@ -1530,7 +1525,7 @@
                     </p>
                     <p class="product_ingredients">成分 : 豆沙、地瓜餡、櫻花餡</p>
                     <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>110円</span>(稅達)/1000g</p>
+                    <p class="product_price"><span>110元</span>(稅達)/1000g</p>
                     <div class="product_product_num">
                         <div class="product_num_btn">
                             <button class="min">-</button>
@@ -1562,9 +1557,9 @@
                 <div class="product_heart"></div>
                 <div class="product_left">
                     <div class="product_img">
-                        <img src="../images/shopping_list/product_pic7/1-2.jpg" alt="">
-                        <img src="../images/shopping_list/product_pic7/1-1.jpg" alt="">
-                        <!-- <img src="../images/shopping_list/product_pic7/1-3.jpg" alt=""> -->
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
                     </div>
                     <div class="product_circle">
                         <div class="circle_grey"></div>
@@ -1579,7 +1574,7 @@
                     </p>
                     <p class="product_ingredients">成分 : 米、糖、牛奶、奶油</p>
                     <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>100円</span>(稅達)/1000g</p>
+                    <p class="product_price"><span>100元</span>(稅達)/1000g</p>
                     <div class="product_product_num">
                         <div class="product_num_btn">
                             <button class="min">-</button>
@@ -1604,9 +1599,9 @@
                 <div class="product_heart"></div>
                 <div class="product_left">
                     <div class="product_img">
-                        <img src="../images/shopping_list/product_pic7/2-2.jpg" alt="">
-                        <img src="../images/shopping_list/product_pic7/2-1.jpg" alt="">
-                        <!-- <img src="../images/shopping_list/product_pic7/2-3.jpg" alt=""> -->
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
                     </div>
                     <div class="product_circle">
                         <div class="circle_grey"></div>
@@ -1621,7 +1616,7 @@
                     </p>
                     <p class="product_ingredients">成分 : 米、糖、牛奶、巧克力</p>
                     <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>100円</span>(稅達)/1000g</p>
+                    <p class="product_price"><span>100元</span>(稅達)/1000g</p>
                     <div class="product_product_num">
                         <div class="product_num_btn">
                             <button class="min">-</button>
@@ -1646,9 +1641,9 @@
                 <div class="product_heart"></div>
                 <div class="product_left">
                     <div class="product_img">
-                        <img src="../images/shopping_list/product_pic7/3-2.jpg" alt="">
-                        <!-- <img src="../images/shopping_list/product_pic7/3-3.jpg" alt=""> -->
-                        <img src="../images/shopping_list/product_pic7/3-1.jpg" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
                     </div>
                     <div class="product_circle">
                         <div class="circle_grey"></div>
@@ -1663,7 +1658,7 @@
                     </p>
                     <p class="product_ingredients">成分 : 米、糖、抹茶</p>
                     <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>100円</span>(稅達)/1000g</p>
+                    <p class="product_price"><span>100元</span>(稅達)/1000g</p>
                     <div class="product_product_num">
                         <div class="product_num_btn">
                             <button class="min">-</button>
@@ -1688,9 +1683,9 @@
                 <div class="product_heart"></div>
                 <div class="product_left">
                     <div class="product_img">
-                        <img src="../images/shopping_list/product_pic7/4-1.jpg" alt="">
-                        <img src="../images/shopping_list/product_pic7/4-2.jpg" alt="">
-                        <!-- <img src="../images/shopping_list/product_pic7/4-3.jpg" alt=""> -->
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
                     </div>
                     <div class="product_circle">
                         <div class="circle_grey"></div>
@@ -1705,7 +1700,7 @@
                     </p>
                     <p class="product_ingredients">成分 : 米、糖、花生</p>
                     <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>100円</span>(稅達)/1000g</p>
+                    <p class="product_price"><span>100元</span>(稅達)/1000g</p>
                     <div class="product_product_num">
                         <div class="product_num_btn">
                             <button class="min">-</button>
@@ -1724,9 +1719,9 @@
                 <div class="product_heart"></div>
                 <div class="product_left">
                     <div class="product_img">
-                        <img src="../images/shopping_list/product_pic7/5-2.jpg" alt="">
-                        <img src="../images/shopping_list/product_pic7/5-1.jpg" alt="">
-                        <!-- <img src="../images/shopping_list/product_pic7/5-3.jpg" alt=""> -->
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
+                        <img src="../images/shopping_list/product_big.png" alt="">
                     </div>
                     <div class="product_circle">
                         <div class="circle_grey"></div>
@@ -1741,7 +1736,7 @@
                     </p>
                     <p class="product_ingredients">成分 : 米、糖、紅豆、牛奶</p>
                     <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>100円</span>(稅達)/1000g</p>
+                    <p class="product_price"><span>100元</span>(稅達)/1000g</p>
                     <div class="product_product_num">
                         <div class="product_num_btn">
                             <button class="min">-</button>
@@ -1761,37 +1756,37 @@
     <section class="product_select_area">
         <div class="product_area" data-num="1">
             <i></i>
-            <img src="../images/shopping_list//shop1.png" alt="">
+            <img src="../images/shopping_list/shop1.png" alt="">
             <span>銅鑼燒</span>
         </div>
         <div class="product_area" data-num="2">
             <i></i>
-            <img src="../images/shopping_list//shop2.png" alt="">
+            <img src="../images/shopping_list/shop2.png" alt="">
             <span>鯛魚燒</span>
         </div>
         <div class="product_area" data-num="3">
             <i></i>
-            <img src="../images/shopping_list//shop3.png" alt="">
+            <img src="../images/shopping_list/shop3.png" alt="">
             <span>大福</span>
         </div>
         <div class="product_area" data-num="4">
             <i></i>
-            <img src="../images/shopping_list//shop4.png" alt="">
+            <img src="../images/shopping_list/shop4.png" alt="">
             <span>日式餅乾</span>
         </div>
         <div class="product_area" data-num="5">
             <i></i>
-            <img src="../images/shopping_list//shop5.png" alt="">
+            <img src="../images/shopping_list/shop5.png" alt="">
             <span>羊羹</span>
         </div>
         <div class="product_area" data-num="6">
             <i></i>
-            <img src="../images/shopping_list//shop6.png" alt="">
+            <img src="../images/shopping_list/shop6.png" alt="">
             <span>生菓子</span>
         </div>
         <div class="product_area" data-num="7">
             <i></i>
-            <img src="../images/shopping_list//shop7.png" alt="">
+            <img src="../images/shopping_list/shop7.png" alt="">
             <span>最中</span>
         </div>
     </section>
