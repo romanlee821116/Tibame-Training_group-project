@@ -458,6 +458,10 @@
                 height: 100%;
                 overflow: hidden;
                 animation: resize 10s linear infinite;
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
             }
             .index_p4_bigPic img{
                 width: 100%;

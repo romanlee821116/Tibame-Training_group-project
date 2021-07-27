@@ -766,6 +766,11 @@
   animation: resize 10s linear infinite;
 }
 
+.index_page4 .index_p4_container .index_p4_bigPic .index_p4_bigPic_img img {
+  width: 100%;
+  height: 100%;
+}
+
 .index_page4 .index_p4_container .index_p4_bigPic .index_p4_bigPic img {
   width: 100%;
   height: 100%;

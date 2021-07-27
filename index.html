@@ -287,12 +287,12 @@
                     <div class="view">
                         <div class="index_p4_picContainer">
                             <!-- 商品列表 -->
-                            <div v-for='item in 20'>
+                            <div v-for='item in p4_pic'>
                                 <div class='index_p4_itemPic'>
-                                    <img src="./images/index/product_small.png">
+                                    <img :src='item.src'>
                                 </div>
                                 <div class="index_p4_itemTxt">
-                                    <p>商品</p>
+                                    <p>{{item.txt}}</p>
                                 </div>
                             </div>
                         </div>
