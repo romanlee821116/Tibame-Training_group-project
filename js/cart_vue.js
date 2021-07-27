@@ -63,24 +63,24 @@ $(document).ready(function(){
       add(item){
         // console.log(item.quantity);
         item.quantity++;
-        //=============local storage =======================
-        let customization = this.customization;      
-        localStorage.setItem('customized_List', JSON.stringify(customization));
+        // ===================== localStorage ======================
         let itemList = this.itemList;
+        let customization = this.customization;      
         localStorage.setItem('item_List', JSON.stringify(itemList));
-      // =================================================
+        localStorage.setItem('customized_List', JSON.stringify(customization));
+      // ===========================================================
       },
       // 數量減少
       sub(item){
         // console.log(item.quantity);
         if(item.quantity > 1){
           item.quantity--;
-          //=============local storage =======================
-          let customization = this.customization;      
-          localStorage.setItem('customized_List', JSON.stringify(customization));
+        // ===================== localStorage ======================
           let itemList = this.itemList;
+          let customization = this.customization;      
           localStorage.setItem('item_List', JSON.stringify(itemList));
-          // ===================================================
+          localStorage.setItem('customized_List', JSON.stringify(customization));
+          // =======================================================
         };
       },
       // 刪除(單一商品)
@@ -93,10 +93,10 @@ $(document).ready(function(){
         }else{
           $('.cart_NoItem').css('display','none');
         }
-        //=============local storage 刪除=======================
+        // ===================== localStorage ======================
         let itemList = this.itemList;
         localStorage.setItem('item_List', JSON.stringify(itemList));
-        // ====================================
+        // =========================================================
       },
       // 刪除(禮盒)
       delete_Customization(index){
@@ -108,10 +108,10 @@ $(document).ready(function(){
         }else{
           $('.cart_NoItem').css('display','none');
         }
-        //=============local storage 刪除=======================
+        // ===================== localStorage ======================
         let customization = this.customization;
         localStorage.setItem('customized_List', JSON.stringify(customization));
-        // ====================================
+        // =========================================================
       },
       // 刪除打勾的項目
       delete_All(){
@@ -140,22 +140,19 @@ $(document).ready(function(){
           };
         };
 
-        //=============local storage 刪除打勾商品=======================
-        let customization = this.customization;
-        localStorage.setItem('customized_List', JSON.stringify(customization));
-        let itemList = this.itemList;
-        localStorage.setItem('item_List', JSON.stringify(itemList));
-        // ============================================================
-  
         // 刪除多個後若沒商品顯示無商品
         if(this.itemList.length == 0 && this.customization.length == 0){
           $('.cart_NoItem').css('display','block');
         }else{
           $('.cart_NoItem').css('display','none');
         }
-
-
-
+        
+        // ===================== localStorage ======================
+        let itemList = this.itemList;
+        let customization = this.customization;
+        localStorage.setItem('customized_List', JSON.stringify(customization));
+        localStorage.setItem('item_List', JSON.stringify(itemList));
+        // =========================================================
       },
       // checkbox被選擇變色，刪除多個變色
       choose(item){
@@ -225,14 +222,14 @@ $(document).ready(function(){
           let item2 = this.customization[a];
           total += item2.price * item2.quantity;
         };
-        //=====local storage新增總金額=====
+        // ===================== localStorage ======================
         localStorage['subtotal'] = '';
         localStorage['total']='';    
         localStorage['discount']=0;  
         localStorage.setItem('subtotal', total);
         localStorage.setItem('total', total);
-        //================================
-        return total.toString().replace(/\B(?=(\d{3})+$)/g, ',');
+        //==========================================================
+        return total;
       },
     },
     mounted() {
@@ -258,36 +255,36 @@ $(document).ready(function(){
       };
   
       // 新增一般
-      // let item_array = [];
-      // item_array.push(item);
-      // localStorage['item_List'] = [];
-      // localStorage.setItem('item_List', JSON.stringify(item_array));
+      let item_array = [];
+      item_array.push(item);
+      localStorage['item_List'] = [];
+      localStorage.setItem('item_List', JSON.stringify(item_array));
   
       // 新增客製
-      // let customized_array = [];
-      // customized_array.push(customized);
-      // localStorage['customized_List'] = [];
-      // localStorage.setItem('customized_List', JSON.stringify(customized_array));
+      let customized_array = [];
+      customized_array.push(customized);
+      localStorage['customized_List'] = [];
+      localStorage.setItem('customized_List', JSON.stringify(customized_array));
   
   
       //===客製加一
       // let customized_total = JSON.parse(localStorage.getItem('customized_List'));
       // customized_total.push(customized);  
       // localStorage.setItem('customized_List', JSON.stringify(customized_total));
-  
+
       //===一般加一
       // let item_total = JSON.parse(localStorage.getItem('item_List'));
       // item_total.push(item);  
       // localStorage.setItem('item_List', JSON.stringify(item_total));
-  
+
       // 呼叫localStorage商品資料
       if (localStorage.item_List) {
         let item = JSON.parse(localStorage.item_List)
-        this.itemList =item;
+        this.itemList = item;
       }
       if (localStorage.customized_List) {
         let cus = JSON.parse(localStorage.customized_List)
-        this.customization =cus;
+        this.customization = cus;
       }
     },
   });

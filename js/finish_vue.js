@@ -55,6 +55,32 @@ $(document).ready(function(){
         //   status: false,
         // },
       ],
+      discount: 0,
+      shipping: 0,
+      total_price: 0,
+      itemPrice:0,
+    },
+    mounted() {
+      // 一般商品
+      if(localStorage.item_List) {
+        let item = JSON.parse(localStorage.item_List)
+        this.itemList =item;
+      };
+      // 禮盒
+      if(localStorage.customized_List) {
+        let local_customization = JSON.parse(localStorage.customized_List)
+        this.customization = local_customization;
+      };
+      // 商品總金額
+      if(localStorage.subtotal){
+        this.itemPrice = localStorage.subtotal;
+        this.total_price = localStorage.total;
+      };
+      // 折扣    
+      this.discount = localStorage.discount;
+
+      // 運費
+      this.shipping = localStorage.shipping;
     },
   })
 })
