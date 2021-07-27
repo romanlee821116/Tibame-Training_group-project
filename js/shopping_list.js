@@ -22,14 +22,14 @@ $(document).ready(function() {
             cart_item.img = this_img;
             cart_item.price = parseInt(this_price);
             cart_item.quantity = this_qty;
-            console.log(cart_item);        
+            // console.log(cart_item);        
             if(localStorage.item_List){
                 let local_itemList= [];
                 // console.log(JSON.parse(localStorage.item_List).length);
                 for(let i=0; i<JSON.parse(localStorage.item_List).length; i++){                    
                     local_itemList.push(JSON.parse(localStorage.item_List)[i].itemName);
                 }
-                console.log(local_itemList);
+                // console.log(local_itemList);
                 if(local_itemList.indexOf(this_name)==-1){
                     let new_itemList = JSON.parse(localStorage.getItem('item_List'));
                     new_itemList.push(cart_item);

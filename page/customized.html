@@ -7,17 +7,19 @@
     <title>客製禮盒 - 小春堂</title>
     <link rel="icon" href="../images/customized/logo_footer.png">
     <link rel="stylesheet" href="../css/customized.css"> 
-    <link rel="stylesheet" href="../css/jquery-ui.css">
+    <link  href="../css/jquery-ui.css">
     <link rel="stylesheet" href="../css/cart.css" >
     <script src="https://kit.fontawesome.com/8c3a8ab95b.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- <script src="../js/navbar.js"></script> -->
     <script src="../js/jquery-ui.js"></script>  
+    <script src="../js/vue.js"></script>
     <script src="../js/customized.js"></script>
-    <script src="../js/navbar.js"></script>
+    
     <script src="../js/vue.js"></script>
 	<script src="../js/cart_vue.js"></script>
     <script src="../js/hamburger.js"></script>
-    <script src="../js/navbar.js"></script>    
+    <!-- <script src="../js/navbar.js"></script>     -->
 </head>
 <body>
     <div class="memberShow"></div>
@@ -274,6 +276,7 @@
                     <img src="../images/customized/transparent.png" class='selected_item' data-itemName='' data-id=''>
                 </div>    
             </div>
+            <p class='cus_reminderWord'>*點選格子即可替換商品</p>
             <!-- 分類 -->
             <div class="cus_product_category">
                 <a href="#" v-for='cat in category' :class='cat.class' :data-cat='cat.id'>{{cat.type}}</a>

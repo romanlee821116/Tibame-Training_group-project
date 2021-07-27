@@ -660,8 +660,36 @@ body {
   -webkit-filter: brightness(100%);
           filter: brightness(100%);
   border-radius: 10px;
+<<<<<<< HEAD
+  animation: flash 3s linear infinite;
+}
+
+@keyframes flash {
+  0% {
+    box-shadow: 0px 0px 10px 5px #f7c242;
+  }
+  25% {
+    box-shadow: 0px 0px 10px 5px transparent;
+  }
+  50% {
+    box-shadow: 0px 0px 10px 5px #f7c242;
+  }
+  75% {
+    box-shadow: 0px 0px 10px 5px transparent;
+  }
+  100% {
+    box-shadow: 0px 0px 10px 5px #f7c242;
+  }
+}
+
+.cus_reminderWord {
+  font-size: 12px;
+  color: #bb866a;
+  margin-top: 5px;
+=======
   -webkit-box-shadow: 0px 0px 10px 5px #f7c242;
           box-shadow: 0px 0px 10px 5px #f7c242;
+>>>>>>> dev
 }
 
 .four_grid {
@@ -1228,6 +1256,7 @@ body {
   color: #bb866a;
   border: 0;
   padding: 40px;
+  padding-left: 50px;
   resize: none;
 }
 
@@ -1247,7 +1276,6 @@ body {
       grid-template-rows: 70px 70px 70px 70px;
   gap: 10px;
   padding: 10px;
-  overflow-y: scroll;
   display: none;
   position: relative;
   z-index: 5;

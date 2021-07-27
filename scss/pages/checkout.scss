@@ -1,4 +1,5 @@
 @import '../mixin/mixin';
+@import '../base/color.scss';
 @import '../pages/cart.scss';
 
 .navbar{
@@ -7,12 +8,14 @@
 
 .footer{
 	@include footer();
+  font-weight: 900;
 }
 
 *{
   box-sizing: border-box;
   font-family: "微軟正黑體";
   color: #bb866a;
+  text-decoration: none;
 }
 
 body{
@@ -676,6 +679,9 @@ body{
   text-align: center;
   padding: 20px 0;
   text-decoration: none;
+  &:hover{
+    background-color: $lightBlue;
+  }
 }
 
 
@@ -713,6 +719,9 @@ body{
   display: flex;
   align-items: center;
   justify-content: center;
+  &:hover{
+    background-color: $darkBrown;
+  }
 }
 
 
@@ -763,14 +772,20 @@ body{
   font-weight: bold;
 }
 
-.checkout_pushItem > div{
+.checkout_pushItem > a{
   background-color: #bb866a;
   border-radius: 15px;
   color: #ffffff;
   font-size: 14px;
-  padding: 3px 0;
+  padding: 5px 0;
   margin-top: 15px;
   cursor: pointer;
+  display: block;
+  text-decoration: none;
+  font-weight: 900;
+  &:hover{
+    background-color: $lightBrown;
+  }
 }
 
 

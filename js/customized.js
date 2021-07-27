@@ -116,7 +116,7 @@ $(function(){
                     //節點替換
                     $('.custom_sideNode_node:nth-child(3)').addClass('before_node');
                     $('.custom_sideNode_node:nth-child(4)').addClass('current_node');
-                    $('.custom_sideNode_frontBar').css('height','25%');
+                    $('.custom_sideNode_frontBar').css('height','33%');
 
                 };
                 //第一格格子亮
@@ -266,7 +266,7 @@ $(function(){
         $('.custom_reminder').fadeIn();
         setTimeout(function(){
             $('.custom_reminder').fadeOut();
-        },2000);
+        },1000);
         //自動將選到的格子換成下一格
         let currentBox = parseInt($('.selected .choosenBox').attr('box-id'));        
         let nextBox = `.selected .custom_gridBox[box-id=${currentBox+1}]`
@@ -285,7 +285,7 @@ $(function(){
     $('.s2_nextstep').click(function(){
         // console.log($('.selected .haveItem').length);
         customized['boxType'] = $('.selected .haveItem').length;
-        // console.log(customized);
+        $('.cus_reminderWord').hide();
         if($('.selected .haveItem').length==boxSize){
             //商品清單出現
             $('.custom_itemConfirm_List').fadeIn();
@@ -300,6 +300,7 @@ $(function(){
             });
             //商品全亮
             $('.selected .custom_gridBox').addClass('choosenBox');
+            $('.choosenBox img').css('animation','none');
             //確認按鈕出現
             $('.cus_confirm_btn').css('display', 'flex');
             //刪除原本上下一步按鈕
@@ -340,23 +341,11 @@ $(function(){
                 //若當前這項產品沒有在item_list中的話就加上去
                 if(item_array.indexOf(item_name)==-1){
                     item_array.push(item_name);
-                    // console.log('沒這項產品內');
-                    // console.log(item_array);
-                    // let txt =`
-                    // <div data-id=> 
-                    //     <img src="${img_url}" alt="">
-                    //     <p>${item_name}</p>
-                    //     <p>x 1</p>
-                    // </div>
-                    // `;
-                    // content += txt;
                     content['name'].push(item_name);
                     content['url'].push(img_url);
                     content['num'].push('1');
-                    // console.log(content);
                 }else{
-                    // console.log('產品重複了啦');
-                    // console.log(item_array);
+                    
                     let index = content['name'].indexOf(item_name);
                     let this_num = content['num'][index];
                     content['num'][index] = parseInt(this_num) + 1;
@@ -384,7 +373,7 @@ $(function(){
             //節點替換
             $('.custom_sideNode_node:nth-child(4)').addClass('before_node');
             $('.custom_sideNode_node:nth-child(5)').addClass('current_node');
-            $('.custom_sideNode_frontBar').css('height','50%');
+            $('.custom_sideNode_frontBar').css('height','66%');
         }else{
             $('.custom_popUp').fadeIn();
             $('.custom_popUp_bg').fadeIn();
@@ -392,6 +381,8 @@ $(function(){
     })
 //==================內容確認返回上一步==================
     $('.cus_confirm_prestep').click(function(){
+        $('.cus_reminderWord').show();
+        $('.choosenBox img').css('animation','flash 3s linear infinite');
         //刪除清單
         $('.custom_itemConfirm_List>div').remove();
         //顯示產品
@@ -480,7 +471,7 @@ $(function(){
         //節點替換
         $('.custom_sideNode_node:nth-child(5)').addClass('before_node');
         $('.custom_sideNode_node:nth-child(6)').addClass('current_node');
-        $('.custom_sideNode_frontBar').css('height','75%');
+        $('.custom_sideNode_frontBar').css('height','100%');
     });
     //hover不需要(結帳)
     $('.cus_giftcard_stop').stop().mouseenter(function(){

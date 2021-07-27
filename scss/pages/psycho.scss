@@ -146,9 +146,9 @@ body {
     max-height: 48vh;
     background: url(../images/psycho/question01_topic.jpg) no-repeat center center;
     background-size: cover;
-    -webkit-mask: url(../images/psycho/picmask.png) no-repeat center center;
-    mask: url(../images/psycho/picmask.png) no-repeat center center;
-    -webkit-mask-size: cover;
+    // -webkit-mask: url(../images/psycho/picmask.png) no-repeat center center;
+    // -webkit-mask-size: cover;
+    mask: url(../images/psycho/picmask.png) no-repeat center center;    
     mask-size: cover;
     transition: all 0.2s ease-out;
 }

@@ -22,7 +22,7 @@
     
     <div class="navbar">
       <div class="navbar-logo">
-        <img src="../images/index/logo.png" alt="">
+        <a href="../index.html"><img src="../images/index/logo.png" alt=""></a>
       </div>
       
 		
@@ -107,7 +107,7 @@
                     <button class="checkout_add mainbtn" @click="add(item)">+</button>
                   </div>
       
-                  <div class="checkout_unitPrice">$<span>{{item.price}}</span>元 / <span>{{item.item_Quantity}}</span>入</div>
+                  <div class="checkout_unitPrice">$<span>{{item.price}}</span>元 / <span>{{item.item_Quantity}}</span>3入</div>
                 </div>
               
               </div>
@@ -259,11 +259,12 @@
         <div class="checkout_pushItemSlider">
           <ul class="checkout_pushItemList">
   
-            <li class="checkout_pushItem" v-for="(item,index) in recommend">
+            <li class="checkout_pushItem" v-for="(item,index) in recommend" :data-id_price='item.id_price'>
               <img :src="item.img">
               <p>{{item.name}}</p>
               <p>{{item.price}}</p>
-              <div>加入購物車</div>
+              <!-- <div ></div> -->
+              <a href="#" class='checkout_pushItem_add'>加入訂單內容</a>
             </li>
   
           </ul>

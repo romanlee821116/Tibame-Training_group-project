@@ -1,5 +1,6 @@
 @import '../mixin/mixin';
 @import '../base/color.scss';
+@import '../base/reset.scss';
 
 *{
     margin: 0;
@@ -9,8 +10,6 @@
     /*font-family: MicrosoftJhengHeiBold , Arial, sans-serif*/;
     font-family: '微軟正黑體';
     text-decoration: none;
-    font-size: 16px;
-    font-weight: 900;
 }
 .navbar{
     @include navbar();
@@ -48,14 +47,11 @@
         
     }
     
-}
-    
+}    
 .mediacolumn{  
     @include media();  
     visibility: hidden;
 }
-
-
 .psychotest{
     @include psycoBtn(#fff);
     display: none;
@@ -75,18 +71,15 @@
     z-index: 2;
     transition: .2s;
     opacity: 0;
-    display: none;
+    // display: none;
     a{
         display: block;
         font-size: 14px;
         color: $darkBrown;
-        margin: 2px 0;
-        transform: translateY(11px);
-        margin: 8px;
+        transform: translate(-30px -1px);
+        margin: 14px;
     }
-}
-    
-
+} 
 
 /* ==================第一面================== */
 .index_intro{
@@ -398,7 +391,7 @@
                 text-align: center;
                 font-size: 24px;
                 color: $darkBrown;
-                margin-top: 90px;
+                margin-top: 135px;
                 line-height: 0.7em;
                 margin-bottom: 12px;
             }
@@ -1135,7 +1128,8 @@
             .index_p7_shopBtn{
                 width: 360px;
                 padding-top: 10px;
-                margin-left: 200px;
+                position: relative;
+                left: 23%;
                 display: flex;
                 justify-content: flex-end;
                 a{
@@ -1160,6 +1154,9 @@
                     }
                     &:hover{
                         background-color: $lightBlue;
+                        i{
+                            color: #fff;
+                        }
                     }             
                 } 
                 .fa-chevron-right{

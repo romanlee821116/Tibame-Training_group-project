@@ -186,10 +186,19 @@ $(document).ready(function(){
       open(){
         $('.cart_cartBoard').css('right','0px');
         // 若沒商品顯示無商品
-        if(this.itemList.length == 0 && this.customization.length == 0){
+        if(!localStorage.item_List && !localStorage.customized_List){
           $('.cart_NoItem').css('display','block');
         }else{
           $('.cart_NoItem').css('display','none');
+        }
+        // 呼叫localStorage商品資料
+        if (localStorage.item_List) {
+          let item = JSON.parse(localStorage.item_List)
+          this.itemList =item;
+        }
+        if (localStorage.customized_List) {
+          let cus = JSON.parse(localStorage.customized_List)
+          this.customization =cus;
         }
       },
       close(){
@@ -215,7 +224,8 @@ $(document).ready(function(){
         };
         // ===================== localStorage ======================
         localStorage['subtotal'] = '';
-        localStorage['total']='';     
+        localStorage['total']='';    
+        localStorage['discount']=0;  
         localStorage.setItem('subtotal', total);
         localStorage.setItem('total', total);
         //==========================================================
