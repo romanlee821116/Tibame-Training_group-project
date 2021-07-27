@@ -13,6 +13,8 @@
   box-sizing: border-box;
   font-family: "微軟正黑體";
   color: #bb866a;
+  text-decoration: none;
+  font-weight: 900;
 }
 
 body{
@@ -22,15 +24,17 @@ body{
   background-attachment: fixed;
 }
 
-img{
-  width: 100%;
-}
+
 
 .payment_container{
   // border: 1px solid black;
   width: 80%;
   max-width: 1200px;
   margin: auto;
+  img{
+    width: 100%;
+    height: 100%;
+  }
 }
 
 @media screen and (max-width: 576px){

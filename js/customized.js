@@ -185,7 +185,8 @@ $(function(){
         "cardType":"",
         "cardContent": "",
         "iconType":[],
-        "status": false,       
+        "status": false, 
+        'img': '../images/cart/customized_box.png',      
     };
 
     //判斷選到四格六格九格

@@ -7,18 +7,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>小春堂</title>
     <link rel="icon" href="./images/index/logo_footer.png">
-    <link rel="stylesheet" href="./css/index.css">
-    <link rel="stylesheet" href="./css/fullpage.css">
-    <link rel="stylesheet" href="./css/rolling.css">
-    <link rel="stylesheet" href="./css/cart.css" >
-    <script src="https://kit.fontawesome.com/8c3a8ab95b.js" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="./js/vue.js"></script>
+    
+    <link rel="stylesheet" type='text/css' href="./css/fullpage.css">
+    <link rel="stylesheet" type='text/css' href="./css/rolling.css">
+    <link rel="stylesheet" type='text/css' href="./css/cart.css" >
+    <link rel="stylesheet" type='text/css' href="./css/index.css">
+    <script src="https://kit.fontawesome.com/8c3a8ab95b.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.js"
         integrity="sha512-gSf3NCgs6wWEdztl1e6vUqtRP884ONnCNzCpomdoQ0xXsk06lrxJsR7jX5yM/qAGkPGsps+4bLV5IEjhOZX+gg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
     <script src="./js/index.js"></script>
-    <script src="./js/cart.js"></script>
+    
 	<script src="./js/cart_vue.js"></script>
     <script src="./js/hamburger.js"></script>
 </head>
@@ -182,7 +184,7 @@
     </div>
     <!-- psycotest -->
     <div class='psychotest'>
-        <a href=""><img src="./images/index/psychologicaltest_icon.png" alt=""></a>
+        <a href="./page/psycho.html"><img src="./images/index/psychologicaltest_icon.png" alt=""></a>
         <p>和菓子測驗</p>
     </div>
     <div class="pagepoint">
@@ -285,12 +287,12 @@
                     <div class="view">
                         <div class="index_p4_picContainer">
                             <!-- 商品列表 -->
-                            <div v-for='item in 20'>
+                            <div v-for='item in p4_pic'>
                                 <div class='index_p4_itemPic'>
-                                    <img src="./images/index/product_small.png">
+                                    <img :src='item.src'>
                                 </div>
                                 <div class="index_p4_itemTxt">
-                                    <p>商品</p>
+                                    <p>{{item.txt}}</p>
                                 </div>
                             </div>
                         </div>

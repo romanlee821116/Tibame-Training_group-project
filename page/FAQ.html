@@ -1,24 +1,33 @@
 <!DOCTYPE html>
 <html lang="zh-tw">
+
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>常見問題 - 小春堂</title>
-  <link rel="icon" href="../images/index/logo_footer.png">
-  <link href="../css/FAQ.css" rel="stylesheet">
-  <link rel="stylesheet" href="../css/cart.css" >
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>常見問題 - 小春堂</title>
+	<link rel="icon" href="../images/index/logo_footer.png">
+	<link href="../css/FAQ.css" rel="stylesheet">
+	<link rel="stylesheet" href="../css/cart.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="https://kit.fontawesome.com/8c3a8ab95b.js" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.14/vue.js"></script>
+	<script src="../js/hamburger.js"></script>
+	<script src="../js/navbar.js"></script>
+	<script src="../js/FAQ_vue.js"></script>
+	<script src="../js/cart_vue.js"></script>
 </head>
+
 <body>
 
-  <div class="memberShow"></div>
-  <!-- 聯絡我們 -->
-  <div class='psychotest'>
-    <a href="./contact.html"><img src="../images/contact/mail_icon.png" alt=""></a>
-    <p>聯絡我們</p>
-  </div>
+	<div class="memberShow"></div>
+	<!-- 聯絡我們 -->
+	<div class='psychotest'>
+		<a href="./contact.html"><img src="../images/contact/mail_icon.png" alt=""></a>
+		<p>聯絡我們</p>
+	</div>
 
-  <!-- navbar -->
+	<!-- navbar -->
 	<div id="cart_app">
 		<div class="navbar">
 			<div class="navbar-logo">
@@ -39,7 +48,7 @@
 				<div class="ham_overlay-content">
 					<div class='ham_jelly'></div>
 					<div class="ham_select">
-						<a href="./index.html">首頁</a>
+						<a href="../index.html">首頁</a>
 						<a href="./page/about.html">關於我們</a>
 						<a href="./page/news.html">最新消息</a>
 						<a href="./page/shopping_choose.html">商品專區</a>
@@ -167,171 +176,164 @@
 
 		</div>
 	</div>
-  <!-- nav結束 -->
-
-
-
-
-  
-
-  <!-- ========== main ========== -->
-  <div id="FAQ_app">
-    <div class="FAQ_container">
-  
-      <p id="FAQ_QA">Q&A</p>
-      <p id="FAQ_QTitle">常見問題</p>
-  
-      <!-- ========== 問題類別按鈕 ========== -->
-      <div class="FAQ_titleBtn" id="FAQ_a">
-  
-        <div class="FAQ_QBtn" id="FAQ_transaction">
-          <div class="FAQ_imgBtn"><img id="FAQ_transactionBtn" src="../images/FAQ/transaction_h.png"></div>
-          <p>交易相關問題</p>
-        </div>
-  
-  
-        <div class="FAQ_QBtn" id="FAQ_ingredients">
-          <div class="FAQ_imgBtn"><img id="FAQ_ingredientsBtn" src="../images/FAQ/Ingredients_n.png"></div>
-          <p>食材相關問題</p>
-        </div>
-      
-  
-        <div class="FAQ_QBtn" id="FAQ_transport">
-          <div class="FAQ_imgBtn"><img id="FAQ_transportBtn" src="../images/FAQ/transport_n.png"></div>
-          <p>運輸相關問題</p>
-        </div>
-  
-      </div>
-  
-  
-  
-      <!-- ========== Q&A區域 ========== -->
-  
-      <div class="FAQ_classification FAQ_on">
-
-        <div class="FAQ_QAList"  v-for="(item,index) in trade">
-          <!-- Q -->
-          <div class="FAQ_question">
-            <p>Q</p>
-            <p>{{item.Q}}</p>
-            <div class="FAQ_openAnsBtn">
-              <div class="FAQ_minus"></div>
-              <div class="FAQ_plus"></div>
-            </div>  
-          </div>
-
-          <!-- A -->
-          <div class="FAQ_outBorder">
-            <div class="FAQ_answer">
-              <p>A</p>
-              <p>{{item.A}}</p>
-            </div>
-          </div>
-
-        </div>
-      
-      </div>
-  
-      <div class="FAQ_classification">
-
-        <div class="FAQ_QAList"  v-for="(item,index) in ingredients">
-          <!-- Q -->
-          <div class="FAQ_question">
-            <p>Q</p>
-            <p>{{item.Q}}</p>
-            <div class="FAQ_openAnsBtn">
-              <div class="FAQ_minus"></div>
-              <div class="FAQ_plus"></div>
-            </div>  
-          </div>
-
-          <!-- A -->
-          <div class="FAQ_outBorder">
-            <div class="FAQ_answer">
-              <p>A</p>
-              <p>{{item.A}}</p>
-            </div>
-          </div>
-
-        </div>
-      
-      </div>
-
-      <div class="FAQ_classification">
-
-        <div class="FAQ_QAList"  v-for="(item,index) in transportation">
-          <!-- Q -->
-          <div class="FAQ_question">
-            <p>Q</p>
-            <p>{{item.Q}}</p>
-            <div class="FAQ_openAnsBtn">
-              <div class="FAQ_minus"></div>
-              <div class="FAQ_plus"></div>
-            </div>  
-          </div>
-
-          <!-- A -->
-          <div class="FAQ_outBorder">
-            <div class="FAQ_answer">
-              <p>A</p>
-              <p>{{item.A}}</p>
-            </div>
-          </div>
-
-        </div>
-      
-      </div>
-
-  
-  
-  
-  
-      <!-- ========== 聯絡我們 ========== -->
-  
-  
-  
-  
-      
-  
-    </div>
-  </div>
+	<!-- nav結束 -->
 
 
 
 
 
-  <!-- =======================footer======================= -->
-  <div class="footer">
-    <div class="footer-left">
-        <div class='footer-policy'>
-            <p><a href="../page/privacy.html">隱私政策</a></p>
-            <p><a href="../page/terms.html">服務條款</a></p>
-        </div>
-    </div>
-    <div class='footer-media'>
-        <a href="https://www.instagram.com/"><i class="fab fa-instagram-square"></i></a>
-        <a href="https://www.facebook.com/"><i class="fab fa-facebook-square"></i></a>
-        <a href="https://twitter.com/?lang=zh-tw"><i class="fab fa-twitter-square"></i></a>
-    </div>
-    <div class="footer-right">
-        <p>本網站為緯育TibaMe前端設計工程師班第68期第三組學員專題成果作品，本平台僅供學習、展示之用。參考資源:snaq.me。若有侵權疑慮，您可以私訊[TibaMe-前端設計工程師養成班]，後續會由專人協助處理
-        </p>
-    </div>
-</div>
-<!-- =======================footer結束======================= -->
+
+	<!-- ========== main ========== -->
+	<div id="FAQ_app">
+		<div class="FAQ_container">
+
+			<p id="FAQ_QA">Q & A</p>
+			<p id="FAQ_QTitle">常見問題</p>
+
+			<!-- ========== 問題類別按鈕 ========== -->
+			<div class="FAQ_titleBtn" id="FAQ_a">
+
+				<div class="FAQ_QBtn" id="FAQ_transaction">
+					<div class="FAQ_imgBtn"><img id="FAQ_transactionBtn" src="../images/FAQ/transaction_h.png"></div>
+					<p>交易相關問題</p>
+				</div>
 
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
-	<script src="https://kit.fontawesome.com/8c3a8ab95b.js" crossorigin="anonymous"></script> 
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.14/vue.js"></script>
-	<script src="../js/hamburger.js"></script>
-	<script src="../js/navbar.js"></script>
-  <script src="../js/FAQ_vue.js"></script>
-	<script src="../js/cart_vue.js"></script>
+				<div class="FAQ_QBtn" id="FAQ_ingredients">
+					<div class="FAQ_imgBtn"><img id="FAQ_ingredientsBtn" src="../images/FAQ/Ingredients_n.png"></div>
+					<p>食材相關問題</p>
+				</div>
+
+
+				<div class="FAQ_QBtn" id="FAQ_transport">
+					<div class="FAQ_imgBtn"><img id="FAQ_transportBtn" src="../images/FAQ/transport_n.png"></div>
+					<p>運輸相關問題</p>
+				</div>
+
+			</div>
+
+
+
+			<!-- ========== Q&A區域 ========== -->
+
+			<div class="FAQ_classification FAQ_on">
+
+				<div class="FAQ_QAList" v-for="(item,index) in trade">
+					<!-- Q -->
+					<div class="FAQ_question">
+						<p>Q</p>
+						<p>{{item.Q}}</p>
+						<div class="FAQ_openAnsBtn">
+							<div class="FAQ_minus"></div>
+							<div class="FAQ_plus"></div>
+						</div>
+					</div>
+
+					<!-- A -->
+					<div class="FAQ_outBorder">
+						<div class="FAQ_answer">
+							<p>A</p>
+							<p>{{item.A}}</p>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+
+			<div class="FAQ_classification">
+
+				<div class="FAQ_QAList" v-for="(item,index) in ingredients">
+					<!-- Q -->
+					<div class="FAQ_question">
+						<p>Q</p>
+						<p>{{item.Q}}</p>
+						<div class="FAQ_openAnsBtn">
+							<div class="FAQ_minus"></div>
+							<div class="FAQ_plus"></div>
+						</div>
+					</div>
+
+					<!-- A -->
+					<div class="FAQ_outBorder">
+						<div class="FAQ_answer">
+							<p>A</p>
+							<p>{{item.A}}</p>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+
+			<div class="FAQ_classification">
+
+				<div class="FAQ_QAList" v-for="(item,index) in transportation">
+					<!-- Q -->
+					<div class="FAQ_question">
+						<p>Q</p>
+						<p>{{item.Q}}</p>
+						<div class="FAQ_openAnsBtn">
+							<div class="FAQ_minus"></div>
+							<div class="FAQ_plus"></div>
+						</div>
+					</div>
+
+					<!-- A -->
+					<div class="FAQ_outBorder">
+						<div class="FAQ_answer">
+							<p>A</p>
+							<p>{{item.A}}</p>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+
+
+
+
+
+			<!-- ========== 聯絡我們 ========== -->
+
+
+
+
+
+
+		</div>
+	</div>
+
+
+
+
+
+	<!-- =======================footer======================= -->
+	<div class="footer">
+		<div class="footer-left">
+			<div class='footer-policy'>
+				<p><a href="../page/privacy.html">隱私政策</a></p>
+				<p><a href="../page/terms.html">服務條款</a></p>
+			</div>
+		</div>
+		<div class='footer-media'>
+			<a href="https://www.instagram.com/"><i class="fab fa-instagram-square"></i></a>
+			<a href="https://www.facebook.com/"><i class="fab fa-facebook-square"></i></a>
+			<a href="https://twitter.com/?lang=zh-tw"><i class="fab fa-twitter-square"></i></a>
+		</div>
+		<div class="footer-right">
+			<p>本網站為緯育TibaMe前端設計工程師班第68期第三組學員專題成果作品，本平台僅供學習、展示之用。參考資源:snaq.me。若有侵權疑慮，您可以私訊[TibaMe-前端設計工程師養成班]，後續會由專人協助處理
+			</p>
+		</div>
+	</div>
+	<!-- =======================footer結束======================= -->
+
 
 
 
 
 
 </body>
+
 </html>

@@ -1,7 +1,8 @@
 $(document).ready(function () {
+    console.log('new run');
     // ==============標題點擊效果=================
     $('#newsAll_classification_all').click(function () {
-        $('.choosenBar2').css('left', '0%');
+        $('.newsUnderLine .choosenBar2').css('left', '0%');
         $(this).css('color', '#172852');
         $(this).siblings().css('color', '#cba89a');
         $('.newsPart1').fadeIn(700);
@@ -9,7 +10,8 @@ $(document).ready(function () {
     });
 
     $('#newsAll_classification_product').click(function () {
-        $('.choosenBar2').css('left', '20%');
+        $('.newsUnderLine .choosenBar2').css({left: '20%'});
+        console.log('run bar2');
         $(this).css('color', '#172852');
         $(this).siblings().css('color', '#cba89a');
         $('.newsPart2').fadeIn(700);

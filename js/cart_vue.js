@@ -1,58 +1,59 @@
+$(document).ready(function(){
   new Vue({
     el: "#cart_app",
     data: {
       // 單項商品
       itemList:[
-        {
-          id: 'item_1',
-          itemName: '南投銅鑼燒',
-          img: '../images/cart/banner_matcha_item.png',
-          price: 480,
-          item_Quantity: '6',
-          quantity: 1,
-          status: false,
-        },
-        {
-          id: 'item_2',
-          itemName: '苗栗大福草莓',
-          img: '../images/cart/banner_strawberry_item.png',
-          price: 480,
-          item_Quantity: '6',
-          quantity: 1,
-          status: false,
-        },
-        {
-          id: 'item_3',
-          itemName: '南投銅鑼燒',
-          img: '../images/cart/banner_matcha_item.png',
-          price: 480,
-          item_Quantity: '6',
-          quantity: 1,
-          status: false,
-        },
+        // {
+        //   id: 'item_1',
+        //   itemName: '南投銅鑼燒',
+        //   img: '../images/cart/banner_matcha_item.png',
+        //   price: 480,
+        //   item_Quantity: '6',
+        //   quantity: 1,
+        //   status: false,
+        // },
+        // {
+        //   id: 'item_2',
+        //   itemName: '苗栗大福草莓',
+        //   img: '../images/cart/banner_strawberry_item.png',
+        //   price: 480,
+        //   item_Quantity: '6',
+        //   quantity: 1,
+        //   status: false,
+        // },
+        // {
+        //   id: 'item_3',
+        //   itemName: '南投銅鑼燒',
+        //   img: '../images/cart/banner_matcha_item.png',
+        //   price: 480,
+        //   item_Quantity: '6',
+        //   quantity: 1,
+        //   status: false,
+        // },
       ],
       // 禮盒
       customization: [
-        {
-          id: 'customization_1',
-          itemName: '四格小資組合',
-          img: '../images/cart/customized_box.png',
-          price: 480,
-          quantity: 1,
-          detail: ['草莓大福(1入)', '抹茶大福(1入)', '柳橙大福(1入)', '巧克力大福(1入)'],
-          detail_Quantity: ['1', '1', '1', '1'],
-          status: false,
-        },
-        {
-          id: 'customization_2',
-          itemName: '四格小資組合',
-          img: '../images/cart/customized_box.png',
-          price: 480,
-          quantity: 1,
-          detail: ['草莓大福(1入)', '柳橙大福(1入)', '巧克力大福(1入)'],
-          detail_Quantity: ['2', '1', '1'],
-          status: false,
-        },
+        // {
+        //   id: 'customization_1',
+        //   itemName: '四格小資組合',
+        //   img: '../images/cart/customized_box.png',
+        //   price: 480,
+        //   quantity: 1,
+        //   detail: ['草莓大福(1入)', '抹茶大福(1入)', '柳橙大福(1入)', '巧克力大福(1入)'],
+        //   detail_Quantity: ['1', '1', '1', '1'],
+        //   status: false,
+        // },
+        // {
+        //   id: 'customization_2',
+        //   itemName: '四格小資組合',
+        //   img: '../images/cart/customized_box.png',
+        //   price: 480,
+        //   quantity: 1,
+        //   detail: ['草莓大福(1入)', '柳橙大福(1入)', '巧克力大福(1入)'],
+        //   detail_Quantity: ['2', '1', '1'],
+        //   status: false,
+        // },
       ],
       delete_bgc: '#a3a3a3',
       delete_cursor: 'default',
@@ -62,12 +63,24 @@
       add(item){
         // console.log(item.quantity);
         item.quantity++;
+        //=============local storage =======================
+        let customization = this.customization;      
+        localStorage.setItem('customized_List', JSON.stringify(customization));
+        let itemList = this.itemList;
+        localStorage.setItem('item_List', JSON.stringify(itemList));
+      // =================================================
       },
       // 數量減少
       sub(item){
         // console.log(item.quantity);
         if(item.quantity > 1){
           item.quantity--;
+          //=============local storage =======================
+          let customization = this.customization;      
+          localStorage.setItem('customized_List', JSON.stringify(customization));
+          let itemList = this.itemList;
+          localStorage.setItem('item_List', JSON.stringify(itemList));
+          // ===================================================
         };
       },
       // 刪除(單一商品)
@@ -77,9 +90,13 @@
         // 刪除多個後若沒商品顯示無商品
         if(this.itemList.length == 0 && this.customization.length == 0){
           $('.cart_NoItem').css('display','block');
-        }else if(this.itemList.length > 0 || this.customization.length > 0){
+        }else{
           $('.cart_NoItem').css('display','none');
         }
+        //=============local storage 刪除=======================
+        let itemList = this.itemList;
+        localStorage.setItem('item_List', JSON.stringify(itemList));
+        // ====================================
       },
       // 刪除(禮盒)
       delete_Customization(index){
@@ -88,9 +105,13 @@
         // 刪除多個後若沒商品顯示無商品
         if(this.itemList.length == 0 && this.customization.length == 0){
           $('.cart_NoItem').css('display','block');
-        }else if(this.itemList.length > 0 || this.customization.length > 0){
+        }else{
           $('.cart_NoItem').css('display','none');
         }
+        //=============local storage 刪除=======================
+        let customization = this.customization;
+        localStorage.setItem('customized_List', JSON.stringify(customization));
+        // ====================================
       },
       // 刪除打勾的項目
       delete_All(){
@@ -122,9 +143,15 @@
         // 刪除多個後若沒商品顯示無商品
         if(this.itemList.length == 0 && this.customization.length == 0){
           $('.cart_NoItem').css('display','block');
-        }else if(this.itemList.length > 0 || this.customization.length > 0){
+        }else{
           $('.cart_NoItem').css('display','none');
         }
+        //=============local storage 刪除=======================
+        let customization = this.customization;
+        localStorage.setItem('customized_List', JSON.stringify(customization));
+        let itemList = this.itemList;
+        localStorage.setItem('item_List', JSON.stringify(itemList));
+        // =====================================================
       },
       // checkbox被選擇變色，刪除多個變色
       choose(item){
@@ -186,18 +213,76 @@
           total += item2.price * item2.quantity;
         };
         //=====local storage新增總金額=====
-        localStorage['totalPrice'] = '';
-        localStorage.setItem('totalPrice', total);
+        localStorage['subtotal'] = '';
+        localStorage['total']='';      
+        localStorage.setItem('subtotal', total);
+        localStorage.setItem('total', total);
         //================================
         return total.toString().replace(/\B(?=(\d{3})+$)/g, ',');
       },
     },
+    mounted() {
+      var customized = {
+        itemName: '四格小資組合',
+        img: '../images/cart/customized_box.png',
+        price: 480,
+        quantity: 1,
+        detail: ['草莓大福(1入)', '抹茶大福(1入)', '柳橙大福(1入)', '巧克力大福(1入)'],
+        detail_Quantity: ['1', '1', '1', '1'],
+        status: false,
+        "id": new Date(),
+      };
+  
+      var item = {
+        itemName: '銅鑼燒',
+        img: '../images/cart/banner_matcha_item.png',
+        price: 120,
+        quantity: 1,
+        status: false,
+        "id": new Date(),
+      }
+  
+      // 新增一般
+      // let item_array = [];
+      // item_array.push(item);
+      // localStorage['item_List'] = [];
+      // localStorage.setItem('item_List', JSON.stringify(item_array));
+  
+      // 新增客製
+      // let customized_array = [];
+      // customized_array.push(customized);
+      // localStorage['customized_List'] = [];
+      // localStorage.setItem('customized_List', JSON.stringify(customized_array));
+  
+  
+      //===客製加一
+      // let customized_total = JSON.parse(localStorage.getItem('customized_List'));
+      // customized_total.push(customized);  
+      // localStorage.setItem('customized_List', JSON.stringify(customized_total));
+  
+      //===一般加一
+      // let item_total = JSON.parse(localStorage.getItem('item_List'));
+      // item_total.push(item);  
+      // localStorage.setItem('item_List', JSON.stringify(item_total));
+  
+      if (localStorage.customized_List) {
+        let cus = JSON.parse(localStorage.customized_List)
+        this.customization =cus;
+      }
+      if (localStorage.item_List) {
+        let item = JSON.parse(localStorage.item_List)
+        this.itemList =item;
+      }
+    },
   });
+})
+    
 
 
+//================================jQuery================================
 
-
-  // 按數量增加變色
+$(function(){
+    // 按數量增加變色
   $('.cart_add').mousedown(function(){
     $(this).css('background-color','#172852');
     $(this).css('color','#ffffff');
@@ -286,3 +371,6 @@
     };
 
   });
+
+})
+  

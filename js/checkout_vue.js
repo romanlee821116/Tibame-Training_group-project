@@ -1,49 +1,50 @@
+$(document).ready(function(){
   new Vue({
     el: "#checkout_app",
     data: {
       // 單項商品
       itemList:[
-        {
-          id: 'item_1',
-          itemName: '苗栗草莓大福',
-          img: '../images/checkout/banner_strawberry_item.png',
-          price: 480,
-          item_Quantity: '6',
-          quantity: 1,
-          status: false,
-        },
-        {
-          id: 'item_2',
-          itemName: '南投銅鑼燒',
-          img: '../images/cart/banner_matcha_item.png',
-          price: 480,
-          item_Quantity: '6',
-          quantity: 1,
-          status: false,
-        },
+        // {
+        //   id: 'item_1',
+        //   itemName: '苗栗草莓大福',
+        //   img: '../images/checkout/banner_strawberry_item.png',
+        //   price: 480,
+        //   item_Quantity: '6',
+        //   quantity: 1,
+        //   status: false,
+        // },
+        // {
+        //   id: 'item_2',
+        //   itemName: '南投銅鑼燒',
+        //   img: '../images/cart/banner_matcha_item.png',
+        //   price: 480,
+        //   item_Quantity: '6',
+        //   quantity: 1,
+        //   status: false,
+        // },
       ],
       // 禮盒
       customization: [
-        {
-          id: 'customization_1',
-          itemName: '四格小資組合',
-          img: '../images/cart/customized_box.png',
-          price: 480,
-          quantity: 1,
-          detail: ['草莓大福(1入)', '抹茶大福(1入)', '柳橙大福(1入)', '巧克力大福(1入)'],
-          detail_Quantity: ['1', '1', '1', '1'],
-          status: false,
-        },
-        {
-          id: 'customization_2',
-          itemName: '四格小資組合',
-          img: '../images/cart/customized_box.png',
-          price: 480,
-          quantity: 1,
-          detail: ['草莓大福(1入)', '柳橙大福(1入)', '巧克力大福(1入)'],
-          detail_Quantity: ['2', '1', '1'],
-          status: false,
-        },
+        // {
+        //   id: 'customization_1',
+        //   itemName: '四格小資組合',
+        //   img: '../images/cart/customized_box.png',
+        //   price: 480,
+        //   quantity: 1,
+        //   detail: ['草莓大福(1入)', '抹茶大福(1入)', '柳橙大福(1入)', '巧克力大福(1入)'],
+        //   detail_Quantity: ['1', '1', '1', '1'],
+        //   status: false,
+        // },
+        // {
+        //   id: 'customization_2',
+        //   itemName: '四格小資組合',
+        //   img: '../images/cart/customized_box.png',
+        //   price: 480,
+        //   quantity: 1,
+        //   detail: ['草莓大福(1入)', '柳橙大福(1入)', '巧克力大福(1入)'],
+        //   detail_Quantity: ['2', '1', '1'],
+        //   status: false,
+        // },
       ],
       recommend:[
         {
@@ -100,8 +101,9 @@
       delete_bgc: '#a3a3a3',
       delete_cursor: 'default',
       total_item: 0,
-      discount: 0,
+      discount: 80,
       total_price: 0,
+      itemPrice:0,
     },
     methods: {
       // checkbox被選擇變色，刪除多個變色
@@ -163,12 +165,39 @@
       add(item){
         // console.log(item.quantity);
         item.quantity++;
+        //=============local storage =======================   
+        let this_price = item.price;
+        console.log(this_price);
+        let new_subtotal = parseInt(localStorage['subtotal']) + this_price;
+        let new_total = parseInt(localStorage['total']) + this_price;
+        let customization = this.customization;
+        let itemList = this.itemList;
+        localStorage.setItem('subtotal', new_subtotal);
+        localStorage.setItem('total', new_total);  
+        localStorage.setItem('customized_List', JSON.stringify(customization));
+        localStorage.setItem('item_List', JSON.stringify(itemList));
+        this.itemPrice = new_subtotal;
+        this.total_price = new_total;
+        // ====================================
       },
       // 數量減少
       sub(item){
         // console.log(item.quantity);
         if(item.quantity > 1){
           item.quantity--;
+          //=============local storage =======================   
+          let this_price = item.price;
+          let new_subtotal = parseInt(localStorage['subtotal']) - this_price;
+          let new_total = parseInt(localStorage['total']) - this_price;
+          let customization = this.customization;
+          let itemList = this.itemList;
+          localStorage.setItem('subtotal', new_subtotal);
+          localStorage.setItem('total', new_total);  
+          localStorage.setItem('customized_List', JSON.stringify(customization));
+          localStorage.setItem('item_List', JSON.stringify(itemList));
+          this.itemPrice = new_subtotal;
+          this.total_price = new_total;
+          // ====================================
         };
       },
       // 刪除(單一商品)
@@ -181,6 +210,36 @@
         }else if(this.itemList.length > 0 || this.customization.length > 0){
           $('.cart_NoItem').css('display','none');
         }
+
+        //=============local storage =======================   
+        let customization = this.customization;
+        let itemList = this.itemList;
+        localStorage.setItem('customized_List', JSON.stringify(customization));
+        localStorage.setItem('item_List', JSON.stringify(itemList));
+
+        let item_length = this.itemList.length;
+        let cus_length = this.customization.length;
+        let new_itemSub=0;
+        let new_cusSub=0;
+        for(i=0; i< item_length; i++){
+          let this_price = this.itemList[i]['price'];
+          let this_qty = this.itemList[i]['quantity'];
+          let this_subtotal = this_price*this_qty;
+          new_itemSub += this_subtotal;
+        }
+        for(j=0; j<cus_length; j++){
+          let this_price = this.customization[j]['price'];
+          let this_qty = this.customization[j]['quantity'];
+          let this_subtotal = this_price*this_qty;
+          new_cusSub += this_subtotal;
+        }
+        let new_subtotal = new_itemSub + new_cusSub;
+        let new_total = new_subtotal - parseInt(localStorage['discount']);
+        localStorage.setItem('subtotal', new_subtotal);
+        localStorage.setItem('total', new_total);
+        this.itemPrice = new_subtotal;
+        this.total_price = new_total;
+        // ====================================
       },
       // 刪除(禮盒)
       delete_Customization(index){
@@ -192,49 +251,114 @@
         }else if(this.itemList.length > 0 || this.customization.length > 0){
           $('.cart_NoItem').css('display','none');
         }
+        //=============local storage =======================   
+        let customization = this.customization;
+        let itemList = this.itemList;
+        localStorage.setItem('customized_List', JSON.stringify(customization));
+        localStorage.setItem('item_List', JSON.stringify(itemList));
+
+        let item_length = this.itemList.length;
+        let cus_length = this.customization.length;
+        let new_itemSub=0;
+        let new_cusSub=0;
+        for(i=0; i< item_length; i++){
+          let this_price = this.itemList[i]['price'];
+          let this_qty = this.itemList[i]['quantity'];
+          let this_subtotal = this_price*this_qty;
+          new_itemSub += this_subtotal;
+        }
+
+        for(j=0; j<cus_length; j++){
+          let this_price = this.customization[j]['price'];
+          let this_qty = this.customization[j]['quantity'];
+          let this_subtotal = this_price*this_qty;
+          new_cusSub += this_subtotal;
+        }
+        let new_subtotal = new_itemSub + new_cusSub;
+        let new_total = new_subtotal - parseInt(localStorage['discount']);
+        localStorage.setItem('subtotal', new_subtotal);
+        localStorage.setItem('total', new_total);
+        this.itemPrice = new_subtotal;
+        this.total_price = new_total;
+        // ====================================
       },
       // 提交折扣
       sendDiscount(){
         if($('#checkout_discountNumber').val() !== ""){
           $('.checkout_discountMoney').removeClass('checkout_none');
           $('.checkout_removeDiscount').removeClass('checkout_none');
-          this.discount = 80;
+          //====local storage折扣======
+          let new_price = parseInt(localStorage.total)-80;
+          this.total_price = new_price.toString().replace(/\B(?=(\d{3})+$)/g, ',')
+          console.log(this.total_price);            
+          localStorage['discount']=0;
+          localStorage.setItem('total', JSON.stringify(new_price));
+          localStorage.setItem('discount', 80);
         }  
       },
       // 移除折扣
       deleteDiscount(){
         $('.checkout_discountMoney').addClass('checkout_none');
         $('.checkout_removeDiscount').addClass('checkout_none');
-        this.discount = 0;
+        // this.discount = 0;
+        //====local storage折扣======
+        let new_price = parseInt(localStorage.total)+80;
+        this.total_price = new_price.toString().replace(/\B(?=(\d{3})+$)/g, ',');
+        localStorage.setItem('total', JSON.stringify(new_price));
+        localStorage.setItem('discount', 0);
       }
     },
     computed: {
-      // 商品總金額
-      itemPrice(){
-        let total = 0;
+      // // 商品總金額
+      // itemPrice(){
+      //   let total = 0;
   
-        for(let i = 0; i < this.itemList.length; i++){
-          let item = this.itemList[i];
-          total += item.price * item.quantity;
-        };
-        for(let a = 0; a < this.customization.length; a++){
-          let item2 = this.customization[a];
-          total += item2.price * item2.quantity;
-        };
+      //   for(let i = 0; i < this.itemList.length; i++){
+      //     let item = this.itemList[i];
+      //     total += item.price * item.quantity;
+      //   };
+      //   for(let a = 0; a < this.customization.length; a++){
+      //     let item2 = this.customization[a];
+      //     total += item2.price * item2.quantity;
+      //   };
   
-        this.total_item = total;
-        return total.toString().replace(/\B(?=(\d{3})+$)/g, ',');
-      },
-      // 訂單總金額
-      totalPrice(){
-        this.total_price = this.total_item - this.discount;
-        return this.total_price;
+      //   this.total_item = total;
+      //   return total.toString().replace(/\B(?=(\d{3})+$)/g, ',');
+      // },
+      // // 訂單總金額
+      // totalPrice(){
+      //   this.total_price = this.total_item - this.discount;
+      //   return this.total_price;
+      // }
+    },
+    mounted() {
+  
+      if (localStorage.customized_List) {
+        let local_customization = JSON.parse(localStorage.customized_List)
+        this.customization =local_customization;
+      };
+      if (localStorage.item_List) {
+        let item = JSON.parse(localStorage.item_List)
+        this.itemList =item;
+      };
+      if(localStorage.subtotal){
+        let subtotal =localStorage.subtotal.toString().replace(/\B(?=(\d{3})+$)/g, ',');
+        let total=localStorage.total.toString().replace(/\B(?=(\d{3})+$)/g, ',');      
+        this.itemPrice = subtotal;
+        this.total_price = total;
+      };
+      if(localStorage.discount!=0){
+        $('.checkout_discountMoney').removeClass('checkout_none');
+        $('.checkout_removeDiscount').removeClass('checkout_none');
       }
+      // ====================================================
+      
     },
   })
-
-
+})
+$(function(){
     // 按數量增加變色
+    console.log('jQuery run');
     $('.checkout_add').mousedown(function(){
       $(this).css('background-color','#172852');
       $(this).css('color','#ffffff');
@@ -306,14 +430,17 @@
       }
     });
   
-  
+    $('.checkout_detailBtn').click(function(){
+      console.log('btn click');
+    })
   
     // 查看禮盒明細
   
     $('.checkout_detailBtn').click(function(){
+      console.log('打開明細');
       let open = $(this).parents('.checkout_customization').children('.checkout_detailBorder');
       open.slideToggle();
-      // 開關按鈕變色
+      // // 開關按鈕變色
       let btnColor = $(this).css('background-color');
       if(btnColor == 'rgb(187, 134, 106)'){
         $(this).css('background-color','#cba89a');
@@ -338,6 +465,7 @@
     // 輪播圖左右按鈕
     // 左邊按鈕
     $('.checkout_pushItemBtnL').click(function(){
+      console.log('輪播做事');
       let a = parseInt($('.checkout_pushItemList').css('left'));
       let b = a + 195;
       if(a < 0){
@@ -349,6 +477,7 @@
   
     // 右邊按鈕
     $('.checkout_pushItemBtnR').click(function(){
+      console.log('輪播做事');
       let a = parseInt($('.checkout_pushItemList').css('left'));
       let b = a - 195;
       if(a < -780){
@@ -357,4 +486,11 @@
         $('.checkout_pushItemList').css('left', b+'px');
       }
     })
+})    
+    
+  
+  
+  
+
+    
   

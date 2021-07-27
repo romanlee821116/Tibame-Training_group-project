@@ -316,7 +316,7 @@
 }
 
 //=============心理測驗按鈕=============
-@mixin psycoBtn($color) {
+@mixin psycoBtn($color:#fff) {
     position: fixed;
     width: 80px;
     height: 80px;

@@ -226,14 +226,7 @@
         width: 100%;
         height: 40px;
     }
-        // .index_p2_ticker marquee{
-        //     color: #fff;
-        //     font-size: 100px;
-        //     height: 150px;
-        //     font-weight: 900;
-        //     text-align: center;
-        //     display: inline-block;
-        // }
+    
     .index_p2-progress{
         position: absolute;
         left: 0;
@@ -465,6 +458,10 @@
                 height: 100%;
                 overflow: hidden;
                 animation: resize 10s linear infinite;
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
             }
             .index_p4_bigPic img{
                 width: 100%;
@@ -477,8 +474,11 @@
                 height: 140px;
                 bottom: -5%;
                 padding: 20px;
-                background-color: #fad689;
-                /* border-radius: 46% 54% 35% 65% / 47% 37% 63% 53% ; */
+                // background-color: #fad689;
+                background: url('/images/index/product_explanatorytext02.png');
+                background-size: 150%;
+                background-position: center;
+                overflow: hidden;
                 animation: resize_small 5s linear infinite;
                 text-align: center;
                 font-weight: 900;
@@ -655,7 +655,10 @@
             position: absolute;
             left: 55%;
             top: 15vh;
-            background-color: #fad689;
+            background: url('/images/index/product_explanatorytext02.png');
+            background-size: cover;
+            background-position: center;
+            // overflow: hidden;
             animation: resize1 8s linear infinite;        
             .index_p5_bigPic_box{
                 width: 80%;

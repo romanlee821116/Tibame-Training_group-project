@@ -7,12 +7,14 @@
 
 .footer{
 	@include footer();
+  font-weight: 900;
 }
 
 *{
   box-sizing: border-box;
   font-family: "微軟正黑體";
   color: #bb866a;
+  text-decoration: none;
 }
 
 body{
@@ -25,6 +27,13 @@ body{
 
 .psychotest{
   @include psycoBtn(#fff);
+  p{
+    top: 8px;
+  }
+  &:hover p {
+    font-size: 14px;
+    top: 3px;
+  }
 }
 
 img{
@@ -47,12 +56,13 @@ img{
 /* ========== 標題 ========== */
 
 #FAQ_QA{
-  border-bottom: 3px solid #bb866a;
+  border-bottom: 2px solid #bb866a;
   border-radius: 1.5px;
   display: inline-block;
   margin: 0;
-  padding-bottom: 3px;
+  padding-bottom: 2px;
   font-size: 14px;
+  font-weight: 900;
 }
 
 #FAQ_QTitle{

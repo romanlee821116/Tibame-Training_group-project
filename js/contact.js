@@ -1,4 +1,5 @@
-// radio顏色
+$(function(){
+  // radio顏色
 $('#contact_tel').click(function(){
   $('.contact_fakeClick1').css('display','block');
   $('.contact_fakeClick2').css('display','none');
@@ -74,3 +75,5 @@ $('button').click(function(e){
     $('#contact_content').css('border','none');
   };
 })
+})
+
