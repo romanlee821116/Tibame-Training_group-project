@@ -1,5 +1,12 @@
 $(document).ready(function() {
-    $('.memberShow').load('login.html').hide();
+    console.log('navbar loading');
+    
+    if(window.location.pathname == '/index.html'){
+        console.log('homepage');
+        $('.memberShow').load('page/login.html').hide();
+    }else{
+        $('.memberShow').load('login.html').hide();
+    }
     // 儲存人頭為會員中心
     // window.onload = function (){
     //     if($('#loginFormPage .loginButton').hasClass('loginOK')){
@@ -10,6 +17,7 @@ $(document).ready(function() {
     
     // 點擊打開
     $('.navbar-icon .fa-user').click(function(){
+        // console.log('navbar icon click');
         // ----------嘗試用load寫-----------
         // // 隱藏所有頁面
         $('.footer').hide();

@@ -280,8 +280,21 @@ body{
     img{
         filter: brightness(100%);
         border-radius: 10px;
-        box-shadow: 0px 0px 10px 5px #f7c242;
+        // box-shadow: 0px 0px 10px 5px #f7c242;
+        animation: flash 3s linear infinite;
     }
+}
+@keyframes flash {
+    0%{box-shadow: 0px 0px 10px 5px #f7c242;}
+    25%{box-shadow: 0px 0px 10px 5px transparent;}
+    50%{box-shadow: 0px 0px 10px 5px #f7c242;}
+    75%{box-shadow: 0px 0px 10px 5px transparent;}
+    100%{box-shadow: 0px 0px 10px 5px #f7c242;}
+}
+.cus_reminderWord{
+    font-size: 12px;
+    color: $darkBrown;
+    margin-top: 5px;
 }
 .four_grid{
     background-image: url('../images/customized/four_boxBody.png');
@@ -748,6 +761,7 @@ body{
                 color: $darkBrown;
                 border: 0;
                 padding: 40px;
+                padding-left: 50px;
                 resize: none;
                 &:focus{
                     outline: 0;
@@ -762,8 +776,7 @@ body{
             grid-template-columns: 1fr 1fr 1fr;
             grid-template-rows: 70px 70px 70px 70px;
             gap: 10px;
-            padding: 10px;
-            overflow-y: scroll;
+            padding: 10px;            
             display: none;
             position: relative;
             z-index: 5;

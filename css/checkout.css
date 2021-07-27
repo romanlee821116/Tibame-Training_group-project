@@ -548,6 +548,7 @@
   position: relative;
   margin: 50px auto 0 auto;
   padding: 60px 0 20px 0;
+  font-weight: 900;
 }
 
 .footer a,
@@ -647,6 +648,7 @@
   box-sizing: border-box;
   font-family: "微軟正黑體";
   color: #bb866a;
+  text-decoration: none;
 }
 
 body {
@@ -1240,6 +1242,10 @@ body {
   text-decoration: none;
 }
 
+.checkout_checkout:hover {
+  background-color: #2e447c;
+}
+
 .checkout_maybe {
   display: flex;
   justify-content: space-between;
@@ -1267,6 +1273,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.checkout_maybe > a:hover {
+  background-color: #bb866a;
 }
 
 .checkout_pushItemBorder {
@@ -1302,14 +1312,21 @@ body {
   font-weight: bold;
 }
 
-.checkout_pushItem > div {
+.checkout_pushItem > a {
   background-color: #bb866a;
   border-radius: 15px;
   color: #ffffff;
   font-size: 14px;
-  padding: 3px 0;
+  padding: 5px 0;
   margin-top: 15px;
   cursor: pointer;
+  display: block;
+  text-decoration: none;
+  font-weight: 900;
+}
+
+.checkout_pushItem > a:hover {
+  background-color: #cba89a;
 }
 
 .checkout_pushItemBtn {

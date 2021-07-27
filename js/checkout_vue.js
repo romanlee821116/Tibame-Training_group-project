@@ -48,54 +48,64 @@ $(document).ready(function(){
       ],
       recommend:[
         {
-          img: '../images/checkout/banner_matcha_item.png',
-          name: '南投銅鑼燒',
-          price: '$480元/6入',
+          img: '../images/shopping_list/daifuku_mango_c_big.png',
+          name: '芒果大福',
+          price: '$300元/3入',
+          id_price: 300,
         },
         {
-          img: '../images/checkout/banner_strawberry_item.png',
-          name: '苗栗草莓大福',
-          price: '$480元/6入',
+          img: '../images/shopping_list/dorayaki_chestnut_c_big.png',
+          name: '栗子銅鑼燒',
+          price: '$285元/3入',
+          id_price: 285,
         },
         {
-          img: '../images/checkout/banner_matcha_item.png',
-          name: '南投銅鑼燒',
-          price: '$480元/6入',
+          img: '../images/shopping_list/taiyaki_sakura_c_big.png',
+          name: '櫻花鯛魚燒',
+          price: '$345元/3入',
+          id_price: 345,
         },
         {
-          img: '../images/checkout/banner_strawberry_item.png',
-          name: '苗栗草莓大福',
-          price: '$480元/6入',
+          img: '../images/shopping_list/sweet_madeleine_c_big.png',
+          name: '瑪德蓮',
+          price: '$120元/3入',
+          id_price: 120,
         },
         {
-          img: '../images/checkout/banner_matcha_item.png',
-          name: '南投銅鑼燒',
-          price: '$480元/6入',
+          img: '../images/shopping_list/namagashi_kikyo_b_big.png',
+          name: '生菓子花火',
+          price: '$330元/3入',
+          id_price: 330,
         },
         {
-          img: '../images/checkout/banner_strawberry_item.png',
-          name: '苗栗草莓大福',
-          price: '$480元/6入',
+          img: '../images/shopping_list/daifuku_strawberry_b_big.png',
+          name: '草莓大福',
+          price: '$300元/3入',
+          id_price: 300,
         },
         {
-          img: '../images/checkout/banner_matcha_item.png',
-          name: '南投銅鑼燒',
-          price: '$480元/6入',
+          img: '../images/shopping_list/monaka_redBean_b_big.png',
+          name: '紅豆最中',
+          price: '$300元/3入',
+          id_price: 300,
         },
         {
-          img: '../images/checkout/banner_strawberry_item.png',
-          name: '苗栗草莓大福',
-          price: '$480元/6入',
+          img: '../images/shopping_list/namagashi_sakura_a_big.png',
+          name: '生菓子櫻花',
+          price: '$330元/3入',
+          id_price: 330,
         },
         {
-          img: '../images/checkout/banner_matcha_item.png',
-          name: '南投銅鑼燒',
-          price: '$480元/6入',
+          img: '../images/shopping_list/sweet_lemon_b_big.png',
+          name: '檸檬餅乾',
+          price: '$180元/12入',
+          id_price: 180,
         },
         {
-          img: '../images/checkout/banner_strawberry_item.png',
-          name: '苗栗草莓大福',
-          price: '$480元/6入',
+          img: '../images/shopping_list/dorayaki_chocolate_b_big.png',
+          name: '巧克力銅鑼燒',
+          price: '$285元/3入',
+          id_price: 285,
         },
       ],
       delete_bgc: '#a3a3a3',
@@ -318,7 +328,8 @@ $(document).ready(function(){
         this.total_price = new_price.toString().replace(/\B(?=(\d{3})+$)/g, ',');
         localStorage.setItem('total', JSON.stringify(new_price));
         localStorage.setItem('discount', 0);
-      }
+      },
+      
     },
     computed: {
       // // 商品總金額
@@ -346,12 +357,10 @@ $(document).ready(function(){
     mounted() {
   
       if (localStorage.customized_List) {
-        let local_customization = JSON.parse(localStorage.customized_List)
-        this.customization =local_customization;
+        this.customization = JSON.parse(localStorage.customized_List);
       };
       if (localStorage.item_List) {
-        let item = JSON.parse(localStorage.item_List)
-        this.itemList =item;
+        this.itemList = JSON.parse(localStorage.item_List);
       };
       if(localStorage.subtotal){
         let subtotal =localStorage.subtotal.toString().replace(/\B(?=(\d{3})+$)/g, ',');
@@ -360,7 +369,6 @@ $(document).ready(function(){
         this.total_price = total;
       };
       if(localStorage.discount!=0){
-        console.log(JSON.parse(localStorage.discount));
         $('.checkout_discountMoney').removeClass('checkout_none');
         $('.checkout_removeDiscount').removeClass('checkout_none');
       }
@@ -447,10 +455,8 @@ $(function(){
       console.log('btn click');
     })
   
-    // 查看禮盒明細
-  
+    // 查看禮盒明細  
     $('.checkout_detailBtn').click(function(){
-      console.log('打開明細');
       let open = $(this).parents('.checkout_customization').children('.checkout_detailBorder');
       open.slideToggle();
       // // 開關按鈕變色
@@ -478,7 +484,6 @@ $(function(){
     // 輪播圖左右按鈕
     // 左邊按鈕
     $('.checkout_pushItemBtnL').click(function(){
-      console.log('輪播做事');
       let a = parseInt($('.checkout_pushItemList').css('left'));
       let b = a + 195;
       if(a < 0){
@@ -490,7 +495,6 @@ $(function(){
   
     // 右邊按鈕
     $('.checkout_pushItemBtnR').click(function(){
-      console.log('輪播做事');
       let a = parseInt($('.checkout_pushItemList').css('left'));
       let b = a - 195;
       if(a < -780){
@@ -499,6 +503,60 @@ $(function(){
         $('.checkout_pushItemList').css('left', b+'px');
       }
     })
+
+    //============================可能喜歡================================
+    let cart_item = {
+      'productId': 0,
+      'itemName': '',
+      'img': '',
+      'price': 0,
+      'quantity': 1,
+      'status': false,
+      "id": new Date(),
+    };
+
+    $('.checkout_pushItem_add').click(function(e){
+      e.preventDefault();
+      console.log('add cart');
+      let product_Id = '';
+      let this_name = $(this).prev().prev().text();
+      let this_price = $(this).closest('.checkout_pushItem').attr('data-id_price'); 
+      let this_img = $(this).closest('.checkout_pushItem').find('img').attr('src');
+      let this_qty = 1;
+      cart_item.productId = product_Id;
+      cart_item.itemName = this_name;
+      cart_item.img = this_img;
+      cart_item.price = parseInt(this_price);
+      cart_item.quantity = this_qty;
+      // console.log(cart_item);        
+      if(localStorage.item_List){
+          let local_itemList= [];
+          for(let i=0; i<JSON.parse(localStorage.item_List).length; i++){                    
+              local_itemList.push(JSON.parse(localStorage.item_List)[i].itemName);
+          }
+          console.log(local_itemList);
+          if(local_itemList.indexOf(this_name)==-1){
+              let new_itemList = JSON.parse(localStorage.getItem('item_List'));
+              new_itemList.push(cart_item);
+              localStorage.setItem('item_List', JSON.stringify(new_itemList));              
+          }else{
+              alert('此產品已在訂單內容');
+          }
+          
+      }else{
+          let new_itemList = [];
+          new_itemList.push(cart_item);
+          localStorage['item_List'] = [];
+          localStorage.setItem('item_List', JSON.stringify(new_itemList));
+          $('.product_reminder').fadeIn();
+              setTimeout(function(){
+                  $('.product_reminder').fadeOut();
+          },1000);
+      }
+  })
+
+
+
 })    
     
   
