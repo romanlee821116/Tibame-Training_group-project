@@ -24,15 +24,15 @@ body{
   background-attachment: fixed;
 }
 
-img{
-  width: 100%;
-}
 
 .OC_container{
   // border: 1px solid black;
   width: 80%;
   max-width: 1200px;
   margin: auto;
+  img{
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 576px){
