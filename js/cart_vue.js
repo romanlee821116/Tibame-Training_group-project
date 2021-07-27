@@ -214,7 +214,8 @@ $(document).ready(function(){
         };
         //=====local storage新增總金額=====
         localStorage['subtotal'] = '';
-        localStorage['total']='';      
+        localStorage['total']='';     
+        localStorage['discount']=0; 
         localStorage.setItem('subtotal', total);
         localStorage.setItem('total', total);
         //================================
@@ -243,16 +244,16 @@ $(document).ready(function(){
       }
   
       // 新增一般
-      // let item_array = [];
-      // item_array.push(item);
-      // localStorage['item_List'] = [];
-      // localStorage.setItem('item_List', JSON.stringify(item_array));
+      let item_array = [];
+      item_array.push(item);
+      localStorage['item_List'] = [];
+      localStorage.setItem('item_List', JSON.stringify(item_array));
   
       // 新增客製
-      // let customized_array = [];
-      // customized_array.push(customized);
-      // localStorage['customized_List'] = [];
-      // localStorage.setItem('customized_List', JSON.stringify(customized_array));
+      let customized_array = [];
+      customized_array.push(customized);
+      localStorage['customized_List'] = [];
+      localStorage.setItem('customized_List', JSON.stringify(customized_array));
   
   
       //===客製加一
