@@ -220,6 +220,14 @@ body{
     align-items: center;
 }
 
+.n-product_product li{
+    white-space: nowrap;  
+    /* 不斷行 */
+    overflow: hidden;    
+    /* 隱藏 */
+    text-overflow: ellipsis; /* 出現省略符號 */
+}
+
 .n-product_product li:last-child{
     background-color: #6599e8;
     border-radius: 15px;
