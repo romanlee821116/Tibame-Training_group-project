@@ -58,15 +58,14 @@ $(document).ready(function() {
     //========================================local storage========================================
     var item_area = $(".product_product");
     $(item_area).first().show().siblings().hide();
-
     // 點擊切換商品分類內容
     $(".product_area").click(function() {
         let index = $(this).index();
         $(item_area).eq(index).fadeIn(500).show().siblings().hide();
         $(this).find("i").addClass("yellow").show();
         $(this).find('span').css({ color: '#172852' });
+        $(this).find("img").attr("src", `../images/shopping_list/shop${index+1}_hov.png`);
         if ($(this).find("i").hasClass("yellow")) {
-            $(this).find("img").attr("src", `../images/shopping_list/shop${index+1}_hov.png`);
             $(this).siblings().find("i").removeClass("yellow").hide();
             $(this).siblings().find('span').css({ color: '#bb866a' });
         } else {
@@ -134,7 +133,6 @@ $(document).ready(function() {
         });
         $(this).addClass("click").siblings().removeClass("click");
     })
-
 
 
 });
