@@ -11,10 +11,10 @@
     background-repeat: no-repeat;
     
 }
-
 .loginAll{
     display: flex;
     margin-bottom: 500px;
+    font-weight: bold;
 }
 .loginSignup{
     display: flex;
@@ -171,6 +171,8 @@ input{
     background-color: #f0ebe9;
     border: none;
     color: #172852;
+    font-weight: bold;
+
 }
 /* 開眼睛看密碼 */
 .loginAll .eye1{
@@ -256,7 +258,7 @@ input{
     border: none;
     color: #172852;
 }
-#loginFormPage div select:focus, #loginFormPage option:checked{
+#loginFormPage select:focus, #loginFormPage option:checked{
     background-color: #f0ebe9;
     /* color: #cba89a; */
 }

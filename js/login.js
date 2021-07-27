@@ -5,6 +5,21 @@ $(document).ready(function(){
     $('.eye2').hide();  //開眼睛看密碼
     $('.loginpopBG').hide();   //送出密碼彈窗關閉
 
+    // =============== vue ===============
+    Vue.component('member-error',{
+        template:`
+        <div class="loginError">
+            <p>資料格式不正確</p>
+            <div></div>
+        </div>
+        `,
+    });
+
+    new Vue({
+        el: '.loginAll',
+    });
+    // =============== vue結束 ===============
+
     // 登入與註冊的頁面轉換=====================
     $('#signup_form').hide();
     $('#loginTitle>h4').click(function(){
@@ -264,11 +279,12 @@ $(document).ready(function(){
         }
 
         // 做登入註冊/會員中心判斷--------
-        if( !$('.loginAccount').hasClass('loginFalse') || !$('#loginPassword').hasClass('loginFalse')){
+        if( !$('.loginAccount').hasClass('loginFalse') && !$('#loginPassword').hasClass('loginFalse')){
             $(this).addClass('loginOK');
             $('.memberShow').fadeOut(500);
             $('.footer').show();
             $('.navbar').show();
+            $('body').removeClass('stopScroll');   // addClass的部分寫在navbar.js
             // window.history.back(-1);
             // $('.navbar-icon>a:first').hasClass('loginOK');
         }
@@ -355,6 +371,7 @@ $(document).ready(function(){
 
     // 註冊會員表單的縣市下拉市選單==============
     window.onload = function () {
+        console.log('addressssss');
         //當頁面載完之後，用AddressSeleclList.Initialize()，
         //傳入要綁定的縣市下拉選單ID及鄉鎮市區下拉選單ID
         AddressSeleclList.Initialize('縣市1', '鄉鎮市區1');
