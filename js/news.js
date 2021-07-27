@@ -2,7 +2,7 @@ $(document).ready(function () {
     console.log('new run');
     // ==============標題點擊效果=================
     $('#newsAll_classification_all').click(function () {
-        $('.newsUnderLine .choosenBar2').css('left', '0%');
+        $('.newsChoosenBar2').css('left', '0%');
         $(this).css('color', '#172852');
         $(this).siblings().css('color', '#cba89a');
         $('.newsPart1').fadeIn(700);
@@ -10,7 +10,7 @@ $(document).ready(function () {
     });
 
     $('#newsAll_classification_product').click(function () {
-        $('.newsUnderLine .choosenBar2').css({left: '20%'});
+        $('.newsChoosenBar2').css({left: '20%'});
         console.log('run bar2');
         $(this).css('color', '#172852');
         $(this).siblings().css('color', '#cba89a');
@@ -19,7 +19,7 @@ $(document).ready(function () {
     });
 
     $('#newsAll_classification_activity').click(function () {
-        $('.choosenBar2').css('left', '40%');
+        $('.newsChoosenBar2').css('left', '40%');
         $(this).css('color', '#172852');
         $(this).siblings().css('color', '#cba89a');
         $('.newsPart3').fadeIn(700);
@@ -27,7 +27,7 @@ $(document).ready(function () {
     });
 
     $('#newsAll_classification_report').click(function () {
-        $('.choosenBar2').css('left', '60%');
+        $('.newsChoosenBar2').css('left', '60%');
         $(this).css('color', '#172852');
         $(this).siblings().css('color', '#cba89a');
         $('.newsPart4').fadeIn(700);
@@ -35,7 +35,7 @@ $(document).ready(function () {
     });
 
     $('#newsAll_classification_shop').click(function () {
-        $('.choosenBar2').css('left', '80%');
+        $('.newsChoosenBar2').css('left', '80%');
         $(this).css('color', '#172852');
         $(this).siblings().css('color', '#cba89a');
         $('.newsPart5').fadeIn(700);
