@@ -26,7 +26,7 @@ $(document).ready(function() {
     $(".product_area").mouseleave(function() {
         let index = $(this).index();
         if (!$(this).find("i").hasClass("yellow")) {
-            $(this).siblings().find('span').css({ color: '#bb866a' });
+            $(this).find('span').css({ color: '#bb866a' });
             $(this).find("img").attr("src", `../images/shopping_list/shop${index+1}.png`);
         }
     });
