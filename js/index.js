@@ -99,7 +99,6 @@ $(function () {
     ticker();
     newsCarousel();
     indexIntro();
-    // $('.ham_bar').css('background-color','#fff');
     shopPicChange();
     productPicChange();
 })

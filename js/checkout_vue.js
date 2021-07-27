@@ -165,39 +165,45 @@ $(document).ready(function(){
       add(item){
         // console.log(item.quantity);
         item.quantity++;
-        //=============local storage =======================   
+        //====================== local storage =====================
         let this_price = item.price;
-        console.log(this_price);
+        // console.log(this_price);
+        // 價錢更新
         let new_subtotal = parseInt(localStorage['subtotal']) + this_price;
         let new_total = parseInt(localStorage['total']) + this_price;
-        let customization = this.customization;
-        let itemList = this.itemList;
         localStorage.setItem('subtotal', new_subtotal);
         localStorage.setItem('total', new_total);  
-        localStorage.setItem('customized_List', JSON.stringify(customization));
-        localStorage.setItem('item_List', JSON.stringify(itemList));
         this.itemPrice = new_subtotal;
         this.total_price = new_total;
-        // ====================================
+
+        // 商品內容更新
+        let customization = this.customization;
+        let itemList = this.itemList;
+        localStorage.setItem('customized_List', JSON.stringify(customization));
+        localStorage.setItem('item_List', JSON.stringify(itemList));
+        // ==========================================================
       },
       // 數量減少
       sub(item){
         // console.log(item.quantity);
         if(item.quantity > 1){
           item.quantity--;
-          //=============local storage =======================   
+          //=================== local storage =======================   
           let this_price = item.price;
+          // 價錢更新
           let new_subtotal = parseInt(localStorage['subtotal']) - this_price;
           let new_total = parseInt(localStorage['total']) - this_price;
-          let customization = this.customization;
-          let itemList = this.itemList;
           localStorage.setItem('subtotal', new_subtotal);
           localStorage.setItem('total', new_total);  
-          localStorage.setItem('customized_List', JSON.stringify(customization));
-          localStorage.setItem('item_List', JSON.stringify(itemList));
           this.itemPrice = new_subtotal;
           this.total_price = new_total;
-          // ====================================
+
+          // 數量更新
+          let customization = this.customization;
+          let itemList = this.itemList;
+          localStorage.setItem('customized_List', JSON.stringify(customization));
+          localStorage.setItem('item_List', JSON.stringify(itemList));
+          // =======================================================
         };
       },
       // 刪除(單一商品)
@@ -234,7 +240,13 @@ $(document).ready(function(){
           new_cusSub += this_subtotal;
         }
         let new_subtotal = new_itemSub + new_cusSub;
-        let new_total = new_subtotal - parseInt(localStorage['discount']);
+        let new_total;
+        //若有discount
+        if(localStorage['discount']){
+          new_total = new_subtotal - parseInt(localStorage['discount']);
+        }else{
+          new_total = new_subtotal
+        }  
         localStorage.setItem('subtotal', new_subtotal);
         localStorage.setItem('total', new_total);
         this.itemPrice = new_subtotal;
@@ -248,7 +260,7 @@ $(document).ready(function(){
         // 刪除多個後若沒商品顯示無商品
         if(this.itemList.length == 0 && this.customization.length == 0){
           $('.cart_NoItem').css('display','block');
-        }else if(this.itemList.length > 0 || this.customization.length > 0){
+        }else{
           $('.cart_NoItem').css('display','none');
         }
         //=============local storage =======================   
@@ -275,7 +287,7 @@ $(document).ready(function(){
           new_cusSub += this_subtotal;
         }
         let new_subtotal = new_itemSub + new_cusSub;
-        let new_total = new_subtotal - parseInt(localStorage['discount']);
+        let new_total = new_subtotal - parseInt(localStorage['discount']);  
         localStorage.setItem('subtotal', new_subtotal);
         localStorage.setItem('total', new_total);
         this.itemPrice = new_subtotal;
@@ -348,6 +360,7 @@ $(document).ready(function(){
         this.total_price = total;
       };
       if(localStorage.discount!=0){
+        console.log(JSON.parse(localStorage.discount));
         $('.checkout_discountMoney').removeClass('checkout_none');
         $('.checkout_removeDiscount').removeClass('checkout_none');
       }

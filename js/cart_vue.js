@@ -139,6 +139,13 @@ $(document).ready(function(){
             a--;
           };
         };
+
+        //=============local storage 刪除打勾商品=======================
+        let customization = this.customization;
+        localStorage.setItem('customized_List', JSON.stringify(customization));
+        let itemList = this.itemList;
+        localStorage.setItem('item_List', JSON.stringify(itemList));
+        // ============================================================
   
         // 刪除多個後若沒商品顯示無商品
         if(this.itemList.length == 0 && this.customization.length == 0){
@@ -146,12 +153,9 @@ $(document).ready(function(){
         }else{
           $('.cart_NoItem').css('display','none');
         }
-        //=============local storage 刪除=======================
-        let customization = this.customization;
-        localStorage.setItem('customized_List', JSON.stringify(customization));
-        let itemList = this.itemList;
-        localStorage.setItem('item_List', JSON.stringify(itemList));
-        // =====================================================
+
+
+
       },
       // checkbox被選擇變色，刪除多個變色
       choose(item){
@@ -187,7 +191,7 @@ $(document).ready(function(){
         // 若沒商品顯示無商品
         if(this.itemList.length == 0 && this.customization.length == 0){
           $('.cart_NoItem').css('display','block');
-        }else if(this.itemList.length > 0 || this.customization.length > 0){
+        }else{
           $('.cart_NoItem').css('display','none');
         }
       },
@@ -214,7 +218,7 @@ $(document).ready(function(){
         };
         //=====local storage新增總金額=====
         localStorage['subtotal'] = '';
-        localStorage['total']='';      
+        localStorage['total']='';     
         localStorage.setItem('subtotal', total);
         localStorage.setItem('total', total);
         //================================
@@ -237,22 +241,23 @@ $(document).ready(function(){
         itemName: '銅鑼燒',
         img: '../images/cart/banner_matcha_item.png',
         price: 120,
+        item_Quantity: '6',
         quantity: 1,
         status: false,
         "id": new Date(),
-      }
+      };
   
       // 新增一般
-      // let item_array = [];
-      // item_array.push(item);
-      // localStorage['item_List'] = [];
-      // localStorage.setItem('item_List', JSON.stringify(item_array));
+      let item_array = [];
+      item_array.push(item);
+      localStorage['item_List'] = [];
+      localStorage.setItem('item_List', JSON.stringify(item_array));
   
       // 新增客製
-      // let customized_array = [];
-      // customized_array.push(customized);
-      // localStorage['customized_List'] = [];
-      // localStorage.setItem('customized_List', JSON.stringify(customized_array));
+      let customized_array = [];
+      customized_array.push(customized);
+      localStorage['customized_List'] = [];
+      localStorage.setItem('customized_List', JSON.stringify(customized_array));
   
   
       //===客製加一
@@ -265,13 +270,14 @@ $(document).ready(function(){
       // item_total.push(item);  
       // localStorage.setItem('item_List', JSON.stringify(item_total));
   
-      if (localStorage.customized_List) {
-        let cus = JSON.parse(localStorage.customized_List)
-        this.customization =cus;
-      }
+      // 呼叫localStorage商品資料
       if (localStorage.item_List) {
         let item = JSON.parse(localStorage.item_List)
         this.itemList =item;
+      }
+      if (localStorage.customized_List) {
+        let cus = JSON.parse(localStorage.customized_List)
+        this.customization =cus;
       }
     },
   });
