@@ -220,6 +220,16 @@ body{
     align-items: center;
 }
 
+.n-news_news li{
+    /* -webkit-box 尚在實驗性的屬性值 */
+    display: -webkit-box;  
+    /* 用來設定一個元素是水平還是垂直方向排列其內容 */
+    -webkit-box-orient: vertical;  
+    /* 限制指定的行數 */
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+
 .n-news_news li:last-child{
     background-color: #6599e8;
     border-radius: 15px;

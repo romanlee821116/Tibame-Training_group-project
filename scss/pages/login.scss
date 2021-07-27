@@ -4,6 +4,7 @@
 
 *{
     font-family: '微軟正黑體';
+    box-sizing: border-box;   //請留著，他吃不到scss QQ
 }
 .memberShow{
     padding: 0;
@@ -15,10 +16,10 @@
     z-index: 999;
     position: relative;
 }
-
 .loginAll{
     display: flex;
     margin-bottom: 500px;
+    font-weight: bold;
 }
 .loginSignup{
     display: flex;
@@ -170,11 +171,13 @@ input{
     display: block;
 
     margin-bottom: 8px;
-    padding: 10px;
+    padding: 8px;
     border-radius: 5px;
     background-color: #f0ebe9;
     border: none;
     color: #172852;
+    font-weight: bold;
+
 }
 /* 開眼睛看密碼 */
 .loginAll .eye1{
@@ -259,8 +262,9 @@ input{
     background-color: #f0ebe9;
     border: none;
     color: #172852;
+    font-weight: bold;
 }
-#loginFormPage div select:focus, #loginFormPage option:checked{
+#loginFormPage select:focus, #loginFormPage option:checked{
     background-color: #f0ebe9;
     /* color: #cba89a; */
 }

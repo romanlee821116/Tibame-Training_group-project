@@ -9,7 +9,6 @@ $(document).ready(function() {
     
     // 點擊打開
     $('.navbar-icon .fa-user').click(function(){
-        console.log('click member');
         // ----------嘗試用load寫-----------
         // // 隱藏所有頁面
         $('.footer').hide();
@@ -18,11 +17,11 @@ $(document).ready(function() {
         // // 開啟登入註冊or會員中心
         if($('#loginFormPage .loginButton').hasClass('loginOK') || $('.navbar-icon>a:first').hasClass('loginOK')){
             window.location.href = 'member.html';
-            console.log('haveclass');
+            // console.log('haveclass');
         }else{
             $('.memberShow').load('login.html').fadeIn(700);
             $('body').addClass('stopScroll');
-            console.log('noclass');
+            // console.log('noclass');
         };
         // ---------------------------------
         
