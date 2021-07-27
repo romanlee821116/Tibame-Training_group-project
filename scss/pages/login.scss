@@ -4,6 +4,7 @@
 
 *{
     font-family: '微軟正黑體';
+    box-sizing: border-box;   //請留著，他吃不到scss QQ
 }
 .memberShow{
     padding: 0;
@@ -170,7 +171,7 @@ input{
     display: block;
 
     margin-bottom: 8px;
-    padding: 10px;
+    padding: 8px;
     border-radius: 5px;
     background-color: #f0ebe9;
     border: none;
@@ -261,6 +262,7 @@ input{
     background-color: #f0ebe9;
     border: none;
     color: #172852;
+    font-weight: bold;
 }
 #loginFormPage select:focus, #loginFormPage option:checked{
     background-color: #f0ebe9;

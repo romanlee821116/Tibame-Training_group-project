@@ -1,6 +1,4 @@
 $(document).ready(function(){
-    
-    // console.log('ready');
     getRandom();        //驗證碼亂數
     $('.eye2').hide();  //開眼睛看密碼
     $('.loginpopBG').hide();   //送出密碼彈窗關閉

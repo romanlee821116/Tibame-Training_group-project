@@ -123,23 +123,23 @@ html, body{
 
 .underLine {
     position: relative;
-    .underLine .choosenBar {
+    .choosenBar {
         width: 100%;
         height: 2px;
         background-color: #cba89a;
         /* display: block; */
     }
     
-    .underLine .choosenBar2 {
+    .choosenBar2 {
         width: 20%;
         height: 2px;
         background-color: #172852;
         position: absolute;
         top: 0;
-        left: 20%;
+        left: 0%;
     }
     
-    .underLine .choosenBar2::before {
+    .choosenBar2::before {
         content: '';
         display: inline-block;
         width: 6px;
