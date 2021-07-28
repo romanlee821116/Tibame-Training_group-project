@@ -288,9 +288,9 @@ $(document).ready(function(){
       };
   
       // 新增一般
-      // let item_array = [];
-      // item_array.push(item);
-      // localStorage['item_List'] = [];
+      let item_array = [];
+      item_array.push(item);
+      localStorage['item_List'] = [];
       localStorage.setItem('item_List', JSON.stringify(item_array));
   
       // 新增客製
@@ -433,7 +433,6 @@ $(function(){
 
   // 點擊購物車以外區域會關掉購物車
   $(document).mouseup(function(e) {
-    console.log($('.cart_cartBoard').has(e.target).length);
     if(!$('.cart_cartBoard').is(e.target) && $('.cart_cartBoard').has(e.target).length === 0){
       $('.cart_cartBoard').css('right','-600px'); 
     }

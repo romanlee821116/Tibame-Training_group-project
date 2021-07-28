@@ -194,10 +194,11 @@ $(document).ready(function(){
         let new_total = parseInt(localStorage.subtotal - localStorage.discount);
         localStorage.setItem('total', new_total);
         this.total_price = new_total;
-        //判定是否全空
+
+        // 若刪光購物車內容，跳出轉移商品頁面提示框
         let item_List = localStorage.item_List;
         let cus_List = localStorage.customized_List;
-        console.log(item_List.length);
+        // console.log(item_List.length);
         if(item_List.length =='2' && cus_List.length=='2'){
           $('.checkout_popBG').fadeIn();
         }
@@ -283,10 +284,11 @@ $(document).ready(function(){
         let new_total = parseInt(localStorage.subtotal - localStorage.discount);
         localStorage.setItem('total', new_total);
         this.total_price = new_total;
-        //判定是否全空
+
+        // 若刪光購物車內容，跳出轉移商品頁面提示框
         let item_List = localStorage.item_List;
         let cus_List = localStorage.customized_List;
-        console.log(item_List.length);
+        // console.log(item_List.length);
         if(item_List.length =='2' && cus_List.length=='2'){
           $('.checkout_popBG').fadeIn();
         }
@@ -326,10 +328,11 @@ $(document).ready(function(){
         let new_total = parseInt(localStorage.subtotal - localStorage.discount);
         localStorage.setItem('total', new_total);
         this.total_price = new_total;
-        //判定是否全空
+
+        // 若刪光購物車內容，跳出轉移商品頁面提示框
         let item_List = localStorage.item_List;
         let cus_List = localStorage.customized_List;
-        console.log(item_List.length);
+        // console.log(item_List.length);
         if(item_List.length =='2' && cus_List.length=='2'){
           $('.checkout_popBG').fadeIn();
         }
