@@ -2,7 +2,8 @@ $(document).ready(function(){
   new Vue ({
     el: "#payment_app",
     data: {
-      applyData: false,
+      orderer: false,
+      recipient: false,
       // 單項商品
       itemList:[
         // {
@@ -60,9 +61,12 @@ $(document).ready(function(){
       cardCertification: "",
     },
     methods: {
+      // 同會員資料checkbox
       choose(){
-        // checkbox
-        this.applyData=!this.applyData;
+        this.orderer=!this.orderer;
+      },
+      chooseRecipient(){
+        this.recipient=!this.recipient;
       },
       countShipping(){
         this.shipping = 80;

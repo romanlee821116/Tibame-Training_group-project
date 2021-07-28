@@ -352,7 +352,7 @@
 
 /* ========== 前往結帳 ========== */
 .cart_checkout {
-  background-color: #172852;
+  background-color: #a3a3a3;
   width: 600px;
   height: 60px;
   color: #ffffff;
@@ -360,16 +360,12 @@
   font-weight: bold;
   text-align: center;
   line-height: 60px;
-  cursor: pointer;
+  cursor: default;
   text-decoration: none;
   display: inline-block;
   position: absolute;
   left: 0;
   bottom: 0;
-}
-
-.cart_checkout:hover {
-  background-color: #2e447c;
 }
 
 @media screen and (max-width: 600px) {
@@ -941,10 +937,28 @@ body {
   }
 }
 
-.payment_receiver > p {
+.payment_receiverTitle {
+  display: flex;
+}
+
+.payment_receiverTitle > p {
   margin: 0;
   color: #172852;
   font-weight: bold;
+  margin-right: 30px;
+}
+
+.payment_receiverTitle > div {
+  display: flex;
+}
+
+.payment_receiverTitle > div > p {
+  margin: 0;
+  color: #172852;
+  font-size: 16px;
+  font-weight: bold;
+  margin-left: 10px;
+  display: flex;
 }
 
 .payment_receiverData {
@@ -1395,6 +1409,10 @@ input[type="radio"]:checked + label {
   justify-content: center;
   align-items: center;
   text-decoration: none;
+}
+
+.payment_next:hover {
+  background-color: #2e447c;
 }
 
 .payment_nextText {

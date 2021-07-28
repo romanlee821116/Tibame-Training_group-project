@@ -318,20 +318,19 @@ $(document).ready(function(){
       // 提交折扣
       sendDiscount(){
         if($('#checkout_discountNumber').val() !== ""){
+          $('#checkout_discountNumber').val("");
           $('.checkout_discountMoney').removeClass('checkout_none');
           $('.checkout_removeDiscount').removeClass('checkout_none');
           this.discount = 80;
-          // $('#checkout_discountNumber').val() = "";
 
         // ========================== localStorage ==========================
           // 折扣加進去
           let dis = this.discount;
-          localStorage['discount'] = 0;
-          localStorage.setItem('discount', JSON.stringify(dis));
+          localStorage.setItem('discount', dis);
           
           // 總金額重算
           let new_price = parseInt(localStorage.total) - parseInt(localStorage.discount);
-          localStorage.setItem('total', JSON.stringify(new_price));
+          localStorage.setItem('total', new_price);
           this.total_price = new_price;    
         // ==================================================================
         }  
