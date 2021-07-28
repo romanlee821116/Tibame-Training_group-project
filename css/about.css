@@ -311,6 +311,7 @@ body::-webkit-scrollbar {
   right: 50vw;
   z-index: 7;
   height: 22vh;
+  animation: walk2 25s linear infinite;
 }
 
 #about_scene1 .about_people4 div::before {

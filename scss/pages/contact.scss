@@ -12,7 +12,6 @@
 *{
   box-sizing: border-box;
   font-family: "微軟正黑體";
-  color: #bb866a;
 }
 
 body{
@@ -27,6 +26,7 @@ body{
   width: 80%;
   max-width: 1200px;
   margin: auto;
+  color: #bb866a;
   img{
     width: 100%;
   }
@@ -47,6 +47,7 @@ body{
   padding-bottom: 3px;
   margin: 0 0 30px;
   font-size: 14px;
+  font-weight: bold;
 }
 
 #contact_contactBorder{

@@ -57,36 +57,15 @@ $(document).ready(function() {
 
     //========================================local storage========================================
     var item_area = $(".product_product");
-    $(item_area).first().show().siblings().hide();
+    // ================================ 抓頁面 ==============================
+    var page_show = JSON.parse(localStorage.getItem("product_page_num"));
+    $(`.product_product:nth-child(${page_show})`).show().siblings().hide();
+    $(`.product_area:nth-child(${page_show})`).find("img").attr("src", `../images/shopping_list/shop${page_show}_hov.png`);
+    $(`.product_area:nth-child(${page_show})`).find('span').css({ color: '#172852' });
+    $(`.product_area:nth-child(${page_show})`).addClass('yellow');
+
+
     // 點擊切換商品分類內容 救救可憐的廢物
-    $(".product_area").click(function() {
-        let index = $(this).index();
-        $(item_area).eq(index).fadeIn(500).show().siblings().hide();
-        $(this).find("i").addClass("yellow").show();
-        $(this).find('span').css({ color: '#172852' });
-        $(this).find("img").attr("src", `../images/shopping_list/shop${index+1}_hov.png`);
-        if ($(this).find("i").hasClass("yellow")) {
-            $(this).siblings().find("i").removeClass("yellow").hide();
-            $(this).siblings().find('span').css({ color: '#bb866a' });
-        }
-    });
-
-    // 選擇商品分類
-    $(".product_area").mouseenter(function() {
-        let index = $(this).index();
-        $(this).find("img").attr("src", `../images/shopping_list/shop${index+1}_hov.png`);
-        $(this).find('span').css({ color: '#172852' });
-    });
-    $(".product_area").mouseleave(function() {
-        let index = $(this).index();
-        if ($(this).find("i").hasClass("yellow")) {
-            $(this).find('span').css({ color: '#bb866a' });
-            $(this).find("img").attr("src", `../images/shopping_list/shop${index+1}.png`);
-        } else {
-
-        }
-    });
-
     $('.product_area').hover(function() {
         let index = $(this).index();
         // console.log(index);
@@ -94,17 +73,29 @@ $(document).ready(function() {
         $(this).find('span').css({ color: '#172852' });
     }, function() {
         let index = $(this).index();
-        $(this).find('span').css({ color: '#bb866a' });
-        $(this).find("img").attr("src", `../images/shopping_list/shop${index+1}.png`);
+        if (!($(this).hasClass('yellow'))) {
+            $(this).find('span').css({ color: '#bb866a' });
+            $(this).find("img").attr("src", `../images/shopping_list/shop${index+1}.png`);
+        } else {
+            $(this).find('span').css({ color: '#172852' });
+        }
     });
     $('.product_area').click(function() {
-        $(this).unbind('mouseenter mouseleave');
         let index = $(this).index();
+        $(item_area).eq(index).fadeIn(500).show().siblings().hide();
+        var prevtarget = $('.yellow');
+        if (prevtarget[0]) {
+            var tmpIndex = prevtarget.attr("data-num");
+            prevtarget.find("img").attr("src", `../images/shopping_list/shop${tmpIndex}.png`);
+            prevtarget.find('span').css({ color: '#bb866a' });
+        }
         $(this).find("img").attr("src", `../images/shopping_list/shop${index+1}_hov.png`);
         $(this).find('span').css({ color: '#172852' });
-        $('.product_area').bind('hover');
         $('.product_area').removeClass('yellow');
         $(this).addClass('yellow');
+        $('html, body').animate({
+            scrollTop: '0',
+        },300);
     })
 
     // 商品數量增減 

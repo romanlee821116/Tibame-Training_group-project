@@ -170,7 +170,7 @@
 				</div>
 			</div>
 
-			<div class="cart_checkoutBorder"><a href="../page/checkout.html" class="cart_checkout" @click=“stopGo”>前往結帳</a></div>
+			<div class="cart_checkoutBorder"><a href="../page/checkout.html" class="cart_checkout" @click='stopGo'>前往結帳</a></div>
 
 		</div>
 	</div>
@@ -523,6 +523,10 @@
                 opacity: '0',
             })
         });
+    </script>
+    <script>
+        $(".ham_select").find("a:nth-child(1)").css({ color: "#fad689" });
+        $(".ham_select").find("a:nth-child(1)::before").css({backgroundColor: "#fad689" });
     </script>
 </body>
 

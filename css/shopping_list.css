@@ -255,6 +255,10 @@ body {
   margin-top: 12px;
 }
 
+.stick_color {
+  color: #fad689;
+}
+
 #product_counter {
   position: absolute;
   top: 2px;
@@ -832,7 +836,7 @@ body {
     margin-right: 0;
   }
   .product_select_area {
-    right: 20px;
+    right: 25px;
   }
 }
 
@@ -904,7 +908,7 @@ body {
     margin-right: 0;
   }
   .product_select_area {
-    right: 0px;
+    right: 10px;
   }
 }
 /*# sourceMappingURL=shopping_list.css.map */
