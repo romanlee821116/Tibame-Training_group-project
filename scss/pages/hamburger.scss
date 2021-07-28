@@ -25,6 +25,7 @@ body {
     transition: 0.4s;
     }
 }
+
 .ham_change .ham_bar1 {
     background-color: white;
     transform: rotate(-45deg) translate(-6px, 5px);
@@ -74,33 +75,35 @@ body {
         text-align: left;
         width: 200px;
         cursor: pointer;
+        a {
+            padding: 10px;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+            display: block;
+            letter-spacing: 2px;
+            opacity: 0;
+            transition: all .5s;
+            &:hover{
+                color: #fad689;
+                
+            }
+            &:hover:before{
+                background-color: #fad689
+            }
+            &::before{
+                content: "\A";
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                display: inline-block;
+                margin: 0 20px;
+                background-color: transparent;
+                transition: all .3s;
+            }
+        }
     }
-    a {
-        padding: 10px;
-        text-decoration: none;
-        font-size: 20px;
-        font-weight: bold;
-        color: white;
-        display: block;
-        letter-spacing: 2px;
-        opacity: 0;
-        transition: all .5s;
-        &:hover{
-            color: #fad689;
-            
-        }
-        &:hover:before{
-            background-color: #fad689
-        }
-        &::before{
-            content: "\A";
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            display: inline-block;
-            margin: 0 20px;
-            background-color: transparent;
-            transition: all .3s;
-        }
-    }
+    
+    
 }

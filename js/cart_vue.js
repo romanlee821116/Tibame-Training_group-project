@@ -297,50 +297,6 @@ $(document).ready(function(){
       },
     },
     mounted() {
-      var customized = {
-        itemName: '四格小資組合',
-        img: '../images/cart/customized_box.png',
-        price: 480,
-        quantity: 1,
-        detail: ['草莓大福(1入)', '抹茶大福(1入)', '柳橙大福(1入)', '巧克力大福(1入)'],
-        detail_Quantity: ['1', '1', '1', '1'],
-        status: false,
-        "id": new Date(),
-      };
-  
-      var item = {
-        itemName: '銅鑼燒',
-        img: '../images/cart/banner_matcha_item.png',
-        price: 120,
-        item_Quantity: '6',
-        quantity: 1,
-        status: false,
-        "id": new Date(),
-      };
-  
-      // 新增一般
-      let item_array = [];
-      item_array.push(item);
-      localStorage['item_List'] = [];
-      localStorage.setItem('item_List', JSON.stringify(item_array));
-  
-      // 新增客製
-      // let customized_array = [];
-      // customized_array.push(customized);
-      // localStorage['customized_List'] = [];
-      // localStorage.setItem('customized_List', JSON.stringify(customized_array));
-  
-  
-      //===客製加一
-      // let customized_total = JSON.parse(localStorage.getItem('customized_List'));
-      // customized_total.push(customized);  
-      // localStorage.setItem('customized_List', JSON.stringify(customized_total));
-
-      //===一般加一
-      // let item_total = JSON.parse(localStorage.getItem('item_List'));
-      // item_total.push(item);  
-      // localStorage.setItem('item_List', JSON.stringify(item_total));
-
       // 一般商品
       if(localStorage.item_List) {
         let item = JSON.parse(localStorage.item_List)

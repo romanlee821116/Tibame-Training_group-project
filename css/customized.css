@@ -1033,6 +1033,7 @@ body {
   word-wrap: break-word;
   font-size: 16px;
   color: #bb866a;
+  box-shadow: 0px 0px 15px #ccc;
 }
 
 .cus_step2 .cus_bag_card .choose-bag {
