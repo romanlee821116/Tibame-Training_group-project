@@ -352,7 +352,7 @@
 
 /* ========== 前往結帳 ========== */
 .cart_checkout {
-  background-color: #172852;
+  background-color: #a3a3a3;
   width: 600px;
   height: 60px;
   color: #ffffff;
@@ -360,16 +360,12 @@
   font-weight: bold;
   text-align: center;
   line-height: 60px;
-  cursor: pointer;
+  cursor: default;
   text-decoration: none;
   display: inline-block;
   position: absolute;
   left: 0;
   bottom: 0;
-}
-
-.cart_checkout:hover {
-  background-color: #2e447c;
 }
 
 @media screen and (max-width: 600px) {
@@ -699,6 +695,13 @@ body {
   text-align: center;
   font-size: 12px;
   transition: .2s;
+}
+
+@media (max-width: 575px) {
+  .psychotest {
+    right: 10px;
+    bottom: 10px;
+  }
 }
 
 .psychotest p {

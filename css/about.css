@@ -107,6 +107,13 @@ body::-webkit-scrollbar {
   transition: .2s;
 }
 
+@media (max-width: 575px) {
+  .psychotest {
+    right: 10px;
+    bottom: 10px;
+  }
+}
+
 .about_wrap {
   width: 100vw;
   height: 100vh;
@@ -175,6 +182,12 @@ body::-webkit-scrollbar {
   z-index: 5;
 }
 
+@media (max-width: 575px) {
+  #about_scene1 .about_people1 {
+    display: none;
+  }
+}
+
 #about_scene1 .about_people2 {
   bottom: 8%;
   right: 30vw;
@@ -222,6 +235,18 @@ body::-webkit-scrollbar {
 #about_scene1 .about_people2 .about_people2_leg img {
   height: 100%;
   width: auto;
+}
+
+@media (max-width: 575px) {
+  #about_scene1 .about_people2 .about_people2_leg {
+    animation: bikeLeg 8s linear infinite;
+  }
+}
+
+@media (max-width: 575px) {
+  #about_scene1 .about_people2 {
+    animation: bike_rwd 5s linear infinite;
+  }
 }
 
 #about_scene1 .about_people3 {
@@ -275,12 +300,17 @@ body::-webkit-scrollbar {
   animation: Leg1 8s  linear infinite;
 }
 
+@media (max-width: 575px) {
+  #about_scene1 .about_people3 {
+    animation: walk1 10s linear infinite;
+  }
+}
+
 #about_scene1 .about_people4 {
   bottom: 9%;
   right: 50vw;
   z-index: 7;
   height: 22vh;
-  animation: walk2 28s linear infinite;
 }
 
 #about_scene1 .about_people4 div::before {
@@ -327,6 +357,12 @@ body::-webkit-scrollbar {
   animation: Leg 10s linear infinite;
 }
 
+@media (max-width: 575px) {
+  #about_scene1 .about_people4 {
+    animation: walk2 12s linear infinite;
+  }
+}
+
 #about_scene1 .about_people6 {
   bottom: 14%;
   left: 15%;
@@ -350,6 +386,13 @@ body::-webkit-scrollbar {
   transform-origin: left bottom;
   z-index: 6;
   animation: hand 20s linear infinite;
+}
+
+@media (max-width: 575px) {
+  #about_scene1 .about_people7 {
+    bottom: 16%;
+    right: 12vw;
+  }
 }
 
 @keyframes bikeLeg {
@@ -548,6 +591,17 @@ body::-webkit-scrollbar {
   }
   100% {
     right: 110vw;
+    bottom: 40px;
+  }
+}
+
+@keyframes bike_rwd {
+  0% {
+    right: -30vw;
+    bottom: 40px;
+  }
+  100% {
+    right: 130vw;
     bottom: 40px;
   }
 }

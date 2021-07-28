@@ -59,9 +59,17 @@ $(function(){
         if(this.terms == true){
           $('.OC_next').css('background-color', '#172852');
           $('.OC_next').css('cursor', 'pointer');
+          $('.OC_next').hover(function(){
+            $('.OC_next').css('background-color', '#2e447c');
+          },function(){
+            $('.OC_next').css('background-color', '#172852');
+          });
         }else if(this.terms == false){
           $('.OC_next').css('background-color', '#a3a3a3');
           $('.OC_next').css('cursor', 'default');
+          $('.OC_next').hover(function(){
+            $('.OC_next').css('background-color', '#a3a3a3');
+          });
         }
       },
       // 沒打勾就不能去下一頁
