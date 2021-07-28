@@ -244,6 +244,7 @@ body {
   opacity: 0;
   -webkit-transition: all .5s;
   transition: all .5s;
+  cursor: pointer;
 }
 
 .navbar .ham_overlay a:hover {
