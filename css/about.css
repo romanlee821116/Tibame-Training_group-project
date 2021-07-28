@@ -18,6 +18,7 @@ time, mark, audio, video {
   font-size: 100%;
   font: bold inherit '微軟正黑體';
   vertical-align: baseline;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   text-decoration: none;
   font-weight: 900;
@@ -80,7 +81,8 @@ body::-webkit-scrollbar {
 }
 
 .psychotest:hover img {
-  transform: scale(1.3);
+  -webkit-transform: scale(1.3);
+          transform: scale(1.3);
 }
 
 .psychotest:hover p {
@@ -91,6 +93,7 @@ body::-webkit-scrollbar {
 .psychotest img {
   width: 100%;
   height: 100%;
+  -webkit-transition: .2s;
   transition: .2s;
 }
 
@@ -98,12 +101,14 @@ body::-webkit-scrollbar {
   position: absolute;
   top: 16px;
   left: 50%;
-  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
   color: #fff;
   font-weight: 900;
   width: 130px;
   text-align: center;
   font-size: 12px;
+  -webkit-transition: .2s;
   transition: .2s;
 }
 
@@ -177,8 +182,10 @@ body::-webkit-scrollbar {
   background: url("../../images/about/character01_3.png");
   background-size: contain;
   background-repeat: no-repeat;
-  transform-origin: right 0;
-  animation: Leg 20s .5s linear infinite;
+  -webkit-transform-origin: right 0;
+          transform-origin: right 0;
+  -webkit-animation: Leg 20s .5s linear infinite;
+          animation: Leg 20s .5s linear infinite;
   z-index: 5;
 }
 
@@ -192,12 +199,9 @@ body::-webkit-scrollbar {
   bottom: 8%;
   right: 30vw;
   height: 25%;
-<<<<<<< HEAD
-  z-index: 8;
-=======
   z-index: 9;
->>>>>>> dev
-  animation: bike 10s linear infinite;
+  -webkit-animation: bike 10s linear infinite;
+          animation: bike 10s linear infinite;
 }
 
 #about_scene1 .about_people2::before {
@@ -210,7 +214,8 @@ body::-webkit-scrollbar {
   background: url("../../images/about/character02_2.png");
   background-size: contain;
   background-repeat: no-repeat;
-  animation: wheel 2s linear infinite;
+  -webkit-animation: wheel 2s linear infinite;
+          animation: wheel 2s linear infinite;
 }
 
 #about_scene1 .about_people2::after {
@@ -223,7 +228,8 @@ body::-webkit-scrollbar {
   background: url("../../images/about/character02_3.png");
   background-size: contain;
   background-repeat: no-repeat;
-  animation: wheel 2s linear infinite;
+  -webkit-animation: wheel 2s linear infinite;
+          animation: wheel 2s linear infinite;
 }
 
 #about_scene1 .about_people2 .about_people2_leg {
@@ -232,8 +238,10 @@ body::-webkit-scrollbar {
   height: 45%;
   left: 30%;
   top: 50%;
-  transform-origin: right 0;
-  animation: bikeLeg 10s linear infinite;
+  -webkit-transform-origin: right 0;
+          transform-origin: right 0;
+  -webkit-animation: bikeLeg 10s linear infinite;
+          animation: bikeLeg 10s linear infinite;
 }
 
 #about_scene1 .about_people2 .about_people2_leg img {
@@ -243,13 +251,15 @@ body::-webkit-scrollbar {
 
 @media (max-width: 575px) {
   #about_scene1 .about_people2 .about_people2_leg {
-    animation: bikeLeg 8s linear infinite;
+    -webkit-animation: bikeLeg 8s linear infinite;
+            animation: bikeLeg 8s linear infinite;
   }
 }
 
 @media (max-width: 575px) {
   #about_scene1 .about_people2 {
-    animation: bike_rwd 5s linear infinite;
+    -webkit-animation: bike_rwd 5s linear infinite;
+            animation: bike_rwd 5s linear infinite;
   }
 }
 
@@ -257,12 +267,9 @@ body::-webkit-scrollbar {
   height: 23%;
   bottom: 8%;
   right: 25vw;
-<<<<<<< HEAD
-  z-index: 7;
-=======
   z-index: 8;
->>>>>>> dev
-  animation: walk1 30s linear infinite;
+  -webkit-animation: walk1 30s linear infinite;
+          animation: walk1 30s linear infinite;
 }
 
 #about_scene1 .about_people3 div::before {
@@ -275,8 +282,10 @@ body::-webkit-scrollbar {
   background: url("../../images/about/character03_2.png");
   background-size: contain;
   background-repeat: no-repeat;
-  transform-origin: top left;
-  animation: hand1 15s linear infinite;
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
+  -webkit-animation: hand1 15s linear infinite;
+          animation: hand1 15s linear infinite;
   z-index: 6;
 }
 
@@ -290,8 +299,10 @@ body::-webkit-scrollbar {
   background: url("../../images/about/character03_3.png");
   background-size: contain;
   background-repeat: no-repeat;
-  transform-origin: center 0;
-  animation: Leg 8s linear infinite;
+  -webkit-transform-origin: center 0;
+          transform-origin: center 0;
+  -webkit-animation: Leg 8s linear infinite;
+          animation: Leg 8s linear infinite;
 }
 
 #about_scene1 .about_people3::after {
@@ -304,17 +315,17 @@ body::-webkit-scrollbar {
   background: url("../../images/about/character03_4.png");
   background-size: contain;
   background-repeat: no-repeat;
-  transform-origin: center 0;
-  animation: Leg1 8s  linear infinite;
-<<<<<<< HEAD
-=======
+  -webkit-transform-origin: center 0;
+          transform-origin: center 0;
+  -webkit-animation: Leg1 8s  linear infinite;
+          animation: Leg1 8s  linear infinite;
 }
 
 @media (max-width: 575px) {
   #about_scene1 .about_people3 {
-    animation: walk1 10s linear infinite;
+    -webkit-animation: walk1 10s linear infinite;
+            animation: walk1 10s linear infinite;
   }
->>>>>>> dev
 }
 
 #about_scene1 .about_people4 {
@@ -322,10 +333,6 @@ body::-webkit-scrollbar {
   right: 50vw;
   z-index: 7;
   height: 22vh;
-<<<<<<< HEAD
-  animation: walk2 28s linear infinite;
-=======
->>>>>>> dev
 }
 
 #about_scene1 .about_people4 div::before {
@@ -338,13 +345,11 @@ body::-webkit-scrollbar {
   background: url("../../images/about/character04_2.png");
   background-size: contain;
   background-repeat: no-repeat;
-  transform-origin: top right;
-  animation: hand 10s linear infinite;
-<<<<<<< HEAD
-  z-index: 6;
-=======
+  -webkit-transform-origin: top right;
+          transform-origin: top right;
+  -webkit-animation: hand 10s linear infinite;
+          animation: hand 10s linear infinite;
   z-index: 7;
->>>>>>> dev
 }
 
 #about_scene1 .about_people4::before {
@@ -353,13 +358,16 @@ body::-webkit-scrollbar {
   height: 30%;
   bottom: -10%;
   left: 0%;
-  transform: rotate(-60deg);
+  -webkit-transform: rotate(-60deg);
+          transform: rotate(-60deg);
   position: absolute;
   background: url("../../images/about/character04_3.png");
   background-size: contain;
   background-repeat: no-repeat;
-  transform-origin: top;
-  animation: Leg1 10s linear infinite;
+  -webkit-transform-origin: top;
+          transform-origin: top;
+  -webkit-animation: Leg1 10s linear infinite;
+          animation: Leg1 10s linear infinite;
 }
 
 #about_scene1 .about_people4::after {
@@ -372,17 +380,17 @@ body::-webkit-scrollbar {
   background: url("../../images/about/character04_4.png");
   background-size: contain;
   background-repeat: no-repeat;
-  transform-origin: top;
-  animation: Leg 10s linear infinite;
-<<<<<<< HEAD
-=======
+  -webkit-transform-origin: top;
+          transform-origin: top;
+  -webkit-animation: Leg 10s linear infinite;
+          animation: Leg 10s linear infinite;
 }
 
 @media (max-width: 575px) {
   #about_scene1 .about_people4 {
-    animation: walk2 12s linear infinite;
+    -webkit-animation: walk2 12s linear infinite;
+            animation: walk2 12s linear infinite;
   }
->>>>>>> dev
 }
 
 #about_scene1 .about_people6 {
@@ -405,11 +413,11 @@ body::-webkit-scrollbar {
   background: url("../../images/about/character07_2.png");
   background-size: contain;
   background-repeat: no-repeat;
-  transform-origin: left bottom;
+  -webkit-transform-origin: left bottom;
+          transform-origin: left bottom;
   z-index: 6;
-  animation: hand 20s linear infinite;
-<<<<<<< HEAD
-=======
+  -webkit-animation: hand 20s linear infinite;
+          animation: hand 20s linear infinite;
 }
 
 @media (max-width: 575px) {
@@ -417,197 +425,508 @@ body::-webkit-scrollbar {
     bottom: 16%;
     right: 12vw;
   }
->>>>>>> dev
+}
+
+@-webkit-keyframes bikeLeg {
+  0% {
+    -webkit-transform: rotate(-10deg);
+            transform: rotate(-10deg);
+  }
+  10% {
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+  }
+  20% {
+    -webkit-transform: rotate(-10deg);
+            transform: rotate(-10deg);
+  }
+  30% {
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+  }
+  40% {
+    -webkit-transform: rotate(-10deg);
+            transform: rotate(-10deg);
+  }
+  50% {
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+  }
+  60% {
+    -webkit-transform: rotate(-10deg);
+            transform: rotate(-10deg);
+  }
+  70% {
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+  }
+  80% {
+    -webkit-transform: rotate(-10deg);
+            transform: rotate(-10deg);
+  }
+  90% {
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+  }
+  100% {
+    -webkit-transform: rotate(-10deg);
+            transform: rotate(-10deg);
+  }
 }
 
 @keyframes bikeLeg {
   0% {
-    transform: rotate(-10deg);
+    -webkit-transform: rotate(-10deg);
+            transform: rotate(-10deg);
   }
   10% {
-    transform: rotate(10deg);
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
   }
   20% {
-    transform: rotate(-10deg);
+    -webkit-transform: rotate(-10deg);
+            transform: rotate(-10deg);
   }
   30% {
-    transform: rotate(10deg);
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
   }
   40% {
-    transform: rotate(-10deg);
+    -webkit-transform: rotate(-10deg);
+            transform: rotate(-10deg);
   }
   50% {
-    transform: rotate(10deg);
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
   }
   60% {
-    transform: rotate(-10deg);
+    -webkit-transform: rotate(-10deg);
+            transform: rotate(-10deg);
   }
   70% {
-    transform: rotate(10deg);
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
   }
   80% {
-    transform: rotate(-10deg);
+    -webkit-transform: rotate(-10deg);
+            transform: rotate(-10deg);
   }
   90% {
-    transform: rotate(10deg);
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
   }
   100% {
-    transform: rotate(-10deg);
+    -webkit-transform: rotate(-10deg);
+            transform: rotate(-10deg);
+  }
+}
+
+@-webkit-keyframes Leg {
+  0% {
+    -webkit-transform: rotate(15deg);
+            transform: rotate(15deg);
+  }
+  10% {
+    -webkit-transform: rotate(-15deg);
+            transform: rotate(-15deg);
+  }
+  20% {
+    -webkit-transform: rotate(15deg);
+            transform: rotate(15deg);
+  }
+  30% {
+    -webkit-transform: rotate(-15deg);
+            transform: rotate(-15deg);
+  }
+  40% {
+    -webkit-transform: rotate(15deg);
+            transform: rotate(15deg);
+  }
+  50% {
+    -webkit-transform: rotate(-15deg);
+            transform: rotate(-15deg);
+  }
+  60% {
+    -webkit-transform: rotate(15deg);
+            transform: rotate(15deg);
+  }
+  70% {
+    -webkit-transform: rotate(-15deg);
+            transform: rotate(-15deg);
+  }
+  80% {
+    -webkit-transform: rotate(15deg);
+            transform: rotate(15deg);
+  }
+  90% {
+    -webkit-transform: rotate(-15deg);
+            transform: rotate(-15deg);
+  }
+  100% {
+    -webkit-transform: rotate(15deg);
+            transform: rotate(15deg);
   }
 }
 
 @keyframes Leg {
   0% {
-    transform: rotate(15deg);
+    -webkit-transform: rotate(15deg);
+            transform: rotate(15deg);
   }
   10% {
-    transform: rotate(-15deg);
+    -webkit-transform: rotate(-15deg);
+            transform: rotate(-15deg);
   }
   20% {
-    transform: rotate(15deg);
+    -webkit-transform: rotate(15deg);
+            transform: rotate(15deg);
   }
   30% {
-    transform: rotate(-15deg);
+    -webkit-transform: rotate(-15deg);
+            transform: rotate(-15deg);
   }
   40% {
-    transform: rotate(15deg);
+    -webkit-transform: rotate(15deg);
+            transform: rotate(15deg);
   }
   50% {
-    transform: rotate(-15deg);
+    -webkit-transform: rotate(-15deg);
+            transform: rotate(-15deg);
   }
   60% {
-    transform: rotate(15deg);
+    -webkit-transform: rotate(15deg);
+            transform: rotate(15deg);
   }
   70% {
-    transform: rotate(-15deg);
+    -webkit-transform: rotate(-15deg);
+            transform: rotate(-15deg);
   }
   80% {
-    transform: rotate(15deg);
+    -webkit-transform: rotate(15deg);
+            transform: rotate(15deg);
   }
   90% {
-    transform: rotate(-15deg);
+    -webkit-transform: rotate(-15deg);
+            transform: rotate(-15deg);
   }
   100% {
-    transform: rotate(15deg);
+    -webkit-transform: rotate(15deg);
+            transform: rotate(15deg);
+  }
+}
+
+@-webkit-keyframes Leg1 {
+  0% {
+    -webkit-transform: rotate(-15deg);
+            transform: rotate(-15deg);
+  }
+  10% {
+    -webkit-transform: rotate(15deg);
+            transform: rotate(15deg);
+  }
+  20% {
+    -webkit-transform: rotate(-15deg);
+            transform: rotate(-15deg);
+  }
+  30% {
+    -webkit-transform: rotate(15deg);
+            transform: rotate(15deg);
+  }
+  40% {
+    -webkit-transform: rotate(-15deg);
+            transform: rotate(-15deg);
+  }
+  50% {
+    -webkit-transform: rotate(15deg);
+            transform: rotate(15deg);
+  }
+  60% {
+    -webkit-transform: rotate(-15deg);
+            transform: rotate(-15deg);
+  }
+  70% {
+    -webkit-transform: rotate(15deg);
+            transform: rotate(15deg);
+  }
+  80% {
+    -webkit-transform: rotate(-15deg);
+            transform: rotate(-15deg);
+  }
+  90% {
+    -webkit-transform: rotate(15deg);
+            transform: rotate(15deg);
+  }
+  100% {
+    -webkit-transform: rotate(-15deg);
+            transform: rotate(-15deg);
   }
 }
 
 @keyframes Leg1 {
   0% {
-    transform: rotate(-15deg);
+    -webkit-transform: rotate(-15deg);
+            transform: rotate(-15deg);
   }
   10% {
-    transform: rotate(15deg);
+    -webkit-transform: rotate(15deg);
+            transform: rotate(15deg);
   }
   20% {
-    transform: rotate(-15deg);
+    -webkit-transform: rotate(-15deg);
+            transform: rotate(-15deg);
   }
   30% {
-    transform: rotate(15deg);
+    -webkit-transform: rotate(15deg);
+            transform: rotate(15deg);
   }
   40% {
-    transform: rotate(-15deg);
+    -webkit-transform: rotate(-15deg);
+            transform: rotate(-15deg);
   }
   50% {
-    transform: rotate(15deg);
+    -webkit-transform: rotate(15deg);
+            transform: rotate(15deg);
   }
   60% {
-    transform: rotate(-15deg);
+    -webkit-transform: rotate(-15deg);
+            transform: rotate(-15deg);
   }
   70% {
-    transform: rotate(15deg);
+    -webkit-transform: rotate(15deg);
+            transform: rotate(15deg);
   }
   80% {
-    transform: rotate(-15deg);
+    -webkit-transform: rotate(-15deg);
+            transform: rotate(-15deg);
   }
   90% {
-    transform: rotate(15deg);
+    -webkit-transform: rotate(15deg);
+            transform: rotate(15deg);
   }
   100% {
-    transform: rotate(-15deg);
+    -webkit-transform: rotate(-15deg);
+            transform: rotate(-15deg);
+  }
+}
+
+@-webkit-keyframes hand {
+  0% {
+    -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg);
+  }
+  10% {
+    -webkit-transform: rotate(5deg);
+            transform: rotate(5deg);
+  }
+  20% {
+    -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg);
+  }
+  30% {
+    -webkit-transform: rotate(5deg);
+            transform: rotate(5deg);
+  }
+  40% {
+    -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg);
+  }
+  50% {
+    -webkit-transform: rotate(5deg);
+            transform: rotate(5deg);
+  }
+  60% {
+    -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg);
+  }
+  70% {
+    -webkit-transform: rotate(5deg);
+            transform: rotate(5deg);
+  }
+  80% {
+    -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg);
+  }
+  90% {
+    -webkit-transform: rotate(5deg);
+            transform: rotate(5deg);
+  }
+  100% {
+    -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg);
   }
 }
 
 @keyframes hand {
   0% {
-    transform: rotate(-5deg);
+    -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg);
   }
   10% {
-    transform: rotate(5deg);
+    -webkit-transform: rotate(5deg);
+            transform: rotate(5deg);
   }
   20% {
-    transform: rotate(-5deg);
+    -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg);
   }
   30% {
-    transform: rotate(5deg);
+    -webkit-transform: rotate(5deg);
+            transform: rotate(5deg);
   }
   40% {
-    transform: rotate(-5deg);
+    -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg);
   }
   50% {
-    transform: rotate(5deg);
+    -webkit-transform: rotate(5deg);
+            transform: rotate(5deg);
   }
   60% {
-    transform: rotate(-5deg);
+    -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg);
   }
   70% {
-    transform: rotate(5deg);
+    -webkit-transform: rotate(5deg);
+            transform: rotate(5deg);
   }
   80% {
-    transform: rotate(-5deg);
+    -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg);
   }
   90% {
-    transform: rotate(5deg);
+    -webkit-transform: rotate(5deg);
+            transform: rotate(5deg);
   }
   100% {
-    transform: rotate(-5deg);
+    -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg);
+  }
+}
+
+@-webkit-keyframes hand1 {
+  0% {
+    -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg);
+  }
+  10% {
+    -webkit-transform: rotate(15deg);
+            transform: rotate(15deg);
+  }
+  20% {
+    -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg);
+  }
+  30% {
+    -webkit-transform: rotate(15deg);
+            transform: rotate(15deg);
+  }
+  40% {
+    -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg);
+  }
+  50% {
+    -webkit-transform: rotate(15deg);
+            transform: rotate(15deg);
+  }
+  60% {
+    -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg);
+  }
+  70% {
+    -webkit-transform: rotate(15deg);
+            transform: rotate(15deg);
+  }
+  80% {
+    -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg);
+  }
+  90% {
+    -webkit-transform: rotate(15deg);
+            transform: rotate(15deg);
+  }
+  100% {
+    -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg);
   }
 }
 
 @keyframes hand1 {
   0% {
-    transform: rotate(-5deg);
+    -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg);
   }
   10% {
-    transform: rotate(15deg);
+    -webkit-transform: rotate(15deg);
+            transform: rotate(15deg);
   }
   20% {
-    transform: rotate(-5deg);
+    -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg);
   }
   30% {
-    transform: rotate(15deg);
+    -webkit-transform: rotate(15deg);
+            transform: rotate(15deg);
   }
   40% {
-    transform: rotate(-5deg);
+    -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg);
   }
   50% {
-    transform: rotate(15deg);
+    -webkit-transform: rotate(15deg);
+            transform: rotate(15deg);
   }
   60% {
-    transform: rotate(-5deg);
+    -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg);
   }
   70% {
-    transform: rotate(15deg);
+    -webkit-transform: rotate(15deg);
+            transform: rotate(15deg);
   }
   80% {
-    transform: rotate(-5deg);
+    -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg);
   }
   90% {
-    transform: rotate(15deg);
+    -webkit-transform: rotate(15deg);
+            transform: rotate(15deg);
   }
   100% {
-    transform: rotate(-5deg);
+    -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg);
+  }
+}
+
+@-webkit-keyframes wheel {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(-360deg);
+            transform: rotate(-360deg);
   }
 }
 
 @keyframes wheel {
   0% {
-    transform: rotate(0deg);
-<<<<<<< HEAD
-=======
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
   }
   100% {
-    transform: rotate(-360deg);
+    -webkit-transform: rotate(-360deg);
+            transform: rotate(-360deg);
+  }
+}
+
+@-webkit-keyframes bike {
+  0% {
+    right: -10vw;
+    bottom: 40px;
+  }
+  100% {
+    right: 110vw;
+    bottom: 40px;
   }
 }
 
@@ -615,10 +934,21 @@ body::-webkit-scrollbar {
   0% {
     right: -10vw;
     bottom: 40px;
->>>>>>> dev
   }
   100% {
-    transform: rotate(-360deg);
+    right: 110vw;
+    bottom: 40px;
+  }
+}
+
+@-webkit-keyframes bike_rwd {
+  0% {
+    right: -30vw;
+    bottom: 40px;
+  }
+  100% {
+    right: 130vw;
+    bottom: 40px;
   }
 }
 
@@ -630,6 +960,33 @@ body::-webkit-scrollbar {
   100% {
     right: 130vw;
     bottom: 40px;
+  }
+}
+
+@-webkit-keyframes walk1 {
+  0% {
+    right: 60vw;
+  }
+  8% {
+    opacity: 1;
+  }
+  10% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  58% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    right: -10vw;
   }
 }
 
@@ -657,6 +1014,33 @@ body::-webkit-scrollbar {
   }
   100% {
     right: -10vw;
+  }
+}
+
+@-webkit-keyframes walk2 {
+  0% {
+    right: 30vw;
+  }
+  8% {
+    opacity: 1;
+  }
+  10% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  58% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    right: 110vw;
   }
 }
 
@@ -708,14 +1092,16 @@ body::-webkit-scrollbar {
   height: auto;
   top: 56vh;
   left: 50%;
-  transform: translate(-45%, -60%);
+  -webkit-transform: translate(-45%, -60%);
+          transform: translate(-45%, -60%);
 }
 
 @media (max-width: 768px) {
   #about_scene1 .about_street_end .about_street_endLogo {
     min-width: 250px;
     min-height: 250px;
-    transform: translate(-45%, -100%);
+    -webkit-transform: translate(-45%, -100%);
+            transform: translate(-45%, -100%);
   }
 }
 
@@ -737,14 +1123,16 @@ body::-webkit-scrollbar {
   width: 45vw;
   top: 5vh;
   left: -3vw;
-  animation: cloud 6s linear infinite;
+  -webkit-animation: cloud 6s linear infinite;
+          animation: cloud 6s linear infinite;
 }
 
 #about_scene1 .about_street_end .about_cloud2 {
   width: 45vw;
   left: -5vw;
   bottom: 25vh;
-  animation: cloud 8s .5s linear infinite;
+  -webkit-animation: cloud 8s .5s linear infinite;
+          animation: cloud 8s .5s linear infinite;
 }
 
 #about_scene1 .about_street_end .about_cloud3 {
@@ -752,7 +1140,8 @@ body::-webkit-scrollbar {
   width: auto;
   left: -10vw;
   bottom: 5vh;
-  animation: cloud 6s 1s linear infinite;
+  -webkit-animation: cloud 6s 1s linear infinite;
+          animation: cloud 6s 1s linear infinite;
 }
 
 @media (max-width: 575px) {
@@ -801,15 +1190,33 @@ body::-webkit-scrollbar {
   animation: cloud 6s 1s linear infinite reverse;
 }
 
-@keyframes cloud {
+@-webkit-keyframes cloud {
   0% {
-    transform: translateX(-5%);
+    -webkit-transform: translateX(-5%);
+            transform: translateX(-5%);
   }
   50% {
-    transform: translateX(5%);
+    -webkit-transform: translateX(5%);
+            transform: translateX(5%);
   }
   100% {
-    transform: translateX(-5%);
+    -webkit-transform: translateX(-5%);
+            transform: translateX(-5%);
+  }
+}
+
+@keyframes cloud {
+  0% {
+    -webkit-transform: translateX(-5%);
+            transform: translateX(-5%);
+  }
+  50% {
+    -webkit-transform: translateX(5%);
+            transform: translateX(5%);
+  }
+  100% {
+    -webkit-transform: translateX(-5%);
+            transform: translateX(-5%);
   }
 }
 
@@ -821,12 +1228,14 @@ body::-webkit-scrollbar {
   color: #172852;
   position: fixed;
   top: 50%;
-  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
   background-color: rgba(255, 255, 255, 0.9);
   font-weight: 900;
   line-height: 30px;
   font-size: 16px;
-  box-shadow: 0px 0px 20px #555;
+  -webkit-box-shadow: 0px 0px 20px #555;
+          box-shadow: 0px 0px 20px #555;
   display: none;
 }
 
@@ -852,7 +1261,8 @@ body::-webkit-scrollbar {
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: transalte(-50%, -50%);
+  -webkit-transform: transalte(-50%, -50%);
+          transform: transalte(-50%, -50%);
 }
 
 .about_transition {
@@ -879,7 +1289,8 @@ body::-webkit-scrollbar {
 }
 
 .about_taiwan .about_island {
-  transform: scaleY(0.7);
+  -webkit-transform: scaleY(0.7);
+          transform: scaleY(0.7);
   width: 60%;
   height: 90%;
   position: absolute;
@@ -905,7 +1316,8 @@ body::-webkit-scrollbar {
 }
 
 .about_taiwan .about_spot {
-  transform: scaleY(0.7);
+  -webkit-transform: scaleY(0.7);
+          transform: scaleY(0.7);
   position: fixed;
   width: 10%;
   height: 10%;
@@ -927,7 +1339,8 @@ body::-webkit-scrollbar {
 }
 
 .about_taiwan .about_spotDeco {
-  transform: scaleY(0.7);
+  -webkit-transform: scaleY(0.7);
+          transform: scaleY(0.7);
   opacity: 0;
   position: absolute;
   width: 50px;
@@ -978,7 +1391,8 @@ body::-webkit-scrollbar {
   left: 52vw;
   top: 48vh;
   z-index: 2;
-  animation: flying 8s linear infinite;
+  -webkit-animation: flying 8s linear infinite;
+          animation: flying 8s linear infinite;
 }
 
 .about_spotDeco1 img {
@@ -995,7 +1409,8 @@ body::-webkit-scrollbar {
 .about_spotDeco2 {
   left: 50vw;
   top: 47vh;
-  animation: flying 8s .5s linear infinite;
+  -webkit-animation: flying 8s .5s linear infinite;
+          animation: flying 8s .5s linear infinite;
 }
 
 .about_spotDeco2 img {
@@ -1011,7 +1426,8 @@ body::-webkit-scrollbar {
 .about_spotDeco3 {
   left: 48vw;
   top: 50vh;
-  animation: flying 10s .9s linear infinite;
+  -webkit-animation: flying 10s .9s linear infinite;
+          animation: flying 10s .9s linear infinite;
 }
 
 .about_spotDeco3 img {
@@ -1065,7 +1481,8 @@ body::-webkit-scrollbar {
 .about_spotDeco6 {
   left: 60vw;
   top: 15vh;
-  animation: flying 14s  linear infinite;
+  -webkit-animation: flying 14s  linear infinite;
+          animation: flying 14s  linear infinite;
 }
 
 .about_spotDeco6 img {
@@ -1087,7 +1504,8 @@ body::-webkit-scrollbar {
 .about_spotDeco7 {
   left: 57vw;
   top: 15vh;
-  animation: flying 12s .3s linear infinite;
+  -webkit-animation: flying 12s .3s linear infinite;
+          animation: flying 12s .3s linear infinite;
 }
 
 .about_spotDeco7 img {
@@ -1157,21 +1575,49 @@ body::-webkit-scrollbar {
   }
 }
 
-@keyframes flying {
+@-webkit-keyframes flying {
   0% {
-    transform: translateY(-10px);
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
   }
   25% {
-    transform: translateY(10px);
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px);
   }
   50% {
-    transform: translateY(-10px);
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
   }
   75% {
-    transform: translateY(10px);
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px);
   }
   100% {
-    transform: translateY(-10px);
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+  }
+}
+
+@keyframes flying {
+  0% {
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+  }
+  25% {
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px);
+  }
+  50% {
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+  }
+  75% {
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px);
+  }
+  100% {
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
   }
 }
 
@@ -1192,7 +1638,8 @@ body::-webkit-scrollbar {
   min-height: 170px;
   top: 30%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   z-index: 5;
 }
 
@@ -1254,7 +1701,8 @@ body::-webkit-scrollbar {
   width: 45vw;
   top: 5vh;
   left: -3vw;
-  animation: cloud 6s linear infinite;
+  -webkit-animation: cloud 6s linear infinite;
+          animation: cloud 6s linear infinite;
 }
 
 @media (max-width: 575px) {
@@ -1267,7 +1715,8 @@ body::-webkit-scrollbar {
   width: 45vw;
   left: -5vw;
   bottom: 25vh;
-  animation: cloud 8s .5s linear infinite;
+  -webkit-animation: cloud 8s .5s linear infinite;
+          animation: cloud 8s .5s linear infinite;
 }
 
 .about_taiwan_end .about_cloud3 {
@@ -1275,7 +1724,8 @@ body::-webkit-scrollbar {
   width: auto;
   left: -10vw;
   bottom: 5vh;
-  animation: cloud 6s 1s linear infinite;
+  -webkit-animation: cloud 6s 1s linear infinite;
+          animation: cloud 6s 1s linear infinite;
 }
 
 @media (max-width: 575px) {
@@ -1329,7 +1779,8 @@ body::-webkit-scrollbar {
   top: 50%;
   width: 60%;
   max-width: 800px;
-  transform: translate(0, -50%);
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
   padding: 40px 50px;
   display: none;
 }
@@ -1338,7 +1789,8 @@ body::-webkit-scrollbar {
   .about_place1, .about_place2, .about_place3, .about_place4 {
     width: 100%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
   }
 }
 
@@ -1361,7 +1813,8 @@ body::-webkit-scrollbar {
   width: 100%;
   background-color: rgba(255, 255, 255, 0.9);
   padding: 30px 20px;
-  box-shadow: 0px 0px 20px #555;
+  -webkit-box-shadow: 0px 0px 20px #555;
+          box-shadow: 0px 0px 20px #555;
 }
 
 .about_place1 div h3, .about_place2 div h3, .about_place3 div h3, .about_place4 div h3 {
@@ -1434,9 +1887,12 @@ body::-webkit-scrollbar {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   border-radius: 20px;
   padding: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -1538,4 +1994,3 @@ body::-webkit-scrollbar {
   right: 30px;
   cursor: pointer;
 }
-/*# sourceMappingURL=about.css.map */
