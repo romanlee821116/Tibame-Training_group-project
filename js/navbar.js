@@ -1,7 +1,5 @@
 $(document).ready(function() {
     // $('.memberShow').load('login.html').hide();
-<<<<<<< HEAD
-=======
     if (window.location.pathname == '/index.html') {
         console.log('homepage');
         $('.memberShow').load('page/login.html').hide();
@@ -9,7 +7,6 @@ $(document).ready(function() {
         console.log('other');
         $('.memberShow').load('login.html').hide();
     };
->>>>>>> dev
     // 儲存人頭為會員中心
     // window.onload = function (){
     //     if($('#loginFormPage .loginButton').hasClass('loginOK')){
@@ -17,21 +14,12 @@ $(document).ready(function() {
     //         console.log('have');
     //     }
     // };
-<<<<<<< HEAD
-    if (window.location.pathname == '/index.html') {
-        console.log('homepage');
-        $('.memberShow').load('page/login.html').hide();
-    } else {
-        $('.memberShow').load('login.html').hide();
-    }
-=======
     // if(window.location.pathname == '/index.html'){
     //     console.log('homepage');
     //     $('.memberShow').load('page/login.html').hide();
     // }else{
     //     $('.memberShow').load('login.html').hide();
     // }
->>>>>>> dev
     // 點擊人頭打開
     $('body').on('click', '.navbar-icon .fa-user', function() {
         // $('.navbar-icon .fa-user').click(function(){   
