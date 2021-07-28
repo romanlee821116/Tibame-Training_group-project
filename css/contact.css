@@ -9,6 +9,7 @@
   /* border: 1px solid red; */
   background-color: #ffffff;
   font-size: 0;
+  color: #bb866a;
   width: 600px;
   height: 100vh;
   z-index: 991;
@@ -754,7 +755,6 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-family: "微軟正黑體";
-  color: #bb866a;
 }
 
 body {
@@ -769,6 +769,7 @@ body {
   width: 80%;
   max-width: 1200px;
   margin: auto;
+  color: #bb866a;
 }
 
 .contact_container img {
@@ -789,6 +790,7 @@ body {
   padding-bottom: 3px;
   margin: 0 0 30px;
   font-size: 14px;
+  font-weight: bold;
 }
 
 #contact_contactBorder {

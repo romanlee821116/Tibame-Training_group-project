@@ -814,7 +814,7 @@ body {
           align-items: center;
   position: relative;
   min-height: 100vh;
-  padding-bottom: 50px;
+  padding-bottom: 100px;
 }
 
 .cus_step2 .cus_step2_txt {
@@ -1380,6 +1380,13 @@ body {
 .cus_step2 .custom_card_IconOnCard img {
   width: 100%;
   height: auto;
+}
+
+@media (max-width: 575px) {
+  .cus_step2 .custom_card_IconOnCard {
+    width: 40px;
+    height: 40px;
+  }
 }
 
 .cus_step2 .cus-cardConfirm-btn {
