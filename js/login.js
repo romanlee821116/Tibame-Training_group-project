@@ -290,8 +290,8 @@ $(document).ready(function(){
             };
             localStorage.loginStatus = 'Login';
             $('.nav_logOut').fadeIn();
+            $('.mavbar-icon .fas .fa-user').css('color','#f7c242');
         }
-
     });
 
     // 所有input欄位點擊focus時，提示消失

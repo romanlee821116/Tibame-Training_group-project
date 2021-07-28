@@ -44,10 +44,7 @@
             &:hover{
                 color: $yellow;
             }
-        }
-        .navbar_logOut{
-            display: none;
-        }
+        }        
     }
     .ham_container {
         display: inline-block;
@@ -151,6 +148,9 @@
                 background-color: transparent;
                 transition: all .3s;
             }
+        }
+        .navbar_logOut{
+            display: none;
         }
     }
 }

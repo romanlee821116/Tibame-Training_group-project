@@ -114,10 +114,6 @@ body {
   color: #f7c242;
 }
 
-.navbar .navbar-icon .navbar_logOut {
-  display: none;
-}
-
 .navbar .ham_container {
   display: inline-block;
   cursor: pointer;
@@ -233,6 +229,10 @@ body {
   margin: 0 20px;
   background-color: transparent;
   transition: all .3s;
+}
+
+.navbar .ham_overlay .navbar_logOut {
+  display: none;
 }
 
 .product_reminder {
