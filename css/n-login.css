@@ -1,144 +1,90 @@
-@charset "UTF-8";
-* {
-<<<<<<< HEAD
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-=======
-  box-sizing: border-box;
->>>>>>> dev
-  font-family: '微軟正黑體';
+*{
+    box-sizing: border-box;
+    font-family: '微軟正黑體';
 }
 
-body {
-  margin: 0;
-  background-color: #cba89a;
+body{
+    margin: 0;
+    background-color: #cba89a;   
 }
 
-.n-login_header {
-  /* border: 1px solid red; */
-<<<<<<< HEAD
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-=======
-  display: flex;
-  flex-direction: column;
-  align-items: center;
->>>>>>> dev
-  row-gap: 20px;
-  padding-top: 100px;
-  padding-bottom: 70px;
-  background-image: url("../images/backend/loginbg.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 110% 100%;
+.n-login_header{
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 20px;
+    padding-top: 100px;
+    padding-bottom: 70px;
+    background-image: url('../images/backend/loginbg.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 110% 100%;
 }
 
-img {
-  width: 100px;
+img{
+    width: 100px;
 }
 
-p {
-  font-size: 28px;
-  font-weight: bold;
-  color: #bb866a;
-  margin: 0;
-  padding: 0;
+p{
+    font-size: 28px;
+    font-weight: bold;
+    color: #bb866a;
+    margin: 0;
+    padding: 0;
 }
 
-form {
-  /* border: 1px solid blue; */
-<<<<<<< HEAD
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-=======
-  display: flex;
-  flex-direction: column;
->>>>>>> dev
-  width: 300px;
-  margin: 0 auto;
-  font-size: 16px;
-  font-weight: bold;
-  color: #ffffff;
+form{
+    /* border: 1px solid blue; */
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+
+    margin: 0 auto;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
 }
 
-input {
-  padding: 7px 5px;
-  margin-top: 5px;
-  font-size: 16px;
-  font-weight: bold;
-  color: #172852;
+input{
+    padding: 7px 5px;
+    margin-top: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #172852;
 }
 
-<<<<<<< HEAD
-input::-webkit-input-placeholder {
-  font-size: 16px;
-  font-weight: bold;
-  color: #cba89a;
+input::placeholder{
+    font-size: 16px;
+    font-weight: bold;
+    color: #cba89a;
 }
 
-input:-ms-input-placeholder {
-  font-size: 16px;
-  font-weight: bold;
-  color: #cba89a;
+label{
+    margin-top: 20px;
 }
 
-input::-ms-input-placeholder {
-  font-size: 16px;
-  font-weight: bold;
-  color: #cba89a;
+label:first-child{
+    margin-top: -30px;
 }
 
-=======
->>>>>>> dev
-input::placeholder {
-  font-size: 16px;
-  font-weight: bold;
-  color: #cba89a;
+button{
+    width: 125px;
+    align-self: center;
+    background-color: #a3a3a3;
+    color: #ffffff;
+    border: 1px solid #a3a3a3;
+    border-radius: 5px;
+    padding: 5px;
+    margin-top: 20px;
+    font-weight: bold;
 }
 
-label {
-  margin-top: 20px;
+#login.-active{
+    background: #172852;
 }
 
-label:first-child {
-  margin-top: -30px;
-}
 
-button {
-  width: 125px;
-<<<<<<< HEAD
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-=======
-  align-self: center;
->>>>>>> dev
-  background-color: #a3a3a3;
-  color: #ffffff;
-  border: 1px solid #a3a3a3;
-  border-radius: 5px;
-  padding: 5px;
-  margin-top: 20px;
-  font-weight: bold;
-}
 
-#login.-active {
-  background: #172852;
-}
-<<<<<<< HEAD
-=======
-/*# sourceMappingURL=n-login.css.map */
->>>>>>> dev
+
+
