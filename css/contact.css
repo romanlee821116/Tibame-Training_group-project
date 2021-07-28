@@ -923,7 +923,7 @@ textarea:focus {
 }
 
 /* ========== 送出按鈕 ========== */
-button {
+.contact_mainBtn {
   border: none;
   background-color: #172852;
   border-radius: 5px;

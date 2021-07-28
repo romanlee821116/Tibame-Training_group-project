@@ -65,7 +65,7 @@ $(document).ready(function(){
     methods: {
       // 數量增加
       add(item){
-        // console.log(item.quantity);
+        // console.log(item);
         item.quantity++;
 
         // ===================== localStorage ======================
@@ -318,6 +318,7 @@ $(document).ready(function(){
       localStorage.setItem('discount', this.discount);
       // 運費
       localStorage.setItem('shipping', this.shipping);
+
     },
   });
 })
@@ -368,7 +369,6 @@ $(function(){
   });
 
 
-
   // 數量等於1，減號變灰底
   $('.cart_less').click(function(){
     let val = $(this).next().val();
@@ -376,7 +376,14 @@ $(function(){
       $(this).css('background-color','#c4c4c4');
     }
   });
-
+  
+  // 若數量大於1減號變白底 (為了重整後可以偵測input數量變色而設置的==)
+  for(let x = 0; x < $('.cart_quantity').length; x++){
+    if($('.cart_quantity')[x].value > 1){
+      $('.cart_quantity')[x].previousElementSibling.style.backgroundColor = '#ffffff';
+    }
+    // console.log($('.cart_quantity')[x].previousElementSibling);
+  }
 
 
   // 偵測input手動改數字，改變減號底色

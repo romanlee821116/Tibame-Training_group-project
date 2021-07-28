@@ -1028,9 +1028,6 @@ html, body {
   body .memberAll {
     width: 90%;
   }
-  body .memberAll > p {
-    margin: 100px 0 30px 0;
-  }
   body .memberAll .memberPart1 .label input {
     width: 270px;
   }
