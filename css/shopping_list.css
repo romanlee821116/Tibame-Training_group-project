@@ -850,7 +850,7 @@ body {
     transform: translateY(-10px);
   }
   .product_item {
-    width: 100%;
+    width: 62%;
     margin: 50px auto;
     display: flex;
     flex-direction: column;
@@ -907,7 +907,7 @@ body {
     margin-right: 0;
   }
   .product_select_area {
-    right: 0px;
+    right: 20px;
   }
 }
 /*# sourceMappingURL=shopping_list.css.map */
