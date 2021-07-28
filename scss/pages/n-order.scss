@@ -166,7 +166,7 @@ body{
     padding: 10px;
     list-style: none;
     display: grid;
-    grid-template-columns: .8fr 1fr 2fr .8fr .8fr .8fr 1fr 1fr;
+    grid-template-columns: .8fr 1fr 2fr .8fr .8fr .8fr 1fr 107px;
     column-gap: 10px;
     background-color: #cba89a;
     font-size: 16px;
@@ -180,7 +180,7 @@ body{
     padding: 10px;
     list-style: none;
     display: grid;
-    grid-template-columns: .8fr 1fr 2fr .8fr .8fr .8fr 1fr 1fr;
+    grid-template-columns: .8fr 1fr 2fr .8fr .8fr .8fr 1fr 107px;
     column-gap: 10px;
     background-color: #ffffff;
     font-size: 16px;
@@ -188,6 +188,11 @@ body{
     font-weight: bold; 
     align-items: center;
 }
+
+.n-order_order:hover{
+    background-color: #f8f2ed;
+}
+
 
 .n-order_order li{
     white-space: nowrap;  
@@ -253,17 +258,19 @@ body{
 
 .n-order_edit{
     width: 750px;
-    height: 500px;
+    height: 90%;
+    max-height: 1150px;
     /* border: 1px solid red; */    
     border-radius: 10px;
     overflow: hidden;
     position: fixed;
+    /* position: relative; */
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
     z-index: 2;
     background-color: #ffffff;
-    overflow-y: scroll;
+    overflow-y: auto;
 
 }
 
@@ -414,7 +421,7 @@ body{
     cursor: pointer;
 }
 
-.n-order_editbtn .close{    
+.n-order_editbtn .n-order_close{    
     background-color: #a3a3a3;
     border: 1px solid #a3a3a3;    
 }

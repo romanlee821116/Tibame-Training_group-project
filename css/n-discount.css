@@ -289,23 +289,23 @@ body{
 
 .n-discount_edit{
     width: 800px;
-    /* height: 1200px; */
+    height: 90%;
+    max-height: 1200px;
     /* height: 500px; */
     /* border: 1px solid red; */
     display: grid;
     grid-template-rows: 44px 430px 640px 54px;
     border-radius: 10px;
     overflow: hidden;
-    position: relative;
+    /* position: relative; */
     /* left: 20%; */
-    /* position: fixed; */
+    position: fixed;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -40%);
+    transform: translate(-50%, -50%);
     z-index: 2;
     background-color: #ffffff;
-    /* overflow-y: scroll; */
-
+    overflow-y: auto;
 }
 
 .n-discount_edit > p{

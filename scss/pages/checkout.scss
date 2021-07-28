@@ -25,6 +25,21 @@ body{
   background-attachment: fixed;
 }
 
+.checkout_popBG{
+  @include popUpBg();
+  display: none;
+}
+
+.type2{
+  @include popUp_oneBtn();
+  position: fixed; //預設是fixed
+  font-weight: 900;
+}
+.mainBtn{
+  @include btn();
+  width: 150px;   
+}
+
 .checkout_container{
   // border: 1px solid black;
   width: 80%;

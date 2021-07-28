@@ -197,7 +197,7 @@ body{
     padding: 10px;
     list-style: none;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 2.5fr .6fr 1.2fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 2.5fr .6fr 1.2fr 107px;
     column-gap: 10px;
     background-color: #cba89a;
     font-size: 16px;
@@ -211,7 +211,7 @@ body{
     padding: 10px;
     list-style: none;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 2.5fr .6fr 1.2fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 2.5fr .6fr 1.2fr 107px;
     column-gap: 10px;
     background-color: #ffffff;
     font-size: 16px;
@@ -220,7 +220,11 @@ body{
     align-items: center;
 }
 
-.n-discount_discount li{
+.n-discount_discount:hover{
+    background-color: #f8f2ed;
+}
+
+.n-discount_discount li:nth-child(4){
     /* -webkit-box 尚在實驗性的屬性值 */
     display: -webkit-box;  
     /* 用來設定一個元素是水平還是垂直方向排列其內容 */
@@ -285,23 +289,23 @@ body{
 
 .n-discount_edit{
     width: 800px;
-    /* height: 1200px; */
-    height: 500px;
-    border: 1px solid red;
+    height: 90%;
+    max-height: 1200px;
+    /* height: 500px; */
+    /* border: 1px solid red; */
     display: grid;
     grid-template-rows: 44px 430px 640px 54px;
     border-radius: 10px;
     overflow: hidden;
-    /* position: relative;
-    left: 20%; */
+    /* position: relative; */
+    /* left: 20%; */
     position: fixed;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
     z-index: 2;
     background-color: #ffffff;
-    overflow-y: scroll;
-
+    overflow-y: auto;
 }
 
 .n-discount_edit > p{
