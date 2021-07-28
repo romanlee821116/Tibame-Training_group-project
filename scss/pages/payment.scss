@@ -340,13 +340,33 @@ body{
   }
 }
 
+.payment_receiverTitle{
+  // border: 1px solid red;
+  display: flex;
+}
 
-.payment_receiver > p{
+.payment_receiverTitle > p{
   // border: 1px solid blue;
   margin: 0;
   color: #172852;
   font-weight: bold;
+  margin-right: 30px;
 }
+
+.payment_receiverTitle > div{
+  // border: 1px solid green;
+  display: flex;
+}
+
+.payment_receiverTitle > div > p{
+  margin: 0;
+  color: #172852;
+  font-size: 16px;
+  font-weight: bold;
+  margin-left: 10px;
+  display: flex;
+}
+
 
 .payment_receiverData{
   // border: 1px solid blue;
@@ -852,6 +872,9 @@ input[type="radio"]:checked + label{
   justify-content: center;
   align-items: center;
   text-decoration: none;
+  &:hover{
+    background-color: $lightBlue;
+  }
 }
 
 .payment_nextText{
