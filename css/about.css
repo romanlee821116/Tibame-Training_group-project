@@ -192,7 +192,11 @@ body::-webkit-scrollbar {
   bottom: 8%;
   right: 30vw;
   height: 25%;
+<<<<<<< HEAD
+  z-index: 8;
+=======
   z-index: 9;
+>>>>>>> dev
   animation: bike 10s linear infinite;
 }
 
@@ -253,7 +257,11 @@ body::-webkit-scrollbar {
   height: 23%;
   bottom: 8%;
   right: 25vw;
+<<<<<<< HEAD
+  z-index: 7;
+=======
   z-index: 8;
+>>>>>>> dev
   animation: walk1 30s linear infinite;
 }
 
@@ -298,12 +306,15 @@ body::-webkit-scrollbar {
   background-repeat: no-repeat;
   transform-origin: center 0;
   animation: Leg1 8s  linear infinite;
+<<<<<<< HEAD
+=======
 }
 
 @media (max-width: 575px) {
   #about_scene1 .about_people3 {
     animation: walk1 10s linear infinite;
   }
+>>>>>>> dev
 }
 
 #about_scene1 .about_people4 {
@@ -311,6 +322,10 @@ body::-webkit-scrollbar {
   right: 50vw;
   z-index: 7;
   height: 22vh;
+<<<<<<< HEAD
+  animation: walk2 28s linear infinite;
+=======
+>>>>>>> dev
 }
 
 #about_scene1 .about_people4 div::before {
@@ -325,7 +340,11 @@ body::-webkit-scrollbar {
   background-repeat: no-repeat;
   transform-origin: top right;
   animation: hand 10s linear infinite;
+<<<<<<< HEAD
+  z-index: 6;
+=======
   z-index: 7;
+>>>>>>> dev
 }
 
 #about_scene1 .about_people4::before {
@@ -355,12 +374,15 @@ body::-webkit-scrollbar {
   background-repeat: no-repeat;
   transform-origin: top;
   animation: Leg 10s linear infinite;
+<<<<<<< HEAD
+=======
 }
 
 @media (max-width: 575px) {
   #about_scene1 .about_people4 {
     animation: walk2 12s linear infinite;
   }
+>>>>>>> dev
 }
 
 #about_scene1 .about_people6 {
@@ -386,6 +408,8 @@ body::-webkit-scrollbar {
   transform-origin: left bottom;
   z-index: 6;
   animation: hand 20s linear infinite;
+<<<<<<< HEAD
+=======
 }
 
 @media (max-width: 575px) {
@@ -393,6 +417,7 @@ body::-webkit-scrollbar {
     bottom: 16%;
     right: 12vw;
   }
+>>>>>>> dev
 }
 
 @keyframes bikeLeg {
@@ -578,6 +603,8 @@ body::-webkit-scrollbar {
 @keyframes wheel {
   0% {
     transform: rotate(0deg);
+<<<<<<< HEAD
+=======
   }
   100% {
     transform: rotate(-360deg);
@@ -588,10 +615,10 @@ body::-webkit-scrollbar {
   0% {
     right: -10vw;
     bottom: 40px;
+>>>>>>> dev
   }
   100% {
-    right: 110vw;
-    bottom: 40px;
+    transform: rotate(-360deg);
   }
 }
 
