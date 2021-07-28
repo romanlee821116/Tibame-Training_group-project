@@ -232,7 +232,7 @@ $(function () {
         triggerElement: '#keypoint1',
         triggerHook: 0,
         duration: '500%',
-    }).setPin('#about_scene1').setTween(sticky).addIndicators().addTo(controller);
+    }).setPin('#about_scene1').setTween(sticky).addTo(controller);  //addIndicators().
     // ==========================================================================
     var stickyMap = new TimelineMax();
     stickyMap.to('.about_taiwan', 0, { scale: '1%' })
@@ -263,7 +263,7 @@ $(function () {
         triggerElement: '#keypoint2',
         triggerHook: 0,
         duration: '1000%',
-    }).setPin('#about_scene2').setTween(stickyMap).addIndicators().addTo(controller);
+    }).setPin('#about_scene2').setTween(stickyMap).addTo(controller); //addIndicators().
     // =======================================================================
     navbar();
     popUpShow()
@@ -314,14 +314,14 @@ function popUpShow() {
         };
 
         //介紹一
-        if (indexHeight > .75 && indexHeight < 1.85) {
+        if (indexHeight > .95 && indexHeight < 2.00) {
             $('.about_history').fadeIn();
         } else {
             $('.about_history').fadeOut();
         }
 
         //介紹二
-        if (indexHeight > 2.3 && indexHeight < 3.4) {
+        if (indexHeight > 2.5 && indexHeight < 3.4) {
             $('.about_brand').fadeIn();
         } else {
             $('.about_brand').fadeOut();

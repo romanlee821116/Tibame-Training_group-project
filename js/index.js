@@ -230,10 +230,10 @@ function newsCarousel() {
 function productPicChange(){
     let index = 0;
     let productPic_list = [
-        {src: './images/shopping_list/monaka_redBean_a_big.png', name: '紅豆最中', price:'$100'},
-        {src: './images/shopping_list/dorayaki_strawberry_c_big.png', name: '草莓銅鑼燒', price:'6入 $480'},
-        {src: './images/shopping_list/namagashi_firework_c_big.png', name: '生菓子煙花', price:'$95'},
-        {src: './images/shopping_list/daifuku_mango_b_big.png', name: '橘子大福', price:'3入 $300'},        
+        {src: './images/shopping_list/taiyaki_sakura_c_big.png', name: '櫻花鯛魚燒', price:'3入 $300'},
+        {src: './images/shopping_list/dorayaki_strawberry_c_big.png', name: '草莓銅鑼燒', price:'3入 $285'},
+        {src: './images/shopping_list/namagashi_firework_c_big.png', name: '生菓子花火', price:'3入 $330'},
+        {src: './images/shopping_list/sweet_madeleine_c_big.png', name: '瑪德蓮', price:'3入 $120'},        
     ];
     setInterval(() => {
         index = (index+1) % 4;
