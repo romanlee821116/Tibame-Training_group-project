@@ -13,5 +13,8 @@ $(document).ready(function() {
         })
         //判斷該頁面
         // let show = window.location.pathname;
-        // if ()
+        // let num = [1, 2, 3, 4, 5, 6, 7];
+        // localStorage.setItem(num[0], JSON.stringify(show));
+
+
 });

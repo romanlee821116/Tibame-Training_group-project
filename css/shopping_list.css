@@ -254,6 +254,10 @@ body {
   margin-top: 12px;
 }
 
+.stick_color {
+  color: #2e447c;
+}
+
 #product_counter {
   position: absolute;
   top: 2px;
