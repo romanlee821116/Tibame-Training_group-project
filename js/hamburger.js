@@ -1,5 +1,4 @@
 $(document).ready(function() {
-    console.log('ham run');
     $(".ham_container").click(function() {
             console.log('ham click');
             $(".ham_select").find("a").css({ opacity: "1" });

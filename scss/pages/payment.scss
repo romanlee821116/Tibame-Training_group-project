@@ -909,7 +909,7 @@ input[type="radio"]:checked + label{
   // border: 1px solid red;
   background-image: url("../images/payment/card-front.png");
   width: 250px;
-  height: 150px;
+  height: 160px;
   background-repeat: no-repeat;
   background-size: 100%;
   overflow: hidden;
@@ -924,40 +924,44 @@ input[type="radio"]:checked + label{
   }
 }
 
-.payment_cardFront > div{
-  // border: 1px solid blue;
-  color: #ffffff;
-  font-weight: bold;
-  font-size: 15px;
-  height: 20px;
-}
-
 .payment_number{
+  // border: 1px solid green;
   display: flex;
-  margin-top: 15px;
-  margin-left: 35px;
+  margin-top: 80px;
+  margin-left: 20px;
   font-weight: bold;
   font-size: 15px;
+  color: #ffffff;
+  height: 20px;
 }
 
 .payment_number > div, .payment_date > div{
   color: #ffffff;
   font-weight: bold;
   font-size: 15px;
+  margin: 0 5px;
 }
 
 .payment_date{
+  // border: 1px solid blue;
   display: flex;
+  margin-top: 10px;
   margin-left: 170px;
   color: #ffffff;
   font-weight: bold;
   font-size: 15px;
+  height: 20px;
 }
 
 .payment_certification{
   // border: 1px solid red;
+  color: #172852;
+  font-weight: bold;
+  font-size: 15px;
   width: 50px;
-  margin-left: 55px;
-  margin-top: 55px;
+  height: 20px;
+  margin-left: 85px;
+  margin-top: 74px;
   visibility: hidden;
+  position: absolute;
 }

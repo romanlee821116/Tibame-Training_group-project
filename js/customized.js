@@ -4,7 +4,7 @@ $(function(){
         template: `
         <div class='custom_popUp_template'>
             <div class="custom_popUp">
-                <img src="../images/customized/customized_step_a.png" alt="">
+                <img src="../images/customized/popup_undone_icon.png" alt="">
                 <h2>請選擇商品</h2>
                 <p>禮盒內容尚有空格</p>
                 <div>
@@ -25,7 +25,7 @@ $(function(){
         template: `
         <div class='custom_popUp_template'>
             <div class="custom_popUp">
-                <img src="../images/customized/customized_step_a.png" alt="">
+                <img src="../images/customized/popup_card_icon.png" alt="">
                 <h2>卡片尚未選擇</h2>
                 <p>請選擇卡片種類</p>
                 <div>
@@ -274,7 +274,7 @@ $(function(){
             $('.cus-item').show();
         }
 
-        console.log(this_type);
+        // console.log(this_type);
         e.preventDefault();
     })
     //商品添加到格子中
@@ -341,7 +341,7 @@ $(function(){
             //在清單秀出禮盒內容            
             // let total_box = $('.selected  img:nth-child(even)')
             let total_box = $('.haveItem');
-            console.log(boxSize);
+            // console.log(boxSize);
             if(boxSize==4){
                 $('.custom_itemConfirm_List > h2').html('四格小資組合 &nbsp $480');
                 customized['price']=480;
@@ -377,7 +377,7 @@ $(function(){
                     content['num'][index] = parseInt(this_num) + 1;
                 }
             })
-            console.log(content);
+            // console.log(content);
             let content_length = content['name'].length;
             for(let i=0; i<content_length; i++){
                 itemName = content['name'][i];
@@ -461,7 +461,7 @@ $(function(){
         });
         let boxTop = $('.selected').offset().top;
         
-        console.log(boxTop);
+        // console.log(boxTop);
         //蓋子掉下來
         $('.cus_giftbox').animate({
             top: `${boxTop-5}px`,
@@ -543,7 +543,7 @@ $(function(){
             localStorage.setItem('customized_List', JSON.stringify(customized_newArray));
         }else{
             let customized_total = JSON.parse(localStorage.getItem('customized_List'));
-            console.log(customized_total);
+            // console.log(customized_total);
             customized_total.push(customized); 
             localStorage.setItem('customized_List', JSON.stringify(customized_total));           
         };
@@ -657,7 +657,7 @@ $(function(){
         if($('.choosenCard').length!=0){
             let cardType = $('.choosenCard').attr('data-cardId');
             customized['cardType']=cardType;
-            console.log(cardType);
+            // console.log(cardType);
             if(cardType==1){
                 $('.cus_bag_card > pre').css('backgroundColor','#FFF1F4');
             }else if(cardType==2){
@@ -850,7 +850,7 @@ $(function(){
             drag();
 
         }else{
-            console.log('remove-item='+icon_id);
+            // console.log('remove-item='+icon_id);
             let this_icon = `.custom_card_IconOnCard img[data-icon=${icon_id}]`;
             $(this_icon).closest('div').remove();
             //刪除iconType陣列中的貼圖id
@@ -875,7 +875,7 @@ $(function(){
     })
     // ==================第五步 : 確認卡片內容==================  
     $('.cus_cardIcon_nextstep').click(function(){
-        console.log(customized);
+        // console.log(customized);
         // 按鈕替換
         $('.cus-cardIcon-btn').fadeOut();
         $('.cus-cardConfirm-btn').fadeIn();
@@ -914,7 +914,7 @@ $(function(){
     $('.cus_cardConfirm_nextstep').click(function(){
         //取得卡片內容傳給customized
         let cardContent = $('.cus_bag_card > pre').text();
-        console.log(cardContent);
+        // console.log(cardContent);
         customized['cardContent']+=cardContent;
         //卡片貼圖、標題、按鈕消失
         $('.custom_card_IconOnCard').fadeOut();
@@ -935,7 +935,7 @@ $(function(){
             $('.cus_bag_card').css({
                 bottom: '45%',
                 left: '50%',
-                width: '100px',
+                width: '90px',
                 height: '55px',
                 borderRadiis: '15px',
                 transform: 'rotate(-30deg) translate(-50%, 50%)',
@@ -968,7 +968,7 @@ $(function(){
             localStorage.setItem('customized_List', JSON.stringify(customized_newArray));
         }else{
             let customized_total = JSON.parse(localStorage.getItem('customized_List'));
-            console.log(customized_total);
+            // console.log(customized_total);
             customized_total.push(customized); 
             localStorage.setItem('customized_List', JSON.stringify(customized_total));           
         };
@@ -979,7 +979,7 @@ $(function(){
     $('.custom_popUp_close').click(function(){
         $('.custom_popUp').fadeOut();
         $('.custom_popUp_bg').fadeOut();
-        console.log('close');
+        // console.log('close');
     })    
 });
 

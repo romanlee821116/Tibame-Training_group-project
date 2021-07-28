@@ -199,6 +199,7 @@ body::-webkit-scrollbar {
         right: 50vw;
         z-index: 7;
         height: 22vh;
+        animation: walk2 25s linear infinite ;
         // border: 2px solid red;
         div{
             &::before{

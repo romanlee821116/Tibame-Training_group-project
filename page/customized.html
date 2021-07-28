@@ -328,7 +328,7 @@
         <!-- 購物車 -->
         <div class="custom_popUp_cart">
             <div class="custom_cart">
-                <img src="../images/customized/customized_step_a.png" alt="">
+                <img src="../images/customized/popup_done_icon.png" alt="">
                 <h2>客製禮盒成功</h2>
                 <p>您的商品已添加至購物車!</p>
                 <div>
@@ -345,5 +345,9 @@
         <component :is="content"></component>
     </div>
     <script>$('#widget').draggable();</script>
+    <script>
+        $(".ham_select").find("a:nth-child(5)").css({ color: "#fad689" });
+        $(".ham_select").find("a:nth-child(5)::before").css({backgroundColor: "#fad689" });
+    </script>
 </body>
 </html>
