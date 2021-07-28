@@ -18,10 +18,7 @@ time, mark, audio, video {
   font-size: 100%;
   font: bold inherit '微軟正黑體';
   vertical-align: baseline;
-<<<<<<< HEAD
   -webkit-box-sizing: border-box;
-=======
->>>>>>> dev
   box-sizing: border-box;
   text-decoration: none;
   font-weight: 900;
@@ -59,12 +56,8 @@ table {
 * {
   margin: 0;
   padding: 0;
-<<<<<<< HEAD
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-=======
-  box-sizing: border-box;
->>>>>>> dev
   list-style: none;
   /*font-family: MicrosoftJhengHeiBold , Arial, sans-serif*/
   font-family: '微軟正黑體';
@@ -78,17 +71,12 @@ table {
   top: 0px;
   left: 0;
   padding-top: 10px;
-<<<<<<< HEAD
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-=======
-  display: flex;
-  justify-content: space-between;
->>>>>>> dev
   z-index: 900;
   position: fixed;
 }
@@ -105,17 +93,12 @@ table {
 }
 
 .navbar .navbar-icon {
-<<<<<<< HEAD
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-=======
-  display: flex;
-  justify-content: flex-start;
->>>>>>> dev
   margin: 0 20px 0 0px;
 }
 
@@ -163,12 +146,8 @@ table {
 
 .navbar .ham_change .ham_bar1 {
   background-color: white;
-<<<<<<< HEAD
   -webkit-transform: rotate(-45deg) translate(-6px, 5px);
           transform: rotate(-45deg) translate(-6px, 5px);
-=======
-  transform: rotate(-45deg) translate(-6px, 5px);
->>>>>>> dev
 }
 
 .navbar .ham_change .ham_bar2 {
@@ -177,12 +156,8 @@ table {
 
 .navbar .ham_change .ham_bar3 {
   background-color: white;
-<<<<<<< HEAD
   -webkit-transform: rotate(45deg) translate(-8px, -8px);
           transform: rotate(45deg) translate(-8px, -8px);
-=======
-  transform: rotate(45deg) translate(-8px, -8px);
->>>>>>> dev
 }
 
 .navbar .ham_overlay {
@@ -194,10 +169,7 @@ table {
   right: 0;
   background-color: #b48164;
   overflow: hidden;
-<<<<<<< HEAD
   -webkit-transition: 0.5s;
-=======
->>>>>>> dev
   transition: 0.5s;
 }
 
@@ -215,7 +187,6 @@ table {
   position: absolute;
   top: -302vw;
   left: 50%;
-<<<<<<< HEAD
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   border-radius: 45%;
@@ -237,17 +208,10 @@ table {
     -webkit-transform: translate(-50%, 0%) rotateZ(360deg);
             transform: translate(-50%, 0%) rotateZ(360deg);
   }
-=======
-  transform: translateX(-50%);
-  border-radius: 45%;
-  background-color: #cba89a;
-  animation: rotate 15s linear infinite;
->>>>>>> dev
 }
 
 @keyframes rotate {
   0% {
-<<<<<<< HEAD
     -webkit-transform: translate(-50%, 0) rotateZ(0deg);
             transform: translate(-50%, 0) rotateZ(0deg);
   }
@@ -258,15 +222,6 @@ table {
   100% {
     -webkit-transform: translate(-50%, 0%) rotateZ(360deg);
             transform: translate(-50%, 0%) rotateZ(360deg);
-=======
-    transform: translate(-50%, 0) rotateZ(0deg);
-  }
-  50% {
-    transform: translate(-50%, -2%) rotateZ(180deg);
-  }
-  100% {
-    transform: translate(-50%, 0%) rotateZ(360deg);
->>>>>>> dev
   }
 }
 
@@ -285,11 +240,9 @@ table {
   display: block;
   letter-spacing: 2px;
   opacity: 0;
-<<<<<<< HEAD
   -webkit-transition: all .5s;
-=======
->>>>>>> dev
   transition: all .5s;
+  cursor: pointer;
 }
 
 .navbar .ham_overlay a:hover {
@@ -308,10 +261,7 @@ table {
   display: inline-block;
   margin: 0 20px;
   background-color: transparent;
-<<<<<<< HEAD
   -webkit-transition: all .3s;
-=======
->>>>>>> dev
   transition: all .3s;
 }
 
@@ -351,7 +301,6 @@ table {
   position: fixed;
   top: 50%;
   left: 10px;
-<<<<<<< HEAD
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   display: -webkit-box;
@@ -361,11 +310,6 @@ table {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-=======
-  transform: translateY(-50%);
-  display: flex;
-  flex-direction: column;
->>>>>>> dev
   z-index: 900;
   visibility: hidden;
 }
@@ -432,12 +376,8 @@ table {
 }
 
 .psychotest:hover img {
-<<<<<<< HEAD
   -webkit-transform: scale(1.3);
           transform: scale(1.3);
-=======
-  transform: scale(1.3);
->>>>>>> dev
 }
 
 .psychotest:hover p {
@@ -448,10 +388,7 @@ table {
 .psychotest img {
   width: 100%;
   height: 100%;
-<<<<<<< HEAD
   -webkit-transition: .2s;
-=======
->>>>>>> dev
   transition: .2s;
 }
 
@@ -459,21 +396,14 @@ table {
   position: absolute;
   top: 16px;
   left: 50%;
-<<<<<<< HEAD
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-=======
-  transform: translateX(-50%);
->>>>>>> dev
   color: #fff;
   font-weight: 900;
   width: 130px;
   text-align: center;
   font-size: 12px;
-<<<<<<< HEAD
   -webkit-transition: .2s;
-=======
->>>>>>> dev
   transition: .2s;
 }
 
@@ -488,15 +418,10 @@ table {
   right: 0px;
   width: 105px;
   top: 50%;
-<<<<<<< HEAD
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   z-index: 2;
   -webkit-transition: .2s;
-=======
-  transform: translateY(-50%);
-  z-index: 2;
->>>>>>> dev
   transition: .2s;
   opacity: 0;
 }
@@ -505,12 +430,8 @@ table {
   display: block;
   font-size: 14px;
   color: #bb866a;
-<<<<<<< HEAD
   -webkit-transform: translate(-30px -1px);
           transform: translate(-30px -1px);
-=======
-  transform: translate(-30px -1px);
->>>>>>> dev
   margin: 14px;
 }
 
@@ -528,18 +449,12 @@ table {
 .index_intro .intro_container {
   width: 250px;
   margin: 0 auto;
-<<<<<<< HEAD
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 48px 48px 48px 48px;
       grid-template-columns: 48px 48px 48px 48px;
   -webkit-column-gap: 20px;
           column-gap: 20px;
-=======
-  display: grid;
-  grid-template-columns: 48px 48px 48px 48px;
-  column-gap: 20px;
->>>>>>> dev
   position: relative;
   top: 15vh;
 }
@@ -549,66 +464,43 @@ table {
   margin: 0;
   padding: 0;
   color: #bb866a;
-<<<<<<< HEAD
   -webkit-writing-mode: vertical-rl;
       -ms-writing-mode: tb-rl;
           writing-mode: vertical-rl;
-=======
-  writing-mode: vertical-rl;
->>>>>>> dev
 }
 
 .index_intro .intro_container p.intro_add {
   opacity: 0;
-<<<<<<< HEAD
   -webkit-animation-name: intro_opac;
           animation-name: intro_opac;
   -webkit-animation-duration: 5s;
           animation-duration: 5s;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
-=======
-  animation-name: intro_opac;
-  animation-duration: 5s;
-  animation-fill-mode: forwards;
->>>>>>> dev
 }
 
 .index_intro .intro_container p.intro_add2 {
   opacity: 0;
-<<<<<<< HEAD
   -webkit-animation-name: intro_opac;
           animation-name: intro_opac;
   -webkit-animation-duration: 5s;
           animation-duration: 5s;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
-=======
-  animation-name: intro_opac;
-  animation-duration: 5s;
-  animation-fill-mode: forwards;
->>>>>>> dev
 }
 
 .index_intro .intro_container p.intro_add3 {
   opacity: 0;
-<<<<<<< HEAD
   -webkit-animation-name: intro_opac;
           animation-name: intro_opac;
   -webkit-animation-duration: 5s;
           animation-duration: 5s;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
-=======
-  animation-name: intro_opac;
-  animation-duration: 5s;
-  animation-fill-mode: forwards;
->>>>>>> dev
 }
 
 .index_intro .intro_container p.intro_add4 {
   opacity: 0;
-<<<<<<< HEAD
   -webkit-animation-name: intro_opac;
           animation-name: intro_opac;
   -webkit-animation-duration: 5s;
@@ -624,11 +516,6 @@ table {
   100% {
     opacity: 1;
   }
-=======
-  animation-name: intro_opac;
-  animation-duration: 5s;
-  animation-fill-mode: forwards;
->>>>>>> dev
 }
 
 @keyframes intro_opac {
@@ -644,11 +531,8 @@ table {
 .index_p2_container {
   width: 100%;
   height: 100%;
-<<<<<<< HEAD
   display: -webkit-box;
   display: -ms-flexbox;
-=======
->>>>>>> dev
   display: flex;
   position: relative;
   z-index: 2;
@@ -681,12 +565,8 @@ table {
   left: 50%;
   width: 280px;
   height: 260px;
-<<<<<<< HEAD
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-=======
-  transform: translate(-50%, -50%);
->>>>>>> dev
 }
 
 .index_p2_container .index_p2_pic img {
@@ -698,12 +578,8 @@ table {
   position: absolute;
   top: 0;
   left: 50%;
-<<<<<<< HEAD
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-=======
-  transform: translateX(-50%);
->>>>>>> dev
   height: 100%;
   text-align: center;
   overflow: hidden;
@@ -729,12 +605,8 @@ table {
   border-radius: 25px;
   position: absolute;
   left: 50%;
-<<<<<<< HEAD
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-=======
-  transform: translateX(-50%);
->>>>>>> dev
   bottom: 80px;
   font-weight: 900;
   width: 140px;
@@ -748,12 +620,8 @@ table {
   position: absolute;
   top: 45%;
   right: 0;
-<<<<<<< HEAD
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-=======
-  transform: translateY(-50%);
->>>>>>> dev
   width: 100%;
   height: 40px;
 }
@@ -796,18 +664,14 @@ table {
   max-height: 850px;
   margin: auto;
   position: relative;
-<<<<<<< HEAD
   display: -webkit-box;
   display: -ms-flexbox;
-=======
->>>>>>> dev
   display: flex;
 }
 
 .index_page3 .index_p3_container .index_p3_txt {
   width: 50%;
   height: 100%;
-<<<<<<< HEAD
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -818,11 +682,6 @@ table {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-=======
-  display: flex;
-  flex-direction: column;
-  align-items: center;
->>>>>>> dev
   padding-left: 50px;
 }
 
@@ -964,7 +823,6 @@ table {
   width: 100%;
   height: 50%;
   position: relative;
-<<<<<<< HEAD
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -975,11 +833,6 @@ table {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-=======
-  display: flex;
-  flex-direction: column;
-  align-items: center;
->>>>>>> dev
   padding-left: 45%;
 }
 
@@ -1056,12 +909,8 @@ table {
   width: 100%;
   height: 100%;
   overflow: hidden;
-<<<<<<< HEAD
   -webkit-animation: resize 10s linear infinite;
           animation: resize 10s linear infinite;
-=======
-  animation: resize 10s linear infinite;
->>>>>>> dev
 }
 
 .index_page4 .index_p4_container .index_p4_bigPic .index_p4_bigPic_img img {
@@ -1085,7 +934,6 @@ table {
   background-size: 150%;
   background-position: center;
   overflow: hidden;
-<<<<<<< HEAD
   -webkit-animation: resize_small 5s linear infinite;
           animation: resize_small 5s linear infinite;
   text-align: center;
@@ -1100,14 +948,6 @@ table {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-=======
-  animation: resize_small 5s linear infinite;
-  text-align: center;
-  font-weight: 900;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
->>>>>>> dev
 }
 
 .index_page4 .index_p4_container .index_p4_bigPic .index_p4_bigPic_info p {
@@ -1119,12 +959,8 @@ table {
   .index_page4 .index_p4_container .index_p4_bigPic {
     left: 50%;
     bottom: 5vh;
-<<<<<<< HEAD
     -webkit-transform: translate(-60%, 0px);
             transform: translate(-60%, 0px);
-=======
-    transform: translate(-60%, 0px);
->>>>>>> dev
   }
   .index_page4 .index_p4_container .index_p4_bigPic .index_p4_bigPic_img {
     width: 130%;
@@ -1137,7 +973,6 @@ table {
   }
 }
 
-<<<<<<< HEAD
 @-webkit-keyframes resize {
   0% {
     border-radius: 50% 50% 54% 46% / 49% 50% 50% 51%;
@@ -1153,8 +988,6 @@ table {
   }
 }
 
-=======
->>>>>>> dev
 @keyframes resize {
   0% {
     border-radius: 50% 50% 54% 46% / 49% 50% 50% 51%;
@@ -1170,7 +1003,6 @@ table {
   }
 }
 
-<<<<<<< HEAD
 @-webkit-keyframes resize_small {
   0% {
     border-radius: 46% 54% 35% 65% / 47% 37% 63% 53%;
@@ -1186,8 +1018,6 @@ table {
   }
 }
 
-=======
->>>>>>> dev
 @keyframes resize_small {
   0% {
     border-radius: 46% 54% 35% 65% / 47% 37% 63% 53%;
@@ -1207,11 +1037,8 @@ table {
   width: 100%;
   height: 40%;
   position: absolute;
-<<<<<<< HEAD
   display: -webkit-box;
   display: -ms-flexbox;
-=======
->>>>>>> dev
   display: flex;
   right: 0%;
   bottom: 0;
@@ -1292,7 +1119,6 @@ table {
   width: 50%;
   height: 50%;
   position: relative;
-<<<<<<< HEAD
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1303,11 +1129,6 @@ table {
   -webkit-box-align: left;
       -ms-flex-align: left;
           align-items: left;
-=======
-  display: flex;
-  flex-direction: column;
-  align-items: left;
->>>>>>> dev
   padding-left: 150px;
 }
 
@@ -1387,12 +1208,8 @@ table {
   background: url("/images/index/product_explanatorytext02.png");
   background-size: cover;
   background-position: center;
-<<<<<<< HEAD
   -webkit-animation: resize1 8s linear infinite;
           animation: resize1 8s linear infinite;
-=======
-  animation: resize1 8s linear infinite;
->>>>>>> dev
 }
 
 .index_page5 .index_p5_container .index_p5_bigPic .index_p5_bigPic_box {
@@ -1412,12 +1229,8 @@ table {
   .index_page5 .index_p5_container .index_p5_bigPic {
     position: relative;
     left: 50%;
-<<<<<<< HEAD
     -webkit-transform: translate(-50%, -80%);
             transform: translate(-50%, -80%);
-=======
-    transform: translate(-50%, -80%);
->>>>>>> dev
     width: 180px;
     height: auto;
     min-width: 180px;
@@ -1427,11 +1240,8 @@ table {
 
 .index_page5 .index_p5_container .index_p5_manual {
   width: 100%;
-<<<<<<< HEAD
   display: -webkit-box;
   display: -ms-flexbox;
-=======
->>>>>>> dev
   display: flex;
   padding-left: 100px;
   padding-top: 100px;
@@ -1473,12 +1283,8 @@ table {
   .index_page5 .index_p5_container .index_p5_manual {
     width: 81%;
     left: 50%;
-<<<<<<< HEAD
     -webkit-transform: translateX(-50%);
             transform: translateX(-50%);
-=======
-    transform: translateX(-50%);
->>>>>>> dev
     padding-left: 0px;
     padding-top: 70px;
   }
@@ -1544,7 +1350,6 @@ table {
   top: -30%;
 }
 
-<<<<<<< HEAD
 @-webkit-keyframes resize1 {
   0% {
     border-radius: 43% 57% 38% 62% / 50% 45% 55% 50%;
@@ -1560,8 +1365,6 @@ table {
   }
 }
 
-=======
->>>>>>> dev
 @keyframes resize1 {
   0% {
     border-radius: 43% 57% 38% 62% / 50% 45% 55% 50%;
@@ -1597,7 +1400,6 @@ table {
 .index_page6 .index_p6_container .index_p6_txt {
   width: 100%;
   position: relative;
-<<<<<<< HEAD
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1608,11 +1410,6 @@ table {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-=======
-  display: flex;
-  flex-direction: column;
-  align-items: center;
->>>>>>> dev
 }
 
 .index_page6 .index_p6_container .index_p6_txt h1 {
@@ -1650,7 +1447,6 @@ table {
 }
 
 .index_page6 .index_p6_container .index_p6_card .index_p6_cardContainer {
-<<<<<<< HEAD
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1660,11 +1456,6 @@ table {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-=======
-  display: flex;
-  justify-content: center;
-  align-items: center;
->>>>>>> dev
   margin-bottom: 30px;
 }
 
@@ -1684,25 +1475,16 @@ table {
   border: 2px solid #ccc;
   border-radius: 10px;
   overflow: hidden;
-<<<<<<< HEAD
   -webkit-box-shadow: #999 0px 0px 10px;
           box-shadow: #999 0px 0px 10px;
   cursor: pointer;
   -webkit-transition: .2s;
-=======
-  box-shadow: #999 0px 0px 10px;
-  cursor: pointer;
->>>>>>> dev
   transition: .2s;
 }
 
 .index_page6 .index_p6_container .index_p6_card .index_p6_cardContainer .index_p6_cardbg .index_p6_cardItem:hover {
-<<<<<<< HEAD
   -webkit-transform: translate(-10px, -10px);
           transform: translate(-10px, -10px);
-=======
-  transform: translate(-10px, -10px);
->>>>>>> dev
 }
 
 .index_page6 .index_p6_container .index_p6_card .index_p6_cardContainer .index_p6_cardbg .index_p6_cardItem .index_p6_itemImg {
@@ -1717,12 +1499,8 @@ table {
   vertical-align: top;
   position: relative;
   left: 50%;
-<<<<<<< HEAD
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-=======
-  transform: translateX(-50%);
->>>>>>> dev
 }
 
 .index_page6 .index_p6_container .index_p6_card .index_p6_cardContainer .index_p6_cardbg .index_p6_cardItem .index_p6_itemTxt {
@@ -1785,13 +1563,9 @@ table {
   .index_page6 .index_p6_container .index_p6_card .index_p6_cardContainer {
     width: 1050px;
     margin: 0 auto;
-<<<<<<< HEAD
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: flex-start;
-=======
-    justify-content: flex-start;
->>>>>>> dev
     position: relative;
     top: 10px;
     left: 0;
@@ -1804,13 +1578,9 @@ table {
 .index_p6_carousel {
   width: 100px;
   margin: 10px auto 50px auto;
-<<<<<<< HEAD
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-=======
-  justify-content: center;
->>>>>>> dev
   display: none;
 }
 
@@ -1829,11 +1599,8 @@ table {
 
 @media (max-width: 767px) {
   .index_p6_carousel {
-<<<<<<< HEAD
     display: -webkit-box;
     display: -ms-flexbox;
-=======
->>>>>>> dev
     display: flex;
   }
 }
@@ -1855,12 +1622,8 @@ table {
   font-weight: 900;
   position: relative;
   left: 50%;
-<<<<<<< HEAD
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-=======
-  transform: translateX(-50%);
->>>>>>> dev
 }
 
 .index_p6-btn a:hover {
@@ -1917,7 +1680,6 @@ table {
 .index_page7 .index_p7_container .index_p7_txt {
   width: 100%;
   text-align: center;
-<<<<<<< HEAD
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1928,11 +1690,6 @@ table {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-=======
-  display: flex;
-  flex-direction: column;
-  align-items: center;
->>>>>>> dev
 }
 
 .index_page7 .index_p7_container .index_p7_txt h1 {
@@ -1998,11 +1755,8 @@ table {
 }
 
 .index_page7 .index_p7_container .index_p7_info .index_p7_shopInfo .p7-servicehour, .index_page7 .index_p7_container .index_p7_info .index_p7_shopInfo .p7-dayoff, .index_page7 .index_p7_container .index_p7_info .index_p7_shopInfo .p7-tel {
-<<<<<<< HEAD
   display: -webkit-box;
   display: -ms-flexbox;
-=======
->>>>>>> dev
   display: flex;
   width: 100%;
   margin-top: 20px;
@@ -2019,15 +1773,10 @@ table {
 }
 
 .index_page7 .index_p7_container .index_p7_info .index_p7_shopInfo .index_p7_address {
-<<<<<<< HEAD
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 80px 250px;
       grid-template-columns: 80px 250px;
-=======
-  display: grid;
-  grid-template-columns: 80px 250px;
->>>>>>> dev
   width: 100%;
   margin-top: 20px;
 }
@@ -2060,17 +1809,12 @@ table {
   padding-top: 10px;
   position: relative;
   left: 23%;
-<<<<<<< HEAD
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-=======
-  display: flex;
-  justify-content: flex-end;
->>>>>>> dev
 }
 
 .index_page7 .index_p7_container .index_p7_info .index_p7_shopBtn a {
@@ -2120,24 +1864,16 @@ table {
   position: absolute;
   left: 55%;
   top: 40%;
-<<<<<<< HEAD
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-=======
-  transform: translateY(-50%);
->>>>>>> dev
   z-index: 2;
 }
 
 .index_page7 .index_p7_container .index_p7_bigPic img {
   width: 100%;
   height: auto;
-<<<<<<< HEAD
   -webkit-animation: resize2 10s linear infinite;
           animation: resize2 10s linear infinite;
-=======
-  animation: resize2 10s linear infinite;
->>>>>>> dev
 }
 
 @media (max-width: 920px) {
@@ -2158,7 +1894,6 @@ table {
     margin-top: 60px;
   }
   .index_page7 .index_p7_container .index_p7_info {
-<<<<<<< HEAD
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -2166,10 +1901,6 @@ table {
     -webkit-box-direction: reverse;
         -ms-flex-direction: column-reverse;
             flex-direction: column-reverse;
-=======
-    display: flex;
-    flex-direction: column-reverse;
->>>>>>> dev
     position: relative;
     top: 40%;
     z-index: 1;
@@ -2190,12 +1921,8 @@ table {
     height: auto;
     top: 22%;
     left: 50%;
-<<<<<<< HEAD
     -webkit-transform: translateX(-50%);
             transform: translateX(-50%);
-=======
-    transform: translateX(-50%);
->>>>>>> dev
   }
 }
 
@@ -2211,7 +1938,6 @@ table {
   }
 }
 
-<<<<<<< HEAD
 @-webkit-keyframes resize2 {
   0% {
     border-radius: 47% 53% 36% 64% / 50% 41% 59% 50%;
@@ -2227,8 +1953,6 @@ table {
   }
 }
 
-=======
->>>>>>> dev
 @keyframes resize2 {
   0% {
     border-radius: 47% 53% 36% 64% / 50% 41% 59% 50%;
@@ -2282,11 +2006,8 @@ table {
 .footer {
   width: 100%;
   max-width: 1400px;
-<<<<<<< HEAD
   display: -webkit-box;
   display: -ms-flexbox;
-=======
->>>>>>> dev
   display: flex;
   position: relative;
   margin: 50px auto 0 auto;
@@ -2294,12 +2015,8 @@ table {
   position: absolute;
   bottom: 0;
   left: 50%;
-<<<<<<< HEAD
   -webkit-transform: translate(-50%);
           transform: translate(-50%);
-=======
-  transform: translate(-50%);
->>>>>>> dev
 }
 
 .footer a,
@@ -2318,17 +2035,12 @@ table {
 .footer .footer-left {
   width: 40%;
   height: 100%;
-<<<<<<< HEAD
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-=======
-  display: flex;
-  align-items: center;
->>>>>>> dev
   padding-left: 200px;
 }
 
@@ -2338,33 +2050,23 @@ table {
 }
 
 .footer .footer-left .footer-policy {
-<<<<<<< HEAD
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-=======
-  display: flex;
-  justify-content: center;
->>>>>>> dev
   min-width: 200px;
 }
 
 .footer .footer-right {
   width: 60%;
-<<<<<<< HEAD
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-=======
-  display: flex;
-  align-items: center;
->>>>>>> dev
   padding-right: 100px;
 }
 
@@ -2381,7 +2083,6 @@ table {
 
 @media (max-width: 767px) {
   .footer {
-<<<<<<< HEAD
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -2398,15 +2099,6 @@ table {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-=======
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .footer .footer-left {
-    padding-left: 0px;
-    justify-content: center;
->>>>>>> dev
     margin-bottom: 10px;
   }
   .footer .footer-right {
