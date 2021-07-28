@@ -58,7 +58,7 @@ $(document).ready(function() {
     //========================================local storage========================================
     var item_area = $(".product_product");
     $(item_area).first().show().siblings().hide();
-    // 點擊切換商品分類內容
+    // 點擊切換商品分類內容 救救可憐的廢物
     $(".product_area").click(function() {
         let index = $(this).index();
         $(item_area).eq(index).fadeIn(500).show().siblings().hide();
@@ -74,30 +74,32 @@ $(document).ready(function() {
     });
 
     // 選擇商品分類
-    // $(".product_area").mouseenter(function() {
-    //     let index = $(this).index();
-    //     $(this).find("img").attr("src", `../images/shopping_list/shop${index+1}_hov.png`);
-    //     $(this).find('span').css({ color: '#172852' });
-    // });
-    // $(".product_area").mouseleave(function() {
-    //     let index = $(this).index();
-    //     if (!$(this).find("i").hasClass("yellow")) {
-    //         $(this).find('span').css({ color: '#bb866a' });
-    //         $(this).find("img").attr("src", `../images/shopping_list/shop${index+1}.png`);
-    //     }
-    // });
+    $(".product_area").mouseenter(function() {
+        let index = $(this).index();
+        $(this).find("img").attr("src", `../images/shopping_list/shop${index+1}_hov.png`);
+        $(this).find('span').css({ color: '#172852' });
+    });
+    $(".product_area").mouseleave(function() {
+        let index = $(this).index();
+        if ($(this).find("i").hasClass("yellow")) {
+            $(this).find('span').css({ color: '#bb866a' });
+            $(this).find("img").attr("src", `../images/shopping_list/shop${index+1}.png`);
+        } else {
 
-    $('.product_area').hover(function(){
+        }
+    });
+
+    $('.product_area').hover(function() {
         let index = $(this).index();
         // console.log(index);
         $(this).find("img").attr("src", `../images/shopping_list/shop${index+1}_hov.png`);
         $(this).find('span').css({ color: '#172852' });
-    }, function(){
+    }, function() {
         let index = $(this).index();
         $(this).find('span').css({ color: '#bb866a' });
-        $(this).find("img").attr("src", `../images/shopping_list/shop${index+1}.png`);        
+        $(this).find("img").attr("src", `../images/shopping_list/shop${index+1}.png`);
     });
-    $('.product_area').click(function(){
+    $('.product_area').click(function() {
         $(this).unbind('mouseenter mouseleave');
         let index = $(this).index();
         $(this).find("img").attr("src", `../images/shopping_list/shop${index+1}_hov.png`);
