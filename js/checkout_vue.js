@@ -381,11 +381,12 @@ $(document).ready(function(){
           'itemName': '',
           'img': '',
           'price': 0,
+          'item_Quantity': 6,
           'quantity': 1,
           'status': false,
           "id": new Date(),
         };
-        console.log(this.recommend[index].name);
+        // console.log(this.recommend[index].name);
         
         let product_Id = '';
         let this_name = this.recommend[index].name;
@@ -397,47 +398,52 @@ $(document).ready(function(){
         cart_item.img = this_img;
         cart_item.price = parseInt(this_price);
         cart_item.quantity = this_qty;
-        console.log(cart_item);        
+        // console.log(cart_item); 
+
         if(localStorage.item_List){
-            let local_itemList= [];
-            for(let i=0; i<JSON.parse(localStorage.item_List).length; i++){                    
-                local_itemList.push(JSON.parse(localStorage.item_List)[i].itemName);
-            }
-            console.log(local_itemList);
-            if(local_itemList.indexOf(this_name)==-1){
-                let new_itemList = JSON.parse(localStorage.getItem('item_List'));
-                new_itemList.push(cart_item);
-                localStorage.setItem('item_List', JSON.stringify(new_itemList));
-                //價格更新
-                let new_subtotal = parseInt(localStorage.subtotal) + this_price;
-                let new_total = parseInt(localStorage.total) + this_price;
-                localStorage.setItem('subtotal', new_subtotal);
-                localStorage.setItem('total', new_total);  
-                this.itemPrice = new_subtotal;
-                this.total_price = new_total; 
-            }else{
-                alert('此產品已在訂單內容');
-            }
-            
-        }else{
-            let new_itemList = [];
+          // 先把localStorage上有的一般商品抓下來並放在空陣列
+          let local_itemList= [];
+          for(let i = 0; i < JSON.parse(localStorage.item_List).length; i++){                    
+              local_itemList.push(JSON.parse(localStorage.item_List)[i].itemName);
+          }
+          console.log(local_itemList);
+
+          // 判斷剛剛的陣列裡面有沒有重複的商品，沒有會顯示-1
+          if(local_itemList.indexOf(this_name) == -1){
+            // 把新的東西推進去
+            let new_itemList = JSON.parse(localStorage.getItem('item_List'));
             new_itemList.push(cart_item);
-            localStorage['item_List'] = [];
             localStorage.setItem('item_List', JSON.stringify(new_itemList));
+
             //價格更新
             let new_subtotal = parseInt(localStorage.subtotal) + this_price;
             let new_total = parseInt(localStorage.total) + this_price;
             localStorage.setItem('subtotal', new_subtotal);
             localStorage.setItem('total', new_total);  
             this.itemPrice = new_subtotal;
-            this.total_price = new_total;
+            this.total_price = new_total; 
+          }else{
+            alert('此產品已在訂單內容');
+          }
+        }else{
+          let new_itemList = [];
+          new_itemList.push(cart_item);
+          localStorage['item_List'] = [];
+          localStorage.setItem('item_List', JSON.stringify(new_itemList));
+          //價格更新
+          let new_subtotal = parseInt(localStorage.subtotal) + this_price;
+          let new_total = parseInt(localStorage.total) + this_price;
+          localStorage.setItem('subtotal', new_subtotal);
+          localStorage.setItem('total', new_total);  
+          this.itemPrice = new_subtotal;
+          this.total_price = new_total;
         }
-      
 
-        // 呼叫localStorage商品資料        
+
+        // 把localStorage商品更新到vue，才會及時顯現出來
         let item = JSON.parse(localStorage.item_List)
-        this.itemList =item;
-        console.log('refresh');
+        this.itemList = item;
+        // console.log('refresh');
       }
     },
     computed: {
