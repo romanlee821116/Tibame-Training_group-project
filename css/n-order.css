@@ -2,9 +2,14 @@
 * {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   box-sizing: border-box;
+=======
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+>>>>>>> f27bcfd4798b9dd2c40f8ee7712e8c30eff504be
   font-family: '微軟正黑體';
 }
 
@@ -15,9 +20,15 @@ body {
 }
 
 .n-order_header {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   background-image: url("../images/backend/loginbg.png");
   background-repeat: no-repeat;
   background-position: center top;
@@ -27,10 +38,17 @@ body {
 }
 
 .n-order_logo {
-  flex-grow: 2;
+  -webkit-box-flex: 2;
+      -ms-flex-positive: 2;
+          flex-grow: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  column-gap: 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 20px;
+          column-gap: 20px;
 }
 
 .n-order_logo img {
@@ -46,9 +64,14 @@ body {
 }
 
 .n-order_logout {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  column-gap: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 10px;
+          column-gap: 10px;
   cursor: pointer;
 }
 
@@ -61,14 +84,23 @@ body {
 }
 
 .n-order_main {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   padding: 0 60px;
 }
 
 .n-order_left {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: 15%;
 }
 
@@ -108,8 +140,12 @@ body {
 
 .n-order_right form {
   /* border: 1px solid blue; */
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: flex-end;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   margin-bottom: 20px;
 }
 
@@ -123,11 +159,20 @@ body {
 }
 
 .n-order_right form section {
-  flex-grow: 2;
+  -webkit-box-flex: 2;
+      -ms-flex-positive: 2;
+          flex-grow: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: flex-end;
-  column-gap: 10px;
-  align-items: flex-end;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-column-gap: 10px;
+          column-gap: 10px;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
 }
 
 .n-order_right form section label {
@@ -160,6 +205,21 @@ body {
   padding-left: 5px;
 }
 
+.n-order_right form section input::-webkit-input-placeholder {
+  color: #cba89a;
+  font-weight: bold;
+}
+
+.n-order_right form section input:-ms-input-placeholder {
+  color: #cba89a;
+  font-weight: bold;
+}
+
+.n-order_right form section input::-ms-input-placeholder {
+  color: #cba89a;
+  font-weight: bold;
+}
+
 .n-order_right form section input::placeholder {
   color: #cba89a;
   font-weight: bold;
@@ -170,13 +230,21 @@ body {
   margin: 0;
   padding: 10px;
   list-style: none;
+  display: -ms-grid;
   display: grid;
+<<<<<<< HEAD
 <<<<<<< HEAD
   grid-template-columns: .8fr 1fr 2fr .8fr .8fr .8fr 1fr 1fr;
 =======
   grid-template-columns: .8fr 1fr 2fr .8fr .8fr .8fr 1fr 107px;
 >>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   column-gap: 10px;
+=======
+  -ms-grid-columns: .8fr 1fr 2fr .8fr .8fr .8fr 1fr 107px;
+      grid-template-columns: .8fr 1fr 2fr .8fr .8fr .8fr 1fr 107px;
+  -webkit-column-gap: 10px;
+          column-gap: 10px;
+>>>>>>> f27bcfd4798b9dd2c40f8ee7712e8c30eff504be
   background-color: #cba89a;
   font-size: 16px;
   color: #ffffff;
@@ -188,18 +256,28 @@ body {
   margin: 0;
   padding: 10px;
   list-style: none;
+  display: -ms-grid;
   display: grid;
+<<<<<<< HEAD
 <<<<<<< HEAD
   grid-template-columns: .8fr 1fr 2fr .8fr .8fr .8fr 1fr 1fr;
 =======
   grid-template-columns: .8fr 1fr 2fr .8fr .8fr .8fr 1fr 107px;
 >>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   column-gap: 10px;
+=======
+  -ms-grid-columns: .8fr 1fr 2fr .8fr .8fr .8fr 1fr 107px;
+      grid-template-columns: .8fr 1fr 2fr .8fr .8fr .8fr 1fr 107px;
+  -webkit-column-gap: 10px;
+          column-gap: 10px;
+>>>>>>> f27bcfd4798b9dd2c40f8ee7712e8c30eff504be
   background-color: #ffffff;
   font-size: 16px;
   color: #172852;
   font-weight: bold;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 <<<<<<< HEAD
@@ -549,6 +627,7 @@ body {
   padding: 0px;
   list-style: none;
 <<<<<<< HEAD
+<<<<<<< HEAD
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -559,6 +638,14 @@ body {
   display: flex;
   justify-content: flex-end;
 >>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
+=======
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+>>>>>>> f27bcfd4798b9dd2c40f8ee7712e8c30eff504be
   margin-top: 15px;
 }
 
@@ -631,7 +718,8 @@ body {
   /* position: relative; */
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   z-index: 2;
   background-color: #ffffff;
   overflow-y: auto;
@@ -647,11 +735,15 @@ body {
   background-color: #bb866a;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   position: -webkit-sticky;
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
 =======
 >>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
+=======
+  position: -webkit-sticky;
+>>>>>>> f27bcfd4798b9dd2c40f8ee7712e8c30eff504be
   position: sticky;
   top: 0;
 }
@@ -680,6 +772,7 @@ body {
   list-style: none;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   display: flex;
   justify-content: center;
   column-gap: 30px;
@@ -698,6 +791,16 @@ body {
   justify-content: center;
   column-gap: 30px;
 >>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
+=======
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-column-gap: 30px;
+          column-gap: 30px;
+>>>>>>> f27bcfd4798b9dd2c40f8ee7712e8c30eff504be
   color: #172852;
   font-weight: bold;
   border: 2px solid #cba89a;
@@ -714,6 +817,7 @@ body {
   cursor: pointer;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   appearance: none;
 =======
   -webkit-appearance: none;
@@ -723,6 +827,11 @@ body {
 =======
   appearance: none;
 >>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
+=======
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+>>>>>>> f27bcfd4798b9dd2c40f8ee7712e8c30eff504be
   outline: none;
   background: none;
   background-image: url("../images/backend/select.png");
@@ -740,6 +849,7 @@ body {
   padding: 15px 20px;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   display: grid;
   grid-template-columns: 1fr n-order_8fr;
 =======
@@ -752,6 +862,12 @@ body {
   display: grid;
   grid-template-columns: 1fr n-order_8fr;
 >>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
+=======
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr n-order_8fr;
+      grid-template-columns: 1fr n-order_8fr;
+>>>>>>> f27bcfd4798b9dd2c40f8ee7712e8c30eff504be
   row-gap: 20px;
   border: 2px solid #cba89a;
 }
@@ -776,6 +892,7 @@ body {
   list-style: none;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 =======
@@ -788,6 +905,12 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 >>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
+=======
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+>>>>>>> f27bcfd4798b9dd2c40f8ee7712e8c30eff504be
   background-color: #f4ece5;
   margin-bottom: 0;
 }
@@ -802,6 +925,7 @@ body {
   margin-left: 10px;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   display: grid;
   grid-template-columns: 1.05fr 1fr 1.05fr;
 =======
@@ -814,6 +938,12 @@ body {
   display: grid;
   grid-template-columns: 1.05fr 1fr 1.05fr;
 >>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
+=======
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1.05fr 1fr 1.05fr;
+      grid-template-columns: 1.05fr 1fr 1.05fr;
+>>>>>>> f27bcfd4798b9dd2c40f8ee7712e8c30eff504be
 }
 
 .n-order_detail_content {
@@ -822,23 +952,31 @@ body {
   list-style: none;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   display: grid;
   grid-template-rows: 40px 40px 40px;
   align-items: center;
 =======
   display: -ms-grid;
   display: grid;
+=======
+  display: -ms-grid;
+  display: grid;
+>>>>>>> f27bcfd4798b9dd2c40f8ee7712e8c30eff504be
   -ms-grid-rows: 40px 40px 40px;
       grid-template-rows: 40px 40px 40px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+<<<<<<< HEAD
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
 =======
   display: grid;
   grid-template-rows: 40px 40px 40px;
   align-items: center;
 >>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
+=======
+>>>>>>> f27bcfd4798b9dd2c40f8ee7712e8c30eff504be
 }
 
 .n-order_order_checkout {
@@ -852,6 +990,7 @@ body {
 
 .n-order_editbtn {
   margin-top: 20px;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   display: flex;
@@ -872,6 +1011,16 @@ body {
   justify-content: center;
   column-gap: 30px;
 >>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
+=======
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-column-gap: 30px;
+          column-gap: 30px;
+>>>>>>> f27bcfd4798b9dd2c40f8ee7712e8c30eff504be
   margin-bottom: 20px;
 }
 
@@ -913,4 +1062,3 @@ body {
 .n-order_right .-active {
   background: #172852;
 }
-/*# sourceMappingURL=n-order.css.map */

@@ -2,6 +2,7 @@
 * {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   box-sizing: border-box;
 =======
   -webkit-box-sizing: border-box;
@@ -10,6 +11,10 @@
 =======
   box-sizing: border-box;
 >>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
+=======
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+>>>>>>> f27bcfd4798b9dd2c40f8ee7712e8c30eff504be
   font-family: '微軟正黑體';
 }
 
@@ -20,6 +25,7 @@ body {
 }
 
 .n-faq_header {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   display: flex;
@@ -41,6 +47,17 @@ body {
   align-items: center;
   justify-content: flex-start;
 >>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
+=======
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+>>>>>>> f27bcfd4798b9dd2c40f8ee7712e8c30eff504be
   background-image: url("../images/backend/loginbg.png");
   background-repeat: no-repeat;
   background-position: center top;
@@ -50,6 +67,7 @@ body {
 }
 
 .n-faq_logo {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -66,14 +84,25 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+=======
+  -webkit-box-flex: 2;
+      -ms-flex-positive: 2;
+          flex-grow: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+>>>>>>> f27bcfd4798b9dd2c40f8ee7712e8c30eff504be
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   -webkit-column-gap: 20px;
           column-gap: 20px;
+<<<<<<< HEAD
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
 =======
 >>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
+=======
+>>>>>>> f27bcfd4798b9dd2c40f8ee7712e8c30eff504be
 }
 
 .n-faq_logo img {
@@ -89,6 +118,7 @@ body {
 }
 
 .n-faq_logout {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   display: flex;
@@ -109,6 +139,16 @@ body {
   align-items: center;
   column-gap: 10px;
 >>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
+=======
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 10px;
+          column-gap: 10px;
+>>>>>>> f27bcfd4798b9dd2c40f8ee7712e8c30eff504be
   cursor: pointer;
 }
 
@@ -121,6 +161,7 @@ body {
 }
 
 .n-faq_main {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   display: flex;
@@ -137,10 +178,19 @@ body {
   display: flex;
   justify-content: flex-start;
 >>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
+=======
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+>>>>>>> f27bcfd4798b9dd2c40f8ee7712e8c30eff504be
   padding: 0 60px;
 }
 
 .n-faq_left {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   display: flex;
@@ -158,6 +208,15 @@ body {
   display: flex;
   flex-direction: column;
 >>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
+=======
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+>>>>>>> f27bcfd4798b9dd2c40f8ee7712e8c30eff504be
   width: 15%;
 }
 
@@ -199,6 +258,7 @@ body {
   /* border: 1px solid blue; */
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   display: flex;
   justify-content: flex-end;
 =======
@@ -213,6 +273,14 @@ body {
   display: flex;
   justify-content: flex-end;
 >>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
+=======
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+>>>>>>> f27bcfd4798b9dd2c40f8ee7712e8c30eff504be
   margin-bottom: 20px;
 }
 
@@ -229,6 +297,7 @@ body {
   /* border: 1px solid red; */
   width: 280px;
   margin-left: 40px;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   display: flex;
@@ -249,6 +318,16 @@ body {
   column-gap: 40px;
   align-items: flex-end;
 >>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
+=======
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 40px;
+          column-gap: 40px;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+>>>>>>> f27bcfd4798b9dd2c40f8ee7712e8c30eff504be
 }
 
 .n-faq_faqbtn button {
@@ -275,6 +354,7 @@ body {
 .n-faq_right form section {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   flex-grow: 2;
@@ -290,6 +370,14 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+=======
+  -webkit-box-flex: 2;
+      -ms-flex-positive: 2;
+          flex-grow: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+>>>>>>> f27bcfd4798b9dd2c40f8ee7712e8c30eff504be
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
@@ -298,9 +386,12 @@ body {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
+<<<<<<< HEAD
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
 =======
 >>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
+=======
+>>>>>>> f27bcfd4798b9dd2c40f8ee7712e8c30eff504be
 }
 
 .n-faq_right form section label {
@@ -335,7 +426,10 @@ body {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> f27bcfd4798b9dd2c40f8ee7712e8c30eff504be
 .n-faq_right form section input::-webkit-input-placeholder {
   color: #cba89a;
   font-weight: bold;
@@ -351,9 +445,12 @@ body {
   font-weight: bold;
 }
 
+<<<<<<< HEAD
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
 =======
 >>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
+=======
+>>>>>>> f27bcfd4798b9dd2c40f8ee7712e8c30eff504be
 .n-faq_right form section input::placeholder {
   color: #cba89a;
   font-weight: bold;
@@ -364,6 +461,7 @@ body {
   margin: 0;
   padding: 10px;
   list-style: none;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   display: grid;
@@ -382,6 +480,14 @@ body {
   grid-template-columns: 1fr 1fr 2.5fr 3.5fr 107px;
   column-gap: 10px;
 >>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
+=======
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 2.5fr 3.5fr 107px;
+      grid-template-columns: 1fr 1fr 2.5fr 3.5fr 107px;
+  -webkit-column-gap: 10px;
+          column-gap: 10px;
+>>>>>>> f27bcfd4798b9dd2c40f8ee7712e8c30eff504be
   background-color: #cba89a;
   font-size: 16px;
   color: #ffffff;
@@ -395,6 +501,7 @@ body {
   list-style: none;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   display: grid;
   grid-template-columns: 1fr 1fr 2.5fr 3.5fr 1fr;
   column-gap: 10px;
@@ -411,13 +518,27 @@ body {
   grid-template-columns: 1fr 1fr 2.5fr 3.5fr 107px;
   column-gap: 10px;
 >>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
+=======
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 2.5fr 3.5fr 107px;
+      grid-template-columns: 1fr 1fr 2.5fr 3.5fr 107px;
+  -webkit-column-gap: 10px;
+          column-gap: 10px;
+>>>>>>> f27bcfd4798b9dd2c40f8ee7712e8c30eff504be
   background-color: #ffffff;
   font-size: 16px;
   color: #172852;
   font-weight: bold;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   align-items: center;
+=======
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+>>>>>>> f27bcfd4798b9dd2c40f8ee7712e8c30eff504be
 }
 
 .n-faq_faq li {
@@ -444,9 +565,13 @@ body {
   display: -webkit-box;
   /* 用來設定一個元素是水平還是垂直方向排列其內容 */
 <<<<<<< HEAD
+<<<<<<< HEAD
   -webkit-box-orient: vertical;
 =======
 >>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
+=======
+  -webkit-box-orient: vertical;
+>>>>>>> f27bcfd4798b9dd2c40f8ee7712e8c30eff504be
   /* 限制指定的行數 */
   -webkit-line-clamp: 2;
   overflow: hidden;
@@ -457,10 +582,14 @@ body {
   display: -webkit-box;
   /* 用來設定一個元素是水平還是垂直方向排列其內容 */
 <<<<<<< HEAD
+<<<<<<< HEAD
   -webkit-box-orient: vertical;
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
 =======
 >>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
+=======
+  -webkit-box-orient: vertical;
+>>>>>>> f27bcfd4798b9dd2c40f8ee7712e8c30eff504be
   /* 限制指定的行數 */
   -webkit-line-clamp: 2;
   overflow: hidden;
@@ -488,6 +617,7 @@ body {
   list-style: none;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   display: flex;
   justify-content: flex-end;
 =======
@@ -502,6 +632,14 @@ body {
   display: flex;
   justify-content: flex-end;
 >>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
+=======
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+>>>>>>> f27bcfd4798b9dd2c40f8ee7712e8c30eff504be
   margin-top: 15px;
 }
 
@@ -548,9 +686,15 @@ body {
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
 =======
   /* border: 1px solid red; */
+  display: -ms-grid;
   display: grid;
+<<<<<<< HEAD
   grid-template-rows: 44px 300px 54px;
 >>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
+=======
+  -ms-grid-rows: 44px 300px 54px;
+      grid-template-rows: 44px 300px 54px;
+>>>>>>> f27bcfd4798b9dd2c40f8ee7712e8c30eff504be
   border-radius: 10px;
   overflow: hidden;
   /* position: relative;
@@ -558,6 +702,7 @@ body {
   position: fixed;
   left: 50%;
   top: 50%;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   transform: translate(-50%, -50%);
@@ -568,6 +713,10 @@ body {
 =======
   transform: translate(-50%, -50%);
 >>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
+=======
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+>>>>>>> f27bcfd4798b9dd2c40f8ee7712e8c30eff504be
   z-index: 2;
   background-color: #ffffff;
   /* overflow-y: scroll; */
@@ -582,11 +731,15 @@ body {
   background-color: #bb866a;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   position: -webkit-sticky;
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
 =======
 >>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
+=======
+  position: -webkit-sticky;
+>>>>>>> f27bcfd4798b9dd2c40f8ee7712e8c30eff504be
   position: sticky;
   top: 0;
   z-index: 3;
@@ -598,11 +751,17 @@ body {
   list-style: none;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
+=======
+  display: -ms-grid;
+>>>>>>> f27bcfd4798b9dd2c40f8ee7712e8c30eff504be
   display: grid;
-  grid-template-rows: 1fr 1fr 5fr;
+  -ms-grid-rows: 1fr 1fr 5fr;
+      grid-template-rows: 1fr 1fr 5fr;
   justify-items: flex-start;
+<<<<<<< HEAD
   align-items: center;
 <<<<<<< HEAD
 =======
@@ -617,6 +776,11 @@ body {
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
 =======
 >>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
+=======
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+>>>>>>> f27bcfd4798b9dd2c40f8ee7712e8c30eff504be
   row-gap: 15px;
 }
 
@@ -629,6 +793,7 @@ body {
 }
 
 .n-faq_edit ul li:last-child {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   display: flex;
@@ -644,6 +809,13 @@ body {
   display: flex;
   column-gap: 3px;
 >>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
+=======
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 3px;
+          column-gap: 3px;
+>>>>>>> f27bcfd4798b9dd2c40f8ee7712e8c30eff504be
 }
 
 .n-faq_edit select {
@@ -657,6 +829,7 @@ body {
   cursor: pointer;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   appearance: none;
 =======
   -webkit-appearance: none;
@@ -666,6 +839,11 @@ body {
 =======
   appearance: none;
 >>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
+=======
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+>>>>>>> f27bcfd4798b9dd2c40f8ee7712e8c30eff504be
   outline: none;
   background: none;
   background-image: url("../images/backend/select.png");
@@ -694,6 +872,7 @@ body {
 .n-faq_editbtn {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   display: flex;
   justify-content: center;
   column-gap: 30px;
@@ -712,6 +891,16 @@ body {
   justify-content: center;
   column-gap: 30px;
 >>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
+=======
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-column-gap: 30px;
+          column-gap: 30px;
+>>>>>>> f27bcfd4798b9dd2c40f8ee7712e8c30eff504be
   height: 54px;
   /* border: 1px solid red; */
 }
@@ -752,4 +941,3 @@ body {
 .-active2 {
   color: #a3a3a3;
 }
-/*# sourceMappingURL=n-faq.css.map */
