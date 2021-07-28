@@ -98,7 +98,7 @@ body{
 }
 
 .n-faq_right > div{
-    border: 1px solid #bb866a;    
+    border: 1px solid #bb866a; 
 }
 
 .n-faq_right form{
@@ -197,7 +197,7 @@ body{
     padding: 10px;
     list-style: none;
     display: grid;
-    grid-template-columns: 1fr 1fr 2.5fr 3.5fr 1fr;
+    grid-template-columns: 1fr 1fr 2.5fr 3.5fr 107px;
     column-gap: 10px;
     background-color: #cba89a;
     font-size: 16px;
@@ -211,7 +211,7 @@ body{
     padding: 10px;
     list-style: none;
     display: grid;
-    grid-template-columns: 1fr 1fr 2.5fr 3.5fr 1fr;
+    grid-template-columns: 1fr 1fr 2.5fr 3.5fr 107px;
     column-gap: 10px;
     background-color: #ffffff;
     font-size: 16px;
@@ -220,7 +220,21 @@ body{
     align-items: center;
 }
 
-.n-faq_faq li{
+.n-faq_faq:hover{
+    background-color: #f8f2ed;
+}
+
+.n-faq_faq li:nth-child(3){
+    /* -webkit-box 尚在實驗性的屬性值 */
+    display: -webkit-box;  
+    /* 用來設定一個元素是水平還是垂直方向排列其內容 */
+    -webkit-box-orient: vertical;  
+    /* 限制指定的行數 */
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+
+.n-faq_faq li:nth-child(4){
     /* -webkit-box 尚在實驗性的屬性值 */
     display: -webkit-box;  
     /* 用來設定一個元素是水平還是垂直方向排列其內容 */
@@ -287,7 +301,7 @@ body{
 .n-faq_edit{
     width: 800px;
     /* height: 500px; */
-    border: 1px solid red;
+    /* border: 1px solid red; */
     display: grid;
     grid-template-rows: 44px 300px 54px;
     border-radius: 10px;
@@ -431,6 +445,9 @@ body{
 .-active2{
     color: #a3a3a3;
 }
+
+
+
 
 
 

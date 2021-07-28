@@ -1,6 +1,11 @@
 @charset "UTF-8";
 * {
+<<<<<<< HEAD
   box-sizing: border-box;
+=======
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+>>>>>>> 579eeae2f2f967ec311bd533008a684834644801
   font-family: '微軟正黑體';
 }
 
@@ -11,9 +16,22 @@ body {
 
 .n-login_header {
   /* border: 1px solid red; */
+<<<<<<< HEAD
   display: flex;
   flex-direction: column;
   align-items: center;
+=======
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+>>>>>>> 579eeae2f2f967ec311bd533008a684834644801
   row-gap: 20px;
   padding-top: 100px;
   padding-bottom: 70px;
@@ -37,8 +55,18 @@ p {
 
 form {
   /* border: 1px solid blue; */
+<<<<<<< HEAD
   display: flex;
   flex-direction: column;
+=======
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+>>>>>>> 579eeae2f2f967ec311bd533008a684834644801
   width: 300px;
   margin: 0 auto;
   font-size: 16px;
@@ -54,12 +82,17 @@ input {
   color: #172852;
 }
 
+<<<<<<< HEAD
 input::placeholder {
+=======
+input::-webkit-input-placeholder {
+>>>>>>> 579eeae2f2f967ec311bd533008a684834644801
   font-size: 16px;
   font-weight: bold;
   color: #cba89a;
 }
 
+<<<<<<< HEAD
 label {
   margin-top: 20px;
 }
@@ -83,4 +116,49 @@ button {
 #login.-active {
   background: #172852;
 }
+=======
+input:-ms-input-placeholder {
+  font-size: 16px;
+  font-weight: bold;
+  color: #cba89a;
+}
+
+input::-ms-input-placeholder {
+  font-size: 16px;
+  font-weight: bold;
+  color: #cba89a;
+}
+
+input::placeholder {
+  font-size: 16px;
+  font-weight: bold;
+  color: #cba89a;
+}
+
+label {
+  margin-top: 20px;
+}
+
+label:first-child {
+  margin-top: -30px;
+}
+
+button {
+  width: 125px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  background-color: #a3a3a3;
+  color: #ffffff;
+  border: 1px solid #a3a3a3;
+  border-radius: 5px;
+  padding: 5px;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+#login.-active {
+  background: #172852;
+}
+>>>>>>> 579eeae2f2f967ec311bd533008a684834644801
 /*# sourceMappingURL=n-login.css.map */
