@@ -288,9 +288,9 @@ $(document).ready(function(){
       };
   
       // 新增一般
-      let item_array = [];
-      item_array.push(item);
-      localStorage['item_List'] = [];
+      // let item_array = [];
+      // item_array.push(item);
+      // localStorage['item_List'] = [];
       localStorage.setItem('item_List', JSON.stringify(item_array));
   
       // 新增客製
