@@ -95,7 +95,8 @@ $(document).ready(function() {
 
     //登出
     $('.nav_logOut').click(function(){
-        localStorage.loginStatus='False';
+        console.log('log out');
+        localStorage.removeItem('loginStatus');
         location.reload();
         $('.nav_logOut').fadeOut();
     })
