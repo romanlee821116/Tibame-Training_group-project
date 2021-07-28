@@ -56,7 +56,7 @@ table {
 * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  font-family: '微軟正黑體';
+  font-family: "微軟正黑體";
   font-weight: bold;
 }
 
@@ -445,11 +445,11 @@ body {
   background: url(../images/psycho/question01_topic.jpg) no-repeat center center;
   background-size: cover;
   -webkit-mask: url(../images/psycho/picmask.png) no-repeat center center;
-  mask: url(../images/psycho/picmask.png) no-repeat center center;
+          mask: url(../images/psycho/picmask.png) no-repeat center center;
   -webkit-mask-size: cover;
-  mask-size: cover;
-  -webkit-transition: all .2s ease-out;
-  transition: all .2s ease-out;
+          mask-size: cover;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
 }
 
 /* 選項 */
@@ -477,15 +477,15 @@ body {
   background-color: white;
   -webkit-box-shadow: 0px 7px 13.8px 2.2px rgba(65, 31, 19, 0.18);
           box-shadow: 0px 7px 13.8px 2.2px rgba(65, 31, 19, 0.18);
-  -webkit-transition: all .2s ease-out;
-  transition: all .2s ease-out;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
 .psychoQuestionAns::after {
-  content: '';
+  content: "";
   padding-top: 100%;
 }
 
@@ -505,7 +505,8 @@ body {
   color: #bb866a;
 }
 
-.psychoQuestionAns:hover, .psychoQuestionAns:focus {
+.psychoQuestionAns:hover,
+.psychoQuestionAns:focus {
   -webkit-transform: scale(1.1, 1.1);
           transform: scale(1.1, 1.1);
   border-radius: 10px;
@@ -554,8 +555,8 @@ body {
   border-radius: 50px;
   position: absolute;
   /* bottom: 2vh; */
-  -webkit-transition: all .5s ease-out;
-  transition: all .5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
   z-index: 1;
 }
 
@@ -609,8 +610,8 @@ body {
   height: 0vh;
   background-color: rgba(63, 30, 18, 0.3);
   mix-blend-mode: multiply;
-  -webkit-transition: height .5s ease-in-out;
-  transition: height .5s ease-in-out;
+  -webkit-transition: height 0.5s ease-in-out;
+  transition: height 0.5s ease-in-out;
 }
 
 .psycho_resultContent {
@@ -701,8 +702,8 @@ body {
   height: 100%;
   background: url(../images/psycho/card_front_fire.png) no-repeat center center;
   background-size: cover;
-  -webkit-transition: .8s ease-in-out;
-  transition: .8s ease-in-out;
+  -webkit-transition: 0.8s ease-in-out;
+  transition: 0.8s ease-in-out;
   -webkit-transform: rotateY(180deg);
           transform: rotateY(180deg);
   -webkit-backface-visibility: hidden;
@@ -716,8 +717,8 @@ body {
   background: url(../images/psycho/card_back.png) no-repeat center center;
   background-size: cover;
   /* backface-visibility: hidden; */
-  -webkit-transition: .8s ease-in-out;
-  transition: .8s ease-in-out;
+  -webkit-transition: 0.8s ease-in-out;
+  transition: 0.8s ease-in-out;
   -webkit-transform: rotateY(180deg);
           transform: rotateY(180deg);
 }
@@ -739,12 +740,12 @@ body {
 .psycho_collectScreen .psychoLikePack {
   position: relative;
   display: inline-block;
-  width: calc((100% - 95px)/5);
+  width: calc((100% - 95px) / 5);
   margin-left: 20px;
   margin-bottom: 20px;
 }
 
-.psychoLikePack:nth-child(5n+1) {
+.psychoLikePack:nth-child(5n + 1) {
   margin-left: 0;
 }
 
@@ -776,12 +777,12 @@ body {
     width: 80%;
   }
   .psycho_collectScreen .psychoLikePack {
-    width: calc((100% - 72px)/4);
+    width: calc((100% - 72px) / 4);
   }
-  .psycho_collectScreen .psychoLikePack:nth-child(5n+1) {
+  .psycho_collectScreen .psychoLikePack:nth-child(5n + 1) {
     margin-left: 20px;
   }
-  .psycho_collectScreen .psychoLikePack:nth-child(4n+1) {
+  .psycho_collectScreen .psychoLikePack:nth-child(4n + 1) {
     margin-left: 0;
   }
 }
@@ -794,21 +795,21 @@ body {
     width: 80%;
   }
   .psycho_collectScreen .psychoLikePack {
-    width: calc((100% - 25px)/2);
+    width: calc((100% - 25px) / 2);
   }
-  .psycho_collectScreen .psychoLikePack:nth-child(5n+1) {
+  .psycho_collectScreen .psychoLikePack:nth-child(5n + 1) {
     margin-left: 20px;
   }
-  .psycho_collectScreen .psychoLikePack:nth-child(4n+1) {
+  .psycho_collectScreen .psychoLikePack:nth-child(4n + 1) {
     margin-left: 20px;
   }
-  .psycho_collectScreen .psychoLikePack:nth-child(2n+1) {
+  .psycho_collectScreen .psychoLikePack:nth-child(2n + 1) {
     margin-left: 0px;
   }
 }
 
 @media (max-width: 500px) {
-  .psychotest{
+  .psychotest {
     display: none;
   }
   .psycho_questionScreen {
@@ -832,7 +833,6 @@ body {
   }
   .psychoQuestion01Range {
     margin: 1vh auto 1vh;
-    width: 85%;
   }
   .psychoQuestionAnsRange {
     -webkit-box-orient: vertical;
@@ -849,3 +849,4 @@ body {
     /* opacity:.5; */
   }
 }
+/*# sourceMappingURL=psycho.css.map */

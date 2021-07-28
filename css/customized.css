@@ -660,25 +660,53 @@ body {
   -webkit-filter: brightness(100%);
           filter: brightness(100%);
   border-radius: 10px;
-<<<<<<< HEAD
-  animation: flash 3s linear infinite;
+  -webkit-animation: flash 3s linear infinite;
+          animation: flash 3s linear infinite;
+}
+
+@-webkit-keyframes flash {
+  0% {
+    -webkit-box-shadow: 0px 0px 10px 5px #f7c242;
+            box-shadow: 0px 0px 10px 5px #f7c242;
+  }
+  25% {
+    -webkit-box-shadow: 0px 0px 10px 5px transparent;
+            box-shadow: 0px 0px 10px 5px transparent;
+  }
+  50% {
+    -webkit-box-shadow: 0px 0px 10px 5px #f7c242;
+            box-shadow: 0px 0px 10px 5px #f7c242;
+  }
+  75% {
+    -webkit-box-shadow: 0px 0px 10px 5px transparent;
+            box-shadow: 0px 0px 10px 5px transparent;
+  }
+  100% {
+    -webkit-box-shadow: 0px 0px 10px 5px #f7c242;
+            box-shadow: 0px 0px 10px 5px #f7c242;
+  }
 }
 
 @keyframes flash {
   0% {
-    box-shadow: 0px 0px 10px 5px #f7c242;
+    -webkit-box-shadow: 0px 0px 10px 5px #f7c242;
+            box-shadow: 0px 0px 10px 5px #f7c242;
   }
   25% {
-    box-shadow: 0px 0px 10px 5px transparent;
+    -webkit-box-shadow: 0px 0px 10px 5px transparent;
+            box-shadow: 0px 0px 10px 5px transparent;
   }
   50% {
-    box-shadow: 0px 0px 10px 5px #f7c242;
+    -webkit-box-shadow: 0px 0px 10px 5px #f7c242;
+            box-shadow: 0px 0px 10px 5px #f7c242;
   }
   75% {
-    box-shadow: 0px 0px 10px 5px transparent;
+    -webkit-box-shadow: 0px 0px 10px 5px transparent;
+            box-shadow: 0px 0px 10px 5px transparent;
   }
   100% {
-    box-shadow: 0px 0px 10px 5px #f7c242;
+    -webkit-box-shadow: 0px 0px 10px 5px #f7c242;
+            box-shadow: 0px 0px 10px 5px #f7c242;
   }
 }
 
@@ -686,10 +714,6 @@ body {
   font-size: 12px;
   color: #bb866a;
   margin-top: 5px;
-=======
-  -webkit-box-shadow: 0px 0px 10px 5px #f7c242;
-          box-shadow: 0px 0px 10px 5px #f7c242;
->>>>>>> dev
 }
 
 .four_grid {
