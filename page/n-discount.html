@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>discount</title>
-    <link rel="stylesheet" href="../css/n-discount.css">
+    <link rel="stylesheet" href="../css/nt-discount.css">
     <link rel="stylesheet" href="../css/n-pop.css">
     <link rel="icon" href="../images/backend/n_logo.png">
 </head>
@@ -52,7 +52,7 @@
                     <ul v-for='(discount,key) in discounts' class="n-discount_discount">                              
                         <li>{{discount.折扣碼編號}}</li>
                         <li>{{discount.上架日期}}</li>
-                        <li>{{d_number_list[discount.折扣碼號]}}</li>
+                        <li>{{discount.折扣碼號}}</li>
                         <li>{{discount.標題}}</li>
                         <li :class="{'-active2':discounts[key].上下架 == '1'}">{{on_off_list[discount.上下架]}}</li> 
                         <li>{{discount.最後更新日期}}</li>
@@ -75,13 +75,10 @@
             
             <div class="n-discount_discount_mid">
                 <ul>                    
-                    <li>
-                        <section>折扣碼號:
-                            <select name="status" id="" v-model='d_number'>
-                                <option value="0">abcdefg</option>
-                                <option value="1">gtrfdes</option>
-                            </select>
-                        </section>
+                    <li>                                                  
+                        <label for="">折扣碼號:<span>
+                            <input type="text" v-model='d_number' placeholder="請輸入折扣碼號">
+                        </label>
                     
                         <section>上下架:
                             <select name="status" id="" v-model='on_off'>
@@ -170,7 +167,7 @@
         Vue.component('discount-add', {
             data(){
                 return{  //組件的變數寫在這裡
-                    d_number:0,
+                    d_number:'',
                     on_off:0,
                     d_main_title:'',
                     d_sec_title:'',
@@ -184,17 +181,14 @@
                 <div>
                     <div class="n-discount_edit">
 
-                        <p>編輯與查看</p>
+                        <p>新增折扣碼</p>
                         
                         <div class="n-discount_discount_mid">
                             <ul>                    
                                 <li>
-                                    <section>折扣碼號:
-                                        <select name="status" id="" v-model='d_number'>
-                                            <option value="0">abcdefg</option>
-                                            <option value="1">gtrfdes</option>
-                                        </select>
-                                    </section>
+                                    <label for="">折扣碼號:</span>
+                                        <input type="text" v-model='d_number' placeholder="請輸入折扣碼號">
+                                    </label>
                                 
                                     <section>上下架:
                                         <select name="status" id="" v-model='on_off'>
@@ -292,10 +286,9 @@
 
                 discount_number:'',
                 on_off_list:['上架', '下架'],
-                d_number_list:['abcdefg', 'gtrfdes'],
                 d_main_title:'',
                 d_sec_title:'',
-                d_number:0,
+                d_number:'',
                 on_off:0,       
                 d_main_content:'',
                 d_sec_content:'',         
@@ -321,7 +314,7 @@
                     {
                         '折扣碼編號':'1234567890',
                         '上架日期':'2021/01/01',
-                        '折扣碼號':0,
+                        '折扣碼號':'cscscs',
                         '標題':'新品上市新品上市新品上市新品上市新品上市',
                         '上下架':0,
                         '最後更新日期':'2021/03/01 16:16',
@@ -329,7 +322,7 @@
                     {
                         '折扣碼編號':'1234567890',
                         '上架日期':'2021/01/01',
-                        '折扣碼號':1,
+                        '折扣碼號':'sfeweggg',
                         '標題':'新品上市新品上市新品上市新品上市新品上市',
                         '上下架':1,
                         '最後更新日期':'2021/03/01 16:16',
@@ -337,7 +330,7 @@
                     {
                         '折扣碼編號':'1234567890',
                         '上架日期':'2021/01/01',
-                        '折扣碼號':0,
+                        '折扣碼號':'feffefgg',
                         '標題':'新品上市新品上市新品上市新品上市新品上市',
                         '上下架':0,
                         '最後更新日期':'2021/03/01 16:16',
@@ -461,7 +454,7 @@
                     {      
                         '折扣碼編號':'1234567890',
                         '上架日期':u_today,   
-                        '折扣碼號':parseInt(d_number),
+                        '折扣碼號':d_number,
                         '標題':d_main_title,
                         '上下架':parseInt(on_off),
                         '最後更新日期':last_today,  

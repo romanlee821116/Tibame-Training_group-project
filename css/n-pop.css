@@ -1,0 +1,71 @@
+@charset "UTF-8";
+/* 談窗 */
+.dbc {
+  /* border: 1px solid red; */
+  width: 385px;
+  height: 220px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  margin: 0;
+  padding: 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 50px 1fr 1fr;
+      grid-template-rows: 50px 1fr 1fr;
+  background-color: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  z-index: 5;
+}
+
+.dbc section {
+  background-color: #bb866a;
+}
+
+.dbc p {
+  font-size: 22px;
+  font-weight: bold;
+  color: #172852;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.dbc div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-column-gap: 30px;
+          column-gap: 30px;
+  height: 54px;
+  -ms-flex-item-align: center;
+      align-self: center;
+}
+
+.dbc button {
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #172852;
+  padding: 5px 25px;
+  margin: 0;
+  border: 1px solid #172852;
+  border-radius: 10px;
+  cursor: pointer;
+  height: 34px;
+}
+
+.dbc button:first-child {
+  background-color: #a3a3a3;
+  border: 1px solid #a3a3a3;
+}
+/*# sourceMappingURL=n-pop.css.map */
