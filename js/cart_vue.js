@@ -98,11 +98,19 @@ $(document).ready(function(){
         if(this.itemList.length == 0 && this.customization.length == 0){
           $('.cart_NoItem').css('display','block');
           $('.cart_checkout').css('background-color','#a3a3a3');
-          $('.cart_checkout').css('cursor','default')
+          $('.cart_checkout').css('cursor','default');
+          $('.cart_checkout').hover(function(){
+            $('.cart_checkout').css('background-color', '#a3a3a3');
+          });
         }else{
           $('.cart_NoItem').css('display','none');
           $('.cart_checkout').css('background-color','#172852');
           $('.cart_checkout').css('cursor','pointer')
+          $('.cart_checkout').hover(function(){
+            $('.cart_checkout').css('background-color', '#2e447c');
+          },function(){
+            $('.cart_checkout').css('background-color', '#172852');
+          });
         }
 
         // ===================== localStorage ======================
@@ -119,13 +127,20 @@ $(document).ready(function(){
         if(this.itemList.length == 0 && this.customization.length == 0){
           $('.cart_NoItem').css('display','block');
           $('.cart_checkout').css('background-color','#a3a3a3');
-          $('.cart_checkout').css('cursor','default')
+          $('.cart_checkout').css('cursor','default');
+          $('.cart_checkout').hover(function(){
+            $('.cart_checkout').css('background-color', '#a3a3a3');
+          });
         }else{
           $('.cart_NoItem').css('display','none');
           $('.cart_checkout').css('background-color','#172852');
           $('.cart_checkout').css('cursor','pointer')
+          $('.cart_checkout').hover(function(){
+            $('.cart_checkout').css('background-color', '#2e447c');
+          },function(){
+            $('.cart_checkout').css('background-color', '#172852');
+          });
         }
-
         // ===================== localStorage ======================
         let customization = this.customization;
         localStorage.setItem('customized_List', JSON.stringify(customization));
@@ -162,11 +177,19 @@ $(document).ready(function(){
         if(this.itemList.length == 0 && this.customization.length == 0){
           $('.cart_NoItem').css('display','block');
           $('.cart_checkout').css('background-color','#a3a3a3');
-          $('.cart_checkout').css('cursor','default')
+          $('.cart_checkout').css('cursor','default');
+          $('.cart_checkout').hover(function(){
+            $('.cart_checkout').css('background-color', '#a3a3a3');
+          });
         }else{
           $('.cart_NoItem').css('display','none');
           $('.cart_checkout').css('background-color','#172852');
           $('.cart_checkout').css('cursor','pointer')
+          $('.cart_checkout').hover(function(){
+            $('.cart_checkout').css('background-color', '#2e447c');
+          },function(){
+            $('.cart_checkout').css('background-color', '#172852');
+          });
         }
         
         // ===================== localStorage ======================
@@ -220,18 +243,26 @@ $(document).ready(function(){
         if(this.itemList.length == 0 && this.customization.length == 0){
           $('.cart_NoItem').css('display','block');
           $('.cart_checkout').css('background-color','#a3a3a3');
-          $('.cart_checkout').css('cursor','default')
+          $('.cart_checkout').css('cursor','default');
+          $('.cart_checkout').hover(function(){
+            $('.cart_checkout').css('background-color', '#a3a3a3');
+          });
         }else{
           $('.cart_NoItem').css('display','none');
           $('.cart_checkout').css('background-color','#172852');
           $('.cart_checkout').css('cursor','pointer')
+          $('.cart_checkout').hover(function(){
+            $('.cart_checkout').css('background-color', '#2e447c');
+          },function(){
+            $('.cart_checkout').css('background-color', '#172852');
+          });
         }
       },
       // 無商品就不能按前往結帳
       stopGo(e){
         if($('.cart_checkout').css('background-color') == 'rgb(163, 163, 163)'){
           e.preventDefault();
-          $('.cart_checkout').css('cursor','default')
+          $('.cart_checkout').css('cursor','default');
         }
       },
       // 關掉購物車
