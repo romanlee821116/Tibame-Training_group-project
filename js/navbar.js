@@ -1,12 +1,12 @@
 $(document).ready(function() {
     // $('.memberShow').load('login.html').hide();
-    if(window.location.pathname == '/index.html'){
-        console.log('homepage');
-        $('.memberShow').load('page/login.html').hide();
-    }else{
-        console.log('other');
-        $('.memberShow').load('login.html').hide();
-    };
+    // if(window.location.pathname == '/index.html'){
+    //     console.log('homepage');
+    //     $('.memberShow').load('page/login.html').hide();
+    // }else{
+    //     console.log('other');
+    //     $('.memberShow').load('login.html').hide();
+    // };
     // 儲存人頭為會員中心
     // window.onload = function (){
     //     if($('#loginFormPage .loginButton').hasClass('loginOK')){
@@ -30,8 +30,22 @@ $(document).ready(function() {
         $('.navbar').hide();
 
         // // 開啟登入註冊or會員中心
-        if($('#loginFormPage .loginButton').hasClass('loginOK') || $('.navbar-icon>a:first').hasClass('loginOK')){
-            // window.location.href = 'member.html';
+        // if($('#loginFormPage .loginButton').hasClass('loginOK') || $('.navbar-icon>a:first').hasClass('loginOK')){
+        //     // window.location.href = 'member.html';
+        //     if(window.location.pathname == '/index.html'){
+        //         window.location.href = 'page/member.html';
+        //     }else{
+        //         window.location.href = 'member.html';
+        //     };
+        // }else{
+        //     // $('.memberShow').fadeIn(700);
+        //     // $('.memberShow').load('login.html').fadeIn(700);
+        //     $('.memberShow').fadeIn(700);
+        //     $('body').addClass('stopScroll');
+        // };
+
+        if(localStorage.loginStatus=='Login'){
+             // window.location.href = 'member.html';
             if(window.location.pathname == '/index.html'){
                 window.location.href = 'page/member.html';
             }else{
@@ -43,6 +57,7 @@ $(document).ready(function() {
             $('.memberShow').fadeIn(700);
             $('body').addClass('stopScroll');
         };
+
         // ---------------------------------
 
         // 全部用跳轉頁面寫------------
@@ -65,7 +80,7 @@ $(document).ready(function() {
     
             // // 開啟登入註冊or會員中心
             $('.memberShow').fadeIn(700);
-             $('body').addClass('stopScroll');
+            $('body').addClass('stopScroll');
     
         });
 
@@ -77,5 +92,12 @@ $(document).ready(function() {
         $('.navbar').show();
         $('body').removeClass('stopScroll');
     });
+
+    //登出
+    $('.nav_logOut').click(function(){
+        localStorage.loginStatus='False';
+        location.reload();
+        $('.nav_logOut').fadeOut();
+    })
 
 });

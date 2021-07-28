@@ -114,6 +114,10 @@ body {
   color: #f7c242;
 }
 
+.navbar .navbar-icon .navbar_logOut {
+  display: none;
+}
+
 .navbar .ham_container {
   display: inline-block;
   cursor: pointer;
@@ -259,6 +263,19 @@ body {
   color: #fad689;
 }
 
+.product_backTop {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  display: block;
+  z-index: 100;
+}
+
+.product_backTop i {
+  color: #172852;
+  font-size: 28px;
+}
+
 #product_counter {
   position: absolute;
   top: 2px;
@@ -311,7 +328,7 @@ body {
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
-  z-index: 900;
+  z-index: 500;
 }
 
 .mediacolumn::before {

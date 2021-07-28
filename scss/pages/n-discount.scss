@@ -337,11 +337,20 @@ body{
     font-weight: bold;
     margin: 0;
     padding: 0;
+    display: flex;
+    column-gap: 10px;
 }
 
 .n-discount_discount_mid ul li:first-child{
     display: grid;
     grid-template-columns: 370px 370px;
+}
+
+.n-discount_discount_mid ul li:first-child input{
+    width: 250px;
+    border: 1.5px solid #cba89a;
+    border-radius: 3px;
+    margin-left: 6px;
 }
 
 .n-discount_discount_mid select{
@@ -368,7 +377,7 @@ body{
     font-size: 16px;
     color: #172852;
     font-weight: bold;
-    border: 1n-discount_5px solid #cba89a;
+    border: 1.5px solid #cba89a;
     width: 655px;
 }
 
@@ -488,8 +497,6 @@ body{
     background-color: #a3a3a3;
     border: 1px solid #a3a3a3;    
 }
-
-
 
 
 

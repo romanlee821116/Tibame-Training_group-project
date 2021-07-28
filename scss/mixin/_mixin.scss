@@ -45,6 +45,9 @@
                 color: $yellow;
             }
         }
+        .navbar_logOut{
+            display: none;
+        }
     }
     .ham_container {
         display: inline-block;
@@ -160,7 +163,7 @@
     transform: translateY(-50%);
     display: flex;
     flex-direction: column;
-    z-index: 900;
+    z-index: 500;
     @content;
     &::before {
         content: '';
@@ -500,4 +503,17 @@
         border: 3px solid $lightBlue;
     }
     @content;
+}
+
+//============回到最上面===========
+@mixin backTop($r:20px, $b:20px){
+    position: fixed;
+    right: $r;
+    bottom: $b;
+    display: block;
+    z-index: 100;
+    i{
+        color: $darkBlue;
+        font-size: 28px;
+    }
 }

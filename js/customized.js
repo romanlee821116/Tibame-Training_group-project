@@ -1,4 +1,6 @@
-$(function(){   
+$(document).ready(function(){
+
+
 
     Vue.component('checkBox',{
         template: `
@@ -149,6 +151,7 @@ $(function(){
             },
             //第二步回第一步
             p2_to_p1(){
+                $('.selected_item').removeClass('haveItem');
                 let winWidth = $(window).width();
                 $('.custom_btn_p1Next').fadeOut();
                 $('.cus_step1-box > div').css('opacity','1');
@@ -185,18 +188,13 @@ $(function(){
             
         }, 
     });
+
+})
+$(function(){
+
+
     //========================================jquery========================================
     var boxSize = 0;
-    // var customized= {
-    //     "boxType":"",
-    //     "productId":[],
-    //     "price":[],
-    //     "card":"",
-    //     "cardType":"",
-    //     "cardContent": "",
-    //     "iconType":[],
-    //     "time": new Date(),        
-    // };
     var customized= {
         "id": new Date(),
         "boxType":"",
@@ -302,7 +300,7 @@ $(function(){
             $('html,body').animate({ scrollTop: 0 },1000); 
             // currentBox = 0;
             $('.selected .custom_gridBox').addClass('choosenBox');  
-            $('.custom_reminder').remove();          
+            $('.custom_reminder').fadeOut();       
         }
     })
 
@@ -310,9 +308,11 @@ $(function(){
 //==================選擇內容下一步==================
     $('.s2_nextstep').click(function(){
         // console.log($('.selected .haveItem').length);
-        customized['boxType'] = $('.selected .haveItem').length;
-        $('.cus_reminderWord').hide();
+        customized['boxType'] = $('.selected .haveItem').length;        
         if($('.selected .haveItem').length==boxSize){
+
+            // $('.custom_gridBox').unbind('click');
+            $('.cus_reminderWord').hide();
             //商品清單出現
             $('.custom_itemConfirm_List').fadeIn();
             //隱藏產品
@@ -341,7 +341,6 @@ $(function(){
             //在清單秀出禮盒內容            
             // let total_box = $('.selected  img:nth-child(even)')
             let total_box = $('.haveItem');
-            // console.log(boxSize);
             if(boxSize==4){
                 $('.custom_itemConfirm_List > h2').html('四格小資組合 &nbsp $480');
                 customized['price']=480;
@@ -407,6 +406,7 @@ $(function(){
     })
 //==================內容確認返回上一步==================
     $('.cus_confirm_prestep').click(function(){
+        // $('.custom_gridBox').bind('click');
         $('.cus_reminderWord').show();
         $('.choosenBox img').css('animation','flash 3s linear infinite');
         //刪除清單
@@ -421,7 +421,7 @@ $(function(){
             transition: '1s',
         });
         //綁定變暗第一個亮
-        $('.custom_gridBox').removeClass('choosenBox');
+        $('.selected .custom_gridBox').removeClass('choosenBox');
         $('.custom_gridBox:nth-child(1)').addClass('choosenBox');  
         //確認按鈕消失
         $('.cus_confirm_btn').css('display', 'none');
@@ -981,7 +981,15 @@ $(function(){
         $('.custom_popUp_bg').fadeOut();
         // console.log('close');
     })    
-});
+
+})
+
+
+
+
+
+
+
 
 
 function touchHandler(event) {

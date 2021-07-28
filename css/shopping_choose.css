@@ -113,6 +113,10 @@ body {
   color: #f7c242;
 }
 
+.navbar .navbar-icon .navbar_logOut {
+  display: none;
+}
+
 .navbar .ham_container {
   display: inline-block;
   cursor: pointer;

@@ -288,6 +288,8 @@ $(document).ready(function(){
             }else{
                 window.location.href = 'member.html';
             };
+            localStorage.loginStatus = 'Login';
+            $('.nav_logOut').fadeIn();
         }
 
     });
@@ -388,7 +390,7 @@ $(document).ready(function(){
 
     // 註冊會員表單的縣市下拉市選單==============
     window.onload = function () {
-        console.log('addressssss');
+        // console.log('addressssss');
         //當頁面載完之後，用AddressSeleclList.Initialize()，
         //傳入要綁定的縣市下拉選單ID及鄉鎮市區下拉選單ID
         AddressSeleclList.Initialize('縣市1', '鄉鎮市區1');
