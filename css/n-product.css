@@ -1,6 +1,9 @@
 @charset "UTF-8";
 * {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   box-sizing: border-box;
   font-family: '微軟正黑體';
 }
@@ -198,7 +201,11 @@ body {
   padding: 10px;
   list-style: none;
   display: grid;
+<<<<<<< HEAD
   grid-template-columns: 1.2fr 1fr 1.2fr .8fr .8fr .8fr .9fr .7fr 1fr;
+=======
+  grid-template-columns: 1.2fr 1fr 1.2fr .8fr .8fr .8fr .9fr .7fr 107px;
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   column-gap: 10px;
   background-color: #cba89a;
   font-size: 16px;
@@ -212,7 +219,11 @@ body {
   padding: 10px;
   list-style: none;
   display: grid;
+<<<<<<< HEAD
   grid-template-columns: 1.2fr 1fr 1.2fr .8fr .8fr .8fr .9fr .7fr 1fr;
+=======
+  grid-template-columns: 1.2fr 1fr 1.2fr .8fr .8fr .8fr .9fr .7fr 107px;
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   column-gap: 10px;
   background-color: #ffffff;
   font-size: 16px;
@@ -221,6 +232,7 @@ body {
   align-items: center;
 }
 
+<<<<<<< HEAD
 .n-product_product li {
   white-space: nowrap;
   /* 不斷行 */
@@ -566,6 +578,8 @@ body {
           align-items: center;
 }
 
+=======
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
 .n-product_product:hover {
   background-color: #f8f2ed;
 }
@@ -599,12 +613,17 @@ body {
   margin: 0;
   padding: 0px;
   list-style: none;
+<<<<<<< HEAD
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+=======
+  display: flex;
+  justify-content: flex-end;
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   margin-top: 15px;
 }
 
@@ -629,7 +648,10 @@ body {
   color: #ffffff;
 }
 
+<<<<<<< HEAD
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
+=======
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
 .n-product_footer ul li:first-child {
   border-left: 1px solid #bb866a;
 }
@@ -637,6 +659,7 @@ body {
 /* 編輯 */
 .n-product_edit {
   width: 800px;
+<<<<<<< HEAD
 <<<<<<< HEAD
   /* height: 1070px; */
   height: 500px;
@@ -656,16 +679,24 @@ body {
   background-color: #ffffff;
   overflow-y: scroll;
 =======
+=======
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   height: 90%;
   max-height: 1100px;
   /* height: 500px; */
   /* border: 1px solid red; */
+<<<<<<< HEAD
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
   -ms-grid-rows: 44px 980px 54px;
       grid-template-rows: 44px 980px 54px;
+=======
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 44px 980px 54px;
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   border-radius: 10px;
   overflow: hidden;
   /* position: relative; */
@@ -673,12 +704,19 @@ body {
   position: fixed;
   left: 50%;
   top: 50%;
+<<<<<<< HEAD
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   z-index: 2;
   background-color: #ffffff;
   overflow-y: auto;
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
+=======
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  background-color: #ffffff;
+  overflow-y: auto;
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
 }
 
 .n-product_edit > p {
@@ -689,6 +727,7 @@ body {
   color: #ffffff;
   background-color: #bb866a;
 <<<<<<< HEAD
+<<<<<<< HEAD
   grid-area: 1/1/2/3;
 =======
   -ms-grid-row: 1;
@@ -698,6 +737,9 @@ body {
   grid-area: 1/1/2/3;
   position: -webkit-sticky;
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
+=======
+  grid-area: 1/1/2/3;
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   position: sticky;
   top: 0;
   z-index: 3;
@@ -713,10 +755,14 @@ body {
   padding: 0px;
   list-style: none;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   display: grid;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 2fr 3fr;
   justify-content: center;
   align-items: center;
+<<<<<<< HEAD
 =======
   display: -ms-grid;
   display: grid;
@@ -729,6 +775,8 @@ body {
       -ms-flex-align: center;
           align-items: center;
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
+=======
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
 }
 
 .n-product_edit_left ul li {
@@ -741,6 +789,9 @@ body {
 
 .n-product_edit_left ul li:nth-child(10) {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   transform: translateX(-15px);
 }
 
@@ -754,6 +805,7 @@ body {
   display: flex;
   justify-content: flex-end;
   column-gap: 5px;
+<<<<<<< HEAD
 =======
   -webkit-transform: translateX(-15px);
           transform: translateX(-15px);
@@ -780,6 +832,8 @@ body {
   -webkit-column-gap: 5px;
           column-gap: 5px;
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
+=======
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
 }
 
 .n-product_edit_left select {
@@ -792,12 +846,16 @@ body {
   overflow: hidden;
   cursor: pointer;
 <<<<<<< HEAD
+<<<<<<< HEAD
   appearance: none;
 =======
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
+=======
+  appearance: none;
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   outline: none;
   background: none;
   background-image: url("../images/backend/select.png");
@@ -827,10 +885,14 @@ body {
   margin: 0;
   padding: 0px;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   display: grid;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
   justify-content: center;
   align-items: center;
+<<<<<<< HEAD
 =======
   display: -ms-grid;
   display: grid;
@@ -843,6 +905,8 @@ body {
       -ms-flex-align: center;
           align-items: center;
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
+=======
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   row-gap: 20px;
   padding-top: 20px;
   padding-bottom: 20px;
@@ -907,11 +971,15 @@ body {
   top: 50%;
   left: 50%;
 <<<<<<< HEAD
+<<<<<<< HEAD
   transform: translate(-50%, -50%);
 =======
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
+=======
+  transform: translate(-50%, -50%);
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
 }
 
 .n-product_edit_right div.n-product_img > p {
@@ -924,6 +992,7 @@ body {
 }
 
 .n-product_editbtn {
+<<<<<<< HEAD
 <<<<<<< HEAD
   display: flex;
   justify-content: center;
@@ -942,6 +1011,11 @@ body {
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
+=======
+  display: flex;
+  justify-content: center;
+  column-gap: 30px;
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   grid-area: 3/1/4/3;
   height: 54px;
   /* border: 1px solid red; */

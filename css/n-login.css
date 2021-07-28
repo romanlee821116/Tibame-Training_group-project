@@ -1,11 +1,15 @@
 @charset "UTF-8";
 * {
 <<<<<<< HEAD
+<<<<<<< HEAD
   box-sizing: border-box;
 =======
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
+=======
+  box-sizing: border-box;
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   font-family: '微軟正黑體';
 }
 
@@ -16,6 +20,7 @@ body {
 
 .n-login_header {
   /* border: 1px solid red; */
+<<<<<<< HEAD
 <<<<<<< HEAD
   display: flex;
   flex-direction: column;
@@ -32,6 +37,11 @@ body {
       -ms-flex-align: center;
           align-items: center;
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
+=======
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   row-gap: 20px;
   padding-top: 100px;
   padding-bottom: 70px;
@@ -56,6 +66,7 @@ p {
 form {
   /* border: 1px solid blue; */
 <<<<<<< HEAD
+<<<<<<< HEAD
   display: flex;
   flex-direction: column;
 =======
@@ -67,6 +78,10 @@ form {
       -ms-flex-direction: column;
           flex-direction: column;
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
+=======
+  display: flex;
+  flex-direction: column;
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   width: 300px;
   margin: 0 auto;
   font-size: 16px;
@@ -82,6 +97,7 @@ input {
   color: #172852;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 input::placeholder {
 =======
@@ -129,6 +145,8 @@ input::-ms-input-placeholder {
   color: #cba89a;
 }
 
+=======
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
 input::placeholder {
   font-size: 16px;
   font-weight: bold;
@@ -145,9 +163,7 @@ label:first-child {
 
 button {
   width: 125px;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  align-self: center;
   background-color: #a3a3a3;
   color: #ffffff;
   border: 1px solid #a3a3a3;

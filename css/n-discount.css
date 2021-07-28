@@ -1,6 +1,9 @@
 @charset "UTF-8";
 * {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   box-sizing: border-box;
   font-family: '微軟正黑體';
 }
@@ -198,7 +201,11 @@ body {
   padding: 10px;
   list-style: none;
   display: grid;
+<<<<<<< HEAD
   grid-template-columns: 1fr 1fr 1fr 2.5fr .6fr 1.2fr 1fr;
+=======
+  grid-template-columns: 1fr 1fr 1fr 2.5fr .6fr 1.2fr 107px;
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   column-gap: 10px;
   background-color: #cba89a;
   font-size: 16px;
@@ -212,7 +219,11 @@ body {
   padding: 10px;
   list-style: none;
   display: grid;
+<<<<<<< HEAD
   grid-template-columns: 1fr 1fr 1fr 2.5fr .6fr 1.2fr 1fr;
+=======
+  grid-template-columns: 1fr 1fr 1fr 2.5fr .6fr 1.2fr 107px;
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   column-gap: 10px;
   background-color: #ffffff;
   font-size: 16px;
@@ -221,6 +232,7 @@ body {
   align-items: center;
 }
 
+<<<<<<< HEAD
 .n-discount_discount li {
   /* -webkit-box 尚在實驗性的屬性值 */
   display: -webkit-box;
@@ -535,6 +547,8 @@ body {
           align-items: center;
 }
 
+=======
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
 .n-discount_discount:hover {
   background-color: #f8f2ed;
 }
@@ -543,7 +557,10 @@ body {
   /* -webkit-box 尚在實驗性的屬性值 */
   display: -webkit-box;
   /* 用來設定一個元素是水平還是垂直方向排列其內容 */
+<<<<<<< HEAD
   -webkit-box-orient: vertical;
+=======
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   /* 限制指定的行數 */
   -webkit-line-clamp: 2;
   overflow: hidden;
@@ -564,12 +581,16 @@ body {
   padding-right: 60px;
 }
 
+<<<<<<< HEAD
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
+=======
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
 .n-discount_footer ul {
   /* border: 1px solid #bb866a; */
   margin: 0;
   padding: 0px;
   list-style: none;
+<<<<<<< HEAD
 <<<<<<< HEAD
   display: flex;
   justify-content: flex-end;
@@ -581,6 +602,10 @@ body {
       -ms-flex-pack: end;
           justify-content: flex-end;
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
+=======
+  display: flex;
+  justify-content: flex-end;
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   margin-top: 15px;
 }
 
@@ -613,6 +638,7 @@ body {
 .n-discount_edit {
   width: 800px;
 <<<<<<< HEAD
+<<<<<<< HEAD
   /* height: 1200px; */
   height: 500px;
   border: 1px solid red;
@@ -630,14 +656,21 @@ body {
   background-color: #ffffff;
   overflow-y: scroll;
 =======
+=======
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   height: 90%;
   max-height: 1200px;
   /* height: 500px; */
   /* border: 1px solid red; */
+<<<<<<< HEAD
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: 44px 430px 640px 54px;
       grid-template-rows: 44px 430px 640px 54px;
+=======
+  display: grid;
+  grid-template-rows: 44px 430px 640px 54px;
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   border-radius: 10px;
   overflow: hidden;
   /* position: relative; */
@@ -645,12 +678,19 @@ body {
   position: fixed;
   left: 50%;
   top: 50%;
+<<<<<<< HEAD
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   z-index: 2;
   background-color: #ffffff;
   overflow-y: auto;
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
+=======
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  background-color: #ffffff;
+  overflow-y: auto;
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
 }
 
 .n-discount_edit > p {
@@ -661,9 +701,12 @@ body {
   color: #ffffff;
   background-color: #bb866a;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   position: -webkit-sticky;
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
+=======
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   position: sticky;
   top: 0;
   z-index: 3;
@@ -674,10 +717,14 @@ body {
   padding: 20px;
   list-style: none;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   display: grid;
   grid-template-rows: 1fr 1fr 1fr 3fr 3fr;
   justify-items: center;
   align-items: center;
+<<<<<<< HEAD
 =======
   display: -ms-grid;
   display: grid;
@@ -688,6 +735,8 @@ body {
       -ms-flex-align: center;
           align-items: center;
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
+=======
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   row-gap: 15px;
 }
 
@@ -701,6 +750,7 @@ body {
 
 .n-discount_discount_mid ul li:first-child {
 <<<<<<< HEAD
+<<<<<<< HEAD
   display: grid;
   grid-template-columns: 370px 370px;
 =======
@@ -709,6 +759,10 @@ body {
   -ms-grid-columns: 370px 370px;
       grid-template-columns: 370px 370px;
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
+=======
+  display: grid;
+  grid-template-columns: 370px 370px;
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
 }
 
 .n-discount_discount_mid select {
@@ -721,12 +775,16 @@ body {
   overflow: hidden;
   cursor: pointer;
 <<<<<<< HEAD
+<<<<<<< HEAD
   appearance: none;
 =======
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
+=======
+  appearance: none;
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   outline: none;
   background: none;
   background-image: url("../images/backend/select.png");
@@ -754,6 +812,7 @@ body {
 
 .n-discount_discount_bot {
 <<<<<<< HEAD
+<<<<<<< HEAD
   display: grid;
   grid-template-columns: 1fr 1fr;
 =======
@@ -762,6 +821,10 @@ body {
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
+=======
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   justify-items: center;
   padding: 20px;
 }
@@ -825,11 +888,15 @@ body {
   top: 50%;
   left: 50%;
 <<<<<<< HEAD
+<<<<<<< HEAD
   transform: translate(-50%, -50%);
 =======
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
+=======
+  transform: translate(-50%, -50%);
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
 }
 
 .n-discount_discount_bot div.n-discount_img > p {
@@ -842,6 +909,7 @@ body {
 }
 
 .n-discount_editbtn {
+<<<<<<< HEAD
 <<<<<<< HEAD
   display: flex;
   justify-content: center;
@@ -856,6 +924,11 @@ body {
   -webkit-column-gap: 30px;
           column-gap: 30px;
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
+=======
+  display: flex;
+  justify-content: center;
+  column-gap: 30px;
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   height: 54px;
   /* border: 1px solid red; */
 }

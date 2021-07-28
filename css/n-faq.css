@@ -1,11 +1,15 @@
 @charset "UTF-8";
 * {
 <<<<<<< HEAD
+<<<<<<< HEAD
   box-sizing: border-box;
 =======
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
+=======
+  box-sizing: border-box;
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   font-family: '微軟正黑體';
 }
 
@@ -16,6 +20,7 @@ body {
 }
 
 .n-faq_header {
+<<<<<<< HEAD
 <<<<<<< HEAD
   display: flex;
   align-items: center;
@@ -31,6 +36,11 @@ body {
       -ms-flex-pack: start;
           justify-content: flex-start;
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
+=======
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   background-image: url("../images/backend/loginbg.png");
   background-repeat: no-repeat;
   background-position: center top;
@@ -41,10 +51,14 @@ body {
 
 .n-faq_logo {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   flex-grow: 2;
   display: flex;
   align-items: center;
   column-gap: 20px;
+<<<<<<< HEAD
 =======
   -webkit-box-flex: 2;
       -ms-flex-positive: 2;
@@ -58,6 +72,8 @@ body {
   -webkit-column-gap: 20px;
           column-gap: 20px;
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
+=======
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
 }
 
 .n-faq_logo img {
@@ -74,6 +90,7 @@ body {
 
 .n-faq_logout {
 <<<<<<< HEAD
+<<<<<<< HEAD
   display: flex;
   align-items: center;
   column-gap: 10px;
@@ -87,6 +104,11 @@ body {
   -webkit-column-gap: 10px;
           column-gap: 10px;
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
+=======
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   cursor: pointer;
 }
 
@@ -100,6 +122,7 @@ body {
 
 .n-faq_main {
 <<<<<<< HEAD
+<<<<<<< HEAD
   display: flex;
   justify-content: flex-start;
 =======
@@ -110,10 +133,15 @@ body {
       -ms-flex-pack: start;
           justify-content: flex-start;
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
+=======
+  display: flex;
+  justify-content: flex-start;
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   padding: 0 60px;
 }
 
 .n-faq_left {
+<<<<<<< HEAD
 <<<<<<< HEAD
   display: flex;
   flex-direction: column;
@@ -126,6 +154,10 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
+=======
+  display: flex;
+  flex-direction: column;
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   width: 15%;
 }
 
@@ -166,6 +198,7 @@ body {
 .n-faq_right form {
   /* border: 1px solid blue; */
 <<<<<<< HEAD
+<<<<<<< HEAD
   display: flex;
   justify-content: flex-end;
 =======
@@ -176,6 +209,10 @@ body {
       -ms-flex-pack: end;
           justify-content: flex-end;
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
+=======
+  display: flex;
+  justify-content: flex-end;
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   margin-bottom: 20px;
 }
 
@@ -193,6 +230,7 @@ body {
   width: 280px;
   margin-left: 40px;
 <<<<<<< HEAD
+<<<<<<< HEAD
   display: flex;
   column-gap: 40px;
   align-items: flex-end;
@@ -206,6 +244,11 @@ body {
       -ms-flex-align: end;
           align-items: flex-end;
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
+=======
+  display: flex;
+  column-gap: 40px;
+  align-items: flex-end;
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
 }
 
 .n-faq_faqbtn button {
@@ -231,11 +274,15 @@ body {
 
 .n-faq_right form section {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   flex-grow: 2;
   display: flex;
   justify-content: flex-end;
   column-gap: 10px;
   align-items: flex-end;
+<<<<<<< HEAD
 =======
   -webkit-box-flex: 2;
       -ms-flex-positive: 2;
@@ -252,6 +299,8 @@ body {
       -ms-flex-align: end;
           align-items: flex-end;
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
+=======
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
 }
 
 .n-faq_right form section label {
@@ -285,6 +334,7 @@ body {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 .n-faq_right form section input::-webkit-input-placeholder {
   color: #cba89a;
@@ -302,6 +352,8 @@ body {
 }
 
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
+=======
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
 .n-faq_right form section input::placeholder {
   color: #cba89a;
   font-weight: bold;
@@ -312,6 +364,7 @@ body {
   margin: 0;
   padding: 10px;
   list-style: none;
+<<<<<<< HEAD
 <<<<<<< HEAD
   display: grid;
   grid-template-columns: 1fr 1fr 2.5fr 3.5fr 1fr;
@@ -324,6 +377,11 @@ body {
   -webkit-column-gap: 10px;
           column-gap: 10px;
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
+=======
+  display: grid;
+  grid-template-columns: 1fr 1fr 2.5fr 3.5fr 107px;
+  column-gap: 10px;
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   background-color: #cba89a;
   font-size: 16px;
   color: #ffffff;
@@ -336,6 +394,7 @@ body {
   padding: 10px;
   list-style: none;
 <<<<<<< HEAD
+<<<<<<< HEAD
   display: grid;
   grid-template-columns: 1fr 1fr 2.5fr 3.5fr 1fr;
   column-gap: 10px;
@@ -347,10 +406,16 @@ body {
   -webkit-column-gap: 10px;
           column-gap: 10px;
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
+=======
+  display: grid;
+  grid-template-columns: 1fr 1fr 2.5fr 3.5fr 107px;
+  column-gap: 10px;
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   background-color: #ffffff;
   font-size: 16px;
   color: #172852;
   font-weight: bold;
+<<<<<<< HEAD
 <<<<<<< HEAD
   align-items: center;
 }
@@ -365,6 +430,11 @@ body {
           align-items: center;
 }
 
+=======
+  align-items: center;
+}
+
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
 .n-faq_faq:hover {
   background-color: #f8f2ed;
 }
@@ -373,7 +443,10 @@ body {
   /* -webkit-box 尚在實驗性的屬性值 */
   display: -webkit-box;
   /* 用來設定一個元素是水平還是垂直方向排列其內容 */
+<<<<<<< HEAD
   -webkit-box-orient: vertical;
+=======
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   /* 限制指定的行數 */
   -webkit-line-clamp: 2;
   overflow: hidden;
@@ -383,8 +456,11 @@ body {
   /* -webkit-box 尚在實驗性的屬性值 */
   display: -webkit-box;
   /* 用來設定一個元素是水平還是垂直方向排列其內容 */
+<<<<<<< HEAD
   -webkit-box-orient: vertical;
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
+=======
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   /* 限制指定的行數 */
   -webkit-line-clamp: 2;
   overflow: hidden;
@@ -411,6 +487,7 @@ body {
   padding: 0px;
   list-style: none;
 <<<<<<< HEAD
+<<<<<<< HEAD
   display: flex;
   justify-content: flex-end;
 =======
@@ -421,6 +498,10 @@ body {
       -ms-flex-pack: end;
           justify-content: flex-end;
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
+=======
+  display: flex;
+  justify-content: flex-end;
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   margin-top: 15px;
 }
 
@@ -454,6 +535,7 @@ body {
   width: 800px;
   /* height: 500px; */
 <<<<<<< HEAD
+<<<<<<< HEAD
   border: 1px solid red;
   display: grid;
   grid-template-rows: 44px 300px 54px;
@@ -464,6 +546,11 @@ body {
   -ms-grid-rows: 44px 300px 54px;
       grid-template-rows: 44px 300px 54px;
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
+=======
+  /* border: 1px solid red; */
+  display: grid;
+  grid-template-rows: 44px 300px 54px;
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   border-radius: 10px;
   overflow: hidden;
   /* position: relative;
@@ -472,11 +559,15 @@ body {
   left: 50%;
   top: 50%;
 <<<<<<< HEAD
+<<<<<<< HEAD
   transform: translate(-50%, -50%);
 =======
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
+=======
+  transform: translate(-50%, -50%);
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   z-index: 2;
   background-color: #ffffff;
   /* overflow-y: scroll; */
@@ -490,9 +581,12 @@ body {
   color: #ffffff;
   background-color: #bb866a;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   position: -webkit-sticky;
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
+=======
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   position: sticky;
   top: 0;
   z-index: 3;
@@ -503,10 +597,14 @@ body {
   padding: 20px;
   list-style: none;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   display: grid;
   grid-template-rows: 1fr 1fr 5fr;
   justify-items: flex-start;
   align-items: center;
+<<<<<<< HEAD
 =======
   display: -ms-grid;
   display: grid;
@@ -517,6 +615,8 @@ body {
       -ms-flex-align: center;
           align-items: center;
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
+=======
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   row-gap: 15px;
 }
 
@@ -530,6 +630,7 @@ body {
 
 .n-faq_edit ul li:last-child {
 <<<<<<< HEAD
+<<<<<<< HEAD
   display: flex;
   column-gap: 3px;
 =======
@@ -539,6 +640,10 @@ body {
   -webkit-column-gap: 3px;
           column-gap: 3px;
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
+=======
+  display: flex;
+  column-gap: 3px;
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
 }
 
 .n-faq_edit select {
@@ -551,12 +656,16 @@ body {
   overflow: hidden;
   cursor: pointer;
 <<<<<<< HEAD
+<<<<<<< HEAD
   appearance: none;
 =======
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
+=======
+  appearance: none;
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   outline: none;
   background: none;
   background-image: url("../images/backend/select.png");
@@ -584,6 +693,7 @@ body {
 
 .n-faq_editbtn {
 <<<<<<< HEAD
+<<<<<<< HEAD
   display: flex;
   justify-content: center;
   column-gap: 30px;
@@ -597,6 +707,11 @@ body {
   -webkit-column-gap: 30px;
           column-gap: 30px;
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
+=======
+  display: flex;
+  justify-content: center;
+  column-gap: 30px;
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   height: 54px;
   /* border: 1px solid red; */
 }

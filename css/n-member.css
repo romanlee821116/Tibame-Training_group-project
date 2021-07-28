@@ -1,11 +1,15 @@
 @charset "UTF-8";
 * {
 <<<<<<< HEAD
+<<<<<<< HEAD
   box-sizing: border-box;
 =======
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
+=======
+  box-sizing: border-box;
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   font-family: '微軟正黑體';
 }
 
@@ -16,6 +20,7 @@ body {
 }
 
 .n-member_header {
+<<<<<<< HEAD
 <<<<<<< HEAD
   display: flex;
   align-items: center;
@@ -31,6 +36,11 @@ body {
       -ms-flex-pack: start;
           justify-content: flex-start;
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
+=======
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   background-image: url("../images/backend/loginbg.png");
   background-repeat: no-repeat;
   background-position: center top;
@@ -41,10 +51,14 @@ body {
 
 .n-member_logo {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   flex-grow: 2;
   display: flex;
   align-items: center;
   column-gap: 20px;
+<<<<<<< HEAD
 =======
   -webkit-box-flex: 2;
       -ms-flex-positive: 2;
@@ -58,6 +72,8 @@ body {
   -webkit-column-gap: 20px;
           column-gap: 20px;
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
+=======
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
 }
 
 .n-member_logo img {
@@ -74,6 +90,7 @@ body {
 
 .n-member_logout {
 <<<<<<< HEAD
+<<<<<<< HEAD
   display: flex;
   align-items: center;
   column-gap: 10px;
@@ -87,6 +104,11 @@ body {
   -webkit-column-gap: 10px;
           column-gap: 10px;
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
+=======
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   cursor: pointer;
 }
 
@@ -100,6 +122,7 @@ body {
 
 .n-member_main {
 <<<<<<< HEAD
+<<<<<<< HEAD
   display: flex;
   justify-content: flex-start;
 =======
@@ -110,10 +133,15 @@ body {
       -ms-flex-pack: start;
           justify-content: flex-start;
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
+=======
+  display: flex;
+  justify-content: flex-start;
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   padding: 0 60px;
 }
 
 .n-member_left {
+<<<<<<< HEAD
 <<<<<<< HEAD
   display: flex;
   flex-direction: column;
@@ -126,6 +154,10 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
+=======
+  display: flex;
+  flex-direction: column;
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   width: 15%;
 }
 
@@ -166,6 +198,7 @@ body {
 .n-member_right form {
   /* border: 1px solid blue; */
 <<<<<<< HEAD
+<<<<<<< HEAD
   display: flex;
   justify-content: flex-end;
 =======
@@ -176,6 +209,10 @@ body {
       -ms-flex-pack: end;
           justify-content: flex-end;
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
+=======
+  display: flex;
+  justify-content: flex-end;
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   margin-bottom: 20px;
 }
 
@@ -190,11 +227,15 @@ body {
 
 .n-member_right form section {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   flex-grow: 2;
   display: flex;
   justify-content: flex-end;
   column-gap: 10px;
   align-items: flex-end;
+<<<<<<< HEAD
 =======
   -webkit-box-flex: 2;
       -ms-flex-positive: 2;
@@ -211,6 +252,8 @@ body {
       -ms-flex-align: end;
           align-items: flex-end;
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
+=======
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
 }
 
 .n-member_right form section label {
@@ -244,6 +287,7 @@ body {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 .n-member_right form section input::-webkit-input-placeholder {
   color: #cba89a;
@@ -261,6 +305,8 @@ body {
 }
 
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
+=======
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
 .n-member_right form section input::placeholder {
   color: #cba89a;
   font-weight: bold;
@@ -271,6 +317,7 @@ body {
   margin: 0;
   padding: 10px;
   list-style: none;
+<<<<<<< HEAD
 <<<<<<< HEAD
   display: grid;
   grid-template-columns: 1fr 2.5fr 1fr 1fr .8fr 1fr 1fr;
@@ -283,6 +330,11 @@ body {
   -webkit-column-gap: 10px;
           column-gap: 10px;
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
+=======
+  display: grid;
+  grid-template-columns: 1fr 2.5fr 1fr 1fr .8fr 1fr 107px;
+  column-gap: 10px;
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   background-color: #cba89a;
   font-size: 16px;
   color: #ffffff;
@@ -295,6 +347,7 @@ body {
   padding: 10px;
   list-style: none;
 <<<<<<< HEAD
+<<<<<<< HEAD
   display: grid;
   grid-template-columns: 1fr 2.5fr 1fr 1fr .8fr 1fr 1fr;
   column-gap: 10px;
@@ -306,21 +359,33 @@ body {
   -webkit-column-gap: 10px;
           column-gap: 10px;
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
+=======
+  display: grid;
+  grid-template-columns: 1fr 2.5fr 1fr 1fr .8fr 1fr 107px;
+  column-gap: 10px;
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   background-color: #ffffff;
   font-size: 16px;
   color: #172852;
   font-weight: bold;
+<<<<<<< HEAD
 <<<<<<< HEAD
   align-items: center;
 =======
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+=======
+  align-items: center;
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
 }
 
 .n-member_member:hover {
   background-color: #f8f2ed;
+<<<<<<< HEAD
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
+=======
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
 }
 
 .n-member_member li {
@@ -353,6 +418,7 @@ body {
   padding: 0px;
   list-style: none;
 <<<<<<< HEAD
+<<<<<<< HEAD
   display: flex;
   justify-content: flex-end;
 =======
@@ -363,6 +429,10 @@ body {
       -ms-flex-pack: end;
           justify-content: flex-end;
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
+=======
+  display: flex;
+  justify-content: flex-end;
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   margin-top: 15px;
 }
 
@@ -396,6 +466,7 @@ body {
   height: 300px;
   /* border: 1px solid red; */
 <<<<<<< HEAD
+<<<<<<< HEAD
   display: flex;
   flex-direction: column;
 =======
@@ -407,17 +478,25 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
+=======
+  display: flex;
+  flex-direction: column;
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   border-radius: 10px;
   overflow: hidden;
   position: fixed;
   left: 50%;
   top: 50%;
 <<<<<<< HEAD
+<<<<<<< HEAD
   transform: translate(-50%, -50%);
 =======
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
+=======
+  transform: translate(-50%, -50%);
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   z-index: 2;
   background-color: #ffffff;
   /* display: none; */
@@ -437,6 +516,7 @@ body {
   padding: 0px;
   list-style: none;
 <<<<<<< HEAD
+<<<<<<< HEAD
   display: grid;
   grid-template-columns: 1fr .9fr;
 =======
@@ -445,6 +525,10 @@ body {
   -ms-grid-columns: 1fr .9fr;
       grid-template-columns: 1fr .9fr;
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
+=======
+  display: grid;
+  grid-template-columns: 1fr .9fr;
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   padding: 15px 30px;
   row-gap: 20px;
 }
@@ -467,12 +551,16 @@ body {
   overflow: hidden;
   cursor: pointer;
 <<<<<<< HEAD
+<<<<<<< HEAD
   appearance: none;
 =======
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
+=======
+  appearance: none;
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   outline: none;
   background: none;
   background-image: url("../images/backend/select.png");
@@ -483,6 +571,7 @@ body {
 
 .n-member_editbtn {
   margin-top: 20px;
+<<<<<<< HEAD
 <<<<<<< HEAD
   display: flex;
   justify-content: center;
@@ -497,6 +586,11 @@ body {
   -webkit-column-gap: 30px;
           column-gap: 30px;
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
+=======
+  display: flex;
+  justify-content: center;
+  column-gap: 30px;
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
 }
 
 .n-member_editbtn button {
@@ -512,10 +606,14 @@ body {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 .n-member_editbtn .close {
 =======
 .n-member_editbtn .n-member_close {
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
+=======
+.n-member_editbtn .n-member_close {
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   background-color: #a3a3a3;
   border: 1px solid #a3a3a3;
 }

@@ -1,6 +1,9 @@
 @charset "UTF-8";
 * {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   box-sizing: border-box;
   font-family: '微軟正黑體';
 }
@@ -168,7 +171,11 @@ body {
   padding: 10px;
   list-style: none;
   display: grid;
+<<<<<<< HEAD
   grid-template-columns: .8fr 1fr 2fr .8fr .8fr .8fr 1fr 1fr;
+=======
+  grid-template-columns: .8fr 1fr 2fr .8fr .8fr .8fr 1fr 107px;
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   column-gap: 10px;
   background-color: #cba89a;
   font-size: 16px;
@@ -182,7 +189,11 @@ body {
   padding: 10px;
   list-style: none;
   display: grid;
+<<<<<<< HEAD
   grid-template-columns: .8fr 1fr 2fr .8fr .8fr .8fr 1fr 1fr;
+=======
+  grid-template-columns: .8fr 1fr 2fr .8fr .8fr .8fr 1fr 107px;
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   column-gap: 10px;
   background-color: #ffffff;
   font-size: 16px;
@@ -191,6 +202,7 @@ body {
   align-items: center;
 }
 
+<<<<<<< HEAD
 .n-order_order li {
   white-space: nowrap;
   /* 不斷行 */
@@ -501,6 +513,8 @@ body {
           align-items: center;
 }
 
+=======
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
 .n-order_order:hover {
   background-color: #f8f2ed;
 }
@@ -534,12 +548,17 @@ body {
   margin: 0;
   padding: 0px;
   list-style: none;
+<<<<<<< HEAD
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+=======
+  display: flex;
+  justify-content: flex-end;
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   margin-top: 15px;
 }
 
@@ -564,7 +583,10 @@ body {
   color: #ffffff;
 }
 
+<<<<<<< HEAD
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
+=======
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
 .n-order_footer ul li:first-child {
   border-left: 1px solid #bb866a;
 }
@@ -573,15 +595,21 @@ body {
 .n-order_edit {
   width: 750px;
 <<<<<<< HEAD
+<<<<<<< HEAD
   height: 500px;
 =======
   height: 90%;
   max-height: 1150px;
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
+=======
+  height: 90%;
+  max-height: 1150px;
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   /* border: 1px solid red; */
   border-radius: 10px;
   overflow: hidden;
   position: fixed;
+<<<<<<< HEAD
 <<<<<<< HEAD
   left: 50%;
   top: 50%;
@@ -599,6 +627,15 @@ body {
   background-color: #ffffff;
   overflow-y: auto;
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
+=======
+  /* position: relative; */
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  background-color: #ffffff;
+  overflow-y: auto;
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
 }
 
 .n-order_edit > p {
@@ -609,9 +646,12 @@ body {
   color: #ffffff;
   background-color: #bb866a;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   position: -webkit-sticky;
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
+=======
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   position: sticky;
   top: 0;
 }
@@ -639,6 +679,7 @@ body {
   padding: 15px 20px;
   list-style: none;
 <<<<<<< HEAD
+<<<<<<< HEAD
   display: flex;
   justify-content: center;
   column-gap: 30px;
@@ -652,6 +693,11 @@ body {
   -webkit-column-gap: 30px;
           column-gap: 30px;
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
+=======
+  display: flex;
+  justify-content: center;
+  column-gap: 30px;
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   color: #172852;
   font-weight: bold;
   border: 2px solid #cba89a;
@@ -667,12 +713,16 @@ body {
   overflow: hidden;
   cursor: pointer;
 <<<<<<< HEAD
+<<<<<<< HEAD
   appearance: none;
 =======
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
+=======
+  appearance: none;
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   outline: none;
   background: none;
   background-image: url("../images/backend/select.png");
@@ -689,6 +739,7 @@ body {
   margin: 30px;
   padding: 15px 20px;
 <<<<<<< HEAD
+<<<<<<< HEAD
   display: grid;
   grid-template-columns: 1fr n-order_8fr;
 =======
@@ -697,6 +748,10 @@ body {
   -ms-grid-columns: 1fr n-order_8fr;
       grid-template-columns: 1fr n-order_8fr;
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
+=======
+  display: grid;
+  grid-template-columns: 1fr n-order_8fr;
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   row-gap: 20px;
   border: 2px solid #cba89a;
 }
@@ -720,6 +775,7 @@ body {
   padding: 8px 15px;
   list-style: none;
 <<<<<<< HEAD
+<<<<<<< HEAD
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 =======
@@ -728,6 +784,10 @@ body {
   -ms-grid-columns: 1fr 1fr 1fr;
       grid-template-columns: 1fr 1fr 1fr;
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
+=======
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   background-color: #f4ece5;
   margin-bottom: 0;
 }
@@ -741,6 +801,7 @@ body {
   margin: 0;
   margin-left: 10px;
 <<<<<<< HEAD
+<<<<<<< HEAD
   display: grid;
   grid-template-columns: 1.05fr 1fr 1.05fr;
 =======
@@ -749,12 +810,17 @@ body {
   -ms-grid-columns: 1.05fr 1fr 1.05fr;
       grid-template-columns: 1.05fr 1fr 1.05fr;
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
+=======
+  display: grid;
+  grid-template-columns: 1.05fr 1fr 1.05fr;
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
 }
 
 .n-order_detail_content {
   margin: 0px;
   padding: 8px 15px;
   list-style: none;
+<<<<<<< HEAD
 <<<<<<< HEAD
   display: grid;
   grid-template-rows: 40px 40px 40px;
@@ -768,6 +834,11 @@ body {
       -ms-flex-align: center;
           align-items: center;
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
+=======
+  display: grid;
+  grid-template-rows: 40px 40px 40px;
+  align-items: center;
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
 }
 
 .n-order_order_checkout {
@@ -782,6 +853,7 @@ body {
 .n-order_editbtn {
   margin-top: 20px;
 <<<<<<< HEAD
+<<<<<<< HEAD
   display: flex;
   justify-content: center;
   column-gap: 30px;
@@ -795,6 +867,11 @@ body {
   -webkit-column-gap: 30px;
           column-gap: 30px;
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
+=======
+  display: flex;
+  justify-content: center;
+  column-gap: 30px;
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   margin-bottom: 20px;
 }
 
@@ -811,10 +888,14 @@ body {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 .n-order_editbtn .close {
 =======
 .n-order_editbtn .n-order_close {
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
+=======
+.n-order_editbtn .n-order_close {
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   background-color: #a3a3a3;
   border: 1px solid #a3a3a3;
 }

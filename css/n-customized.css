@@ -1,11 +1,15 @@
 @charset "UTF-8";
 * {
 <<<<<<< HEAD
+<<<<<<< HEAD
   box-sizing: border-box;
 =======
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
+=======
+  box-sizing: border-box;
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   font-family: '微軟正黑體';
 }
 
@@ -16,6 +20,7 @@ body {
 }
 
 .n-customized_header {
+<<<<<<< HEAD
 <<<<<<< HEAD
   display: flex;
   align-items: center;
@@ -31,6 +36,11 @@ body {
       -ms-flex-pack: start;
           justify-content: flex-start;
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
+=======
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   background-image: url("../images/backend/loginbg.png");
   background-repeat: no-repeat;
   background-position: center top;
@@ -41,10 +51,14 @@ body {
 
 .n-customized_logo {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   flex-grow: 2;
   display: flex;
   align-items: center;
   column-gap: 20px;
+<<<<<<< HEAD
 =======
   -webkit-box-flex: 2;
       -ms-flex-positive: 2;
@@ -58,6 +72,8 @@ body {
   -webkit-column-gap: 20px;
           column-gap: 20px;
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
+=======
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
 }
 
 .n-customized_logo img {
@@ -74,6 +90,7 @@ body {
 
 .n-customized_logout {
 <<<<<<< HEAD
+<<<<<<< HEAD
   display: flex;
   align-items: center;
   column-gap: 10px;
@@ -87,6 +104,11 @@ body {
   -webkit-column-gap: 10px;
           column-gap: 10px;
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
+=======
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   cursor: pointer;
 }
 
@@ -99,6 +121,7 @@ body {
 }
 
 .n-customized_main {
+<<<<<<< HEAD
 <<<<<<< HEAD
   display: flex;
   justify-content: flex-start;
@@ -116,10 +139,16 @@ body {
       -ms-flex-pack: start;
           justify-content: flex-start;
   padding: 0 60px;
+=======
+  display: flex;
+  justify-content: flex-start;
+  padding: 0 60px;
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   padding-right: 30px;
 }
 
 .n-customized_left {
+<<<<<<< HEAD
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -128,6 +157,10 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
+=======
+  display: flex;
+  flex-direction: column;
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   width: 15%;
 }
 
@@ -179,11 +212,15 @@ body {
 /* 調整右邊2個區域 */
 .n-customized_card_style {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   /* grid-template-rows: 1fr 2fr 1fr; */
   row-gap: 20px;
   margin-bottom: 30px;
+<<<<<<< HEAD
 }
 
 .n-customized_card_style > p {
@@ -207,6 +244,13 @@ body {
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
+=======
+  padding: 20px;
+  justify-content: center;
+}
+
+.n-customized_card_style > p {
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   grid-area: 1/1/2/4;
   font-size: 22px;
   color: #172852;
@@ -217,11 +261,15 @@ body {
 
 .n-customized_sticker_style {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   /* grid-template-rows: 1fr 2fr 1fr; */
   row-gap: 20px;
   margin-bottom: 30px;
+<<<<<<< HEAD
 }
 
 .n-customized_sticker_style > p {
@@ -245,6 +293,13 @@ body {
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
+=======
+  padding: 20px;
+  justify-content: center;
+}
+
+.n-customized_sticker_style > p {
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   grid-area: 1/1/2/4;
   font-size: 22px;
   color: #172852;
@@ -314,11 +369,15 @@ body {
   top: 50%;
   left: 50%;
 <<<<<<< HEAD
+<<<<<<< HEAD
   transform: translate(-50%, -50%);
 =======
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
+=======
+  transform: translate(-50%, -50%);
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
 }
 
 .n-customized_group div.n-customized_img > p {
@@ -331,6 +390,7 @@ body {
 }
 
 .n-customized_editbtn {
+<<<<<<< HEAD
 <<<<<<< HEAD
   display: flex;
   justify-content: center;
@@ -349,6 +409,11 @@ body {
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
+=======
+  display: flex;
+  justify-content: center;
+  column-gap: 30px;
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   grid-area: 3/1/4/4;
   height: 54px;
   /* border: 1px solid red; */
@@ -356,12 +421,15 @@ body {
 
 .n-customized_sticker_style .n-customized_editbtn {
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   -ms-grid-row: 6;
   -ms-grid-row-span: 1;
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
 >>>>>>> 579eeae2f2f967ec311bd533008a684834644801
+=======
+>>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   grid-area: 6/1/7/4;
 }
 

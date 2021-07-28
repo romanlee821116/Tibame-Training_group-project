@@ -12,7 +12,8 @@
     <script src="https://kit.fontawesome.com/8c3a8ab95b.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!-- <script src="../js/navbar.js"></script> -->
-    <script src="../js/jquery-ui.js"></script>  
+    <script src="../js/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js" integrity="sha512-0bEtK0USNd96MnO4XhH8jhv3nyRF0eK87pJke6pkYf3cM0uDIhNJy9ltuzqgypoIFXw3JSuiy04tVk4AjpZdZw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>  
     <script src="../js/vue.js"></script>
     <script src="../js/customized.js"></script>
 
@@ -167,7 +168,7 @@
 				</div>
 			</div>
 
-			<div class="cart_checkoutBorder"><a href="../page/checkout.html" class="cart_checkout" @click=“stopGo”>前往結帳</a></div>
+			<div class="cart_checkoutBorder"><a href="../page/checkout.html" class="cart_checkout" @click='stopGo'>前往結帳</a></div>
 
 		</div>
 	</div>
@@ -343,5 +344,6 @@
         <!-- 功能彈窗 -->        
         <component :is="content"></component>
     </div>
+    <script>$('#widget').draggable();</script>
 </body>
 </html>
