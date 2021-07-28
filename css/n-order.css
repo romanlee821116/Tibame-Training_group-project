@@ -258,18 +258,19 @@ body{
 
 .n-order_edit{
     width: 750px;
-    /* height: 500px; */
+    height: 90%;
+    max-height: 1150px;
     /* border: 1px solid red; */    
     border-radius: 10px;
     overflow: hidden;
-    /* position: fixed; */
-    position: relative;
+    position: fixed;
+    /* position: relative; */
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -40%);
+    transform: translate(-50%, -50%);
     z-index: 2;
     background-color: #ffffff;
-    /* overflow-y: scroll; */
+    overflow-y: auto;
 
 }
 
