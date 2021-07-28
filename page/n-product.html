@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>product</title>
     <link rel="stylesheet" href="../css/n-product.css">
+    <link rel="stylesheet" href="../css/n-pop.css">
     <link rel="icon" href="../images/backend/n_logo.png">
 </head>
 <body>
@@ -93,15 +94,15 @@
                     </li>
                     <li>
                         <label for="">&emsp;&emsp;原價:</label>
-                        <input type="text" v-model='p_original'>
+                        <input type="text" v-model='p_original' @keyup='regular'>
                     </li>
                     <li>
                         <label for="">&emsp;&emsp;售價:</label>
-                        <input type="text" v-model='p_sell'>
+                        <input type="text" v-model='p_sell' @keyup='regular'>
                     </li>
                     <li>
                         <label for="">庫存數量:</label>
-                        <input type="text" v-model='p_stock'>
+                        <input type="text" v-model='p_stock' @keyup='regular'>
                     </li>
                     <li>
                         商品狀態:
@@ -169,12 +170,36 @@
         <div id="hide" v-if='current_edit !== null'></div>
 
         <product-add v-if='new_edit' @pclose='closeppp' @psave='saveppp'></product-add>
+        <double-check v-if='dbcheck' @save='sss' @cancel='ccc'></double-check>
 
 
     </div>
 
     <script src="../js/vue.js"></script>
     <script>
+        Vue.component('double-check', {            
+            template: 
+                ` 
+                <div class="dbc">
+                    <section></section>
+                    <p>尚未存檔，是否確認關閉</p>
+                    <div>
+                        <button type="button" @click='sure'>確認</button>
+                        <button type="button" @click='cancel'>取消</button>
+                    </div>
+                </div>                
+                `
+            ,
+            methods:{
+                sure(){
+                    this.$emit('save')
+                },
+                cancel(){
+                    this.$emit('cancel')
+                }
+            },
+        });
+
         Vue.component('product-add', {
             data(){
                 return{  //組件的變數寫在這裡
@@ -331,7 +356,7 @@
         new Vue({
             el: '#app',
             data:{
-
+                dbcheck:false,
                 new_edit:false,
                 img_names:[ '圖片01', '圖片02', '圖片03', '俯視圖', '客製化用圖'],
 
@@ -455,9 +480,26 @@
 
 
                 },
-                p_close(){                    
-                    this.current_edit = null;
+                p_close(){       
+                    this.dbcheck=true;
+                    let edit_z = document.querySelector('.n-product_edit');
+                    edit_z.style.opacity = 0;
                 },  
+
+                sss(){
+                    this.current_edit = null;
+                    this.dbcheck=false;
+                    let edit_z = document.querySelector('.n-product_edit');
+                    edit_z.style.opacity = 1;
+
+                    this.new_edit = false;
+                },
+
+                ccc(){
+                    this.dbcheck=false;
+                    let edit_z = document.querySelector('.n-product_edit');
+                    edit_z.style.opacity = 1;
+                }, 
                 p_save(){     
 
                     let n_index = this.$data.current_edit;
@@ -465,7 +507,7 @@
                     this.products[n_index].上下架 = this.on_off;
                     this.products[n_index].客製化禮盒 = this.p_customized;
 
-                    this.products[n_index].名稱 = this.p_name;
+                    this.products[n_index].名稱 = this.p_name;                    
                     this.products[n_index].原價 = this.p_original;
                     this.products[n_index].售價 = this.p_sell;
                     this.products[n_index].庫存數量 = this.p_stock;
@@ -498,7 +540,11 @@
                     // this.current_edit = "notnull";
                 },
                 closeppp(){
-                    this.new_edit = false;
+                    // this.new_edit = false;
+
+                    this.dbcheck=true;
+                    let edit_z = document.querySelector('.n-product_edit');
+                    edit_z.style.opacity = 0;
                 },
                 saveppp(p_number, p_sort, p_name, p_original, p_sell, p_stock, p_status, p_limit, on_off, p_exp, p_customized, p_ingredient, p_descript){
                     
@@ -528,6 +574,12 @@
                 },
                 log_out(){
                     location.href = "./n-login.html"
+                },
+                regular(e){
+
+                    let str = (e.target.value).replace(/\D/g, "");
+                    e.target.value = str;
+
                 }
 
 

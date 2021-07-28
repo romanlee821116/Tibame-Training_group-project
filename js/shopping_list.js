@@ -10,8 +10,8 @@ $(document).ready(function() {
         "id": new Date(),
     };
 
-    $('.product_add_cart').click(function(){
-        if($(this).attr('id')!='grey'){
+    $('.product_add_cart').click(function() {
+        if ($(this).attr('id') != 'grey') {
             let product_Id = $(this).closest('.product_right').attr('data-id');
             let this_name = $(this).closest('.product_right').find('h3').text();
             let this_price = $(this).closest('.product_right').find('.product_price').find('span').text();
@@ -23,34 +23,34 @@ $(document).ready(function() {
             cart_item.price = parseInt(this_price);
             cart_item.quantity = this_qty;
             // console.log(cart_item);        
-            if(localStorage.item_List){
-                let local_itemList= [];
+            if (localStorage.item_List) {
+                let local_itemList = [];
                 // console.log(JSON.parse(localStorage.item_List).length);
-                for(let i=0; i<JSON.parse(localStorage.item_List).length; i++){                    
+                for (let i = 0; i < JSON.parse(localStorage.item_List).length; i++) {
                     local_itemList.push(JSON.parse(localStorage.item_List)[i].itemName);
                 }
                 // console.log(local_itemList);
-                if(local_itemList.indexOf(this_name)==-1){
+                if (local_itemList.indexOf(this_name) == -1) {
                     let new_itemList = JSON.parse(localStorage.getItem('item_List'));
                     new_itemList.push(cart_item);
                     localStorage.setItem('item_List', JSON.stringify(new_itemList));
                     $('.product_reminder').fadeIn();
-                    setTimeout(function(){
+                    setTimeout(function() {
                         $('.product_reminder').fadeOut();
-                    },1000);
-                }else{
+                    }, 1000);
+                } else {
                     alert('此產品已在購物車');
                 }
-                
-            }else{
+
+            } else {
                 let new_itemList = [];
                 new_itemList.push(cart_item);
                 localStorage['item_List'] = [];
                 localStorage.setItem('item_List', JSON.stringify(new_itemList));
                 $('.product_reminder').fadeIn();
-                    setTimeout(function(){
-                        $('.product_reminder').fadeOut();
-                },1000);
+                setTimeout(function() {
+                    $('.product_reminder').fadeOut();
+                }, 1000);
             }
         }
     })
@@ -58,22 +58,21 @@ $(document).ready(function() {
     //========================================local storage========================================
     var item_area = $(".product_product");
     $(item_area).first().show().siblings().hide();
-
-    function all() {
-        $(".product_area")
-    }
-    // 點擊切換商品分類內容
+    // 點擊切換商品分類內容 救救可憐的廢物
     $(".product_area").click(function() {
         let index = $(this).index();
         $(item_area).eq(index).fadeIn(500).show().siblings().hide();
         $(this).find("i").addClass("yellow").show();
         $(this).find('span').css({ color: '#172852' });
+        $(this).find("img").attr("src", `../images/shopping_list/shop${index+1}_hov.png`);
         if ($(this).find("i").hasClass("yellow")) {
-            $(this).find("img").attr("src", `../images/shopping_list/shop${index+1}_hov.png`);
             $(this).siblings().find("i").removeClass("yellow").hide();
             $(this).siblings().find('span').css({ color: '#bb866a' });
-        } else {}
+        } else {
+
+        }
     });
+
     // 選擇商品分類
     $(".product_area").mouseenter(function() {
         let index = $(this).index();
@@ -82,11 +81,33 @@ $(document).ready(function() {
     });
     $(".product_area").mouseleave(function() {
         let index = $(this).index();
-        if (!$(this).find("i").hasClass("yellow")) {
+        if ($(this).find("i").hasClass("yellow")) {
             $(this).find('span').css({ color: '#bb866a' });
             $(this).find("img").attr("src", `../images/shopping_list/shop${index+1}.png`);
+        } else {
+
         }
     });
+
+    $('.product_area').hover(function() {
+        let index = $(this).index();
+        // console.log(index);
+        $(this).find("img").attr("src", `../images/shopping_list/shop${index+1}_hov.png`);
+        $(this).find('span').css({ color: '#172852' });
+    }, function() {
+        let index = $(this).index();
+        $(this).find('span').css({ color: '#bb866a' });
+        $(this).find("img").attr("src", `../images/shopping_list/shop${index+1}.png`);
+    });
+    $('.product_area').click(function() {
+        $(this).unbind('mouseenter mouseleave');
+        let index = $(this).index();
+        $(this).find("img").attr("src", `../images/shopping_list/shop${index+1}_hov.png`);
+        $(this).find('span').css({ color: '#172852' });
+        $('.product_area').bind('hover');
+        $('.product_area').removeClass('yellow');
+        $(this).addClass('yellow');
+    })
 
     // 商品數量增減 
 
@@ -94,7 +115,7 @@ $(document).ready(function() {
     $(".add").click(function() {
         var t = $(this).siblings(".num");
         t.val(parseInt(t.val()) + 1);
-        $(".min").removeAttr("disabled").css({ backgroundColor: "white", color: "#172852" });
+        $(this).siblings(".min").removeAttr("disabled").css({ backgroundColor: "white", color: "#172852" });
     });
     $(".min").click(function() {
         var t = $(this).siblings(".num");
@@ -132,10 +153,8 @@ $(document).ready(function() {
         $(this).parent().prev('.product_img').animate({
             left: divWidth * index * -1
         });
-        $(this).addClass("click");
-        $(".product_circle div").not(this).removeClass("click");        
+        $(this).addClass("click").siblings().removeClass("click");
     })
-    
-    
+
 
 });

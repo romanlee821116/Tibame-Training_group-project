@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>member</title>
     <link rel="stylesheet" href="../css/n-member.css">
+    <link rel="stylesheet" href="../css/n-pop.css">
     <link rel="icon" href="../images/backend/n_logo.png">
 </head>
 <body>
@@ -90,14 +91,40 @@
         </div>
 
         <div id="hide" v-if='current_edit !== null'></div>
+        <double-check v-if='dbcheck' @save='sss' @cancel='ccc'></double-check>
 
     </div>
 
     <script src="../js/vue.js"></script>
     <script>
+        Vue.component('double-check', {            
+            template: 
+                ` 
+                <div class="dbc">
+                    <section></section>
+                    <p>尚未存檔，是否確認關閉</p>
+                    <div>
+                        <button type="button" @click='sure'>確認</button>
+                        <button type="button" @click='cancel'>取消</button>
+                    </div>
+                </div>                
+                `
+            ,
+            methods:{
+                sure(){
+                    this.$emit('save')
+                },
+                cancel(){
+                    this.$emit('cancel')
+                }
+            },
+        });
+
         new Vue({
             el: '#app',
             data:{
+                dbcheck:false,
+
                 member_number: '',
                 m_status:0,
                 member_list:['正常', '停權'],
@@ -162,10 +189,30 @@
                     this.current_edit = index;    
 
                     this.m_status = this.members[index].帳號狀態;
-                },
-                f_close(){                    
-                    this.current_edit = null;
+                },                 
+
+
+                f_close(){       
+                    this.dbcheck=true;
+                    let edit_z = document.querySelector('.n-member_edit');
+                    edit_z.style.opacity = 0;
                 },  
+
+                sss(){
+                    this.current_edit = null;
+                    this.dbcheck=false;
+                    let edit_z = document.querySelector('.n-member_edit');
+                    edit_z.style.opacity = 1;
+
+                },
+
+                ccc(){
+                    this.dbcheck=false;
+                    let edit_z = document.querySelector('.n-member_edit');
+                    edit_z.style.opacity = 1;
+                },
+
+
                 f_save(){     
 
                     let n_index = this.$data.current_edit;

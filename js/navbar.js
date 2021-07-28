@@ -14,7 +14,12 @@ $(document).ready(function() {
     //         console.log('have');
     //     }
     // };
-    
+    if(window.location.pathname == '/index.html'){
+        console.log('homepage');
+        $('.memberShow').load('page/login.html').hide();
+    }else{
+        $('.memberShow').load('login.html').hide();
+    }
     // 點擊打開
     $('body').on('click','.navbar-icon .fa-user',function(){
     // $('.navbar-icon .fa-user').click(function(){   
@@ -22,8 +27,8 @@ $(document).ready(function() {
         // // 隱藏所有頁面
         console.log('clickhead');
         $('.footer').hide();
-        $('.navbar').hide();    
-        
+        $('.navbar').hide();
+
         // // 開啟登入註冊or會員中心
         if($('#loginFormPage .loginButton').hasClass('loginOK') || $('.navbar-icon>a:first').hasClass('loginOK')){
             // window.location.href = 'member.html';
@@ -39,9 +44,9 @@ $(document).ready(function() {
             $('body').addClass('stopScroll');
         };
         // ---------------------------------
-        
-        
-        
+
+
+
         // 全部用跳轉頁面寫------------
         // if($('.navbar-icon>a:first').hasClass('loginOK')){
         //     window.location.href = 'member.html';
@@ -49,11 +54,11 @@ $(document).ready(function() {
         //     window.location.href = 'login.html';
         // };
 
-        
-        
+
+
     });
     // 點擊關閉
-    $('body').on('click','.loginClose',function(){
+    $('body').on('click', '.loginClose', function() {
         $('.memberShow').fadeOut(500);
         $('.footer').show();
         $('.navbar').show();

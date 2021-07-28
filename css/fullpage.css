@@ -19,7 +19,6 @@ html.fp-enabled,
 
 .fp-section {
   position: relative;
-  -webkit-box-sizing: border-box;
   /* Safari<=5 Android<=3 */
   /* <=28 */
   box-sizing: border-box;
@@ -40,7 +39,6 @@ html.fp-enabled,
   height: 100%;
   overflow: hidden;
   position: relative;
-  -webkit-transition: all 0.3s ease-out;
   /* Safari<=6 Android<=4.3 */
   transition: all 0.3s ease-out;
 }
@@ -81,7 +79,6 @@ html.fp-enabled,
   height: 0;
   border-style: solid;
   margin-top: -38px;
-  -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
 
@@ -112,7 +109,6 @@ html.fp-enabled,
 }
 
 .fp-notransition {
-  -webkit-transition: none !important;
   transition: none !important;
 }
 
@@ -138,7 +134,6 @@ html.fp-enabled,
   position: absolute;
   z-index: 4;
   opacity: 1;
-  -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
   left: 0 !important;
   right: 0;
@@ -205,7 +200,6 @@ html.fp-enabled,
   left: 50%;
   top: 50%;
   margin: -2px 0 10px -4px;
-  -webkit-transition: all 0.1s ease-in-out;
   transition: all 0.1s ease-in-out;
 }
 
@@ -238,7 +232,6 @@ html.fp-enabled,
 
 #fp-nav ul li:hover .fp-tooltip,
 #fp-nav.fp-show-active a.active + .fp-tooltip {
-  -webkit-transition: opacity 0.2s ease-in;
   transition: opacity 0.2s ease-in;
   width: auto;
   opacity: 1;
