@@ -73,9 +73,11 @@ $(document).ready(function() {
         $(this).find('span').css({ color: '#172852' });
     }, function() {
         let index = $(this).index();
-        $(this).find('span').css({ color: '#bb866a' });
         if (!($(this).hasClass('yellow'))) {
+            $(this).find('span').css({ color: '#bb866a' });
             $(this).find("img").attr("src", `../images/shopping_list/shop${index+1}.png`);
+        } else {
+            $(this).find('span').css({ color: '#172852' });
         }
     });
     $('.product_area').click(function() {
