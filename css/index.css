@@ -1102,11 +1102,7 @@ table {
   .index_page5 .index_p5_container .index_p5_bigPic {
     position: relative;
     left: 50%;
-<<<<<<< HEAD
-    transform: translate(-50%, -80%);
-=======
     transform: translate(-50%, -15vh);
->>>>>>> dev
     width: 180px;
     height: auto;
     min-width: 180px;
