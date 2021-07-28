@@ -280,6 +280,7 @@ body {
 }
 
 /* 編輯 */
+<<<<<<< HEAD
 .n-news_edit {
   width: 800px;
   /* height: 1200px; */
@@ -493,3 +494,232 @@ body {
   color: #a3a3a3;
 }
 /*# sourceMappingURL=n-news.css.map */
+=======
+
+.n-news_edit{
+    width: 800px;
+    height: 90%;
+    max-height: 1200px;
+    /* height: 500px; */
+    /* border: 1px solid red; */
+    display: grid;
+    grid-template-rows: 44px 430px 640px 54px;
+    border-radius: 10px;
+    overflow: hidden;
+    /* position: relative; */
+    /* left: 20%; */
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    background-color: #ffffff;
+    overflow-y: auto;
+}
+
+.n-news_edit > p{
+    margin: 0;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #bb866a;   
+    position: sticky;
+    top: 0;
+    z-index: 3;
+}
+
+.n-news_news_mid ul{
+    margin: 0;
+    padding: 20px;
+    list-style: none;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 3fr 3fr;
+    justify-items: center;
+    align-items: center;
+    row-gap: 15px;
+}
+
+.n-news_news_mid ul li{
+    font-size: 16px;
+    color: #172852;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+
+.n-news_news_mid ul li:first-child{
+    display: grid;
+    grid-template-columns: 370px 370px;
+}
+
+.n-news_news_mid select{
+    font-size: 16px;
+    color: #172852;
+    font-weight: bold;
+    width: 130px;
+    padding-left: 10px;
+    border-radius: 3px;
+    overflow: hidden;
+    cursor: pointer;
+
+    appearance: none;  
+    outline: none;
+    background: none;
+    background-image: url("../images/backend/select.png");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+    border: 1.5px solid #cba89a;
+} 
+
+.n-news_news_mid input{
+    font-size: 16px;
+    color: #172852;
+    font-weight: bold;
+    border: 1n-news_5px solid #cba89a;
+    width: 655px;
+}
+
+.n-news_news_mid textarea{
+    font-size: 16px;
+    color: #172852;
+    font-weight: bold;
+    border: 1.5px solid #cba89a;
+    resize: none;
+}
+
+
+.n-news_news_bot{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    padding: 20px;
+}
+
+
+
+
+
+.n-news_group{
+    /* border: 1px solid red; */
+    position: relative;
+    width: 340px;
+}
+
+.n-news_group label{
+    /* border: 1px solid blue; */
+    font-size: 16px;
+    color: #172852;
+    font-weight: bold;
+}
+
+.n-news_group input{
+    /* border: 1px solid purple; */
+    position: absolute;
+    top: 0;
+    left: 60px;
+    opacity: 0;
+    z-index: 2;
+}
+
+.n-news_group > p{
+    margin: 0;
+    padding: 3px;
+    position: absolute;
+    top: -3px;
+    left: 100px;    
+    border: 1.5px solid #cba89a;
+    border-radius: 5px;
+    overflow: hidden;
+    width: 215px;
+    font-size: 16px;
+    color: #172852;
+    font-weight: bold;
+
+    background-image: url("../images/backend/select.png");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+}
+
+.n-news_news_bot div.n-news_img{
+    border: 1.5px solid #cba89a;
+    width: 260px;
+    height: 130px;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 0; 
+    margin-right: 25px; 
+    position: relative;
+}
+
+.n-news_news_bot div.n-news_img > img{
+    max-width: 255px;
+    max-height: 125px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.n-news_news_bot div.n-news_img > p{
+    position: absolute;
+    top: 35px;
+    left: 70px;
+    font-size: 16px;
+    color: #cba89a;
+    font-weight: bold;
+}
+
+.n-news_editbtn{
+    display: flex;
+    justify-content: center;
+    column-gap: 30px;
+    height: 54px;
+    /* border: 1px solid red; */
+}
+
+.n-news_editbtn button{
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #172852;
+    padding: 5px 25px;
+    margin: 0;
+    border: 1px solid #172852;
+    border-radius: 10px;
+    cursor: pointer;
+    height: 34px;
+}
+
+.n-news_editbtn .n-news_close{    
+    background-color: #a3a3a3;
+    border: 1px solid #a3a3a3;    
+}
+
+
+
+#hide{
+    background-color: black;
+    opacity: .5;
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* display: none; */
+    width: 100%;
+    height: 100%;
+}
+
+.n-news_right .-active{
+    background: #172852;
+}
+
+.-active2{
+    color: #a3a3a3;
+}
+
+
+
+
+>>>>>>> dev

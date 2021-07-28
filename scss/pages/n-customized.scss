@@ -59,6 +59,7 @@ body{
     display: flex;
     justify-content: flex-start;
     padding: 0 60px;
+    padding-right: 30px;
 }
 
 .n-customized_left{
@@ -121,6 +122,8 @@ body{
     /* grid-template-rows: 1fr 2fr 1fr; */
     row-gap: 20px;
     margin-bottom: 30px;
+    padding: 20px;
+    justify-content: center;
 }
 
 .n-customized_card_style > p{
@@ -139,7 +142,8 @@ body{
     /* grid-template-rows: 1fr 2fr 1fr; */
     row-gap: 20px;
     margin-bottom: 30px;
-
+    padding: 20px;    
+    justify-content: center;
 }
 
 .n-customized_sticker_style > p{

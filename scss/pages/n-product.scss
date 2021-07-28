@@ -197,7 +197,7 @@ body{
     padding: 10px;
     list-style: none;
     display: grid;
-    grid-template-columns: 1.2fr 1fr 1.2fr .8fr .8fr .8fr .9fr .7fr 1fr;
+    grid-template-columns: 1.2fr 1fr 1.2fr .8fr .8fr .8fr .9fr .7fr 107px;
     column-gap: 10px;
     background-color: #cba89a;
     font-size: 16px;
@@ -211,13 +211,17 @@ body{
     padding: 10px;
     list-style: none;
     display: grid;
-    grid-template-columns: 1.2fr 1fr 1.2fr .8fr .8fr .8fr .9fr .7fr 1fr;
+    grid-template-columns: 1.2fr 1fr 1.2fr .8fr .8fr .8fr .9fr .7fr 107px;
     column-gap: 10px;
     background-color: #ffffff;
     font-size: 16px;
     color: #172852;
     font-weight: bold; 
     align-items: center;
+}
+
+.n-product_product:hover{
+    background-color: #f8f2ed;
 }
 
 .n-product_product li{
@@ -283,23 +287,24 @@ body{
 
 .n-product_edit{
     width: 800px;
-    /* height: 1070px; */
-    height: 500px;
-    border: 1px solid red;
+    height: 90%;
+    max-height: 1100px;
+    /* height: 500px; */
+    /* border: 1px solid red; */
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 44px 980px 54px;    
     border-radius: 10px;
     overflow: hidden;
-    /* position: relative;
-    left: 20%; */
+    /* position: relative; */
+    /* left: 20%; */
     position: fixed;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
     z-index: 2;
     background-color: #ffffff;
-    overflow-y: scroll;
+    overflow-y: auto;
 
 }
 

@@ -194,6 +194,13 @@ $(document).ready(function(){
         let new_total = parseInt(localStorage.subtotal - localStorage.discount);
         localStorage.setItem('total', new_total);
         this.total_price = new_total;
+        //判定是否全空
+        let item_List = localStorage.item_List;
+        let cus_List = localStorage.customized_List;
+        console.log(item_List.length);
+        if(item_List.length =='2' && cus_List.length=='2'){
+          $('.checkout_popBG').fadeIn();
+        }
         // ===================================================
       },
       // 數量增加
@@ -276,7 +283,13 @@ $(document).ready(function(){
         let new_total = parseInt(localStorage.subtotal - localStorage.discount);
         localStorage.setItem('total', new_total);
         this.total_price = new_total;
-        // =========================================================
+        //判定是否全空
+        let item_List = localStorage.item_List;
+        let cus_List = localStorage.customized_List;
+        console.log(item_List.length);
+        if(item_List.length =='2' && cus_List.length=='2'){
+          $('.checkout_popBG').fadeIn();
+        }
       },
       // 刪除(禮盒)
       delete_Customization(index){
@@ -313,7 +326,13 @@ $(document).ready(function(){
         let new_total = parseInt(localStorage.subtotal - localStorage.discount);
         localStorage.setItem('total', new_total);
         this.total_price = new_total;
-        // ====================================
+        //判定是否全空
+        let item_List = localStorage.item_List;
+        let cus_List = localStorage.customized_List;
+        console.log(item_List.length);
+        if(item_List.length =='2' && cus_List.length=='2'){
+          $('.checkout_popBG').fadeIn();
+        }
       },
       // 提交折扣
       sendDiscount(){
@@ -351,6 +370,71 @@ $(document).ready(function(){
         localStorage.setItem('total', JSON.stringify(new_price));
         this.total_price = new_price;
         // ==================================================================
+      },
+      refresh(index){
+        // ====================
+        let cart_item = {
+          'productId': 0,
+          'itemName': '',
+          'img': '',
+          'price': 0,
+          'quantity': 1,
+          'status': false,
+          "id": new Date(),
+        };
+        console.log(this.recommend[index].name);
+        
+        let product_Id = '';
+        let this_name = this.recommend[index].name;
+        let this_price = this.recommend[index].id_price; 
+        let this_img = this.recommend[index].img;
+        let this_qty = 1;
+        cart_item.productId = product_Id;
+        cart_item.itemName = this_name;
+        cart_item.img = this_img;
+        cart_item.price = parseInt(this_price);
+        cart_item.quantity = this_qty;
+        console.log(cart_item);        
+        if(localStorage.item_List){
+            let local_itemList= [];
+            for(let i=0; i<JSON.parse(localStorage.item_List).length; i++){                    
+                local_itemList.push(JSON.parse(localStorage.item_List)[i].itemName);
+            }
+            console.log(local_itemList);
+            if(local_itemList.indexOf(this_name)==-1){
+                let new_itemList = JSON.parse(localStorage.getItem('item_List'));
+                new_itemList.push(cart_item);
+                localStorage.setItem('item_List', JSON.stringify(new_itemList));
+                //價格更新
+                let new_subtotal = parseInt(localStorage.subtotal) + this_price;
+                let new_total = parseInt(localStorage.total) + this_price;
+                localStorage.setItem('subtotal', new_subtotal);
+                localStorage.setItem('total', new_total);  
+                this.itemPrice = new_subtotal;
+                this.total_price = new_total; 
+            }else{
+                alert('此產品已在訂單內容');
+            }
+            
+        }else{
+            let new_itemList = [];
+            new_itemList.push(cart_item);
+            localStorage['item_List'] = [];
+            localStorage.setItem('item_List', JSON.stringify(new_itemList));
+            //價格更新
+            let new_subtotal = parseInt(localStorage.subtotal) + this_price;
+            let new_total = parseInt(localStorage.total) + this_price;
+            localStorage.setItem('subtotal', new_subtotal);
+            localStorage.setItem('total', new_total);  
+            this.itemPrice = new_subtotal;
+            this.total_price = new_total;
+        }
+      
+
+        // 呼叫localStorage商品資料        
+        let item = JSON.parse(localStorage.item_List)
+        this.itemList =item;
+        console.log('refresh');
       }
     },
     computed: {
@@ -536,55 +620,55 @@ $(function(){
     })
 
     //============================可能喜歡================================
-    let cart_item = {
-      'productId': 0,
-      'itemName': '',
-      'img': '',
-      'price': 0,
-      'quantity': 1,
-      'status': false,
-      "id": new Date(),
-    };
+  //   let cart_item = {
+  //     'productId': 0,
+  //     'itemName': '',
+  //     'img': '',
+  //     'price': 0,
+  //     'quantity': 1,
+  //     'status': false,
+  //     "id": new Date(),
+  //   };
 
-    $('.checkout_pushItem_add').click(function(e){
-      e.preventDefault();
-      console.log('add cart');
-      let product_Id = '';
-      let this_name = $(this).prev().prev().text();
-      let this_price = $(this).closest('.checkout_pushItem').attr('data-id_price'); 
-      let this_img = $(this).closest('.checkout_pushItem').find('img').attr('src');
-      let this_qty = 1;
-      cart_item.productId = product_Id;
-      cart_item.itemName = this_name;
-      cart_item.img = this_img;
-      cart_item.price = parseInt(this_price);
-      cart_item.quantity = this_qty;
-      // console.log(cart_item);        
-      if(localStorage.item_List){
-          let local_itemList= [];
-          for(let i=0; i<JSON.parse(localStorage.item_List).length; i++){                    
-              local_itemList.push(JSON.parse(localStorage.item_List)[i].itemName);
-          }
-          console.log(local_itemList);
-          if(local_itemList.indexOf(this_name)==-1){
-              let new_itemList = JSON.parse(localStorage.getItem('item_List'));
-              new_itemList.push(cart_item);
-              localStorage.setItem('item_List', JSON.stringify(new_itemList));              
-          }else{
-              alert('此產品已在訂單內容');
-          }
+  //   $('.checkout_pushItem_add').click(function(e){
+  //     e.preventDefault();
+  //     console.log('add cart');
+  //     let product_Id = '';
+  //     let this_name = $(this).prev().prev().text();
+  //     let this_price = $(this).closest('.checkout_pushItem').attr('data-id_price'); 
+  //     let this_img = $(this).closest('.checkout_pushItem').find('img').attr('src');
+  //     let this_qty = 1;
+  //     cart_item.productId = product_Id;
+  //     cart_item.itemName = this_name;
+  //     cart_item.img = this_img;
+  //     cart_item.price = parseInt(this_price);
+  //     cart_item.quantity = this_qty;
+  //     // console.log(cart_item);        
+  //     if(localStorage.item_List){
+  //         let local_itemList= [];
+  //         for(let i=0; i<JSON.parse(localStorage.item_List).length; i++){                    
+  //             local_itemList.push(JSON.parse(localStorage.item_List)[i].itemName);
+  //         }
+  //         console.log(local_itemList);
+  //         if(local_itemList.indexOf(this_name)==-1){
+  //             let new_itemList = JSON.parse(localStorage.getItem('item_List'));
+  //             new_itemList.push(cart_item);
+  //             localStorage.setItem('item_List', JSON.stringify(new_itemList));              
+  //         }else{
+  //             alert('此產品已在訂單內容');
+  //         }
           
-      }else{
-          let new_itemList = [];
-          new_itemList.push(cart_item);
-          localStorage['item_List'] = [];
-          localStorage.setItem('item_List', JSON.stringify(new_itemList));
-          $('.product_reminder').fadeIn();
-              setTimeout(function(){
-                  $('.product_reminder').fadeOut();
-          },1000);
-      }
-  })
+  //     }else{
+  //         let new_itemList = [];
+  //         new_itemList.push(cart_item);
+  //         localStorage['item_List'] = [];
+  //         localStorage.setItem('item_List', JSON.stringify(new_itemList));
+  //         $('.product_reminder').fadeIn();
+  //             setTimeout(function(){
+  //                 $('.product_reminder').fadeOut();
+  //         },1000);
+  //     }
+  // })
 
 
 
