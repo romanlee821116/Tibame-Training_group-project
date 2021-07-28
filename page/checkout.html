@@ -23,10 +23,21 @@
     <div class="navbar">
       <div class="navbar-logo">
         <a href="../index.html"><img src="../images/index/logo.png" alt=""></a>
+      </div>   
+    </div>
+
+    <!-- ===============單按鈕 (複製以下code)====================== -->
+    <div class='checkout_popBG'>
+      <div class="type2">
+          <img src="../images/customized/customized_step_a.png" alt="">
+          <h2>訂單內容無商品</h2>
+          <p>請返回商品專區選購</p>
+          <div>
+              <a href="./shopping_choose.html" class='mainBtn'>前往商品專區</a>            
+          </div>
       </div>
-      
-		
-  </div>
+    </div>
+    <!-- ========================================================= -->
 
 
 
@@ -264,7 +275,7 @@
               <p>{{item.name}}</p>
               <p>{{item.price}}</p>
               <!-- <div ></div> -->
-              <a href="#" class='checkout_pushItem_add'>加入訂單內容</a>
+              <a href="#" class='checkout_pushItem_add' @click.prevent='refresh(index)'>加入訂單內容</a>
             </li>
   
           </ul>
