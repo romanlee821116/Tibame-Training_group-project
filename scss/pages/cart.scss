@@ -1,5 +1,5 @@
 
-
+@import '../base/color.scss';
 *{
   box-sizing: border-box;
   font-family: "微軟正黑體";
@@ -260,6 +260,9 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  &:hover{
+    background-color: $lightBrown;
+  }
 }
 
 
@@ -398,7 +401,7 @@
   left: 0;
   bottom: 0;
   &:hover{
-    color: #bb866a;
+    background-color: $lightBlue;
   }
 }
 
