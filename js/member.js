@@ -183,6 +183,13 @@ $(document).ready(function(){
 
 
     });
+
+    // 所有input欄位點擊focus時，提示消失
+    $('.memberPart2 input').focus(function(){
+        // $(this).next().css('display','none');
+        $(this).next().next().css('display','none');      
+    });
+
     // 開眼睛看密碼
     $('.memberPart2 .eye').click(function(){
         let type = $(this).prev().attr('type');
