@@ -1,7 +1,11 @@
 @charset "UTF-8";
 * {
+<<<<<<< HEAD
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+=======
+  box-sizing: border-box;
+>>>>>>> dev
   font-family: '微軟正黑體';
 }
 
@@ -12,6 +16,7 @@ body {
 }
 
 .n-member_header {
+<<<<<<< HEAD
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -21,6 +26,11 @@ body {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
+=======
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+>>>>>>> dev
   background-image: url("../images/backend/loginbg.png");
   background-repeat: no-repeat;
   background-position: center top;
@@ -30,6 +40,7 @@ body {
 }
 
 .n-member_logo {
+<<<<<<< HEAD
   -webkit-box-flex: 2;
       -ms-flex-positive: 2;
           flex-grow: 2;
@@ -41,6 +52,12 @@ body {
           align-items: center;
   -webkit-column-gap: 20px;
           column-gap: 20px;
+=======
+  flex-grow: 2;
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+>>>>>>> dev
 }
 
 .n-member_logo img {
@@ -56,6 +73,7 @@ body {
 }
 
 .n-member_logout {
+<<<<<<< HEAD
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -64,6 +82,11 @@ body {
           align-items: center;
   -webkit-column-gap: 10px;
           column-gap: 10px;
+=======
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+>>>>>>> dev
   cursor: pointer;
 }
 
@@ -76,16 +99,22 @@ body {
 }
 
 .n-member_main {
+<<<<<<< HEAD
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
+=======
+  display: flex;
+  justify-content: flex-start;
+>>>>>>> dev
   padding: 0 60px;
 }
 
 .n-member_left {
+<<<<<<< HEAD
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -93,6 +122,10 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+=======
+  display: flex;
+  flex-direction: column;
+>>>>>>> dev
   width: 15%;
 }
 
@@ -132,12 +165,17 @@ body {
 
 .n-member_right form {
   /* border: 1px solid blue; */
+<<<<<<< HEAD
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+=======
+  display: flex;
+  justify-content: flex-end;
+>>>>>>> dev
   margin-bottom: 20px;
 }
 
@@ -151,6 +189,7 @@ body {
 }
 
 .n-member_right form section {
+<<<<<<< HEAD
   -webkit-box-flex: 2;
       -ms-flex-positive: 2;
           flex-grow: 2;
@@ -165,6 +204,13 @@ body {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
+=======
+  flex-grow: 2;
+  display: flex;
+  justify-content: flex-end;
+  column-gap: 10px;
+  align-items: flex-end;
+>>>>>>> dev
 }
 
 .n-member_right form section label {
@@ -197,6 +243,7 @@ body {
   padding-left: 5px;
 }
 
+<<<<<<< HEAD
 .n-member_right form section input::-webkit-input-placeholder {
   color: #cba89a;
   font-weight: bold;
@@ -212,6 +259,8 @@ body {
   font-weight: bold;
 }
 
+=======
+>>>>>>> dev
 .n-member_right form section input::placeholder {
   color: #cba89a;
   font-weight: bold;
@@ -222,12 +271,18 @@ body {
   margin: 0;
   padding: 10px;
   list-style: none;
+<<<<<<< HEAD
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 2.5fr 1fr 1fr .8fr 1fr 107px;
       grid-template-columns: 1fr 2.5fr 1fr 1fr .8fr 1fr 107px;
   -webkit-column-gap: 10px;
           column-gap: 10px;
+=======
+  display: grid;
+  grid-template-columns: 1fr 2.5fr 1fr 1fr .8fr 1fr 107px;
+  column-gap: 10px;
+>>>>>>> dev
   background-color: #cba89a;
   font-size: 16px;
   color: #ffffff;
@@ -239,19 +294,29 @@ body {
   margin: 0;
   padding: 10px;
   list-style: none;
+<<<<<<< HEAD
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 2.5fr 1fr 1fr .8fr 1fr 107px;
       grid-template-columns: 1fr 2.5fr 1fr 1fr .8fr 1fr 107px;
   -webkit-column-gap: 10px;
           column-gap: 10px;
+=======
+  display: grid;
+  grid-template-columns: 1fr 2.5fr 1fr 1fr .8fr 1fr 107px;
+  column-gap: 10px;
+>>>>>>> dev
   background-color: #ffffff;
   font-size: 16px;
   color: #172852;
   font-weight: bold;
+<<<<<<< HEAD
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+=======
+  align-items: center;
+>>>>>>> dev
 }
 
 .n-member_member:hover {
@@ -287,12 +352,17 @@ body {
   margin: 0;
   padding: 0px;
   list-style: none;
+<<<<<<< HEAD
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+=======
+  display: flex;
+  justify-content: flex-end;
+>>>>>>> dev
   margin-top: 15px;
 }
 
@@ -325,6 +395,7 @@ body {
   width: 750px;
   height: 300px;
   /* border: 1px solid red; */
+<<<<<<< HEAD
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -332,13 +403,21 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+=======
+  display: flex;
+  flex-direction: column;
+>>>>>>> dev
   border-radius: 10px;
   overflow: hidden;
   position: fixed;
   left: 50%;
   top: 50%;
+<<<<<<< HEAD
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+=======
+  transform: translate(-50%, -50%);
+>>>>>>> dev
   z-index: 2;
   background-color: #ffffff;
   /* display: none; */
@@ -357,10 +436,15 @@ body {
   margin: 0;
   padding: 0px;
   list-style: none;
+<<<<<<< HEAD
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr .9fr;
       grid-template-columns: 1fr .9fr;
+=======
+  display: grid;
+  grid-template-columns: 1fr .9fr;
+>>>>>>> dev
   padding: 15px 30px;
   row-gap: 20px;
 }
@@ -382,9 +466,13 @@ body {
   border-radius: 3px;
   overflow: hidden;
   cursor: pointer;
+<<<<<<< HEAD
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
+=======
+  appearance: none;
+>>>>>>> dev
   outline: none;
   background: none;
   background-image: url("../images/backend/select.png");
@@ -395,6 +483,7 @@ body {
 
 .n-member_editbtn {
   margin-top: 20px;
+<<<<<<< HEAD
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -403,6 +492,11 @@ body {
           justify-content: center;
   -webkit-column-gap: 30px;
           column-gap: 30px;
+=======
+  display: flex;
+  justify-content: center;
+  column-gap: 30px;
+>>>>>>> dev
 }
 
 .n-member_editbtn button {
@@ -440,3 +534,7 @@ body {
 .-active2 {
   color: #a3a3a3;
 }
+<<<<<<< HEAD
+=======
+/*# sourceMappingURL=n-member.css.map */
+>>>>>>> dev

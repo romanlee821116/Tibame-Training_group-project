@@ -1,8 +1,12 @@
 @charset "UTF-8";
 * {
   font-family: '微軟正黑體';
+<<<<<<< HEAD
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+=======
+  box-sizing: border-box;
+>>>>>>> dev
 }
 
 .memberShow {
@@ -17,16 +21,22 @@
 }
 
 .loginAll {
+<<<<<<< HEAD
   display: -webkit-box;
   display: -ms-flexbox;
+=======
+>>>>>>> dev
   display: flex;
   margin-bottom: 500px;
   font-weight: bold;
 }
 
 .loginSignup {
+<<<<<<< HEAD
   display: -webkit-box;
   display: -ms-flexbox;
+=======
+>>>>>>> dev
   display: flex;
   margin-left: 10%;
   margin-top: 8vh;
@@ -43,7 +53,10 @@
 
 /* 滑動效果 */
 .loginLeft, .forgetPWD, #loginIcon, #signupIcon, .loginWrapper, #loginArrow, .loginGender, .loginCode, .loginButton, .loginUnderline, span, .loginChoosenBar {
+<<<<<<< HEAD
   -webkit-transition: all 0.8s cubic-bezier(0.6, 0, 0.4, 1);
+=======
+>>>>>>> dev
   transition: all 0.8s cubic-bezier(0.6, 0, 0.4, 1);
 }
 
@@ -58,8 +71,12 @@
   width: 100%;
   height: 100%;
   /* border: 1px solid pink; */
+<<<<<<< HEAD
   -o-object-fit: cover;
      object-fit: cover;
+=======
+  object-fit: cover;
+>>>>>>> dev
 }
 
 .loginClose {
@@ -80,8 +97,12 @@
 }
 
 .loginClose .loginHamBar1 {
+<<<<<<< HEAD
   -webkit-transform: rotate(-45deg) translate(-6px, 5px);
           transform: rotate(-45deg) translate(-6px, 5px);
+=======
+  transform: rotate(-45deg) translate(-6px, 5px);
+>>>>>>> dev
 }
 
 .loginClose .loginHamBar2 {
@@ -89,8 +110,12 @@
 }
 
 .loginClose .loginHamBar3 {
+<<<<<<< HEAD
   -webkit-transform: rotate(45deg) translate(-8px, -8px);
           transform: rotate(45deg) translate(-8px, -8px);
+=======
+  transform: rotate(45deg) translate(-8px, -8px);
+>>>>>>> dev
 }
 
 /* 右邊表單=========================== */
@@ -115,8 +140,11 @@
 
 /* 調整標題 */
 .loginFormTitle {
+<<<<<<< HEAD
   display: -webkit-box;
   display: -ms-flexbox;
+=======
+>>>>>>> dev
   display: flex;
   /* border: 1px solid blue; */
   margin-bottom: 8px;
@@ -126,9 +154,13 @@
 
 .loginFormTitle h4 {
   /* border: 1px solid black; */
+<<<<<<< HEAD
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+=======
+  flex: 1;
+>>>>>>> dev
   text-align: center;
   padding-bottom: 5px;
   border-bottom: 2px solid #cba89a;
@@ -159,8 +191,12 @@
   position: absolute;
   top: 50%;
   left: 50%;
+<<<<<<< HEAD
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+=======
+  transform: translate(-50%, -50%);
+>>>>>>> dev
 }
 
 input {
@@ -172,7 +208,10 @@ input {
 .loginWrapper {
   height: 145px;
   overflow: hidden;
+<<<<<<< HEAD
   -webkit-transition: all 0.5s cubic-bezier(0.6, 0, 0.4, 1);
+=======
+>>>>>>> dev
   transition: all 0.5s cubic-bezier(0.6, 0, 0.4, 1);
   position: relative;
   /* 給眼睛定位 */
@@ -191,6 +230,7 @@ input {
 }
 
 /* 預設文字色彩 */
+<<<<<<< HEAD
 ::-webkit-input-placeholder {
   color: #cba89a;
 }
@@ -200,6 +240,8 @@ input {
 ::-ms-input-placeholder {
   color: #cba89a;
 }
+=======
+>>>>>>> dev
 ::placeholder {
   color: #cba89a;
 }
@@ -255,8 +297,11 @@ input {
 }
 
 .loginOther2 {
+<<<<<<< HEAD
   display: -webkit-box;
   display: -ms-flexbox;
+=======
+>>>>>>> dev
   display: flex;
 }
 
@@ -280,9 +325,13 @@ input {
   border-radius: 5px;
   color: white;
   /* margin-left: 5px; */
+<<<<<<< HEAD
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+=======
+  flex: 1;
+>>>>>>> dev
   text-align: center;
 }
 
@@ -355,8 +404,11 @@ input {
 
 /* 驗證碼 */
 .loginCode {
+<<<<<<< HEAD
   display: -webkit-box;
   display: -ms-flexbox;
+=======
+>>>>>>> dev
   display: flex;
 }
 
@@ -386,9 +438,13 @@ input {
   height: 15px;
   cursor: pointer;
   margin-bottom: 10px;
+<<<<<<< HEAD
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
+=======
+  align-self: center;
+>>>>>>> dev
 }
 
 /* 按鈕 */
@@ -409,8 +465,12 @@ input {
   display: block;
   line-height: 40px;
   position: relative;
+<<<<<<< HEAD
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0);
+=======
+  transform: translate3d(0, 0, 0);
+>>>>>>> dev
 }
 
 /* 忘記密碼================================= */
@@ -455,8 +515,12 @@ input {
   position: absolute;
   top: 50%;
   left: 50%;
+<<<<<<< HEAD
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+=======
+  transform: translate(-50%, -50%);
+>>>>>>> dev
 }
 
 #forgetFormPage .loginButton {
@@ -517,6 +581,7 @@ input {
   position: fixed;
   top: 50%;
   left: 50%;
+<<<<<<< HEAD
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   border-radius: 20px;
@@ -530,6 +595,14 @@ input {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+=======
+  transform: translate(-50%, -50%);
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0px 10px 32px rgba(23, 40, 82, 0.6);
+  flex-direction: column;
+  align-items: center;
+>>>>>>> dev
   text-align: center;
   padding: 40px;
   z-index: 999;
@@ -555,12 +628,17 @@ input {
 }
 
 .type2 div {
+<<<<<<< HEAD
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+=======
+  display: flex;
+  justify-content: center;
+>>>>>>> dev
 }
 
 @media (max-width: 575px) {
@@ -650,3 +728,7 @@ input {
     margin: 100px auto 0 auto;
   }
 }
+<<<<<<< HEAD
+=======
+/*# sourceMappingURL=login.css.map */
+>>>>>>> dev
