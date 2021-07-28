@@ -251,6 +251,10 @@
   cursor: pointer;
 }
 
+.cart_detailBtn:hover {
+  background-color: #cba89a;
+}
+
 /* ========== 禮盒明細 ========== */
 .cart_detailBorder {
   display: none;
@@ -365,7 +369,7 @@
 }
 
 .cart_checkout:hover {
-  color: #bb866a;
+  background-color: #2e447c;
 }
 
 @media screen and (max-width: 600px) {

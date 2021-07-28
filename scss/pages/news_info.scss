@@ -25,6 +25,10 @@ body {
     @include footer();
 }
 
+.mediacolumn {
+    @include media();
+}
+
 .psychotest{
     @include psycoBtn();
 }
@@ -95,7 +99,7 @@ body {
     max-width: 1200px;
     height: 40vw;
     max-height: 450px;
-    background-image: url(../images/news/newsinfo_pic01.png);
+    background-image: url(../images/shopping_list/daifuku_mango_b_big.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -117,7 +121,7 @@ body {
     max-width: 300px;
     height: 20vw;
     max-height: 300px;
-    background-image: url(../images/news/newsinfo_pic02.png);
+    background-image: url(../images/shopping_list/daifuku_mango_c_big.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -129,7 +133,7 @@ body {
     max-width: 300px;
     height: 20vw;
     max-height: 300px;
-    background-image: url(../images/news/newsinfo_pic03.png);
+    background-image: url(../images/about/farmer2.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -141,7 +145,7 @@ body {
     max-width: 300px;
     height: 20vw;
     max-height: 300px;
-    background-image: url(../images/news/newsinfo_pic04.png);
+    background-image: url(../images/shopping_list/daifuku_mango_a_big.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -184,7 +188,7 @@ body {
     position: absolute;
     bottom: 0px;
     left: 0px;
-    background-image: url(../images/news/newsinfo_pic01.png);
+    background-image: url(../images/about/randomMango.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

@@ -7,7 +7,12 @@ $(document).ready(function() {
     //         console.log('have');
     //     }
     // };
-
+    if(window.location.pathname == '/index.html'){
+        console.log('homepage');
+        $('.memberShow').load('page/login.html').hide();
+    }else{
+        $('.memberShow').load('login.html').hide();
+    }
     // 點擊打開
     $('.navbar-icon .fa-user').click(function() {
         // ----------嘗試用load寫-----------
