@@ -166,7 +166,7 @@ body{
     padding: 10px;
     list-style: none;
     display: grid;
-    grid-template-columns: 1fr 2.5fr 1fr 1fr .8fr 1fr 1fr;
+    grid-template-columns: 1fr 2.5fr 1fr 1fr .8fr 1fr 107px;
     column-gap: 10px;
     background-color: #cba89a;
     font-size: 16px;
@@ -180,13 +180,17 @@ body{
     padding: 10px;
     list-style: none;
     display: grid;
-    grid-template-columns: 1fr 2.5fr 1fr 1fr .8fr 1fr 1fr;
+    grid-template-columns: 1fr 2.5fr 1fr 1fr .8fr 1fr 107px;
     column-gap: 10px;
     background-color: #ffffff;
     font-size: 16px;
     color: #172852;
     font-weight: bold; 
     align-items: center;
+}
+
+.n-member_member:hover{
+    background-color: #f8f2ed;
 }
 
 .n-member_member li{
@@ -329,7 +333,7 @@ body{
     cursor: pointer;
 }
 
-.n-member_editbtn .close{    
+.n-member_editbtn .n-member_close{    
     background-color: #a3a3a3;
     border: 1px solid #a3a3a3;    
 }
