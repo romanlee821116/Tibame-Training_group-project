@@ -1,20 +1,7 @@
 @charset "UTF-8";
 * {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  box-sizing: border-box;
-=======
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
->>>>>>> 579eeae2f2f967ec311bd533008a684834644801
-=======
-  box-sizing: border-box;
->>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
-=======
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
->>>>>>> f27bcfd4798b9dd2c40f8ee7712e8c30eff504be
   font-family: '微軟正黑體';
 }
 
@@ -25,36 +12,15 @@ body {
 }
 
 .n-member_header {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-=======
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-=======
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
->>>>>>> f27bcfd4798b9dd2c40f8ee7712e8c30eff504be
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-<<<<<<< HEAD
->>>>>>> 579eeae2f2f967ec311bd533008a684834644801
-=======
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
->>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
-=======
->>>>>>> f27bcfd4798b9dd2c40f8ee7712e8c30eff504be
   background-image: url("../images/backend/loginbg.png");
   background-repeat: no-repeat;
   background-position: center top;
@@ -64,42 +30,17 @@ body {
 }
 
 .n-member_logo {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
-  flex-grow: 2;
-  display: flex;
-  align-items: center;
-  column-gap: 20px;
-<<<<<<< HEAD
-=======
   -webkit-box-flex: 2;
       -ms-flex-positive: 2;
           flex-grow: 2;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-=======
-  -webkit-box-flex: 2;
-      -ms-flex-positive: 2;
-          flex-grow: 2;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
->>>>>>> f27bcfd4798b9dd2c40f8ee7712e8c30eff504be
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   -webkit-column-gap: 20px;
           column-gap: 20px;
-<<<<<<< HEAD
->>>>>>> 579eeae2f2f967ec311bd533008a684834644801
-=======
->>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
-=======
->>>>>>> f27bcfd4798b9dd2c40f8ee7712e8c30eff504be
 }
 
 .n-member_logo img {
@@ -115,13 +56,6 @@ body {
 }
 
 .n-member_logout {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  display: flex;
-  align-items: center;
-  column-gap: 10px;
-=======
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -130,22 +64,6 @@ body {
           align-items: center;
   -webkit-column-gap: 10px;
           column-gap: 10px;
->>>>>>> 579eeae2f2f967ec311bd533008a684834644801
-=======
-  display: flex;
-  align-items: center;
-  column-gap: 10px;
->>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
-=======
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-column-gap: 10px;
-          column-gap: 10px;
->>>>>>> f27bcfd4798b9dd2c40f8ee7712e8c30eff504be
   cursor: pointer;
 }
 
@@ -158,41 +76,16 @@ body {
 }
 
 .n-member_main {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  display: flex;
-  justify-content: flex-start;
-=======
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
->>>>>>> 579eeae2f2f967ec311bd533008a684834644801
-=======
-  display: flex;
-  justify-content: flex-start;
->>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
-=======
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
->>>>>>> f27bcfd4798b9dd2c40f8ee7712e8c30eff504be
   padding: 0 60px;
 }
 
 .n-member_left {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  display: flex;
-  flex-direction: column;
-=======
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -200,20 +93,6 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
->>>>>>> 579eeae2f2f967ec311bd533008a684834644801
-=======
-  display: flex;
-  flex-direction: column;
->>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
-=======
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
->>>>>>> f27bcfd4798b9dd2c40f8ee7712e8c30eff504be
   width: 15%;
 }
 
@@ -253,31 +132,12 @@ body {
 
 .n-member_right form {
   /* border: 1px solid blue; */
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  display: flex;
-  justify-content: flex-end;
-=======
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
->>>>>>> 579eeae2f2f967ec311bd533008a684834644801
-=======
-  display: flex;
-  justify-content: flex-end;
->>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
-=======
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
->>>>>>> f27bcfd4798b9dd2c40f8ee7712e8c30eff504be
   margin-bottom: 20px;
 }
 
@@ -291,32 +151,12 @@ body {
 }
 
 .n-member_right form section {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
-  flex-grow: 2;
-  display: flex;
-  justify-content: flex-end;
-  column-gap: 10px;
-  align-items: flex-end;
-<<<<<<< HEAD
-=======
   -webkit-box-flex: 2;
       -ms-flex-positive: 2;
           flex-grow: 2;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-=======
-  -webkit-box-flex: 2;
-      -ms-flex-positive: 2;
-          flex-grow: 2;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
->>>>>>> f27bcfd4798b9dd2c40f8ee7712e8c30eff504be
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
@@ -325,12 +165,6 @@ body {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
-<<<<<<< HEAD
->>>>>>> 579eeae2f2f967ec311bd533008a684834644801
-=======
->>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
-=======
->>>>>>> f27bcfd4798b9dd2c40f8ee7712e8c30eff504be
 }
 
 .n-member_right form section label {
@@ -363,12 +197,6 @@ body {
   padding-left: 5px;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> f27bcfd4798b9dd2c40f8ee7712e8c30eff504be
 .n-member_right form section input::-webkit-input-placeholder {
   color: #cba89a;
   font-weight: bold;
@@ -384,12 +212,6 @@ body {
   font-weight: bold;
 }
 
-<<<<<<< HEAD
->>>>>>> 579eeae2f2f967ec311bd533008a684834644801
-=======
->>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
-=======
->>>>>>> f27bcfd4798b9dd2c40f8ee7712e8c30eff504be
 .n-member_right form section input::placeholder {
   color: #cba89a;
   font-weight: bold;
@@ -400,33 +222,12 @@ body {
   margin: 0;
   padding: 10px;
   list-style: none;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  display: grid;
-  grid-template-columns: 1fr 2.5fr 1fr 1fr .8fr 1fr 1fr;
-  column-gap: 10px;
-=======
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 2.5fr 1fr 1fr .8fr 1fr 107px;
       grid-template-columns: 1fr 2.5fr 1fr 1fr .8fr 1fr 107px;
   -webkit-column-gap: 10px;
           column-gap: 10px;
->>>>>>> 579eeae2f2f967ec311bd533008a684834644801
-=======
-  display: grid;
-  grid-template-columns: 1fr 2.5fr 1fr 1fr .8fr 1fr 107px;
-  column-gap: 10px;
->>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
-=======
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 2.5fr 1fr 1fr .8fr 1fr 107px;
-      grid-template-columns: 1fr 2.5fr 1fr 1fr .8fr 1fr 107px;
-  -webkit-column-gap: 10px;
-          column-gap: 10px;
->>>>>>> f27bcfd4798b9dd2c40f8ee7712e8c30eff504be
   background-color: #cba89a;
   font-size: 16px;
   color: #ffffff;
@@ -438,61 +239,23 @@ body {
   margin: 0;
   padding: 10px;
   list-style: none;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  display: grid;
-  grid-template-columns: 1fr 2.5fr 1fr 1fr .8fr 1fr 1fr;
-  column-gap: 10px;
-=======
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 2.5fr 1fr 1fr .8fr 1fr 107px;
       grid-template-columns: 1fr 2.5fr 1fr 1fr .8fr 1fr 107px;
   -webkit-column-gap: 10px;
           column-gap: 10px;
->>>>>>> 579eeae2f2f967ec311bd533008a684834644801
-=======
-  display: grid;
-  grid-template-columns: 1fr 2.5fr 1fr 1fr .8fr 1fr 107px;
-  column-gap: 10px;
->>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
-=======
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 2.5fr 1fr 1fr .8fr 1fr 107px;
-      grid-template-columns: 1fr 2.5fr 1fr 1fr .8fr 1fr 107px;
-  -webkit-column-gap: 10px;
-          column-gap: 10px;
->>>>>>> f27bcfd4798b9dd2c40f8ee7712e8c30eff504be
   background-color: #ffffff;
   font-size: 16px;
   color: #172852;
   font-weight: bold;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  align-items: center;
-=======
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-=======
-  align-items: center;
->>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
-=======
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
->>>>>>> f27bcfd4798b9dd2c40f8ee7712e8c30eff504be
 }
 
 .n-member_member:hover {
   background-color: #f8f2ed;
-<<<<<<< HEAD
->>>>>>> 579eeae2f2f967ec311bd533008a684834644801
-=======
->>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
 }
 
 .n-member_member li {
@@ -524,31 +287,12 @@ body {
   margin: 0;
   padding: 0px;
   list-style: none;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  display: flex;
-  justify-content: flex-end;
-=======
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
->>>>>>> 579eeae2f2f967ec311bd533008a684834644801
-=======
-  display: flex;
-  justify-content: flex-end;
->>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
-=======
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
->>>>>>> f27bcfd4798b9dd2c40f8ee7712e8c30eff504be
   margin-top: 15px;
 }
 
@@ -581,52 +325,20 @@ body {
   width: 750px;
   height: 300px;
   /* border: 1px solid red; */
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  display: flex;
-  flex-direction: column;
-=======
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-=======
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
->>>>>>> f27bcfd4798b9dd2c40f8ee7712e8c30eff504be
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-<<<<<<< HEAD
->>>>>>> 579eeae2f2f967ec311bd533008a684834644801
-=======
-  display: flex;
-  flex-direction: column;
->>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
-=======
->>>>>>> f27bcfd4798b9dd2c40f8ee7712e8c30eff504be
   border-radius: 10px;
   overflow: hidden;
   position: fixed;
   left: 50%;
   top: 50%;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  transform: translate(-50%, -50%);
-=======
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
->>>>>>> 579eeae2f2f967ec311bd533008a684834644801
-=======
-  transform: translate(-50%, -50%);
->>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
-=======
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
->>>>>>> f27bcfd4798b9dd2c40f8ee7712e8c30eff504be
   z-index: 2;
   background-color: #ffffff;
   /* display: none; */
@@ -645,27 +357,10 @@ body {
   margin: 0;
   padding: 0px;
   list-style: none;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  display: grid;
-  grid-template-columns: 1fr .9fr;
-=======
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr .9fr;
       grid-template-columns: 1fr .9fr;
->>>>>>> 579eeae2f2f967ec311bd533008a684834644801
-=======
-  display: grid;
-  grid-template-columns: 1fr .9fr;
->>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
-=======
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr .9fr;
-      grid-template-columns: 1fr .9fr;
->>>>>>> f27bcfd4798b9dd2c40f8ee7712e8c30eff504be
   padding: 15px 30px;
   row-gap: 20px;
 }
@@ -687,23 +382,9 @@ body {
   border-radius: 3px;
   overflow: hidden;
   cursor: pointer;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  appearance: none;
-=======
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
->>>>>>> 579eeae2f2f967ec311bd533008a684834644801
-=======
-  appearance: none;
->>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
-=======
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
->>>>>>> f27bcfd4798b9dd2c40f8ee7712e8c30eff504be
   outline: none;
   background: none;
   background-image: url("../images/backend/select.png");
@@ -714,13 +395,6 @@ body {
 
 .n-member_editbtn {
   margin-top: 20px;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  display: flex;
-  justify-content: center;
-  column-gap: 30px;
-=======
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -729,22 +403,6 @@ body {
           justify-content: center;
   -webkit-column-gap: 30px;
           column-gap: 30px;
->>>>>>> 579eeae2f2f967ec311bd533008a684834644801
-=======
-  display: flex;
-  justify-content: center;
-  column-gap: 30px;
->>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
-=======
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-column-gap: 30px;
-          column-gap: 30px;
->>>>>>> f27bcfd4798b9dd2c40f8ee7712e8c30eff504be
 }
 
 .n-member_editbtn button {
@@ -759,15 +417,7 @@ body {
   cursor: pointer;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-.n-member_editbtn .close {
-=======
 .n-member_editbtn .n-member_close {
->>>>>>> 579eeae2f2f967ec311bd533008a684834644801
-=======
-.n-member_editbtn .n-member_close {
->>>>>>> eba12a48373f2c7277b22609e0cc362154eca36e
   background-color: #a3a3a3;
   border: 1px solid #a3a3a3;
 }
@@ -790,3 +440,4 @@ body {
 .-active2 {
   color: #a3a3a3;
 }
+/*# sourceMappingURL=n-member.css.map */
