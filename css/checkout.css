@@ -251,6 +251,10 @@
   cursor: pointer;
 }
 
+.cart_detailBtn:hover {
+  background-color: #cba89a;
+}
+
 /* ========== 禮盒明細 ========== */
 .cart_detailBorder {
   display: none;
