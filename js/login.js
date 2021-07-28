@@ -159,6 +159,7 @@ $(document).ready(function(){
         $('.loginError').css('display','none');
         $('.loginError').children('p').text('資料格式不正確');
         $('.loginAll input').css('border','2px solid transparent');
+        $('.loginAll select').css('border','2px solid transparent');
         // 設定變數
         let account = $('.loginAccount').val();
         let password = $('#loginPassword').val();
@@ -252,6 +253,9 @@ $(document).ready(function(){
 
         if(address1 == false || address2 == false || address3 == false){
             e.preventDefault();
+            $('#loginAddress').css('border','2px solid #dc3838');
+            $('.loginSelect1').css('border','2px solid #dc3838');
+            $('.loginSelect2').css('border','2px solid #dc3838');
             $('#loginAddress').next().css('display','inline-block');
             $('#loginAddress').next().children('p').text('地址請填寫完全');
         }
@@ -291,11 +295,13 @@ $(document).ready(function(){
     // 所有input欄位點擊focus時，提示消失
     $('.loginAll input').focus(function(){
         if( $(this).attr('type') == 'radio' ){
-            // console.log( $(this).attr('type'));
+            console.log( $(this).attr('name'));
             $(this).parent().next().css('display','none');
+        }else if( $(this).attr('name') == 'loginPswFocus' ){
+            $(this).next().next().css('display','none');
         }else{
             $(this).next().css('display','none');
-            $(this).next().next().css('display','none');
+            // $(this).next().next().css('display','none');
         };
         
     });
@@ -368,6 +374,7 @@ $(document).ready(function(){
         $('.loginError').css('display','none');
         $('.loginError').children('p').text('資料格式不正確');
         $('.loginAll input').css('border','2px solid transparent');
+        $('.loginAll select').css('border','2px solid transparent');
         // 清除所有input的值
         $('.loginAll input').val('');
     };

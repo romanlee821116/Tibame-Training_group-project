@@ -42,5 +42,9 @@ $(document).ready(function() {
 
 
     // =================== local storage===========================
-
+    $('.choose_select_area a').click(function() {
+        let product_num = $(this).find("div").data("id");
+        // alert(product_num)
+        localStorage.setItem("product_page_num", JSON.stringify(product_num))
+    })
 });
