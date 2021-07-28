@@ -15,6 +15,10 @@ body{
 body::-webkit-scrollbar {
     display: none;
 }
+.psychotest{
+    @include psycoBtn();
+    z-index: 999;
+}
 .about_wrap{
     width: 100vw;
     height: 100vh;    
@@ -83,7 +87,7 @@ body::-webkit-scrollbar {
         bottom: 8%;
         right: 30vw;
         height: 25%;
-        z-index: 8;
+        z-index: 9;
         // border: 2px solid red;
         &::before{
             content: '';
@@ -131,7 +135,7 @@ body::-webkit-scrollbar {
         height: 23%;
         bottom: 8%;
         right: 25vw;
-        z-index: 7;
+        z-index: 8;
         div{
             &::before{
                 content: '';
@@ -183,7 +187,7 @@ body::-webkit-scrollbar {
     .about_people4{
         bottom: 9%;
         right: 50vw;
-        z-index: 6;
+        z-index: 7;
         height: 22vh;
         // border: 2px solid red;
         div{
@@ -200,7 +204,7 @@ body::-webkit-scrollbar {
                 background-repeat: no-repeat; 
                 transform-origin: top right;
                 animation: hand 10s linear infinite;
-                z-index: 6;
+                z-index: 7;
             }
         }
         &::before{
@@ -236,7 +240,7 @@ body::-webkit-scrollbar {
         animation: walk2 28s linear infinite ; 
     }
     .about_people6{
-    bottom: 15%;
+    bottom: 14%;
     left: 15%;    
     }
     

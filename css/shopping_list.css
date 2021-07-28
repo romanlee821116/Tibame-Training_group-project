@@ -236,8 +236,7 @@ body {
   position: fixed;
   top: 10%;
   left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
   border-radius: 25px;
   background-color: #bb866a;
   text-align: center;
