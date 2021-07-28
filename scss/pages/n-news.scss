@@ -337,6 +337,8 @@ body{
     font-weight: bold;
     margin: 0;
     padding: 0;
+    display: flex;
+    column-gap: 10px;
 }
 
 .n-news_news_mid ul li:first-child{
@@ -362,13 +364,14 @@ body{
     background-position: right;
     background-size: contain;
     border: 1.5px solid #cba89a;
+    margin-left: 6px;
 } 
 
 .n-news_news_mid input{
     font-size: 16px;
     color: #172852;
     font-weight: bold;
-    border: 1n-news_5px solid #cba89a;
+    border: 1.5px solid #cba89a;
     width: 655px;
 }
 
