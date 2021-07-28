@@ -58,7 +58,7 @@ $(document).ready(function() {
     //========================================local storage========================================
     var item_area = $(".product_product");
     $(item_area).first().show().siblings().hide();
-    // 點擊切換商品分類內容
+    // 點擊切換商品分類內容 救救可憐的廢物
     $(".product_area").click(function() {
         let index = $(this).index();
         $(item_area).eq(index).fadeIn(500).show().siblings().hide();
