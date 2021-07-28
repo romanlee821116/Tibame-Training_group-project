@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>discount</title>
     <link rel="stylesheet" href="../css/n-discount.css">
+    <link rel="stylesheet" href="../css/n-pop.css">
     <link rel="icon" href="../images/backend/n_logo.png">
 </head>
 <body>
@@ -30,7 +31,7 @@
             <div class="n-discount_right">
 
                 <form action="" method="get" id="">
-                    <p>消息管理</p>
+                    <p>折扣碼管理</p>
 
                     <div class="n-discount_discountbtn">
                         <button class="n-discount_add" @click='new_add()' type="button">新增</button>
@@ -136,12 +137,35 @@
         <div id="hide" v-if='current_edit !== null'></div>
 
         <discount-add v-if='new_edit' @dclose='closeddd' @dsave='saveddd'></discount-add>
-
+        <double-check v-if='dbcheck' @save='sss' @cancel='ccc'></double-check>
 
     </div>
 
     <script src="../js/vue.js"></script>
     <script>
+        Vue.component('double-check', {            
+            template: 
+                ` 
+                <div class="dbc">
+                    <section></section>
+                    <p>尚未存檔，是否確認關閉</p>
+                    <div>
+                        <button type="button" @click='sure'>確認</button>
+                        <button type="button" @click='cancel'>取消</button>
+                    </div>
+                </div>                
+                `
+            ,
+            methods:{
+                sure(){
+                    this.$emit('save')
+                },
+                cancel(){
+                    this.$emit('cancel')
+                }
+            },
+        });
+
 
         Vue.component('discount-add', {
             data(){
@@ -261,7 +285,8 @@
         new Vue({
             el: '#app',
             data:{
-
+                
+                dbcheck:false,
                 new_edit:false,
                 img_names:['右上圖', '主題', '圖片01', '圖片02', '圖片03'],
 
@@ -342,11 +367,32 @@
                     this.d_sec_title = this.discounts[index].標題;
                     this.d_main_content = this.discounts[index].內文;
                     this.d_sec_content = this.discounts[index].內文;
+
                 },
 
-                d_close(){                    
-                    this.current_edit = null;
+
+                d_close(){       
+                    this.dbcheck=true;
+                    let edit_z = document.querySelector('.n-discount_edit');
+                    edit_z.style.opacity = 0;
                 },  
+
+                sss(){
+                    this.current_edit = null;
+                    this.dbcheck=false;
+                    let edit_z = document.querySelector('.n-discount_edit');
+                    edit_z.style.opacity = 1;
+
+                    this.new_edit = false;
+                },
+
+                ccc(){
+                    this.dbcheck=false;
+                    let edit_z = document.querySelector('.n-discount_edit');
+                    edit_z.style.opacity = 1;
+                },
+
+
                 d_save(){     
 
                     let d_index = this.$data.current_edit;
@@ -381,7 +427,11 @@
                     // this.current_edit = "notnull";
                 },
                 closeddd(){
-                    this.new_edit = false;
+                    // this.new_edit = false;
+
+                    this.dbcheck=true;
+                    let edit_z = document.querySelector('.n-discount_edit');
+                    edit_z.style.opacity = 0;
                 },
                 saveddd(d_number, on_off, d_main_title, d_sec_title, d_main_content, d_sec_content){
                     this.new_edit = false;
