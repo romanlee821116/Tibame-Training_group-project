@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Q&A</title>
     <link rel="stylesheet" href="../css/n-faq.css">
+    <link rel="stylesheet" href="../css/n-pop.css">
     <link rel="icon" href="../images/backend/n_logo.png">
 </head>
 <body>
@@ -104,11 +105,37 @@
         <div id="hide" v-if='current_edit !== null'></div>
 
         <faq-add v-if='new_edit' @fclose='closefff' @fsave='savefff'></faq-add>
+        <double-check v-if='dbcheck' @save='sss' @cancel='ccc'></double-check>
 
     </div>
 
     <script src="../js/vue.js"></script>
     <script>
+        Vue.component('double-check', {            
+            template: 
+                ` 
+                <div class="dbc">
+                    <section></section>
+                    <p>尚未存檔，是否確認關閉</p>
+                    <div>
+                        <button type="button" @click='sure'>確認</button>
+                        <button type="button" @click='cancel'>取消</button>
+                    </div>
+                </div>                
+                `
+            ,
+            methods:{
+                sure(){
+                    this.$emit('save')
+                },
+                cancel(){
+                    this.$emit('cancel')
+                }
+            },
+        });
+
+        
+
         Vue.component('faq-add', {
             data(){
                 return{  //組件的變數寫在這裡
@@ -181,6 +208,7 @@
                 f_question:'',
                 f_answer:'',
                 new_edit:false,
+                dbcheck:false,
                 
                 mainbtn: [  
                     {name:"會員管理", url: "./n-member.html"},
@@ -235,9 +263,31 @@
                     this.f_answer = this.faqs[index].回答;
                     
                 },
-                f_close(){                    
-                    this.current_edit = null;
+
+
+                f_close(){       
+                    this.dbcheck=true;
+                    let edit_z = document.querySelector('.n-faq_edit');
+                    edit_z.style.opacity = 0;
                 },  
+
+                sss(){
+                    this.current_edit = null;
+                    this.dbcheck=false;
+                    let edit_z = document.querySelector('.n-faq_edit');
+                    edit_z.style.opacity = 1;
+
+                    this.new_edit = false;
+                },
+
+                ccc(){
+                    this.dbcheck=false;
+                    let edit_z = document.querySelector('.n-faq_edit');
+                    edit_z.style.opacity = 1;
+                },
+
+
+
                 f_save(){     
 
                     let n_index = this.$data.current_edit;
@@ -252,9 +302,19 @@
                     this.new_edit = true;
                     // this.current_edit = "notnull";
                 },
+
+
+
                 closefff(){
-                    this.new_edit = false;
+                    // this.new_edit = false;
+
+                    this.dbcheck=true;
+                    let edit_z = document.querySelector('.n-faq_edit');
+                    edit_z.style.opacity = 0;
                 },
+
+
+
                 savefff(f_sort, f_question, f_answer){
                     this.new_edit = false;
 
@@ -274,7 +334,7 @@
                 },
                 log_out(){
                     location.href = "./n-login.html"
-                }                
+                },                 
                 
             },
             

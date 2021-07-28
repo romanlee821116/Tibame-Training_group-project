@@ -297,6 +297,7 @@ body {
     height: 100%;
     padding: 0.9999999px;
     text-align: center;
+    font-weight: 900;
 }
 
 .product_num_btn button {
@@ -375,14 +376,18 @@ body {
 }
 
 .yellow {
-    width: 30px;
-    height: 30px;
-    background-size: cover;
-    position: absolute;
-    transform: translateX(10px);
-    z-index: 0;
-    background-image: url("../images/shopping_list/yellow.png");
-    display: none;
+    span{
+        color:#172852
+    }
+    i{
+        width: 30px;
+        height: 30px;
+        background-size: cover;
+        position: absolute;
+        transform: translateX(10px);
+        z-index: 0;
+        background-image: url("../images/shopping_list/yellow.png");
+    }
 }
 
 .product_area img {

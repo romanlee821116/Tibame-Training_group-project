@@ -26,6 +26,10 @@ body {
     @include footer();
 }
 
+.mediacolumn {
+    @include media();
+}
+
 .newsAll_title, .newsAll_classification {
     width: 80%;
     max-width: 1200px;
