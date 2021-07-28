@@ -84,6 +84,7 @@ body {
         text-align: left;
         width: 200px;
         cursor: pointer;
+<<<<<<< HEAD
     }
     a {
         padding: 10px;
@@ -110,8 +111,39 @@ body {
             margin: 0 20px;
             background-color: transparent;
             transition: all .3s;
+=======
+        a {
+            padding: 10px;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+            display: block;
+            letter-spacing: 2px;
+            opacity: 0;
+            transition: all .5s;
+            &:hover{
+                color: #fad689;
+                
+            }
+            &:hover:before{
+                background-color: #fad689
+            }
+            &::before{
+                content: "\A";
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                display: inline-block;
+                margin: 0 20px;
+                background-color: transparent;
+                transition: all .3s;
+            }
+>>>>>>> dev
         }
     }
+    
+    
 }
 
 .yellow_ball {

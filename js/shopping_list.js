@@ -93,6 +93,9 @@ $(document).ready(function() {
         $(this).find('span').css({ color: '#172852' });
         $('.product_area').removeClass('yellow');
         $(this).addClass('yellow');
+        $('html, body').animate({
+            scrollTop: '0',
+        },300);
     })
 
     // 商品數量增減 

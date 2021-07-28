@@ -5,7 +5,7 @@ $(document).ready(function() {
     $(".first_front_end").hover(function() {
         $(this).css({
             boxShadow: "0px 0px 0px transparent",
-            backgroundColor: "transparent",
+            backgroundColor: "#ffe4c4",
             border: "0",
         })
         $(this).find("a").css({
@@ -43,7 +43,7 @@ $(document).ready(function() {
     $(".first_back_end").hover(function() {
         $(this).css({
             boxShadow: "0px 0px 0px transparent",
-            backgroundColor: "transparent",
+            backgroundColor: "#ffe4c4",
             border: "0",
         })
         $(this).find("a").css({

@@ -144,7 +144,7 @@ body {
   cursor: pointer;
 }
 
-.ham_overlay a {
+.ham_overlay .ham_select a {
   padding: 10px;
   text-decoration: none;
   font-size: 20px;
@@ -156,15 +156,15 @@ body {
   transition: all .5s;
 }
 
-.ham_overlay a:hover {
+.ham_overlay .ham_select a:hover {
   color: #fad689;
 }
 
-.ham_overlay a:hover:before {
+.ham_overlay .ham_select a:hover:before {
   background-color: #fad689;
 }
 
-.ham_overlay a::before {
+.ham_overlay .ham_select a::before {
   content: "\A";
   width: 10px;
   height: 10px;
@@ -172,6 +172,7 @@ body {
   display: inline-block;
   margin: 0 20px;
   background-color: transparent;
+<<<<<<< HEAD
   transition: all .3s;
 }
 
@@ -184,6 +185,8 @@ body {
   display: inline-block;
   margin: 0 20px;
   background-color: #fad689;
+=======
+>>>>>>> dev
   transition: all .3s;
 }
 /*# sourceMappingURL=hamburger.css.map */
