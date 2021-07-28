@@ -68,8 +68,6 @@ $(document).ready(function() {
         if ($(this).find("i").hasClass("yellow")) {
             $(this).siblings().find("i").removeClass("yellow").hide();
             $(this).siblings().find('span').css({ color: '#bb866a' });
-        } else {
-
         }
     });
 
