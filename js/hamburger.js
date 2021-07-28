@@ -12,8 +12,11 @@ $(document).ready(function() {
             }
         })
         //判斷當前頁面顏色提示
-    let show = window.location.pathname;
-    localStorage.setItem("nowPage", JSON.stringify(show));
-    //判斷當前是否登入顯示登入/登出連結
+        // let show = window.location.pathname;
+        // localStorage.setItem("nowPage", JSON.stringify(show));
+        // if (window.location.pathname == 'page/shopimg_choose.html') {
+        //     console.log("hi")
+        // }
+        //判斷當前是否登入顯示登入/登出連結
 
 });
