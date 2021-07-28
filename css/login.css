@@ -1,0 +1,654 @@
+@charset "UTF-8";
+* {
+  font-family: '微軟正黑體';
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.memberShow {
+  padding: 0;
+  margin: 0;
+  color: #172852;
+  font-size: 14px;
+  background-image: url(../images/login/login_bg.png);
+  background-repeat: no-repeat;
+  z-index: 999;
+  position: relative;
+}
+
+.loginAll {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 500px;
+  font-weight: bold;
+  min-height: 100vh;
+}
+
+.loginSignup {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 10%;
+  margin-top: 8vh;
+  /* border: 2px solid red; */
+  width: 270px;
+  overflow: hidden;
+}
+
+/* 禁止滑動卷軸 */
+.stopScroll {
+  height: 100%;
+  overflow: hidden;
+}
+
+/* 滑動效果 */
+.loginLeft, .forgetPWD, #loginIcon, #signupIcon, .loginWrapper, #loginArrow, .loginGender, .loginCode, .loginButton, .loginUnderline, span, .loginChoosenBar {
+  -webkit-transition: all 0.8s cubic-bezier(0.6, 0, 0.4, 1);
+  transition: all 0.8s cubic-bezier(0.6, 0, 0.4, 1);
+}
+
+/* 左邊圖片 */
+#loginImg {
+  width: 50%;
+  height: 100vh;
+  /* border: 1px solid pink; */
+}
+
+#loginImg img {
+  width: 100%;
+  height: 100%;
+  /* border: 1px solid pink; */
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.loginClose {
+  display: inline-block;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  z-index: 10;
+}
+
+.loginClose .loginHam {
+  width: 30px;
+  height: 4px;
+  background-color: #bb866a;
+  border-radius: 10px;
+  margin: 6px 0;
+}
+
+.loginClose .loginHamBar1 {
+  -webkit-transform: rotate(-45deg) translate(-6px, 5px);
+          transform: rotate(-45deg) translate(-6px, 5px);
+}
+
+.loginClose .loginHamBar2 {
+  opacity: 0;
+}
+
+.loginClose .loginHamBar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+          transform: rotate(45deg) translate(-8px, -8px);
+}
+
+/* 右邊表單=========================== */
+/* 關閉紐 */
+.loginForm {
+  /* border: 1px solid red; */
+  width: 270px;
+}
+
+#loginFormPage {
+  font-size: 14px;
+}
+
+/* 隱藏radio */
+#login, #signup {
+  display: none;
+}
+
+#signupIcon {
+  color: #cba89a;
+}
+
+/* 調整標題 */
+.loginFormTitle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  /* border: 1px solid blue; */
+  margin-bottom: 8px;
+  width: 270px;
+  position: relative;
+}
+
+.loginFormTitle h4 {
+  /* border: 1px solid black; */
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  text-align: center;
+  padding-bottom: 5px;
+  border-bottom: 2px solid #cba89a;
+  margin: 0;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* .loginFormTitle .h4_underline{
+    border-bottom: 2px solid #172852;
+} */
+.loginFormTitle .loginChoosenBar {
+  position: absolute;
+  width: 50%;
+  height: 2px;
+  background-color: #172852;
+  left: 0;
+  bottom: 0;
+}
+
+.loginFormTitle .loginChoosenBar::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50px;
+  background-color: #172852;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+input {
+  border: 2px solid transparent;
+}
+
+/* 登入註冊============================== */
+/* 決定顯示範圍 */
+.loginWrapper {
+  height: 145px;
+  overflow: hidden;
+  -webkit-transition: all 0.5s cubic-bezier(0.6, 0, 0.4, 1);
+  transition: all 0.5s cubic-bezier(0.6, 0, 0.4, 1);
+  position: relative;
+  /* 給眼睛定位 */
+}
+
+/* 登入================================== */
+/* 小三角形 */
+#loginArrow {
+  height: 0;
+  width: 0;
+  border-bottom: 10px solid #f0ebe9;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  position: relative;
+  left: 21%;
+}
+
+/* 預設文字色彩 */
+::-webkit-input-placeholder {
+  color: #cba89a;
+}
+:-ms-input-placeholder {
+  color: #cba89a;
+}
+::-ms-input-placeholder {
+  color: #cba89a;
+}
+::placeholder {
+  color: #cba89a;
+}
+
+/* 保持登入｜忘記密碼 */
+#loginKeep {
+  color: #172852;
+  margin: 20px 0 20px 0;
+}
+
+#loginKeep span {
+  color: #647bb5;
+  cursor: pointer;
+  float: right;
+}
+
+/* 表單調整 */
+#loginFormPage .loginWrapper .loginErrorWrap > input {
+  width: 100%;
+  display: block;
+  margin-bottom: 8px;
+  padding: 8px;
+  border-radius: 5px;
+  background-color: #f0ebe9;
+  border: none;
+  color: #172852;
+  font-weight: bold;
+}
+
+/* 開眼睛看密碼 */
+.loginAll .eye1 {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  color: #cba89a;
+  cursor: pointer;
+}
+
+.loginAll .eye2 {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  color: #cba89a;
+  cursor: pointer;
+}
+
+/* 其他登入方式================ */
+.loginOther {
+  width: 270px;
+  margin-top: 190px;
+  position: absolute;
+  font-size: 12px;
+}
+
+.loginOther2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.loginFB {
+  padding: 10px 13px 10px 13px;
+  background-color: #39539d;
+  border-radius: 5px;
+  color: white;
+  margin-right: 5px;
+}
+
+.loginFB a, .loginLine a {
+  text-decoration: none;
+  outline: none;
+  color: white;
+}
+
+.loginLine {
+  padding: 10px;
+  background-color: #00cd00;
+  border-radius: 5px;
+  color: white;
+  /* margin-left: 5px; */
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  text-align: center;
+}
+
+/* 或的線條 */
+.loginOther1 {
+  margin: 40px 0 10px 0;
+  /* border: 1px solid purple; */
+  text-align: center;
+}
+
+.loginOther1 p {
+  display: inline-block;
+  margin: 0;
+  vertical-align: middle;
+  color: #cba89a;
+}
+
+.loginUnderline {
+  display: block;
+  background-color: #cba89a;
+  width: 45%;
+  height: 1px;
+  line-height: 14px;
+}
+
+/* 註冊================================== */
+/* 縣市區域 */
+#loginFormPage div select {
+  margin-bottom: 10px;
+  padding: 8px;
+  border-radius: 5px;
+  background-color: #f0ebe9;
+  border: 2px solid transparent;
+  color: #172852;
+  font-weight: bold;
+}
+
+#loginFormPage select:focus, #loginFormPage option:checked {
+  background-color: #f0ebe9;
+  /* color: #cba89a; */
+}
+
+.loginSelect1 {
+  width: 110px;
+}
+
+.loginSelect2 {
+  width: calc(100% - 118.5px);
+  margin-left: 5px;
+}
+
+.loginErrorAddress .loginError {
+  top: 70px !important;
+}
+
+/* 姓別 */
+#loginFormPage div input[type="radio"] {
+  /* vertical-align: text-top; */
+  margin-bottom: 2px;
+}
+
+#loginFormPage .loginWrapper .loginErrorWrap .loginGender {
+  margin-bottom: 10px;
+  color: #cba89a;
+}
+
+.loginGender input[type='radio']:checked + label {
+  color: #172852;
+}
+
+/* 驗證碼 */
+.loginCode {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.loginCode > div > input {
+  margin-bottom: 10px;
+  padding: 8px;
+  border-radius: 5px;
+  background-color: #f0ebe9;
+  border: none;
+  width: 160px;
+}
+
+.loginCode span {
+  display: inline-block;
+  border-radius: 5px;
+  border: 2px solid #172852;
+  width: 78px;
+  height: 38px;
+  margin: 0 5px 0 5px;
+  text-align: center;
+  font-size: 18px;
+  padding: 8px 0 8px 0;
+}
+
+.loginCode i {
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+/* 按鈕 */
+.loginButton {
+  width: 100%;
+  display: block;
+  padding: 0 10px 0 10px;
+  border-radius: 5px;
+  background-color: #172852;
+  color: #f0ebe9;
+  border: none;
+  height: 35px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.loginButton span {
+  display: block;
+  line-height: 40px;
+  position: relative;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+
+/* 忘記密碼================================= */
+.forgetPWD {
+  width: 270px;
+  margin-left: 50%;
+}
+
+/* 標題 */
+.forgetFormTitle {
+  /* border-bottom: 1px solid #cba89a; */
+  margin-bottom: 8px;
+  width: 270px;
+  position: relative;
+}
+
+.forgetFormTitle h4 {
+  /* border: 1px solid black; */
+  text-align: center;
+  padding-bottom: 5px;
+  border-bottom: 2px solid #cba89a;
+  margin: 0;
+  font-size: 16px;
+}
+
+.forgetFormTitle .loginChoosenBar2 {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #172852;
+  left: 0;
+  bottom: 0;
+}
+
+.forgetFormTitle .loginChoosenBar2::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50px;
+  background-color: #172852;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+#forgetFormPage .loginButton {
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+/* 三角形 */
+#loginArrow2 {
+  height: 0;
+  width: 0;
+  border-bottom: 10px solid #f0ebe9;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  margin: 0 auto;
+}
+
+/* 表單 */
+#forgetFormPage > .loginErrorWrap input {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #f0ebe9;
+  border: none;
+  color: #172852;
+}
+
+/* 返回登入 */
+.forgetForm #forgetFormPage .loginBack {
+  margin-top: 50px;
+  color: #bb866a;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.forgetForm #forgetFormPage .loginBack span {
+  padding-left: 15px;
+}
+
+.loginpopBG {
+  width: 100vw;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 991;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.type2 {
+  width: 25%;
+  height: 340px;
+  max-width: 300px;
+  max-height: 340px;
+  min-width: 290px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.95);
+  -webkit-box-shadow: 0px 10px 32px rgba(23, 40, 82, 0.6);
+          box-shadow: 0px 10px 32px rgba(23, 40, 82, 0.6);
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  padding: 40px;
+  z-index: 999;
+  position: relative;
+}
+
+.type2 img {
+  width: 80px;
+  height: auto;
+}
+
+.type2 h2 {
+  color: #172852;
+  font-size: 28px;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.type2 p {
+  color: #172852;
+  margin-bottom: 45px;
+  font-size: 14px;
+}
+
+.type2 div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media (max-width: 575px) {
+  .type2 {
+    padding: 40px 20px;
+  }
+}
+
+.type2 .mainBtn {
+  display: block;
+  padding: 8px 10px;
+  width: 120px;
+  border-radius: 25px;
+  background: #172852;
+  border: 3px solid #172852;
+  color: #fff;
+  text-align: center;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.type2 .mainBtn:hover {
+  background-color: #2e447c;
+  color: #fff;
+  border: 3px solid #2e447c;
+}
+
+.loginErrorWrap {
+  position: relative;
+}
+
+.loginError {
+  display: none;
+  background-color: #dc3838;
+  border-radius: 5px;
+  width: 120px;
+  height: 25px;
+  padding: 5px 10px;
+  font-size: 12px;
+  text-align: center;
+  position: absolute;
+  right: 10px;
+  top: 20px;
+  z-index: 1;
+}
+
+.loginError > p {
+  display: inline-block;
+  margin: 0;
+  color: #ffffff;
+  padding: 2px;
+}
+
+.loginError > div {
+  border-top: 1px solid transparent;
+  border-right: 8px solid transparent;
+  border-left: 8px solid transparent;
+  border-bottom: 13px solid #dc3838;
+  position: relative;
+  width: 15px;
+  height: 18px;
+  top: -36px;
+  right: -85px;
+}
+
+@media (max-width: 991px) {
+  body .loginSignup {
+    margin-left: 5%;
+  }
+}
+
+@media (max-width: 768px) {
+  body body {
+    background-image: url(../images/login/login.png);
+    background-repeat: no-repeat;
+  }
+  body .loginSignup {
+    margin: 100px auto 200px auto;
+  }
+  body #loginImg {
+    display: none;
+  }
+}
+
+@media (max-width: 575px) {
+  body .loginSignup {
+    margin: 100px auto 0 auto;
+  }
+}
+/*# sourceMappingURL=login.css.map */

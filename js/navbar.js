@@ -70,7 +70,7 @@ $(document).ready(function() {
     });
 
     // 點擊漢堡打開
-    $('body').on('click','.ham_select a:last',function(){
+    $('body').on('click','.ham_select a:nth-child(7)',function(){
         // $('.navbar-icon .fa-user').click(function(){   
             // ----------嘗試用load寫-----------
             // // 隱藏所有頁面
