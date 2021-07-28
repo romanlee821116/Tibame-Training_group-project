@@ -285,6 +285,13 @@ body {
   transition: .2s;
 }
 
+@media (max-width: 575px) {
+  .psychotest {
+    right: 10px;
+    bottom: 10px;
+  }
+}
+
 /* 開場心理測驗圖片加文字 */
 .psycho_beginScreen {
   height: 100vh;

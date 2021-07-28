@@ -13,9 +13,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="../js/news.js"></script>
     <script src="../js/vue.js"></script>
-	<script src="../js/cart_vue.js"></script>
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.14/vue.js"></script> -->
     <script src="../js/hamburger.js"></script>
     <script src="../js/navbar.js"></script>    
+    <script src="../js/cart_vue.js"></script>
 </head>
 
 <body>
@@ -165,7 +166,7 @@
 				</div>
 			</div>
 
-			<div class="cart_checkoutBorder"><a href="../page/checkout.html" class="cart_checkout">前往結帳</a></div>
+			<div class="cart_checkoutBorder"><a href="../page/checkout.html" class="cart_checkout" @click='stopGo'>前往結帳</a></div>
 
 		</div>
 	</div>

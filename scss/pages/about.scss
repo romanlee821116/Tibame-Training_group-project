@@ -15,6 +15,10 @@ body{
 body::-webkit-scrollbar {
     display: none;
 }
+.psychotest{
+    @include psycoBtn();
+    z-index: 999;
+}
 .about_wrap{
     width: 100vw;
     height: 100vh;    
@@ -78,12 +82,15 @@ body::-webkit-scrollbar {
             animation: Leg 20s .5s linear infinite; 
             z-index: 5;           
         }
+        @include rwd(575px){
+            display: none;
+        }
     }
     .about_people2{
         bottom: 8%;
         right: 30vw;
         height: 25%;
-        z-index: 8;
+        z-index: 9;
         // border: 2px solid red;
         &::before{
             content: '';
@@ -97,7 +104,6 @@ body::-webkit-scrollbar {
             background-size: contain;
             background-repeat: no-repeat; 
             animation: wheel 2s linear infinite; 
-            // z-index: -1; 
         }
         &::after{
             content: '';
@@ -124,14 +130,20 @@ body::-webkit-scrollbar {
                 height: 100%;
                 width: auto;
             }
+            @include rwd(575px){
+                animation: bikeLeg 8s linear infinite;     
+            }
         }
         animation: bike 10s linear infinite ;
+        @include rwd(575px){
+            animation: bike_rwd 5s linear infinite ;  
+        }
     }
     .about_people3{
         height: 23%;
         bottom: 8%;
         right: 25vw;
-        z-index: 7;
+        z-index: 8;
         div{
             &::before{
                 content: '';
@@ -178,12 +190,14 @@ body::-webkit-scrollbar {
             animation: Leg1 8s  linear infinite;
         }
         animation: walk1 30s linear infinite ;
-        // animation: walk2 28s linear infinite ;     
+        @include rwd(575px){
+            animation: walk1 10s linear infinite ;
+        }   
     }
     .about_people4{
         bottom: 9%;
         right: 50vw;
-        z-index: 6;
+        z-index: 7;
         height: 22vh;
         // border: 2px solid red;
         div{
@@ -200,7 +214,7 @@ body::-webkit-scrollbar {
                 background-repeat: no-repeat; 
                 transform-origin: top right;
                 animation: hand 10s linear infinite;
-                z-index: 6;
+                z-index: 7;
             }
         }
         &::before{
@@ -233,10 +247,12 @@ body::-webkit-scrollbar {
             animation: Leg 10s linear infinite;
         }
         
-        animation: walk2 28s linear infinite ; 
+        @include rwd(575px){
+            animation: walk2 12s linear infinite ;
+        }    
     }
     .about_people6{
-    bottom: 15%;
+    bottom: 14%;
     left: 15%;    
     }
     
@@ -257,6 +273,10 @@ body::-webkit-scrollbar {
             transform-origin: left bottom;
             z-index: 6;
             animation: hand 20s linear infinite;
+        }
+        @include rwd(575px){
+            bottom: 16%;
+            right: 12vw;     
         }       
     }
     @keyframes bikeLeg {
@@ -332,6 +352,12 @@ body::-webkit-scrollbar {
         0%{right: -10vw;
             bottom: 40px}
         100%{right: 110vw;
+        bottom: 40px}
+    }
+    @keyframes bike_rwd {
+        0%{right: -30vw;
+            bottom: 40px}
+        100%{right: 130vw;
         bottom: 40px}
     }  
     @keyframes walk1 {

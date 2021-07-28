@@ -280,7 +280,7 @@ $(function(){
     //商品添加到格子中
     $('.fa-plus').click(function(e){
         let itemPic = $(this).closest('div').prev('div').find('img').attr('src');
-        let picSrc = itemPic.replace('.png','Top.png');
+        let picSrc = itemPic.replace('cuslist','cusbox');
         let itemTxt = $(this).closest('div').find('p').text();
         let itemId = $(this).closest('div').prev('div').find('img').attr('data-id');
         $('.selected .choosenBox').find('.selected_item').attr('src', picSrc).addClass('haveItem');
@@ -535,6 +535,18 @@ $(function(){
         setTimeout(function(){
             $('.custom_cart').css('display','flex').fadeIn();            
         },2300);
+        //=================================== local storage ======================================================   
+        if(localStorage['customized_List'] == null){
+            let customized_newArray=[];
+            customized_newArray.push(customized);
+            localStorage['customized_List'] = [];
+            localStorage.setItem('customized_List', JSON.stringify(customized_newArray));
+        }else{
+            let customized_total = JSON.parse(localStorage.getItem('customized_List'));
+            console.log(customized_total);
+            customized_total.push(customized); 
+            localStorage.setItem('customized_List', JSON.stringify(customized_total));           
+        };
     })
 
 
@@ -924,7 +936,8 @@ $(function(){
                 bottom: '45%',
                 left: '50%',
                 width: '100px',
-                height: '75px',
+                height: '55px',
+                borderRadiis: '15px',
                 transform: 'rotate(-30deg) translate(-50%, 50%)',
                 transition: '.5s',
             });
@@ -948,7 +961,6 @@ $(function(){
             $('.custom_popUp_bg').fadeIn();
         },3700) 
         //=================================== local storage ======================================================   
-        // let storage = localStorage;
         if(localStorage['customized_List'] == null){
             let customized_newArray=[];
             customized_newArray.push(customized);
