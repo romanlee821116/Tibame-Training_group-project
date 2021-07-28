@@ -1,0 +1,316 @@
+@charset "UTF-8";
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: '微軟正黑體';
+}
+
+body {
+  margin: 0;
+  min-width: 1199px;
+  /* border: 1px solid red; */
+}
+
+.n-customized_header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  background-image: url("../images/backend/loginbg.png");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 120% 100%;
+  padding: 20px 30px;
+  margin-bottom: 30px;
+}
+
+.n-customized_logo {
+  -webkit-box-flex: 2;
+      -ms-flex-positive: 2;
+          flex-grow: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 20px;
+          column-gap: 20px;
+}
+
+.n-customized_logo img {
+  width: 60px;
+}
+
+.n-customized_logo p {
+  font-size: 30px;
+  color: #bb866a;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+}
+
+.n-customized_logout {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 10px;
+          column-gap: 10px;
+  cursor: pointer;
+}
+
+.n-customized_logout p {
+  font-size: 16px;
+  color: #172852;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+}
+
+.n-customized_main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding: 0 60px;
+  padding-right: 30px;
+}
+
+.n-customized_left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 15%;
+}
+
+.n-customized_left > a {
+  text-decoration: none;
+  font-size: 18px;
+  color: #172852;
+  font-weight: bold;
+  margin: 0;
+  margin-bottom: 10px;
+  padding: 0;
+  width: 144px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 10px;
+  border: 1px solid #f4ece5;
+  background-color: #f4ece5;
+}
+
+.n-customized_left > a:nth-child(4) {
+  background-color: #f7c242;
+}
+
+.n-customized_left > a:hover {
+  background-color: #f7c242;
+}
+
+.n-customized_right {
+  /* border: 1px solid red; */
+  width: 85%;
+}
+
+.n-customized_right > div {
+  border: 1px solid #bb866a;
+}
+
+.n-customized_right > p {
+  font-size: 22px;
+  color: #bb866a;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+  border-bottom: 3px solid #b48164;
+  width: 170px;
+  margin-bottom: 30px;
+}
+
+/* 調整右邊2個區域 */
+.n-customized_card_style {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  /* grid-template-rows: 1fr 2fr 1fr; */
+  row-gap: 20px;
+  margin-bottom: 30px;
+  padding: 20px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.n-customized_card_style > p {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: 1/1/2/4;
+  font-size: 22px;
+  color: #172852;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+}
+
+.n-customized_sticker_style {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  /* grid-template-rows: 1fr 2fr 1fr; */
+  row-gap: 20px;
+  margin-bottom: 30px;
+  padding: 20px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.n-customized_sticker_style > p {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: 1/1/2/4;
+  font-size: 22px;
+  color: #172852;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+}
+
+/* 上傳檔案樣式修改 */
+.n-customized_group {
+  /* border: 1px solid red; */
+  position: relative;
+  width: 320px;
+}
+
+.n-customized_group label {
+  /* border: 1px solid blue; */
+  font-size: 16px;
+  color: #172852;
+  font-weight: bold;
+}
+
+.n-customized_group input {
+  /* border: 1px solid purple; */
+  position: absolute;
+  top: 0;
+  left: 60px;
+  opacity: 0;
+  z-index: 2;
+  width: 230px;
+}
+
+.n-customized_group > p {
+  margin: 0;
+  padding: 3px;
+  position: absolute;
+  top: -3px;
+  left: 65px;
+  border: 1.5px solid #cba89a;
+  border-radius: 5px;
+  overflow: hidden;
+  width: 230px;
+  font-size: 16px;
+  color: #172852;
+  font-weight: bold;
+  background-image: url("../images/backend/select.png");
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: contain;
+}
+
+.n-customized_group div.n-customized_img {
+  border: 1.5px solid #cba89a;
+  width: 260px;
+  height: 130px;
+  margin: 0 auto;
+  margin-top: 20px;
+  padding: 0;
+  margin-right: 25px;
+  position: relative;
+}
+
+.n-customized_group div.n-customized_img > img {
+  max-width: 255px;
+  max-height: 125px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.n-customized_group div.n-customized_img > p {
+  position: absolute;
+  top: 35px;
+  left: 70px;
+  font-size: 16px;
+  color: #cba89a;
+  font-weight: bold;
+}
+
+.n-customized_editbtn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-column-gap: 30px;
+          column-gap: 30px;
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: 3/1/4/4;
+  height: 54px;
+  /* border: 1px solid red; */
+}
+
+.n-customized_sticker_style .n-customized_editbtn {
+  -ms-grid-row: 6;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: 6/1/7/4;
+}
+
+.n-customized_editbtn button {
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #172852;
+  padding: 5px 25px;
+  margin: 0;
+  border: 1px solid #172852;
+  border-radius: 10px;
+  cursor: pointer;
+  height: 34px;
+}
+
+.n-customized_editbtn .n-customized_close {
+  background-color: #a3a3a3;
+  border: 1px solid #a3a3a3;
+}
+/*# sourceMappingURL=n-customized.css.map */
