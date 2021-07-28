@@ -85,9 +85,7 @@
 						<div class="cart_itemText">
 							<p class="cart_itemName">{{item.itemName}}</p>
 							<br>
-							<p class="cart_itemAmount">$<span class="cart_price">{{item.price}}</span>元 /
-								<span>{{item.item_Quantity}}</span>入
-							</p>
+							<p class="cart_itemAmount">$<span class="cart_price">{{item.price}}</span>元
 							<div class="cart_itemQuantity">
 								<button class="cart_less mainbtn" @click="sub(item)">&#45;</button>
 								<input class="cart_quantity" type="text" v-model="item.quantity">
