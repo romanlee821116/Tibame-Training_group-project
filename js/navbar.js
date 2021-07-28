@@ -20,7 +20,7 @@ $(document).ready(function() {
     }else{
         $('.memberShow').load('login.html').hide();
     }
-    // 點擊打開
+    // 點擊人頭打開
     $('body').on('click','.navbar-icon .fa-user',function(){
     // $('.navbar-icon .fa-user').click(function(){   
         // ----------嘗試用load寫-----------
@@ -45,8 +45,6 @@ $(document).ready(function() {
         };
         // ---------------------------------
 
-
-
         // 全部用跳轉頁面寫------------
         // if($('.navbar-icon>a:first').hasClass('loginOK')){
         //     window.location.href = 'member.html';
@@ -54,9 +52,24 @@ $(document).ready(function() {
         //     window.location.href = 'login.html';
         // };
 
-
-
     });
+
+    // 點擊漢堡打開
+    $('body').on('click','.ham_select a:last',function(){
+        // $('.navbar-icon .fa-user').click(function(){   
+            // ----------嘗試用load寫-----------
+            // // 隱藏所有頁面
+            console.log('clickhamm');
+            $('.footer').hide();
+            $('.navbar').hide();
+    
+            // // 開啟登入註冊or會員中心
+            $('.memberShow').fadeIn(700);
+             $('body').addClass('stopScroll');
+    
+        });
+
+
     // 點擊關閉
     $('body').on('click', '.loginClose', function() {
         $('.memberShow').fadeOut(500);

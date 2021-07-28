@@ -279,12 +279,26 @@ $(document).ready(function(){
             $('body').removeClass('stopScroll');   // addClass的部分寫在navbar.js
             // window.history.back(-1);
             // $('.navbar-icon>a:first').hasClass('loginOK');
+            if(window.location.pathname == '/index.html'){
+                window.location.href = 'page/member.html';
+            }else{
+                window.location.href = 'member.html';
+            };
         }
 
     });
 
     // 所有input欄位點擊focus時，提示消失
-    
+    $('.loginAll input').focus(function(){
+        if( $(this).attr('type') == 'radio' ){
+            // console.log( $(this).attr('type'));
+            $(this).parent().next().css('display','none');
+        }else{
+            $(this).next().css('display','none');
+            $(this).next().next().css('display','none');
+        };
+        
+    });
 
 
     // 忘記密碼=============
@@ -359,9 +373,9 @@ $(document).ready(function(){
     };
 
     // 點擊關閉回到上一頁-----------
-    // $('body').on('click','.loginClose',function(){
-        // window.history.back(-1);
-    // });
+    $('body').on('click','.loginClose',function(){
+        memberFormError0();
+    });
 });
 
 
