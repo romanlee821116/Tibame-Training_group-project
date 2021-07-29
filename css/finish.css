@@ -543,6 +543,10 @@
   transition: all .3s;
 }
 
+.navbar .ham_overlay .navbar_logOut {
+  display: none;
+}
+
 * {
   box-sizing: border-box;
   font-family: "微軟正黑體";

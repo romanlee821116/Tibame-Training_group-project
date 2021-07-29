@@ -172,6 +172,21 @@ body {
   display: inline-block;
   margin: 0 20px;
   background-color: transparent;
+<<<<<<< HEAD
+=======
+  transition: all .3s;
+}
+
+.yellow_ball {
+  content: "\A";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+  display: inline-block;
+  margin: 0 20px;
+  background-color: #fad689;
+>>>>>>> dev
   transition: all .3s;
 }
 /*# sourceMappingURL=hamburger.css.map */

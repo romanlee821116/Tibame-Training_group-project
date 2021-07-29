@@ -414,6 +414,9 @@ body {
 
 // RWD
 @media screen and (min-width: 664px) and (max-width: 991px) {
+    .product_backTop {
+        @include backTop();
+    }
     .product_main {
         width: 80%;
     }
@@ -481,6 +484,10 @@ body {
 }
 
 @media screen and (max-width: 663px) {
+    .product_backTop {
+        @include backTop();
+        transform: translateX(14px);
+    }
     .product_main {
         width: 80%;
     }
