@@ -51,7 +51,7 @@ body::-webkit-scrollbar {
         }       
     }
     .about_people1{
-        bottom: 10%;
+        bottom: 7%;
         right: 15vw;  
         // border: 2px solid red;
         &::before{
@@ -87,7 +87,7 @@ body::-webkit-scrollbar {
         }
     }
     .about_people2{
-        bottom: 8%;
+        bottom: 6%;
         right: 30vw;
         height: 25%;
         z-index: 9;
@@ -253,12 +253,12 @@ body::-webkit-scrollbar {
         }    
     }
     .about_people6{
-    bottom: 14%;
+    bottom: 10%;
     left: 15%;    
     }
     
     .about_people7{
-        bottom: 11%;
+        bottom: 8%;
         right: 35vw;              
         &::before{
             content: '';
