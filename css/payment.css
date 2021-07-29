@@ -671,7 +671,7 @@
 
 body {
   margin: 0;
-  background-image: url("../../images/payment/bg.png");
+  background-image: url("../images/payment/bg.png");
   background-size: cover;
   background-attachment: fixed;
 }
