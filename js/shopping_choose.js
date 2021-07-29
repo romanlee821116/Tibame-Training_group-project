@@ -40,7 +40,6 @@ $(document).ready(function() {
     //判斷當前頁面 漢堡連結顏色提示
     if (window.location.pathname == '/page/shopping_choose.html') {
         $(".ham_select").find("a:nth-child(4)").css({ color: "#fad689" });
-        $(".ham_select").find("a:nth-child(4)").append("<div class='yellow_ball'></div>");
     }
     // =================== local storage===========================
     $('.choose_select_area a').click(function() {

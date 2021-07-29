@@ -95,7 +95,7 @@ $(document).ready(function() {
         $(this).addClass('yellow');
         $('html, body').animate({
             scrollTop: '0',
-        },300);
+        }, 300);
     })
 
     // 商品數量增減 
@@ -148,6 +148,5 @@ $(document).ready(function() {
     //判斷當前頁面 漢堡連結顏色提示
     if (window.location.pathname == '/page/shopping_list.html') {
         $(".ham_select").find("a:nth-child(4)").css({ color: "#fad689" });
-        $(".ham_select").find("a:nth-child(4)").append("<span>hi</span>");
     }
 });
