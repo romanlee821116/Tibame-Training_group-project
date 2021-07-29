@@ -1,6 +1,7 @@
 @charset "UTF-8";
 * {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   font-family: '微軟正黑體';
 }
 
@@ -11,9 +12,15 @@ body {
 }
 
 .n-discount_header {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   background-image: url("../images/backend/loginbg.png");
   background-repeat: no-repeat;
   background-position: center top;
@@ -23,10 +30,17 @@ body {
 }
 
 .n-discount_logo {
-  flex-grow: 2;
+  -webkit-box-flex: 2;
+      -ms-flex-positive: 2;
+          flex-grow: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  column-gap: 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 20px;
+          column-gap: 20px;
 }
 
 .n-discount_logo img {
@@ -42,9 +56,14 @@ body {
 }
 
 .n-discount_logout {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  column-gap: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 10px;
+          column-gap: 10px;
   cursor: pointer;
 }
 
@@ -57,14 +76,23 @@ body {
 }
 
 .n-discount_main {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   padding: 0 60px;
 }
 
 .n-discount_left {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: 15%;
 }
 
@@ -104,8 +132,12 @@ body {
 
 .n-discount_right form {
   /* border: 1px solid blue; */
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: flex-end;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   margin-bottom: 20px;
 }
 
@@ -122,9 +154,14 @@ body {
   /* border: 1px solid red; */
   width: 280px;
   margin-left: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  column-gap: 40px;
-  align-items: flex-end;
+  -webkit-column-gap: 40px;
+          column-gap: 40px;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
 }
 
 .n-discount_discountbtn button {
@@ -149,11 +186,20 @@ body {
 }
 
 .n-discount_right form section {
-  flex-grow: 2;
+  -webkit-box-flex: 2;
+      -ms-flex-positive: 2;
+          flex-grow: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: flex-end;
-  column-gap: 10px;
-  align-items: flex-end;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-column-gap: 10px;
+          column-gap: 10px;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
 }
 
 .n-discount_right form section label {
@@ -186,6 +232,21 @@ body {
   padding-left: 5px;
 }
 
+.n-discount_right form section input::-webkit-input-placeholder {
+  color: #cba89a;
+  font-weight: bold;
+}
+
+.n-discount_right form section input:-ms-input-placeholder {
+  color: #cba89a;
+  font-weight: bold;
+}
+
+.n-discount_right form section input::-ms-input-placeholder {
+  color: #cba89a;
+  font-weight: bold;
+}
+
 .n-discount_right form section input::placeholder {
   color: #cba89a;
   font-weight: bold;
@@ -196,9 +257,12 @@ body {
   margin: 0;
   padding: 10px;
   list-style: none;
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 2.5fr .6fr 1.2fr 107px;
-  column-gap: 10px;
+  -ms-grid-columns: 1fr 1fr 1fr 2.5fr .6fr 1.2fr 107px;
+      grid-template-columns: 1fr 1fr 1fr 2.5fr .6fr 1.2fr 107px;
+  -webkit-column-gap: 10px;
+          column-gap: 10px;
   background-color: #cba89a;
   font-size: 16px;
   color: #ffffff;
@@ -210,14 +274,19 @@ body {
   margin: 0;
   padding: 10px;
   list-style: none;
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 2.5fr .6fr 1.2fr 107px;
-  column-gap: 10px;
+  -ms-grid-columns: 1fr 1fr 1fr 2.5fr .6fr 1.2fr 107px;
+      grid-template-columns: 1fr 1fr 1fr 2.5fr .6fr 1.2fr 107px;
+  -webkit-column-gap: 10px;
+          column-gap: 10px;
   background-color: #ffffff;
   font-size: 16px;
   color: #172852;
   font-weight: bold;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .n-discount_discount:hover {
@@ -228,6 +297,7 @@ body {
   /* -webkit-box 尚在實驗性的屬性值 */
   display: -webkit-box;
   /* 用來設定一個元素是水平還是垂直方向排列其內容 */
+  -webkit-box-orient: vertical;
   /* 限制指定的行數 */
   -webkit-line-clamp: 2;
   overflow: hidden;
@@ -253,8 +323,12 @@ body {
   margin: 0;
   padding: 0px;
   list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: flex-end;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   margin-top: 15px;
 }
 
@@ -290,8 +364,10 @@ body {
   max-height: 1200px;
   /* height: 500px; */
   /* border: 1px solid red; */
+  display: -ms-grid;
   display: grid;
-  grid-template-rows: 44px 430px 640px 54px;
+  -ms-grid-rows: 44px 430px 640px 54px;
+      grid-template-rows: 44px 430px 640px 54px;
   border-radius: 10px;
   overflow: hidden;
   /* position: relative; */
@@ -299,7 +375,8 @@ body {
   position: fixed;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   z-index: 2;
   background-color: #ffffff;
   overflow-y: auto;
@@ -312,6 +389,7 @@ body {
   font-weight: bold;
   color: #ffffff;
   background-color: #bb866a;
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 3;
@@ -321,10 +399,14 @@ body {
   margin: 0;
   padding: 20px;
   list-style: none;
+  display: -ms-grid;
   display: grid;
-  grid-template-rows: 1fr 1fr 1fr 3fr 3fr;
+  -ms-grid-rows: 1fr 1fr 1fr 3fr 3fr;
+      grid-template-rows: 1fr 1fr 1fr 3fr 3fr;
   justify-items: center;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   row-gap: 15px;
 }
 
@@ -334,13 +416,18 @@ body {
   font-weight: bold;
   margin: 0;
   padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  column-gap: 10px;
+  -webkit-column-gap: 10px;
+          column-gap: 10px;
 }
 
 .n-discount_discount_mid ul li:first-child {
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: 370px 370px;
+  -ms-grid-columns: 370px 370px;
+      grid-template-columns: 370px 370px;
 }
 
 .n-discount_discount_mid ul li:first-child input {
@@ -359,7 +446,9 @@ body {
   border-radius: 3px;
   overflow: hidden;
   cursor: pointer;
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   outline: none;
   background: none;
   background-image: url("../images/backend/select.png");
@@ -386,8 +475,10 @@ body {
 }
 
 .n-discount_discount_bot {
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
   justify-items: center;
   padding: 20px;
 }
@@ -450,7 +541,8 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 .n-discount_discount_bot div.n-discount_img > p {
@@ -463,9 +555,14 @@ body {
 }
 
 .n-discount_editbtn {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  column-gap: 30px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-column-gap: 30px;
+          column-gap: 30px;
   height: 54px;
   /* border: 1px solid red; */
 }
