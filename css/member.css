@@ -219,6 +219,10 @@ table {
   transition: all .3s;
 }
 
+.navbar .ham_overlay .navbar_logOut {
+  display: none;
+}
+
 * {
   box-sizing: border-box;
   font-family: '微軟正黑體';
@@ -1023,9 +1027,6 @@ html, body {
 @media (max-width: 575px) {
   body .memberAll {
     width: 90%;
-  }
-  body .memberAll > p {
-    margin: 100px 0 30px 0;
   }
   body .memberAll .memberPart1 .label input {
     width: 270px;

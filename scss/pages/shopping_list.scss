@@ -45,6 +45,10 @@ body {
     color: #fad689;
 }
 
+.product_backTop{
+    @include backTop();
+}
+
 #product_counter {
     position: absolute;
     top: 2px;

@@ -381,7 +381,6 @@ $(document).ready(function(){
           'itemName': '',
           'img': '',
           'price': 0,
-          'item_Quantity': 6,
           'quantity': 1,
           'status': false,
           "id": new Date(),
@@ -552,6 +551,15 @@ $(function(){
         $(this).css('background-color','#c4c4c4');
       }
     });
+
+
+    // 若數量大於1減號變白底 (為了重整後可以偵測input數量變色而設置的==)
+    for(let x = 0; x < $('.checkout_quantity').length; x++){
+      if($('.checkout_quantity')[x].value > 1){
+        $('.checkout_quantity')[x].previousElementSibling.style.backgroundColor = '#ffffff';
+      }
+      // console.log($('.cart_quantity')[x].previousElementSibling);
+    }
   
   
   

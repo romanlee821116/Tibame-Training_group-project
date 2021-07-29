@@ -22,7 +22,7 @@
 
     <div class="navbar">
       <div class="navbar-logo">
-        <img src="../images/index/logo.png" alt="">
+        <a href="../index.html"><img src="../images/index/logo.png" alt=""></a>
       </div>
     </div>
   </div>
@@ -117,7 +117,7 @@
               <div>{{item.itemName}}</div>
             </div>
             <div>x {{item.quantity}}</div>
-            <div>${{item.price}}元 / {{item.item_Quantity}}入</div>
+            <div>${{item.price}}元</div>
           </li>
 
           <li class="finish_item" v-for="(item,index) in customization" id="item.id">

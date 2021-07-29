@@ -230,6 +230,10 @@ body {
   transition: all .3s;
 }
 
+.navbar .ham_overlay .navbar_logOut {
+  display: none;
+}
+
 .navbar-icon a {
   margin-top: 12px;
 }
