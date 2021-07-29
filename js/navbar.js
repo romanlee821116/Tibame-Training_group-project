@@ -33,7 +33,7 @@ $(document).ready(function() {
         if (localStorage.loginStatus == 'Login') {
             // window.location.href = 'member.html';
             if (window.location.pathname == '/index.html') {
-                window.location.href = '/page/member.html';
+                window.location.href = './page/member.html';
             } else {
                 window.location.href = 'member.html';
             };
