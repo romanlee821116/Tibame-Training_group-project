@@ -16,6 +16,9 @@ body{
 .navbar{
     @include navbar();
 }
+.mediacolumn{  
+    @include media(); 
+}
 .privacy_wrap{
     width: 100%;
     overflow: hidden;

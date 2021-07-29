@@ -202,4 +202,16 @@ body {
   -webkit-transition: all .3s;
   transition: all .3s;
 }
+
+.yellow_ball {
+  content: "\A";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+  display: inline-block;
+  margin: 0 20px;
+  background-color: #fad689;
+  transition: all .3s;
+}
 /*# sourceMappingURL=hamburger.css.map */
