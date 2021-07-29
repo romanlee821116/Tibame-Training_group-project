@@ -144,6 +144,12 @@
   display: flex;
 }
 
+@media screen and (max-width: 576px){
+  .cart_itemImg{
+    margin: auto 20px;
+  }
+}
+
 .cart_itemText{
   /* border: 1px solid red; */
   flex-grow: 1;
@@ -262,6 +268,12 @@
   cursor: pointer;
   &:hover{
     background-color: $lightBrown;
+  }
+}
+
+@media screen and (max-width: 576px){
+  .cart_detailBtn{
+    width: 90px;
   }
 }
 

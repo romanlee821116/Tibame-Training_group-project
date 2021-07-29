@@ -135,6 +135,12 @@
   display: flex;
 }
 
+@media screen and (max-width: 576px) {
+  .cart_itemImg {
+    margin: auto 20px;
+  }
+}
+
 .cart_itemText {
   /* border: 1px solid red; */
   flex-grow: 1;
@@ -254,6 +260,12 @@
 
 .cart_detailBtn:hover {
   background-color: #cba89a;
+}
+
+@media screen and (max-width: 576px) {
+  .cart_detailBtn {
+    width: 90px;
+  }
 }
 
 /* ========== 禮盒明細 ========== */

@@ -7,11 +7,14 @@
 
 .footer{
 	@include footer();
+  text-decoration: none;
+  font-weight: 900;
 }
 
 *{
   box-sizing: border-box;
   font-family: "微軟正黑體";
+  text-decoration: none;
 }
 
 body{
