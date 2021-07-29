@@ -4,6 +4,17 @@
   font-family: "微軟正黑體";
 }
 
+.cart_mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 991;
+  display: none;
+}
+
 .cart_cartBoard {
   /* border: 1px solid red; */
   background-color: #ffffff;
@@ -11,7 +22,7 @@
   color: #bb866a;
   width: 600px;
   height: 100vh;
-  z-index: 991;
+  z-index: 992;
   position: fixed;
   right: -600px;
   top: 0;
@@ -953,7 +964,17 @@ body {
 }
 
 /* ========== 假的按鈕顏色 ========== */
-.contact_fake1, .contact_fake2 {
+.contact_fake1 {
+  border: 1.5px solid #172852;
+  border-radius: 50%;
+  width: 13px;
+  height: 13px;
+  position: relative;
+  top: -17px;
+  left: 0;
+}
+
+.contact_fake2 {
   border: 1.5px solid #bb866a;
   border-radius: 50%;
   width: 13px;
@@ -964,7 +985,16 @@ body {
 }
 
 /* 中間點點顏色 */
-.contact_fakeClick1, .contact_fakeClick2 {
+.contact_fakeClick1 {
+  background-color: #172852;
+  border-radius: 50%;
+  width: 7px;
+  height: 7px;
+  margin: 1.5px auto;
+  display: block;
+}
+
+.contact_fakeClick2 {
   background-color: #172852;
   border-radius: 50%;
   width: 7px;

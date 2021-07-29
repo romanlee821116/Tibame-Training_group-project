@@ -4,6 +4,17 @@
   font-family: "微軟正黑體";
 }
 
+.cart_mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 991;
+  display: none;
+}
+
 .cart_cartBoard {
   /* border: 1px solid red; */
   background-color: #ffffff;
@@ -11,7 +22,7 @@
   color: #bb866a;
   width: 600px;
   height: 100vh;
-  z-index: 991;
+  z-index: 992;
   position: fixed;
   right: -600px;
   top: 0;

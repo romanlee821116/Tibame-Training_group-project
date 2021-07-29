@@ -265,7 +265,17 @@ input[type="radio"]:checked + label{
 
 /* ========== 假的按鈕顏色 ========== */
 
-.contact_fake1, .contact_fake2{
+.contact_fake1{
+  border: 1.5px solid #172852;
+  border-radius: 50%;
+  width: 13px;
+  height: 13px;
+  position: relative;
+  top: -17px;
+  left: 0;
+}
+
+.contact_fake2{
   border: 1.5px solid #bb866a;
   border-radius: 50%;
   width: 13px;
@@ -276,7 +286,16 @@ input[type="radio"]:checked + label{
 }
 
 /* 中間點點顏色 */
-.contact_fakeClick1, .contact_fakeClick2{
+.contact_fakeClick1{
+  background-color: #172852;
+  border-radius: 50%;
+  width: 7px;
+  height: 7px;
+  margin: 1.5px auto;
+  display: block;
+}
+
+.contact_fakeClick2{
   background-color: #172852;
   border-radius: 50%;
   width: 7px;
