@@ -1,5 +1,6 @@
 $(document).ready(function() {
-    if (window.location.pathname == '/index.html') {
+    console.log(window.location.pathname);
+    if (window.location.pathname == '/index.html'|| window.location.pathname == 'https://tibamef2e.com/tfd102/project/g3/index.html') {
         console.log('homepage');
         $('.memberShow').load('page/login.html').hide();
     } else {
