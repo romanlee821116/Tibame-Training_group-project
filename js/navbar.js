@@ -1,12 +1,13 @@
 $(document).ready(function() {
     // $('.memberShow').load('login.html').hide();
-    if (window.location.pathname == '/index.html') {
+    if (window.location.pathname == '/index.html' || '/shopping_choose.html') {
         console.log('homepage');
         $('.memberShow').load('page/login.html').hide();
     } else {
         console.log('other');
         $('.memberShow').load('login.html').hide();
     };
+
     // 儲存人頭為會員中心
     // window.onload = function (){
     //     if($('#loginFormPage .loginButton').hasClass('loginOK')){
