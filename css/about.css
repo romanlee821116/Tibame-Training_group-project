@@ -137,7 +137,7 @@ body::-webkit-scrollbar {
   position: absolute;
   top: 0;
   left: 0;
-  background: url("../../images/about/start_bg.png");
+  background: url("../images/about/start_bg.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -167,7 +167,7 @@ body::-webkit-scrollbar {
   top: 12%;
   left: -10px;
   position: absolute;
-  background: url("../../images/about/character01_2.png");
+  background: url("../images/about/character01_2.png");
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -179,7 +179,7 @@ body::-webkit-scrollbar {
   top: 15%;
   right: -30%;
   position: absolute;
-  background: url("../../images/about/character01_3.png");
+  background: url("../images/about/character01_3.png");
   background-size: contain;
   background-repeat: no-repeat;
   -webkit-transform-origin: right 0;
@@ -211,7 +211,7 @@ body::-webkit-scrollbar {
   bottom: -15%;
   left: -7%;
   position: absolute;
-  background: url("../../images/about/character02_2.png");
+  background: url("../images/about/character02_2.png");
   background-size: contain;
   background-repeat: no-repeat;
   -webkit-animation: wheel 2s linear infinite;
@@ -225,7 +225,7 @@ body::-webkit-scrollbar {
   bottom: -15%;
   right: 0%;
   position: absolute;
-  background: url("../../images/about/character02_3.png");
+  background: url("../images/about/character02_3.png");
   background-size: contain;
   background-repeat: no-repeat;
   -webkit-animation: wheel 2s linear infinite;
@@ -279,7 +279,7 @@ body::-webkit-scrollbar {
   top: 20%;
   left: 0%;
   position: absolute;
-  background: url("../../images/about/character03_2.png");
+  background: url("../images/about/character03_2.png");
   background-size: contain;
   background-repeat: no-repeat;
   -webkit-transform-origin: top left;
@@ -296,7 +296,7 @@ body::-webkit-scrollbar {
   bottom: -15%;
   left: 10%;
   position: absolute;
-  background: url("../../images/about/character03_3.png");
+  background: url("../images/about/character03_3.png");
   background-size: contain;
   background-repeat: no-repeat;
   -webkit-transform-origin: center 0;
@@ -312,7 +312,7 @@ body::-webkit-scrollbar {
   bottom: -16%;
   right: -12%;
   position: absolute;
-  background: url("../../images/about/character03_4.png");
+  background: url("../images/about/character03_4.png");
   background-size: contain;
   background-repeat: no-repeat;
   -webkit-transform-origin: center 0;
@@ -344,7 +344,7 @@ body::-webkit-scrollbar {
   top: 18%;
   left: -10%;
   position: absolute;
-  background: url("../../images/about/character04_2.png");
+  background: url("../images/about/character04_2.png");
   background-size: contain;
   background-repeat: no-repeat;
   -webkit-transform-origin: top right;
@@ -363,7 +363,7 @@ body::-webkit-scrollbar {
   -webkit-transform: rotate(-60deg);
           transform: rotate(-60deg);
   position: absolute;
-  background: url("../../images/about/character04_3.png");
+  background: url("../images/about/character04_3.png");
   background-size: contain;
   background-repeat: no-repeat;
   -webkit-transform-origin: top;
@@ -379,7 +379,7 @@ body::-webkit-scrollbar {
   bottom: -11%;
   right: -33%;
   position: absolute;
-  background: url("../../images/about/character04_4.png");
+  background: url("../images/about/character04_4.png");
   background-size: contain;
   background-repeat: no-repeat;
   -webkit-transform-origin: top;
@@ -412,7 +412,7 @@ body::-webkit-scrollbar {
   top: 25%;
   left: -5%;
   position: absolute;
-  background: url("../../images/about/character07_2.png");
+  background: url("../images/about/character07_2.png");
   background-size: contain;
   background-repeat: no-repeat;
   -webkit-transform-origin: left bottom;
@@ -1270,7 +1270,7 @@ body::-webkit-scrollbar {
 .about_transition {
   width: 100%;
   height: 50%;
-  background: url("../../images/about/aboutUs_bgB02.png");
+  background: url("../images/about/aboutUs_bgB02.png");
   background-position: top;
   background-size: cover;
   background-repeat: no-repeat;
@@ -1629,7 +1629,7 @@ body::-webkit-scrollbar {
   height: 100%;
   z-index: -1;
   position: relative;
-  background: url("../../images/about/aboutUs_bg3.jpg");
+  background: url("../images/about/aboutUs_bg3.jpg");
 }
 
 .about_taiwan_end .about_taiwan_endLogo {
