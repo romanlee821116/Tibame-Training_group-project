@@ -24,7 +24,6 @@ $(document).ready(function() {
             $('body').addClass('stopScroll');
         };
     });
-
     // 點擊漢堡打開
     $('body').on('click', '.ham_select a:nth-child(7)', function() {
         // // 隱藏所有頁面
@@ -34,7 +33,7 @@ $(document).ready(function() {
         if (localStorage.loginStatus == 'Login') {
             // window.location.href = 'member.html';
             if (window.location.pathname == '/index.html') {
-                window.location.href = 'page/member.html';
+                window.location.href = '/page/member.html';
             } else {
                 window.location.href = 'member.html';
             };
