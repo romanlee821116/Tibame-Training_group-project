@@ -95,7 +95,7 @@ $(document).ready(function() {
         $(this).addClass('yellow');
         $('html, body').animate({
             scrollTop: '0',
-        },300);
+        }, 300);
     })
 
     // 商品數量增減 
@@ -145,6 +145,7 @@ $(document).ready(function() {
         $(this).addClass("click").siblings().removeClass("click");
     })
 
+<<<<<<< HEAD
     //回到最上面
     $('.product_backTop').click(function(){
         $('html body').animate({
@@ -153,4 +154,10 @@ $(document).ready(function() {
     })
 
 
+=======
+    //判斷當前頁面 漢堡連結顏色提示
+    if (window.location.pathname == '/page/shopping_list.html') {
+        $(".ham_select").find("a:nth-child(4)").css({ color: "#fad689" });
+    }
+>>>>>>> wei
 });
