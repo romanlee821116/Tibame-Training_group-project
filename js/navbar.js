@@ -1,33 +1,10 @@
 $(document).ready(function() {
-<<<<<<< HEAD
-    // $('.memberShow').load('login.html').hide();
-    if (window.location.pathname == '/index.html' || '/shopping_choose.html') {
-=======
     if (window.location.pathname == '/index.html') {
->>>>>>> dev
         console.log('homepage');
         $('.memberShow').load('page/login.html').hide();
     } else {
         $('.memberShow').load('login.html').hide();
-<<<<<<< HEAD
-    };
-
-    // 儲存人頭為會員中心
-    // window.onload = function (){
-    //     if($('#loginFormPage .loginButton').hasClass('loginOK')){
-    //         $('.navbar-icon>a:first').addClass('loginOK');
-    //         console.log('have');
-    //     }
-    // };
-    // if(window.location.pathname == '/index.html'){
-    //     console.log('homepage');
-    //     $('.memberShow').load('page/login.html').hide();
-    // }else{
-    //     $('.memberShow').load('login.html').hide();
-    // }
-=======
     }
->>>>>>> dev
     // 點擊人頭打開
     $('body').on('click', '.navbar-icon .fa-user', function() {
         // ----------嘗試用load寫-----------
