@@ -251,6 +251,10 @@ body {
   display: none;
 }
 
+.product_backTop {
+  display: none;
+}
+
 .navbar-icon {
   position: relative;
 }
@@ -784,6 +788,7 @@ body {
     bottom: 30px;
     display: block;
     z-index: 100;
+    display: block;
   }
   .product_backTop i {
     color: #172852;
@@ -863,6 +868,7 @@ body {
     display: block;
     z-index: 100;
     transform: translateX(14px);
+    display: block;
   }
   .product_backTop i {
     color: #172852;

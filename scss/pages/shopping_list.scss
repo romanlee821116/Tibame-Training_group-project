@@ -33,6 +33,10 @@ body {
     display: none;
 }
 
+.product_backTop{
+    display: none;
+}
+
 .navbar-icon {
     position: relative;
 }
@@ -416,6 +420,7 @@ body {
 @media screen and (min-width: 664px) and (max-width: 991px) {
     .product_backTop {
         @include backTop();
+        display: block;
     }
     .product_main {
         width: 80%;
@@ -487,6 +492,7 @@ body {
     .product_backTop {
         @include backTop();
         transform: translateX(14px);
+        display: block;
     }
     .product_main {
         width: 80%;
