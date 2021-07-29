@@ -151,6 +151,12 @@ $(document).ready(function() {
             scrollTop: '0',
         },300);
     })
+    //判斷登入登出
+    if(localStorage.loginStatus){
+        $('.nav_logOut').fadeIn();
+    }else{
+        $('.nav_logOut').fadeOut();
+    }
 
 
 });

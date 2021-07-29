@@ -24,6 +24,10 @@ body{
   position: relative;
 }
 
+.mediacolumn{  
+  @include media(); 
+}
+
 .psychotest{
   @include psycoBtn(#fff);
   p{

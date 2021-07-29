@@ -237,6 +237,66 @@ body {
   display: none;
 }
 
+.mediacolumn {
+  position: fixed;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  z-index: 500;
+}
+
+.mediacolumn::before {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 15vh;
+  background-color: #bb866a;
+  left: 30px;
+  top: -15vh;
+}
+
+.mediacolumn::after {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 15vh;
+  background-color: #bb866a;
+  left: 30px;
+  bottom: -15vh;
+}
+
+.mediacolumn a {
+  display: block;
+  width: 60px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.mediacolumn a:nth-child(1) {
+  margin-top: 12px;
+}
+
+.mediacolumn a:nth-child(3) {
+  margin-bottom: 12px;
+}
+
+.mediacolumn a i {
+  color: #bb866a;
+  font-size: 28px;
+}
+
+.mediacolumn a i:hover {
+  color: #f7c242;
+}
+
+@media (max-width: 575px) {
+  .mediacolumn {
+    display: none;
+  }
+}
+
 .terms_wrap {
   width: 100%;
   overflow: hidden;

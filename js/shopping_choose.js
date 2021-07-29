@@ -47,4 +47,10 @@ $(document).ready(function() {
         // alert(product_num)
         localStorage.setItem("product_page_num", JSON.stringify(product_num))
     })
+    //判斷登入登出
+    if(localStorage.loginStatus){
+        $('.nav_logOut').fadeIn();
+    }else{
+        $('.nav_logOut').fadeOut();
+    }
 });

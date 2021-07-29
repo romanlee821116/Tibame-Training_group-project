@@ -191,7 +191,12 @@ $(document).ready(function(){
 
 })
 $(function(){
-
+    //判斷登入登出
+    if(localStorage.loginStatus){
+        $('.nav_logOut').fadeIn();
+    }else{
+        $('.nav_logOut').fadeOut();
+    }
 
     //========================================jquery========================================
     var boxSize = 0;

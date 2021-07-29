@@ -21,6 +21,10 @@ body{
   background-attachment: fixed;
 }
 
+.mediacolumn{  
+  @include media(); 
+}
+
 .contact_container{
   /* border: 1px solid black; */
   width: 80%;

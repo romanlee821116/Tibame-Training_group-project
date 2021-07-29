@@ -476,10 +476,18 @@
                     $('.psychotest').css({
                         display: "block",
                     });
+                    //漢堡
+                    $('.ham_container').click(function(){
+                        if ($(this).hasClass("ham_change")) {
+                            $('.ham_bar').css('background-color','#fff');
+                        }else{
+                            $('.ham_bar').css('background-color','#bb866a');
+                        }
+                    })
                     //navbar改色                    
                     $('.navbar-icon .fas ').addClass('index_navChange');
                     $('.ham_container').addClass('index_hamChange');
-
+                    $('.ham_bar').css('background-color','#bb866a');
                 }
 
                 else if (origin.index == 1 && direction == 'up') {
@@ -501,9 +509,18 @@
                     $('.psychotest').css({
                         display: 'none',
                     });
-                    //    navbar改色
+                     //漢堡
+                    $('.ham_container').click(function(){
+                        if ($(this).hasClass("ham_change")) {
+                            $('.ham_bar').css('background-color','#fff');
+                        }else{
+                            $('.ham_bar').css('background-color','#fff');
+                        }
+                    })
+                     //    navbar改色
                     $('.navbar-icon .fas ').removeClass('index_navChange');
                     $('.ham_container').removeClass('index_hamChange');
+                    $('.ham_bar').css('background-color','#fff');
 
                 }
             }, //導覽列提示
