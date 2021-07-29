@@ -1035,7 +1035,8 @@ body {
     bottom: 30px;
     display: block;
     z-index: 100;
-    transform: translateX(14px);
+    -webkit-transform: translateX(14px);
+            transform: translateX(14px);
   }
   .product_backTop i {
     color: #172852;

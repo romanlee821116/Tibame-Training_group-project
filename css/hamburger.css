@@ -212,6 +212,7 @@ body {
   display: inline-block;
   margin: 0 20px;
   background-color: #fad689;
+  -webkit-transition: all .3s;
   transition: all .3s;
 }
 /*# sourceMappingURL=hamburger.css.map */
