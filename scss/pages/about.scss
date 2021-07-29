@@ -790,6 +790,7 @@ body::-webkit-scrollbar {
             @include btn();
             display: inline-block;
             margin: 0 20px;
+            z-index: 100;
         }
     }
     .about_cloud{

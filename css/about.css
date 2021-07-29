@@ -1209,6 +1209,7 @@ body::-webkit-scrollbar {
   cursor: pointer;
   display: inline-block;
   margin: 0 20px;
+  z-index: 100;
 }
 
 .about_taiwan_end .about_endBtn a:hover {
