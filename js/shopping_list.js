@@ -145,5 +145,12 @@ $(document).ready(function() {
         $(this).addClass("click").siblings().removeClass("click");
     })
 
+    //回到最上面
+    $('.product_backTop').click(function(){
+        $('html body').animate({
+            scrollTop: '0',
+        },300);
+    })
+
 
 });

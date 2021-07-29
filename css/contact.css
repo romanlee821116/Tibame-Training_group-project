@@ -129,8 +129,8 @@
 
 .cart_itemImg {
   /* border: 1px solid blue; */
-  width: 70px;
-  height: 70px;
+  width: 85px;
+  height: 85px;
   margin: auto 30px;
   display: flex;
 }
@@ -543,6 +543,10 @@
   transition: all .3s;
 }
 
+.navbar .ham_overlay .navbar_logOut {
+  display: none;
+}
+
 .footer {
   width: 100%;
   max-width: 1400px;
@@ -919,7 +923,7 @@ textarea:focus {
 }
 
 /* ========== 送出按鈕 ========== */
-button {
+.contact_mainBtn {
   border: none;
   background-color: #172852;
   border-radius: 5px;

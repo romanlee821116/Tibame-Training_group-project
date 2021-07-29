@@ -830,9 +830,7 @@ body {
     @include rwd(575px) {
         .memberAll {
             width: 90%;
-            >p {
-                margin: 100px 0 30px 0;
-            }
+            
             // 手機版本標題改為滑動的方式
             // 會員資料表格
             .memberPart1 {

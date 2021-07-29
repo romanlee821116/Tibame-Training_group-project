@@ -231,6 +231,10 @@ body {
   transition: all .3s;
 }
 
+.navbar .ham_overlay .navbar_logOut {
+  display: none;
+}
+
 .product_reminder {
   width: 200px;
   height: 70px;
@@ -257,6 +261,19 @@ body {
 
 .stick_color {
   color: #fad689;
+}
+
+.product_backTop {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  display: block;
+  z-index: 100;
+}
+
+.product_backTop i {
+  color: #172852;
+  font-size: 28px;
 }
 
 #product_counter {
@@ -311,7 +328,7 @@ body {
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
-  z-index: 900;
+  z-index: 500;
 }
 
 .mediacolumn::before {

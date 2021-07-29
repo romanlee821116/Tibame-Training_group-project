@@ -230,6 +230,10 @@ table {
   transition: all .3s;
 }
 
+.navbar .ham_overlay .navbar_logOut {
+  display: none;
+}
+
 .navbar .navbar-icon .fas {
   color: #fff;
 }
@@ -269,7 +273,7 @@ table {
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
-  z-index: 900;
+  z-index: 500;
   visibility: hidden;
 }
 

@@ -910,11 +910,13 @@ body::-webkit-scrollbar {
         background-color: $darkBrown;
         position: absolute;
         right: 50px;
-        bottom: 5px;
+        bottom: -5px;
         color: #fff;
         text-align: center;
         border-radius: 25px;
-
+        &:hover{
+            background-color: $lightBrown;
+        }
     }
 }
 .about_place1{

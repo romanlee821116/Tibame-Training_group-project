@@ -1356,10 +1356,14 @@ body::-webkit-scrollbar {
   background-color: #bb866a;
   position: absolute;
   right: 50px;
-  bottom: 5px;
+  bottom: -5px;
   color: #fff;
   text-align: center;
   border-radius: 25px;
+}
+
+.about_place1 a:hover, .about_place2 a:hover, .about_place3 a:hover, .about_place4 a:hover {
+  background-color: #cba89a;
 }
 
 .about_place1 {

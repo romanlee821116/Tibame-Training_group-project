@@ -15,8 +15,9 @@
     <script src="../js/vue.js"></script>
 	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.14/vue.js"></script> -->
     <script src="../js/cart_vue.js"></script>
-    <script src="../js/navbar.js"></script> 
+    
     <script src="../js/hamburger.js"></script>
+    <script src="../js/navbar.js"></script> 
 </head>
 
 <body>
@@ -49,6 +50,7 @@
 						<a href="./customized.html">客製化禮盒</a>
 						<a href="./FAQ.html">Q&A</a>
 						<a>會員中心</a>
+                        <a href="#" class='nav_logOut'>會員登出 &nbsp<i class="fas fa-sign-out-alt"></i></a>
 					</div>
 				</div>
 			</div>
@@ -87,8 +89,7 @@
 						<div class="cart_itemText">
 							<p class="cart_itemName">{{item.itemName}}</p>
 							<br>
-							<p class="cart_itemAmount">$<span class="cart_price">{{item.price}}</span>元 /
-								<span>{{item.item_Quantity}}</span>入
+							<p class="cart_itemAmount">$<span class="cart_price">{{item.price}}</span>元
 							</p>
 							<div class="cart_itemQuantity">
 								<button class="cart_less mainbtn" @click="sub(item)">&#45;</button>
@@ -1464,8 +1465,7 @@
     </div>
     <!-- =======================footer結束======================= -->
     <script>
-        $(".ham_select").find("a:nth-child(3))").css({ color: "#fad689" });
-        $(".ham_select").find("a:nth-child(3)::before").css({backgroundColor: "#fad689" });
+        $(".ham_select").find("a:nth-child(3)").css({ color: "#fad689" });
     </script>
 </body>
 
