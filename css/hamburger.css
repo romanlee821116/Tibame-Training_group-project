@@ -172,8 +172,6 @@ body {
   display: inline-block;
   margin: 0 20px;
   background-color: transparent;
-<<<<<<< HEAD
-=======
   transition: all .3s;
 }
 
@@ -186,7 +184,6 @@ body {
   display: inline-block;
   margin: 0 20px;
   background-color: #fad689;
->>>>>>> dev
   transition: all .3s;
 }
 /*# sourceMappingURL=hamburger.css.map */

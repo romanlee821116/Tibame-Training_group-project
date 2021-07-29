@@ -315,11 +315,7 @@ body {
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
-<<<<<<< HEAD
-  z-index: 900;
-=======
   z-index: 500;
->>>>>>> dev
 }
 
 .mediacolumn::before {
