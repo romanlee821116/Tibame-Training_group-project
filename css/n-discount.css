@@ -334,11 +334,8 @@ body {
   font-weight: bold;
   margin: 0;
   padding: 0;
-<<<<<<< HEAD
-=======
   display: flex;
   column-gap: 10px;
->>>>>>> 61215deff9851f9aa5d1372cbea91d1dbbd03ec7
 }
 
 .n-discount_discount_mid ul li:first-child {
@@ -346,8 +343,6 @@ body {
   grid-template-columns: 370px 370px;
 }
 
-<<<<<<< HEAD
-=======
 .n-discount_discount_mid ul li:first-child input {
   width: 250px;
   border: 1.5px solid #cba89a;
@@ -355,7 +350,6 @@ body {
   margin-left: 6px;
 }
 
->>>>>>> 61215deff9851f9aa5d1372cbea91d1dbbd03ec7
 .n-discount_discount_mid select {
   font-size: 16px;
   color: #172852;
@@ -379,11 +373,7 @@ body {
   font-size: 16px;
   color: #172852;
   font-weight: bold;
-<<<<<<< HEAD
-  border: 1n-discount_5px solid #cba89a;
-=======
   border: 1.5px solid #cba89a;
->>>>>>> 61215deff9851f9aa5d1372cbea91d1dbbd03ec7
   width: 655px;
 }
 
