@@ -695,7 +695,7 @@ table {
     left: 0px;
   }
   .index_page3 .index_p3_bg img {
-    content: url("../../images/about/aboutus_rightbg_rotate-1.png");
+    content: url("../images/about/aboutus_rightbg_rotate-1.png");
     width: 130%;
     height: 90%;
   }
@@ -844,7 +844,7 @@ table {
   height: 140px;
   bottom: -5%;
   padding: 20px;
-  background: url("/images/index/product_explanatorytext02.png");
+  background: url("../images/index/product_explanatorytext02.png");
   background-size: 150%;
   background-position: center;
   overflow: hidden;
@@ -1083,7 +1083,7 @@ table {
   position: absolute;
   left: 55%;
   top: 15vh;
-  background: url("/images/index/product_explanatorytext02.png");
+  background: url("../images/index/product_explanatorytext02.png");
   background-size: cover;
   background-position: center;
   animation: resize1 8s linear infinite;

@@ -339,7 +339,7 @@
             top: 0;
             left: 0px;
             img{
-                content: url('../../images/about/aboutus_rightbg_rotate-1.png');
+                content: url('../images/about/aboutus_rightbg_rotate-1.png');
                 width: 130%;
                 height: 90%;
             }            
@@ -468,7 +468,7 @@
                 bottom: -5%;
                 padding: 20px;
                 // background-color: #fad689;
-                background: url('/images/index/product_explanatorytext02.png');
+                background: url('../images/index/product_explanatorytext02.png');
                 background-size: 150%;
                 background-position: center;
                 overflow: hidden;
@@ -657,7 +657,7 @@
             position: absolute;
             left: 55%;
             top: 15vh;
-            background: url('/images/index/product_explanatorytext02.png');
+            background: url('../images/index/product_explanatorytext02.png');
             background-size: cover;
             background-position: center;
             // overflow: hidden;
