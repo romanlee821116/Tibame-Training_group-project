@@ -542,6 +542,7 @@ body {
   text-align: center;
   font-weight: 900;
   cursor: pointer;
+  z-index: 999;
 }
 
 .custom_btn:hover {
@@ -567,6 +568,7 @@ body {
   bottom: 0;
   right: 0;
   display: none;
+  z-index: 999;
 }
 
 .custom_gridBox {
@@ -961,6 +963,7 @@ body {
   display: flex;
   display: none;
   justify-content: space-between;
+  z-index: 999;
 }
 
 .cus_step2 .cus_giftcard_btn {
@@ -971,6 +974,7 @@ body {
   display: flex;
   display: none;
   justify-content: space-between;
+  z-index: 999;
 }
 
 .cus_step2 .cus_giftcard_btn a {
@@ -1075,6 +1079,7 @@ body {
   display: flex;
   display: none;
   justify-content: space-between;
+  z-index: 999;
 }
 
 .cus_step2 .choosenCard {

@@ -1117,13 +1117,13 @@
                             background-color: $darkBlue;
                             color: #fff;
                             font-size: 12px;
-                            padding: 10px 20px;
+                            padding: 5px 20px;
                             border-radius: 25px;
                             display: block;
                             width: 120px;
-                            height: 30px;
+                            height: 28px;
                             text-align: center;
-                            line-height: 10px;
+                            line-height: 18px;
                             font-weight: 900;
                             margin-top: 5px;
                             &:hover{
@@ -1131,6 +1131,16 @@
                             } 
                         }  
                     }               
+                }
+                .index_p7-contact{
+                    margin-top: 10px;
+                    position: relative;
+                    left: 80px;
+                    a{
+                        @include btn();
+                        padding: 5px 20px;
+                        font-size: 12px;
+                    }
                 } 
                     
             }

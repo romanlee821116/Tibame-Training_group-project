@@ -337,6 +337,7 @@ body {
   .footer .footer-right {
     opacity: .6;
     line-height: 12px;
+    display: none;
   }
 }
 
