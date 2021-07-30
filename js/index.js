@@ -180,7 +180,7 @@ function ticker() {
     let index = 0;
     let titleWord = ['MONOKA', 'DORAYAKI', 'DAIFUKU'];
     let bgColor = ['#f1ca96', '#6b8871', '#e09ba9'];
-    let bgPic = ['../images/index/banner_monaka_bg.png', '../images/index/banner_matcha_bg.png', '../images/index/banner_strawberry_bg.png'];
+    let bgPic = ['../images/index/banner_monaka_bg.jpg', '../images/index/banner_matcha_bg.jpg', '../images/index/banner_strawberry_bg.jpg'];
     let itemPic = ['../images/index/banner_monaka_item.png', '../images/index/banner_matcha_item.png', '../images/index/banner_strawberry_item.png'];
     setInterval(function () {
         $('.iindex_p2-progressSolid').width(`${length}%`)

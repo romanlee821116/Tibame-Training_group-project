@@ -254,12 +254,14 @@ body{
             display: none;
         }
     }
+    z-index: 999;
 }
 .custom_btn_p1Next{
     position: absolute;
     bottom: 0;
     right:0; 
     display: none; 
+    z-index: 999;
 }
 .custom_gridBox{
     width: 95%;
@@ -606,7 +608,7 @@ body{
         display: flex;
         display: none;
         justify-content: space-between;
-        
+        z-index: 999;
     }
     //客製禮卡需不需要按鈕
     .cus_giftcard_btn{
@@ -618,6 +620,7 @@ body{
         display: flex;
         display: none;
         justify-content: space-between;
+        z-index: 999;
         a{
             display: block;
             margin: 0 15%;
@@ -720,7 +723,8 @@ body{
         transform: translateX(-50%);
         display: flex;
         display: none;
-        justify-content: space-between;        
+        justify-content: space-between;     
+        z-index: 999;   
     }
     //選擇的那張卡片
     .choosenCard{
