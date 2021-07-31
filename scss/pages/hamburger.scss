@@ -70,20 +70,19 @@ body {
     .wave1 {
         animation: animated 10s linear infinite;
         z-index: 1000;
-        opacity: 1;
-        animation-delay: 0s;
+        opacity: 0.6;
     }
     .wave2 {
-        animation: animated2 10s linear infinite;
+        animation: animated2 8s linear infinite;
         z-index: 999;
-        opacity: 0.3;
-        top: 20px;
+        opacity: 0.8;
+        top: 10px;
     }
     .wave3 {
-        animation: animated3 10s linear infinite;
+        animation: animated3 12s linear infinite;
         z-index: 888;
-        opacity: 0.5;
-        top: 10px;
+        opacity: 0.8;
+        top: 0px;
     }
     @keyframes animated {
         0% {
@@ -99,6 +98,14 @@ body {
         }
         100% {
             background-position-x: 1280px;
+        }
+    }
+    @keyframes animated3 {
+        0% {
+            background-position-x: 0;
+        }
+        100% {
+            background-position-x: -1280px;
         }
     }
     .ham_select {
