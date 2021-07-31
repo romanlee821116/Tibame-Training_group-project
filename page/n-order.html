@@ -136,10 +136,10 @@
                 </section>
 
                 <ul class="n-order_order_checkout">
-                    <li>商品金額:${{total_cost}}元</li>
-                    <li>折扣碼:N/A&emsp;&nbsp;&nbsp;&nbsp;</li>
-                    <li>運費:${{ship_cost[orders[current_edit].運費]}}元&nbsp;&nbsp;</li>
-                    <li>訂單總金額:${{order_cost}}元</li>
+                    <li>商品金額&emsp;&nbsp;:&ensp;${{total_cost}}元</li>
+                    <li>折扣碼&emsp;&emsp;&nbsp;:&ensp;{{orders[current_edit].折扣碼編號}}</li>
+                    <li>運費&emsp;&emsp;&emsp;&nbsp;:&ensp;${{ship_cost[orders[current_edit].運費]}}元&nbsp;&nbsp;</li>
+                    <li>訂單總金額&nbsp;:&ensp;${{order_cost}}元</li>
                 </ul>
             </div>
 
@@ -200,23 +200,24 @@
                 titles: ['編號', '訂單編號', '帳號', '付款狀態', '訂單狀態', '貨運狀態', '訂購日期', '', ],
                 orders:[
                     {
-                        '編號':'001',
-                        '訂單編號':'1321344fff',
-                        '帳號':'Harukadou@gmail.com',
-                        '付款狀態':0,
-                        '訂單狀態':2,
-                        '貨運狀態':3,
-                        '訂購日期':'2021/01/01',
+                        'order_id':'001',
+                        'order_list':'1321344fff',
+                        'account':'Harukadou@gmail.com',
+                        'payment_status':0,
+                        'order_status':2,
+                        'shipping_status':3,
+                        'order_date':'2021/01/01',
                         '姓名':'員姓名',
                         '運送方式':'宅配服務',
                         '會員編號':'32242424',
-                        '收件人地址':'N/A',
-                        '門市名稱':'N/A',
-                        '付款方式':'信用卡',
+                        'address':'N/A',
+                        'store':'N/A',
+                        'payment':'信用卡',
                         '物流編號':'N/A',
                         '手機':'0123456789',
                         '門市地址':'N/A',
                         '運費':1,
+                        'discount_id':'edr100'
                     },
                     {
                         '編號':'002',
@@ -236,6 +237,7 @@
                         '手機':'0123456789',
                         '門市地址':'N/A',
                         '運費':0,
+                        '折扣碼編號':'edr100'
                     },
                     {
                         '編號':'003',
@@ -255,6 +257,7 @@
                         '手機':'0123456789',
                         '門市地址':'N/A',
                         '運費':1,
+                        '折扣碼編號':'N/A'
                     }
                 ],
                 pages:[

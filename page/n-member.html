@@ -46,12 +46,12 @@
                     </ul>
 
                     <ul v-for='(member,key) in members' class="n-member_member">                        
-                        <li>{{member.編號}}</li>
-                        <li>{{member.帳號}}</li>
-                        <li>{{member.姓名}}</li>
-                        <li>{{member.手機}}</li>
-                        <li :class="{'-active2':members[key].帳號狀態 == '1'}">{{member_list[member.帳號狀態]}}</li>
-                        <li>{{member.創建時間}}</li>        
+                        <li>{{member.member_id}}</li>
+                        <li>{{member.account}}</li>
+                        <li>{{member.name}}</li>
+                        <li>{{member.phone}}</li>
+                        <li :class="{'-active2':members[key].member_status == '1'}">{{member_list[member.member_status]}}</li>
+                        <li>{{member.register_date}}</li>        
                         <li @click='edit(key)'>編輯與查看</li>
                     </ul>
                 </div>
@@ -68,11 +68,11 @@
             <p>編輯與查看</p>
 
             <ul class="n-member_edit-member">                        
-                <li>編號:{{members[current_edit].編號}}</li>
-                <li>性別:{{members[current_edit].性別}}</li>
-                <li>帳號:{{members[current_edit].帳號}}</li>
-                <li>手機:{{members[current_edit].手機}}</li>
-                <li>姓名:{{members[current_edit].姓名}}</li>
+                <li>編號:{{members[current_edit].member_id}}</li>
+                <li>性別:{{members[current_edit].gender}}</li>
+                <li>帳號:{{members[current_edit].account}}</li>
+                <li>手機:{{members[current_edit].phone}}</li>
+                <li>姓名:{{members[current_edit].name}}</li>
                 <li>
                     帳號狀態:
                     <select name="status" id="" v-model='m_status'>
@@ -80,8 +80,8 @@
                         <option value="1">停權</option>
                     </select>
                 </li>
-                <li>地址:{{members[current_edit].地址}}</li>
-                <li>創建時間:{{members[current_edit].創建時間}}</li> 
+                <li>地址:{{members[current_edit].address}}</li>
+                <li>創建時間:{{members[current_edit].register_date}}</li> 
             </ul>
 
             <div class="n-member_editbtn">
@@ -140,34 +140,34 @@
                 titles: ['會員編號', '帳號', '姓名', '手機', '帳號狀態', '創建時間', '', ],
                 members:[
                     {
-                        '編號':'001',
-                        '帳號':'Harukadou@gmail.com',
-                        '姓名':'張昭',
-                        '手機':'0910123456',
-                        '帳號狀態':0,
-                        '創建時間':'2021/01/01',
-                        '地址':'台北市大安區大安路一段16巷2號',
-                        '性別':'女',
+                        'member_id':'001',
+                        'account':'Harukadou@gmail.com',
+                        'name':'張昭',
+                        'phone':'0910123456',
+                        'member_status':0,
+                        'register_date':'2021/01/01',
+                        'address':'台北市大安區大安路一段16巷2號',
+                        'gender':'女',
                     },
                     {
-                        '編號':'002',
-                        '帳號':'Harukadouv2@gmail.com',
-                        '姓名':'張昭2',
-                        '手機':'0910123456',
-                        '帳號狀態':1,
-                        '創建時間':'2021/01/02',
-                        '地址':'台北市大安區大安路一段16巷2號',
-                        '性別':'女',
+                        'member_id':'002',
+                        'account':'Harukadouv2@gmail.com',
+                        'name':'張昭2',
+                        'phone':'0910123456',
+                        'member_status':1,
+                        'register_date':'2021/01/02',
+                        'address':'台北市大安區大安路一段16巷2號',
+                        'gender':'女',
                     },
                     {
-                        '編號':'003',
-                        '帳號':'Harukadouv3@gmail.com',
-                        '姓名':'張昭3',
-                        '手機':'0910123456',
-                        '帳號狀態':0,
-                        '創建時間':'2021/01/03',
-                        '地址':'台北市大安區大安路一段16巷2號',
-                        '性別':'女',
+                        'member_id':'003',
+                        'account':'Harukadouv3@gmail.com',
+                        'name':'張昭3',
+                        'phone':'0910123456',
+                        'member_status':0,
+                        'register_date':'2021/01/03',
+                        'address':'台北市大安區大安路一段16巷2號',
+                        'gender':'女',
                     }
                 ],
                 pages:[
@@ -188,7 +188,7 @@
                 edit(index){                    
                     this.current_edit = index;    
 
-                    this.m_status = this.members[index].帳號狀態;
+                    this.m_status = this.members[index].member_status;
                 },                 
 
 
@@ -217,7 +217,7 @@
 
                     let n_index = this.$data.current_edit;
 
-                    this.members[n_index].帳號狀態 = this.m_status;
+                    this.members[n_index].member_status = this.m_status;
 
                     this.current_edit = null;
 
