@@ -59,122 +59,119 @@
             </div>
         </div>
 
-		<!-- 購物車 -->
+        <!-- 購物車 -->
         <div>
-        <div class="cart_mask"></div>
-        <div class="cart_cartBoard">
-            <div class="cart_cart">
-            <div class="cart_cartTitle">
-                <p>購物車</p>
-                <div class="cart_close" @click="close()">
-                <div class="cart_left"></div>
-                <div class="cart_right"></div>
-                </div>
-            </div>
-            <!-- ========== 商品細項 ========== -->
-            <ul class="cart_itemList">
-                <!-- 購物車空值顯示 -->
-                <div class="cart_NoItem">
-                <div>
-                    <img src="../images/cart/shoppingcart_empty.png">
-                </div>
-                <p>購物車還是空的哦！</p>
-                </div>
-                <!-- 一般商品 -->
-                <li class="cart_item" v-for="(item,index) in itemList" :id="item.id">
-                <div class="cart_itemCB" :class="{'cart_choose': item.status}" @click="choose(item)">
-                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="fas"
-                    data-icon="check" class="svg-inline--fa fa-check fa-w-16" role="img" viewBox="0 0 512 512">
+            <div class="cart_mask"></div>
+            <div class="cart_cartBoard">
+                <div class="cart_cart">
+                    <div class="cart_cartTitle">
+                        <p>購物車</p>
+                        <div class="cart_close" @click="close()">
+                            <div class="cart_left"></div>
+                            <div class="cart_right"></div>
+                        </div>
+                    </div>
+                    <!-- ========== 商品細項 ========== -->
+                    <ul class="cart_itemList">
+                        <!-- 購物車空值顯示 -->
+                        <div class="cart_NoItem">
+                            <div>
+                                <img src="../images/cart/shoppingcart_empty.png">
+                            </div>
+                            <p>購物車還是空的哦！</p>
+                        </div>
+                        <!-- 一般商品 -->
+                        <li class="cart_item" v-for="(item,index) in itemList" :id="item.id">
+                            <div class="cart_itemCB" :class="{'cart_choose': item.status}" @click="choose(item)">
+                                <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check fa-w-16" role="img" viewBox="0 0 512 512">
                     <path fill="#ffffff"
                         d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z" />
                     </svg>
-                </div>
-                <div class="cart_itemImg">
-                    <img :src="item.img">
-                </div>
-                <div class="cart_itemText">
-                    <p class="cart_itemName">{{item.itemName}}</p>
-                    <br>
-                    <p class="cart_itemAmount">$<span class="cart_price">{{item.price}}</span>元
-                    </p>
-                    <div class="cart_itemQuantity">
-                    <button class="cart_less mainbtn" @click="sub(item)">&#45;</button>
-                    <input class="cart_quantity" type="text" v-model="item.quantity">
-                    <button class="cart_add mainbtn" @click="add(item)">&#43;</button>
-                    </div>
-                </div>
-                <div class="cart_itemDelete" @click="delete_Item(index)">
-                    <div class="cart_leftD"></div>
-                    <div class="cart_rightD"></div>
-                </div>
-                </li>
-    
-                <!-- 客制禮盒 -->
-                <li class="cart_customization" v-for="(item,index) in customization" :id="item.id">
-                <!-- 商品 -->
-                <div class="cart_customizationItem">
-                    <div class="cart_itemCB" :class="{'cart_choose': item.status}" @click="choose(item)">
-                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="fas"
-                        data-icon="check" class="svg-inline--fa fa-check fa-w-16" role="img" viewBox="0 0 512 512">
+                            </div>
+                            <div class="cart_itemImg">
+                                <img :src="item.img">
+                            </div>
+                            <div class="cart_itemText">
+                                <p class="cart_itemName">{{item.itemName}}</p>
+                                <br>
+                                <p class="cart_itemAmount">$<span class="cart_price">{{item.price}}</span>元
+                                </p>
+                                <div class="cart_itemQuantity">
+                                    <button class="cart_less mainbtn" @click="sub(item)">&#45;</button>
+                                    <input class="cart_quantity" type="text" v-model="item.quantity">
+                                    <button class="cart_add mainbtn" @click="add(item)">&#43;</button>
+                                </div>
+                            </div>
+                            <div class="cart_itemDelete" @click="delete_Item(index)">
+                                <div class="cart_leftD"></div>
+                                <div class="cart_rightD"></div>
+                            </div>
+                        </li>
+
+                        <!-- 客制禮盒 -->
+                        <li class="cart_customization" v-for="(item,index) in customization" :id="item.id">
+                            <!-- 商品 -->
+                            <div class="cart_customizationItem">
+                                <div class="cart_itemCB" :class="{'cart_choose': item.status}" @click="choose(item)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check fa-w-16" role="img" viewBox="0 0 512 512">
                         <path fill="#ffffff"
                         d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z" />
                     </svg>
-                    </div>
-    
-                    <div class="cart_itemImg">
-                    <img :src="item.img">
-                    </div>
-    
-                    <div class="cart_itemText">
-                    <p class="cart_itemName">{{item.itemName}}</p>
-                    <br>
-                    <p class="cart_itemAmount">$<span>{{item.price}}</span>元</p>
-                    <div class="cart_itemQuantity">
-                        <button class="cart_less mainbtn" @click="sub(item)">-</button>
-                        <input class="cart_quantity" type="text" v-model="item.quantity">
-                        <button class="cart_add mainbtn" @click="add(item)">+</button>
-                    </div>
-                    </div>
-    
-                    <div class="cart_itemRight">
-                    <div class="cart_itemDelete" @click="delete_Customization(index)">
-                        <div class="cart_leftD"></div>
-                        <div class="cart_rightD"></div>
-                    </div>
-                    <div class="cart_detailBtn">查看禮盒明細</div>
+                                </div>
+
+                                <div class="cart_itemImg">
+                                    <img :src="item.img">
+                                </div>
+
+                                <div class="cart_itemText">
+                                    <p class="cart_itemName">{{item.itemName}}</p>
+                                    <br>
+                                    <p class="cart_itemAmount">$<span>{{item.price}}</span>元</p>
+                                    <div class="cart_itemQuantity">
+                                        <button class="cart_less mainbtn" @click="sub(item)">-</button>
+                                        <input class="cart_quantity" type="text" v-model="item.quantity">
+                                        <button class="cart_add mainbtn" @click="add(item)">+</button>
+                                    </div>
+                                </div>
+
+                                <div class="cart_itemRight">
+                                    <div class="cart_itemDelete" @click="delete_Customization(index)">
+                                        <div class="cart_leftD"></div>
+                                        <div class="cart_rightD"></div>
+                                    </div>
+                                    <div class="cart_detailBtn">查看禮盒明細</div>
+                                </div>
+                            </div>
+
+                            <!-- 展開禮盒明細 -->
+                            <div class="cart_detailBorder">
+                                <div class="cart_detail">
+                                    <div>
+                                        <div class="cart_detailItem" v-for="item in item.detail">
+                                            - {{item}}
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="cart_detailQuantity" v-for="item in item.detail_Quantity">
+                                            x {{item}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div id="cart_deleteMany" @click="delete_All()" :style="{'background-color': delete_bgc, cursor: delete_cursor}">刪除多個</div>
+
+                    <div class="cart_total">
+                        <p>小計</p>
+                        <p>$<span>{{total_Price}}</span></p>
                     </div>
                 </div>
-    
-                <!-- 展開禮盒明細 -->
-                <div class="cart_detailBorder">
-                    <div class="cart_detail">
-                    <div>
-                        <div class="cart_detailItem" v-for="item in item.detail">
-                        - {{item}}
-                        </div>
-                    </div>
-                    <div>
-                        <div class="cart_detailQuantity" v-for="item in item.detail_Quantity">
-                        x {{item}}
-                        </div>
-                    </div>
-                    </div>
-                </div>
-                </li>
-            </ul>
-    
-            <div id="cart_deleteMany" @click="delete_All()"
-                :style="{'background-color': delete_bgc, cursor: delete_cursor}">刪除多個</div>
-    
-            <div class="cart_total">
-                <p>小計</p>
-                <p>$<span>{{total_Price}}</span></p>
+
+                <div class="cart_checkoutBorder"><a href="../page/checkout.html" class="cart_checkout" @click="stopGo">前往結帳</a></div>
+
             </div>
-            </div>
-    
-            <div class="cart_checkoutBorder"><a href="../page/checkout.html" class="cart_checkout" @click="stopGo">前往結帳</a></div>
-    
-        </div>
         </div>
     </div>
     <!-- nav結束 -->
@@ -505,14 +502,14 @@
                         <div class="circle_grey"></div>
                     </div>
                 </div>
-                <div class="product_right" data-id="20" data-price="285"> 
+                <div class="product_right" data-id="20" data-price="285">
                     <p class="product_right_title">期間限定商品</p>
                     <h3 class="product_right_name">抹茶鯛魚燒<span> / (三入)</span></h3>
                     <p class="product_main_content">抹茶控必吃，嚴選台灣本地硬紅春麥製成的小麥粉製作餅皮，配上靜岡抹茶與阿里山台茶12號的黃金比例調配，夠濃夠美味
                     </p>
                     <p class="product_ingredients">成分 : 小麥、糖、抹茶</p>
                     <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>95元</span></p>
+                    <p class="product_price"><span>285元</span></p>
                     <div class="product_product_num">
                         <div class="product_num_btn">
                             <button class="min">-</button>
@@ -548,7 +545,7 @@
                     </p>
                     <p class="product_ingredients">成分 : 小麥、糖、紅豆、牛奶</p>
                     <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>95元</span></p>
+                    <p class="product_price"><span>285元</span></p>
                     <div class="product_product_num">
                         <div class="product_num_btn">
                             <button class="min">-</button>
@@ -584,7 +581,7 @@
                     </p>
                     <p class="product_ingredients">成分 : 小麥、糖、綠豆</p>
                     <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>95元</span></p>
+                    <p class="product_price"><span>285元</span></p>
                     <div class="product_product_num">
                         <div class="product_num_btn">
                             <button class="min">-</button>
@@ -663,7 +660,7 @@
                     </p>
                     <p class="product_ingredients">成分 : 米、糖、毛豆</p>
                     <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>100元</span></p>
+                    <p class="product_price"><span>300元</span></p>
                     <div class="product_product_num">
                         <div class="product_num_btn">
                             <button class="min">-</button>
@@ -699,7 +696,7 @@
                     </p>
                     <p class="product_ingredients">成分 : 米、糖、奶油、牛奶</p>
                     <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>90元</span></p>
+                    <p class="product_price"><span>270元</span></p>
                     <div class="product_product_num">
                         <div class="product_num_btn">
                             <button class="min">-</button>
@@ -735,7 +732,7 @@
                     </p>
                     <p class="product_ingredients">成分 : 米、糖、巧克力、牛奶</p>
                     <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>90元</span></p>
+                    <p class="product_price"><span>270元</span></p>
                     <div class="product_product_num">
                         <div class="product_num_btn">
                             <button class="min">-</button>
@@ -771,7 +768,7 @@
                     </p>
                     <p class="product_ingredients">成分 : 米、糖、布丁</p>
                     <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>90元</span></p>
+                    <p class="product_price"><span>270元</span></p>
                     <div class="product_product_num">
                         <div class="product_num_btn">
                             <button class="min">-</button>
@@ -813,7 +810,7 @@
                     </p>
                     <p class="product_ingredients">成分 : 米、糖、芒果</p>
                     <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>100元</span></p>
+                    <p class="product_price"><span>300元</span></p>
                     <div class="product_product_num">
                         <div class="product_num_btn">
                             <button class="min">-</button>
@@ -855,7 +852,7 @@
                     </p>
                     <p class="product_ingredients">成分 : 米、糖、抹茶</p>
                     <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>90元</span></p>
+                    <p class="product_price"><span>270元</span></p>
                     <div class="product_product_num">
                         <div class="product_num_btn">
                             <button class="min">-</button>
@@ -897,7 +894,7 @@
                     </p>
                     <p class="product_ingredients">成分 : 米、糖、柳橙、卡士達</p>
                     <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>100元</span></p>
+                    <p class="product_price"><span>300元</span></p>
                     <div class="product_product_num">
                         <div class="product_num_btn">
                             <button class="min">-</button>
@@ -933,7 +930,7 @@
                     </p>
                     <p class="product_ingredients">成分 : 米、糖、紅豆、牛奶</p>
                     <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>90元</span></p>
+                    <p class="product_price"><span>270元</span></p>
                     <div class="product_product_num">
                         <div class="product_num_btn">
                             <button class="min">-</button>
@@ -975,7 +972,7 @@
                     </p>
                     <p class="product_ingredients">成分 : 米、糖、紅豆、栗</p>
                     <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>90元</span></p>
+                    <p class="product_price"><span>270元</span></p>
                     <div class="product_product_num">
                         <div class="product_num_btn">
                             <button class="min">-</button>
@@ -1017,7 +1014,7 @@
                     </p>
                     <p class="product_ingredients">成分 : 米、糖、草莓</p>
                     <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>100元</span></p>
+                    <p class="product_price"><span>300元</span></p>
                     <div class="product_product_num">
                         <div class="product_num_btn">
                             <button class="min">-</button>
@@ -1061,13 +1058,13 @@
                 </div>
                 <div class="product_right" data-id="120">
                     <p class="product_right_title">期間限定商品</p>
-                    <h3 class="product_right_name">杏仁瓦片
+                    <h3 class="product_right_name">翡冷翠杏仁脆餅
                         <span> / (三入)</span></h3>
                     <p class="product_main_content">嚴選瑞士高品質杏仁，滿滿杏仁與奶油融合的香氣撲鼻，是一種讓人無法抗拒的誘惑
                     </p>
                     <p class="product_ingredients">成分 : 杏仁、糖、蛋、麵粉、無鹽奶油</p>
                     <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>90元</span></p>
+                    <p class="product_price"><span>120元</span></p>
                     <div class="product_product_num">
                         <div class="product_num_btn">
                             <button class="min">-</button>
@@ -1109,7 +1106,7 @@
                     </p>
                     <p class="product_ingredients">成分 : 糖、蛋、麵粉、無鹽奶油</p>
                     <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>90元</span></p>
+                    <p class="product_price"><span>120元</span></p>
                     <div class="product_product_num">
                         <div class="product_num_btn">
                             <button class="min">-</button>
@@ -1146,12 +1143,12 @@
                 </div>
                 <div class="product_right" data-id="120">
                     <p class="product_right_title">期間限定商品</p>
-                    <h3 class="product_right_name">布列塔尼餅乾<span> / (三入)</span></h3>
+                    <h3 class="product_right_name">國王餅<span> / (三入)</span></h3>
                     <p class="product_main_content">法國西北部布列塔尼區的傳統小點心，烘烤的厚餅乾嚐起來口感酥脆，在口中散發出甜中略帶鹹味的自然奶香
                     </p>
                     <p class="product_ingredients">成分 : 麵粉、無鹽奶油、蘭姆酒、牛奶</p>
                     <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>90元</span></p>
+                    <p class="product_price"><span>120元</span></p>
                     <div class="product_product_num">
                         <div class="product_num_btn">
                             <button class="min">-</button>
@@ -1188,12 +1185,12 @@
                 </div>
                 <div class="product_right" data-id="120">
                     <p class="product_right_title">期間限定商品</p>
-                    <h3 class="product_right_name">檸檬糖霜<span> / (三入)</span></h3>
+                    <h3 class="product_right_name">檸檬沙貝雷<span> / (三入)</span></h3>
                     <p class="product_main_content">特選屏東鹽埔有機檸檬，檸檬汁拌入麵團，以明亮的果香氣息打開味蕾，為女性最愛的人氣口味
                     </p>
                     <p class="product_ingredients">成分 : 糖、蛋、麵粉、無鹽奶油、檸檬</p>
                     <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>90元</span></p>
+                    <p class="product_price"><span>120元</span></p>
                     <div class="product_product_num">
                         <div class="product_num_btn">
                             <button class="min">-</button>
@@ -1235,7 +1232,7 @@
                     </p>
                     <p class="product_ingredients">成分 : 糖、蛋、麵粉、無鹽奶油</p>
                     <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>90元</span></p>
+                    <p class="product_price"><span>120元</span></p>
                     <div class="product_product_num">
                         <div class="product_num_btn">
                             <button class="min">-</button>
@@ -1277,14 +1274,14 @@
                         <div class="circle_grey"></div>
                     </div>
                 </div>
-                <div class="product_right" data-id="80">
+                <div class="product_right" data-id="240">
                     <p class="product_right_title">期間限定商品</p>
                     <h3 class="product_right_name">起司羊羹<span> / (三入)</span></h3>
                     <p class="product_main_content">果凍般晶瑩般的外觀帶著脆甜滋味，特選初鹿牧場鮮奶，並採用大稻埕乳酪坊手工製作的台灣起司，奶味香醇
                     </p>
                     <p class="product_ingredients">成分 : 洋菜、麥芽糖、起司、牛奶</p>
                     <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>80元</span></p>
+                    <p class="product_price"><span>240元</span></p>
                     <div class="product_product_num">
                         <div class="product_num_btn">
                             <button class="min">-</button>
@@ -1319,14 +1316,14 @@
                         <div class="circle_grey"></div>
                     </div>
                 </div>
-                <div class="product_right" data-id="80">
+                <div class="product_right" data-id="240">
                     <p class="product_right_title">期間限定商品</p>
                     <h3 class="product_right_name">巧克力羊羹<span> / (三入)</span></h3>
                     <p class="product_main_content">果凍般晶瑩的外觀帶著脆甜滋味，採用100% 台灣一號屏東巧克力製成內餡，可可味濃厚不甜膩，喜歡巧克力的首選
                     </p>
                     <p class="product_ingredients">成分 : 洋菜、麥芽糖、紅豆、巧克力</p>
                     <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>80元</span></p>
+                    <p class="product_price"><span>240元</span></p>
                     <div class="product_product_num">
                         <div class="product_num_btn">
                             <button class="min">-</button>
@@ -1543,7 +1540,7 @@
                     </p>
                     <p class="product_ingredients">成分 : 豆沙、抹茶餡</p>
                     <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>110元</span></p>
+                    <p class="product_price"><span>330元</span></p>
                     <div class="product_product_num">
                         <div class="product_num_btn">
                             <button class="min">-</button>
@@ -1585,7 +1582,7 @@
                     </p>
                     <p class="product_ingredients">成分 : 米、豆沙、柚子紅茶餡</p>
                     <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>110元</span></p>
+                    <p class="product_price"><span>330元</span></p>
                     <div class="product_product_num">
                         <div class="product_num_btn">
                             <button class="min">-</button>
@@ -1627,7 +1624,7 @@
                     </p>
                     <p class="product_ingredients">成分 : 豆沙、奶油餡、牛奶</p>
                     <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>110元</span></p>
+                    <p class="product_price"><span>330元</span></p>
                     <div class="product_product_num">
                         <div class="product_num_btn">
                             <button class="min">-</button>
@@ -1669,7 +1666,7 @@
                     </p>
                     <p class="product_ingredients">成分 : 豆沙、柚子紅茶餡</p>
                     <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>110元</span></p>
+                    <p class="product_price"><span>330元</span></p>
                     <div class="product_product_num">
                         <div class="product_num_btn">
                             <button class="min">-</button>
@@ -1711,7 +1708,7 @@
                     </p>
                     <p class="product_ingredients">成分 : 豆沙、地瓜餡</p>
                     <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>110元</span></p>
+                    <p class="product_price"><span>330元</span></p>
                     <div class="product_product_num">
                         <div class="product_num_btn">
                             <button class="min">-</button>
@@ -1753,7 +1750,7 @@
                     </p>
                     <p class="product_ingredients">成分 : 豆沙、地瓜餡、櫻花餡</p>
                     <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>110元</span></p>
+                    <p class="product_price"><span>330元</span></p>
                     <div class="product_product_num">
                         <div class="product_num_btn">
                             <button class="min">-</button>
@@ -1795,12 +1792,12 @@
                 </div>
                 <div class="product_right" data-id="300">
                     <p class="product_right_title">期間限定商品</p>
-                    <h3 class="product_right_name">牛奶最中餅<span> / (三入)</span></h3>
+                    <h3 class="product_right_name">牛奶最中<span> / (三入)</span></h3>
                     <p class="product_main_content">餅殼精選台東池上鄉農會的三冠米，蒸成麻糬再用細火手工烘烤而成，香脆外殼配上濃厚牛奶風味內餡，令人回味無窮
                     </p>
                     <p class="product_ingredients">成分 : 米、糖、牛奶、奶油</p>
                     <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>100元</span></p>
+                    <p class="product_price"><span>300元</span></p>
                     <div class="product_product_num">
                         <div class="product_num_btn">
                             <button class="min">-</button>
@@ -1835,12 +1832,12 @@
                 </div>
                 <div class="product_right" data-id="300">
                     <p class="product_right_title">期間限定商品</p>
-                    <h3 class="product_right_name">巧克力最中餅<span> / (三入)</span></h3>
+                    <h3 class="product_right_name">巧克力最中<span> / (三入)</span></h3>
                     <p class="product_main_content">餅殼精選台東池上鄉農會的三冠米，蒸成麻糬再用細火手工烘烤而成，香脆外殼配上100% 台灣一號屏東巧克力與牛奶製成內餡，可可味濃厚但不甜膩，喜歡巧克力的首選
                     </p>
                     <p class="product_ingredients">成分 : 米、糖、牛奶、巧克力</p>
                     <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>100元</span></p>
+                    <p class="product_price"><span>300元</span></p>
                     <div class="product_product_num">
                         <div class="product_num_btn">
                             <button class="min">-</button>
@@ -1875,12 +1872,12 @@
                 </div>
                 <div class="product_right" data-id="300">
                     <p class="product_right_title">期間限定商品</p>
-                    <h3 class="product_right_name">抹茶最中餅<span> / (三入)</span></h3>
+                    <h3 class="product_right_name">抹茶最中<span> / (三入)</span></h3>
                     <p class="product_main_content">餅殼精選台東池上鄉農會的三冠米，蒸成麻糬再用細火手工烘烤而成，香脆外殼配上特選靜岡抹茶與阿里山台茶12號的黃金比例調配，抹茶味濃厚不甜膩
                     </p>
                     <p class="product_ingredients">成分 : 米、糖、抹茶</p>
                     <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>100元</span></p>
+                    <p class="product_price"><span>300元</span></p>
                     <div class="product_product_num">
                         <div class="product_num_btn">
                             <button class="min">-</button>
@@ -1915,12 +1912,12 @@
                 </div>
                 <div class="product_right" data-id="300">
                     <p class="product_right_title">期間限定商品</p>
-                    <h3 class="product_right_name">花生最中餅<span> / (三入)</span></h3>
+                    <h3 class="product_right_name">花生最中<span> / (三入)</span></h3>
                     <p class="product_main_content">餅殼精選台東池上鄉農會的三冠米，蒸成麻糬再用細火手工烘烤而成，香脆外殼配上新竹福源花生醬，與花生台南18 號的花生顆粒，增添口感並降低甜度，老少咸宜的風味
                     </p>
                     <p class="product_ingredients">成分 : 米、糖、花生</p>
                     <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>100元</span></p>
+                    <p class="product_price"><span>300元</span></p>
                     <div class="product_product_num">
                         <div class="product_num_btn">
                             <button class="min">-</button>
@@ -1949,12 +1946,12 @@
                 </div>
                 <div class="product_right" data-id="300">
                     <p class="product_right_title">期間限定商品</p>
-                    <h3 class="product_right_name">紅豆最中餅<span> / (三入)</span></h3>
+                    <h3 class="product_right_name">紅豆最中<span> / (三入)</span></h3>
                     <p class="product_main_content">餅殼精選台東池上鄉農會的三冠米，蒸成麻糬再用細火手工烘烤而成，香脆外殼配上特製牛奶餡與熬煮八小時的屏東老鷹紅豆，製作成不甜不膩的牛奶紅豆
                     </p>
                     <p class="product_ingredients">成分 : 米、糖、紅豆、牛奶</p>
                     <p class="product_save_days">保存期限:5日</p>
-                    <p class="product_price"><span>100元</span></p>
+                    <p class="product_price"><span>300元</span></p>
                     <div class="product_product_num">
                         <div class="product_num_btn">
                             <button class="min">-</button>
