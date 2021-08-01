@@ -8,169 +8,172 @@
     <title>最新消息 - 小春堂</title>
     <link rel="icon" href="../images/index/logo_footer.png">
     <link rel="stylesheet" href="../css/news.css">
-    <link rel="stylesheet" href="../css/cart.css" >
+    <link rel="stylesheet" href="../css/cart.css">
+    <link rel="stylesheet" href="../css/hamburger.css">
     <script src="https://kit.fontawesome.com/8c3a8ab95b.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="../js/news.js"></script>
     <script src="../js/vue.js"></script>
-	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.14/vue.js"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.14/vue.js"></script> -->
     <script src="../js/cart_vue.js"></script>
-    
+
     <script src="../js/hamburger.js"></script>
-    <script src="../js/navbar.js"></script> 
+    <script src="../js/navbar.js"></script>
 </head>
 
 <body>
     <div class="memberShow"></div>
     <!-- navbar -->
-	<div id="cart_app">
-		<div class="navbar">
-			<div class="navbar-logo">
-				<a href="../index.html"><img src="../images/index/logo.png" alt=""></a>
-			</div>
-			<div class="navbar-icon">
-				<a href="#"><i class="fas fa-user"></i></a>
-				<a href="#" @click="open()"><i class="fas fa-shopping-cart"></i></a>
-				<a href="#"></a>
-			</div>
-			<!-- 漢堡 -->
-			<div class="ham_container">
-				<div class="ham_bar1 ham_bar"></div>
-				<div class="ham_bar2 ham_bar"></div>
-				<div class="ham_bar3 ham_bar"></div>
-			</div>
-			<div id="ham_myNav" class="ham_overlay">
-				<div class="ham_overlay-content">
-					<div class='ham_jelly'></div>
-					<div class="ham_select">
-						<a href="../index.html">首頁</a>
-						<a href="./about.html">關於我們</a>
-						<a href="./news.html">最新消息</a>
-						<a href="./shopping_choose.html">商品專區</a>
-						<a href="./customized.html">客製化禮盒</a>
-						<a href="./FAQ.html">Q&A</a>
-						<a>會員中心</a>
+    <div id="cart_app">
+        <div class="navbar">
+            <div class="navbar-logo">
+                <a href="./homepage.html"><img src="../images/index/logo.png" alt=""></a>
+            </div>
+            <div class="navbar-icon">
+                <a href="#"><i class="fas fa-user"></i></a>
+                <a href="#" @click="open()"><i class="fas fa-shopping-cart"></i></a>
+                <a href="#"></a>
+            </div>
+            <!-- 漢堡 -->
+            <div class="ham_container">
+                <div class="ham_bar1 ham_bar"></div>
+                <div class="ham_bar2 ham_bar"></div>
+                <div class="ham_bar3 ham_bar"></div>
+            </div>
+            <div id="ham_myNav" class="ham_overlay">
+                <div class="ham_wave wave1"></div>
+                <div class="ham_wave wave2"></div>
+                <div class="ham_wave wave3"></div>
+                <div class="ham_overlay-content">
+                    <div class="ham_select">
+                        <a href="./homepage.html">首頁</a>
+                        <a href="./about.html">關於我們</a>
+                        <a href="./news.html">最新消息</a>
+                        <a href="./shopping_choose.html">商品專區</a>
+                        <a href="./customized.html">客製化禮盒</a>
+                        <a href="./FAQ.html">Q&A</a>
+                        <a>會員中心</a>
                         <a href="#" class='nav_logOut'>會員登出 &nbsp<i class="fas fa-sign-out-alt"></i></a>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="cart_cartBoard">
-			<div class="cart_cart">
-				<div class="cart_cartTitle">
-					<p>購物車</p>
-					<div class="cart_close" @click="close()">
-						<div class="cart_left"></div>
-						<div class="cart_right"></div>
-					</div>
-				</div>
-				<!-- ========== 商品細項 ========== -->
-				<ul class="cart_itemList">
-					<!-- 購物車空值顯示 -->
-					<div class="cart_NoItem">
-						<div>
-							<img src="../images/cart/shoppingcart_empty.png">
-						</div>
-						<p>購物車還是空的哦！</p>
-					</div>
-					<!-- 一般商品 -->
-					<li class="cart_item" v-for="(item,index) in itemList" :id="item.id">
-						<div class="cart_itemCB" :class="{'cart_choose': item.status}" @click="choose(item)">
-							<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"
-								data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check fa-w-16" role="img"
-								viewBox="0 0 512 512">
-								<path fill="#ffffff"
-									d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z" />
-							</svg>
-						</div>
-						<div class="cart_itemImg">
-							<img :src="item.img">
-						</div>
-						<div class="cart_itemText">
-							<p class="cart_itemName">{{item.itemName}}</p>
-							<br>
-							<p class="cart_itemAmount">$<span class="cart_price">{{item.price}}</span>元
-							</p>
-							<div class="cart_itemQuantity">
-								<button class="cart_less mainbtn" @click="sub(item)">&#45;</button>
-								<input class="cart_quantity" type="text" v-model="item.quantity">
-								<button class="cart_add mainbtn" @click="add(item)">&#43;</button>
-							</div>
-						</div>
-						<div class="cart_itemDelete" @click="delete_Item(index)">
-							<div class="cart_leftD"></div>
-							<div class="cart_rightD"></div>
-						</div>
-					</li>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-					<!-- 客制禮盒 -->
-					<li class="cart_customization" v-for="(item,index) in customization" :id="item.id">
-						<!-- 商品 -->
-						<div class="cart_customizationItem">
-							<div class="cart_itemCB" :class="{'cart_choose': item.status}" @click="choose(item)">
-								<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"
-									data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check fa-w-16"
-									role="img" viewBox="0 0 512 512">
-									<path fill="#ffffff"
-										d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z" />
-								</svg>
-							</div>
+        <!-- 購物車 -->
+        <div>
+            <div class="cart_mask"></div>
+            <div class="cart_cartBoard">
+                <div class="cart_cart">
+                    <div class="cart_cartTitle">
+                        <p>購物車</p>
+                        <div class="cart_close" @click="close()">
+                            <div class="cart_left"></div>
+                            <div class="cart_right"></div>
+                        </div>
+                    </div>
+                    <!-- ========== 商品細項 ========== -->
+                    <ul class="cart_itemList">
+                        <!-- 購物車空值顯示 -->
+                        <div class="cart_NoItem">
+                            <div>
+                                <img src="../images/cart/shoppingcart_empty.png">
+                            </div>
+                            <p>購物車還是空的哦！</p>
+                        </div>
+                        <!-- 一般商品 -->
+                        <li class="cart_item" v-for="(item,index) in itemList" :id="item.id">
+                            <div class="cart_itemCB" :class="{'cart_choose': item.status}" @click="choose(item)">
+                                <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check fa-w-16" role="img" viewBox="0 0 512 512">
+                    <path fill="#ffffff"
+                        d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z" />
+                    </svg>
+                            </div>
+                            <div class="cart_itemImg">
+                                <img :src="item.img">
+                            </div>
+                            <div class="cart_itemText">
+                                <p class="cart_itemName">{{item.itemName}}</p>
+                                <br>
+                                <p class="cart_itemAmount">$<span class="cart_price">{{item.price}}</span>元
+                                </p>
+                                <div class="cart_itemQuantity">
+                                    <button class="cart_less mainbtn" @click="sub(item)">&#45;</button>
+                                    <input class="cart_quantity" type="text" v-model="item.quantity">
+                                    <button class="cart_add mainbtn" @click="add(item)">&#43;</button>
+                                </div>
+                            </div>
+                            <div class="cart_itemDelete" @click="delete_Item(index)">
+                                <div class="cart_leftD"></div>
+                                <div class="cart_rightD"></div>
+                            </div>
+                        </li>
 
-							<div class="cart_itemImg">
-								<img :src="item.img">
-							</div>
+                        <!-- 客制禮盒 -->
+                        <li class="cart_customization" v-for="(item,index) in customization" :id="item.id">
+                            <!-- 商品 -->
+                            <div class="cart_customizationItem">
+                                <div class="cart_itemCB" :class="{'cart_choose': item.status}" @click="choose(item)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check fa-w-16" role="img" viewBox="0 0 512 512">
+                        <path fill="#ffffff"
+                        d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z" />
+                    </svg>
+                                </div>
 
-							<div class="cart_itemText">
-								<p class="cart_itemName">{{item.itemName}}</p>
-								<br>
-								<p class="cart_itemAmount">$<span>{{item.price}}</span>元</p>
-								<div class="cart_itemQuantity">
-									<button class="cart_less mainbtn" @click="sub(item)">-</button>
-									<input class="cart_quantity" type="text" v-model="item.quantity">
-									<button class="cart_add mainbtn" @click="add(item)">+</button>
-								</div>
-							</div>
+                                <div class="cart_itemImg">
+                                    <img :src="item.img">
+                                </div>
 
-							<div class="cart_itemRight">
-								<div class="cart_itemDelete" @click="delete_Customization(index)">
-									<div class="cart_leftD"></div>
-									<div class="cart_rightD"></div>
-								</div>
-								<div class="cart_detailBtn">查看禮盒明細</div>
-							</div>
-						</div>
+                                <div class="cart_itemText">
+                                    <p class="cart_itemName">{{item.itemName}}</p>
+                                    <br>
+                                    <p class="cart_itemAmount">$<span>{{item.price}}</span>元</p>
+                                    <div class="cart_itemQuantity">
+                                        <button class="cart_less mainbtn" @click="sub(item)">-</button>
+                                        <input class="cart_quantity" type="text" v-model="item.quantity">
+                                        <button class="cart_add mainbtn" @click="add(item)">+</button>
+                                    </div>
+                                </div>
 
-						<!-- 展開禮盒明細 -->
-						<div class="cart_detailBorder">
-							<div class="cart_detail">
-								<div>
-									<div class="cart_detailItem" v-for="item in item.detail">
-										- {{item}}
-									</div>
-								</div>
-								<div>
-									<div class="cart_detailQuantity" v-for="item in item.detail_Quantity">
-										x {{item}}
-									</div>
-								</div>
-							</div>
-						</div>
-					</li>
-				</ul>
+                                <div class="cart_itemRight">
+                                    <div class="cart_itemDelete" @click="delete_Customization(index)">
+                                        <div class="cart_leftD"></div>
+                                        <div class="cart_rightD"></div>
+                                    </div>
+                                    <div class="cart_detailBtn">查看禮盒明細</div>
+                                </div>
+                            </div>
 
-				<div id="cart_deleteMany" @click="delete_All()"
-					:style="{'background-color': delete_bgc, cursor: delete_cursor}">刪除多個</div>
+                            <!-- 展開禮盒明細 -->
+                            <div class="cart_detailBorder">
+                                <div class="cart_detail">
+                                    <div>
+                                        <div class="cart_detailItem" v-for="item in item.detail">
+                                            - {{item}}
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="cart_detailQuantity" v-for="item in item.detail_Quantity">
+                                            x {{item}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
 
-				<div class="cart_total">
-					<p>小計</p>
-					<p>$<span>{{total_Price}}</span></p>
-				</div>
-			</div>
+                    <div id="cart_deleteMany" @click="delete_All()" :style="{'background-color': delete_bgc, cursor: delete_cursor}">刪除多個</div>
 
-			<div class="cart_checkoutBorder"><a href="../page/checkout.html" class="cart_checkout" @click='stopGo'>前往結帳</a></div>
+                    <div class="cart_total">
+                        <p>小計</p>
+                        <p>$<span>{{total_Price}}</span></p>
+                    </div>
+                </div>
 
-		</div>
-	</div>
+                <div class="cart_checkoutBorder"><a href="../page/checkout.html" class="cart_checkout" @click="stopGo">前往結帳</a></div>
+
+            </div>
+        </div>
+    </div>
     <!-- nav結束 -->
     <!-- media -->
     <div class='mediacolumn'>
@@ -200,7 +203,8 @@
 
     <div class="news_blockAll">
         <div class="newsPart1">
-            <div class="news_blockarray"><a class="news_blocklink" href="../page/news_info.html">
+            <div class="news_blockarray">
+                <a class="news_blocklink" href="../page/news_info.html">
                     <section class="news_blockbg">
                         <article class="news_blockpic">
                             <img src="../images/news/news_pic_a.png">
@@ -213,10 +217,7 @@
                             <h4>挺防疫，免運活動開跑</h4>
                             <p>即日起至2021/08/31，輸入折扣碼即可享運費折抵</p>
                             <div class="news_blockmore">
-                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas"
-                                    data-icon="long-arrow-alt-right"
-                                    class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img"
-                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="long-arrow-alt-right" class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                                     <path fill="currentColor"
                                         d="M313.941 216H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h301.941v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.569 0-33.941l-86.059-86.059c-15.119-15.119-40.971-4.411-40.971 16.971V216z">
                                     </path>
@@ -240,10 +241,7 @@
                             <h4>挺防疫，免運活動開跑</h4>
                             <p>即日起至2021/08/31，輸入折扣碼即可享運費折抵</p>
                             <div class="news_blockmore">
-                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas"
-                                    data-icon="long-arrow-alt-right"
-                                    class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img"
-                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="long-arrow-alt-right" class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                                     <path fill="currentColor"
                                         d="M313.941 216H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h301.941v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.569 0-33.941l-86.059-86.059c-15.119-15.119-40.971-4.411-40.971 16.971V216z">
                                     </path>
@@ -267,10 +265,7 @@
                             <h4>挺防疫，免運活動開跑</h4>
                             <p>即日起至2021/08/31，輸入折扣碼即可享運費折抵</p>
                             <div class="news_blockmore">
-                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas"
-                                    data-icon="long-arrow-alt-right"
-                                    class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img"
-                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="long-arrow-alt-right" class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                                     <path fill="currentColor"
                                         d="M313.941 216H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h301.941v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.569 0-33.941l-86.059-86.059c-15.119-15.119-40.971-4.411-40.971 16.971V216z">
                                     </path>
@@ -294,10 +289,7 @@
                             <h4>挺防疫，免運活動開跑</h4>
                             <p>即日起至2021/08/31，輸入折扣碼即可享運費折抵</p>
                             <div class="news_blockmore">
-                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas"
-                                    data-icon="long-arrow-alt-right"
-                                    class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img"
-                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="long-arrow-alt-right" class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                                     <path fill="currentColor"
                                         d="M313.941 216H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h301.941v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.569 0-33.941l-86.059-86.059c-15.119-15.119-40.971-4.411-40.971 16.971V216z">
                                     </path>
@@ -321,10 +313,7 @@
                             <h4>挺防疫，免運活動開跑</h4>
                             <p>即日起至2021/08/31，輸入折扣碼即可享運費折抵</p>
                             <div class="news_blockmore">
-                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas"
-                                    data-icon="long-arrow-alt-right"
-                                    class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img"
-                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="long-arrow-alt-right" class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                                     <path fill="currentColor"
                                         d="M313.941 216H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h301.941v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.569 0-33.941l-86.059-86.059c-15.119-15.119-40.971-4.411-40.971 16.971V216z">
                                     </path>
@@ -348,10 +337,7 @@
                             <h4>挺防疫，免運活動開跑</h4>
                             <p>即日起至2021/08/31，輸入折扣碼即可享運費折抵</p>
                             <div class="news_blockmore">
-                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas"
-                                    data-icon="long-arrow-alt-right"
-                                    class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img"
-                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="long-arrow-alt-right" class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                                     <path fill="currentColor"
                                         d="M313.941 216H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h301.941v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.569 0-33.941l-86.059-86.059c-15.119-15.119-40.971-4.411-40.971 16.971V216z">
                                     </path>
@@ -375,10 +361,7 @@
                             <h4>挺防疫，免運活動開跑</h4>
                             <p>即日起至2021/08/31，輸入折扣碼即可享運費折抵</p>
                             <div class="news_blockmore">
-                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas"
-                                    data-icon="long-arrow-alt-right"
-                                    class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img"
-                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="long-arrow-alt-right" class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                                     <path fill="currentColor"
                                         d="M313.941 216H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h301.941v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.569 0-33.941l-86.059-86.059c-15.119-15.119-40.971-4.411-40.971 16.971V216z">
                                     </path>
@@ -402,10 +385,7 @@
                             <h4>挺防疫，免運活動開跑</h4>
                             <p>即日起至2021/08/31，輸入折扣碼即可享運費折抵</p>
                             <div class="news_blockmore">
-                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas"
-                                    data-icon="long-arrow-alt-right"
-                                    class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img"
-                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="long-arrow-alt-right" class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                                     <path fill="currentColor"
                                         d="M313.941 216H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h301.941v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.569 0-33.941l-86.059-86.059c-15.119-15.119-40.971-4.411-40.971 16.971V216z">
                                     </path>
@@ -429,10 +409,7 @@
                             <h4>挺防疫，免運活動開跑</h4>
                             <p>即日起至2021/08/31，輸入折扣碼即可享運費折抵</p>
                             <div class="news_blockmore">
-                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas"
-                                    data-icon="long-arrow-alt-right"
-                                    class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img"
-                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="long-arrow-alt-right" class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                                     <path fill="currentColor"
                                         d="M313.941 216H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h301.941v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.569 0-33.941l-86.059-86.059c-15.119-15.119-40.971-4.411-40.971 16.971V216z">
                                     </path>
@@ -449,7 +426,8 @@
 
         </div>
         <div class="newsPart2">
-            <div class="news_blockarray"><a class="news_blocklink" href="#">
+            <div class="news_blockarray">
+                <a class="news_blocklink" href="#">
                     <section class="news_blockbg">
                         <article class="news_blockpic">
                             <img src="../images/news/news_pic_a.png">
@@ -462,10 +440,7 @@
                             <h4>挺防疫，免運活動開跑</h4>
                             <p>即日起至2021/08/31，輸入折扣碼即可享運費折抵</p>
                             <div class="news_blockmore">
-                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas"
-                                    data-icon="long-arrow-alt-right"
-                                    class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img"
-                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="long-arrow-alt-right" class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                                     <path fill="currentColor"
                                         d="M313.941 216H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h301.941v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.569 0-33.941l-86.059-86.059c-15.119-15.119-40.971-4.411-40.971 16.971V216z">
                                     </path>
@@ -489,10 +464,7 @@
                             <h4>挺防疫，免運活動開跑</h4>
                             <p>即日起至2021/08/31，輸入折扣碼即可享運費折抵</p>
                             <div class="news_blockmore">
-                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas"
-                                    data-icon="long-arrow-alt-right"
-                                    class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img"
-                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="long-arrow-alt-right" class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                                     <path fill="currentColor"
                                         d="M313.941 216H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h301.941v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.569 0-33.941l-86.059-86.059c-15.119-15.119-40.971-4.411-40.971 16.971V216z">
                                     </path>
@@ -516,10 +488,7 @@
                             <h4>挺防疫，免運活動開跑</h4>
                             <p>即日起至2021/08/31，輸入折扣碼即可享運費折抵</p>
                             <div class="news_blockmore">
-                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas"
-                                    data-icon="long-arrow-alt-right"
-                                    class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img"
-                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="long-arrow-alt-right" class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                                     <path fill="currentColor"
                                         d="M313.941 216H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h301.941v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.569 0-33.941l-86.059-86.059c-15.119-15.119-40.971-4.411-40.971 16.971V216z">
                                     </path>
@@ -543,10 +512,7 @@
                             <h4>挺防疫，免運活動開跑</h4>
                             <p>即日起至2021/08/31，輸入折扣碼即可享運費折抵</p>
                             <div class="news_blockmore">
-                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas"
-                                    data-icon="long-arrow-alt-right"
-                                    class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img"
-                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="long-arrow-alt-right" class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                                     <path fill="currentColor"
                                         d="M313.941 216H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h301.941v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.569 0-33.941l-86.059-86.059c-15.119-15.119-40.971-4.411-40.971 16.971V216z">
                                     </path>
@@ -570,10 +536,7 @@
                             <h4>挺防疫，免運活動開跑</h4>
                             <p>即日起至2021/08/31，輸入折扣碼即可享運費折抵</p>
                             <div class="news_blockmore">
-                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas"
-                                    data-icon="long-arrow-alt-right"
-                                    class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img"
-                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="long-arrow-alt-right" class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                                     <path fill="currentColor"
                                         d="M313.941 216H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h301.941v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.569 0-33.941l-86.059-86.059c-15.119-15.119-40.971-4.411-40.971 16.971V216z">
                                     </path>
@@ -597,10 +560,7 @@
                             <h4>挺防疫，免運活動開跑</h4>
                             <p>即日起至2021/08/31，輸入折扣碼即可享運費折抵</p>
                             <div class="news_blockmore">
-                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas"
-                                    data-icon="long-arrow-alt-right"
-                                    class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img"
-                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="long-arrow-alt-right" class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                                     <path fill="currentColor"
                                         d="M313.941 216H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h301.941v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.569 0-33.941l-86.059-86.059c-15.119-15.119-40.971-4.411-40.971 16.971V216z">
                                     </path>
@@ -624,10 +584,7 @@
                             <h4>挺防疫，免運活動開跑</h4>
                             <p>即日起至2021/08/31，輸入折扣碼即可享運費折抵</p>
                             <div class="news_blockmore">
-                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas"
-                                    data-icon="long-arrow-alt-right"
-                                    class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img"
-                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="long-arrow-alt-right" class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                                     <path fill="currentColor"
                                         d="M313.941 216H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h301.941v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.569 0-33.941l-86.059-86.059c-15.119-15.119-40.971-4.411-40.971 16.971V216z">
                                     </path>
@@ -651,10 +608,7 @@
                             <h4>挺防疫，免運活動開跑</h4>
                             <p>即日起至2021/08/31，輸入折扣碼即可享運費折抵</p>
                             <div class="news_blockmore">
-                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas"
-                                    data-icon="long-arrow-alt-right"
-                                    class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img"
-                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="long-arrow-alt-right" class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                                     <path fill="currentColor"
                                         d="M313.941 216H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h301.941v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.569 0-33.941l-86.059-86.059c-15.119-15.119-40.971-4.411-40.971 16.971V216z">
                                     </path>
@@ -678,10 +632,7 @@
                             <h4>挺防疫，免運活動開跑</h4>
                             <p>即日起至2021/08/31，輸入折扣碼即可享運費折抵</p>
                             <div class="news_blockmore">
-                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas"
-                                    data-icon="long-arrow-alt-right"
-                                    class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img"
-                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="long-arrow-alt-right" class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                                     <path fill="currentColor"
                                         d="M313.941 216H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h301.941v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.569 0-33.941l-86.059-86.059c-15.119-15.119-40.971-4.411-40.971 16.971V216z">
                                     </path>
@@ -698,7 +649,8 @@
 
         </div>
         <div class="newsPart3">
-            <div class="news_blockarray"><a class="news_blocklink" href="#">
+            <div class="news_blockarray">
+                <a class="news_blocklink" href="#">
                     <section class="news_blockbg">
                         <article class="news_blockpic">
                             <img src="../images/news/news_pic_a.png">
@@ -711,10 +663,7 @@
                             <h4>挺防疫，免運活動開跑</h4>
                             <p>即日起至2021/08/31，輸入折扣碼即可享運費折抵</p>
                             <div class="news_blockmore">
-                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas"
-                                    data-icon="long-arrow-alt-right"
-                                    class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img"
-                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="long-arrow-alt-right" class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                                     <path fill="currentColor"
                                         d="M313.941 216H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h301.941v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.569 0-33.941l-86.059-86.059c-15.119-15.119-40.971-4.411-40.971 16.971V216z">
                                     </path>
@@ -738,10 +687,7 @@
                             <h4>挺防疫，免運活動開跑</h4>
                             <p>即日起至2021/08/31，輸入折扣碼即可享運費折抵</p>
                             <div class="news_blockmore">
-                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas"
-                                    data-icon="long-arrow-alt-right"
-                                    class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img"
-                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="long-arrow-alt-right" class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                                     <path fill="currentColor"
                                         d="M313.941 216H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h301.941v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.569 0-33.941l-86.059-86.059c-15.119-15.119-40.971-4.411-40.971 16.971V216z">
                                     </path>
@@ -765,10 +711,7 @@
                             <h4>挺防疫，免運活動開跑</h4>
                             <p>即日起至2021/08/31，輸入折扣碼即可享運費折抵</p>
                             <div class="news_blockmore">
-                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas"
-                                    data-icon="long-arrow-alt-right"
-                                    class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img"
-                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="long-arrow-alt-right" class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                                     <path fill="currentColor"
                                         d="M313.941 216H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h301.941v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.569 0-33.941l-86.059-86.059c-15.119-15.119-40.971-4.411-40.971 16.971V216z">
                                     </path>
@@ -792,10 +735,7 @@
                             <h4>挺防疫，免運活動開跑</h4>
                             <p>即日起至2021/08/31，輸入折扣碼即可享運費折抵</p>
                             <div class="news_blockmore">
-                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas"
-                                    data-icon="long-arrow-alt-right"
-                                    class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img"
-                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="long-arrow-alt-right" class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                                     <path fill="currentColor"
                                         d="M313.941 216H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h301.941v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.569 0-33.941l-86.059-86.059c-15.119-15.119-40.971-4.411-40.971 16.971V216z">
                                     </path>
@@ -819,10 +759,7 @@
                             <h4>挺防疫，免運活動開跑</h4>
                             <p>即日起至2021/08/31，輸入折扣碼即可享運費折抵</p>
                             <div class="news_blockmore">
-                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas"
-                                    data-icon="long-arrow-alt-right"
-                                    class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img"
-                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="long-arrow-alt-right" class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                                     <path fill="currentColor"
                                         d="M313.941 216H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h301.941v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.569 0-33.941l-86.059-86.059c-15.119-15.119-40.971-4.411-40.971 16.971V216z">
                                     </path>
@@ -846,10 +783,7 @@
                             <h4>挺防疫，免運活動開跑</h4>
                             <p>即日起至2021/08/31，輸入折扣碼即可享運費折抵</p>
                             <div class="news_blockmore">
-                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas"
-                                    data-icon="long-arrow-alt-right"
-                                    class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img"
-                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="long-arrow-alt-right" class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                                     <path fill="currentColor"
                                         d="M313.941 216H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h301.941v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.569 0-33.941l-86.059-86.059c-15.119-15.119-40.971-4.411-40.971 16.971V216z">
                                     </path>
@@ -873,10 +807,7 @@
                             <h4>挺防疫，免運活動開跑</h4>
                             <p>即日起至2021/08/31，輸入折扣碼即可享運費折抵</p>
                             <div class="news_blockmore">
-                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas"
-                                    data-icon="long-arrow-alt-right"
-                                    class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img"
-                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="long-arrow-alt-right" class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                                     <path fill="currentColor"
                                         d="M313.941 216H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h301.941v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.569 0-33.941l-86.059-86.059c-15.119-15.119-40.971-4.411-40.971 16.971V216z">
                                     </path>
@@ -900,10 +831,7 @@
                             <h4>挺防疫，免運活動開跑</h4>
                             <p>即日起至2021/08/31，輸入折扣碼即可享運費折抵</p>
                             <div class="news_blockmore">
-                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas"
-                                    data-icon="long-arrow-alt-right"
-                                    class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img"
-                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="long-arrow-alt-right" class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                                     <path fill="currentColor"
                                         d="M313.941 216H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h301.941v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.569 0-33.941l-86.059-86.059c-15.119-15.119-40.971-4.411-40.971 16.971V216z">
                                     </path>
@@ -927,10 +855,7 @@
                             <h4>挺防疫，免運活動開跑</h4>
                             <p>即日起至2021/08/31，輸入折扣碼即可享運費折抵</p>
                             <div class="news_blockmore">
-                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas"
-                                    data-icon="long-arrow-alt-right"
-                                    class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img"
-                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="long-arrow-alt-right" class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                                     <path fill="currentColor"
                                         d="M313.941 216H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h301.941v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.569 0-33.941l-86.059-86.059c-15.119-15.119-40.971-4.411-40.971 16.971V216z">
                                     </path>
@@ -947,7 +872,8 @@
 
         </div>
         <div class="newsPart4">
-            <div class="news_blockarray"><a class="news_blocklink" href="#">
+            <div class="news_blockarray">
+                <a class="news_blocklink" href="#">
                     <section class="news_blockbg">
                         <article class="news_blockpic">
                             <img src="../images/news/news_pic_a.png">
@@ -960,10 +886,7 @@
                             <h4>挺防疫，免運活動開跑</h4>
                             <p>即日起至2021/08/31，輸入折扣碼即可享運費折抵</p>
                             <div class="news_blockmore">
-                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas"
-                                    data-icon="long-arrow-alt-right"
-                                    class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img"
-                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="long-arrow-alt-right" class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                                     <path fill="currentColor"
                                         d="M313.941 216H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h301.941v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.569 0-33.941l-86.059-86.059c-15.119-15.119-40.971-4.411-40.971 16.971V216z">
                                     </path>
@@ -987,10 +910,7 @@
                             <h4>挺防疫，免運活動開跑</h4>
                             <p>即日起至2021/08/31，輸入折扣碼即可享運費折抵</p>
                             <div class="news_blockmore">
-                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas"
-                                    data-icon="long-arrow-alt-right"
-                                    class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img"
-                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="long-arrow-alt-right" class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                                     <path fill="currentColor"
                                         d="M313.941 216H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h301.941v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.569 0-33.941l-86.059-86.059c-15.119-15.119-40.971-4.411-40.971 16.971V216z">
                                     </path>
@@ -1014,10 +934,7 @@
                             <h4>挺防疫，免運活動開跑</h4>
                             <p>即日起至2021/08/31，輸入折扣碼即可享運費折抵</p>
                             <div class="news_blockmore">
-                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas"
-                                    data-icon="long-arrow-alt-right"
-                                    class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img"
-                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="long-arrow-alt-right" class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                                     <path fill="currentColor"
                                         d="M313.941 216H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h301.941v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.569 0-33.941l-86.059-86.059c-15.119-15.119-40.971-4.411-40.971 16.971V216z">
                                     </path>
@@ -1041,10 +958,7 @@
                             <h4>挺防疫，免運活動開跑</h4>
                             <p>即日起至2021/08/31，輸入折扣碼即可享運費折抵</p>
                             <div class="news_blockmore">
-                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas"
-                                    data-icon="long-arrow-alt-right"
-                                    class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img"
-                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="long-arrow-alt-right" class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                                     <path fill="currentColor"
                                         d="M313.941 216H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h301.941v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.569 0-33.941l-86.059-86.059c-15.119-15.119-40.971-4.411-40.971 16.971V216z">
                                     </path>
@@ -1068,10 +982,7 @@
                             <h4>挺防疫，免運活動開跑</h4>
                             <p>即日起至2021/08/31，輸入折扣碼即可享運費折抵</p>
                             <div class="news_blockmore">
-                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas"
-                                    data-icon="long-arrow-alt-right"
-                                    class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img"
-                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="long-arrow-alt-right" class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                                     <path fill="currentColor"
                                         d="M313.941 216H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h301.941v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.569 0-33.941l-86.059-86.059c-15.119-15.119-40.971-4.411-40.971 16.971V216z">
                                     </path>
@@ -1095,10 +1006,7 @@
                             <h4>挺防疫，免運活動開跑</h4>
                             <p>即日起至2021/08/31，輸入折扣碼即可享運費折抵</p>
                             <div class="news_blockmore">
-                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas"
-                                    data-icon="long-arrow-alt-right"
-                                    class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img"
-                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="long-arrow-alt-right" class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                                     <path fill="currentColor"
                                         d="M313.941 216H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h301.941v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.569 0-33.941l-86.059-86.059c-15.119-15.119-40.971-4.411-40.971 16.971V216z">
                                     </path>
@@ -1122,10 +1030,7 @@
                             <h4>挺防疫，免運活動開跑</h4>
                             <p>即日起至2021/08/31，輸入折扣碼即可享運費折抵</p>
                             <div class="news_blockmore">
-                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas"
-                                    data-icon="long-arrow-alt-right"
-                                    class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img"
-                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="long-arrow-alt-right" class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                                     <path fill="currentColor"
                                         d="M313.941 216H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h301.941v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.569 0-33.941l-86.059-86.059c-15.119-15.119-40.971-4.411-40.971 16.971V216z">
                                     </path>
@@ -1149,10 +1054,7 @@
                             <h4>挺防疫，免運活動開跑</h4>
                             <p>即日起至2021/08/31，輸入折扣碼即可享運費折抵</p>
                             <div class="news_blockmore">
-                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas"
-                                    data-icon="long-arrow-alt-right"
-                                    class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img"
-                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="long-arrow-alt-right" class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                                     <path fill="currentColor"
                                         d="M313.941 216H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h301.941v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.569 0-33.941l-86.059-86.059c-15.119-15.119-40.971-4.411-40.971 16.971V216z">
                                     </path>
@@ -1176,10 +1078,7 @@
                             <h4>挺防疫，免運活動開跑</h4>
                             <p>即日起至2021/08/31，輸入折扣碼即可享運費折抵</p>
                             <div class="news_blockmore">
-                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas"
-                                    data-icon="long-arrow-alt-right"
-                                    class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img"
-                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="long-arrow-alt-right" class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                                     <path fill="currentColor"
                                         d="M313.941 216H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h301.941v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.569 0-33.941l-86.059-86.059c-15.119-15.119-40.971-4.411-40.971 16.971V216z">
                                     </path>
@@ -1196,7 +1095,8 @@
 
         </div>
         <div class="newsPart5">
-            <div class="news_blockarray"><a class="news_blocklink" href="#">
+            <div class="news_blockarray">
+                <a class="news_blocklink" href="#">
                     <section class="news_blockbg">
                         <article class="news_blockpic">
                             <img src="../images/news/news_pic_a.png">
@@ -1209,10 +1109,7 @@
                             <h4>挺防疫，免運活動開跑</h4>
                             <p>即日起至2021/08/31，輸入折扣碼即可享運費折抵</p>
                             <div class="news_blockmore">
-                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas"
-                                    data-icon="long-arrow-alt-right"
-                                    class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img"
-                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="long-arrow-alt-right" class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                                     <path fill="currentColor"
                                         d="M313.941 216H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h301.941v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.569 0-33.941l-86.059-86.059c-15.119-15.119-40.971-4.411-40.971 16.971V216z">
                                     </path>
@@ -1236,10 +1133,7 @@
                             <h4>挺防疫，免運活動開跑</h4>
                             <p>即日起至2021/08/31，輸入折扣碼即可享運費折抵</p>
                             <div class="news_blockmore">
-                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas"
-                                    data-icon="long-arrow-alt-right"
-                                    class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img"
-                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="long-arrow-alt-right" class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                                     <path fill="currentColor"
                                         d="M313.941 216H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h301.941v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.569 0-33.941l-86.059-86.059c-15.119-15.119-40.971-4.411-40.971 16.971V216z">
                                     </path>
@@ -1263,10 +1157,7 @@
                             <h4>挺防疫，免運活動開跑</h4>
                             <p>即日起至2021/08/31，輸入折扣碼即可享運費折抵</p>
                             <div class="news_blockmore">
-                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas"
-                                    data-icon="long-arrow-alt-right"
-                                    class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img"
-                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="long-arrow-alt-right" class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                                     <path fill="currentColor"
                                         d="M313.941 216H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h301.941v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.569 0-33.941l-86.059-86.059c-15.119-15.119-40.971-4.411-40.971 16.971V216z">
                                     </path>
@@ -1290,10 +1181,7 @@
                             <h4>挺防疫，免運活動開跑</h4>
                             <p>即日起至2021/08/31，輸入折扣碼即可享運費折抵</p>
                             <div class="news_blockmore">
-                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas"
-                                    data-icon="long-arrow-alt-right"
-                                    class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img"
-                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="long-arrow-alt-right" class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                                     <path fill="currentColor"
                                         d="M313.941 216H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h301.941v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.569 0-33.941l-86.059-86.059c-15.119-15.119-40.971-4.411-40.971 16.971V216z">
                                     </path>
@@ -1317,10 +1205,7 @@
                             <h4>挺防疫，免運活動開跑</h4>
                             <p>即日起至2021/08/31，輸入折扣碼即可享運費折抵</p>
                             <div class="news_blockmore">
-                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas"
-                                    data-icon="long-arrow-alt-right"
-                                    class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img"
-                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="long-arrow-alt-right" class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                                     <path fill="currentColor"
                                         d="M313.941 216H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h301.941v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.569 0-33.941l-86.059-86.059c-15.119-15.119-40.971-4.411-40.971 16.971V216z">
                                     </path>
@@ -1344,10 +1229,7 @@
                             <h4>挺防疫，免運活動開跑</h4>
                             <p>即日起至2021/08/31，輸入折扣碼即可享運費折抵</p>
                             <div class="news_blockmore">
-                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas"
-                                    data-icon="long-arrow-alt-right"
-                                    class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img"
-                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="long-arrow-alt-right" class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                                     <path fill="currentColor"
                                         d="M313.941 216H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h301.941v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.569 0-33.941l-86.059-86.059c-15.119-15.119-40.971-4.411-40.971 16.971V216z">
                                     </path>
@@ -1371,10 +1253,7 @@
                             <h4>挺防疫，免運活動開跑</h4>
                             <p>即日起至2021/08/31，輸入折扣碼即可享運費折抵</p>
                             <div class="news_blockmore">
-                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas"
-                                    data-icon="long-arrow-alt-right"
-                                    class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img"
-                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="long-arrow-alt-right" class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                                     <path fill="currentColor"
                                         d="M313.941 216H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h301.941v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.569 0-33.941l-86.059-86.059c-15.119-15.119-40.971-4.411-40.971 16.971V216z">
                                     </path>
@@ -1398,10 +1277,7 @@
                             <h4>挺防疫，免運活動開跑</h4>
                             <p>即日起至2021/08/31，輸入折扣碼即可享運費折抵</p>
                             <div class="news_blockmore">
-                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas"
-                                    data-icon="long-arrow-alt-right"
-                                    class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img"
-                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="long-arrow-alt-right" class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                                     <path fill="currentColor"
                                         d="M313.941 216H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h301.941v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.569 0-33.941l-86.059-86.059c-15.119-15.119-40.971-4.411-40.971 16.971V216z">
                                     </path>
@@ -1425,10 +1301,7 @@
                             <h4>挺防疫，免運活動開跑</h4>
                             <p>即日起至2021/08/31，輸入折扣碼即可享運費折抵</p>
                             <div class="news_blockmore">
-                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas"
-                                    data-icon="long-arrow-alt-right"
-                                    class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img"
-                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                <span>詳細資訊</span><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="long-arrow-alt-right" class="svg-inline--fa fa-long-arrow-alt-right fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                                     <path fill="currentColor"
                                         d="M313.941 216H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h301.941v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.569 0-33.941l-86.059-86.059c-15.119-15.119-40.971-4.411-40.971 16.971V216z">
                                     </path>
@@ -1465,7 +1338,9 @@
     </div>
     <!-- =======================footer結束======================= -->
     <script>
-        $(".ham_select").find("a:nth-child(3)").css({ color: "#fad689" });
+        $(".ham_select").find("a:nth-child(3)").css({
+            color: "#fad689"
+        });
     </script>
 </body>
 

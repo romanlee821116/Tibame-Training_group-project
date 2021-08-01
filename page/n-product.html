@@ -245,15 +245,15 @@
                                 </li>
                                 <li>
                                     <label for="">&emsp;&emsp;原價:</label>
-                                    <input type="text" v-model='p_original'>
+                                    <input type="text" v-model='p_original' @keyup='regular'>
                                 </li>
                                 <li>
                                     <label for="">&emsp;&emsp;售價:</label>
-                                    <input type="text" v-model='p_sell'>
+                                    <input type="text" v-model='p_sell' @keyup='regular'>
                                 </li>
                                 <li>
                                     <label for="">庫存數量:</label>
-                                    <input type="text" v-model='p_stock'>
+                                    <input type="text" v-model='p_stock' @keyup='regular'>
                                 </li>
                                 <li>
                                     商品狀態:
@@ -348,6 +348,11 @@
                         e.target.nextElementSibling.nextElementSibling.querySelector('p').style.opacity=0;
 
                     });
+                },
+                regular(e){
+
+                    let str = (e.target.value).replace(/\D/g, "");
+                    e.target.value = str;
                 },
             }  
         });
@@ -579,7 +584,6 @@
 
                     let str = (e.target.value).replace(/\D/g, "");
                     e.target.value = str;
-
                 }
 
 

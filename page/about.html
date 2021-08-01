@@ -8,6 +8,7 @@
     <title>關於我們 - 小春堂</title>
     <link rel="icon" href="../images/about/logo_footer.png">
     <link rel="stylesheet" href="../css/about.css">
+    <link rel="stylesheet" href="../css/scrollDown.css">
     <script src="https://kit.fontawesome.com/8c3a8ab95b.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
@@ -23,9 +24,13 @@
 <body>
     <!-- psycotest -->
     <div class='psychotest'>
-        <a href="../index.html"><img src="../images/psycho/psycho_backToIndex.png" alt=""></a>
+        <a href="./homepage.html"><img src="../images/psycho/psycho_backToIndex.png" alt=""></a>
         <p>返回首頁</p>
     </div>
+    <!-- scroll down -->
+    <section id="section07" class="demo">
+        <a><span></span><span></span><span></span>Scroll</a>
+    </section>
     <div class="about_wrap" id='about_wrap'>
         <div id="keypoint1"></div>
         <!-- ======================= about_scene1 =======================  -->       
@@ -66,7 +71,7 @@
                 <img v-for='(item, index) in scene1End' :src="item.src"  :class='item.class' v-if='index!=0'>
                 <h2>最道地的日本風味</h2>
                 <div class='about_endBtn'>
-                    <a href="../index.html">返回首頁</a>
+                    <a href="./homepage.html">返回首頁</a>
                     <a href="./shopping_choose.html">前往商品頁</a>
                 </div>
                 

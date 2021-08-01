@@ -1812,19 +1812,46 @@ table {
   background-color: #172852;
   color: #fff;
   font-size: 12px;
-  padding: 10px 20px;
+  padding: 5px 20px;
   border-radius: 25px;
   display: block;
   width: 120px;
-  height: 30px;
+  height: 28px;
   text-align: center;
-  line-height: 10px;
+  line-height: 18px;
   font-weight: 900;
   margin-top: 5px;
 }
 
 .index_page7 .index_p7_container .index_p7_info .index_p7_shopInfo .index_p7_address .index_p7_address_detailed a:hover {
   background-color: #2e447c;
+}
+
+.index_page7 .index_p7_container .index_p7_info .index_p7_shopInfo .index_p7-contact {
+  margin-top: 10px;
+  position: relative;
+  left: 80px;
+}
+
+.index_page7 .index_p7_container .index_p7_info .index_p7_shopInfo .index_p7-contact a {
+  display: block;
+  padding: 8px 10px;
+  width: 120px;
+  border-radius: 25px;
+  background: #172852;
+  border: 3px solid #172852;
+  color: #fff;
+  text-align: center;
+  font-weight: 900;
+  cursor: pointer;
+  padding: 5px 20px;
+  font-size: 12px;
+}
+
+.index_page7 .index_p7_container .index_p7_info .index_p7_shopInfo .index_p7-contact a:hover {
+  background-color: #2e447c;
+  color: #fff;
+  border: 3px solid #2e447c;
 }
 
 .index_page7 .index_p7_container .index_p7_info .index_p7_shopBtn {
@@ -2153,6 +2180,7 @@ table {
   .footer .footer-right {
     opacity: .6;
     line-height: 12px;
+    display: none;
   }
 }
 /*# sourceMappingURL=index.css.map */
