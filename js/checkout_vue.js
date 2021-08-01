@@ -341,6 +341,8 @@ $(document).ready(function(){
       sendDiscount(){
         if($('#checkout_discountNumber').val() !== ""){
           $('#checkout_discountNumber').val("");
+          $('.checkout_send').css('background-color', '#a3a3a3');
+          $('.checkout_send').css('cursor', 'default');
           $('.checkout_discountMoney').removeClass('checkout_none');
           $('.checkout_removeDiscount').removeClass('checkout_none');
           this.discount = 80;

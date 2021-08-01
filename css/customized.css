@@ -548,7 +548,8 @@ body {
   height: auto;
 }
 
-.cus_step1-box .box2, .cus_step1-box .box3 {
+.cus_step1-box .box2,
+.cus_step1-box .box3 {
   width: 240px;
   height: auto;
 }
@@ -558,7 +559,8 @@ body {
     width: 120px;
     height: auto;
   }
-  .cus_step1-box .box2, .cus_step1-box .box3 {
+  .cus_step1-box .box2,
+  .cus_step1-box .box3 {
     width: 180px;
     height: auto;
   }
@@ -572,7 +574,8 @@ body {
     width: 100px;
     height: auto;
   }
-  .cus_step1-box .box2, .cus_step1-box .box3 {
+  .cus_step1-box .box2,
+  .cus_step1-box .box3 {
     width: 150px;
     height: auto;
   }
@@ -598,7 +601,8 @@ body {
     width: 80px;
     height: auto;
   }
-  .cus_step1-box .box2, .cus_step1-box .box3 {
+  .cus_step1-box .box2,
+  .cus_step1-box .box3 {
     width: 120px;
     height: auto;
   }
@@ -615,6 +619,7 @@ body {
   text-align: center;
   font-weight: 900;
   cursor: pointer;
+  z-index: 999;
 }
 
 .custom_btn:hover {
@@ -640,6 +645,7 @@ body {
   bottom: 0;
   right: 0;
   display: none;
+  z-index: 999;
 }
 
 .custom_gridBox {
@@ -1109,6 +1115,7 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  z-index: 999;
 }
 
 .cus_step2 .cus_giftcard_btn {
@@ -1123,6 +1130,7 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  z-index: 999;
 }
 
 .cus_step2 .cus_giftcard_btn a {
@@ -1168,7 +1176,8 @@ body {
   }
 }
 
-.cus_step2 .cus_bag_card .choose-card, .cus_step2 .cus_bag_card .choose-bag {
+.cus_step2 .cus_bag_card .choose-card,
+.cus_step2 .cus_bag_card .choose-bag {
   width: 100%;
   height: 100%;
   display: none;
@@ -1237,6 +1246,7 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  z-index: 999;
 }
 
 .cus_step2 .choosenCard {

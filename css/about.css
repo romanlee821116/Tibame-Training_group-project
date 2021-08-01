@@ -156,7 +156,7 @@ body::-webkit-scrollbar {
 }
 
 #about_scene1 .about_people1 {
-  bottom: 10%;
+  bottom: 7%;
   right: 15vw;
 }
 
@@ -196,7 +196,7 @@ body::-webkit-scrollbar {
 }
 
 #about_scene1 .about_people2 {
-  bottom: 8%;
+  bottom: 6%;
   right: 30vw;
   height: 25%;
   z-index: 9;
@@ -396,12 +396,12 @@ body::-webkit-scrollbar {
 }
 
 #about_scene1 .about_people6 {
-  bottom: 14%;
+  bottom: 10%;
   left: 15%;
 }
 
 #about_scene1 .about_people7 {
-  bottom: 11%;
+  bottom: 8%;
   right: 35vw;
 }
 
@@ -1684,6 +1684,7 @@ body::-webkit-scrollbar {
   cursor: pointer;
   display: inline-block;
   margin: 0 20px;
+  z-index: 100;
 }
 
 .about_taiwan_end .about_endBtn a:hover {

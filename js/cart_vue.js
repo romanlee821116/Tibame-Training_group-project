@@ -230,6 +230,7 @@ $(document).ready(function(){
       // 打開購物車
       open(){
         $('.cart_cartBoard').css('right','0px');
+        $('.cart_mask').css('display', 'block');
         // 呼叫localStorage商品資料
         if(localStorage.item_List) {
           let item = JSON.parse(localStorage.item_List)
@@ -268,6 +269,7 @@ $(document).ready(function(){
       // 關掉購物車
       close(){
         $('.cart_cartBoard').css('right','-600px');
+        $('.cart_mask').css('display', 'none');
         // 禮盒細項關起來
         $('.cart_detailBorder').css('display','none');
         // 查看禮盒明細按鈕顏色
@@ -429,6 +431,7 @@ $(function(){
   $(document).mouseup(function(e) {
     if(!$('.cart_cartBoard').is(e.target) && $('.cart_cartBoard').has(e.target).length === 0){
       $('.cart_cartBoard').css('right','-600px'); 
+      $('.cart_mask').css('display', 'none');
     }
   });
 

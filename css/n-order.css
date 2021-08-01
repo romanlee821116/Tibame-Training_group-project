@@ -478,10 +478,10 @@ body {
 .n-order_order_checkout {
   margin: 0px;
   padding: 10px 0;
-  padding-right: 145px;
+  padding-left: 350px;
   width: 624px;
   list-style: none;
-  text-align: right;
+  text-align: left;
 }
 
 .n-order_editbtn {

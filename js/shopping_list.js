@@ -147,17 +147,16 @@ $(document).ready(function() {
 
     //回到最上面
     $('.product_backTop').click(function() {
-        $('html body').animate({
-            scrollTop: '0',
-        }, 300);
-    })
-    //判斷登入登出
-    if(localStorage.loginStatus){
+            $('html body').animate({
+                scrollTop: '0',
+            }, 300);
+        })
+        //判斷登入登出
+    if (localStorage.loginStatus) {
         $('.nav_logOut').fadeIn();
-    }else{
+    } else {
         $('.nav_logOut').fadeOut();
     }
-
     //判斷當前頁面 漢堡連結顏色提示
     if (window.location.pathname == '/page/shopping_list.html') {
         $(".ham_select").find("a:nth-child(4)").css({ color: "#fad689" });
