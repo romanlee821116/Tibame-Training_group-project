@@ -50,12 +50,12 @@
                     </ul>
 
                     <ul v-for='(discount,key) in discounts' class="n-discount_discount">                              
-                        <li>{{discount.折扣碼編號}}</li>
-                        <li>{{discount.上架日期}}</li>
-                        <li>{{discount.折扣碼號}}</li>
-                        <li>{{discount.標題}}</li>
-                        <li :class="{'-active2':discounts[key].上下架 == '1'}">{{on_off_list[discount.上下架]}}</li> 
-                        <li>{{discount.最後更新日期}}</li>
+                        <li>{{discount.discount_id}}</li>
+                        <li>{{discount.create_date}}</li>
+                        <li>{{discount.discount_name}}</li>
+                        <li>{{discount.news_title1}}</li>
+                        <li :class="{'-active2':discounts[key].news_status == '0'}">{{on_off_list[discount.news_status]}}</li> 
+                        <li>{{discount.news_update}}</li>
                         <li @click='edit(key)'>編輯與查看</li>
                     </ul>                
                 </div>
@@ -79,11 +79,15 @@
                         <label for="">折扣碼號:<span>
                             <input type="text" v-model='d_number' placeholder="請輸入折扣碼號">
                         </label>
+
+                        <label for="">折扣金額:<span>
+                            <input type="text" v-model='d_money' placeholder="請輸入折扣金額" @keyup='regular'>
+                        </label>
                     
                         <section>上下架:
                             <select name="status" id="" v-model='on_off'>
-                                <option value="0">上架</option>
-                                <option value="1">下架</option>
+                                <option value="0">下架</option>
+                                <option value="1">上架</option>
                             </select>
                         </section>
                     </li>
@@ -174,6 +178,7 @@
                     d_main_content:'',
                     d_sec_content:'',
                     img_names:['右上圖', '主題', '圖片01', '圖片02', '圖片03'],
+                    d_money:0,
                 };
             },
         
@@ -186,14 +191,18 @@
                         <div class="n-discount_discount_mid">
                             <ul>                    
                                 <li>
-                                    <label for="">折扣碼號:</span>
+                                    <label for="">折扣碼號:
                                         <input type="text" v-model='d_number' placeholder="請輸入折扣碼號">
+                                    </label>
+
+                                    <label for="">折扣金額:
+                                        <input type="text" v-model='d_money' placeholder="請輸入折扣金額" @keyup='regular'>
                                     </label>
                                 
                                     <section>上下架:
                                         <select name="status" id="" v-model='on_off'>
-                                            <option value="0">上架</option>
-                                            <option value="1">下架</option>
+                                            <option value="0">下架</option>
+                                            <option value="1">上架</option>
                                         </select>
                                     </section>
                                 </li>
@@ -251,8 +260,12 @@
                 },  
                 d_save(){   
 
-                    this.$emit('dsave', this.d_number, this.on_off, this.d_main_title, this.d_sec_title, this.d_main_content, this.d_sec_content);
+                    this.$emit('dsave', this.d_number, this.d_money, this.on_off, this.d_main_title, this.d_sec_title, this.d_main_content, this.d_sec_content);
 
+                },
+                regular(e){
+                    let str = (e.target.value).replace(/\D/g, "");
+                    e.target.value = str;
                 },
 
                 upload_img(e){
@@ -285,13 +298,14 @@
                 img_names:['右上圖', '主題', '圖片01', '圖片02', '圖片03'],
 
                 discount_number:'',
-                on_off_list:['上架', '下架'],
+                on_off_list:['下架', '上架'],
                 d_main_title:'',
                 d_sec_title:'',
                 d_number:'',
                 on_off:0,       
                 d_main_content:'',
-                d_sec_content:'',         
+                d_sec_content:'',  
+                d_money:0,       
 
                 group1_name:'請選擇圖片上傳',
                 group2_name:'請選擇圖片上傳',
@@ -312,28 +326,40 @@
                 titles: ['折扣碼編號', '上架日期', '折扣碼號', '標題', '上下架', '最後更新日期', ''],
                 discounts:[
                     {
-                        '折扣碼編號':'1234567890',
-                        '上架日期':'2021/01/01',
-                        '折扣碼號':'cscscs',
-                        '標題':'新品上市新品上市新品上市新品上市新品上市',
-                        '上下架':0,
-                        '最後更新日期':'2021/03/01 16:16',
+                        'discount_id':'1234567890',
+                        'create_date':'2021/01/01',
+                        'discount_name':'cscscs',
+                        'news_title1':'新品上市新品上市新品上市新品上市新品上市',
+                        'news_title2':'2新品上市新品上市新品上市新品上市新品上市',
+                        'news_status':0,
+                        'news_update':'2021/03/01 16:16',
+                        'news_content1':'這就是內文',
+                        'news_content2':'2這就是內文',
+                        'discount_price':200,
                     },
                     {
-                        '折扣碼編號':'1234567890',
-                        '上架日期':'2021/01/01',
-                        '折扣碼號':'sfeweggg',
-                        '標題':'新品上市新品上市新品上市新品上市新品上市',
-                        '上下架':1,
-                        '最後更新日期':'2021/03/01 16:16',
+                        'discount_id':'1234567890',
+                        'create_date':'2021/01/01',
+                        'discount_name':'cscscs',
+                        'news_title1':'新品上市新品上市新品上市新品上市新品上市',
+                        'news_title2':'2新品上市新品上市新品上市新品上市新品上市',
+                        'news_status':1,
+                        'news_update':'2021/03/01 16:16',
+                        'news_content1':'這就是內文',
+                        'news_content2':'2這就是內文',
+                        'discount_price':200,
                     },
                     {
-                        '折扣碼編號':'1234567890',
-                        '上架日期':'2021/01/01',
-                        '折扣碼號':'feffefgg',
-                        '標題':'新品上市新品上市新品上市新品上市新品上市',
-                        '上下架':0,
-                        '最後更新日期':'2021/03/01 16:16',
+                        'discount_id':'1234567890',
+                        'create_date':'2021/01/01',
+                        'discount_name':'cscscs',
+                        'news_title1':'新品上市新品上市新品上市新品上市新品上市',
+                        'news_title2':'2新品上市新品上市新品上市新品上市新品上市',
+                        'news_status':0,
+                        'news_update':'2021/03/01 16:16',
+                        'news_content1':'這就是內文',
+                        'news_content2':'2這就是內文',
+                        'discount_price':200,
                     }
                 ],
                 pages:[
@@ -354,13 +380,13 @@
                 edit(index){                    
                     this.current_edit = index;     
 
-                    this.d_number = this.discounts[index].折扣碼號;
-                    this.on_off = this.discounts[index].上下架;
-                    this.d_main_title = this.discounts[index].標題;
-                    this.d_sec_title = this.discounts[index].標題;
-                    this.d_main_content = this.discounts[index].內文;
-                    this.d_sec_content = this.discounts[index].內文;
-
+                    this.d_number = this.discounts[index].discount_name;
+                    this.on_off = this.discounts[index].news_status;
+                    this.d_main_title = this.discounts[index].news_title1;
+                    this.d_sec_title = this.discounts[index].news_title2;
+                    this.d_main_content = this.discounts[index].news_content1;
+                    this.d_sec_content = this.discounts[index].news_content2;
+                    this.d_money = this.discounts[index].discount_price;
                 },
 
 
@@ -385,14 +411,23 @@
                     edit_z.style.opacity = 1;
                 },
 
+                regular(e){
+                    let str = (e.target.value).replace(/\D/g, "");
+                    e.target.value = str;
+                },
+
 
                 d_save(){     
 
                     let d_index = this.$data.current_edit;
 
-                    this.discounts[d_index].上下架 = this.on_off;
-                    this.discounts[d_index].折扣碼號 = this.d_number;
-                    this.discounts[d_index].標題 = this.d_main_title;
+                    this.discounts[d_index].news_status = this.on_off;
+                    this.discounts[d_index].discount_name = this.d_number;
+                    this.discounts[d_index].news_title1 = this.d_main_title;
+                    this.discounts[d_index].news_title2 = this.d_sec_title;
+                    this.discounts[d_index].news_content1 = this.d_main_content;
+                    this.discounts[d_index].news_content2 = this.d_sec_content;
+                    this.discounts[d_index].discount_price = this.d_money;
 
                     this.current_edit = null;
                 },  
@@ -426,7 +461,7 @@
                     let edit_z = document.querySelector('.n-discount_edit');
                     edit_z.style.opacity = 0;
                 },
-                saveddd(d_number, on_off, d_main_title, d_sec_title, d_main_content, d_sec_content){
+                saveddd(d_number, d_money, on_off, d_main_title, d_sec_title, d_main_content, d_sec_content){
                     this.new_edit = false;
 
                     // console.log(f_sort);
@@ -438,6 +473,9 @@
                         m_today = '0'+m_today
                     }
                     let d_today = today.getDate()
+                    if(d_today < 10 ){
+                        d_today = '0'+d_today
+                    }
                     let h_today = today.getHours()
                     if(h_today < 10 ){
                         h_today = '0'+h_today
@@ -452,12 +490,16 @@
 
                     let ddd = 
                     {      
-                        '折扣碼編號':'1234567890',
-                        '上架日期':u_today,   
-                        '折扣碼號':d_number,
-                        '標題':d_main_title,
-                        '上下架':parseInt(on_off),
-                        '最後更新日期':last_today,  
+                        'discount_id':'1234567890',
+                        'create_date':u_today,   
+                        'discount_name':d_number,
+                        'news_title1':d_main_title,
+                        'news_title2':d_sec_title,
+                        'news_content1':d_main_content,
+                        'news_content2':d_sec_content,
+                        'news_status':parseInt(on_off),
+                        'news_update':last_today, 
+                        'discount_price':d_money, 
                     }
 
                     console.log(ddd);
