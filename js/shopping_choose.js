@@ -43,14 +43,14 @@ $(document).ready(function() {
     }
     // =================== local storage===========================
     $('.choose_select_area a').click(function() {
-        let product_num = $(this).find("div").data("id");
-        // alert(product_num)
-        localStorage.setItem("product_page_num", JSON.stringify(product_num))
-    })
-    //判斷登入登出
-    if(localStorage.loginStatus){
+            let product_num = $(this).find("div").data("id");
+            // alert(product_num)
+            localStorage.setItem("product_page_num", JSON.stringify(product_num))
+        })
+        //判斷登入登出
+    if (localStorage.loginStatus) {
         $('.nav_logOut').fadeIn();
-    }else{
+    } else {
         $('.nav_logOut').fadeOut();
     }
 });
