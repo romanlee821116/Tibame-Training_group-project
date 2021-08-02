@@ -171,7 +171,7 @@ input {
 /* 登入註冊============================== */
 /* 決定顯示範圍 */
 .loginWrapper {
-  height: 145px;
+  height: 180px;
   overflow: hidden;
   -webkit-transition: all 0.5s cubic-bezier(0.6, 0, 0.4, 1);
   transition: all 0.5s cubic-bezier(0.6, 0, 0.4, 1);
@@ -393,7 +393,7 @@ input {
 }
 
 /* 按鈕 */
-.loginButton {
+.loginButton, .loginSignupButton {
   width: 100%;
   display: block;
   padding: 0 10px 0 10px;
@@ -402,16 +402,7 @@ input {
   color: #f0ebe9;
   border: none;
   height: 35px;
-  overflow: hidden;
   cursor: pointer;
-}
-
-.loginButton span {
-  display: block;
-  line-height: 40px;
-  position: relative;
-  -webkit-transform: translate3d(0, 0, 0);
-          transform: translate3d(0, 0, 0);
 }
 
 /* 忘記密碼================================= */

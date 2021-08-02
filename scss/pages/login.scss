@@ -164,10 +164,11 @@ input{
 /* 登入註冊============================== */
 /* 決定顯示範圍 */
 .loginWrapper{
-    height: 145px;
+    height: 180px;
     overflow: hidden;
     transition: all .5s cubic-bezier(.6,0,.4,1); 
     position: relative;    /* 給眼睛定位 */
+    // border: 1px solid red;
 }
 
 /* 登入================================== */
@@ -355,7 +356,7 @@ input{
     align-self: center;
 }
 /* 按鈕 */
-.loginButton{
+.loginButton, .loginSignupButton{
     width: 100%;
     display: block;
 
@@ -366,16 +367,16 @@ input{
     border: none;
 
     height: 35px;
-    overflow: hidden;
+    // overflow: hidden;
     cursor: pointer;
 }
 
-.loginButton span{
-    display: block;
-    line-height: 40px;
-    position: relative;
-    transform: translate3d(0,0,0);
-}
+// .loginButton span{
+//     display: block;
+//     line-height: 40px;
+//     position: relative;
+    // transform: translate3d(0,0,0);
+// }
 
 /* 忘記密碼================================= */
 .forgetPWD{
