@@ -35,15 +35,25 @@
 
                     <p>卡片樣式</p>
 
-                    <div class="n-customized_group" v-for='img_name in img_names'>
+                    <!-- <div class="n-customized_group" v-for='img_name in img_names'>
                         <label for="group1">{{img_name}}:</label>
                         <input type="file" id="group1" @change='upload_img'>
                         <p>請選擇圖片上傳</p>
-                        <div class="n-customized_img">
-                            <img src=''>
+                        <div class="n-customized_img" >
+                            <img :src = "card_back">
                             <p>請選擇圖片上傳</p>
                         </div>
-                    </div>                     
+                    </div>    -->
+                    
+                    <div class="n-customized_group" v-for='test in tests'>
+                        <label for="group1">{{test.t1}}:</label>
+                        <input type="file" id="group1" @change='upload_img'>
+                        <p>請選擇圖片上傳</p>
+                        <div class="n-customized_img" >
+                            <img :src = "test.t2">
+                            <p>請選擇圖片上傳</p>
+                        </div>
+                    </div>  
 
                     <div class="n-customized_editbtn">
                         <button class="n-customized_close">關閉</button>
@@ -57,12 +67,22 @@
                     
                     <p>貼圖樣式</p>
     
-                    <div class="n-customized_group" v-for='(num,key) in 12'>
+                    <!-- <div class="n-customized_group" v-for='(num,key) in 12'>
                         <label for="group5">圖片{{key +1}}:</label>
                         <input type="file" id="group5" @change='upload_img'>
                         <p>請選擇圖片上傳</p>
                         <div class="n-customized_img">
                             <img src="">
+                            <p>請選擇圖片上傳</p>
+                        </div>
+                    </div> -->
+
+                    <div class="n-customized_group" v-for='(ctest,key) in ctests'>
+                        <label for="group5">圖片{{key +1}}:</label>
+                        <input type="file" id="group5" @change='upload_img'>
+                        <p>請選擇圖片上傳</p>
+                        <div class="n-customized_img">
+                            <img :src = "ctest">
                             <p>請選擇圖片上傳</p>
                         </div>
                     </div>
@@ -90,6 +110,30 @@
             data:{    
                 
                 img_names:['圖片01', '圖片02', '圖片03'],
+                card_backs:[ '../images/backend/card_back01.png', 
+                            '../images/backend/card_back02.png',
+                            '../images/backend/card_back03.png'],
+
+                tests:[
+                    {t1:'圖片01', t2:'../images/backend/card_back01.png'},
+                    {t1:'圖片02', t2:'../images/backend/card_back02.png'},
+                    {t1:'圖片03', t2:'../images/backend/card_back03.png'},
+                ],
+
+                ctests:[
+                    '../images/backend/sticker01.png',
+                    '../images/backend/sticker02.png',
+                    '../images/backend/sticker03.png',
+                    '../images/backend/sticker04.png',
+                    '../images/backend/sticker05.png',
+                    '../images/backend/sticker06.png',
+                    '../images/backend/sticker07.png',
+                    '../images/backend/sticker08.png',
+                    '../images/backend/sticker09.png',
+                    '../images/backend/sticker10.png',
+                    '../images/backend/sticker11.png',
+                    '../images/backend/sticker12.png',
+                ],
 
                 mainbtn: [  
                     {name:"會員管理", url: "./n-member.html"},

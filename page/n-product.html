@@ -50,14 +50,14 @@
                     </ul>
 
                     <ul v-for='(product,key) in products' class="n-product_product">                            
-                        <li>{{product.商品編號}}</li>
-                        <li>{{p_sort_list[product.商品類別]}}</li>
-                        <li>{{product.名稱}}</li>
-                        <li>{{product.原價}}</li>
-                        <li>{{product.售價}}</li>
-                        <li>{{product.庫存數量}}</li>
-                        <li :class="{'-active2':products[key].客製化禮盒 == '1'}">{{p_customized_list[product.客製化禮盒]}}</li>
-                        <li :class="{'-active2':products[key].上下架 == '1'}">{{on_off_list[product.上下架]}}</li>      
+                        <li>{{product.product_id}}</li>
+                        <li>{{p_sort_list[product.product_class]}}</li>
+                        <li>{{product.product_name}}</li>
+                        <li>{{product.net_price}}</li>
+                        <li>{{product.price}}</li>
+                        <li>{{product.stock}}</li>
+                        <li :class="{'-active2':products[key].product_customize == '0'}">{{p_customized_list[product.product_customize]}}</li>
+                        <li :class="{'-active2':products[key].product_status == '0'}">{{on_off_list[product.product_status]}}</li>      
                         <li @click='edit(key)'>編輯與查看</li>
                     </ul>                
                 </div>
@@ -84,8 +84,13 @@
                     <li>
                         商品類別:
                         <select name="status" id="" v-model='p_sort'>
-                            <option value="0">大福</option>
-                            <option value="1">小福</option>
+                            <option value="0">銅鑼燒</option>
+                            <option value="1">日式餅乾</option>
+                            <option value="2">生菓子</option>
+                            <option value="3">鯛魚燒</option>
+                            <option value="4">羊羹</option>
+                            <option value="5">大福</option>
+                            <option value="6">最中</option>
                         </select>
                     </li>
                     <li>
@@ -108,32 +113,34 @@
                         商品狀態:
                         <select name="status" id="" v-model='p_status'>
                             <option value="0">新品上市</option>
-                            <option value="1">舊品出清</option>
+                            <option value="1">熱銷商品</option>
                         </select>
                         <select name="status" id="" v-model='p_limit'>
                             <option value="0">期間限定商品</option>
-                            <option value="1">常駐商品</option>
+                            <option value="1">人氣商品</option>
                         </select>
                     </li>
                     <li>
                         &emsp;上下架:
                         <select name="status" id="" v-model='on_off'>
-                            <option value="0">上架</option>
-                            <option value="1">下架</option>
+                            <option value="0">下架</option>
+                            <option value="1">上架</option>
                         </select>
                     </li>
                     <li>
                         保存期限:
                         <select name="status" id="" v-model='p_exp'>
-                            <option value="0">14日</option>
-                            <option value="1">30日</option>
+                            <option value="0">3日</option>
+                            <option value="1">7日</option>
+                            <option value="2">14日</option>
+                            <option value="3">30日</option>
                         </select>
                     </li>
                     <li>
                         客製化禮盒:
                         <select name="status" id="" v-model='p_customized'>
-                            <option value="0">是</option>
-                            <option value="1">否</option>
+                            <option value="0">否</option>
+                            <option value="1">是</option>
                         </select>
                     </li>
                     <li>
@@ -235,8 +242,13 @@
                                 <li>
                                     商品類別:
                                     <select name="status" id="" v-model='p_sort'>
-                                        <option value="0">大福</option>
-                                        <option value="1">小福</option>
+                                        <option value="0">銅鑼燒</option>
+                                        <option value="1">日式餅乾</option>
+                                        <option value="2">生菓子</option>
+                                        <option value="3">鯛魚燒</option>
+                                        <option value="4">羊羹</option>
+                                        <option value="5">大福</option>
+                                        <option value="6">最中</option>
                                     </select>
                                 </li>
                                 <li>
@@ -259,32 +271,34 @@
                                     商品狀態:
                                     <select name="status" id="" v-model='p_status'>
                                         <option value="0">新品上市</option>
-                                        <option value="1">舊品出清</option>
+                                        <option value="1">熱銷商品</option>
                                     </select>
                                     <select name="status" id="" v-model='p_limit'>
                                         <option value="0">期間限定商品</option>
-                                        <option value="1">常駐商品</option>
+                                        <option value="1">人氣商品</option>
                                     </select>
                                 </li>
                                 <li>
                                     &emsp;上下架:
                                     <select name="status" id="" v-model='on_off'>
-                                        <option value="0">上架</option>
-                                        <option value="1">下架</option>
+                                        <option value="0">下架</option>
+                                        <option value="1">上架</option>
                                     </select>
                                 </li>
                                 <li>
                                     保存期限:
                                     <select name="status" id="" v-model='p_exp'>
-                                        <option value="0">14日</option>
-                                        <option value="1">30日</option>
+                                        <option value="0">3日</option>
+                                        <option value="1">7日</option>
+                                        <option value="2">14日</option>
+                                        <option value="3">30日</option>
                                     </select>
                                 </li>
                                 <li>
                                     客製化禮盒:
                                     <select name="status" id="" v-model='p_customized'>
-                                        <option value="0">是</option>
-                                        <option value="1">否</option>
+                                        <option value="0">否</option>
+                                        <option value="1">是</option>
                                     </select>
                                 </li>
                                 <li>
@@ -378,10 +392,10 @@
                 on_off:0,
                 p_exp:0,
                 p_customized:0,
-                p_customized_list:['是', '否'],
-                on_off_list:['上架', '下架'],
+                p_customized_list:['否', '是'],
+                on_off_list:['下架', '上架'],
                 p_sort:0,
-                p_sort_list:['大福', '小福'],
+                p_sort_list:['銅鑼燒', '日式餅乾', '生菓子', '鯛魚燒', '羊羹', '大福', '最中'],
                 p_ingredient:'',
                 p_descript:'',
 
@@ -404,49 +418,49 @@
                 titles: ['商品編號', '商品類別', '名稱', '原價', '售價', '庫存數量', '客製化禮盒', '上下架', ''],
                 products:[
                     {
-                        '商品編號':'1234567890',
-                        '商品類別':0,
-                        '名稱':'草莓大福',
-                        '原價':111,
-                        '售價':222,
-                        '庫存數量':333,
-                        '客製化禮盒':0,
-                        '上下架':1,
-                        '保存期限':0,
-                        '商品狀態上市':0,
-                        '商品狀態商品':0,
-                        '成分':'1成分成分成分',
-                        '說明':'1說明說明說明',
+                        'product_id':'1234567890',
+                        'product_class':0,
+                        'product_name':'草莓大福',
+                        'net_price':111,
+                        'price':222,
+                        'stock':333,
+                        'product_customize':0,
+                        'product_status':1,
+                        'expiration':0,
+                        'promotion':0,
+                        'promotion2':0,
+                        'ingredient':'1成分成分成分',
+                        'product_content':'1說明說明說明',
                     },
                     {
-                        '商品編號':'1234567890',
-                        '商品類別':1,
-                        '名稱':'草莓大福',
-                        '原價':111,
-                        '售價':222,
-                        '庫存數量':333,
-                        '客製化禮盒':1,
-                        '上下架':0,
-                        '保存期限':0,
-                        '商品狀態上市':0,
-                        '商品狀態商品':0,
-                        '成分':'2成分成分成分',
-                        '說明':'2說明說明說明',
+                        'product_id':'1234567890',
+                        'product_class':3,
+                        'product_name':'草莓大福',
+                        'net_price':111,
+                        'price':222,
+                        'stock':333,
+                        'product_customize':1,
+                        'product_status':0,
+                        'expiration':0,
+                        'promotion':0,
+                        'promotion2':0,
+                        'ingredient':'1成分成分成分',
+                        'product_content':'1說明說明說明',
                     },
                     {
-                        '商品編號':'1234567890',
-                        '商品類別':0,
-                        '名稱':'草莓大福',
-                        '原價':111,
-                        '售價':222,
-                        '庫存數量':333,
-                        '客製化禮盒':0,
-                        '上下架':1,
-                        '保存期限':0,
-                        '商品狀態上市':0,
-                        '商品狀態商品':0,
-                        '成分':'3成分成分成分',
-                        '說明':'3說明說明說明',
+                        'product_id':'1234567890',
+                        'product_class':2,
+                        'product_name':'草莓大福',
+                        'net_price':111,
+                        'price':222,
+                        'stock':333,
+                        'product_customize':0,
+                        'product_status':1,
+                        'expiration':0,
+                        'promotion':0,
+                        'promotion2':0,
+                        'ingredient':'1成分成分成分',
+                        'product_content':'1說明說明說明',
                     }
                 ],
                 pages:[
@@ -467,21 +481,21 @@
                 edit(index){                    
                     this.current_edit = index;     
 
-                    this.p_number = this.products[index].商品編號;
-                    this.p_name = this.products[index].名稱;
-                    this.p_original = this.products[index].原價;
-                    this.p_sell = this.products[index].售價;
-                    this.p_stock = this.products[index].庫存數量;                    
+                    this.p_number = this.products[index].product_id;
+                    this.p_name = this.products[index].product_name;
+                    this.p_original = this.products[index].net_price;
+                    this.p_sell = this.products[index].price;
+                    this.p_stock = this.products[index].stock;                    
 
-                    this.p_status = this.products[index].商品狀態上市;
-                    this.p_limit = this.products[index].商品狀態商品;
-                    this.on_off = this.products[index].上下架;
-                    this.p_exp = this.products[index].保存期限;
-                    this.p_customized = this.products[index].客製化禮盒;
-                    this.p_sort = this.products[index].商品類別;
+                    this.p_status = this.products[index].promotion;
+                    this.p_limit = this.products[index].promotion2;
+                    this.on_off = this.products[index].product_status;
+                    this.p_exp = this.products[index].expiration;
+                    this.p_customized = this.products[index].product_customize;
+                    this.p_sort = this.products[index].product_class;
 
-                    this.p_ingredient = this.products[index].成分;
-                    this.p_descript = this.products[index].說明;
+                    this.p_ingredient = this.products[index].ingredient;
+                    this.p_descript = this.products[index].product_content;
 
 
                 },
@@ -509,16 +523,16 @@
 
                     let n_index = this.$data.current_edit;
 
-                    this.products[n_index].上下架 = this.on_off;
-                    this.products[n_index].客製化禮盒 = this.p_customized;
+                    this.products[n_index].product_status = this.on_off;
+                    this.products[n_index].product_customize = this.p_customized;
 
-                    this.products[n_index].名稱 = this.p_name;                    
-                    this.products[n_index].原價 = this.p_original;
-                    this.products[n_index].售價 = this.p_sell;
-                    this.products[n_index].庫存數量 = this.p_stock;
+                    this.products[n_index].product_name = this.p_name;                    
+                    this.products[n_index].net_price = this.p_original;
+                    this.products[n_index].price = this.p_sell;
+                    this.products[n_index].stock = this.p_stock;
 
-                    this.products[n_index].商品類別 = this.p_sort;
-                    this.products[n_index].商品編號 = this.p_number;
+                    this.products[n_index].product_class = this.p_sort;
+                    this.products[n_index].product_id = this.p_number;
 
                     this.current_edit = null;
                 },  
@@ -557,19 +571,19 @@
 
                     let ppp = 
                     {                              
-                        '商品編號':p_number,
-                        '商品類別':parseInt(p_sort),
-                        '名稱':p_name,
-                        '原價':parseInt(p_original),
-                        '售價':parseInt(p_sell),
-                        '庫存數量':parseInt(p_stock),
-                        '客製化禮盒':parseInt(p_customized),
-                        '上下架':parseInt(on_off),
-                        '保存期限':parseInt(p_exp),
-                        '商品狀態上市':parseInt(p_status),
-                        '商品狀態商品':parseInt(p_limit),
-                        '成分':p_ingredient,
-                        '說明':p_descript,
+                        'product_id':p_number,
+                        'product_class':parseInt(p_sort),
+                        'product_name':p_name,
+                        'net_price':parseInt(p_original),
+                        'price':parseInt(p_sell),
+                        'stock':parseInt(p_stock),
+                        'product_customize':parseInt(p_customized),
+                        'product_status':parseInt(on_off),
+                        'expiration':parseInt(p_exp),
+                        'promotion':parseInt(p_status),
+                        'promotion2':parseInt(p_limit),
+                        'ingredient':p_ingredient,
+                        'product_content':p_descript,
                     }
 
                     console.log(ppp);

@@ -379,9 +379,17 @@ body{
     padding: 0;
     margin: 0;
     margin-left: 10px;
-    display: grid;
-    grid-template-columns: 1.05fr 1fr 1.05fr;
 }
+
+.n-order_order_detail > section > ul {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.n-order_order_detail > section > ul > li{
+    width: 200px;
+}
+
 
 .n-order_detail_content{
     margin: 0px;
@@ -394,11 +402,11 @@ body{
 
 .n-order_order_checkout{
     margin: 0px;
-    padding: 10px 0;
-    padding-right: 145px;
+    padding: 10px 0;    
+    padding-left: 350px;
     width: 624px;
     list-style: none;
-    text-align: right;
+    text-align: left;
 }
 
 .n-order_editbtn{

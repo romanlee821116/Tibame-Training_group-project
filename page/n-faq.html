@@ -50,10 +50,10 @@
                     </ul>
 
                     <ul v-for='(faq,key) in faqs' class="n-faq_faq">                              
-                        <li>{{faq.問題編號}}</li>
-                        <li>{{f_sort_list[faq.問題分類]}}</li>
-                        <li>{{faq.問題}}</li>
-                        <li>{{faq.回答}}</li>
+                        <li>{{faq.qa_id}}</li>
+                        <li>{{f_sort_list[faq.qa_class]}}</li>
+                        <li>{{faq.question}}</li>
+                        <li>{{faq.answer}}</li>
                         <li @click='edit(key)'>編輯與查看</li>
                     </ul>                
                 </div>
@@ -222,22 +222,22 @@
                 titles: ['問題編號', '問題分類', '問題', '回答', ''],
                 faqs:[
                     {
-                        '問題編號':'1234567890',
-                        '問題分類':0,
-                        '問題':'1新品上市新品上市新品上市新品上市新品上市',
-                        '回答':'1這就是回答',
+                        'qa_id':'1234567890',
+                        'qa_class':0,
+                        'question':'1新品上市新品上市新品上市新品上市新品上市',
+                        'answer':'1這就是回答',
                     },
                     {
-                        '問題編號':'1234567890',
-                        '問題分類':1,
-                        '問題':'2新品上市新品上市新品上市新品上市新品上市',
-                        '回答':'2這就是回答',
+                        'qa_id':'1234567890',
+                        'qa_class':1,
+                        'question':'2新品上市新品上市新品上市新品上市新品上市',
+                        'answer':'2這就是回答',
                     },
                     {
-                        '問題編號':'1234567890',
-                        '問題分類':2,
-                        '問題':'3新品上市新品上市新品上市新品上市新品上市',
-                        '回答':'3這就是回答',
+                        'qa_id':'1234567890',
+                        'qa_class':2,
+                        'question':'3新品上市新品上市新品上市新品上市新品上市',
+                        'answer':'3這就是回答',
                     }
                 ],
                 pages:[
@@ -258,9 +258,9 @@
                 edit(index){                    
                     this.current_edit = index;  
 
-                    this.f_sort = this.faqs[index].問題分類;
-                    this.f_question = this.faqs[index].問題;
-                    this.f_answer = this.faqs[index].回答;
+                    this.f_sort = this.faqs[index].qa_class;
+                    this.f_question = this.faqs[index].question;
+                    this.f_answer = this.faqs[index].answer;
                     
                 },
 
@@ -292,9 +292,9 @@
 
                     let n_index = this.$data.current_edit;
 
-                    this.faqs[n_index].問題分類 = this.f_sort;
-                    this.faqs[n_index].問題 = this.f_question;
-                    this.faqs[n_index].回答 = this.f_answer;
+                    this.faqs[n_index].qa_class = this.f_sort;
+                    this.faqs[n_index].question = this.f_question;
+                    this.faqs[n_index].answer = this.f_answer;
 
                     this.current_edit = null;
                 },
@@ -322,10 +322,10 @@
 
                     let fff = 
                     {
-                        '問題編號':'1234567890',
-                        '問題分類':parseInt(f_sort),
-                        '問題':f_question,
-                        '回答':f_answer,
+                        'qa_id':'1234567890',
+                        'qa_class':parseInt(f_sort),
+                        'question':f_question,
+                        'answer':f_answer,
                     }
 
                     // console.log(fff);
