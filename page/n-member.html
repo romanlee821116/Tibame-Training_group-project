@@ -50,7 +50,7 @@
                         <li>{{member.account}}</li>
                         <li>{{member.name}}</li>
                         <li>{{member.phone}}</li>
-                        <li :class="{'-active2':members[key].member_status == '1'}">{{member_list[member.member_status]}}</li>
+                        <li :class="{'-active2':members[key].member_status == '0'}">{{member_list[member.member_status]}}</li>
                         <li>{{member.register_date}}</li>        
                         <li @click='edit(key)'>編輯與查看</li>
                     </ul>
@@ -76,8 +76,8 @@
                 <li>
                     帳號狀態:
                     <select name="status" id="" v-model='m_status'>
-                        <option value="0">正常</option>
-                        <option value="1">停權</option>
+                        <option value="0">停權</option>
+                        <option value="1">正常</option>
                     </select>
                 </li>
                 <li>地址:{{members[current_edit].address}}</li>
@@ -127,7 +127,7 @@
 
                 member_number: '',
                 m_status:0,
-                member_list:['正常', '停權'],
+                member_list:['停權', '正常'],
                 mainbtn: [  
                     {name:"會員管理", url: "./n-member.html"},
                     {name:"訂單管理", url: "./n-order.html"},

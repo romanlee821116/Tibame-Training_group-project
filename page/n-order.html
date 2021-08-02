@@ -46,13 +46,13 @@
                     </ul>
 
                     <ul v-for='(order,key) in orders' class="n-order_order">                        
-                        <li>{{order.編號}}</li>
-                        <li>{{order.訂單編號}}</li>
-                        <li>{{order.帳號}}</li>
-                        <li>{{pay_list[order.付款狀態]}}</li>
-                        <li>{{form_list[order.訂單狀態]}}</li>
-                        <li>{{ship_list[order.貨運狀態]}}</li>
-                        <li>{{order.訂購日期}}</li>      
+                        <li>{{order.order_id}}</li>
+                        <li>{{order.order_list}}</li>
+                        <li>{{order.account}}</li>
+                        <li>{{pay_list[order.payment_status]}}</li>
+                        <li>{{form_list[order.order_status]}}</li>
+                        <li>{{ship_list[order.shipping_status]}}</li>
+                        <li>{{order.order_date}}</li>      
                         <li @click='edit(key)'>編輯與查看</li>
                     </ul>
                 </div>
@@ -111,16 +111,13 @@
             </ul>
 
             <ul class="n-order_order_information">
-                <li>會員姓名: {{orders[current_edit].姓名}}</li>
-                <li>運送方式: {{orders[current_edit].運送方式}}</li>
-                <li>會員編號:{{orders[current_edit].會員編號}}</li>
-                <li>收件人地址: {{orders[current_edit].收件人地址}}</li>
-                <li>會員帳號: {{orders[current_edit].帳號}}</li>
-                <li>門市名稱: {{orders[current_edit].門市名稱}}</li>
-                <li>&emsp;&emsp;手機: {{orders[current_edit].手機}}</li>
-                <li>門市地址: {{orders[current_edit].門市地址}}</li>
-                <li>付款方式: {{orders[current_edit].付款方式}}</li>
-                <li>物流編號: {{orders[current_edit].物流編號}}</li>
+                <li>會員帳號: {{orders[current_edit].account}}</li>
+                <li>收件人姓名: {{orders[current_edit].receiver_name}}</li>
+                <li>收件人手機: {{orders[current_edit].receiver_phone}}</li>
+                <li>收件人地址: {{orders[current_edit].shipping_address}}</li>
+                <li>運送方式: {{orders[current_edit].shipping_type}}</li>
+                <li>付款方式: {{orders[current_edit].payment}}</li>                
+                <li>門市名稱: {{orders[current_edit].store}}</li>              
             </ul>
 
             <div class="n-order_order_detail">
@@ -137,8 +134,8 @@
 
                 <ul class="n-order_order_checkout">
                     <li>商品金額&emsp;&nbsp;:&ensp;${{total_cost}}元</li>
-                    <li>折扣碼&emsp;&emsp;&nbsp;:&ensp;{{orders[current_edit].折扣碼編號}}</li>
-                    <li>運費&emsp;&emsp;&emsp;&nbsp;:&ensp;${{ship_cost[orders[current_edit].運費]}}元&nbsp;&nbsp;</li>
+                    <li>折扣碼&emsp;&emsp;&nbsp;:&ensp;{{orders[current_edit].discount_id}}</li>
+                    <li>運費&emsp;&emsp;&emsp;&nbsp;:&ensp;${{orders[current_edit].shipping_fee}}元&nbsp;&nbsp;</li>
                     <li>訂單總金額&nbsp;:&ensp;${{order_cost}}元</li>
                 </ul>
             </div>
@@ -207,57 +204,48 @@
                         'order_status':2,
                         'shipping_status':3,
                         'order_date':'2021/01/01',
-                        '姓名':'員姓名',
-                        '運送方式':'宅配服務',
-                        '會員編號':'32242424',
-                        'address':'N/A',
+                        'receiver_name':'員姓名',
+                        'receiver_phone':'32242424',
+                        'shipping_address':'N/A',
+                        'shipping_type':'宅配服務',
                         'store':'N/A',
-                        'payment':'信用卡',
-                        '物流編號':'N/A',
-                        '手機':'0123456789',
-                        '門市地址':'N/A',
-                        '運費':1,
+                        'payment':'線上付款',
+                        'shipping_fee':60,
                         'discount_id':'edr100'
                     },
                     {
-                        '編號':'002',
-                        '訂單編號':'1321344fff',
-                        '帳號':'Harukadou@gmail.com',
-                        '付款狀態':2,
-                        '訂單狀態':3,
-                        '貨運狀態':1,
-                        '訂購日期':'2021/01/01',
-                        '姓名':'員姓名',
-                        '運送方式':'宅配服務',
-                        '會員編號':'32242424',
-                        '收件人地址':'N/A',
-                        '門市名稱':'N/A',
-                        '付款方式':'信用卡',
-                        '物流編號':'N/A',
-                        '手機':'0123456789',
-                        '門市地址':'N/A',
-                        '運費':0,
-                        '折扣碼編號':'edr100'
+                        'order_id':'002',
+                        'order_list':'1321344fff',
+                        'account':'Harukadou@gmail.com',
+                        'payment_status':0,
+                        'order_status':2,
+                        'shipping_status':3,
+                        'order_date':'2021/01/01',
+                        'receiver_name':'員姓名',
+                        'receiver_phone':'32242424',
+                        'shipping_address':'N/A',
+                        'shipping_type':'宅配服務',
+                        'store':'N/A',
+                        'payment':'線上付款',
+                        'shipping_fee':0,
+                        'discount_id':'edr100'
                     },
                     {
-                        '編號':'003',
-                        '訂單編號':'1321344fff',
-                        '帳號':'Harukadou@gmail.com',
-                        '付款狀態':3,
-                        '訂單狀態':2,
-                        '貨運狀態':1,
-                        '訂購日期':'2021/01/01',
-                        '姓名':'員姓名',
-                        '運送方式':'宅配服務',
-                        '會員編號':'32242424',
-                        '收件人地址':'N/A',
-                        '門市名稱':'N/A',
-                        '付款方式':'信用卡',
-                        '物流編號':'N/A',
-                        '手機':'0123456789',
-                        '門市地址':'N/A',
-                        '運費':1,
-                        '折扣碼編號':'N/A'
+                        'order_id':'003',
+                        'order_list':'1321344fff',
+                        'account':'Harukadou@gmail.com',
+                        'payment_status':0,
+                        'order_status':2,
+                        'shipping_status':3,
+                        'order_date':'2021/01/01',
+                        'receiver_name':'員姓名',
+                        'receiver_phone':'32242424',
+                        'shipping_address':'N/A',
+                        'shipping_type':'宅配服務',
+                        'store':'N/A',
+                        'payment':'線上付款',
+                        'shipping_fee':180,
+                        'discount_id':'edr100'
                     }
                 ],
                 pages:[
@@ -273,28 +261,27 @@
                 ],
                 current_edit:null,
                 order_title: ['名稱', '數量', '金額'],
-                order_list:[
-                    {
-                        '名稱':['草莓大福', '藍莓大福', '草莓大福'],
-                        '數量':['2', '3', '4'],
-                        '金額':[456, 234, 444],
-                    },
-                    {
-                        '名稱':['草莓大福', '藍莓大福', '草莓大福'],
-                        '數量':['5', '6', '7'],
-                        '金額':[111, 222, 777],
-                    },
-                    {
-                        '名稱':['草莓大福', '藍莓大福', '草莓大福'],
-                        '數量':['8', '9', '4'],
-                        '金額':[256, 890, 343],
-                    },
+                order_list:[                    
+                    [
+                        {'product_name':'草莓大福', 'quantity':'2', 'order_detail_price':456},
+                        {'product_name':'藍莓大福', 'quantity':'3', 'order_detail_price':234},
+                        {'product_name':'草莓大福', 'quantity':'4', 'order_detail_price':444}
+                    ],
+                    [
+                        {'product_name':'草莓大福', 'quantity':'2', 'order_detail_price':456},
+                        {'product_name':'藍莓大福', 'quantity':'3', 'order_detail_price':234},
+                        {'product_name':'草莓大福', 'quantity':'4', 'order_detail_price':444}
+                    ],
+                    [
+                        {'product_name':'草莓大福', 'quantity':'2', 'order_detail_price':456},
+                        {'product_name':'藍莓大福', 'quantity':'3', 'order_detail_price':234},
+                        {'product_name':'草莓大福', 'quantity':'4', 'order_detail_price':444}
+                    ],                    
                     
                 ],
                 select_number:'',
                 total_cost:null,
                 order_cost:null,
-                ship_cost:[0, 160],
             },
 
             methods: {
@@ -302,21 +289,24 @@
                     this.current_edit = index;   
 
                     // 訂單編號
-                    this.select_number = this.orders[index].訂單編號;
+                    this.select_number = this.orders[index].order_list;
 
                     // 商品總金額
-                    let tot = this.order_list[index].金額;
+                    let tot = this.order_list[index];                    
 
                     for(let i=0; i<tot.length; i++){
-                        this.total_cost += tot[i]
-                    }
+                        this.total_cost += tot[i].order_detail_price
+                    }                    
 
                     // 訂單總金額                    
-                    this.order_cost = this.total_cost + this.ship_cost[this.orders[index].運費];
+                    this.order_cost = this.total_cost + this.orders[index].shipping_fee;
 
-                    this.o_pay = this.orders[index].付款狀態;
-                    this.o_form = this.orders[index].訂單狀態;
-                    this.o_ship = this.orders[index].貨運狀態;
+                    //狀態
+                    this.o_pay = this.orders[index].payment_status;
+                    this.o_form = this.orders[index].order_status;
+                    this.o_ship = this.orders[index].shipping_status;
+
+                    
                 },
 
 
@@ -352,9 +342,9 @@
 
                     let n_index = this.$data.current_edit;
 
-                    this.orders[n_index].付款狀態 = this.o_pay;
-                    this.orders[n_index].訂單狀態 = this.o_form;
-                    this.orders[n_index].貨運狀態 = this.o_ship;
+                    this.orders[n_index].payment_status = this.o_pay;
+                    this.orders[n_index].order_status = this.o_form;
+                    this.orders[n_index].shipping_status = this.o_ship;
 
 
                     this.current_edit = null;

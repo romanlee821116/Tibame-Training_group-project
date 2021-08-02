@@ -50,12 +50,12 @@
                     </ul>
 
                     <ul v-for='(news,key) in newss' class="n-news_news">                              
-                        <li>{{news.文章編號}}</li>
-                        <li>{{news.上架日期}}</li>
-                        <li>{{n_sort_list[news.文章分類]}}</li>
-                        <li>{{news.標題}}</li>
-                        <li :class="{'-active2':newss[key].上下架 == '1'}">{{on_off_list[news.上下架]}}</li> 
-                        <li>{{news.最後更新日期}}</li>
+                        <li>{{news.news_id}}</li>
+                        <li>{{news.create_date}}</li>
+                        <li>{{n_sort_list[news.news_class]}}</li>
+                        <li>{{news.news_title1}}</li>
+                        <li :class="{'-active2':newss[key].news_status == '0'}">{{on_off_list[news.news_status]}}</li> 
+                        <li>{{news.news_update}}</li>
                         <li @click='edit(key)'>編輯與查看</li>
                     </ul>                
                 </div>
@@ -79,14 +79,16 @@
                         <section>文章分類:
                             <select name="status" id="" v-model='n_sort'>
                                 <option value="0">新品上市</option>
-                                <option value="1">舊品出清</option>
+                                <option value="1">活動消息</option>
+                                <option value="2">媒體報導</option>
+                                <option value="3">店鋪新資訊</option>
                             </select>
                         </section>
                     
                         <section>上下架:
                             <select name="status" id="" v-model='on_off'>
-                                <option value="0">上架</option>
-                                <option value="1">下架</option>
+                                <option value="0">下架</option>
+                                <option value="1">上架</option>
                             </select>
                         </section>
                     </li>
@@ -191,14 +193,16 @@
                                     <section>文章分類:
                                         <select name="status" id="" v-model='n_sort'>
                                             <option value="0">新品上市</option>
-                                            <option value="1">舊品出清</option>
+                                            <option value="1">活動消息</option>
+                                            <option value="2">媒體報導</option>
+                                            <option value="3">店鋪新資訊</option>
                                         </select>
                                     </section>
                                 
                                     <section>上下架:
                                         <select name="status" id="" v-model='on_off'>
-                                            <option value="0">上架</option>
-                                            <option value="1">下架</option>
+                                            <option value="0">下架</option>
+                                            <option value="1">上架</option>
                                         </select>
                                     </section>
                                 </li>
@@ -291,8 +295,8 @@
                 img_names:['右上圖', '主題', '圖片01', '圖片02', '圖片03'],
 
                 news_number:'',
-                on_off_list:['上架', '下架'],
-                n_sort_list:['新品上市', '舊品出清'],
+                on_off_list:['下架', '上架'],
+                n_sort_list:['新品上市', '活動消息', '媒體報導', '店鋪新資訊'],
                 n_main_title:'',
                 n_sec_title:'',
                 n_sort:0,
@@ -313,31 +317,37 @@
                 titles: ['文章編號', '上架日期', '文章分類', '標題', '上下架', '最後更新日期', ''],
                 newss:[
                     {
-                        '文章編號':'1234567890',
-                        '上架日期':'2021/01/01',
-                        '文章分類':0,
-                        '標題':'新品上市新品上市新品上市新品上市新品上市',
-                        '上下架':0,
-                        '最後更新日期':'2021/03/01 16:16',
-                        '內文':'這就是內文',
+                        'news_id':'1234567890',
+                        'create_date':'2021/01/01',
+                        'news_class':0,
+                        'news_title1':'新品上市新品上市新品上市新品上市新品上市',
+                        'news_title2':'2新品上市新品上市新品上市新品上市新品上市',
+                        'news_status':0,
+                        'news_update':'2021/03/01 16:16',
+                        'news_content1':'這就是內文',
+                        'news_content2':'2這就是內文',
                     },
                     {
-                        '文章編號':'1234567890',
-                        '上架日期':'2021/01/01',
-                        '文章分類':0,
-                        '標題':'新品上市新品上市新品上市新品上市',
-                        '上下架':1,
-                        '最後更新日期':'2021/03/01 16:16',
-                        '內文':'這就是內文',
+                        'news_id':'1234567890',
+                        'create_date':'2021/01/01',
+                        'news_class':0,
+                        'news_title1':'新品上市新品上市新品上市新品上市新品上市新品上市新品上市新品上市新品上市新品上市',
+                        'news_title2':'2新品上市新品上市新品上市新品上市新品上市',
+                        'news_status':0,
+                        'news_update':'2021/03/01 16:16',
+                        'news_content1':'這就是內文',
+                        'news_content2':'2這就是內文',
                     },
                     {
-                        '文章編號':'1234567890',
-                        '上架日期':'2021/01/01',
-                        '文章分類':0,
-                        '標題':'新品上市新品上市新品上市新品上市新品上市新品上市新品上市新品上市新品上市新品上市新品上市',
-                        '上下架':0,
-                        '最後更新日期':'2021/03/01 16:16',
-                        '內文':'這就是內文',
+                        'news_id':'1234567890',
+                        'create_date':'2021/01/01',
+                        'news_class':0,
+                        'news_title1':'新品上市新品上市新品上市新品上市新品上市',
+                        'news_title2':'2新品上市新品上市新品上市新品上市新品上市',
+                        'news_status':0,
+                        'news_update':'2021/03/01 16:16',
+                        'news_content1':'這就是內文',
+                        'news_content2':'2這就是內文',
                     }
                 ],
                 pages:[
@@ -358,12 +368,12 @@
                 edit(index){                    
                     this.current_edit = index;     
 
-                    this.n_sort = this.newss[index].文章分類;
-                    this.on_off = this.newss[index].上下架;
-                    this.n_main_title = this.newss[index].標題;
-                    this.n_sec_title = this.newss[index].標題;
-                    this.n_main_content = this.newss[index].內文;
-                    this.n_sec_content = this.newss[index].內文;
+                    this.n_sort = this.newss[index].news_class;
+                    this.on_off = this.newss[index].news_status;
+                    this.n_main_title = this.newss[index].news_title1;
+                    this.n_sec_title = this.newss[index].news_title2;
+                    this.n_main_content = this.newss[index].news_content1;
+                    this.n_sec_content = this.newss[index].news_content2;
                 },
 
                 n_close(){       
@@ -391,9 +401,12 @@
 
                     let n_index = this.$data.current_edit;
 
-                    this.newss[n_index].上下架 = this.on_off;
-                    this.newss[n_index].文章分類 = this.n_sort;
-                    this.newss[n_index].標題 = this.n_main_title;
+                    this.newss[n_index].news_status = this.on_off;
+                    this.newss[n_index].news_class = this.n_sort;
+                    this.newss[n_index].news_title1 = this.n_main_title;
+                    this.newss[n_index].news_title2 = this.n_sec_title;
+                    this.newss[n_index].news_content1 = this.n_main_content;
+                    this.newss[n_index].news_content2 = this.n_sec_content;
 
 
                     this.current_edit = null;
@@ -440,6 +453,9 @@
                         m_today = '0'+m_today
                     }
                     let d_today = today.getDate()
+                    if(d_today < 10 ){
+                        d_today = '0'+d_today
+                    }
                     let h_today = today.getHours()
                     if(h_today < 10 ){
                         h_today = '0'+h_today
@@ -454,13 +470,15 @@
 
                     let nnn = 
                     {      
-                        '文章編號':'1234567890',
-                        '上架日期':u_today,  
-                        '文章分類':parseInt(n_sort),
-                        '標題':n_main_title,
-                        '上下架':parseInt(on_off),
-                        '最後更新日期':last_today,
-                        '內文':'這就是內文',
+                        'news_id':'1234567890',
+                        'create_date':u_today,  
+                        'news_class':parseInt(n_sort),
+                        'news_title1':n_main_title,
+                        'news_title2':n_sec_title,
+                        'news_status':parseInt(on_off),
+                        'news_update':last_today,
+                        'news_content1':n_main_content,
+                        'news_content2':n_sec_content,
                     }
 
                     // console.log(nnn);
