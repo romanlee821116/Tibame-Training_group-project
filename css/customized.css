@@ -1190,6 +1190,7 @@ body {
   transform: translateX(-50%);
   display: none;
   justify-content: space-between;
+  z-index: 999;
 }
 
 .cus_step2 .cus-cardIcon-btn {
@@ -1200,6 +1201,7 @@ body {
   transform: translateX(-50%);
   display: none;
   justify-content: space-between;
+  z-index: 999;
 }
 
 .cus_step2 .custom_card_IconOnCard {
@@ -1232,6 +1234,7 @@ body {
   transform: translateX(-50%);
   display: none;
   justify-content: space-between;
+  z-index: 999;
 }
 
 .cus_step2 .cus-cardConfirm-btn .cus_cardConfirm_nextstep::before {

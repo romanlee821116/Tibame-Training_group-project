@@ -1,7 +1,7 @@
 $(document).ready(function() {
     //========================================local storage========================================
     let cart_item = {
-        'productId': 0,
+        'productCat': 0,
         'itemName': '',
         'img': '',
         'price': 0,
@@ -14,10 +14,12 @@ $(document).ready(function() {
         if ($(this).attr('id') != 'grey') {
             let product_Id = $(this).closest('.product_right').attr('data-id');
             let this_name = $(this).closest('.product_right').find('h3').text();
+            this_name = (this_name.split('/')[0]).replace(/\s*/g,"");
             let this_price = $(this).closest('.product_right').find('.product_price').find('span').text();
             let this_img = $(this).closest('.product_right').prev().find('.product_img').find('img').first().attr('src');
+            this_img = this_img.split('/')[3];
             let this_qty = $(this).closest('.product_right').find('.product_product_num').find('input').val();
-            cart_item.productId = product_Id;
+            cart_item.productCat = product_Id;
             cart_item.itemName = this_name;
             cart_item.img = this_img;
             cart_item.price = parseInt(this_price);
