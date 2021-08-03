@@ -312,7 +312,7 @@ $(document).ready(function(){
         if( $(this).attr('type') == 'radio' ){
             console.log( $(this).attr('name'));
             $(this).parent().next().css('display','none');
-        }else if( $(this).attr('name') == 'loginPswFocus' ){
+        }else if( $(this).attr('name') == 'password' ){
             $(this).next().next().css('display','none');
         }else{
             $(this).next().css('display','none');
