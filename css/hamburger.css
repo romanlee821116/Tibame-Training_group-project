@@ -18,7 +18,6 @@ time, mark, audio, video {
   font-size: 100%;
   font: bold inherit '微軟正黑體';
   vertical-align: baseline;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   text-decoration: none;
   font-weight: 900;
@@ -54,8 +53,7 @@ table {
 }
 
 * {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   /* border: solid 1px red; */
 }
 
@@ -78,14 +76,12 @@ body {
   background-color: #bb866a;
   border-radius: 10px;
   margin: 6px 0;
-  -webkit-transition: 0.4s;
   transition: 0.4s;
 }
 
 .ham_change .ham_bar1 {
   background-color: white;
-  -webkit-transform: rotate(-45deg) translate(-6px, 5px);
-          transform: rotate(-45deg) translate(-6px, 5px);
+  transform: rotate(-45deg) translate(-6px, 5px);
 }
 
 .ham_change .ham_bar2 {
@@ -94,8 +90,7 @@ body {
 
 .ham_change .ham_bar3 {
   background-color: white;
-  -webkit-transform: rotate(45deg) translate(-8px, -8px);
-          transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-8px, -8px);
 }
 
 .ham_overlay {
@@ -107,7 +102,6 @@ body {
   right: 0;
   background-color: #b48164;
   overflow: hidden;
-  -webkit-transition: 0.5s;
   transition: 0.5s;
 }
 
@@ -125,56 +119,34 @@ body {
   left: 0;
   width: 100%;
   height: 100px;
-  -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
+  transform: rotate(180deg);
   background: url("../images/hamburger/wave1.png");
   background-size: 1280px 100px;
 }
 
 .ham_overlay .wave1 {
-  -webkit-animation: animated 10s linear infinite;
-          animation: animated 10s linear infinite;
+  animation: animated 10s linear infinite;
   z-index: 1000;
   opacity: 0.6;
 }
 
 .ham_overlay .wave2 {
-  -webkit-animation: animated2 8s linear infinite;
-          animation: animated2 8s linear infinite;
+  animation: animated2 8s linear infinite;
   z-index: 999;
   opacity: 0.8;
   top: 10px;
 }
 
 .ham_overlay .wave3 {
-  -webkit-animation: animated3 12s linear infinite;
-          animation: animated3 12s linear infinite;
+  animation: animated3 12s linear infinite;
   z-index: 888;
   opacity: 0.8;
   top: 0px;
 }
 
-@-webkit-keyframes animated {
-  0% {
-    background-position-x: 0px;
-  }
-  100% {
-    background-position-x: 1280px;
-  }
-}
-
 @keyframes animated {
   0% {
     background-position-x: 0px;
-  }
-  100% {
-    background-position-x: 1280px;
-  }
-}
-
-@-webkit-keyframes animated2 {
-  0% {
-    background-position-x: 0;
   }
   100% {
     background-position-x: 1280px;
@@ -187,15 +159,6 @@ body {
   }
   100% {
     background-position-x: 1280px;
-  }
-}
-
-@-webkit-keyframes animated3 {
-  0% {
-    background-position-x: 0;
-  }
-  100% {
-    background-position-x: -1280px;
   }
 }
 
@@ -224,7 +187,6 @@ body {
   display: block;
   letter-spacing: 2px;
   opacity: 0;
-  -webkit-transition: all .5s;
   transition: all .5s;
 }
 
@@ -244,7 +206,6 @@ body {
   display: inline-block;
   margin: 0 20px;
   background-color: transparent;
-  -webkit-transition: all .3s;
   transition: all .3s;
 }
 
@@ -257,7 +218,6 @@ body {
   display: inline-block;
   margin: 0 20px;
   background-color: #fad689;
-  -webkit-transition: all .3s;
   transition: all .3s;
 }
 /*# sourceMappingURL=hamburger.css.map */

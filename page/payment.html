@@ -112,7 +112,7 @@
 
                   <div class="payment_home">
                     <div class="payment_radio payment_radio1">
-                      <input type="radio" name="transport" id="payment_home" @click="countShipping">
+                      <input type="radio" name="transport" id="payment_home" @click="countShipping" value= '宅配到府'>
                       <label for="payment_home">宅配到府（運費$80TWD）</label>
                       <div class="payment_fake1"><div class="payment_fakeClick1"></div></div>
                     </div>
@@ -133,15 +133,15 @@
 
                       <div class="payment_receiverData">
                         <div>姓名：</div>
-                        <input type="text" name="receiverName" placeholder="請輸入收件人姓名" onfocus="this.placeholder=''" onblur="this.placeholder='請輸入收件人姓名'" >
+                        <input type="text" class='payment_receiverName' name="receiverName" placeholder="請輸入收件人姓名" onfocus="this.placeholder=''" onblur="this.placeholder='請輸入收件人姓名' " >
                       </div>
                       <div class="payment_receiverData">
                         <div>手機：</div>
-                        <input type="text" name="receiverName" placeholder="請輸入收件人手機號碼" onfocus="this.placeholder=''" onblur="this.placeholder='請輸入收件人手機號碼'" >
+                        <input type="text" class='payment_receiverPhone' name="receiverName" placeholder="請輸入收件人手機號碼" onfocus="this.placeholder=''" onblur="this.placeholder='請輸入收件人手機號碼'" >
                       </div>
                       <div class="payment_receiverData">
                         <div>地址：</div>
-                        <input type="text" name="receiverName" placeholder="請輸入收件人地址" onfocus="this.placeholder=''" onblur="this.placeholder='請輸入收件人地址'" >
+                        <input type="text" class='payment_receiverAddress' name="receiverName" placeholder="請輸入收件人地址" onfocus="this.placeholder=''" onblur="this.placeholder='請輸入收件人地址'" >
                       </div>
                     </div>
 
@@ -149,7 +149,7 @@
 
                   <div class="payment_711">
                     <div class="payment_radio payment_radio2">
-                      <input type="radio" name="transport" id="payment_seven" @click="count711">
+                      <input type="radio" name="transport" id="payment_seven" @click="count711" value= '7-11取貨'>
                       <label for="payment_seven">7-11取貨（運費$60TWD）</label>
                       <div class="payment_fake2"><div class="payment_fakeClick2"></div></div>
                     </div>
@@ -178,7 +178,7 @@
                   </div>
 
                   <div class="payment_radio payment_radio3">
-                    <input type="radio" name="transport" id="payment_shop" @click="countShop">
+                    <input type="radio" name="transport" id="payment_shop" @click="countShop" value= '門市自取'>
                     <label for="payment_shop">門市自取</label>
                     <div class="payment_fake3"><div class="payment_fakeClick3"></div></div>
                   </div>
@@ -193,13 +193,13 @@
                 <div class="payment_radioBorder2">
 
                   <div class="payment_radio payment_radio4">
-                    <input type="radio" name="payment" id="payment_online">
+                    <input type="radio" name="payment" id="payment_online" value='線上付款'>
                     <label for="payment_online">線上付款</label>
                     <div class="payment_fake4"><div class="payment_fakeClick4"></div></div>
                   </div>
 
                   <div class="payment_radio payment_radio5">
-                    <input type="radio" name="payment" id="payment_cash">
+                    <input type="radio" name="payment" id="payment_cash" value='取貨付款'>
                     <label for="payment_cash">取貨付款</label>
                     <div class="payment_fake5"><div class="payment_fakeClick5"></div></div>
                   </div>
