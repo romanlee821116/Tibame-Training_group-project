@@ -331,12 +331,12 @@ $(document).ready(function(){
 
 $(function(){
     // 按數量增加變色
-  $('.cart_add').mousedown(function(){
+  $('.cart_itemList').on('mousedown','.cart_add',function(){
     $(this).css('background-color','#172852');
     $(this).css('color','#ffffff');
   });
 
-  $('.cart_add').mouseup(function(){
+  $('.cart_itemList').on('mouseup','.cart_add',function(){
     $(this).css('background-color','#ffffff');
     $(this).css('color','#172852');
   });
@@ -344,7 +344,7 @@ $(function(){
 
 
   // 按數量減少變色
-  $('.cart_less').mousedown(function(){
+  $('.cart_itemList').on('mousedown','.cart_less',function(){
     let val = $(this).next().val();
     if(val > 1){
       $(this).css('background-color','#172852');
@@ -352,7 +352,7 @@ $(function(){
     }
   });
 
-  $('.cart_less').mouseup(function(){
+  $('.cart_itemList').on('mouseup','.cart_less',function(){
     let val = $(this).next().val();
     if(val > 1){
       $(this).css('background-color','#ffffff');
@@ -363,7 +363,7 @@ $(function(){
 
 
   // 若數量大於1，減號變白底
-  $('.cart_add').click(function(){
+  $('.cart_itemList').on('click','.cart_add',function(){
     let val = $(this).prev().val();
     if(val > 1){
       $(this).siblings('.cart_less').css('background-color','#ffffff');
@@ -372,7 +372,7 @@ $(function(){
 
 
   // 數量等於1，減號變灰底
-  $('.cart_less').click(function(){
+  $('.cart_itemList').on('click','.cart_less',function(){
     let val = $(this).next().val();
     if(val == 1){
       $(this).css('background-color','#c4c4c4');
@@ -389,7 +389,7 @@ $(function(){
 
 
   // 偵測input手動改數字，改變減號底色
-  $('.cart_quantity').on("keypress keyup blur", function(e){
+  $('.cart_itemList').on("keypress keyup blur",'.cart_quantity', function(e){
     // 不能輸入符號
     $(this).val($(this).val().replace(/[^\d].+/, ""));
     if ((e.which < 48 || e.which > 57)) {
@@ -411,7 +411,7 @@ $(function(){
 
 
   // 查看禮盒明細
-  $('.cart_detailBtn').click(function(){
+  $('.cart_itemList').on('click','.cart_detailBtn',function(){
     console.log('cusbox open');
     let open = $(this).parents('.cart_customization').children('.cart_detailBorder');
     open.slideToggle();
