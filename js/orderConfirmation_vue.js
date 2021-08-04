@@ -126,3 +126,18 @@ $(function(){
     }
   })
 })
+//jquery
+$(document).ready(function(){
+  let info = JSON.parse(localStorage.getItem('info'))
+  let OC_name = info['deliver_name'];
+  let OC_phone = info['deliver_phone'];
+  let OC_address = info['deliver_address'];
+  let OC_shippingType = info['delivery_type'];
+  let OC_paymentType = info['payment_type'];
+
+  $('.OC_deliverName').val(OC_name);
+  $('.OC_deliverPhone').val(OC_phone);
+  $('.OC_deliverAddress').val(OC_address);
+  $('.OC_transport div:last-child').text(OC_shippingType);
+  $('.OC_payMoney div:last-child').text(OC_paymentType);
+})

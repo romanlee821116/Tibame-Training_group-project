@@ -201,8 +201,7 @@ $(document).ready(function(){
             $('.loginAccount').addClass('loginFalse');    //給登入註冊切換判斷
         }else{
             $('.loginAccount').removeClass('loginFalse');    //給登入註冊切換判斷
-            $(isSignupOK).push('signupOK');
-            console.log(isSignupOK);
+            isSignupOK.push('signupOK');
         }
 
         if(password == ""){
@@ -217,6 +216,7 @@ $(document).ready(function(){
             $('#loginPassword').next().next().css('display','inline-block');
             $('#loginPassword').addClass('loginFalse');    //給登入註冊切換判斷
         }else{
+            isSignupOK.push('signupOK');
             $('#loginPassword').removeClass('loginFalse');    //給登入註冊切換判斷
         }
 
@@ -230,6 +230,8 @@ $(document).ready(function(){
             $('#loginPassword2').css('border','2px solid #dc3838');
             $('#loginPassword2').next().next().css('display','inline-block');
             $('#loginPassword2').next().next().children('p').text('兩次輸入密碼不同');
+        }else{
+            isSignupOK.push('signupOK');
         }
 
         if(malecheck == false && femalecheck == false && othercheck == false){
@@ -243,6 +245,8 @@ $(document).ready(function(){
             $('#loginName').css('border','2px solid #dc3838');
             $('#loginName').next().css('display','inline-block');
             $('#loginName').next().children('p').text('請輸入資訊');
+        }else{
+            isSignupOK.push('signupOK');
         }
 
         if(phone == ""){
@@ -250,6 +254,8 @@ $(document).ready(function(){
             $('#loginPhone').css('border','2px solid #dc3838');
             $('#loginPhone').next().css('display','inline-block');
             $('#loginPhone').next().children('p').text('請輸入資訊');
+        }else{
+            isSignupOK.push('signupOK');
         }
 
         if(address1 == false || address2 == false || address3 == false){
@@ -259,6 +265,8 @@ $(document).ready(function(){
             $('.loginSelect2').css('border','2px solid #dc3838');
             $('#loginAddress').next().css('display','inline-block');
             $('#loginAddress').next().children('p').text('地址請填寫完全');
+        }else{
+            isSignupOK.push('signupOK');
         }
 
         // 輸入數字
@@ -273,30 +281,35 @@ $(document).ready(function(){
             $('.loginCodeEnter').css('border','2px solid #dc3838');
             $('.loginCodeEnter').next().css('display','inline-block');
             $('.loginCodeEnter').next().children('p').text('驗證碼錯誤');
+        }else{
+            isSignupOK.push('signupOK');
         };
+
+        //全部欄位判定成功
+        // console.log(isSignupOK.length);
 
         // 登入成功
-        if( $('.loginBtn').hasClass('loginButton') ){
-            // 做登入註冊/會員中心判斷--------
-            if( !$('.loginAccount').hasClass('loginFalse') && !$('#loginPassword').hasClass('loginFalse')){
-                $(this).addClass('loginOK');
-                $('.memberShow').fadeOut(500);
-                $('.footer').show();
-                $('.navbar').show();
-                $('body').removeClass('stopScroll');   // addClass的部分寫在navbar.js
-                // window.history.back(-1);
-                // $('.navbar-icon>a:first').hasClass('loginOK');
-                if(window.location.pathname == '/index.html'){
-                    window.location.href = 'page/member.html';
-                }else{
-                    window.location.href = 'member.html';
-                };
-                localStorage.loginStatus = 'Login';
-                $('.nav_logOut').fadeIn();
-                $('.mavbar-icon .fas .fa-user').css('color','#f7c242');
-            }
+        // if( $('.loginButton').hasClass('loginButton') ){
+        //     // 做登入註冊/會員中心判斷--------
+        //     if( !$('.loginAccount').hasClass('loginFalse') && !$('#loginPassword').hasClass('loginFalse')){
+        //         $(this).addClass('loginOK');
+        //         $('.memberShow').fadeOut(500);
+        //         $('.footer').show();
+        //         $('.navbar').show();
+        //         $('body').removeClass('stopScroll');   // addClass的部分寫在navbar.js
+        //         // window.history.back(-1);
+        //         // $('.navbar-icon>a:first').hasClass('loginOK');
+        //         if(window.location.pathname == '/index.html'){
+        //             window.location.href = 'page/member.html';
+        //         }else{
+        //             window.location.href = 'member.html';
+        //         };
+        //         localStorage.loginStatus = 'Login';
+        //         $('.nav_logOut').fadeIn();
+        //         $('.mavbar-icon .fas .fa-user').css('color','#f7c242');
+        //     }
 
-        };
+        // };
 
         // 註冊成功
         if( $('.loginBtn').hasClass('loginSignupButton') ){

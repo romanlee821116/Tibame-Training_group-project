@@ -296,6 +296,54 @@ $(function(){
     $('.payment_date').css('display','flex');
     $('.payment_certification').css('visibility','hidden');
   })
+
+  //同會員資料按紐
+  $('.payment_itemCB').click(function(){
+    let payment_name = $('.payment_data:nth-child(1) input').val();
+    let payment_phone = $('.payment_data:nth-child(2) input').val();
+    let payment_address = $('.payment_data:nth-child(3) input').val();
+    console.log(' payment_name'+ payment_name);
+    console.log(' payment_phone'+ payment_phone);
+    console.log(' payment_address'+ payment_address);
+    $('.payment_receiverName').val(payment_name);
+    $('.payment_receiverPhone').val(payment_phone);
+    $('.payment_receiverAddress').val(payment_address);
+  })
+
+  //按下一頁時把資訊存到localstorage
+  $('.payment_next').click(function(){
+    let order_detail = {
+      'deliver_name':'',
+      'deliver_phone':'',
+      'deliver_address':'',
+      'delivery_type': 0,
+      'payment_type':0
+    };
+    let payment_name = $('.payment_data:nth-child(1) input').val();
+    let payment_phone = $('.payment_data:nth-child(2) input').val();
+    let payment_address = $('.payment_data:nth-child(3) input').val();
+
+    let delivery_name = $('.payment_receiverName').val();
+    let delivery_phone = $('.payment_receiverPhone').val();
+    let delivery_address = $('.payment_receiverAddress').val();
+
+    let delivery_type = $('input[name="transport"]:checked').val();
+    let payment_type = $('input[name="payment"]:checked').val();
+
+    order_detail.deliver_name = payment_name;
+    order_detail.deliver_phone = payment_phone;
+    order_detail.deliver_address = payment_address;
+    order_detail.delivery_type = delivery_type;
+    order_detail.payment_type = payment_type;
+
+    if($('.payment_choose').length ==1){
+      order_detail.deliver_name = delivery_name;
+      order_detail.deliver_phone = delivery_phone;
+      order_detail.deliver_address = delivery_address;
+    }
+    // let info=[order_detail];
+    localStorage.setItem('info', JSON.stringify(order_detail));
+  })
 }) 
   
     

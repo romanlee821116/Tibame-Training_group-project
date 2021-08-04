@@ -17,7 +17,7 @@ $(document).ready(function() {
             this_name = (this_name.split('/')[0]).replace(/\s*/g, "");
             let this_price = $(this).closest('.product_right').find('.product_price').find('span').text();
             let this_img = $(this).closest('.product_right').prev().find('.product_img').find('img').first().attr('src');
-            this_img = this_img.split('/')[3];
+            // this_img = this_img.split('/')[3];
             let this_qty = $(this).closest('.product_right').find('.product_product_num').find('input').val();
             cart_item.productCat = product_Id;
             cart_item.itemName = this_name;
