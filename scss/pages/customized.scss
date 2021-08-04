@@ -845,7 +845,8 @@ body {
         transform: translateX(-50%);
         // display: flex;
         display: none;
-        justify-content: space-between;
+        justify-content: space-between;   
+        z-index: 999;     
     }
     .cus-cardIcon-btn {
         width: 100%;
@@ -854,7 +855,8 @@ body {
         left: 50%;
         transform: translateX(-50%);
         display: none;
-        justify-content: space-between;
+        justify-content: space-between;   
+        z-index: 999;     
     }
     .custom_card_IconOnCard {
         width: 60px;
@@ -881,9 +883,10 @@ body {
         left: 50%;
         transform: translateX(-50%);
         display: none;
-        justify-content: space-between;
-        .cus_cardConfirm_nextstep {
-            &::before {
+        justify-content: space-between;   
+        z-index: 999;  
+        .cus_cardConfirm_nextstep{
+            &::before{
                 content: '添加到購物車';
                 position: absolute;
                 font-size: 14px;

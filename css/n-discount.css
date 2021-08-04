@@ -419,19 +419,19 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-column-gap: 10px;
-          column-gap: 10px;
+  -webkit-column-gap: 20px;
+          column-gap: 20px;
 }
 
 .n-discount_discount_mid ul li:first-child {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 370px 370px;
-      grid-template-columns: 370px 370px;
+  -ms-grid-columns: 230px 230px 230px;
+      grid-template-columns: 230px 230px 230px;
 }
 
 .n-discount_discount_mid ul li:first-child input {
-  width: 250px;
+  width: 150px;
   border: 1.5px solid #cba89a;
   border-radius: 3px;
   margin-left: 6px;

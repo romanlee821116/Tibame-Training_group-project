@@ -1368,6 +1368,7 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  z-index: 999;
 }
 
 .cus_step2 .cus-cardIcon-btn {
@@ -1381,6 +1382,7 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  z-index: 999;
 }
 
 .cus_step2 .custom_card_IconOnCard {
@@ -1416,6 +1418,7 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  z-index: 999;
 }
 
 .cus_step2 .cus-cardConfirm-btn .cus_cardConfirm_nextstep::before {

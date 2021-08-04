@@ -30,7 +30,7 @@ $(document).ready(function(){
         // 清空表單反饋
         memberFormError0();
         // -----------
-        $('.loginWrapper').css('height','145px');
+        $('.loginWrapper').css('height','180px');
         // FB跟LINE登入
         $('.loginOther').fadeIn(700);
         // 密碼說明
@@ -39,7 +39,7 @@ $(document).ready(function(){
         // 小三角形移動位置
         $('#loginArrow').css('left','21%');
         // 送出按鈕
-        $('button span').css('transform','translate3d(0,0,0)');
+        $('.loginButton').fadeIn(1500);
         // 登入註冊下底線
         $('.loginChoosenBar').css({left:'0'});
         // 文字顏色改變
@@ -54,7 +54,7 @@ $(document).ready(function(){
         // 清空表單反饋
         memberFormError0();
         // -----------
-        $('.loginWrapper').css('height','420px');
+        $('.loginWrapper').css('height','470px');
         // FB跟LINE登入
         $('.loginOther').css('display','none');
         // 密碼說明
@@ -63,9 +63,7 @@ $(document).ready(function(){
         // 小三角形移動位置
         $('#loginArrow').css('left','71%');
         // 送出按鈕
-        $('button span').css({
-            transform:'translate3d(0,-43px,0)',
-        });
+        $('.loginButton').hide();
         // 登入註冊下底線
         $('.loginChoosenBar').css({left :'50%'});
         // 文字顏色改變
@@ -152,7 +150,8 @@ $(document).ready(function(){
 
     // ================ 表單錯誤資訊反饋 ==================
     // 沒輸入按送出會跳出提示框
-    $('.loginButton').click(function(e){
+    $('.loginBtn').click(function(e){
+        let isSignupOK = [];// 註冊成功的判別
         
         // ----------------------------------
         // 清空重來
@@ -202,6 +201,8 @@ $(document).ready(function(){
             $('.loginAccount').addClass('loginFalse');    //給登入註冊切換判斷
         }else{
             $('.loginAccount').removeClass('loginFalse');    //給登入註冊切換判斷
+            $(isSignupOK).push('signupOK');
+            console.log(isSignupOK);
         }
 
         if(password == ""){
@@ -272,26 +273,38 @@ $(document).ready(function(){
             $('.loginCodeEnter').css('border','2px solid #dc3838');
             $('.loginCodeEnter').next().css('display','inline-block');
             $('.loginCodeEnter').next().children('p').text('驗證碼錯誤');
-        }
+        };
 
-        // 做登入註冊/會員中心判斷--------
-        if( !$('.loginAccount').hasClass('loginFalse') && !$('#loginPassword').hasClass('loginFalse')){
-            $(this).addClass('loginOK');
-            $('.memberShow').fadeOut(500);
-            $('.footer').show();
-            $('.navbar').show();
-            $('body').removeClass('stopScroll');   // addClass的部分寫在navbar.js
-            // window.history.back(-1);
-            // $('.navbar-icon>a:first').hasClass('loginOK');
-            if(window.location.pathname == '/index.html'){
-                window.location.href = 'page/member.html';
-            }else{
-                window.location.href = 'member.html';
-            };
-            localStorage.loginStatus = 'Login';
-            $('.nav_logOut').fadeIn();
-            $('.mavbar-icon .fas .fa-user').css('color','#f7c242');
-        }
+        // 登入成功
+        if( $('.loginBtn').hasClass('loginButton') ){
+            // 做登入註冊/會員中心判斷--------
+            if( !$('.loginAccount').hasClass('loginFalse') && !$('#loginPassword').hasClass('loginFalse')){
+                $(this).addClass('loginOK');
+                $('.memberShow').fadeOut(500);
+                $('.footer').show();
+                $('.navbar').show();
+                $('body').removeClass('stopScroll');   // addClass的部分寫在navbar.js
+                // window.history.back(-1);
+                // $('.navbar-icon>a:first').hasClass('loginOK');
+                if(window.location.pathname == '/index.html'){
+                    window.location.href = 'page/member.html';
+                }else{
+                    window.location.href = 'member.html';
+                };
+                localStorage.loginStatus = 'Login';
+                $('.nav_logOut').fadeIn();
+                $('.mavbar-icon .fas .fa-user').css('color','#f7c242');
+            }
+
+        };
+
+        // 註冊成功
+        if( $('.loginBtn').hasClass('loginSignupButton') ){
+            console.log('welcome');
+        };
+
+
+        
     });
 
     // 所有input欄位點擊focus時，提示消失
@@ -299,7 +312,7 @@ $(document).ready(function(){
         if( $(this).attr('type') == 'radio' ){
             console.log( $(this).attr('name'));
             $(this).parent().next().css('display','none');
-        }else if( $(this).attr('name') == 'loginPswFocus' ){
+        }else if( $(this).attr('name') == 'password' ){
             $(this).next().next().css('display','none');
         }else{
             $(this).next().css('display','none');
