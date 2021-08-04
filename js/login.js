@@ -286,30 +286,30 @@ $(document).ready(function(){
         };
 
         //全部欄位判定成功
-        console.log(isSignupOK.length);
+        // console.log(isSignupOK.length);
 
         // 登入成功
-        if( $('.loginButton').hasClass('loginButton') ){
-            // 做登入註冊/會員中心判斷--------
-            if( !$('.loginAccount').hasClass('loginFalse') && !$('#loginPassword').hasClass('loginFalse')){
-                $(this).addClass('loginOK');
-                $('.memberShow').fadeOut(500);
-                $('.footer').show();
-                $('.navbar').show();
-                $('body').removeClass('stopScroll');   // addClass的部分寫在navbar.js
-                // window.history.back(-1);
-                // $('.navbar-icon>a:first').hasClass('loginOK');
-                if(window.location.pathname == '/index.html'){
-                    window.location.href = 'page/member.html';
-                }else{
-                    window.location.href = 'member.html';
-                };
-                localStorage.loginStatus = 'Login';
-                $('.nav_logOut').fadeIn();
-                $('.mavbar-icon .fas .fa-user').css('color','#f7c242');
-            }
+        // if( $('.loginButton').hasClass('loginButton') ){
+        //     // 做登入註冊/會員中心判斷--------
+        //     if( !$('.loginAccount').hasClass('loginFalse') && !$('#loginPassword').hasClass('loginFalse')){
+        //         $(this).addClass('loginOK');
+        //         $('.memberShow').fadeOut(500);
+        //         $('.footer').show();
+        //         $('.navbar').show();
+        //         $('body').removeClass('stopScroll');   // addClass的部分寫在navbar.js
+        //         // window.history.back(-1);
+        //         // $('.navbar-icon>a:first').hasClass('loginOK');
+        //         if(window.location.pathname == '/index.html'){
+        //             window.location.href = 'page/member.html';
+        //         }else{
+        //             window.location.href = 'member.html';
+        //         };
+        //         localStorage.loginStatus = 'Login';
+        //         $('.nav_logOut').fadeIn();
+        //         $('.mavbar-icon .fas .fa-user').css('color','#f7c242');
+        //     }
 
-        };
+        // };
 
         // 註冊成功
         if( $('.loginBtn').hasClass('loginSignupButton') ){
