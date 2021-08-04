@@ -431,6 +431,11 @@
                         'promotion2':0,
                         'ingredient':'1成分成分成分',
                         'product_content':'1說明說明說明',
+                        'product_image1':'',
+                        'product_image2':'',
+                        'product_image3':'',
+                        'product_image_topview':'',
+                        'product_image_customize':''
                     },
                     {
                         'product_id':'1234567890',
@@ -446,6 +451,11 @@
                         'promotion2':0,
                         'ingredient':'1成分成分成分',
                         'product_content':'1說明說明說明',
+                        'product_image1':'',
+                        'product_image2':'',
+                        'product_image3':'',
+                        'product_image_topview':'',
+                        'product_image_customize':''
                     },
                     {
                         'product_id':'1234567890',
@@ -461,6 +471,11 @@
                         'promotion2':0,
                         'ingredient':'1成分成分成分',
                         'product_content':'1說明說明說明',
+                        'product_image1':'',
+                        'product_image2':'',
+                        'product_image3':'',
+                        'product_image_topview':'',
+                        'product_image_customize':''
                     }
                 ],
                 pages:[
@@ -485,15 +500,13 @@
                     this.p_name = this.products[index].product_name;
                     this.p_original = this.products[index].net_price;
                     this.p_sell = this.products[index].price;
-                    this.p_stock = this.products[index].stock;                    
-
+                    this.p_stock = this.products[index].stock; 
                     this.p_status = this.products[index].promotion;
                     this.p_limit = this.products[index].promotion2;
                     this.on_off = this.products[index].product_status;
                     this.p_exp = this.products[index].expiration;
                     this.p_customized = this.products[index].product_customize;
                     this.p_sort = this.products[index].product_class;
-
                     this.p_ingredient = this.products[index].ingredient;
                     this.p_descript = this.products[index].product_content;
 
@@ -525,14 +538,18 @@
 
                     this.products[n_index].product_status = this.on_off;
                     this.products[n_index].product_customize = this.p_customized;
-
                     this.products[n_index].product_name = this.p_name;                    
                     this.products[n_index].net_price = this.p_original;
                     this.products[n_index].price = this.p_sell;
                     this.products[n_index].stock = this.p_stock;
-
                     this.products[n_index].product_class = this.p_sort;
                     this.products[n_index].product_id = this.p_number;
+                    this.products[n_index].ingredient = this.p_ingredient;
+                    this.products[n_index].product_content = this.p_descript;
+                    this.products[n_index].promotion = this.p_status;
+                    this.products[n_index].promotion2 = this.p_limit;
+                    this.products[n_index].expiration = this.p_exp;
+
 
                     this.current_edit = null;
                 },  
