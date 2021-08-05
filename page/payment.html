@@ -89,19 +89,19 @@
               <!-- 姓名 -->
               <div class="payment_data">
                 <div>姓名：</div>
-                <input type="text" name="ordererName" placeholder="請輸入您的姓名" onfocus="this.placeholder=''" onblur="this.placeholder='請輸入您的姓名'" >
+                <input type="text" class="payment_name" name="ordererName" v-model="orderer_data.orderer_name" placeholder="請輸入您的姓名" onfocus="this.placeholder=''" onblur="this.placeholder='請輸入您的姓名'" >
               </div>
 
               <!-- 手機號碼 -->
               <div class="payment_data">
                 <div>手機：</div>
-                <input type="text" name="ordererPhone" placeholder="請輸入您的手機號碼" onfocus="this.placeholder=''" onblur="this.placeholder='請輸入您的手機號碼'" >
+                <input type="text" class="payment_phone" name="ordererPhone" v-model="orderer_data.orderer_phone" placeholder="請輸入您的手機號碼" onfocus="this.placeholder=''" onblur="this.placeholder='請輸入您的手機號碼'" >
               </div>
 
               <!-- 地址 -->
               <div class="payment_data">
                 <div>地址：</div>
-                <input type="text" name="ordererAddress" placeholder="請輸入您的地址" onfocus="this.placeholder=''" onblur="this.placeholder='請輸入您的地址'" >
+                <input type="text" class="payment_add" name="ordererAddress" v-model="orderer_data.orderer_address" placeholder="請輸入您的地址" onfocus="this.placeholder=''" onblur="this.placeholder='請輸入您的地址'" >
               </div>
 
               <!-- 運送方式 -->
@@ -122,7 +122,7 @@
                       <div class="payment_receiverTitle">
                         <p>收件人資訊</p>
                         <div>
-                          <div class="payment_itemCB" :class="{'payment_choose': recipient}" @click="chooseRecipient">
+                          <div class="payment_itemCB payment_sameOrderer" :class="{'payment_choose': recipient}" @click="chooseRecipient">
                             <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check fa-w-16" role="img" viewBox="0 0 512 512"><path fill="#ffffff" d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/>
                             </svg>
                           </div>
@@ -137,11 +137,11 @@
                       </div>
                       <div class="payment_receiverData">
                         <div>手機：</div>
-                        <input type="text" class='payment_receiverPhone' name="receiverName" placeholder="請輸入收件人手機號碼" onfocus="this.placeholder=''" onblur="this.placeholder='請輸入收件人手機號碼'" >
+                        <input type="text" class='payment_receiverPhone' name="receiverPhone" placeholder="請輸入收件人手機號碼" onfocus="this.placeholder=''" onblur="this.placeholder='請輸入收件人手機號碼'" >
                       </div>
                       <div class="payment_receiverData">
                         <div>地址：</div>
-                        <input type="text" class='payment_receiverAddress' name="receiverName" placeholder="請輸入收件人地址" onfocus="this.placeholder=''" onblur="this.placeholder='請輸入收件人地址'" >
+                        <input type="text" class='payment_receiverAddress' name="receiverAddress" placeholder="請輸入收件人地址" onfocus="this.placeholder=''" onblur="this.placeholder='請輸入收件人地址'" >
                       </div>
                     </div>
 
@@ -165,11 +165,11 @@
                         </div>
                         <div class="payment_shopData">
                           <div>門市地址：</div>
-                          <input type="text" name="shopName" placeholder="門市地址">
+                          <input type="text" name="shopAddress" placeholder="門市地址">
                         </div>
                         <div class="payment_shopData">
                           <div>門市電話：</div>
-                          <input type="text" name="shopName" placeholder="門市電話">
+                          <input type="text" name="shopPhone" placeholder="門市電話">
                         </div>
                       </div>
                     </div>
@@ -217,10 +217,10 @@
                   <div class="payment_00">信用卡卡號：</div>
 
                   <div>
-                    <input type="text" maxlength="4" v-model="cardNumber1" class="payment_enterCard">-
-                    <input type="text" maxlength="4" v-model="cardNumber2" class="payment_enterCard">-
-                    <input type="text" maxlength="4" v-model="cardNumber3" class="payment_enterCard">-
-                    <input type="text" maxlength="4" v-model="cardNumber4" class="payment_enterCard">
+                    <input type="text" maxlength="4" v-model="card_data.cardNumber1" class="payment_enterCard" id="payment_card1">-
+                    <input type="text" maxlength="4" v-model="card_data.cardNumber2" class="payment_enterCard" id="payment_card2">-
+                    <input type="text" maxlength="4" v-model="card_data.cardNumber3" class="payment_enterCard" id="payment_card3">-
+                    <input type="text" maxlength="4" v-model="card_data.cardNumber4" class="payment_enterCard" id="payment_card4">
                   </div>
 
                 </div>
@@ -230,7 +230,7 @@
                   <div class="payment_01">卡片有效期限：</div>
 
                   <div>
-                    <select class="payment_year" name="year" v-model="cardYear">
+                    <select class="payment_year" name="year" v-model="card_data.cardYear">
                       <option selected disabled>年份</option>
                       <option>21</option>
                       <option>22</option>
@@ -240,7 +240,7 @@
                       <option>26</option>
                     </select>
   
-                    <select class="payment_month" name="month" v-model="cardDate">
+                    <select class="payment_month" name="month" v-model="card_data.cardDate">
                       <option selected disabled>月份</option>
                       <option>1</option>
                       <option value="2">2</option>
@@ -262,25 +262,25 @@
                 <!-- 認證碼 -->
                 <div class="payment_cardNumber">
                   <div class="payment_00">卡片認證碼：</div>
-                  <input type="text" maxlength="3" class="payment_turn" v-model="cardCertification">
+                  <input type="text" maxlength="3" class="payment_turn" v-model="card_data.cardCertification">
                 </div>
 
                 <!-- 信用卡圖片 -->
                 <div class="payment_cardImg">
 
                   <div class="payment_cardFront">
-                    <div class="payment_certification">{{cardCertification}}</div>
+                    <div class="payment_certification">{{card_data.cardCertification}}</div>
 
                     <div class="payment_number">
-                      <div>{{cardNumber1}}</div>-
-                      <div>{{cardNumber2}}</div>-
-                      <div>{{cardNumber3}}</div>-
-                      <div>{{cardNumber4}}</div>
+                      <div>{{card_data.cardNumber1}}</div>-
+                      <div>{{card_data.cardNumber2}}</div>-
+                      <div>{{card_data.cardNumber3}}</div>-
+                      <div>{{card_data.cardNumber4}}</div>
                     </div>
 
                     <div class="payment_date">
-                      <div>{{cardYear}}</div> /
-                      <div>{{cardDate}}</div>
+                      <div>{{card_data.cardYear}}</div> /
+                      <div>{{card_data.cardDate}}</div>
                     </div>
 
                   </div>

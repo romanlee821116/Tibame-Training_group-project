@@ -1,0 +1,169 @@
+* {
+  box-sizing: border-box;
+  /* border: solid 1px red; */
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+.ham_container {
+  display: inline-block;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  z-index: 10000;
+}
+
+.ham_container .ham_bar {
+  width: 30px;
+  height: 4px;
+  background-color: #bb866a;
+  border-radius: 10px;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.ham_change .ham_bar1 {
+  background-color: white;
+  transform: rotate(-45deg) translate(-6px, 5px);
+}
+
+.ham_change .ham_bar2 {
+  opacity: 0;
+}
+
+.ham_change .ham_bar3 {
+  background-color: white;
+  transform: rotate(45deg) translate(-8px, -8px);
+}
+
+.ham_overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 10000;
+  top: 0;
+  right: 0;
+  background-color: #b48164;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+.ham_overlay .ham_overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin: 10px auto;
+}
+
+.ham_overlay .ham_wave {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  transform: rotate(180deg);
+  background: url("../images/hamburger/wave1.png");
+  background-size: 1280px 100px;
+}
+
+.ham_overlay .wave1 {
+  animation: animated 10s linear infinite;
+  z-index: 1000;
+  opacity: 0.6;
+}
+
+.ham_overlay .wave2 {
+  animation: animated2 8s linear infinite;
+  z-index: 999;
+  opacity: 0.8;
+  top: 10px;
+}
+
+.ham_overlay .wave3 {
+  animation: animated3 12s linear infinite;
+  z-index: 888;
+  opacity: 0.8;
+  top: 0px;
+}
+
+@keyframes animated {
+  0% {
+    background-position-x: 0px;
+  }
+  100% {
+    background-position-x: 1280px;
+  }
+}
+
+@keyframes animated2 {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: 1280px;
+  }
+}
+
+@keyframes animated3 {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: -1280px;
+  }
+}
+
+.ham_overlay .ham_select {
+  margin: 0 auto;
+  text-align: left;
+  width: 200px;
+  cursor: pointer;
+}
+
+.ham_overlay .ham_select a {
+  padding: 10px;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  display: block;
+  letter-spacing: 2px;
+  opacity: 0;
+  transition: all .5s;
+}
+
+.ham_overlay .ham_select a:hover {
+  color: #fad689;
+}
+
+.ham_overlay .ham_select a:hover:before {
+  background-color: #fad689;
+}
+
+.ham_overlay .ham_select a::before {
+  content: "\A";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 20px;
+  background-color: transparent;
+  transition: all .3s;
+}
+
+.yellow_ball {
+  content: "\A";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+  display: inline-block;
+  margin: 0 20px;
+  background-color: #fad689;
+  transition: all .3s;
+}
+/*# sourceMappingURL=hamburger.css.map */
