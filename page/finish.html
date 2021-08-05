@@ -87,11 +87,11 @@
 
         <p>訂單編號：<span>1234567890</span></p>
 
-        <p>姓名：<span class='finish_deliverName'>李安</span></p>
-        <p>手機：<span class='finish_deliverPhone'>0912345678</span></p>
-        <p>地址：<span class='finish_deliverAddress'>台北市內湖區民權東路六段</span></p>
-        <p>運送方式：<span class='finish_deliveryType'>門市自取</span></p>
-        <p>付款方式：<span class='finish_paymentType'>線上付款</span></p>
+        <p>姓名：<span class='finish_deliverName'>{{orderer_data.orderer_name}}</span></p>
+        <p>手機：<span class='finish_deliverPhone'>{{orderer_data.orderer_phone}}</span></p>
+        <p>地址：<span class='finish_deliverAddress'>{{orderer_data.orderer_address}}</span></p>
+        <p>運送方式：<span class='finish_deliveryType'>{{orderer_data.delivery_type}}</span></p>
+        <p>付款方式：<span class='finish_paymentType'>{{orderer_data.payment_type}}</span></p>
 
       </div>
 

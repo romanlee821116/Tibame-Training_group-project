@@ -96,57 +96,75 @@
               <!-- 姓名 -->
               <div class="OC_data">
                 <div>姓名：</div>
-                <input type="text" class='OC_deliverName' name="ordererName" value="李安" disabled>
+                <input type="text" class='OC_deliverName' name="ordererName" v-model="orderer_data.orderer_name" disabled>
               </div>
 
               <!-- 手機號碼 -->
               <div class="OC_data">
                 <div>手機：</div>
-                <input type="text" class='OC_deliverPhone' name="ordererPhone" value="0912345678" disabled>
+                <input type="text" class='OC_deliverPhone' name="ordererPhone" v-model="orderer_data.orderer_phone" disabled>
               </div>
 
               <!-- 地址 -->
               <div class="OC_data">
                 <div>地址：</div>
-                <input type="text" class='OC_deliverAddress' name="ordererAddress" value="台北市內湖區明權東路六段" disabled>
+                <input type="text" class='OC_deliverAddress' name="ordererAddress" v-model="orderer_data.orderer_address" disabled>
               </div>
 
               <!-- 運送方式 -->
               <div class="OC_transport">
                 <div>運送方式：</div>
-                <div>門市自取</div>
+                <div>{{orderer_data.delivery_type}}</div>
+              </div>
+
+              <!-- 選宅配才顯示 -->
+              <div class="OC_recipient">
+                <div class="OC_recipientTitle">收件人資訊</div>
+
+                <div class="OC_receiverData">
+                  <div>姓名：</div>
+                  <input type="text" class='OC_receiverName' v-model="delivery_data.delivery_name" name="receiverName" disabled>
+                </div>
+                <div class="OC_receiverData">
+                  <div>手機：</div>
+                  <input type="text" class='OC_receiverPhone' v-model="delivery_data.delivery_phone" name="receiverPhone" disabled>
+                </div>
+                <div class="OC_receiverData">
+                  <div>地址：</div>
+                  <input type="text" class='OC_receiverAddress' v-model="delivery_data.delivery_address" name="receiverAddress" disabled>
+                </div>              
               </div>
 
               <!-- 付款方式 -->
               <div class="OC_payMoney">
                 <div>付款方式：</div>
-                <div>信用卡付款</div>
+                <div>{{orderer_data.payment_type}}</div>
               </div>
 
-              <!-- 信用卡填寫 -->
+              <!-- 選信用卡才顯示 -->
               <div class="OC_credit">
 
                 <!-- 卡號 -->
                 <div class="OC_cardNumber OC_cardNumber1">
                   <div class="OC_00 OC_001">信用卡卡號：</div>
                   <div>
-                    <input type="text"  value="1234" disabled>-
-                    <input type="text"  value="5678" disabled>-
-                    <input type="text"  value="1234" disabled>-
-                    <input type="text"  value="5678" disabled>
+                    <input type="text"  v-model="card_data.cardNumber1" disabled>-
+                    <input type="text"  v-model="card_data.cardNumber2" disabled>-
+                    <input type="text"  v-model="card_data.cardNumber3" disabled>-
+                    <input type="text"  v-model="card_data.cardNumber4" disabled>
                   </div>
                 </div>
 
                 <!-- 有效期限 -->
                 <div class="OC_cardDate">
                   <div class="OC_01">卡片有效期限：</div>
-                  <div>25 / 12</div>
+                  <div>{{card_data.cardYear}} / {{card_data.cardMonth}}</div>
                 </div>
 
                 <!-- 認證碼 -->
                 <div class="OC_cardNumber">
                   <div class="OC_00">卡片認證碼：</div>
-                  <input type="text" value="123" disabled>
+                  <input type="text" v-model="card_data.cardCertification" disabled>
                 </div>
 
               </div>

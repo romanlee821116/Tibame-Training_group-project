@@ -266,8 +266,86 @@ body{
   font-weight: bold;
 }
 
+// ========== 收件人資料 ==========
+.OC_recipient{
+  border: solid 2px #d6ceca;
+  background-color: #ffffff;
+  border-radius: 5px;
+  padding: 15px;
+  width: 400px;
+  margin-left: 115px;
+  margin-bottom: 20px;
+}
 
-// ========== 信用卡填寫 ==========
+@media screen and (max-width: 768px){
+  .OC_recipient{
+    width: 350px;
+    margin-left: 65px;
+  }
+}
+
+@media screen and (max-width: 576px){
+  .OC_recipient{
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+.OC_recipientTitle{
+  // border: 1px solid blue;
+  margin: 0;
+  color: #172852;
+  font-weight: bold;
+  margin-right: 30px;
+}
+
+.OC_receiverData{
+  // border: 1px solid blue;
+  display: flex;
+  margin-top: 15px;
+}
+
+.OC_receiverData > div{
+  color: #172852;
+  font-weight: bold;
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (max-width: 576px){
+  .OC_receiverData > div{
+    display: none;
+  }
+}
+
+.OC_receiverData > input[type="text"]{
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  background-color:#f0ebe9;
+  width: 305px;
+  height: 35px;
+  padding: 15px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #172852;
+}
+
+@media screen and (max-width: 768px){
+  .OC_receiverData > input[type="text"]{
+    width: 250px;
+  }
+}
+
+@media screen and (max-width: 576px){
+  .OC_receiverData > input[type="text"]{
+    width: 100%;
+  }
+}
+
+
+// ========== 信用卡 ==========
 
 .OC_credit{
   // border: 1px solid red;

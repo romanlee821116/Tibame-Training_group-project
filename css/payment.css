@@ -1233,7 +1233,7 @@ input[type="radio"]:checked + label {
   align-items: center;
 }
 
-.payment_cardNumber input {
+.payment_enterCard, .payment_turn {
   background-color: #f0ebe9;
   border-radius: 5px;
   font-size: 14px;
@@ -1248,16 +1248,16 @@ input[type="radio"]:checked + label {
 }
 
 @media screen and (max-width: 576px) {
-  .payment_cardNumber input {
+  .payment_enterCard, .payment_turn {
     width: 70px;
   }
 }
 
-.payment_cardNumber > input:focus {
+.payment_enterCard:focus, .payment_turn:focus {
   border: 2px solid #172852;
 }
 
-.payment_cardDate select {
+.payment_year, .payment_month {
   border: none;
   border-radius: 5px;
   background-color: #f0ebe9;
