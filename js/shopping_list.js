@@ -124,17 +124,20 @@ $(document).ready(function() {
     });
 
 
-    // 購物車icon加數字
-    // let count = 0;
-    $(".product_add_cart").click(function() {
-        // $("#product_counter").html(count += 1).addClass("animated-count");
-    })
-
     //愛心點擊
     $('.product_heart').click(function() {
         $(this).toggleClass('product_heart_red');
-        $(this).toggleClass('product_heart');
-
+        if ($(this).hasClass("product_heart_red")) {
+            $('.product_reminder').text("成功加入收藏").fadeIn();
+            setTimeout(function() {
+                $('.product_reminder').fadeOut();
+            }, 1000);
+        } else {
+            $('.product_reminder').text("成功取消收藏").fadeIn();
+            setTimeout(function() {
+                $('.product_reminder').fadeOut();
+            }, 1000);
+        }
     });
     // 照片slider
     let index = 0;
