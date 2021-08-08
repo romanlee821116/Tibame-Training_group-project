@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=, initial-scale=1.0">
     <link rel="stylesheet" href="../css/login.css">
     <!-- fontawesome -->
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <script src='../js/login.js'></script>
     <title>會員登入 - 小春堂</title>
     <link rel="icon" href="../images/index/logo_footer.png">
 </head>
+
 <body>
     <div class='loginAll'>
         <div id="loginImg">
@@ -51,7 +54,7 @@
                 </div>
                 <!-- 登入註冊============================= -->
                 <div class="loginForm">
-                    <form id='loginFormPage' action="">
+                    <form id='loginFormPage' method='POST' action=''>
                         <div class='loginWrapper'>
                             <div id="loginArrow"></div>
                             <div class='loginErrorWrap'>
@@ -59,30 +62,32 @@
                                 <member-error></member-error>
                             </div>
                             <div class='loginErrorWrap'>
-                                <input id='loginPassword' class='psw loginWrong' name='password' type="password" placeholder="請輸入密碼"><i class="eye eye1 fas fa-eye"></i>
+                                <input id='loginPassword' class='psw loginWrong' name='password' type="password"
+                                    placeholder="請輸入密碼"><i class="eye eye1 fas fa-eye"></i>
                                 <member-error></member-error>
                             </div>
-                            <button class='loginButton loginBtn' type='submit'>
+                            <button class='loginButton loginBtn' type='submit' onclick='doLogin()'>
                                 登入
                             </button>
-                            
+
                             <div id='loginKeep'>
                                 <input type="checkbox" id='loginKeeplog'>
                                 <label for="loginKeeplog">保持登入</label>
                                 <span id='loginForgetPsw'>忘記密碼？</span>
                             </div>
                             <div class='loginErrorWrap'>
-                                <input id='loginPassword2' name='password' type="password" placeholder="請再次輸入密碼"><i class="eye eye2 fas fa-eye"></i>
+                                <input id='loginPassword2' name='password' type="password" placeholder="請再次輸入密碼"><i
+                                    class="eye eye2 fas fa-eye"></i>
                                 <member-error></member-error>
                             </div>
                             <div class='loginErrorWrap'>
                                 <div class='loginGender'>
-                                    <input name='loginGender' type="radio" id="loginMale" value='male'>
-                                    <label for="male">男性</label>
+                                    <input name='loginGender' type="radio" id="loginMale" value='man'>
+                                    <label for="loginMale">男性</label>
                                     <input name='loginGender' type="radio" id="loginFemale" value='female'>
-                                    <label for="female">女性</label>
+                                    <label for="loginFemale">女性</label>
                                     <input name='loginGender' type="radio" id="loginOther" value='other'>
-                                    <label for="other">第三性</label>
+                                    <label for="loginOther">第三性</label>
                                 </div>
                                 <member-error></member-error>
                             </div>
@@ -95,12 +100,12 @@
                                 <member-error></member-error>
                             </div>
                             <div class='loginErrorAddress loginErrorWrap'>
-                                <select class="loginSelect1" id="縣市1"></select>
-                                <select class="loginSelect2" id="鄉鎮市區1"></select>
+                                <select class="loginSelect1" id="縣市1" name='city'></select>
+                                <select class="loginSelect2" id="鄉鎮市區1" name='area'></select>
                                 <input id="loginAddress" type="text" name='address' placeholder="地址">
                                 <member-error></member-error>
                             </div>
-                            
+
 
                             <div class='loginCode'>
                                 <div class='loginErrorWrap'>
@@ -110,9 +115,11 @@
                                 <span class='loginC loginCodeNew'></span>
                                 <i class="fas fa-sync-alt loginRefresh"></i>
                             </div>
-                            <button class='loginSignupButton loginBtn' type='submit'>
+
+                            <button class='loginSignupButton loginBtn' type='button' onclick="doRegister()">
                                 註冊
                             </button>
+                            <!-- <input class='loginSignupButton loginBtn' type='submit' onclick="doRegister()" value='註冊' style='color: black'> -->
                         </div>
                     </form>
                 </div>
@@ -135,7 +142,7 @@
                                 <input class='loginCodeEnterForget' type="text" placeholder="請輸入右方數字">
                                 <member-error></member-error>
                             </div>
-                                
+
                             <span class='loginC loginCodeNewForget'></span>
                             <i class="fas fa-sync-alt loginRefresh"></i>
                         </div>
@@ -144,7 +151,7 @@
                         </button>
                         <div class='loginBack'>
                             <i class="fas fa-angle-left"></i>
-                            <span>返回登入</span>                       
+                            <span>返回登入</span>
                         </div>
                     </form>
                 </div>
@@ -152,35 +159,229 @@
         </div>
     </div>
     <!-- 彈出跳窗 -->
-    <div class='loginpopBG'> 
+    <div class='loginpopBG'>
         <div class="type2">
-                <img src="../images/login/send_password.png" alt="">
-                <h2>新密碼已寄出</h2>
-                <p>系統已發送新密碼至您的指定信箱</p>
-                <div>
-                    <a href="#" class='mainBtn loginSendPSWclose'>返回</a>
-                </div>
+            <img src="../images/login/send_password.png" alt="">
+            <h2>新密碼已寄出</h2>
+            <p>系統已發送新密碼至您的指定信箱</p>
+            <div>
+                <a href="#" class='mainBtn loginSendPSWclose'>返回</a>
+            </div>
         </div>
     </div>
     <!-- 跳窗結束 -->
-
-
-    <script src='../js/login.js'></script>
     <script>
-        // Vue.component('member-error',{
-        //     template:`
-        //     <div class="loginError">
-        //         <p>資料格式不正確</p>
-        //         <div></div>
-        //     </div>
-        //     `,
-        // }),
+        function doRegister() { 
+            let isSignupOK = [];// 註冊成功的判別  
+            // 清空重來
+            $('.loginError').css('display', 'none');
+            $('.loginError').children('p').text('資料格式不正確');
+            $('.loginAll input').css('border', '2px solid transparent');
+            $('.loginAll select').css('border', '2px solid transparent');
+            // 設定變數
+            let account = $('.loginAccount').val();
+            let password = $('#loginPassword').val();
+            let password2 = $('#loginPassword2').val();
+            // 性別x3
+            let malecheck = $('#loginMale').is(":checked");
+            let femalecheck = $('#loginFemale').is(":checked");
+            let othercheck = $('#loginOther').is(":checked");
 
-        // new Vue({
-        //     el: '.loginAll',
-        // })
+            let name = $('#loginName').val();
+            let phone = $('#loginPhone').val();
+            // 地址x3
+            let address1 = $('.loginSelect1').val();
+            let address2 = $('.loginSelect2').val();
+            let address3 = $('#loginAddress').val();
 
+            // 亂數碼
+            let code = $('.loginCodeEnter').val();
+            let codeRight = $('.loginCodeNew').text().substr(0, 4);
+
+            // 正規表示法
+            // email格式
+            let mailRight = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+            // 密碼格式
+            let passwordRight = /^.{8,16}$/;
+            // 程式開始----------------------------
+            if (account == "") {
+                // e.preventDefault();
+                $('.loginAccount').css('border', '2px solid #dc3838');
+                $('.loginAccount').next().css('display', 'inline-block');
+                $('.loginAccount').next().children('p').text('請輸入資訊');
+                $('.loginAccount').addClass('loginFalse');    //給登入註冊切換判斷
+            } else if (!mailRight.test(account)) {
+                // e.preventDefault();
+                $('.loginAccount').css('border', '2px solid #dc3838');
+                $('.loginAccount').next().css('display', 'inline-block');
+                $('.loginAccount').addClass('loginFalse');    //給登入註冊切換判斷
+            } else {
+                $('.loginAccount').removeClass('loginFalse');    //給登入註冊切換判斷
+                isSignupOK.push('signupOK');
+            }
+
+            if (password == "") {
+                // e.preventDefault();
+                $('#loginPassword').css('border', '2px solid #dc3838');
+                $('#loginPassword').next().next().css('display', 'inline-block');
+                $('#loginPassword').next().next().children('p').text('請輸入資訊');
+                $('#loginPassword').addClass('loginFalse');    //給登入註冊切換判斷
+            } else if (!passwordRight.test(password)) {
+                // e.preventDefault();
+                $('#loginPassword').css('border', '2px solid #dc3838');
+                $('#loginPassword').next().next().css('display', 'inline-block');
+                $('#loginPassword').addClass('loginFalse');    //給登入註冊切換判斷
+            } else {
+                isSignupOK.push('signupOK');
+                $('#loginPassword').removeClass('loginFalse');    //給登入註冊切換判斷
+            }
+
+            if (password2 == "") {
+                // e.preventDefault();
+                $('#loginPassword2').css('border', '2px solid #dc3838');
+                $('#loginPassword2').next().next().css('display', 'inline-block');
+                $('#loginPassword2').next().next().children('p').text('請輸入資訊');
+            } else if (password2 != password) {
+                // e.preventDefault();
+                $('#loginPassword2').css('border', '2px solid #dc3838');
+                $('#loginPassword2').next().next().css('display', 'inline-block');
+                $('#loginPassword2').next().next().children('p').text('兩次輸入密碼不同');
+            } else {
+                isSignupOK.push('signupOK');
+            }
+
+            if (malecheck == false && femalecheck == false && othercheck == false) {
+                // e.preventDefault();
+                $('.loginGender').next().css('display', 'inline-block');
+                $('.loginGender').next().children('p').text('請選擇性別');
+            } else {
+                isSignupOK.push('signupOK');
+            }
+
+            if (name == "") {
+                // e.preventDefault();
+                $('#loginName').css('border', '2px solid #dc3838');
+                $('#loginName').next().css('display', 'inline-block');
+                $('#loginName').next().children('p').text('請輸入資訊');
+            } else {
+                isSignupOK.push('signupOK');
+            }
+
+            if (phone == "") {
+                // e.preventDefault();
+                $('#loginPhone').css('border', '2px solid #dc3838');
+                $('#loginPhone').next().css('display', 'inline-block');
+                $('#loginPhone').next().children('p').text('請輸入資訊');
+            } else {
+                isSignupOK.push('signupOK');
+            }
+
+            if (address1 == false || address2 == false || address3 == false) {
+                // e.preventDefault();
+                $('#loginAddress').css('border', '2px solid #dc3838');
+                $('.loginSelect1').css('border', '2px solid #dc3838');
+                $('.loginSelect2').css('border', '2px solid #dc3838');
+                $('#loginAddress').next().css('display', 'inline-block');
+                $('#loginAddress').next().children('p').text('地址請填寫完全');
+            } else {
+                isSignupOK.push('signupOK');
+            }
+
+            // 輸入數字
+            if (code == "") {
+                // e.preventDefault();
+                $('.loginCodeEnter').css('border', '2px solid #dc3838');
+                $('.loginCodeEnter').next().css('display', 'inline-block');
+                $('.loginCodeEnter').next().children('p').text('請輸入資訊');
+            } else if (code != codeRight) {
+                // e.preventDefault();
+                // console.log(code);
+                $('.loginCodeEnter').css('border', '2px solid #dc3838');
+                $('.loginCodeEnter').next().css('display', 'inline-block');
+                $('.loginCodeEnter').next().children('p').text('驗證碼錯誤');
+            } else {
+                isSignupOK.push('signupOK');
+            };
+
+            //全部欄位判定成功
+            if (isSignupOK.length == 8) {
+                let gender = $('.loginGender input[type="radio"]:checked + label').text();
+                if(gender =='男性'){
+                    gender = '男';
+                }else if(gender = '女性'){
+                    gender = '女';
+                }else{
+                    gender = '第三性';
+                };
+
+                $('#loginFormPage').attr('action','../php/register.php');
+                $.ajax({
+                    method: 'POST',
+                    url: '../php/register.php',
+                    data: {
+                        account : $('.loginAccount').val(),
+                        password: $('.psw').val(),
+                        name: $('#loginName').val(),
+                        gender: gender,
+                        phone: $('#loginPhone').val(),
+                        city: $('.loginSelect1').val(),
+                        area: $('.loginSelect2').val(),
+                        address: $('#loginAddress').val(),
+                    },
+                    dataType: 'text',
+                    success: function (data) {
+                        if(data == '1'){
+                            $('.type2 > h2').text('註冊成功');
+                            $('.type2 > p').text('請重新登入');
+                            $('.loginSendPSWclose').text('前往');
+                            $('.loginSendPSWclose').attr('href','login.html')
+                            $('.loginpopBG').show();
+                            // location.href = '../page/login.html';
+                        }else{
+                            $('.type2 > h2').text('註冊失敗');
+                            $('.type2 > p').text('此帳號已被使用，請重新註冊');
+                            $('.loginSendPSWclose').attr('href','login.html')
+                            $('.loginpopBG').show();
+                        }
+                        
+                    },
+                    error: function (exception) {
+                        alert("數據載入失敗: " + exception.status);
+                    }
+                })
+            }
+        };
     </script>
-    
+    <script>
+        function doLogin(){
+            $.ajax({
+                method: 'POST',
+                url: '../php/login.php',
+                data: {
+                    account : $('.loginAccount').val(),
+                    password: $('.psw').val(),
+                },
+                dataType: 'text',
+                success: function (data) {
+                    if(data == '1'){
+                        $('.type2 > h2').text('登入成功');
+                        $('.type2 > p').text('前往會員中心');
+                        $('.loginSendPSWclose').attr('href','member.html')
+                        $('.loginpopBG').show();
+                    }else{
+                        $('.type2 > h2').text('登入失敗');
+                        $('.type2 > p').text('帳號或密碼錯誤');
+                        $('.loginSendPSWclose').attr('href','login.html')
+                        $('.loginpopBG').show();
+                    }           
+                },
+                error: function (exception) {
+                    alert("數據載入失敗: " + exception.status);
+                }
+            })
+        }
+    </script>
+
 </body>
+
 </html>

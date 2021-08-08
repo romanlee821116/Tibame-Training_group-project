@@ -317,7 +317,8 @@ $(function(){
       'deliver_phone':'',
       'deliver_address':'',
       'delivery_type': 0,
-      'payment_type':0
+      'payment_type':0,
+      'order_number':0,
     };
     let payment_name = $('.payment_data:nth-child(1) input').val();
     let payment_phone = $('.payment_data:nth-child(2) input').val();
@@ -336,7 +337,7 @@ $(function(){
     order_detail.delivery_type = delivery_type;
     order_detail.payment_type = payment_type;
 
-    if($('.payment_choose').length ==1){
+    if($('.payment_receiverName').text() !=''){
       order_detail.deliver_name = delivery_name;
       order_detail.deliver_phone = delivery_phone;
       order_detail.deliver_address = delivery_address;

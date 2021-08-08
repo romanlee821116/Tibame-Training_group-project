@@ -5,6 +5,7 @@
 *{
     font-family: '微軟正黑體';
     box-sizing: border-box;   //請留著，他吃不到scss QQ
+    text-decoration: none;
 }
 .memberShow{
     padding: 0;
@@ -39,8 +40,8 @@
 }
 
 /* 滑動效果 */
-.loginLeft, .forgetPWD, #loginIcon, #signupIcon,.loginWrapper, #loginArrow, .loginGender, .loginCode, .loginButton, .loginUnderline, span, .loginChoosenBar{
-    transition: all .8s cubic-bezier(.6,0,.4,1); 
+.loginLeft, .forgetPWD, #loginIcon, #signupIcon,.loginWrapper, #loginArrow, .loginGender, .loginCode, .loginUnderline, span, .loginChoosenBar{
+    transition: .8s cubic-bezier(.6,0,.4,1); 
 }
 
 /* 左邊圖片 */
@@ -365,11 +366,19 @@ input{
     background-color:#172852;
     color: #f0ebe9;
     border: none;
-
     height: 35px;
     // overflow: hidden;
     cursor: pointer;
+    &:hover{
+        background-color: $lightBlue;
+    }
 }
+.loginBtn{
+    &:hover{
+        background-color: $lightBlue;
+    }
+}
+
 
 // .loginButton span{
 //     display: block;
@@ -460,6 +469,7 @@ input{
 // ---------- 忘記密碼送出彈窗 ------------
 .loginpopBG{
 	@include popUpBg();
+    display: none;
 }
 .type2{
 	@include popUp_oneBtn();
@@ -467,6 +477,7 @@ input{
     // top: 15%;
     .mainBtn{
         @include btn(); //按鈕樣式
+        text-decoration: none;
     }
 }
 

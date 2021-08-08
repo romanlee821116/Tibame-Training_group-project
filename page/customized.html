@@ -14,12 +14,12 @@
 
     <script src="https://kit.fontawesome.com/8c3a8ab95b.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
     <script src="../js/jquery-ui.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js" integrity="sha512-0bEtK0USNd96MnO4XhH8jhv3nyRF0eK87pJke6pkYf3cM0uDIhNJy9ltuzqgypoIFXw3JSuiy04tVk4AjpZdZw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- <script src="../js/navbar.js"></script> -->
     <script src="../js/customized.js"></script>
     <script src="../js/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" referrerpolicy="no-referrer"></script>
     <script src="../js/cart_vue.js"></script>
     <script src="../js/hamburger.js"></script>
 
@@ -118,9 +118,9 @@
                             <div class="cart_customizationItem">
                                 <div class="cart_itemCB" :class="{'cart_choose': item.status}" @click="choose(item)">
                                     <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check fa-w-16" role="img" viewBox="0 0 512 512">
-                        <path fill="#ffffff"
-                        d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z" />
-                    </svg>
+                                    <path fill="#ffffff"
+                                    d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z" />
+                                    </svg>
                                 </div>
 
                                 <div class="cart_itemImg">
@@ -219,8 +219,8 @@
                 </div>
             </div>
             <div class="cus_step1-box">
-                <div v-for='box in boxImg' class='cus_box_container'>
-                    <img :src="box.src" alt="" :class='box.class'>
+                <div v-for='(box, index) in boxImg' class='cus_box_container'>
+                    <img :src="box.src" alt="" :class='box.class' @click.prevent='checkBox(index)'>
                     <p>{{box.txt}}</p>
                     <p>{{box.price}}</p>
                 </div>
@@ -290,13 +290,13 @@
             <!--  商品列表  -->
             <div class="cus_product_contianer">
                 <!--商品 -->
-                <div :class='item.class' v-for='item in cus_item' :data-itemType='item.type'>
+                <div :class='item.class' v-for='(item, index) in cus_item' :data-itemType='item.product_class' class='cus-item' @mouseover='mouseover(index)' @mouseleave='mouseleave(index)'>
                     <div class='cus_item_img'>
-                        <img :src="item.img" :data-id='item.id'>
+                        <img :src="item.product_image_customize" :data-id='item.product_list'>
                     </div>
                     <div class='cus_item_txt'>
-                        <p>{{item.txt}}</p>
-                        <a href="#" class='cus_add'><i class="fas fa-plus"></i></a>
+                        <p>{{item.product_name}}</p>
+                        <a href="#" class='cus_add'><i class="fas fa-plus" @click.prevent='addItem(index)'></i></a>
                     </div>
                 </div>
             </div>
@@ -313,7 +313,13 @@
             <div class='cus_giftbox'></div>
             <!-- 袋子或卡片 -->
             <div class='cus_bag_card' id='dragbasic'>
-                <img v-for='img in bagCard' :src="img.src" :class='img.class' :data-cardId='img.id'>
+                <!-- <img v-for='img in bagCard' :src="img.cardimage" :class='img.class' :data-cardId='img.cardimage_id' class='choose-card'> -->
+
+                <img src="" data-cardId='' class='choose-card card2'>
+                <img src="" data-cardId='' class='choose-card card3'>
+                <img src="" data-cardId='' class='choose-card card1'>
+
+                <img src="../images/customized/bag.png" class='choose-bag' data-cardId='0'>
                 <pre>{{message}}</pre>
             </div>
 
@@ -325,7 +331,7 @@
                 </form>
                 <div class="custom_card_iconList">
                     <div v-for='icon in iconList'>
-                        <img :src="icon.src" :data-icon='icon.id' class='custom_card_icon'>
+                        <img :src="icon.cardimage" :data-icon='icon.cardimage_id' class='custom_card_icon'>
                     </div>
                 </div>
             </div>

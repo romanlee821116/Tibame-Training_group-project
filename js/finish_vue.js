@@ -93,10 +93,12 @@ $(document).ready(function(){
   let OC_address = info['deliver_address'];
   let OC_shippingType = info['delivery_type'];
   let OC_paymentType = info['payment_type'];
+  let OC_orderNumber = info['order_number'];
 
   $('.finish_deliverName').text(OC_name);
   $('.finish_deliverPhone').text(OC_phone);
   $('.finish_deliverAddress').text(OC_address);
   $('.finish_deliveryType').text(OC_shippingType);
   $('.finish_paymentType').text(OC_paymentType);
+  $('.finish_orderNumber').text(OC_orderNumber);
 })

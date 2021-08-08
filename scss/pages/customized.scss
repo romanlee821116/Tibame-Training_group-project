@@ -263,7 +263,7 @@ body {
             display: none;
         }
     }
-    z-index: 999;
+    z-index: 850;
 }
 
 .custom_btn_p1Next {
@@ -271,7 +271,7 @@ body {
     bottom: 0;
     right: 0;
     display: none;
-    z-index: 999;
+    z-index: 850;
 }
 
 .custom_gridBox {
@@ -632,7 +632,7 @@ body {
         display: flex;
         display: none;
         justify-content: space-between;
-        z-index: 999;
+        z-index: 850;
     }
     //客製禮卡需不需要按鈕
     .cus_giftcard_btn {
@@ -644,7 +644,7 @@ body {
         display: flex;
         display: none;
         justify-content: space-between;
-        z-index: 999;
+        z-index: 850;
         a {
             display: block;
             margin: 0 15%;
@@ -748,7 +748,7 @@ body {
         display: flex;
         display: none;
         justify-content: space-between;
-        z-index: 999;
+        z-index: 850;
     }
     //選擇的那張卡片
     .choosenCard {
@@ -803,7 +803,7 @@ body {
             width: auto;
             height: 100%;
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-columns: 70px 70px 70px;
             grid-template-rows: 70px 70px 70px 70px;
             gap: 10px;
             padding: 10px;
@@ -812,7 +812,7 @@ body {
             z-index: 5;
             padding: 30px 0 0 40px;
             img {
-                width: auto;
+                width: 100%;
                 height: 100%;
                 background-color: transparent;
                 border-radius: 10px;
@@ -846,7 +846,7 @@ body {
         // display: flex;
         display: none;
         justify-content: space-between;   
-        z-index: 999;     
+        z-index: 850;     
     }
     .cus-cardIcon-btn {
         width: 100%;
@@ -856,7 +856,7 @@ body {
         transform: translateX(-50%);
         display: none;
         justify-content: space-between;   
-        z-index: 999;     
+        z-index: 850;     
     }
     .custom_card_IconOnCard {
         width: 60px;
@@ -866,9 +866,11 @@ body {
         bottom: 10px;
         z-index: 10;
         cursor: pointer;
+        border-radius: 10px;
+        overflow: hidden;
         img {
             width: 100%;
-            height: auto;
+            height: 100%;
         }
         @include rwd(575px) {
             width: 40px;
@@ -884,7 +886,7 @@ body {
         transform: translateX(-50%);
         display: none;
         justify-content: space-between;   
-        z-index: 999;  
+        z-index: 850;  
         .cus_cardConfirm_nextstep{
             &::before{
                 content: '添加到購物車';

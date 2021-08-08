@@ -1,7 +1,7 @@
 $(document).ready(function(){
     getRandom();        //驗證碼亂數
     $('.eye2').hide();  //開眼睛看密碼
-    $('.loginpopBG').hide();   //送出密碼彈窗關閉
+    // $('.loginpopBG').hide();   //送出密碼彈窗關閉
 
     // =============== vue ===============
     Vue.component('member-error',{
@@ -103,28 +103,6 @@ $(document).ready(function(){
             $(this).prev().attr('type','text');
         };
     });
-    
-    // 嘗試寫點擊網頁頁面，就把開眼睛看密碼關掉
-    // $(document).click(function(){
-    //     if( $('.eye').prev().attr('type') == 'text'){
-    //         $('.eye').prev().attr('type','password');
-    //     }
-    // });
-
-    // $('body').on('click', function(){
-    //     console.log($(this));
-    //     if($(this).hasClass('eye')){
-    //         console.log('abc');
-    //         let input_type = $(this).prev().attr('type');
-    //         if(input_type=='password'){
-    //             $(this).prev().attr('type','text');
-    //         };
-    //     }else{
-    //         console.log('QQ');
-    //         $('.eye').prev().attr('type', 'text');
-    //     };
-    // });
-
 
     // 驗證碼亂數================================   
     function getRandom(){
@@ -151,7 +129,6 @@ $(document).ready(function(){
     // ================ 表單錯誤資訊反饋 ==================
     // 沒輸入按送出會跳出提示框
     $('.loginBtn').click(function(e){
-        let isSignupOK = [];// 註冊成功的判別
         
         // ----------------------------------
         // 清空重來
@@ -200,8 +177,7 @@ $(document).ready(function(){
             $('.loginAccount').next().css('display','inline-block');
             $('.loginAccount').addClass('loginFalse');    //給登入註冊切換判斷
         }else{
-            $('.loginAccount').removeClass('loginFalse');    //給登入註冊切換判斷
-            isSignupOK.push('signupOK');
+            $('.loginAccount').removeClass('loginFalse');    //給登入註冊切換判斷            
         }
 
         if(password == ""){
@@ -216,7 +192,6 @@ $(document).ready(function(){
             $('#loginPassword').next().next().css('display','inline-block');
             $('#loginPassword').addClass('loginFalse');    //給登入註冊切換判斷
         }else{
-            isSignupOK.push('signupOK');
             $('#loginPassword').removeClass('loginFalse');    //給登入註冊切換判斷
         }
 
@@ -230,33 +205,27 @@ $(document).ready(function(){
             $('#loginPassword2').css('border','2px solid #dc3838');
             $('#loginPassword2').next().next().css('display','inline-block');
             $('#loginPassword2').next().next().children('p').text('兩次輸入密碼不同');
-        }else{
-            isSignupOK.push('signupOK');
-        }
+        };
 
         if(malecheck == false && femalecheck == false && othercheck == false){
             e.preventDefault();
             $('.loginGender').next().css('display','inline-block');
             $('.loginGender').next().children('p').text('請選擇性別');
-        }
+        };
 
         if(name == ""){
             e.preventDefault();
             $('#loginName').css('border','2px solid #dc3838');
             $('#loginName').next().css('display','inline-block');
             $('#loginName').next().children('p').text('請輸入資訊');
-        }else{
-            isSignupOK.push('signupOK');
-        }
+        };
 
         if(phone == ""){
             e.preventDefault();
             $('#loginPhone').css('border','2px solid #dc3838');
             $('#loginPhone').next().css('display','inline-block');
             $('#loginPhone').next().children('p').text('請輸入資訊');
-        }else{
-            isSignupOK.push('signupOK');
-        }
+        };
 
         if(address1 == false || address2 == false || address3 == false){
             e.preventDefault();
@@ -265,9 +234,7 @@ $(document).ready(function(){
             $('.loginSelect2').css('border','2px solid #dc3838');
             $('#loginAddress').next().css('display','inline-block');
             $('#loginAddress').next().children('p').text('地址請填寫完全');
-        }else{
-            isSignupOK.push('signupOK');
-        }
+        };
 
         // 輸入數字
         if(code == ""){
@@ -281,15 +248,11 @@ $(document).ready(function(){
             $('.loginCodeEnter').css('border','2px solid #dc3838');
             $('.loginCodeEnter').next().css('display','inline-block');
             $('.loginCodeEnter').next().children('p').text('驗證碼錯誤');
-        }else{
-            isSignupOK.push('signupOK');
         };
 
-        //全部欄位判定成功
-        // console.log(isSignupOK.length);
-
         // 登入成功
-        // if( $('.loginButton').hasClass('loginButton') ){
+        // if( $('.loginBtn').hasClass('loginButton') ){
+        //     alert('登入成功');
         //     // 做登入註冊/會員中心判斷--------
         //     if( !$('.loginAccount').hasClass('loginFalse') && !$('#loginPassword').hasClass('loginFalse')){
         //         $(this).addClass('loginOK');
@@ -308,13 +271,12 @@ $(document).ready(function(){
         //         $('.nav_logOut').fadeIn();
         //         $('.mavbar-icon .fas .fa-user').css('color','#f7c242');
         //     }
-
         // };
 
-        // 註冊成功
-        if( $('.loginBtn').hasClass('loginSignupButton') ){
-            console.log('welcome');
-        };
+        // // 註冊成功
+        // if( $('.loginBtn').hasClass('loginSignupButton') ){
+        //     console.log('welcome');
+        // };
 
 
         
@@ -323,7 +285,7 @@ $(document).ready(function(){
     // 所有input欄位點擊focus時，提示消失
     $('.loginAll input').focus(function(){
         if( $(this).attr('type') == 'radio' ){
-            console.log( $(this).attr('name'));
+            // console.log( $(this).attr('name'));
             $(this).parent().next().css('display','none');
         }else if( $(this).attr('name') == 'password' ){
             $(this).next().next().css('display','none');
