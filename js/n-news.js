@@ -139,13 +139,19 @@ Vue.component('news-add', {
 });
 
 
-new Vue({
+var appVue = new Vue({
     el: '#app',
     data:{
         dbcheck:false,
         new_edit:false,
 
-        img_names:['右上圖', '主圖', '圖片01', '圖片02', '圖片03'],
+        img_names:[ 
+            {name:'右上', src:''},
+            {name:'主題', src:''},
+            {name:'圖片01', src:''},
+            {name:'圖片02', src:''},
+            {name:'圖片03', src:''},
+        ],
 
         news_number:'',
         on_off_list:['下架', '上架'],
@@ -169,54 +175,38 @@ new Vue({
         ],
         titles: ['文章編號', '上架日期', '文章分類', '標題', '上下架', '最後更新日期', ''],
         newss:[
+            // {
+            //     'news_id':'1234567890',
+            //     'create_date':'2021/01/01',
+            //     'news_class':0,
+            //     'news_title1':'新品上市新品上市新品上市新品上市新品上市',
+            //     'news_title2':'2新品上市新品上市新品上市新品上市新品上市',
+            //     'news_status':0,
+            //     'news_update':'2021/03/01 16:16',
+            //     'news_content1':'這就是內文',
+            //     'news_content2':'2這就是內文',
+            //     'news_image_right':'',
+            //     'news_image_main':'',
+            //     'news_image1':'',
+            //     'news_image2':'',
+            //     'news_image3':''
+            // },
             {
-                'news_id':'1234567890',
-                'create_date':'2021/01/01',
-                'news_class':0,
-                'news_title1':'新品上市新品上市新品上市新品上市新品上市',
-                'news_title2':'2新品上市新品上市新品上市新品上市新品上市',
-                'news_status':0,
-                'news_update':'2021/03/01 16:16',
-                'news_content1':'這就是內文',
-                'news_content2':'2這就是內文',
+                'news_id':'',
+                'create_date':'',
+                'news_class':'',
+                'news_title1':'',
+                'news_title2':'',
+                'news_status':'',
+                'news_update':'',
+                'news_content1':'',
+                'news_content2':'',
                 'news_image_right':'',
                 'news_image_main':'',
                 'news_image1':'',
                 'news_image2':'',
                 'news_image3':''
-            },
-            {
-                'news_id':'1234567890',
-                'create_date':'2021/01/01',
-                'news_class':0,
-                'news_title1':'新品上市新品上市新品上市新品上市新品上市新品上市新品上市新品上市新品上市新品上市',
-                'news_title2':'2新品上市新品上市新品上市新品上市新品上市',
-                'news_status':0,
-                'news_update':'2021/03/01 16:16',
-                'news_content1':'這就是內文',
-                'news_content2':'2這就是內文',
-                'news_image_right':'',
-                'news_image_main':'',
-                'news_image1':'',
-                'news_image2':'',
-                'news_image3':''
-            },
-            {
-                'news_id':'1234567890',
-                'create_date':'2021/01/01',
-                'news_class':0,
-                'news_title1':'新品上市新品上市新品上市新品上市新品上市',
-                'news_title2':'2新品上市新品上市新品上市新品上市新品上市',
-                'news_status':0,
-                'news_update':'2021/03/01 16:16',
-                'news_content1':'這就是內文',
-                'news_content2':'2這就是內文',
-                'news_image_right':'',
-                'news_image_main':'',
-                'news_image1':'',
-                'news_image2':'',
-                'news_image3':''
-            }
+            }            
         ],
         pages:[
             {page:"<", url: "#"},
@@ -229,7 +219,11 @@ new Vue({
             {page:"20", url: "#"},
             {page:">", url: "#"},
         ],
+        nowpage:1,
         current_edit:null,
+    },
+    created:function(){
+        this.showNdata(1);
     },
 
     methods: {
@@ -242,6 +236,13 @@ new Vue({
             this.n_sec_title = this.newss[index].news_title2;
             this.n_main_content = this.newss[index].news_content1;
             this.n_sec_content = this.newss[index].news_content2;
+
+            this.img_names[0]['src'] = '../images/news/'+ this.newss[index].news_image_right;
+            this.img_names[1]['src'] = '../images/news/'+ this.newss[index].news_image_main;
+            this.img_names[2]['src'] = '../images/news/'+ this.newss[index].news_image1;
+            this.img_names[3]['src'] = '../images/news/'+ this.newss[index].news_image2;
+            this.img_names[4]['src'] = '../images/news/'+ this.newss[index].news_image3;
+
         },
 
         n_close(){       
@@ -355,7 +356,29 @@ new Vue({
         },
         log_out(){
             location.href = "./n-login.html"
-        }
+        },
+        
+        showNdata(gopage){
+            console.log(gopage);
+            if(isNaN(gopage)) return;
+            this.nowpage = gopage;
+
+            $.ajax({
+                method: "POST",
+                url: "../php/getNewsData.php",
+                data:{ 
+                    page : gopage,
+                },            
+                dataType: "json",
+                success: function (response) {
+                    appVue.pages = response[0];
+                    appVue.newss = response[1];
+                },
+                error: function(exception) {
+                    alert("發生錯誤: " + exception.status);
+                },
+            });
+        },
         
         
     },

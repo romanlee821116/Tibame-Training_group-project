@@ -3,58 +3,15 @@ $(document).ready(function(){
     el: '#finish_app',
     data: {
       // 單項商品
-      itemList:[
-        // {
-        //   id: 'item_1',
-        //   itemName: '南投銅鑼燒',
-        //   img: '../images/cart/banner_matcha_item.png',
-        //   price: 480,
-        //   item_Quantity: '6',
-        //   quantity: 1,
-        //   status: false,
-        // },
-        // {
-        //   id: 'item_2',
-        //   itemName: '苗栗大福草莓',
-        //   img: '../images/cart/banner_strawberry_item.png',
-        //   price: 480,
-        //   item_Quantity: '6',
-        //   quantity: 1,
-        //   status: false,
-        // },
-        // {
-        //   id: 'item_3',
-        //   itemName: '南投銅鑼燒',
-        //   img: '../images/cart/banner_matcha_item.png',
-        //   price: 480,
-        //   item_Quantity: '6',
-        //   quantity: 1,
-        //   status: false,
-        // },
-      ],
+      itemList:[],
       // 禮盒
-      customization: [
-        // {
-        //   id: 'customization_1',
-        //   itemName: '四格小資組合',
-        //   img: '../images/cart/customized_box.png',
-        //   price: 480,
-        //   quantity: 1,
-        //   detail: ['草莓大福(1入)', '抹茶大福(1入)', '柳橙大福(1入)', '巧克力大福(1入)'],
-        //   detail_Quantity: ['1', '1', '1', '1'],
-        //   status: false,
-        // },
-        // {
-        //   id: 'customization_2',
-        //   itemName: '四格小資組合',
-        //   img: '../images/cart/customized_box.png',
-        //   price: 480,
-        //   quantity: 1,
-        //   detail: ['草莓大福(1入)', '柳橙大福(1入)', '巧克力大福(1入)'],
-        //   detail_Quantity: ['2', '1', '1'],
-        //   status: false,
-        // },
-      ],
+      customization: [],
+      // 個人資料
+      orderer_data: [],
+      // 收件人資料
+      delivery_data: [],
+      // 卡片資料
+      card_data: [],
       discount: 0,
       shipping: 0,
       total_price: 0,
@@ -76,29 +33,49 @@ $(document).ready(function(){
         this.itemPrice = localStorage.subtotal;
         this.total_price = localStorage.total;
       };
+
+      // 訂購人資訊
+      if(localStorage.orderer_data){
+        let data = JSON.parse(localStorage.orderer_data)
+        this.orderer_data = data;
+      };
+
+      // 收件人資訊
+      if(localStorage.delivery_data){
+        let data = JSON.parse(localStorage.delivery_data)
+        this.delivery_data = data;
+      };
+      
+      // 卡片
+      if(localStorage.card_data){
+        let data = JSON.parse(localStorage.card_data)
+        this.card_data = data;
+      };
+
       // 折扣    
       this.discount = localStorage.discount;
 
       // 運費
       this.shipping = localStorage.shipping;
+
+      // 清空
+      localStorage.clear()
     },
   })
 })
 
 //jquery
-$(document).ready(function(){
-  let info = JSON.parse(localStorage.getItem('info'))
-  let OC_name = info['deliver_name'];
-  let OC_phone = info['deliver_phone'];
-  let OC_address = info['deliver_address'];
-  let OC_shippingType = info['delivery_type'];
-  let OC_paymentType = info['payment_type'];
-  let OC_orderNumber = info['order_number'];
+// $(document).ready(function(){
+//   let info = JSON.parse(localStorage.getItem('info'))
+//   let OC_name = info['deliver_name'];
+//   let OC_phone = info['deliver_phone'];
+//   let OC_address = info['deliver_address'];
+//   let OC_shippingType = info['delivery_type'];
+//   let OC_paymentType = info['payment_type'];
 
-  $('.finish_deliverName').text(OC_name);
-  $('.finish_deliverPhone').text(OC_phone);
-  $('.finish_deliverAddress').text(OC_address);
-  $('.finish_deliveryType').text(OC_shippingType);
-  $('.finish_paymentType').text(OC_paymentType);
-  $('.finish_orderNumber').text(OC_orderNumber);
-})
+//   $('.finish_deliverName').text(OC_name);
+//   $('.finish_deliverPhone').text(OC_phone);
+//   $('.finish_deliverAddress').text(OC_address);
+//   $('.finish_deliveryType').text(OC_shippingType);
+//   $('.finish_paymentType').text(OC_paymentType);
+// })

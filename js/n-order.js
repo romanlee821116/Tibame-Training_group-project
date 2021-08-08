@@ -21,12 +21,12 @@ Vue.component('double-check', {
     },
 });
 
-new Vue({
+var appVue = new Vue({
     el: '#app',
     data:{
         dbcheck:false,
         order_number: '',
-        pay_list:['未付款','已付款','付款失敗','退款中','已還款'],
+        pay_list:['未付款','已付款','付款失敗','退款中','已退款'],
         form_list:['處理中', '已確認', '已完成', '已取消'],
         ship_list:['待出貨', '已出貨', '已送達', '已取貨', '已退貨'],
 
@@ -41,57 +41,42 @@ new Vue({
         ],
         titles: ['編號', '訂單編號', '帳號', '付款狀態', '訂單狀態', '貨運狀態', '訂購日期', '', ],
         orders:[
+            // {
+            //     'order_id':'001',
+            //     'order_list':'1321344fff',
+            //     'account':'Harukadou@gmail.com',
+            //     'payment_status':0,
+            //     'order_status':2,
+            //     'shipping_status':3,
+            //     'order_date':'2021/01/01',
+            //     'receiver_name':'員姓名',
+            //     'receiver_phone':'32242424',
+            //     'shipping_address':'N/A',
+            //     'shipping_type':'宅配服務',
+            //     'store':'N/A',
+            //     'payment':'線上付款',
+            //     'shipping_fee':60,
+            //     'discount_id':'edr100'                        
+            // },
             {
-                'order_id':'001',
-                'order_list':'1321344fff',
-                'account':'Harukadou@gmail.com',
-                'payment_status':0,
-                'order_status':2,
-                'shipping_status':3,
-                'order_date':'2021/01/01',
-                'receiver_name':'員姓名',
-                'receiver_phone':'32242424',
-                'shipping_address':'N/A',
-                'shipping_type':'宅配服務',
-                'store':'N/A',
-                'payment':'線上付款',
-                'shipping_fee':60,
-                'discount_id':'edr100'                        
-            },
-            {
-                'order_id':'002',
-                'order_list':'1321344fff',
-                'account':'Harukadou@gmail.com',
-                'payment_status':0,
-                'order_status':2,
-                'shipping_status':3,
-                'order_date':'2021/01/01',
-                'receiver_name':'員姓名',
-                'receiver_phone':'32242424',
-                'shipping_address':'N/A',
-                'shipping_type':'宅配服務',
-                'store':'N/A',
-                'payment':'線上付款',
-                'shipping_fee':0,
-                'discount_id':'edr100'                        
-            },
-            {
-                'order_id':'003',
-                'order_list':'1321344fff',
-                'account':'Harukadou@gmail.com',
-                'payment_status':0,
-                'order_status':2,
-                'shipping_status':3,
-                'order_date':'2021/01/01',
-                'receiver_name':'員姓名',
-                'receiver_phone':'32242424',
-                'shipping_address':'N/A',
-                'shipping_type':'宅配服務',
-                'store':'N/A',
-                'payment':'線上付款',
-                'shipping_fee':180,
-                'discount_id':'edr100'                        
+                'order_id':'',
+                'order_list':'',
+                'account':'',
+                'payment_status':'',
+                'order_status':'',
+                'shipping_status':'',
+                'order_date':'',
+                'receiver_name':'',
+                'receiver_phone':'',
+                'shipping_address':'',
+                'shipping_type':'',
+                'store':'',
+                'payment':'',
+                'shipping_fee':'',
+                'discount_id':'', 
+                'discount_price':'',                        
             }
+            
         ],
         pages:[
             {page:"<", url: "#"},
@@ -106,29 +91,30 @@ new Vue({
         ],
         current_edit:null,
         order_title: ['名稱', '數量', '金額'],
-        order_list:[                    
+        order_list:[       
+            // [
+            //     {'product_name':'草莓大福', 'quantity':'2', 'order_detail_price':456},
+            //     {'product_name':'藍莓大福', 'quantity':'3', 'order_detail_price':234},
+            //     {'product_name':'草莓大福', 'quantity':'4', 'order_detail_price':444}
+            // ],
+            // [
+            //     {'product_name':'草莓大福', 'quantity':'2', 'order_detail_price':456},
+            //     {'product_name':'藍莓大福', 'quantity':'3', 'order_detail_price':234},
+            //     {'product_name':'草莓大福', 'quantity':'4', 'order_detail_price':444}
+            // ],
             [
-                {'product_name':'草莓大福', 'quantity':'2', 'order_detail_price':456},
-                {'product_name':'藍莓大福', 'quantity':'3', 'order_detail_price':234},
-                {'product_name':'草莓大福', 'quantity':'4', 'order_detail_price':444}
-            ],
-            [
-                {'product_name':'草莓大福', 'quantity':'2', 'order_detail_price':456},
-                {'product_name':'藍莓大福', 'quantity':'3', 'order_detail_price':234},
-                {'product_name':'草莓大福', 'quantity':'4', 'order_detail_price':444}
-            ],
-            [
-                {'product_name':'草莓大福', 'quantity':'2', 'order_detail_price':456},
-                {'product_name':'藍莓大福', 'quantity':'3', 'order_detail_price':234},
-                {'product_name':'草莓大福', 'quantity':'4', 'order_detail_price':444}
+                {'product_name':'', 'quantity':'', 'order_detail_price':''},
             ],                    
             
         ],
+        nowpage:1,
         select_number:'',
         total_cost:null,
         order_cost:null,
     },
-
+    created:function(){
+        this.showOdata(1);
+    },
     methods: {
         edit(index){                    
             this.current_edit = index;   
@@ -140,11 +126,11 @@ new Vue({
             let tot = this.order_list[index];                    
 
             for(let i=0; i<tot.length; i++){
-                this.total_cost += tot[i].order_detail_price
+                this.total_cost += (tot[i].order_detail_price*1)
             }                    
 
             // 訂單總金額                    
-            this.order_cost = this.total_cost + this.orders[index].shipping_fee;
+            this.order_cost = (this.total_cost*1) + (this.orders[index].shipping_fee*1) - (this.orders[index].discount_price*1);
 
             //狀態
             this.o_pay = this.orders[index].payment_status;
@@ -198,9 +184,31 @@ new Vue({
         },     
         log_out(){
             location.href = "./n-login.html"
-        }         
+        },        
        
-        
+        showOdata(gopage){
+            console.log(gopage);
+            if(isNaN(gopage)) return;
+            this.nowpage = gopage;
+
+            $.ajax({
+                method: "POST",
+                url: "../php/getOrderData.php",
+                data:{ 
+                    page : gopage,
+                },            
+                dataType: "json",
+                success: function (response) {
+                    appVue.pages = response[0];
+                    appVue.orders = response[1];
+                    appVue.order_list = response[2];
+                    
+                },
+                error: function(exception) {
+                    alert("發生錯誤: " + exception.status);
+                },
+            });
+        },
     },
     
 })

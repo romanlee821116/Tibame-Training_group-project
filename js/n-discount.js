@@ -143,13 +143,19 @@ Vue.component('discount-add', {
 });
 
 
-new Vue({
+var appVue = new Vue({
     el: '#app',
     data:{
         
         dbcheck:false,
         new_edit:false,
-        img_names:['右上圖', '主題', '圖片01', '圖片02', '圖片03'],
+        img_names:[ 
+            {name:'右上', src:''},
+            {name:'主題', src:''},
+            {name:'圖片01', src:''},
+            {name:'圖片02', src:''},
+            {name:'圖片03', src:''},
+        ],
 
         discount_number:'',
         on_off_list:['下架', '上架'],
@@ -179,57 +185,41 @@ new Vue({
         ],
         titles: ['折扣碼編號', '上架日期', '折扣碼號', '標題', '上下架', '最後更新日期', ''],
         discounts:[
+            // {
+            //     'discount_id':'1234567890',
+            //     'create_date':'2021/01/01',
+            //     'discount_name':'cscscs',
+            //     'news_title1':'新品上市新品上市新品上市新品上市新品上市',
+            //     'news_title2':'2新品上市新品上市新品上市新品上市新品上市',
+            //     'news_status':0,
+            //     'news_update':'2021/03/01 16:16',
+            //     'news_content1':'這就是內文',
+            //     'news_content2':'2這就是內文',
+            //     'discount_price':200,
+            //     'news_image_right':'',
+            //     'news_image_main':'',
+            //     'news_image1':'',
+            //     'news_image2':'',
+            //     'news_image3':''
+            // },
             {
-                'discount_id':'1234567890',
-                'create_date':'2021/01/01',
-                'discount_name':'cscscs',
-                'news_title1':'新品上市新品上市新品上市新品上市新品上市',
-                'news_title2':'2新品上市新品上市新品上市新品上市新品上市',
-                'news_status':0,
-                'news_update':'2021/03/01 16:16',
-                'news_content1':'這就是內文',
-                'news_content2':'2這就是內文',
-                'discount_price':200,
-                'news_image_right':'',
-                'news_image_main':'',
-                'news_image1':'',
-                'news_image2':'',
-                'news_image3':''
-            },
-            {
-                'discount_id':'1234567890',
-                'create_date':'2021/01/01',
-                'discount_name':'cscscs',
-                'news_title1':'新品上市新品上市新品上市新品上市新品上市',
-                'news_title2':'2新品上市新品上市新品上市新品上市新品上市',
-                'news_status':1,
-                'news_update':'2021/03/01 16:16',
-                'news_content1':'這就是內文',
-                'news_content2':'2這就是內文',
-                'discount_price':200,
-                'news_image_right':'',
-                'news_image_main':'',
-                'news_image1':'',
-                'news_image2':'',
-                'news_image3':''
-            },
-            {
-                'discount_id':'1234567890',
-                'create_date':'2021/01/01',
-                'discount_name':'cscscs',
-                'news_title1':'新品上市新品上市新品上市新品上市新品上市',
-                'news_title2':'2新品上市新品上市新品上市新品上市新品上市',
-                'news_status':0,
-                'news_update':'2021/03/01 16:16',
-                'news_content1':'這就是內文',
-                'news_content2':'2這就是內文',
-                'discount_price':200,
+                'news_id':'',
+                'create_date':'',
+                'discount_name':'',
+                'discount_price':'',
+                'news_title1':'',
+                'news_title2':'',
+                'news_status':'',
+                'news_update':'',
+                'news_content1':'',
+                'news_content2':'',
                 'news_image_right':'',
                 'news_image_main':'',
                 'news_image1':'',
                 'news_image2':'',
                 'news_image3':''
             }
+            
         ],
         pages:[
             {page:"<", url: "#"},
@@ -242,7 +232,11 @@ new Vue({
             {page:"20", url: "#"},
             {page:">", url: "#"},
         ],
+        nowpage:1,
         current_edit:null,
+    },
+    created:function(){
+        this.showDdata(1);
     },
 
     methods: {
@@ -250,12 +244,19 @@ new Vue({
             this.current_edit = index;     
 
             this.d_number = this.discounts[index].discount_name;
+            this.d_money = this.discounts[index].discount_price;
             this.on_off = this.discounts[index].news_status;
             this.d_main_title = this.discounts[index].news_title1;
             this.d_sec_title = this.discounts[index].news_title2;
             this.d_main_content = this.discounts[index].news_content1;
             this.d_sec_content = this.discounts[index].news_content2;
-            this.d_money = this.discounts[index].discount_price;
+
+            this.img_names[0]['src'] = '../images/news/'+ this.discounts[index].news_image_right;
+            this.img_names[1]['src'] = '../images/news/'+ this.discounts[index].news_image_main;
+            this.img_names[2]['src'] = '../images/news/'+ this.discounts[index].news_image1;
+            this.img_names[3]['src'] = '../images/news/'+ this.discounts[index].news_image2;
+            this.img_names[4]['src'] = '../images/news/'+ this.discounts[index].news_image3;
+
         },
 
 
@@ -377,8 +378,28 @@ new Vue({
         },
         log_out(){
             location.href = "./n-login.html"
-        }  
-        
+        },  
+        showDdata(gopage){
+            console.log(gopage);
+            if(isNaN(gopage)) return;
+            this.nowpage = gopage;
+
+            $.ajax({
+                method: "POST",
+                url: "../php/getDiscountData.php",
+                data:{ 
+                    page : gopage,
+                },            
+                dataType: "json",
+                success: function (response) {
+                    appVue.pages = response[0];
+                    appVue.discounts = response[1];
+                },
+                error: function(exception) {
+                    alert("發生錯誤: " + exception.status);
+                },
+            });
+        },
         
     },
     

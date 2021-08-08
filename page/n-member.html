@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../css/n-member.css">
     <link rel="stylesheet" href="../css/n-pop.css">
     <link rel="icon" href="../images/backend/n_logo.png">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 </head>
 <body>
     <div id="app">
@@ -60,9 +61,9 @@
 
         <footer class="n-member_footer">
             <ul>
-                <li v-for='page in pages'>{{page.page}}</li>
+                <li v-for='page in pages' v-on:click='showMdata(page.link)' v-bind:class='{nowpagela:page.page == nowpage}'>{{page.page}}</li>
             </ul>
-        </footer>        
+        </footer>
 
         <div class="n-member_edit" v-if='current_edit !== null'>
             <p>編輯與查看</p>
@@ -80,7 +81,7 @@
                         <option value="1">正常</option>
                     </select>
                 </li>
-                <li>地址:{{members[current_edit].address}}</li>
+                <li>地址:{{members[current_edit].city + members[current_edit].area + members[current_edit].address}}</li>
                 <li>創建時間:{{members[current_edit].register_date}}</li> 
             </ul>
 
@@ -97,6 +98,5 @@
 
     <script src="../js/vue.js"></script>
     <script src="../js/n-member.js"></script>
-    
 </body>
 </html>

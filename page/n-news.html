@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../css/n-news.css">
     <link rel="stylesheet" href="../css/n-pop.css">
     <link rel="icon" href="../images/backend/n_logo.png">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 </head>
 <body>
     <div id="app">
@@ -64,7 +65,7 @@
 
         <footer class="n-news_footer">
             <ul>
-                <li v-for='page in pages'>{{page.page}}</li>
+                <li v-for='page in pages' v-on:click='showNdata(page.link)' v-bind:class='{nowpagela:page.page == nowpage}'>{{page.page}}</li>
             </ul>
         </footer>
 
@@ -119,11 +120,11 @@
             <div class="n-news_news_bot">
 
                 <div class="n-news_group" v-for='(img_name, index) in img_names'>
-                    <label :for='index'>{{img_name}}:</label>
+                    <label :for='index'>{{img_name.name}}:</label>
                     <input type="file" :id="index" @change='upload_img'>
                     <p>請選擇圖片上傳</p>
                     <div class="n-news_img">
-                        <img src=''>
+                        <img :src='img_name.src'>
                         <p>請選擇圖片上傳</p>
                     </div>
                 </div> 

@@ -243,17 +243,18 @@ Vue.component('product-add', {
 });
 
 
-new Vue({
+var appVue = new Vue({
     el: '#app',
     data:{
         dbcheck:false,
         new_edit:false,
-        img_names:[
+        img_names:[ 
             {name:'圖片01', src:''},
             {name:'圖片02', src:''},
             {name:'圖片03', src:''},
             {name:'俯視圖', src:''},
-            {name:'客製化用圖', src:''}],
+            {name:'客製化用圖', src:''},
+        ],
 
         p_number:'',
         p_name:'',
@@ -293,66 +294,47 @@ new Vue({
         ],
         titles: ['商品編號', '商品類別', '名稱', '原價', '售價', '庫存數量', '客製化禮盒', '上下架', ''],
         products:[
+            // {
+            //     'product_id':'1234567890',
+            //     'product_class':0,
+            //     'product_name':'草莓大福',
+            //     'net_price':111,
+            //     'price':222,
+            //     'stock':333,
+            //     'product_customize':0,
+            //     'product_status':1,
+            //     'expiration':0,
+            //     'promotion':0,
+            //     'promotion2':0,
+            //     'ingredient':'1成分成分成分',
+            //     'product_content':'1說明說明說明',
+            //     'product_image1':'',
+            //     'product_image2':'',
+            //     'product_image3':'',
+            //     'product_image_topview':'',
+            //     'product_image_customize':''
+            // },
             {
-                'product_id':'1234567890',
-                'product_class':0,
-                'product_name':'草莓大福',
-                'net_price':111,
-                'price':222,
-                'stock':333,
-                'product_customize':0,
-                'product_status':1,
-                'expiration':0,
-                'promotion':0,
-                'promotion2':0,
-                'ingredient':'1成分成分成分',
-                'product_content':'1說明說明說明',
+                'product_id':'',
+                'product_class':'',
+                'product_name':'',
+                'net_price':'',
+                'price':'',
+                'stock':'',
+                'product_customize':'',
+                'product_status':'',
+                'expiration':'',
+                'promotion':'',
+                'promotion2':'',
+                'ingredient':'',
+                'product_content':'',
                 'product_image1':'',
                 'product_image2':'',
                 'product_image3':'',
                 'product_image_topview':'',
                 'product_image_customize':''
             },
-            {
-                'product_id':'1234567890',
-                'product_class':3,
-                'product_name':'草莓大福',
-                'net_price':111,
-                'price':222,
-                'stock':333,
-                'product_customize':1,
-                'product_status':0,
-                'expiration':0,
-                'promotion':0,
-                'promotion2':0,
-                'ingredient':'1成分成分成分',
-                'product_content':'1說明說明說明',
-                'product_image1':'',
-                'product_image2':'',
-                'product_image3':'',
-                'product_image_topview':'',
-                'product_image_customize':''
-            },
-            {
-                'product_id':'1234567890',
-                'product_class':2,
-                'product_name':'草莓大福',
-                'net_price':111,
-                'price':222,
-                'stock':333,
-                'product_customize':0,
-                'product_status':1,
-                'expiration':0,
-                'promotion':0,
-                'promotion2':0,
-                'ingredient':'1成分成分成分',
-                'product_content':'1說明說明說明',
-                'product_image1':'',
-                'product_image2':'',
-                'product_image3':'',
-                'product_image_topview':'',
-                'product_image_customize':''
-            }
+            
         ],
         pages:[
             {page:"<", url: "#"},
@@ -365,7 +347,11 @@ new Vue({
             {page:"20", url: "#"},
             {page:">", url: "#"},
         ],
+        nowpage:1,
         current_edit:null,
+    },
+    created:function(){
+        this.showPdata(1);
     },
 
     methods: {
@@ -385,6 +371,13 @@ new Vue({
             this.p_sort = this.products[index].product_class;
             this.p_ingredient = this.products[index].ingredient;
             this.p_descript = this.products[index].product_content;
+
+            this.img_names[0]['src'] = '../images/shopping_list/'+ this.products[index].product_image1;
+            this.img_names[1]['src'] = '../images/shopping_list/'+ this.products[index].product_image2;
+            this.img_names[2]['src'] = '../images/shopping_list/'+ this.products[index].product_image3;
+            this.img_names[3]['src'] = '../images/shopping_list/'+ this.products[index].product_image_topview;
+            this.img_names[4]['src'] = '../images/shopping_list/'+ this.products[index].product_image_customize;
+
         },
         p_close(){       
             this.dbcheck=true;
@@ -490,7 +483,28 @@ new Vue({
 
             let str = (e.target.value).replace(/\D/g, "");
             e.target.value = str;
-        }
+        },
+        showPdata(gopage){
+            console.log(gopage);
+            if(isNaN(gopage)) return;
+            this.nowpage = gopage;
+
+            $.ajax({
+                method: "POST",
+                url: "../php/getProductData.php",
+                data:{ 
+                    page : gopage,
+                },            
+                dataType: "json",
+                success: function (response) {
+                    appVue.pages = response[0];
+                    appVue.products = response[1];
+                },
+                error: function(exception) {
+                    alert("發生錯誤: " + exception.status);
+                },
+            });
+        },
     },    
 })
 

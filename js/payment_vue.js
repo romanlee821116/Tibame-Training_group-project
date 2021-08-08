@@ -5,60 +5,19 @@ $(document).ready(function(){
       orderer: false,
       recipient: false,
       // 單項商品
-      itemList:[
-        // {
-        //   id: 'item_1',
-        //   itemName: '苗栗草莓大福',
-        //   img: '../images/checkout/banner_strawberry_item.png',
-        //   price: 480,
-        //   item_Quantity: '6',
-        //   quantity: 1,
-        //   status: false,
-        // },
-        // {
-        //   id: 'item_2',
-        //   itemName: '南投銅鑼燒',
-        //   img: '../images/cart/banner_matcha_item.png',
-        //   price: 480,
-        //   item_Quantity: '6',
-        //   quantity: 1,
-        //   status: false,
-        // },
-      ],
+      itemList:[],
       // 禮盒
-      customization: [
-        // {
-        //   id: 'customization_1',
-        //   itemName: '四格小資組合',
-        //   img: '../images/cart/customized_box.png',
-        //   price: 480,
-        //   quantity: 1,
-        //   detail: ['草莓大福(1入)', '抹茶大福(1入)', '柳橙大福(1入)', '巧克力大福(1入)'],
-        //   detail_Quantity: ['1', '1', '1', '1'],
-        //   status: false,
-        // },
-        // {
-        //   id: 'customization_2',
-        //   itemName: '四格小資組合',
-        //   img: '../images/cart/customized_box.png',
-        //   price: 480,
-        //   quantity: 1,
-        //   detail: ['草莓大福(1入)', '柳橙大福(1入)', '巧克力大福(1入)'],
-        //   detail_Quantity: ['2', '1', '1'],
-        //   status: false,
-        // },
-      ],
+      customization: [],
+      // 個人資料
+      orderer_data: [],
+      // 收件人資料
+      delivery_data: [],
+      // 卡片資料
+      card_data: [],
       discount: 0,
       total_price: 0,
       itemPrice:0,
       shipping: 0,
-      cardNumber1: "",
-      cardNumber2: "",
-      cardNumber3: "",
-      cardNumber4: "",
-      cardYear: "",
-      cardDate: "",
-      cardCertification: "",
     },
     methods: {
       // 同會員資料checkbox
@@ -123,17 +82,29 @@ $(document).ready(function(){
         let local_customization = JSON.parse(localStorage.customized_List)
         this.customization = local_customization;
       };
-      // 折扣    
-      this.discount = localStorage.discount;
-      
-      // 運費
-      localStorage.setItem('shipping', this.shipping);
 
       // 商品總金額、總金額
       if(localStorage.subtotal){     
         this.itemPrice = localStorage.subtotal;
         this.total_price = localStorage.total;
       };
+
+      // 帶入折扣    
+      this.discount = localStorage.discount;
+      
+      // 運費重置
+      localStorage.setItem('shipping', this.shipping);
+
+      // 訂購人重置
+      localStorage.setItem('orderer_data', this.orderer_data);
+
+      // 收件人重置
+      localStorage.setItem('delivery_data', this.delivery_data);
+
+      // 卡片重置
+      localStorage.setItem('card_data', this.card_data);
+
+
       // ====================================================
     }
   })
@@ -297,57 +268,266 @@ $(function(){
     $('.payment_certification').css('visibility','hidden');
   })
 
-  //同會員資料按紐
-  $('.payment_itemCB').click(function(){
-    let payment_name = $('.payment_data:nth-child(1) input').val();
-    let payment_phone = $('.payment_data:nth-child(2) input').val();
-    let payment_address = $('.payment_data:nth-child(3) input').val();
-    console.log(' payment_name'+ payment_name);
-    console.log(' payment_phone'+ payment_phone);
-    console.log(' payment_address'+ payment_address);
+  // 勾選 同訂購人資料 按紐，套入訂購人資料
+  $('.payment_sameOrderer').click(function(){
+
+    let payment_name = $('.payment_name').val();
+    let payment_phone = $('.payment_phone').val();
+    let payment_address = $('.payment_add').val();
+
     $('.payment_receiverName').val(payment_name);
     $('.payment_receiverPhone').val(payment_phone);
     $('.payment_receiverAddress').val(payment_address);
   })
 
-  //按下一頁時把資訊存到localstorage
-  $('.payment_next').click(function(){
-    let order_detail = {
-      'deliver_name':'',
-      'deliver_phone':'',
-      'deliver_address':'',
-      'delivery_type': 0,
-      'payment_type':0,
-      'order_number':0,
-    };
-    let payment_name = $('.payment_data:nth-child(1) input').val();
-    let payment_phone = $('.payment_data:nth-child(2) input').val();
-    let payment_address = $('.payment_data:nth-child(3) input').val();
 
+
+
+  // 按下一頁時，觸發事件
+  $('.payment_next').click(function(e){
+
+    // 訂購人資料
+    let payment_name = $('.payment_name').val();
+    let payment_phone = $('.payment_phone').val();
+    let payment_address = $('.payment_add').val();
+
+    // 姓名、電話、地址沒輸入，紅框並停止下一頁
+    if(payment_name == ""){
+      e.preventDefault();
+      $('.payment_name').css('border','2px solid #dc3838');
+    }else{
+      $('.payment_name').css('border','none');
+    };
+
+    if(payment_phone == ""){
+      e.preventDefault();
+      $('.payment_phone').css('border','2px solid #dc3838');
+    }else{
+      $('.payment_phone').css('border','none');
+    };
+    
+    if(payment_address == ""){
+      e.preventDefault();
+      $('.payment_add').css('border','2px solid #dc3838');
+    }else{
+      $('.payment_add').css('border','none');
+    };
+    
+    // ==========================================================
+
+    // 運送方式跟付款方式是否有選擇(true、false)
+    let fakeClick1 = $('#payment_home').is(":checked");
+    let fakeClick2 = $('#payment_seven').is(":checked");
+    let fakeClick3 = $('#payment_shop').is(":checked");
+    let fakeClick4 = $('#payment_online').is(":checked");
+    let fakeClick5 = $('#payment_cash').is(":checked");
+
+    // 運送方式沒選，紅框並停止下一頁
+    if(fakeClick1 == false && fakeClick2 == false && fakeClick3 == false){
+      e.preventDefault();
+      $('.payment_fake1').css('border','2px solid #dc3838');
+      $('.payment_fake2').css('border','2px solid #dc3838');
+      $('.payment_fake3').css('border','2px solid #dc3838');
+    };
+
+    // ==============================================================
+
+    // 宅配裡收件人的資料
     let delivery_name = $('.payment_receiverName').val();
     let delivery_phone = $('.payment_receiverPhone').val();
     let delivery_address = $('.payment_receiverAddress').val();
 
+    // 選擇宅配，若訂購人資料沒填寫，紅框並停止下一頁
+    if(fakeClick1 == true && delivery_name == ""){
+      e.preventDefault();
+      $('.payment_receiverName').css('border','2px solid #dc3838');
+    }else{
+      $('.payment_receiverName').css('border','none');
+    };
+
+    if(fakeClick1 == true && delivery_phone == ""){
+      e.preventDefault();
+      $('.payment_receiverPhone').css('border','2px solid #dc3838');
+    }else{
+      $('.payment_receiverPhone').css('border','none');
+    };
+
+    if(fakeClick1 == true && delivery_address == ""){
+      e.preventDefault();
+      $('.payment_receiverAddress').css('border','2px solid #dc3838');
+    }else{
+      $('.payment_receiverAddress').css('border','none');
+    };
+
+    // =====================================================================
+
+    // 信用卡資料
+    let cardNumber1 = $('#payment_card1').val();
+    let cardNumber2 = $('#payment_card2').val();
+    let cardNumber3 = $('#payment_card3').val();
+    let cardNumber4 = $('#payment_card4').val();
+
+    // 付款方式沒選，紅框並停止下一頁
+    if(fakeClick4 == false && fakeClick5 == false){
+      e.preventDefault();
+      $('.payment_fake4').css('border','2px solid #dc3838');
+      $('.payment_fake5').css('border','2px solid #dc3838');
+    };
+
+    // =====================================================================
+
+    // 卡號沒輸入，紅框並停止下一頁
+    if(fakeClick4 == true && cardNumber1 == ""){
+      e.preventDefault();
+      $('#payment_card1').css('border','2px solid #dc3838');
+    }else{
+      $('#payment_card1').css('border','none');
+    };
+
+    if(fakeClick4 == true && cardNumber2 == ""){
+      e.preventDefault();
+      $('#payment_card2').css('border','2px solid #dc3838');
+    }else{
+      $('#payment_card2').css('border','none');
+    };
+
+    if(fakeClick4 == true && cardNumber3 == ""){
+      e.preventDefault();
+      $('#payment_card3').css('border','2px solid #dc3838');
+    }else{
+      $('#payment_card3').css('border','none');
+    };
+
+    if(fakeClick4 == true && cardNumber4 == ""){
+      e.preventDefault();
+      $('#payment_card4').css('border','2px solid #dc3838');
+    }else{
+      $('#payment_card4').css('border','none');
+    };
+
+    // ====================================================
+
+    // 卡片有效期限沒輸入，紅框並停止下一頁
+    let payment_year = $('.payment_year').val();
+    let payment_month = $('.payment_month').val();
+
+    if(fakeClick4 == true && payment_year == null){
+      e.preventDefault();
+      $('.payment_year').css('border','2px solid #dc3838');
+    }else{
+      $('.payment_year').css('border','none');
+    };
+
+    if(fakeClick4 == true && payment_month == null){
+      e.preventDefault();
+      $('.payment_month').css('border','2px solid #dc3838');
+    }else{
+      $('.payment_month').css('border','none');
+    };
+
+    // ============================================================
+
+    // 卡片認證碼沒輸入，紅框並停止下一頁
+    let payment_turn = $('.payment_turn').val();
+
+    if(fakeClick4 == true && payment_turn == ""){
+      e.preventDefault();
+      $('.payment_turn').css('border','2px solid #dc3838');
+    }else{
+      $('.payment_turn').css('border','none');
+    };
+
+
+    // ========================= localStorage ===========================
+    // 抓選擇的運送方式
     let delivery_type = $('input[name="transport"]:checked').val();
+
+    // 抓選擇的付款方式
     let payment_type = $('input[name="payment"]:checked').val();
 
-    order_detail.deliver_name = payment_name;
-    order_detail.deliver_phone = payment_phone;
-    order_detail.deliver_address = payment_address;
+    // 訂購人
+    let order_detail = {
+      'orderer_name':'',
+      'orderer_phone':'',
+      'orderer_address':'',
+      'delivery_type': '',
+      'payment_type':''
+    };
+    
+    // 訂購人資料存進order_detail
+    order_detail.orderer_name = payment_name;
+    order_detail.orderer_phone = payment_phone;
+    order_detail.orderer_address = payment_address;
     order_detail.delivery_type = delivery_type;
     order_detail.payment_type = payment_type;
 
-    if($('.payment_receiverName').text() !=''){
-      order_detail.deliver_name = delivery_name;
-      order_detail.deliver_phone = delivery_phone;
-      order_detail.deliver_address = delivery_address;
+    // ==================================================
+
+    // if 存宅配收件人資料，else if 購人等於收件人
+    if(fakeClick1 == true){
+      // 收件人
+      let delivery_detail = {
+        'delivery_name':'',
+        'delivery_phone':'',
+        'delivery_address':''
+      }
+  
+      // 收件人資料存進deliver_detail
+      delivery_detail.delivery_name = delivery_name;
+      delivery_detail.delivery_phone = delivery_phone;
+      delivery_detail.delivery_address = delivery_address;
+
+      localStorage.setItem('delivery_data', JSON.stringify(delivery_detail));
+    }else if(fakeClick2 == true || fakeClick3 == true){
+      // 收件人
+      let delivery_detail = {
+        'delivery_name':'',
+        'delivery_phone':'',
+        'delivery_address':''
+      }
+  
+      // 收件人資料存進deliver_detail
+      delivery_detail.delivery_name = payment_name;
+      delivery_detail.delivery_phone = payment_phone;
+      delivery_detail.delivery_address = payment_address;
+
+      localStorage.setItem('delivery_data', JSON.stringify(delivery_detail));
     }
-    // let info=[order_detail];
-    localStorage.setItem('info', JSON.stringify(order_detail));
+
+    // ==================================================
+
+    // 選擇信用卡付款的話才存取資料
+    if(fakeClick4 == true){
+      let card_detail = {
+        'cardNumber1': "",
+        'cardNumber2': "",
+        'cardNumber3': "",
+        'cardNumber4': "",
+        'cardYear': "",
+        'cardMonth': "",
+        'cardCertification': ""
+      }
+  
+      card_detail.cardNumber1 = cardNumber1;
+      card_detail.cardNumber2 = cardNumber2;
+      card_detail.cardNumber3 = cardNumber3;
+      card_detail.cardNumber4 = cardNumber4;
+      card_detail.cardYear = payment_year;
+      card_detail.cardMonth = payment_month;
+      card_detail.cardCertification = payment_turn;
+
+      localStorage.setItem('card_data', JSON.stringify(card_detail));
+
+    }
+
+
+
+
+
+    // 存進localStorage
+    localStorage.setItem('orderer_data', JSON.stringify(order_detail));
+
   })
 }) 
-  
-    
-
 
 

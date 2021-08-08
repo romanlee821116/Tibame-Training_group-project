@@ -37,20 +37,17 @@ $(document).ready(function() {
         // };
     });
 
-    //判斷當前頁面 漢堡連結顏色提示
-    if (window.location.pathname == '/page/shopping_choose.html') {
-        $(".ham_select").find("a:nth-child(4)").css({ color: "#fad689" });
-    }
+
     // =================== local storage===========================
     $('.choose_select_area a').click(function() {
-        let product_num = $(this).find("div").data("id");
-        // alert(product_num)
-        localStorage.setItem("product_page_num", JSON.stringify(product_num))
-    })
-    //判斷登入登出
-    if(localStorage.loginStatus){
+            let product_num = $(this).find("div").data("id");
+            // alert(product_num)
+            localStorage.setItem("product_page_num", JSON.stringify(product_num))
+        })
+        //判斷登入登出
+    if (localStorage.loginStatus) {
         $('.nav_logOut').fadeIn();
-    }else{
+    } else {
         $('.nav_logOut').fadeOut();
     }
 });
