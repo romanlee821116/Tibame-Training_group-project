@@ -8,11 +8,7 @@
     <link rel="stylesheet" href="../css/n-product.css">
     <link rel="stylesheet" href="../css/n-pop.css">
     <link rel="icon" href="../images/backend/n_logo.png">
-<<<<<<< HEAD
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-=======
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
->>>>>>> dev
 </head>
 <body>
     <div id="app">
@@ -159,20 +155,11 @@
                     </ul>
                 </div>
 
-<<<<<<< HEAD
                 <div class="n-product_edit_right">
                     
                     <div class="n-product_group" v-for='(img_name, index) in img_names'>
                         <label :for='index'>{{img_name.name}}:</label>
                         <input type="file" :id="index" @change='upload_img'>
-=======
-                <div class="n-product_group" v-for='(img_name, index) in img_names'>
-                    <label :for='index'>{{img_name.name}}:</label>
-                    <input type="file" :id="index" @change='upload_img'>
-                    <p>請選擇圖片上傳</p>
-                    <div class="n-product_img">
-                        <img :src='img_name.src'>
->>>>>>> dev
                         <p>請選擇圖片上傳</p>
                         <div class="n-product_img">
                             <img :src='img_name.src'>
