@@ -116,6 +116,22 @@ var appVue = new Vue({
 
             this.current_edit = null;
 
+            $.ajax({            
+                method: "POST",
+                url: "../php/n-member_update.php",
+                data:{ 
+                    account: this.members[n_index].account, // 哪筆會員
+                    member_status: this.members[n_index].member_status, // 更新的會員狀態
+                },            
+                dataType: "text",
+                success: function (response) {
+                    alert("更新成功");
+                },
+                error: function(exception) {
+                    alert("發生錯誤: " + exception.status);
+                }
+            });
+
         },          
         log_out(){
             location.href = "./n-login.html"

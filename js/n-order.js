@@ -181,6 +181,24 @@ var appVue = new Vue({
             this.current_edit = null;
             this.total_cost = null;
 
+            $.ajax({            
+                method: "POST",
+                url: "../php/n-order_update.php",
+                data:{ 
+                    account: this.orders[n_index].account, // 該會員帳號
+                    payment_status: this.orders[n_index].payment_status, //付款狀態
+                    order_status: this.orders[n_index].order_status, // 訂單狀態
+                    shipping_status: this.orders[n_index].shipping_status, //貨運狀態
+                },            
+                dataType: "text",
+                success: function (response) {
+                    alert("更新成功");
+                },
+                error: function(exception) {
+                    alert("發生錯誤: " + exception.status);
+                }
+            });
+
         },     
         log_out(){
             location.href = "./n-login.html"

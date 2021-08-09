@@ -282,6 +282,10 @@ var appVue = new Vue({
         group4_name:'請選擇圖片上傳',
         group5_name:'請選擇圖片上傳',
 
+        new_img:['請選擇圖片上傳','請選擇圖片上傳','請選擇圖片上傳','請選擇圖片上傳','請選擇圖片上傳'],
+        new_img_src:['圖片','圖片','圖片','圖片','圖片'],
+
+
 
         mainbtn: [  
             {name:"會員管理", url: "./n-member.html"},
@@ -371,6 +375,12 @@ var appVue = new Vue({
             this.p_sort = this.products[index].product_class;
             this.p_ingredient = this.products[index].ingredient;
             this.p_descript = this.products[index].product_content;
+            
+            this.new_img[0] = this.products[index].product_image1;
+            this.new_img[1] = this.products[index].product_image2;
+            this.new_img[2] = this.products[index].product_image3;
+            this.new_img[3] = this.products[index].product_image_topview;
+            this.new_img[4] = this.products[index].product_image_customize;
 
             this.img_names[0]['src'] = '../images/shopping_list/'+ this.products[index].product_image1;
             this.img_names[1]['src'] = '../images/shopping_list/'+ this.products[index].product_image2;
@@ -383,6 +393,15 @@ var appVue = new Vue({
             this.dbcheck=true;
             let edit_z = document.querySelector('.n-product_edit');
             edit_z.style.opacity = 0;
+
+            // 把預設值設回來
+            this.new_img_src = ['圖片','圖片','圖片','圖片','圖片'];
+
+            this.new_img[0] = '請選擇圖片上傳';
+            this.new_img[1] = '請選擇圖片上傳';
+            this.new_img[2] = '請選擇圖片上傳';
+            this.new_img[3] = '請選擇圖片上傳';
+            this.new_img[4] = '請選擇圖片上傳';
         },  
 
         sss(){
@@ -417,24 +436,76 @@ var appVue = new Vue({
             this.products[n_index].promotion2 = this.p_limit;
             this.products[n_index].expiration = this.p_exp;
 
+            this.products[n_index].product_image1 = this.new_img[0];
+            this.products[n_index].product_image2 = this.new_img[1];
+            this.products[n_index].product_image3 = this.new_img[2];
+            this.products[n_index].product_image_topview = this.new_img[3];
+            this.products[n_index].product_image_customize = this.new_img[4];
 
             this.current_edit = null;
+
+
+            $.ajax({            
+                method: "POST",
+                url: "../php/n-product_update.php",
+                data:{ 
+                    product_id: this.products[n_index].product_id, // 商品ID
+                    product_class: this.products[n_index].product_class, //商品分類
+                    product_name: this.products[n_index].product_name, // 商品名稱
+                    expiration: this.products[n_index].expiration, //保存期限
+                    ingredient: this.products[n_index].ingredient, // 成分
+                    product_content: this.products[n_index].product_content, // 說明文字
+                    stock: this.products[n_index].stock, // 庫存
+                    price: this.products[n_index].price, // 售價
+                    net_price: this.products[n_index].net_price, // 原價
+                    product_customize: this.products[n_index].product_customize, // 客製化禮盒
+                    product_status: this.products[n_index].product_status, // 上下架
+                    promotion: this.products[n_index].promotion, // 商品狀態1(新品上市、熱銷商品)
+                    promotion2: this.products[n_index].promotion2, // 商品狀態2(期間限定商品、人氣商品)
+                    product_image1: this.products[n_index].product_image1, // 圖片1
+                    product_image2: this.products[n_index].product_image2, // 圖片2
+                    product_image3: this.products[n_index].product_image3, // 圖片3
+                    product_image_topview: this.products[n_index].product_image_topview, // 俯視圖
+                    product_image_customize: this.products[n_index].product_image_customize, //客製化圖
+                
+                    new_img: this.new_img, // 所有圖片檔名
+                    new_img_src: this.new_img_src, // 圖片base64
+                },            
+                dataType: "text",
+                success: function (response) {
+                    alert("更新成功");
+                },
+                error: function(exception) {
+                    alert("發生錯誤: " + exception.status);
+                }
+            });
             
+            // 把預設值設回來
+            this.new_img_src = ['圖片','圖片','圖片','圖片','圖片'];
+            
+            this.new_img[0] = '請選擇圖片上傳';
+            this.new_img[1] = '請選擇圖片上傳';
+            this.new_img[2] = '請選擇圖片上傳';
+            this.new_img[3] = '請選擇圖片上傳';
+            this.new_img[4] = '請選擇圖片上傳';
         },  
         upload_img(e){
 
             var files = e.target.files || e.dataTransfer.files;
             let file = files[0];
-
+            
+            this.new_img[e.target.id] = file.name; // 看是第幾個檔案，存進vueData
             e.target.nextElementSibling.innerText = file.name;
+
 
             let readFile = new FileReader();
             readFile.readAsDataURL(file);
             readFile.addEventListener("load", function () {
+                
+                e.target.closest('.n-product_group').querySelector('img').src = readFile.result; 
+                appVue.$data.new_img_src[e.target.id] = readFile.result; // 更換的圖檔base64存進vueData
 
-                e.target.nextElementSibling.nextElementSibling.querySelector('img').src = readFile.result; 
-
-                e.target.nextElementSibling.nextElementSibling.querySelector('p').style.opacity=0;
+                e.target.closest('.n-product_group').querySelector('img').nextElementSibling.style.opacity=0;
             
             });
         },
