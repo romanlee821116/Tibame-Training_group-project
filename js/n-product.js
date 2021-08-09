@@ -1,3 +1,4 @@
+
 Vue.component('double-check', {            
     template: 
         ` 
@@ -37,14 +38,21 @@ Vue.component('product-add', {
             p_customized:0, 
             p_ingredient:'', 
             p_descript:'',
-            img_names:[ '圖片01', '圖片02', '圖片03', '俯視圖', '客製化用圖'],
+            img_names:[ 
+                {img_name : '圖片01', class:'n-product_Pic1', name:'pic1'}, 
+                {img_name : '圖片02', class:'n-product_Pic2', name:'pic2'}, 
+                {img_name : '圖片03', class:'n-product_Pic3', name:'pic3'}, 
+                {img_name : '俯視圖', class:'n-product_Pic4', name:'pic4'}, 
+                {img_name : '客製化用圖', class:'n-product_Pic5', name:'pic5'}
+            ],
         };
     },
 
     template: `
+        
         <div>
+            
             <div class="n-product_edit">
-
                 <p>新增商品</p>
                 
                 <div class="n-product_edit_left">
@@ -127,37 +135,86 @@ Vue.component('product-add', {
                 </div>
 
                 <div class="n-product_edit_right">
-
-                    <div class="n-product_group" v-for='(img_name, index) in img_names'>
-                        <label :for='index'>{{img_name}}:</label>
-                        <input type="file" :id="index" @change='upload_img'>
+                    <form method="post" action="../php/n-product.php" enctype="multipart/form-data">
+                    <div class="n-product_group" v-for='(item, index) in img_names'>
+                        <label :for='index'>{{item.img_name}}:</label>
+                        <input type="file" :id="index" @change='upload_img' :class='item.class' :name='item.name'>
                         <p>請選擇圖片上傳</p>
                         <div class="n-product_img">
                             <img src=''>
                             <p>請選擇圖片上傳</p>
                         </div>
                     </div>
-
+                    </form>
                 </div>
 
                 <div class="n-product_editbtn">
                     <button class="n-product_close" @click='p_close'>關閉</button>
                     <button class="n-product_save" @click='p_save'>儲存</button>
                 </div>
+                
             </div>
-
+            
             <div id="hide"></div>
+            
         </div>
-
+        
     `,
     methods:{
         p_close(){ 
             this.$emit('pclose');
         },  
-        p_save(){   
+        p_save(){       
+            function getFileName(o){
+                var pos=o.lastIndexOf("\\");
+                return o.substring(pos+1);  
+            }
+
+            let product_image1= $('.n-product_Pic1').val();
+            let product_image2 = $('.n-product_Pic2').val();
+            let product_image3 = $('.n-product_Pic3').val();
+            let product_image_topview = $('.n-product_Pic4').val();
+            let product_image_customize = $('.n-product_Pic5').val();
+            product_image1 = getFileName(product_image1);
+            product_image2 = getFileName(product_image2);
+            product_image3 = getFileName(product_image3);
+            product_image_topview = getFileName(product_image_topview);
+            product_image_customize = getFileName(product_image_customize);
+            
+            $.ajax({
+                method: 'POST',
+                url: '../php/n-productAdd.php',
+                data:{
+                    product_list: this.p_number,
+                    product_class: this.p_sort,
+                    product_name: this.p_name,
+                    expiration: this.p_exp,
+                    ingredient: this.p_ingredient,
+                    product_content: this.p_descript,
+                    stock: this.p_stock,
+                    price: this.p_sell,
+                    net_price: this.p_original,
+                    product_customize: this.p_customized,
+                    product_status: this.on_off,
+                    promotion: this.p_status,
+                    promotion2: this.p_limit,
+                    product_image1: product_image1,
+                    product_image2: product_image2,
+                    product_image3: product_image3,
+                    product_image_topview: product_image_topview,
+                    product_image_customize: product_image_customize
+                },
+                dataType:'text',
+                success: function (data) {     
+                    alert(data)
+                },
+                error: function(exception) {
+                    alert("數據載入失敗: " + exception.status);
+                }
+            })
 
             this.$emit('psave', this.p_number, this.p_sort, this.p_name, this.p_original, this.p_sell, this.p_stock, this.p_status, this.p_limit, this.on_off, this.p_exp, this.p_customized, this.p_ingredient, this.p_descript);
-
+            
         },
 
         upload_img(e){
@@ -343,7 +400,7 @@ var appVue = new Vue({
             edit_z.style.opacity = 1;
         }, 
         p_save(){     
-
+            
             let n_index = this.$data.current_edit;
 
             this.products[n_index].product_status = this.on_off;
@@ -362,6 +419,7 @@ var appVue = new Vue({
 
 
             this.current_edit = null;
+            
         },  
         upload_img(e){
 
@@ -413,7 +471,7 @@ var appVue = new Vue({
                 'product_content':p_descript,
             }
 
-            console.log(ppp);
+            // console.log(ppp);
 
             this.products.unshift(ppp);
 
@@ -449,3 +507,7 @@ var appVue = new Vue({
         },
     },    
 })
+
+
+
+

@@ -42,6 +42,8 @@ $(function(){
       checkOK(e){
         if($('.OC_next').css('background-color') == 'rgb(163, 163, 163)'){
           e.preventDefault();
+        }else{
+          checkOut();
         }
       }
     },

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../css/n-product.css">
     <link rel="stylesheet" href="../css/n-pop.css">
     <link rel="icon" href="../images/backend/n_logo.png">
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
     <div id="app">
@@ -75,99 +75,99 @@
         <!-- <div class="edit" v-if='true'> -->
 
             <p>編輯與查看</p>
-            
-            <div class="n-product_edit_left">
-                <ul>
-                    <li>
-                        <label for="">商品編號:</label>
-                        <input type="text" v-model='p_number'>
-                    </li>
-                    <li>
-                        商品類別:
-                        <select name="status" id="" v-model='p_sort'>
-                            <option value="0">銅鑼燒</option>
-                            <option value="1">日式餅乾</option>
-                            <option value="2">生菓子</option>
-                            <option value="3">鯛魚燒</option>
-                            <option value="4">羊羹</option>
-                            <option value="5">大福</option>
-                            <option value="6">最中</option>
-                        </select>
-                    </li>
-                    <li>
-                        <label for="">商品名稱:</label>
-                        <input type="text" v-model='p_name'>
-                    </li>
-                    <li>
-                        <label for="">&emsp;&emsp;原價:</label>
-                        <input type="text" v-model='p_original' @keyup='regular'>
-                    </li>
-                    <li>
-                        <label for="">&emsp;&emsp;售價:</label>
-                        <input type="text" v-model='p_sell' @keyup='regular'>
-                    </li>
-                    <li>
-                        <label for="">庫存數量:</label>
-                        <input type="text" v-model='p_stock' @keyup='regular'>
-                    </li>
-                    <li>
-                        商品狀態:
-                        <select name="status" id="" v-model='p_status'>
-                            <option value="0">新品上市</option>
-                            <option value="1">熱銷商品</option>
-                        </select>
-                        <select name="status" id="" v-model='p_limit'>
-                            <option value="0">期間限定商品</option>
-                            <option value="1">人氣商品</option>
-                        </select>
-                    </li>
-                    <li>
-                        &emsp;上下架:
-                        <select name="status" id="" v-model='on_off'>
-                            <option value="0">下架</option>
-                            <option value="1">上架</option>
-                        </select>
-                    </li>
-                    <li>
-                        保存期限:
-                        <select name="status" id="" v-model='p_exp'>
-                            <option value="0">3日</option>
-                            <option value="1">7日</option>
-                            <option value="2">14日</option>
-                            <option value="3">30日</option>
-                        </select>
-                    </li>
-                    <li>
-                        客製化禮盒:
-                        <select name="status" id="" v-model='p_customized'>
-                            <option value="0">否</option>
-                            <option value="1">是</option>
-                        </select>
-                    </li>
-                    <li>
-                        <label for="">&emsp;&emsp;成分:</label>
-                        <textarea name="" id="" cols="30" rows="5" v-model='p_ingredient'></textarea>
-                    </li>
-                    <li>
-                        <label for="">說明文字:</label>
-                        <textarea name="" id="" cols="30" rows="5" v-model='p_descript'></textarea>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="n-product_edit_right">
-
-                <div class="n-product_group" v-for='(img_name, index) in img_names'>
-                    <label :for='index'>{{img_name.name}}:</label>
-                    <input type="file" :id="index" @change='upload_img'>
-                    <p>請選擇圖片上傳</p>
-                    <div class="n-product_img">
-                        <img :src='img_name.src'>
-                        <p>請選擇圖片上傳</p>
-                    </div>
+        
+                <div class="n-product_edit_left">
+                    <ul>
+                        <li>
+                            <label for="">商品編號:</label>
+                            <input type="text" v-model='p_number'>
+                        </li>
+                        <li>
+                            商品類別:
+                            <select name="status" id="" v-model='p_sort'>
+                                <option value="0">銅鑼燒</option>
+                                <option value="1">日式餅乾</option>
+                                <option value="2">生菓子</option>
+                                <option value="3">鯛魚燒</option>
+                                <option value="4">羊羹</option>
+                                <option value="5">大福</option>
+                                <option value="6">最中</option>
+                            </select>
+                        </li>
+                        <li>
+                            <label for="">商品名稱:</label>
+                            <input type="text" v-model='p_name'>
+                        </li>
+                        <li>
+                            <label for="">&emsp;&emsp;原價:</label>
+                            <input type="text" v-model='p_original' @keyup='regular'>
+                        </li>
+                        <li>
+                            <label for="">&emsp;&emsp;售價:</label>
+                            <input type="text" v-model='p_sell' @keyup='regular'>
+                        </li>
+                        <li>
+                            <label for="">庫存數量:</label>
+                            <input type="text" v-model='p_stock' @keyup='regular'>
+                        </li>
+                        <li>
+                            商品狀態:
+                            <select name="status" id="" v-model='p_status'>
+                                <option value="0">新品上市</option>
+                                <option value="1">熱銷商品</option>
+                            </select>
+                            <select name="status" id="" v-model='p_limit'>
+                                <option value="0">期間限定商品</option>
+                                <option value="1">人氣商品</option>
+                            </select>
+                        </li>
+                        <li>
+                            &emsp;上下架:
+                            <select name="status" id="" v-model='on_off'>
+                                <option value="0">下架</option>
+                                <option value="1">上架</option>
+                            </select>
+                        </li>
+                        <li>
+                            保存期限:
+                            <select name="status" id="" v-model='p_exp'>
+                                <option value="0">3日</option>
+                                <option value="1">7日</option>
+                                <option value="2">14日</option>
+                                <option value="3">30日</option>
+                            </select>
+                        </li>
+                        <li>
+                            客製化禮盒:
+                            <select name="status" id="" v-model='p_customized'>
+                                <option value="0">否</option>
+                                <option value="1">是</option>
+                            </select>
+                        </li>
+                        <li>
+                            <label for="">&emsp;&emsp;成分:</label>
+                            <textarea name="" id="" cols="30" rows="5" v-model='p_ingredient'></textarea>
+                        </li>
+                        <li>
+                            <label for="">說明文字:</label>
+                            <textarea name="" id="" cols="30" rows="5" v-model='p_descript'></textarea>
+                        </li>
+                    </ul>
                 </div>
 
-            </div>
+                <div class="n-product_edit_right">
+                    
+                    <div class="n-product_group" v-for='(img_name, index) in img_names'>
+                        <label :for='index'>{{img_name.name}}:</label>
+                        <input type="file" :id="index" @change='upload_img'>
+                        <p>請選擇圖片上傳</p>
+                        <div class="n-product_img">
+                            <img :src='img_name.src'>
+                            <p>請選擇圖片上傳</p>
+                        </div>
+                    </div>
+
+                </div>
 
             <div class="n-product_editbtn">
                 <button class="n-product_close" @click='p_close'>關閉</button>
@@ -182,8 +182,9 @@
 
 
     </div>
-
+    
     <script src="../js/vue.js"></script>
     <script src="../js/n-product.js"></script>
+    
 </body>
 </html>
