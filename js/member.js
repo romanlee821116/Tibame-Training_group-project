@@ -14,38 +14,26 @@ $(document).ready(function(){
     }),
 
     // 訂單查詢的收件人詳細資訊
-    Vue.component('receiver-detail',{
-        data(){
-            return {
-                memberRecevierName: '李* 先生/小姐',
-                memberRecevierPhone: '0912345678',
-                memberRecevierAddress: '******民權東路六段',
-
-                // isActive: false,
-            };
-        },
-        template: `
-            <div class='receiverDetail'>
-                <div>
-                    <p>收件人姓名：<input disabled type="text" value='李* 先生/小姐'></p>
-                    <p>收件人電話：<input disabled type="text" value='0912345678'></p>
-                    <p>收件人地址：<input disabled type="text" value='******民權東路六段'></p>
-                </div>
-                <p>部分資訊打***以保護個人隱私</p>
-                <button>確認</button>
-            </div>
-        `,
-        // template: `
-        //     <div class='receiverDetail'>
-        //         <div>
-        //             <p>收件人姓名：<input disabled type="text" value='李* 先生/小姐'></p>
-        //             <p>收件人電話：<input disabled type="text" value='0912345678'></p>
-        //             <p>收件人地址：<input disabled type="text" value='******民權東路六段'></p>
-        //         </div>
-        //         <p>部分資訊打***以保護個人隱私</p>
-        //         <button  @click='recevierClose'>確認</button>
-        //     </div>
-        // `,
+    // Vue.component('receiver-detail',{
+    //     data(){
+    //         return {
+    //             memberRecevierName: '李* 先生/小姐',
+    //             memberRecevierPhone: '0912345678',
+    //             memberRecevierAddress: '******民權東路六段',
+    //             // isActive: false,
+    //         };
+    //     },
+    //     template: `
+    //         <div class='receiverDetail'>
+    //             <div>
+    //                 <p>收件人姓名：<input disabled type="text" value='李* 先生/小姐'></p>
+    //                 <p>收件人電話：<input disabled type="text" value='0912345678'></p>
+    //                 <p>收件人地址：<input disabled type="text" value='******民權東路六段'></p>
+    //             </div>
+    //             <p>部分資訊打***以保護個人隱私</p>
+    //             <button>確認</button>
+    //         </div>
+    //     `,
         // methods: {
             // recevierClose(){
             //     // this.isActive = true;
@@ -55,7 +43,7 @@ $(document).ready(function(){
             //     $('body').removeClass('stopScroll');
             // },
         // },
-    });
+    // });
 
     new Vue({
         el: '.memberAll',
@@ -63,9 +51,12 @@ $(document).ready(function(){
     });
 
     // ===================== vue結束ㄌ =======================
-    
+
+    // 登入後先抓localStorage存的帳號，到資料庫撈出相關資訊
+    memberDetailLoad();
+
     // ------暫時用這個取代vue的click----------
-    $('.receiverDetail>button').click(function(){
+    $('body').on('click', '.receiverDetail>button', function(){
         $('.receiverDetail').fadeOut();
         $('.greyBackground').remove();
         // 可滑動卷軸
@@ -126,63 +117,6 @@ $(document).ready(function(){
         $('.memberLine ~ div').not('.memberPart5').hide();
     });
 
-    // =============== 密碼反饋 ===================
-    $('.memberChangePSW').click(function(e){
-        // 清空重來
-        $('.memberError').css('display','none');
-        // $('.memberError').next().children('p').text('資料格式不正確');
-        $('input').css('border','2px solid transparent');
-
-        // 設定變數
-        let oldPSW = $('.memberOldPSW').val();
-        let newPSW = $('.memberNewPSW').val();
-        let newPSW2 = $('.memberNewPSW2').val();
-        // 正規表示法密碼格式
-        let passwordCorrect = /^.{8,16}$/;
-
-        if(oldPSW == ""){
-            e.preventDefault();
-            $('.memberOldPSW').css('border','2px solid #dc3838');
-            $('.memberOldPSW').next().next().css('display','inline-block');
-            $('.memberOldPSW').next().next().children('p').text('請輸入資訊');
-        }else if(!passwordCorrect.test(oldPSW)){
-            e.preventDefault();
-            $('.memberOldPSW').css('border','2px solid #dc3838');
-            $('.memberOldPSW').next().next().css('display','inline-block');
-            $('.memberOldPSW').next().next().children('p').text('資料格式不正確');
-        }
-
-        if(newPSW == ""){
-            e.preventDefault();
-            $('.memberNewPSW').css('border','2px solid #dc3838');
-            $('.memberNewPSW').next().next().css('display','inline-block');
-            $('.memberNewPSW').next().next().children('p').text('請輸入資訊');
-        }else if(!passwordCorrect.test(newPSW)){
-            e.preventDefault();
-            $('.memberNewPSW').css('border','2px solid #dc3838');
-            $('.memberNewPSW').next().next().css('display','inline-block');
-            $('.memberNewPSW').next().next().children('p').text('資料格式不正確');
-        }
-
-        if(newPSW2 == ""){
-            e.preventDefault();
-            $('.memberNewPSW2').css('border','2px solid #dc3838');
-            $('.memberNewPSW2').next().next().css('display','inline-block');
-            $('.memberNewPSW2').next().next().children('p').text('請輸入資訊');
-        }else if(!passwordCorrect.test(newPSW2)){
-            e.preventDefault();
-            $('.memberNewPSW2').css('border','2px solid #dc3838');
-            $('.memberNewPSW2').next().next().css('display','inline-block');
-            $('.memberNewPSW2').next().next().children('p').text('資料格式不正確');
-        }else if(newPSW2 != newPSW ){
-            e.preventDefault();
-            $('.memberNewPSW2').css('border','2px solid #dc3838');
-            $('.memberNewPSW2').next().next().css('display','inline-block');
-            $('.memberNewPSW2').next().next().children('p').text('兩次輸入密碼不同');
-        }
-
-
-    });
 
     // 所有input欄位點擊focus時，提示消失
     $('.memberPart2 input').focus(function(){
@@ -203,9 +137,9 @@ $(document).ready(function(){
 
     // ================ 訂單查詢 ===================
     // 查看明細 & 收合明細
-    $('.memberOrderDetailAll').hide();
-    $('.memberOpenDetail').click(function(){
-        console.log('kk');
+    $('.memberOrderDetailHere').hide();
+    $('body').on('click', '.memberPart3 .memberOpenDetail', function(){
+        console.log($(this));
         $(this).parent().parent().next().slideToggle("slow");
         $(this).toggleClass('close_detail');
         if( $(this).hasClass('close_detail') ){
@@ -215,32 +149,46 @@ $(document).ready(function(){
         }
     });
 
-    // 收件人詳細資訊
-    $('.memberReceiverID').click(function(){
-        // 出現彈出視窗
+    // 收件人詳細資訊  
+    $('body').on('click','.memberReceiverID', function(){
         recevier = $(this).parent().parent().next().next().next();
-        // $('.receiverDetail').fadeIn(500);
         recevier.fadeIn(500);
         // 不可滑動卷軸
         $('body').addClass('stopScroll');
         // 背景灰底
         $('body').append("<div class='greyBackground'></div>");
     });
-    // $('.recevierClose').click(function(){
-    //     console.log('close');
-    //     $(this).parent().parent().hide();
-    //     $('body').removeClass('stopScroll');
-    // });
+
+
+    // ================ 取消訂單查詢 ===================
+    // 查看明細 & 收合明細
+    // $('.memberOrderDetailAll').hide();
+    $('body').on('click', '.memberPart4 .memberOpenDetail', function(){
+        console.log($(this));
+        $(this).parent().parent().next().slideToggle("slow");
+        $(this).toggleClass('close_detail');
+        if( $(this).hasClass('close_detail') ){
+            $(this).text('收合明細');
+        }else{
+            $(this).text('查看明細');
+        }
+    });
 
     // ================== 收藏管理 ==================
-    $('.memberLikeHeart').click(function(){
+    $('body').on('click','.memberLikeHeart',function(){
         let deleItem = this;
         $(deleItem).attr('src','../images/member/unfavorite.png')
         $(deleItem).parent().fadeOut(1000);
         setTimeout(function(){
             $(deleItem).parent().remove();
         },1000);
-        // $(this).parent().remove();
+
+        // 找刪除的圖檔名
+        deleItemSrc = $(deleItem).prev()[0].src;
+        deleItemPicName = deleItemSrc.split('/')[6];
+
+        // =========同步更新資料庫的資料=========
+        memberFavoriteDele(deleItemSrc);
     });
 
 });
