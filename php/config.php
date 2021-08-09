@@ -2,7 +2,7 @@
 function getPDO(){
     $db_host = "127.0.0.1";
     $db_user = "root";
-    $db_pass = "f4a0n1n2y7";
+    $db_pass = "wendy729";
     $db_select = "tfd102_g3";
 
     $dsn = "mysql:host=".$db_host.";dbname=".$db_select;
