@@ -244,9 +244,9 @@ body {
   cursor: pointer;
 }
 
-.n-member_footer ul li:nth-child(2) {
-  background-color: #bb866a;
-  color: #ffffff;
+.nowpagela {
+  background-color: #bb866a !important;
+  color: #ffffff !important;
 }
 
 .n-member_footer ul li:first-child {

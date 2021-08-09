@@ -77,16 +77,37 @@ Vue.component('faq-add', {
             this.$emit('fclose');
         },  
         f_save(){   
-
+            if(this.f_question==''){
+                alert('請輸入問題');
+            }else if(this.f_answer==''){
+                alert('請輸入回答');
+            }else{
+                $.ajax({
+                    method: 'POST',
+                    url: '../php/n-faqAdd.php',
+                    data:{
+                        qa_class: parseInt(this.f_sort),
+                        question: this.f_question,
+                        answer: this.f_answer
+                    },
+                    dataType:'text',
+                    success: function (data) {     
+                        alert(data)
+                    },
+                    error: function(exception) {
+                        alert("數據載入失敗: " + exception.status);
+                    }
+                })
+            }
             this.$emit('fsave', this.f_sort, this.f_question, this.f_answer);
-
+            
         },
     }  
 });
 
 
 
-new Vue({
+var appVue = new Vue({
     el: '#app',
     data:{
         faq_number:'',
@@ -108,24 +129,19 @@ new Vue({
         ],
         titles: ['問題編號', '問題分類', '問題', '回答', ''],
         faqs:[
+            // {
+            //     'qa_id':'1234567890',
+            //     'qa_class':0,
+            //     'question':'1新品上市新品上市新品上市新品上市新品上市',
+            //     'answer':'1這就是回答',
+            // },
             {
-                'qa_id':'1234567890',
-                'qa_class':0,
-                'question':'1新品上市新品上市新品上市新品上市新品上市',
-                'answer':'1這就是回答',
+                'qa_id':'',
+                'qa_class':'',
+                'question':'',
+                'answer':'',
             },
-            {
-                'qa_id':'1234567890',
-                'qa_class':1,
-                'question':'2新品上市新品上市新品上市新品上市新品上市',
-                'answer':'2這就是回答',
-            },
-            {
-                'qa_id':'1234567890',
-                'qa_class':2,
-                'question':'3新品上市新品上市新品上市新品上市新品上市',
-                'answer':'3這就是回答',
-            }
+            
         ],
         pages:[
             {page:"<", url: "#"},
@@ -138,8 +154,13 @@ new Vue({
             {page:"20", url: "#"},
             {page:">", url: "#"},
         ],
+        nowpage:1,
         current_edit:null,
     },
+    created:function(){
+        this.showQdata(1);
+    },
+
 
     methods: {
         edit(index){                    
@@ -178,11 +199,9 @@ new Vue({
         f_save(){     
 
             let n_index = this.$data.current_edit;
-
             this.faqs[n_index].qa_class = this.f_sort;
             this.faqs[n_index].question = this.f_question;
             this.faqs[n_index].answer = this.f_answer;
-
             this.current_edit = null;
         },
         new_add(){
@@ -221,7 +240,29 @@ new Vue({
         },
         log_out(){
             location.href = "./n-login.html"
-        },                 
+        },  
+        
+        showQdata(gopage){
+            console.log(gopage);
+            if(isNaN(gopage)) return;
+            this.nowpage = gopage;
+
+            $.ajax({
+                method: "POST",
+                url: "../php/getFaqData.php",
+                data:{ 
+                    page : gopage,
+                },            
+                dataType: "json",
+                success: function (response) {
+                    appVue.pages = response[0];
+                    appVue.faqs = response[1];
+                },
+                error: function(exception) {
+                    alert("發生錯誤: " + exception.status);
+                },
+            });
+        },             
         
     },
     

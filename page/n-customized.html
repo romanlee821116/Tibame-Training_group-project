@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,7 +8,12 @@
     <title>後台 - 客製管理</title>
     <link rel="stylesheet" href="../css/n-customized.css">
     <link rel="icon" href="../images/backend/n_logo.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+        referrerpolicy="no-referrer"></script>
+
 </head>
+
 <body>
     <div id="app">
         <header class="n-customized_header">
@@ -15,7 +21,7 @@
                 <img src="../images/backend/n_logo.png" alt="" srcset="">
                 <p>小春堂後臺管理</p>
             </div>
-               
+
             <div class="n-customized_logout" @click='log_out'>
                 <p>帳號登出</p>
                 <img src="../images/backend/log-out.png" alt="" srcset="">
@@ -24,18 +30,18 @@
 
         <main class="n-customized_main">
             <div class="n-customized_left">
-                <a v-for = 'btn in mainbtn' :href="btn.url">{{btn.name}}</a>
+                <a v-for='btn in mainbtn' :href="btn.url">{{btn.name}}</a>
             </div>
 
             <div class="n-customized_right">
 
                 <p>客製化商品管理</p>
+                <form enctype="multipart/form-data" name='uploadImages' method='post'>
+                    <div class="n-customized_card_style">
 
-                <div class="n-customized_card_style">
+                        <p>卡片樣式</p>
 
-                    <p>卡片樣式</p>
-
-                    <!-- <div class="n-customized_group" v-for='img_name in img_names'>
+                        <!-- <div class="n-customized_group" v-for='img_name in img_names'>
                         <label for="group1">{{img_name}}:</label>
                         <input type="file" id="group1" @change='upload_img'>
                         <p>請選擇圖片上傳</p>
@@ -44,66 +50,141 @@
                             <p>請選擇圖片上傳</p>
                         </div>
                     </div>    -->
-                    
-                    <div class="n-customized_group" v-for='test in tests'>
-                        <label for="group1">{{test.t1}}:</label>
-                        <input type="file" id="group1" @change='upload_img'>
-                        <p>請選擇圖片上傳</p>
-                        <div class="n-customized_img" >
-                            <img :src = "test.t2">
-                            <p>請選擇圖片上傳</p>
+
+                        <div style="display: flex">
+                            <div class="n-customized_group" v-for='(test, index) in tests'>
+                                <label for="group1">圖片0{{index+1}}:</label>
+                                <input type="file" id="group1" @change='upload_img' name="photo[]"
+                                    class='n-customizedCard'>
+                                <p>請選擇圖片上傳</p>
+                                <div class="n-customized_img">
+                                    <img :src="test.cardimage">
+                                    <p>請選擇圖片上傳</p>
+                                </div>
+                            </div>
                         </div>
-                    </div>  
 
-                    <div class="n-customized_editbtn">
-                        <button class="n-customized_close">關閉</button>
-                        <button class="n-customized_save">儲存</button>
-                    </div>
-
-                </div>
-
-
-                <div class="n-customized_sticker_style"> 
-                    
-                    <p>貼圖樣式</p>
-    
-                    <!-- <div class="n-customized_group" v-for='(num,key) in 12'>
-                        <label for="group5">圖片{{key +1}}:</label>
-                        <input type="file" id="group5" @change='upload_img'>
-                        <p>請選擇圖片上傳</p>
-                        <div class="n-customized_img">
-                            <img src="">
-                            <p>請選擇圖片上傳</p>
-                        </div>
-                    </div> -->
-
-                    <div class="n-customized_group" v-for='(ctest,key) in ctests'>
-                        <label for="group5">圖片{{key +1}}:</label>
-                        <input type="file" id="group5" @change='upload_img'>
-                        <p>請選擇圖片上傳</p>
-                        <div class="n-customized_img">
-                            <img :src = "ctest">
-                            <p>請選擇圖片上傳</p>
+                        <div class="n-customized_editbtn">
+                            <!-- <button class="n-customized_close">關閉</button>
+                            <button class="n-customized_save">儲存</button> -->
+                            <input type="button" class="n-customized_close" value='關閉'>
+                            <input type="button" class="n-customized_save" value='儲存' onclick='cardSave()'>
                         </div>
                     </div>
-    
-                    <div class="n-customized_editbtn">
-                        <button class="n-customized_close">關閉</button>
-                        <button class="n-customized_save">儲存</button>
-                    </div>
-                    
-                </div>
+                </form>
 
+                <form action="" enctype="multipart/form-data">
+                    <div class="n-customized_sticker_style">
+
+                        <p>貼圖樣式</p>
+
+                        <!-- <div class="n-customized_group" v-for='(num,key) in 12'>
+                            <label for="group5">圖片{{key +1}}:</label>
+                            <input type="file" id="group5" @change='upload_img'>
+                            <p>請選擇圖片上傳</p>
+                            <div class="n-customized_img">
+                                <img src="">
+                                <p>請選擇圖片上傳</p>
+                            </div>
+                        </div> -->
+
+                        <div class="n-customized_group" v-for='(ctest,key) in ctests'>
+                            <label for="group5">圖片{{key +1}}:</label>
+                            <input type="file" id="group5" @change='upload_img' class='n-customizedIcon'>
+                            <p>請選擇圖片上傳</p>
+                            <div class="n-customized_img">
+                                <img :src="ctest.cardimage">
+                                <p>請選擇圖片上傳</p>
+                            </div>
+                        </div>
+
+                        <div class="n-customized_editbtn">
+                            <!-- <button class="n-customized_close">關閉</button>
+                            <button class="n-customized_save">儲存</button> -->
+                            <input type="button" class="n-customized_close" value='關閉'>
+                            <input type="button" class="n-customized_save" value='儲存' onclick='iconSave()'>
+                        </div>
+
+                    </div>
+                </form>
             </div>
         </main>
-
-        
-
-       
-
     </div>
 
     <script src="../js/vue.js"></script>
     <script src="../js/n-customized.js"></script>
+    <script>
+        function cardSave() {
+            let form_data = new FormData();
+            let card1 = $('.n-customizedCard').eq(0).val();
+            let card2 = $('.n-customizedCard').eq(1).val();
+            let card3 = $('.n-customizedCard').eq(2).val();
+            let updateIndex=[];
+            if(card1!=''){
+                updateIndex.push(['1']);
+            }
+            if(card2!=''){
+                updateIndex.push(['5']);
+            }
+            if(card3!=''){
+                updateIndex.push(['6']);
+            }
+            // console.log(updateIndex);
+            form_data.append('cardIndex[]', updateIndex);
+            
+            for (let i = 0; i < $('.n-customizedCard').length; i++) {
+                form_data.append("files[]", document.getElementsByClassName('n-customizedCard')[i].files[0]);
+            }
+            
+            $.ajax({
+                url: '../php/n-customizedCard.php',
+                type: 'post',
+                cache: false,
+                data: form_data,
+                processData: false,
+                contentType: false,
+                success: function (res) {
+                    console.log(res);
+                },
+                error: function (exception) {
+                    alert("數據載入失敗: " + exception.status);
+                }
+            })
+        }
+    </script>
+    <script>
+        function iconSave() {
+            let form_data = new FormData();
+            let updateIndex=[];
+
+            for(let i=0; i<$('.n-customizedIcon').length; i++){
+                let this_card = $('.n-customizedIcon').eq(i).val();
+                if(this_card!=''){
+                    updateIndex.push([`${i+7}`]);
+                }//
+
+                form_data.append("files[]", document.getElementsByClassName('n-customizedIcon')[i].files[0]);
+            }
+
+            form_data.append('iconIndex[]', updateIndex);
+            
+            
+            $.ajax({
+                url: '../php/n-customizedIcon.php',
+                type: 'post',
+                cache: false,
+                data: form_data,
+                processData: false,
+                contentType: false,
+                success: function (res) {
+                    console.log(res);
+                },
+                error: function (exception) {
+                    alert("數據載入失敗: " + exception.status);
+                }
+            })
+        }
+    </script>
 </body>
+
 </html>

@@ -21,11 +21,11 @@ Vue.component('double-check', {
     },
 });
 
-new Vue({
+
+var appVue = new Vue({
     el: '#app',
     data:{
         dbcheck:false,
-
         member_number: '',
         m_status:0,
         member_list:['停權', '正常'],
@@ -40,49 +40,43 @@ new Vue({
         ],
         titles: ['會員編號', '帳號', '姓名', '手機', '帳號狀態', '創建時間', '', ],
         members:[
+            // {
+            //     'member_id':'001',
+            //     'account':'Harukadou@gmail.com',
+            //     'name':'張昭',
+            //     'phone':'0910123456',
+            //     'member_status':0,
+            //     'register_date':'2021/01/01',
+            //     'address':'台北市大安區大安路一段16巷2號',
+            //     'gender':'女',
+            // },
             {
-                'member_id':'001',
-                'account':'Harukadou@gmail.com',
-                'name':'張昭',
-                'phone':'0910123456',
-                'member_status':0,
-                'register_date':'2021/01/01',
-                'address':'台北市大安區大安路一段16巷2號',
-                'gender':'女',
-            },
-            {
-                'member_id':'002',
-                'account':'Harukadouv2@gmail.com',
-                'name':'張昭2',
-                'phone':'0910123456',
-                'member_status':1,
-                'register_date':'2021/01/02',
-                'address':'台北市大安區大安路一段16巷2號',
-                'gender':'女',
-            },
-            {
-                'member_id':'003',
-                'account':'Harukadouv3@gmail.com',
-                'name':'張昭3',
-                'phone':'0910123456',
-                'member_status':0,
-                'register_date':'2021/01/03',
-                'address':'台北市大安區大安路一段16巷2號',
-                'gender':'女',
+                'member_id':'',
+                'account':'',
+                'name':'',
+                'phone':'',
+                'member_status':'',
+                'register_date':'',
+                'address':'',
+                'gender':'',
             }
         ],
         pages:[
-            {page:"<", url: "#"},
-            {page:"1", url: "#"},
-            {page:"2", url: "#"},
-            {page:"3", url: "#"},
-            {page:"4", url: "#"},
-            {page:"5", url: "#"},
-            {page:"...", url: "#"},
-            {page:"20", url: "#"},
-            {page:">", url: "#"},
+            {page:"<", link: "x"},
+            {page:"1", link: "1"},
+            {page:"2", link: "2"},
+            {page:"3", link: "3"},
+            {page:"4", link: "4"},
+            {page:"5", link: "5"},
+            {page:"...", link: "x"},
+            {page:"20", link: "20"},
+            {page:">", link: "2"},
         ],
+        nowpage:1,
         current_edit:null,
+    },
+    created:function(){
+        this.showMdata(1);
     },
 
     methods: {
@@ -125,8 +119,30 @@ new Vue({
         },          
         log_out(){
             location.href = "./n-login.html"
-        }
-        
+        },
+
+        showMdata(gopage){
+            console.log(gopage);
+            if(isNaN(gopage)) return;
+            this.nowpage = gopage;
+
+            $.ajax({
+                method: "POST",
+                url: "../php/getMemberData.php",
+                data:{ 
+                    page : gopage,
+                },            
+                dataType: "json",
+                success: function (response) {
+                    appVue.pages = response[0];
+                    appVue.members = response[1];
+                },
+                error: function(exception) {
+                    alert("發生錯誤: " + exception.status);
+                },
+            });
+        },
+
     },
     
 })

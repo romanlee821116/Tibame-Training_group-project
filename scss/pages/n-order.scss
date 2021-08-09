@@ -243,10 +243,10 @@ body{
     cursor: pointer;
 }
 
-.n-order_footer ul li:nth-child(2){
-    background-color: #bb866a;
-    color: #ffffff;
-}
+.nowpagela {
+    background-color: #bb866a !important;
+    color: #ffffff !important;
+  }
 
 .n-order_footer ul li:first-child{
     border-left: 1px solid #bb866a;

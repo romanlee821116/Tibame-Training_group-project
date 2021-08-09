@@ -1,7 +1,4 @@
 $(document).ready(function(){
-
-
-
     Vue.component('checkBox',{
         template: `
         <div class='custom_popUp_template'>
@@ -50,84 +47,66 @@ $(document).ready(function(){
             category: [
                 {type: '所有商品', class:'cus_categoryBtn categoryChoose', id: '9'}, 
                 {type: '銅鑼燒', class:'cus_categoryBtn', id: '0'}, 
-                {type: '日式餅乾', class:'cus_categoryBtn', id: '1'}, 
-                {type: '生菓子', class:'cus_categoryBtn', id: '2'}, 
-                {type: '鯛魚燒', class:'cus_categoryBtn', id: '3'},
+                {type: '日式餅乾', class:'cus_categoryBtn', id: '3'}, 
+                {type: '生菓子', class:'cus_categoryBtn', id: '5'}, 
+                {type: '鯛魚燒', class:'cus_categoryBtn', id: '1'},
                 {type: '羊羹', class:'cus_categoryBtn', id: '4'},
-                {type: '大福', class:'cus_categoryBtn', id: '5'},
+                {type: '大福', class:'cus_categoryBtn', id: '2'},
                 {type: '最中', class:'cus_categoryBtn', id: '6'},
             ],
 
             cus_item: [
-                {txt: '栗子大福',class:'1 cus-item', img: '../images/shopping_list/cuslist_daifuku_chestnut.png', type:'5', id:'38' },
-                {txt: '巧克力大福',class:'2 cus-item', img: '../images/shopping_list/cuslist_daifuku_chocolate.png', type:'5', id:'32' },
-                {txt: '奶油大福',class:'3 cus-item', img: '../images/shopping_list/cuslist_daifuku_cream.png', type:'5', id:'31' },
-                {txt: '芒果大福',class:'4 cus-item', img: '../images/shopping_list/cuslist_daifuku_mango.png', type:'5', id:'34' },
-                {txt: '抹茶大福',class:'5 cus-item', img: '../images/shopping_list/cuslist_daifuku_matcha.png', type:'5', id:'35' },
-                {txt: '柳橙大福',class:'6 cus-item', img: '../images/shopping_list/cuslist_daifuku_oranges.png', type:'5', id:'36' },
-                {txt: '布丁大福',class:'7 cus-item', img: '../images/shopping_list/cuslist_daifuku_pudding.png', type:'5', id:'33' },
-                {txt: '紅豆大福',class:'8 cus-item', img: '../images/shopping_list/cuslist_daifuku_redBean.png', type:'5', id:'37' },
-                {txt: '毛豆大福',class:'9 cus-item', img: '../images/shopping_list/cuslist_daifuku_soybeans.png', type:'5', id:'30' },
-                {txt: '草莓大福',class:'10 cus-item', img: '../images/shopping_list/cuslist_daifuku_strawberry.png', type:'5', id:'39' },
-                {txt: '栗子銅鑼燒',class:'11 cus-item', img: '../images/shopping_list/cuslist_dorayaki_chestnut.png', type:'0', id:'7' },
-                {txt: '巧克力銅鑼燒',class:'12 cus-item', img: '../images/shopping_list/cuslist_dorayaki_chocolate.png', type:'0', id:'4' },
-                {txt: '抹茶銅鑼燒',class:'13 cus-item', img: '../images/shopping_list/cuslist_dorayaki_matcha.png', type:'0', id:'3' },
-                {txt: '布丁銅鑼燒',class:'14 cus-item', img: '../images/shopping_list/cuslist_dorayaki_pudding.png', type:'0', id:'5' },
-                {txt: '紅豆銅鑼燒',class:'15 cus-item', img: '../images/shopping_list/cuslist_dorayaki_redBean.png', type:'0', id:'6' },
-                {txt: '草莓銅鑼燒',class:'16 cus-item', img: '../images/shopping_list/cuslist_dorayaki_strawberry.png', type:'0', id:'1' },
-                {txt: '芋泥銅鑼燒',class:'17 cus-item', img: '../images/shopping_list/cuslist_dorayaki_taro.png', type:'0', id:'2' },
-                {txt: '菊',class:'18 cus-item', img: '../images/shopping_list/cuslist_namagashi_chrysanthemum.png', type:'2', id:'17' },
-                {txt: '花火',class:'19 cus-item', img: '../images/shopping_list/cuslist_namagashi_firework.png', type:'2', id:'13' },
-                {txt: '紫陽花',class:'19 cus-item', img: '../images/shopping_list/cuslist_namagashi_hydrangea.png', type:'2', id:'16' },
-                {txt: '桔梗',class:'19 cus-item', img: '../images/shopping_list/cuslist_namagashi_kikyo.png', type:'2', id:'14' },
-                {txt: '寒牡丹',class:'19 cus-item', img: '../images/shopping_list/cuslist_namagashi_peony.png', type:'2', id:'15' },
-                {txt: '櫻',class:'19 cus-item', img: '../images/shopping_list/cuslist_namagashi_sakura.png', type:'2', id:'18' },
-                {txt: '巧克力最中',class:'19 cus-item', img: '../images/shopping_list/cuslist_monaka_chocolate.png', type:'6', id:'41' },
-                {txt: '抹茶最中',class:'19 cus-item', img: '../images/shopping_list/cuslist_monaka_matcha.png', type:'6', id:'42' },
-                {txt: '牛奶最中',class:'19 cus-item', img: '../images/shopping_list/cuslist_monaka_milk.png', type:'6', id:'40' },
-                {txt: '花生最中',class:'19 cus-item', img: '../images/shopping_list/cuslist_monaka_peanut.png', type:'6', id:'43' },
-                {txt: '紅豆最中',class:'19 cus-item', img: '../images/shopping_list/cuslist_monaka_redBean.png', type:'6', id:'44' },
-                {txt: '奶油鯛魚燒',class:'19 cus-item', img: '../images/shopping_list/cuslist_taiyaki_cream.png', type:'3', id:'19' },
-                {txt: '綠豆鯛魚燒',class:'19 cus-item', img: '../images/shopping_list/cuslist_taiyaki_greenBean.png', type:'3', id:'22' },
-                {txt: '抹茶鯛魚燒',class:'19 cus-item', img: '../images/shopping_list/cuslist_taiyaki_matcha.png', type:'3', id:'20' },
-                {txt: '紅豆鯛魚燒',class:'19 cus-item', img: '../images/shopping_list/cuslist_taiyaki_redBean.png', type:'3', id:'21' },
-                {txt: '櫻花鯛魚燒',class:'19 cus-item', img: '../images/shopping_list/cuslist_taiyaki_sakura.png', type:'3', id:'23' },
-                {txt: '起司羊羹',class:'19 cus-item', img: '../images/shopping_list/cuslist_yokan_cheese.png', type:'4', id:'26' },
-                {txt: '巧克力羊羹',class:'19 cus-item', img: '../images/shopping_list/cuslist_yokan_chocolate.png', type:'4', id:'25' },
-                {txt: '無花果羊羹',class:'19 cus-item', img: '../images/shopping_list/cuslist_yokan_fig.png', type:'4', id:'28' },
-                {txt: '柚子羊羹',class:'19 cus-item', img: '../images/shopping_list/cuslist_yokan_grapefruit.png', type:'4', id:'24' },
-                {txt: '開心果羊羹',class:'19 cus-item', img: '../images/shopping_list/cuslist_yokan_pistachio.png', type:'4', id:'29' },
-                {txt: '草莓羊羹',class:'19 cus-item', img: '../images/shopping_list/cuslist_yokan_strawberry.png', type:'4', id:'27' },
-                {txt: '翡冷翠杏仁脆餅',class:'19 cus-item', img: '../images/shopping_list/cuslist_sweet_almond.png', type:'1', id:'9' },
-                {txt: '費南雪',class:'19 cus-item', img: '../images/shopping_list/cuslist_sweet_fernance.png', type:'1', id:'10' },
-                {txt: '國王餅',class:'19 cus-item', img: '../images/shopping_list/cuslist_sweet_galette.png', type:'1', id:'12' },
-                {txt: '檸檬沙貝蕾',class:'19 cus-item', img: '../images/shopping_list/cuslist_sweet_lemon.png', type:'1', id:'11' },
-                {txt: '瑪德蓮',class:'19 cus-item', img: '../images/shopping_list/cuslist_sweet_madeleine.png', type:'1', id:'8' },
-            ],
-            bagCard: [
-                {src: '../images/customized/card_back02.png', class:'choose-card card2', id:'2'},
-                {src: '../images/customized/card_back03.png', class:'choose-card card3', id:'3'},
-                {src: '../images/customized/card_back01.png', class:'choose-card card1', id:'1'},
-                {src: '../images/customized/bag.png', class:'choose-bag', id:'0'},
-            ],            
-            iconList: [
-                {src: '../images/customized/sticker01.png', id:'1'},
-                {src: '../images/customized/sticker02.png', id:'2'},
-                {src: '../images/customized/sticker03.png', id:'3'},
-                {src: '../images/customized/sticker04.png', id:'4'},
-                {src: '../images/customized/sticker05.png', id:'5'},
-                {src: '../images/customized/sticker06.png', id:'6'},
-                {src: '../images/customized/sticker07.png', id:'7'},
-                {src: '../images/customized/sticker08.png', id:'8'},
-                {src: '../images/customized/sticker09.png', id:'9'},
-                {src: '../images/customized/sticker10.png', id:'10'},
-                {src: '../images/customized/sticker11.png', id:'11'},
-                {src: '../images/customized/sticker13.png', id:'12'},
-            ],                 
+                // {product_name: '栗子大福',class:'1', product_image_customize: '../images/shopping_list/cuslist_daifuku_chestnut.png', product_class:'5', product_list:'38' },
+                // {product_name: '巧克力大福',class:'2', product_image_customize: '../images/shopping_list/cuslist_daifuku_chocolate.png', product_class:'5', product_list:'32' },
+                // {product_name: '奶油大福',class:'3', product_image_customize: '../images/shopping_list/cuslist_daifuku_cream.png', product_class:'5', product_list:'31' },
+                // {product_name: '芒果大福',class:'4', product_image_customize: '../images/shopping_list/cuslist_daifuku_mango.png', product_class:'5', product_list:'34' },
+                // {product_name: '抹茶大福',class:'5', product_image_customize: '../images/shopping_list/cuslist_daifuku_matcha.png', product_class:'5', product_list:'35' },
+                // {product_name: '柳橙大福',class:'6', product_image_customize: '../images/shopping_list/cuslist_daifuku_oranges.png', product_class:'5', product_list:'36' },
+                // {product_name: '布丁大福',class:'7', product_image_customize: '../images/shopping_list/cuslist_daifuku_pudding.png', product_class:'5', product_list:'33' },
+                // {product_name: '紅豆大福',class:'8', product_image_customize: '../images/shopping_list/cuslist_daifuku_redBean.png', product_class:'5', product_list:'37' },
+                // {product_name: '毛豆大福',class:'9', product_image_customize: '../images/shopping_list/cuslist_daifuku_soybeans.png', product_class:'5', product_list:'30' },
+                // {product_name: '草莓大福',class:'10', product_image_customize: '../images/shopping_list/cuslist_daifuku_strawberry.png', product_class:'5', product_list:'39' },
+                // {product_name: '栗子銅鑼燒',class:'11', product_image_customize: '../images/shopping_list/cuslist_dorayaki_chestnut.png', product_class:'0', product_list:'7' },
+                // {product_name: '巧克力銅鑼燒',class:'12', product_image_customize: '../images/shopping_list/cuslist_dorayaki_chocolate.png', product_class:'0', product_list:'4' },
+                // {product_name: '抹茶銅鑼燒',class:'13', product_image_customize: '../images/shopping_list/cuslist_dorayaki_matcha.png', product_class:'0', product_list:'3' },
+                // {product_name: '布丁銅鑼燒',class:'14', product_image_customize: '../images/shopping_list/cuslist_dorayaki_pudding.png', product_class:'0', product_list:'5' },
+                // {product_name: '紅豆銅鑼燒',class:'15', product_image_customize: '../images/shopping_list/cuslist_dorayaki_redBean.png', product_class:'0', product_list:'6' },
+                // {product_name: '草莓銅鑼燒',class:'16', product_image_customize: '../images/shopping_list/cuslist_dorayaki_strawberry.png', product_class:'0', product_list:'1' },
+                // {product_name: '芋泥銅鑼燒',class:'17', product_image_customize: '../images/shopping_list/cuslist_dorayaki_taro.png', product_class:'0', product_list:'2' },
+                // {product_name: '菊',class:'18', product_image_customize: '../images/shopping_list/cuslist_namagashi_chrysanthemum.png', product_class:'2', product_list:'17' },
+                // {product_name: '花火',class:'19', product_image_customize: '../images/shopping_list/cuslist_namagashi_firework.png', product_class:'2', product_list:'13' },
+                // {product_name: '紫陽花',class:'19', product_image_customize: '../images/shopping_list/cuslist_namagashi_hydrangea.png', product_class:'2', product_list:'16' },
+                // {product_name: '桔梗',class:'19', product_image_customize: '../images/shopping_list/cuslist_namagashi_kikyo.png', product_class:'2', product_list:'14' },
+                // {product_name: '寒牡丹',class:'19', product_image_customize: '../images/shopping_list/cuslist_namagashi_peony.png', product_class:'2', product_list:'15' },
+                // {product_name: '櫻',class:'19', product_image_customize: '../images/shopping_list/cuslist_namagashi_sakura.png', product_class:'2', product_list:'18' },
+                // {product_name: '巧克力最中',class:'19', product_image_customize: '../images/shopping_list/cuslist_monaka_chocolate.png', product_class:'6', product_list:'41' },
+                // {product_name: '抹茶最中',class:'19', product_image_customize: '../images/shopping_list/cuslist_monaka_matcha.png', product_class:'6', product_list:'42' },
+                // {product_name: '牛奶最中',class:'19', product_image_customize: '../images/shopping_list/cuslist_monaka_milk.png', product_class:'6', product_list:'40' },
+                // {product_name: '花生最中',class:'19', product_image_customize: '../images/shopping_list/cuslist_monaka_peanut.png', product_class:'6', product_list:'43' },
+                // {product_name: '紅豆最中',class:'19', product_image_customize: '../images/shopping_list/cuslist_monaka_redBean.png', product_class:'6', product_list:'44' },
+                // {product_name: '奶油鯛魚燒',class:'19', product_image_customize: '../images/shopping_list/cuslist_taiyaki_cream.png', product_class:'3', product_list:'19' },
+                // {product_name: '綠豆鯛魚燒',class:'19', product_image_customize: '../images/shopping_list/cuslist_taiyaki_greenBean.png', product_class:'3', product_list:'22' },
+                // {product_name: '抹茶鯛魚燒',class:'19', product_image_customize: '../images/shopping_list/cuslist_taiyaki_matcha.png', product_class:'3', product_list:'20' },
+                // {product_name: '紅豆鯛魚燒',class:'19', product_image_customize: '../images/shopping_list/cuslist_taiyaki_redBean.png', product_class:'3', product_list:'21' },
+                // {product_name: '櫻花鯛魚燒',class:'19', product_image_customize: '../images/shopping_list/cuslist_taiyaki_sakura.png', product_class:'3', product_list:'23' },
+                // {product_name: '起司羊羹',class:'19', product_image_customize: '../images/shopping_list/cuslist_yokan_cheese.png', product_class:'4', product_list:'26' },
+                // {product_name: '巧克力羊羹',class:'19', product_image_customize: '../images/shopping_list/cuslist_yokan_chocolate.png', product_class:'4', product_list:'25' },
+                // {product_name: '無花果羊羹',class:'19', product_image_customize: '../images/shopping_list/cuslist_yokan_fig.png', product_class:'4', product_list:'28' },
+                // {product_name: '柚子羊羹',class:'19', product_image_customize: '../images/shopping_list/cuslist_yokan_grapefruit.png', product_class:'4', product_list:'24' },
+                // {product_name: '開心果羊羹',class:'19', product_image_customize: '../images/shopping_list/cuslist_yokan_pistachio.png', product_class:'4', product_list:'29' },
+                // {product_name: '草莓羊羹',class:'19', product_image_customize: '../images/shopping_list/cuslist_yokan_strawberry.png', product_class:'4', product_list:'27' },
+                // {product_name: '翡冷翠杏仁脆餅',class:'19', product_image_customize: '../images/shopping_list/cuslist_sweet_almond.png', product_class:'1', product_list:'9' },
+                // {product_name: '費南雪',class:'19', product_image_customize: '../images/shopping_list/cuslist_sweet_fernance.png', product_class:'1', product_list:'10' },
+                // {product_name: '國王餅',class:'19', product_image_customize: '../images/shopping_list/cuslist_sweet_galette.png', product_class:'1', product_list:'12' },
+                // {product_name: '檸檬沙貝蕾',class:'19', product_image_customize: '../images/shopping_list/cuslist_sweet_lemon.png', product_class:'1', product_list:'11' },
+                // {product_name: '瑪德蓮',class:'19', product_image_customize: '../images/shopping_list/cuslist_sweet_madeleine.png', product_class:'1', product_list:'8' },
+            ],          
+            iconList: [],                 
             message: '',
             content: 'checkBox',
+            boxSize: 0,
         },
-        methods: {                               
+        methods: {                       
             //第一步到第二步
             p1_to_p2(){
                 //若有選擇格子才執行
@@ -144,7 +123,6 @@ $(document).ready(function(){
                     $('.custom_sideNode_node:nth-child(3)').addClass('before_node');
                     $('.custom_sideNode_node:nth-child(4)').addClass('current_node');
                     $('.custom_sideNode_frontBar').css('height','33%');
-
                 };
                 //第一格格子亮
                 $('.custom_gridBox:nth-child(1)').addClass('choosenBox');
@@ -184,12 +162,94 @@ $(document).ready(function(){
                 } else {
                     $("#textCount").text(80 - $("#custom_cardText").val().length);
                 }
+            },            
+            checkBox(index){
+                if(index==0){
+                    this.boxSize = 4;
+                }else if(index==1){
+                    this.boxSize = 6;                    
+                }else{
+                    this.boxSize = 9;       
+                };        
             },
-            
+            mouseover(index){
+                let this_img = document.getElementsByClassName('cus_item_img')[index];                
+                let this_txt = document.getElementsByClassName('cus_item_txt')[index];
+                this_img.style.zIndex='2';
+                this_txt.style.display='block';
+                this_txt.style.zIndex='1';
+            },
+            mouseleave(index){
+                let this_img = document.getElementsByClassName('cus_item_img')[index];                
+                let this_txt = document.getElementsByClassName('cus_item_txt')[index];
+                this_img.style.zIndex='0';
+                this_txt.style.display='none';
+                this_txt.style.zIndex='0';
+            },
+            addItem(index){
+                let itemPic = this.cus_item[index]['product_image_customize'];
+                let picSrc = itemPic.replace('cuslist','cusbox');
+                let itemTxt = this.cus_item[index]['product_name'];
+                let itemId = this.cus_item[index]['product_list'];
+                let boxSize = this.boxSize;
+        
+                $('.selected .choosenBox').find('.selected_item').attr('src', picSrc).addClass('haveItem');
+                $('.selected .choosenBox').find('.selected_item').attr('data-id', itemId);
+                $('.selected .choosenBox').find('.selected_item').attr('data-itemName', itemTxt);
+                //顯示提示
+                $('.custom_reminder > span').text(`${boxSize-$('.haveItem').length}`)
+                $('.custom_reminder').fadeIn();
+                setTimeout(function(){
+                    $('.custom_reminder').fadeOut();
+                },1000);
+                //自動將選到的格子換成下一格
+                let currentBox = parseInt($('.selected .choosenBox').attr('box-id'));        
+                let nextBox = `.selected .custom_gridBox[box-id=${currentBox+1}]`
+                $('.custom_gridBox').removeClass('choosenBox');
+                $(nextBox).addClass('choosenBox');
+                if(currentBox == boxSize){
+                    $('html,body').animate({ scrollTop: 0 },1000); 
+                    // currentBox = 0;
+                    $('.selected .custom_gridBox').addClass('choosenBox');  
+                    $('.custom_reminder').fadeOut();       
+                }
+            },
+            fetchData:function(){
+                axios.post('../php/customized.php',{
+                    action: 'fetchall'
+                }).then(function(res){
+                    vm.cus_item = res.data['itemList'];
+                    for(let i in vm.cus_item){
+                        imgURL = '../images/shopping_list/'+vm.cus_item[i]['product_image_customize'];
+                        vm.cus_item[i]['product_image_customize'] = imgURL;                      
+                    }; 
+                    
+                    let bagCard = res.data['cardImage'].slice(0,3);
+                    vm.iconList = res.data['cardImage'].slice(3);
+                    for(let j in bagCard){
+                        let this_src = '../images/customized/' + bagCard[j]['cardimage'];
+                        let this_id = bagCard[j]['cardimage_id'];
+                        document.getElementsByClassName('choose-card')[j].setAttribute('src', this_src);
+                        document.getElementsByClassName('choose-card')[j].setAttribute('data-cardId', this_id);                
+                    }; 
+                    for(let k in vm.iconList){
+                        imgURL = '../images/customized/'+vm.iconList[k]['cardimage'];
+                        vm.iconList[k]['cardimage'] = imgURL;   
+                    }
+                                
+                })
+            },           
         }, 
+        created(){
+            this.fetchData();            
+        },
+        mounted(){
+            this.fetchData();
+        },        
     });
-
 })
+
+//========================================jquery========================================
 $(function(){
     //判斷登入登出
     if(localStorage.loginStatus){
@@ -197,8 +257,6 @@ $(function(){
     }else{
         $('.nav_logOut').fadeOut();
     }
-
-    //========================================jquery========================================
     var boxSize = 0;
     var customized= {
         "id": new Date(),
@@ -249,21 +307,7 @@ $(function(){
         if($('.choosenBox').length < 1){
         $(this).toggleClass('choosenBox');
         };
-    })    
-    //hover到客製產品出現詳細資訊
-    $('.cus-item').mouseover(function(e){
-        $(this).find('.cus_item_img').css('zIndex', '2');
-        $(this).find('.cus_item_txt').css({
-            display: 'block',
-            zIndex: '1',
-        });
-    }).mouseleave(function(e){
-        $(this).find('.cus_item_img').css('zIndex', '0');
-        $(this).find('.cus_item_txt').css({
-            display: 'none',
-            zIndex: '0'
-        });
-    });
+    });    
     //商品分類
     $('.cus_categoryBtn').click(function(e){
         e.preventDefault();
@@ -281,32 +325,38 @@ $(function(){
         e.preventDefault();
     })
     //商品添加到格子中
+
+    $('.cus_add').click(function(e){
+        alert('添加');
+    })
     $('.fa-plus').click(function(e){
-        let itemPic = $(this).closest('div').prev('div').find('img').attr('src');
-        let picSrc = itemPic.replace('cuslist','cusbox');
-        let itemTxt = $(this).closest('div').find('p').text();
-        let itemId = $(this).closest('div').prev('div').find('img').attr('data-id');
-        $('.selected .choosenBox').find('.selected_item').attr('src', picSrc).addClass('haveItem');
-        $('.selected .choosenBox').find('.selected_item').attr('data-id', itemId);
-        $('.selected .choosenBox').find('.selected_item').attr('data-itemName', itemTxt);
-        e.preventDefault(); 
-        //顯示提示
-        $('.custom_reminder > span').text(`${boxSize-$('.haveItem').length}`)
-        $('.custom_reminder').fadeIn();
-        setTimeout(function(){
-            $('.custom_reminder').fadeOut();
-        },1000);
-        //自動將選到的格子換成下一格
-        let currentBox = parseInt($('.selected .choosenBox').attr('box-id'));        
-        let nextBox = `.selected .custom_gridBox[box-id=${currentBox+1}]`
-        $('.custom_gridBox').removeClass('choosenBox');
-        $(nextBox).addClass('choosenBox');
-        if(currentBox == boxSize){
-            $('html,body').animate({ scrollTop: 0 },1000); 
-            // currentBox = 0;
-            $('.selected .custom_gridBox').addClass('choosenBox');  
-            $('.custom_reminder').fadeOut();       
-        }
+        alert('ihihihihi');
+        // let itemPic = $(this).closest('div').prev('div').find('img').attr('src');
+        // let picSrc = itemPic.replace('cuslist','cusbox');
+        // let itemTxt = $(this).closest('div').find('p').text();
+        // let itemId = $(this).closest('div').prev('div').find('img').attr('data-id');
+
+        // $('.selected .choosenBox').find('.selected_item').attr('src', picSrc).addClass('haveItem');
+        // $('.selected .choosenBox').find('.selected_item').attr('data-id', itemId);
+        // $('.selected .choosenBox').find('.selected_item').attr('data-itemName', itemTxt);
+        // e.preventDefault(); 
+        // //顯示提示
+        // $('.custom_reminder > span').text(`${boxSize-$('.haveItem').length}`)
+        // $('.custom_reminder').fadeIn();
+        // setTimeout(function(){
+        //     $('.custom_reminder').fadeOut();
+        // },1000);
+        // //自動將選到的格子換成下一格
+        // let currentBox = parseInt($('.selected .choosenBox').attr('box-id'));        
+        // let nextBox = `.selected .custom_gridBox[box-id=${currentBox+1}]`
+        // $('.custom_gridBox').removeClass('choosenBox');
+        // $(nextBox).addClass('choosenBox');
+        // if(currentBox == boxSize){
+        //     $('html,body').animate({ scrollTop: 0 },1000); 
+        //     // currentBox = 0;
+        //     $('.selected .custom_gridBox').addClass('choosenBox');  
+        //     $('.custom_reminder').fadeOut();       
+        // }
     })
 
 
@@ -657,8 +707,7 @@ $(function(){
         $(this).addClass('choosenCard').css('opacity','1');;        
     })
 //==================卡片確認按鈕==================
-    $('.custom_chooseCard_next').click(function(){  
-        alert('卡片確認');     
+    $('.custom_chooseCard_next').click(function(){      
         let winWidth = $(window).width();
         if($('.choosenCard').length!=0){
             let cardType = $('.choosenCard').attr('data-cardId');
@@ -841,7 +890,8 @@ $(function(){
         $('.custom_card_textArea form').css('display','none');
         $('.custom_card_iconList').css('display','grid').fadeIn();
     });
-    $('.custom_card_icon').click(function(){
+
+    $('body').on('click', '.custom_card_icon', function(){
         $(this).toggleClass('choosen_icon');
         icon_src = $(this).attr('src');
         icon_id = $(this).attr('data-icon');
@@ -856,7 +906,6 @@ $(function(){
             drag();
 
         }else{
-            // console.log('remove-item='+icon_id);
             let this_icon = `.custom_card_IconOnCard img[data-icon=${icon_id}]`;
             $(this_icon).closest('div').remove();
             //刪除iconType陣列中的貼圖id
@@ -990,14 +1039,7 @@ $(function(){
 
 })
 
-
-
-
-
-
-
-
-
+//手機版變touch
 function touchHandler(event) {
     var touch = event.changedTouches[0];
     var simulatedEvent = document.createEvent("MouseEvent");
@@ -1014,6 +1056,7 @@ function touchHandler(event) {
     event.preventDefault();
 }
 
+//jQuery拉動
 function drag(){
      /* basic */
     $("#dragbasic div[id^='drag']").draggable({

@@ -283,7 +283,8 @@
             </svg>
           </div>
         </a>
-
+        <!-- <input type="button" value='提交' onclick="checkOut()" style='display:none'> -->
+        <input type="button" value='提交' onclick="checkOut()">
 
       </div>
 
@@ -313,6 +314,61 @@
     </div>
   </div>
   <!-- =======================footer結束======================= -->
+  <script>
+    function checkOut(){
+      alert('checkOut!');
+      let orderlist = new Date();
+      orderlist = orderlist.getTime().toString().slice(-6);
+      let info = JSON.parse(localStorage.getItem('info'));
+      info['order_number']=parseInt(orderlist);
+      localStorage.setItem('info', JSON.stringify(info));
+      console.log(info);
+      alert('stop');
+
+      let payment = $('.OC_payMoney > div:last-child').text();
+      let shipping_address = $("input[name='ordererAddress']").val();
+      let receiver_name = $("input[name='ordererName']").val();
+      let receiver_phone = $("input[name='ordererPhone']").val();
+      let payment_status;
+        if(payment == '信用卡付款'){
+          payment_status = 1;
+        }else{
+          payment_status = 0;
+        }
+      let discount_id = localStorage.getItem('discount');
+  
+      $.ajax({
+            method: 'POST',
+            url: '../php/order.php',
+            data:{
+              orderlist: orderlist,
+              account: 'test123',
+              payment: payment,
+              shipping_id: 2,
+              store: 'blank',
+              shipping_address: shipping_address,
+              receiver_name: receiver_name,
+              receiver_phone: receiver_phone,
+              payment_status: payment_status,
+              shipping_status: 1,
+              order_status: 0,
+              order_date: new Date(),
+              discount_id: discount_id,
+              item_List:  JSON.parse(localStorage.getItem('item_List')),
+              customized_List : JSON.parse(localStorage.getItem('customized_List')),
+              shipping : JSON.parse(localStorage.getItem('shipping')),
+              total : localStorage.getItem('total')
+            },
+            dataType:'text',
+            success: function (data) {      
+              console.log('做事');
+            },
+            error: function(exception) {
+                alert("數據載入失敗: " + exception.status);
+            }
+      })
+    }
+  </script>
 </body>
 
 </html>

@@ -6,7 +6,7 @@
 
 body {
   margin: 0;
-  min-width: 1260px;
+  min-width: 1199px;
   /* border: 1px solid red; */
 }
 
@@ -238,7 +238,7 @@ body {
   grid-area: 6/1/7/4;
 }
 
-.n-customized_editbtn button {
+.n-customized_editbtn input {
   font-size: 16px;
   font-weight: bold;
   color: #ffffff;

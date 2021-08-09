@@ -726,14 +726,15 @@ body {
   color: #bb866a;
 }
 
-#none {
-  color: red;
+.none_stock {
+  color: red !important;
   font-weight: bold;
 }
 
-#grey {
-  border: solid 1px #a3a3a3;
-  background-color: #a3a3a3;
+.grey {
+  border: solid 1px #a3a3a3 !important;
+  background-color: #a3a3a3 !important;
+  cursor: default !important;
 }
 
 .product_add_cart {

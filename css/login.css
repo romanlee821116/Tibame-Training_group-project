@@ -2,6 +2,7 @@
 * {
   font-family: '微軟正黑體';
   box-sizing: border-box;
+  text-decoration: none;
 }
 
 .memberShow {
@@ -38,8 +39,8 @@
 }
 
 /* 滑動效果 */
-.loginLeft, .forgetPWD, #loginIcon, #signupIcon, .loginWrapper, #loginArrow, .loginGender, .loginCode, .loginButton, .loginUnderline, span, .loginChoosenBar {
-  transition: all 0.8s cubic-bezier(0.6, 0, 0.4, 1);
+.loginLeft, .forgetPWD, #loginIcon, #signupIcon, .loginWrapper, #loginArrow, .loginGender, .loginCode, .loginUnderline, span, .loginChoosenBar {
+  transition: 0.8s cubic-bezier(0.6, 0, 0.4, 1);
 }
 
 /* 左邊圖片 */
@@ -373,6 +374,14 @@ input {
   cursor: pointer;
 }
 
+.loginButton:hover, .loginSignupButton:hover {
+  background-color: #2e447c;
+}
+
+.loginBtn:hover {
+  background-color: #2e447c;
+}
+
 /* 忘記密碼================================= */
 .forgetPWD {
   width: 270px;
@@ -465,6 +474,7 @@ input {
   left: 0;
   z-index: 991;
   background-color: rgba(255, 255, 255, 0.6);
+  display: none;
 }
 
 .type2 {
@@ -528,6 +538,7 @@ input {
   text-align: center;
   font-weight: 900;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .type2 .mainBtn:hover {
