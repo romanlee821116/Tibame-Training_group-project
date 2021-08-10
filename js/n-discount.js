@@ -1,3 +1,8 @@
+var my_back = localStorage.getItem("n-login");
+if(my_back !== 'yes'){
+    location.href = "./n-login.html"
+}
+
 Vue.component('double-check', {            
     template: 
         ` 
@@ -467,6 +472,7 @@ var appVue = new Vue({
             this.discounts.unshift(ddd);
         },
         log_out(){
+            localStorage.setItem("n-login", "no");
             location.href = "./n-login.html"
         },  
         showDdata(gopage){
@@ -492,5 +498,18 @@ var appVue = new Vue({
         },
         
     },
+    computed: {
+        discountsd: function() {
+            var search = this.discount_number;            
+
+            if (search) {
+                return this.discounts.filter(function(product) {                   
+                    return String (product.news_id).toLowerCase().indexOf(search) > -1                 
+                })                
+            }
+
+            return this.discounts;
+        }
+    }  
     
 })

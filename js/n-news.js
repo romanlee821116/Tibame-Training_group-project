@@ -1,3 +1,8 @@
+var my_back = localStorage.getItem("n-login");
+if(my_back !== 'yes'){
+    location.href = "./n-login.html"
+}
+
 Vue.component('double-check', {            
     template: 
         ` 
@@ -439,6 +444,7 @@ var appVue = new Vue({
             this.newss.unshift(nnn);
         },
         log_out(){
+            localStorage.setItem("n-login", "no");
             location.href = "./n-login.html"
         },
         
@@ -463,8 +469,19 @@ var appVue = new Vue({
                 },
             });
         },
-        
-        
     },
+    computed: {
+        newssd: function() {
+            var search = this.news_number;            
+
+            if (search) {
+                return this.newss.filter(function(product) {                   
+                    return String (product.news_id).toLowerCase().indexOf(search) > -1                 
+                })                
+            }
+
+            return this.newss;
+        }
+    }  
     
 })

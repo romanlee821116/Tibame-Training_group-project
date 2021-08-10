@@ -15,14 +15,14 @@
             <p>小春堂後臺管理</p>
         </div>
         
-        <form action="" method="post">
+        <form action="../php/n-login.php" method="POST">
             <label for="account">帳號:</label>        
             <input type="text" name="account" id="account" placeholder="請輸入您的帳號" v-model='accounts' >
     
             <label for="password">密碼:</label>
-            <input type="text" name="password" id="password" placeholder="請輸入您的密碼" v-model='passwords' >      
+            <input type="password" name="password" id="password" placeholder="請輸入您的密碼" v-model='passwords' >      
     
-            <button type="button" id="login" @click='go_member' :class="{'-active':accounts && passwords}" :disabled='accounts && passwords ? false : true'>登入</button>
+            <button type="submit" id="login" @click='go_member' :class="{'-active':accounts && passwords}" :disabled='accounts && passwords ? false : true'>登入</button>
         </form>
     </div>  
 

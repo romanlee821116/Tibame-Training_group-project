@@ -1,3 +1,8 @@
+var my_back = localStorage.getItem("n-login");
+if(my_back !== 'yes'){
+    location.href = "./n-login.html"
+}
+
 Vue.component('double-check', {            
     template: 
         ` 
@@ -201,6 +206,7 @@ var appVue = new Vue({
 
         },     
         log_out(){
+            localStorage.setItem("n-login", "no");
             location.href = "./n-login.html"
         },        
        
@@ -228,5 +234,18 @@ var appVue = new Vue({
             });
         },
     },
+    computed: {
+        ordersd: function() {
+            var search = this.order_number;                
+
+            if (search) {
+                return this.orders.filter(function(product) {                   
+                    return String (product.order_id).toLowerCase().indexOf(search) > -1                 
+                })                
+            }
+
+            return this.orders;
+        }
+    } 
     
 })
