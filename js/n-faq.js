@@ -1,3 +1,8 @@
+var my_back = localStorage.getItem("n-login");
+if(my_back !== 'yes'){
+    location.href = "./n-login.html"
+}
+
 Vue.component('double-check', {            
     template: 
         ` 
@@ -203,6 +208,24 @@ var appVue = new Vue({
             this.faqs[n_index].question = this.f_question;
             this.faqs[n_index].answer = this.f_answer;
             this.current_edit = null;
+
+            $.ajax({            
+                method: "POST",
+                url: "../php/n-FAQ_update.php",
+                data:{ 
+                    qa_id: this.faqs[n_index].qa_id, //id
+                    qa_class: this.faqs[n_index].qa_class, //分類
+                    question: this.faqs[n_index].question, // 問題
+                    answer: this.faqs[n_index].answer, // 答案
+                },            
+                dataType: "text",
+                success: function (response) {
+                    alert("更新成功");
+                },
+                error: function(exception) {
+                    alert("發生錯誤: " + exception.status);
+                }
+            });
         },
         new_add(){
             this.new_edit = true;
@@ -239,6 +262,7 @@ var appVue = new Vue({
             this.faqs.unshift(fff);
         },
         log_out(){
+            localStorage.setItem("n-login", "no");
             location.href = "./n-login.html"
         },  
         
@@ -265,5 +289,18 @@ var appVue = new Vue({
         },             
         
     },
+    computed: {
+        faqsd: function() {
+            var search = this.faq_number;            
+
+            if (search) {
+                return this.faqs.filter(function(product) {                   
+                    return String (product.qa_id).toLowerCase().indexOf(search) > -1                 
+                })                
+            }
+
+            return this.faqs;
+        }
+    }  
     
 })

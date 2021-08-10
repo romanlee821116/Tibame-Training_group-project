@@ -50,7 +50,7 @@
                         <li></li>
                     </ul>
 
-                    <ul v-for='(news,key) in newss' class="n-news_news">                              
+                    <ul v-for='(news,key) in newssd' class="n-news_news">                              
                         <li>{{news.news_id}}</li>
                         <li>{{news.create_date}}</li>
                         <li>{{n_sort_list[news.news_class]}}</li>
@@ -122,10 +122,10 @@
                 <div class="n-news_group" v-for='(img_name, index) in img_names'>
                     <label :for='index'>{{img_name.name}}:</label>
                     <input type="file" :id="index" @change='upload_img'>
-                    <p>請選擇圖片上傳</p>
+                    <p>{{new_img[index]}}</p>
                     <div class="n-news_img">
                         <img :src='img_name.src'>
-                        <p>請選擇圖片上傳</p>
+                        <!-- <p>請選擇圖片上傳</p> -->
                     </div>
                 </div> 
 

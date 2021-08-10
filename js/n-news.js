@@ -1,3 +1,8 @@
+var my_back = localStorage.getItem("n-login");
+if(my_back !== 'yes'){
+    location.href = "./n-login.html"
+}
+
 Vue.component('double-check', {            
     template: 
         ` 
@@ -161,7 +166,9 @@ var appVue = new Vue({
         n_sort:0,
         on_off:0,       
         n_main_content:'',
-        n_sec_content:'',                  
+        n_sec_content:'',              
+        new_img:['請選擇圖片上傳','請選擇圖片上傳','請選擇圖片上傳','請選擇圖片上傳','請選擇圖片上傳'],    
+        new_img_src:['圖片','圖片','圖片','圖片','圖片'],
 
 
         mainbtn: [  
@@ -237,6 +244,12 @@ var appVue = new Vue({
             this.n_main_content = this.newss[index].news_content1;
             this.n_sec_content = this.newss[index].news_content2;
 
+            this.new_img[0] = this.newss[index].news_image_right;
+            this.new_img[1] = this.newss[index].news_image_main;
+            this.new_img[2] = this.newss[index].news_image1;
+            this.new_img[3] = this.newss[index].news_image2;
+            this.new_img[4] = this.newss[index].news_image3;
+
             this.img_names[0]['src'] = '../images/news/'+ this.newss[index].news_image_right;
             this.img_names[1]['src'] = '../images/news/'+ this.newss[index].news_image_main;
             this.img_names[2]['src'] = '../images/news/'+ this.newss[index].news_image1;
@@ -249,6 +262,15 @@ var appVue = new Vue({
             this.dbcheck=true;
             let edit_z = document.querySelector('.n-news_edit');
             edit_z.style.opacity = 0;
+
+            // 把預設值設回來
+            this.new_img_src = ['圖片','圖片','圖片','圖片','圖片'];
+
+            this.new_img[0] = '請選擇圖片上傳';
+            this.new_img[1] = '請選擇圖片上傳';
+            this.new_img[2] = '請選擇圖片上傳';
+            this.new_img[3] = '請選擇圖片上傳';
+            this.new_img[4] = '請選擇圖片上傳';
         },  
 
         sss(){
@@ -277,25 +299,92 @@ var appVue = new Vue({
             this.newss[n_index].news_content1 = this.n_main_content;
             this.newss[n_index].news_content2 = this.n_sec_content;
 
+            this.newss[n_index].news_image_right = this.new_img[0];
+            this.newss[n_index].news_image_main = this.new_img[1];
+            this.newss[n_index].news_image1 = this.new_img[2];
+            this.newss[n_index].news_image2 = this.new_img[3];
+            this.newss[n_index].news_image3 = this.new_img[4];
+
+            
+            let aa = new Date();
+            let year = aa.getFullYear();
+
+            let month = aa.getMonth() + 1;
+            if(month < 10 ){
+                month = '0' + month
+            }
+
+            let date = aa.getDate();
+            if(date < 10 ){
+                date = '0' + date
+            }
+
+            let today = year + '-' + month + '-' + date;
+            this.newss[n_index].news_update = today;
+
 
             this.current_edit = null;
+
+            $.ajax({            
+                method: "POST",
+                url: "../php/n-news_update.php",
+                data:{ 
+                    news_id: this.newss[n_index].news_id, //id
+                    news_class: this.newss[n_index].news_class, //分類
+                    news_status: this.newss[n_index].news_status, // 上下架
+                    news_title1: this.newss[n_index].news_title1, // 主標題
+                    news_title2: this.newss[n_index].news_title2, //副標題
+                    news_content1: this.newss[n_index].news_content1, // 內文1
+                    news_content2: this.newss[n_index].news_content2, // 內文2
+                    news_image_right: this.newss[n_index].news_image_right, // 個別圖片檔名
+                    news_image_main: this.newss[n_index].news_image_main,
+                    news_image1: this.newss[n_index].news_image1,
+                    news_image2: this.newss[n_index].news_image2,
+                    news_image3: this.newss[n_index].news_image3,
+                    news_update: this.newss[n_index].news_update, // 更新日期
+
+                    new_img: this.new_img, // 所有圖片檔名
+                    new_img_src: this.new_img_src, // 圖片base64
+
+                },            
+                dataType: "text",
+                success: function (response) {
+                    alert("更新成功");
+                },
+                error: function(exception) {
+                    alert("發生錯誤: " + exception.status);
+                }
+            });
+
+            // 把預設值設回來
+            this.new_img_src = ['圖片','圖片','圖片','圖片','圖片'];
+            
+            this.new_img[0] = '請選擇圖片上傳';
+            this.new_img[1] = '請選擇圖片上傳';
+            this.new_img[2] = '請選擇圖片上傳';
+            this.new_img[3] = '請選擇圖片上傳';
+            this.new_img[4] = '請選擇圖片上傳';
+
         },  
 
         upload_img(e){
 
             var files = e.target.files || e.dataTransfer.files;
             let file = files[0];
-
+            
+            this.new_img[e.target.id] = file.name; // 看是第幾個檔案，存進vueData
             e.target.nextElementSibling.innerText = file.name;
+
 
             let readFile = new FileReader();
             readFile.readAsDataURL(file);
             readFile.addEventListener("load", function () {
+                
+                e.target.closest('.n-news_group').querySelector('img').src = readFile.result; 
+                appVue.$data.new_img_src[e.target.id] = readFile.result; // 更換的圖檔base64存進vueData
 
-                e.target.nextElementSibling.nextElementSibling.querySelector('img').src = readFile.result; 
-
-                e.target.nextElementSibling.nextElementSibling.querySelector('p').style.opacity=0;
-             
+                e.target.closest('.n-news_group').querySelector('img').nextElementSibling.style.opacity=0;
+            
             });
         },
 
@@ -355,6 +444,7 @@ var appVue = new Vue({
             this.newss.unshift(nnn);
         },
         log_out(){
+            localStorage.setItem("n-login", "no");
             location.href = "./n-login.html"
         },
         
@@ -379,8 +469,19 @@ var appVue = new Vue({
                 },
             });
         },
-        
-        
     },
+    computed: {
+        newssd: function() {
+            var search = this.news_number;            
+
+            if (search) {
+                return this.newss.filter(function(product) {                   
+                    return String (product.news_id).toLowerCase().indexOf(search) > -1                 
+                })                
+            }
+
+            return this.newss;
+        }
+    }  
     
 })

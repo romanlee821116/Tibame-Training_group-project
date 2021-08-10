@@ -1,13 +1,15 @@
 new Vue({
     el: '#app',
     data:{
-        accounts: '',
-        passwords: '',
+        accounts: 'wuwuwu@gamil.com',
+        passwords: '12312345',
         disabled:'',
     },
-    methods: {                
-        go_member(){                    
-            location.href = "./n-member.html"
+    methods: {
+        
+        go_member(){
+            localStorage.setItem("n-login", "yes");
         }
-    },   
+    },            
+
 })
