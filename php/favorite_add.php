@@ -1,12 +1,10 @@
 <?php
     include("connection.php");
 
-
-
     // 操作從ajax傳過來的值
     $item_name = $_POST["name"];
     $account = $_POST["account"];
-    if()
+    
     //建立SQL語法
     $sql = "INSERT INTO favorite(product_name, account) VALUES (?, ?)";
 
