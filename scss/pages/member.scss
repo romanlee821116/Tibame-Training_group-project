@@ -202,12 +202,13 @@ html, body{
 }
 
 .memberPart1 .memberAdr:nth-child(1), .memberPart1 .memberAdr:nth-child(2){
-    width: 60px !important;
-    margin-right: 5px;
-    padding: 10px 5px 10px 10px;
+    width: 130px !important;
+    margin-right: 10px;
+    padding: 10px;
 }
 .memberPart1 .memberAdr:last-child{
-    width: 140px !important;
+    width: 270px;
+    margin-left: 70px;
 }
 
 // .memberTop {
