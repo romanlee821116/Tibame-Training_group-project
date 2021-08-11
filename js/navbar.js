@@ -1,4 +1,12 @@
 $(document).ready(function() {    
+
+    //判斷是否已登入
+    if (localStorage.account||sessionStorage.account) {
+        $('.nav_logOut').fadeIn();
+        $('.navbar-icon .fa-user').css('color','#f7c242');
+    } else {
+        $('.nav_logOut').fadeOut();
+    }
     
     $('.memberShow').load('login.html').hide();
 
@@ -6,10 +14,9 @@ $(document).ready(function() {
     $('body').on('click', '.navbar-icon .fa-user', function() {
         // ----------嘗試用load寫-----------
         // // 隱藏所有頁面
-        console.log('clickhead');
         $('.footer').hide();
         $('.navbar').hide();
-        if (localStorage.loginStatus == 'Login') {
+        if (localStorage.account||sessionStorage.account) {
             // window.location.href = 'member.html';
             window.location.href = 'member.html';
         } else {
@@ -20,10 +27,9 @@ $(document).ready(function() {
     // 點擊漢堡打開
     $('body').on('click', '.ham_select a:nth-child(7)', function() {
         // // 隱藏所有頁面
-        console.log('clickhead');
         $('.footer').hide();
         $('.navbar').hide();
-        if (localStorage.loginStatus == 'Login') {
+        if (localStorage.account||sessionStorage.account) {
             // window.location.href = 'member.html';
             window.location.href = 'member.html';
             $('.mavbar-icon .fas .fa-user').css('color', '#f7c242');
@@ -31,10 +37,8 @@ $(document).ready(function() {
             $('.memberShow').fadeIn(700);
             $('body').addClass('stopScroll');
         };
-
     });
-
-
+    
     // 點擊關閉
     $('body').on('click', '.loginClose', function() {
         $('.memberShow').fadeOut(500);
@@ -46,16 +50,12 @@ $(document).ready(function() {
     //登出
     $('.nav_logOut').click(function() {
             console.log('log out');
-            localStorage.removeItem('loginStatus');
+            localStorage.removeItem('account');
+            sessionStorage.removeItem('account');
             $('.nav_logOut').fadeOut();
-            $('.mavbar-icon .fas .fa-user').css('color', '#fff');
-            location.reload();
+            $('.navbar-icon .fas .fa-user').css('color', '#bb866a');
+            window.history.back();
         })
-        //
-    if (localStorage.loginStatus) {
-        $('.nav_logOut').fadeIn();
-    } else {
-        $('.nav_logOut').fadeOut();
-    }
+    
 
 });

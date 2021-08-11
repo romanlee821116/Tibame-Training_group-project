@@ -92,16 +92,19 @@ Vue.component('faq-add', {
                     },
                     dataType:'text',
                     success: function (data) {     
-                        alert(data)
+                        alert(data);
+                        
+                        window.location.reload();
                     },
                     error: function(exception) {
                         alert("數據載入失敗: " + exception.status);
                     }
                 })
             }
-            this.$emit('fsave', this.f_sort, this.f_question, this.f_answer);
             
+            this.$emit('fsave', this.f_sort, this.f_question, this.f_answer);
         },
+        
     }  
 });
 
@@ -203,6 +206,7 @@ new Vue({
             this.faqs[n_index].question = this.f_question;
             this.faqs[n_index].answer = this.f_answer;
             this.current_edit = null;
+            
         },
         new_add(){
             this.new_edit = true;
@@ -237,6 +241,7 @@ new Vue({
             // console.log(fff);
 
             this.faqs.unshift(fff);
+            window.location.reload();
         },
         log_out(){
             location.href = "./n-login.html"

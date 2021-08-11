@@ -283,8 +283,8 @@
             </svg>
           </div>
         </a>
-        <!-- <input type="button" value='提交' onclick="checkOut()" style='display:none'> -->
-        <input type="button" value='提交' onclick="checkOut()">
+        <input type="button" value='提交' onclick="checkOut()" style='display:none'>
+        <!-- <input type="button" value='提交' onclick="checkOut()"> -->
 
       </div>
 
@@ -316,14 +316,16 @@
   <!-- =======================footer結束======================= -->
   <script>
     function checkOut(){
-      alert('checkOut!');
+      
       let orderlist = new Date();
       orderlist = orderlist.getTime().toString().slice(-6);
-      let info = JSON.parse(localStorage.getItem('info'));
-      info['order_number']=parseInt(orderlist);
-      localStorage.setItem('info', JSON.stringify(info));
-      console.log(info);
-      alert('stop');
+      console.log(orderlist);
+      let orderer_data = JSON.parse(localStorage.getItem('orderer_data'));
+      // console.log(info);
+      orderer_data['order_number']=parseInt(orderlist);
+      localStorage.setItem('orderer_data', JSON.stringify(orderer_data));
+      
+      
 
       let payment = $('.OC_payMoney > div:last-child').text();
       let shipping_address = $("input[name='ordererAddress']").val();

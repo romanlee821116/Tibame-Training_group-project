@@ -33,16 +33,19 @@
             &:hover {
                 color: $yellow;
             }
+            i{
+                color: #bb866a;
+                font-size: 28px;
+                @content;
+                &:hover {
+                    color: $yellow;
+                }
+            }           
         }
-        i {
-            color: #bb866a;
-            font-size: 28px;
-            @content;
-            &:hover {
-                color: $yellow;
-            }
-        }
+        
+        
     }
+    
     .ham_container {
         display: inline-block;
         cursor: pointer;

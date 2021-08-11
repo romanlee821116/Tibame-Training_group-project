@@ -1,7 +1,6 @@
 <?php
     
     include("./connection.php");   
-    session_start();
 
     //接從ajax傳來的值
     $account = $_POST['account'];

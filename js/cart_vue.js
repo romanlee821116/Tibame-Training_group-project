@@ -210,13 +210,33 @@ $(document).ready(function () {
           });
         }
       },
+    
       // 無商品就不能按前往結帳
       stopGo(e) {
         if ($('.cart_checkout').css('background-color') == 'rgb(163, 163, 163)') {
           e.preventDefault();
           $('.cart_checkout').css('cursor', 'default');
         }
+
+        if(!localStorage.account && !sessionStorage.account){
+          $('.cart_checkout').attr('href','#');
+          // alert('您尚未登入');
+          let template=
+          `<div class='cart_loginCheckBg'>
+              <div class="cart_loginCheck">
+                  <a href="#" class='card_closeBtn'><i class="fas fa-times"></i></a>
+                  <img src="../images/login/send_password.png" alt="">
+                  <h2>您尚未登入</h2>
+                  <p>請先登入已繼續購物</p>
+                  <div id='goLogin'>
+                      <a class='mainBtn cart_goToLogin' >前往登入</a>
+                  </div>
+              </div>
+          </div>`;
+          $("body").append(template);        
+        }
       },
+      
       // 關掉購物車
       close() {
         $('.cart_cartBoard').css('right', '-600px');
@@ -225,7 +245,8 @@ $(document).ready(function () {
         $('.cart_detailBorder').css('display', 'none');
         // 查看禮盒明細按鈕顏色
         $('.cart_detailBtn').css('background-color', '#bb866a');
-      }
+      },      
+    
     },
     computed: {
       // 購物車總金額
@@ -243,7 +264,7 @@ $(document).ready(function () {
 
         // ===================== localStorage ======================
         localStorage.setItem('subtotal', total);
-        localStorage.setItem('total', total);
+        localStorage.setItem('total', total);        
         //==========================================================
 
         return total;
@@ -386,5 +407,21 @@ $(function () {
     }
   });
 
+  //關掉跳窗
+  $('body').on('click','.card_closeBtn', function(e){
+    $('.cart_loginCheckBg').remove();
+    e.preventDefault();
+  });
+
+
+  document.addEventListener('click', function(e){
+    if(e.target.classList.contains('cart_goToLogin')){
+      $('.footer').hide();
+      $('.navbar').hide();
+      $('.cart_loginCheckBg').remove();
+      $('.memberShow').fadeIn(700);
+      $('body').addClass('stopScroll');
+    }
+  })
 
 })

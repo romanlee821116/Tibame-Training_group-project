@@ -1,5 +1,6 @@
 
 @import '../base/color.scss';
+@import '../mixin/mixin';
 *{
   box-sizing: border-box;
   font-family: "微軟正黑體";
@@ -430,7 +431,27 @@
   }
 }
 
-
+// ---------- 忘記密碼送出彈窗 ------------
+.cart_loginCheckBg{
+	@include popUpBg();
+  z-index: 1200;
+}
+.cart_loginCheck{
+	@include popUp_oneBtn();
+	position: relative; //預設是fixed
+    // top: 15%;
+    .mainBtn{
+        @include btn(); //按鈕樣式
+        text-decoration: none;
+    }
+    .fa-times{
+      position: absolute;
+      font-size: 22px;
+      top: 15px;
+      right: 20px;
+      color: #000;
+    }
+}
 
 
 /* ================================== 不用複製 =================================== */

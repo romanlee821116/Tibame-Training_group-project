@@ -6,7 +6,7 @@ $(document).ready(function() {
         data:{},
         dataType:'text',
         success: function (data) {      
-            // console.log(JSON.parse(data));
+            //接收從php傳過來的全部商品sql資料
             let itemList = JSON.parse(data)
             let html_allItem='';
             for(let i=0; i<itemList.length; i++){
@@ -112,7 +112,7 @@ $(document).ready(function() {
         "id": new Date(),
     };
 
-    $('.product_add_cart').click(function() {
+    $('body').on('click','.product_add_cart', function() {
         if ($(this).attr('id') != 'grey') {
             let product_Id = $(this).closest('.product_right').attr('data-id');
             let this_name = $(this).closest('.product_right').find('h3').text();
@@ -162,11 +162,11 @@ $(document).ready(function() {
     //========================================local storage========================================
     var item_area = $(".product_product");
     // ================================ 抓頁面 ==============================
-    var page_show = JSON.parse(localStorage.getItem("product_page_num"));
-    $(`.product_product:nth-child(${page_show})`).show().siblings().hide();
-    $(`.product_area:nth-child(${page_show})`).find("img").attr("src", `../images/shopping_list/shop${page_show}_hov.png`);
-    $(`.product_area:nth-child(${page_show})`).find('span').css({ color: '#172852' });
-    $(`.product_area:nth-child(${page_show})`).addClass('yellow');
+    // var page_show = JSON.parse(localStorage.getItem("product_page_num"));
+    // $(`.product_product:nth-child(${page_show})`).show().siblings().hide();
+    // $(`.product_area:nth-child(${page_show})`).find("img").attr("src", `../images/shopping_list/shop${page_show}_hov.png`);
+    // $(`.product_area:nth-child(${page_show})`).find('span').css({ color: '#172852' });
+    // $(`.product_area:nth-child(${page_show})`).addClass('yellow');
 
 
     // 點擊切換商品分類內容 救救可憐的廢物
@@ -184,7 +184,7 @@ $(document).ready(function() {
             $(this).find('span').css({ color: '#172852' });
         }
     });
-    $('.product_area').click(function() {
+    $('body').on('click', '.product_area',function() {
         let index = $(this).index();
         $(item_area).eq(index).fadeIn(500).show().siblings().hide();
         var prevtarget = $('.yellow');
@@ -205,12 +205,12 @@ $(document).ready(function() {
     // 商品數量增減 
 
     $(".min").attr("disabled", true).css({ backgroundColor: "#ccc" });
-    $(".add").click(function() {
+    $("body").on('click','.add',function() {
         var t = $(this).siblings(".num");
         t.val(parseInt(t.val()) + 1);
         $(this).siblings(".min").removeAttr("disabled").css({ backgroundColor: "white", color: "#172852" });
     });
-    $(".min").click(function() {
+    $("body").on('click','.min', function() {
         var t = $(this).siblings(".num");
         if (parseInt(t.val()) > 1) {
             t.val(parseInt(t.val()) - 1)
@@ -233,15 +233,16 @@ $(document).ready(function() {
     })
 
     //愛心點擊
-    $('.product_heart').click(function() {
+    $('body').on('click', '.product_heart', function() {
         $(this).toggleClass('product_heart_red');
         $(this).toggleClass('product_heart');
 
     });
     // 照片slider
     let index = 0;
-    let divWidth = $('.product_img').width();
-    $(".product_circle div").click(function() {
+    
+    $("body").on('click','.product_circle div',function() {
+        let divWidth = $('.product_img').width();
         index = ($(this).index());
         $(this).parent().prev('.product_img').animate({
             left: divWidth * index * -1
@@ -250,7 +251,7 @@ $(document).ready(function() {
     })
 
     //回到最上面
-    $('.product_backTop').click(function() {
+    $('.product_backTop').on('click', function() {
             $('html body').animate({
                 scrollTop: '0',
             }, 300);

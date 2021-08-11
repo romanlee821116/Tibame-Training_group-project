@@ -6,6 +6,8 @@
     font-family: '微軟正黑體';
     box-sizing: border-box;   //請留著，他吃不到scss QQ
     text-decoration: none;
+    margin: 0;
+    padding: 0;
 }
 .memberShow{
     padding: 0;
@@ -22,6 +24,7 @@
     margin-bottom: 500px;
     font-weight: bold;
     min-height: 100vh;
+    overflow-y: hidden;
 }
 .loginSignup{
     display: flex;
@@ -191,7 +194,7 @@ input{
 /* 保持登入｜忘記密碼 */
 #loginKeep{
     color: #172852;
-    margin: 20px 0 20px 0;
+    margin: 20px 0 20px 0;    
 }
 #loginKeep span{
     color: #647bb5;

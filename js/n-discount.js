@@ -84,19 +84,19 @@ Vue.component('discount-add', {
                     </ul>
                 </div>
 
-                <div class="n-discount_discount_bot">
-
-                    <div class="n-discount_group" v-for='(img_name, index) in img_names'>
-                        <label :for='index'>{{img_name}}:</label>
-                        <input type="file" :id="index" @change='upload_img'>
-                        <p>請選擇圖片上傳</p>
-                        <div class="n-discount_img">
-                            <img src=''>
+                <form enctype="multipart/form-data">
+                    <div class="n-discount_discount_bot">
+                        <div class="n-discount_group" v-for='(img_name, index) in img_names'>
+                            <label :for='index'>{{img_name}}:</label>
+                            <input type="file" :id="index" @change='upload_img' class='n-dis_Pic'>
                             <p>請選擇圖片上傳</p>
+                            <div class="n-discount_img">
+                                <img src=''>
+                                <p>請選擇圖片上傳</p>
+                            </div>
                         </div>
                     </div>
-
-                </div>
+                </form>
 
                 <div class="n-discount_editbtn">
                     <button class="n-discount_close" @click='d_close'>關閉</button>
@@ -113,9 +113,63 @@ Vue.component('discount-add', {
             this.$emit('dclose');
         },  
         d_save(){   
+            
+            function getFileName(o){
+                var pos=o.lastIndexOf("\\");
+                return o.substring(pos+1);  
+            }
+            let form_data = new FormData();
+            for(let i=0; i<$('.n-dis_Pic').length; i++){
+                form_data.append("files[]", document.getElementsByClassName('n-dis_Pic')[i].files[0]);
+            }            
+            let pic1 = $('.n-dis_Pic').eq(0).val();
+            let pic2 = $('.n-dis_Pic').eq(1).val();
+            let pic3 = $('.n-dis_Pic').eq(2).val();
+            let pic4 = $('.n-dis_Pic').eq(3).val();
+            let pic5 = $('.n-dis_Pic').eq(4).val();
+            pic1 = getFileName(pic1);
+            pic2 = getFileName(pic2);
+            pic3 = getFileName(pic3);
+            pic4 = getFileName(pic4);
+            pic5 = getFileName(pic5);
 
-            this.$emit('dsave', this.d_number, this.d_money, this.on_off, this.d_main_title, this.d_sec_title, this.d_main_content, this.d_sec_content);
+            if(this.d_number!=''&& this.d_money!=''&& this.d_main_title!=''&& this.d_sec_title!=''&& pic1!=''&& pic2!=''&& pic3!=''&& pic4!=''&& pic5!=''){
+                // append
+                form_data.append('discount_name', this.d_number);
+                form_data.append('discount_price', this.d_money);
+                form_data.append('news_status', this.on_off);
+                form_data.append('news_title1', this.d_main_title);
+                form_data.append('news_title2', this.d_sec_title);
+                form_data.append('news_content1', this.d_main_content);
+                form_data.append('news_content2', this.d_sec_content);
+                form_data.append('news_image_right', pic1);
+                form_data.append('news_image_main', pic2);
+                form_data.append('news_image1', pic3);
+                form_data.append('news_image2', pic4);
+                form_data.append('news_image3', pic5);
 
+                $.ajax({
+                    url: '../php/n-discountAdd.php',
+                    type: 'post',
+                    cache: false,
+                    data: form_data,
+                    processData: false,
+                    contentType: false,
+                    success: function (res) {
+                        alert(res);
+                        window.location.reload();
+                        this.$emit('dsave', this.d_number, this.d_money, this.on_off, this.d_main_title, this.d_sec_title, this.d_main_content, this.d_sec_content);
+                    },
+                    error: function (exception) {
+                        alert("數據載入失敗: " + exception.status);
+                    }
+                })
+
+                
+                
+            }else{
+                alert('請完成所有欄位');
+            }
         },
         regular(e){
             let str = (e.target.value).replace(/\D/g, "");

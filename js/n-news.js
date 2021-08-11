@@ -44,7 +44,7 @@ Vue.component('news-add', {
                     <ul>                    
                         <li>
                             <section>文章分類:
-                                <select name="status" id="" v-model='n_sort'>
+                                <select name="status" id="n_news_type" v-model='n_sort'>
                                     <option value="0">新品上市</option>
                                     <option value="1">活動消息</option>
                                     <option value="2">媒體報導</option>
@@ -53,7 +53,7 @@ Vue.component('news-add', {
                             </section>
                         
                             <section>上下架:
-                                <select name="status" id="" v-model='on_off'>
+                                <select name="status" id="n_news_status" v-model='on_off'>
                                     <option value="0">下架</option>
                                     <option value="1">上架</option>
                                 </select>
@@ -62,40 +62,39 @@ Vue.component('news-add', {
 
                         <li>
                             <label for="">主標題:</label>
-                            <input type="text" v-model='n_main_title'>
+                            <input type="text" v-model='n_main_title' id="n_news_title">
                         </li>
 
                         <li>
                             <label for="">副標題:</label>
-                            <input type="text" v-model='n_sec_title'>
+                            <input type="text" v-model='n_sec_title' id="n_news_subtitle">
                         </li>
 
                         <li>
                             <label for="">內文01:</label>
-                            <textarea name="" id="" cols="73" rows="5" v-model='n_main_content'></textarea>
+                            <textarea name="" id="n_news_content1" cols="73" rows="5" v-model='n_main_content'></textarea>
                         </li>
                         
                         <li>
                             <label for="">內文02:</label>
-                            <textarea name="" id="" cols="73" rows="5" v-model='n_sec_content'></textarea>
+                            <textarea name="" id="n_news_content2" cols="73" rows="5" v-model='n_sec_content'></textarea>
                         </li>
 
                     </ul>
                 </div>
-
-                <div class="n-news_news_bot">
-
-                    <div class="n-news_group" v-for='(img_name, index) in img_names'>
-                        <label :for='index'>{{img_name}}:</label>
-                        <input type="file" :id="index" @change='upload_img'>
-                        <p>請選擇圖片上傳</p>
-                        <div class="n-news_img">
-                            <img src=''>
+                <form enctype="multipart/form-data">
+                    <div class="n-news_news_bot">                        
+                        <div class="n-news_group" v-for='(img_name, index) in img_names'>
+                            <label :for='index'>{{img_name}}:</label>
+                            <input type="file" :id="index" @change='upload_img' class='n-news_Pic'>
                             <p>請選擇圖片上傳</p>
-                        </div>
-                    </div> 
-
-                </div>
+                            <div class="n-news_img">
+                                <img src=''>
+                                <p>請選擇圖片上傳</p>
+                            </div>
+                        </div>                     
+                    </div>
+                </form>
 
                 <div class="n-news_editbtn">
                     <button class="n-news_close" @click='n_close'>關閉</button>
@@ -112,10 +111,62 @@ Vue.component('news-add', {
         n_close(){ 
             this.$emit('nclose');
         },  
-        n_save(){   
+        n_save(){ 
+            
+            function getFileName(o){
+                var pos=o.lastIndexOf("\\");
+                return o.substring(pos+1);  
+            }
+            let form_data = new FormData();
+            for(let i=0; i<$('.n-news_Pic').length; i++){
+                form_data.append("files[]", document.getElementsByClassName('n-news_Pic')[i].files[0]);
+            }
+            
+            let pic1 = $('.n-news_Pic').eq(0).val();
+            let pic2 = $('.n-news_Pic').eq(1).val();
+            let pic3 = $('.n-news_Pic').eq(2).val();
+            let pic4 = $('.n-news_Pic').eq(3).val();
+            let pic5 = $('.n-news_Pic').eq(4).val();
+            pic1 = getFileName(pic1);
+            pic2 = getFileName(pic2);
+            pic3 = getFileName(pic3);
+            pic4 = getFileName(pic4);
+            pic5 = getFileName(pic5);
 
-            this.$emit('nsave', this.n_sort, this.on_off, this.n_main_title, this.n_sec_title, this.n_main_content, this.n_sec_content);
+            if(this.n_main_title!=''&& this.n_sec_title!=''&& pic1!=''&& pic2!=''&& pic3!=''&& pic4!=''&& pic5!=''){
+                // append
+                form_data.append('news_class', this.n_sort);
+                form_data.append('news_status', this.on_off);
+                form_data.append('news_title1', this.n_main_title);
+                form_data.append('news_title2', this.n_sec_title);
+                form_data.append('news_content1', this.n_main_content);
+                form_data.append('news_content2', this.n_sec_content);
+                form_data.append('news_image_right', pic1);
+                form_data.append('news_image_main', pic2);
+                form_data.append('news_image1', pic3);
+                form_data.append('news_image2', pic4);
+                form_data.append('news_image3', pic5);
 
+                $.ajax({
+                    url: '../php/n-newsAdd.php',
+                    type: 'post',
+                    cache: false,
+                    data: form_data,
+                    processData: false,
+                    contentType: false,
+                    success: function (res) {
+                        alert(res);
+                        this.$emit('nsave', this.n_sort, this.on_off, this.n_main_title, this.n_sec_title, this.n_main_content, this.n_sec_content);
+                        window.location.reload();
+                    },
+                    error: function (exception) {
+                        alert("數據載入失敗: " + exception.status);
+                    }
+                })
+                
+            }else{
+                alert('請完成所有欄位');
+            }
         },
 
         upload_img(e){
@@ -295,7 +346,7 @@ var appVue = new Vue({
                 e.target.nextElementSibling.nextElementSibling.querySelector('img').src = readFile.result; 
 
                 e.target.nextElementSibling.nextElementSibling.querySelector('p').style.opacity=0;
-             
+            
             });
         },
 
