@@ -3,7 +3,7 @@
     $keyword = isset($_POST['keyword']) ? $_POST['keyword']:''; //用isset去判斷有沒有抓到值，沒有就空值
     $deleItemPicName = $_POST["deleItemPicName"];
 
-    include('connection.php');
+    include("./connection.php"); 
     $pdo = getPDO();
 
     // 把圖片檔名，轉換成商品名稱
