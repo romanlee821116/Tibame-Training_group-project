@@ -125,6 +125,10 @@ $(document).ready(function(){
     $('.loginRefresh').click(function(){
         getRandom();
     });
+    // //
+    // $('#loginKeeplog').on('click', function(){
+    //     $('.loginKeeplog').show();
+    // })
 
     // ================ 表單錯誤資訊反饋 ==================
     // 沒輸入按送出會跳出提示框
@@ -285,9 +289,11 @@ $(document).ready(function(){
     // 所有input欄位點擊focus時，提示消失
     $('.loginAll input').focus(function(){
         if( $(this).attr('type') == 'radio' ){
-            // console.log( $(this).attr('name'));
+            console.log('hide');
             $(this).parent().next().css('display','none');
-        }else if( $(this).attr('name') == 'password' ){
+        }else if( $(this).attr('type') == 'checkbox' ){
+        }
+        else if( $(this).attr('name') == 'password' ){
             $(this).next().next().css('display','none');
         }else{
             $(this).next().css('display','none');

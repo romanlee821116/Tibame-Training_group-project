@@ -44,10 +44,10 @@
             $statement->execute();
 
             //導頁            
-            echo "成功";
+            echo "卡片樣式更新成功";
 
         }else{
-            echo "失敗";            
+            echo "卡片樣式更新失敗";            
         }
     }
 

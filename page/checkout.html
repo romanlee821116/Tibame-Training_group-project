@@ -10,10 +10,11 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.14/vue.js"></script>
   <script src="https://kit.fontawesome.com/8c3a8ab95b.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" referrerpolicy="no-referrer"></script>
   <script src="../js/hamburger.js"></script>
   <script src="../js/navbar.js"></script>  
   <!-- <script src="../js/cart_vue.js"></script> -->
-  <script src="../js/checkout_vue.js"></script>
+  <script src="../js/checkout_vue.js"></script>  
 </head>
 <body>
 
@@ -210,6 +211,7 @@
             <div class="checkout_discount">
               <input type="text" id="checkout_discountNumber" placeholder="請輸入折扣碼" onfocus="this.placeholder=''" onblur="this.placeholder='請輸入折扣碼'">
               <button class="checkout_send" @click="sendDiscount">提交</button>
+              <p class='checkout_unvalid'>查無此折扣碼</p>
             </div>
           </div>
   
@@ -270,10 +272,10 @@
         <div class="checkout_pushItemSlider">
           <ul class="checkout_pushItemList">
   
-            <li class="checkout_pushItem" v-for="(item,index) in recommend" :data-id_price='item.id_price'>
-              <img :src="item.img">
-              <p>{{item.name}}</p>
-              <p>{{item.price}}</p>
+            <li class="checkout_pushItem" v-for="(item,index) in recommend" :data-id_price='item.price'>
+              <img :src="item.product_image1">
+              <p>{{item.product_name}}</p>
+              <p>${{item.price}}/3入</p>
               <!-- <div ></div> -->
               <a href="#" class='checkout_pushItem_add' @click.prevent='refresh(index)'>加入訂單內容</a>
             </li>

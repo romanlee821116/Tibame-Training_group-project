@@ -51,7 +51,7 @@
                         </div>
                     </div>    -->
 
-                        <div style="display: flex">
+                        
                             <div class="n-customized_group" v-for='(test, index) in tests'>
                                 <label for="group1">圖片0{{index+1}}:</label>
                                 <input type="file" id="group1" @change='upload_img' name="photo[]"
@@ -62,7 +62,7 @@
                                     <!-- <p>請選擇圖片上傳</p> -->
                                 </div>
                             </div>
-                        </div>
+                        
 
                         <div class="n-customized_editbtn">
                             <!-- <button class="n-customized_close">關閉</button>
@@ -144,7 +144,7 @@
                 processData: false,
                 contentType: false,
                 success: function (res) {
-                    console.log(res);
+                    alert(res);
                 },
                 error: function (exception) {
                     alert("數據載入失敗: " + exception.status);
@@ -161,8 +161,7 @@
                 let this_card = $('.n-customizedIcon').eq(i).val();
                 if(this_card!=''){
                     updateIndex.push([`${i+7}`]);
-                }//
-
+                }
                 form_data.append("files[]", document.getElementsByClassName('n-customizedIcon')[i].files[0]);
             }
 
@@ -177,7 +176,7 @@
                 processData: false,
                 contentType: false,
                 success: function (res) {
-                    console.log(res);
+                    alert(res);
                 },
                 error: function (exception) {
                     alert("數據載入失敗: " + exception.status);

@@ -43,11 +43,11 @@ Vue.component('product-add', {
             p_ingredient:'', 
             p_descript:'',
             img_names:[ 
-                {img_name : '圖片01', class:'n-product_Pic1', name:'pic1'}, 
-                {img_name : '圖片02', class:'n-product_Pic2', name:'pic2'}, 
-                {img_name : '圖片03', class:'n-product_Pic3', name:'pic3'}, 
-                {img_name : '俯視圖', class:'n-product_Pic4', name:'pic4'}, 
-                {img_name : '客製化用圖', class:'n-product_Pic5', name:'pic5'}
+                {img_name : '圖片01', name:'pic1'}, 
+                {img_name : '圖片02', name:'pic2'}, 
+                {img_name : '圖片03', name:'pic3'}, 
+                {img_name : '俯視圖', name:'pic4'}, 
+                {img_name : '客製化用圖', name:'pic5'}
             ],
         };
     },
@@ -139,10 +139,10 @@ Vue.component('product-add', {
                 </div>
 
                 <div class="n-product_edit_right">
-                    <form method="post" action="../php/n-product.php" enctype="multipart/form-data">
+                    <form enctype="multipart/form-data">
                     <div class="n-product_group" v-for='(item, index) in img_names'>
                         <label :for='index'>{{item.img_name}}:</label>
-                        <input type="file" :id="index" @change='upload_img' :class='item.class' :name='item.name'>
+                        <input type="file" :id="index" @change='upload_img' class='n-product_Pic' :name='item.name'>
                         <p>請選擇圖片上傳</p>
                         <div class="n-product_img">
                             <img src=''>
@@ -168,57 +168,81 @@ Vue.component('product-add', {
         p_close(){ 
             this.$emit('pclose');
         },  
-        p_save(){       
-            function getFileName(o){
-                var pos=o.lastIndexOf("\\");
-                return o.substring(pos+1);  
+        p_save(){  
+            let check = 0;
+            $('.n-product_edit input').each(function(){
+                let value=$(this).val();
+                if(value==''){
+                    check +=1;
+                }
+            });
+
+            if(check==0){
+                function getFileName(o){
+                    var pos=o.lastIndexOf("\\");
+                    return o.substring(pos+1);  
+                }
+                let form_data = new FormData();
+                for(let i=0; i<$('.n-product_Pic').length; i++){
+                    form_data.append("files[]", document.getElementsByClassName('n-product_Pic')[i].files[0]);
+                }
+                let product_image1= $('.n-product_Pic').eq(0).val();
+                let product_image2 = $('.n-product_Pic').eq(1).val();
+                let product_image3 = $('.n-product_Pic').eq(2).val();
+                let product_image_topview = $('.n-product_Pic').eq(3).val();
+                let product_image_customize = $('.n-product_Pic').eq(4).val();
+                product_image1 = getFileName(product_image1);
+                product_image2 = getFileName(product_image2);
+                product_image3 = getFileName(product_image3);
+                product_image_topview = getFileName(product_image_topview);
+                product_image_customize = getFileName(product_image_customize);
+                // append
+                form_data.append('product_list', this.p_number);
+                form_data.append('product_class', this.p_sort);
+                form_data.append('product_name', this.p_name);
+                form_data.append('expiration', this.p_exp);
+                form_data.append('ingredient', this.p_ingredient);
+                form_data.append('product_content', this.p_descript);
+                form_data.append('stock', this.p_stock);
+                form_data.append('price', this.p_sell);
+                form_data.append('net_price', this.p_original);
+                form_data.append('product_customize', this.p_customized);
+                form_data.append('product_status', this.on_off);
+                form_data.append('promotion', this.p_status);
+                form_data.append('promotion2', this.p_limit);
+                form_data.append('product_image1', product_image1);
+                form_data.append('product_image2', product_image2);
+                form_data.append('product_image3', product_image3);
+                form_data.append('product_image_topview', product_image_topview);
+                form_data.append('product_image_customize', product_image_customize);
+                
+                $.ajax({
+                    url: '../php/n-productAdd.php',
+                    type: 'post',
+                    cache: false,
+                    data: form_data,
+                    processData: false,
+                    contentType: false,
+                    success: function (res) {
+                        if(res=='0'){
+                            alert('此商品編號已使用');
+                        }else if(res=='1'){
+                            alert('此商品名稱已使用');
+                        }else{
+                            alert("商品新增成功");
+                            this.$emit('psave', this.p_number, this.p_sort, this.p_name, this.p_original, this.p_sell, this.p_stock, this.p_status, this.p_limit, this.on_off, this.p_exp, this.p_customized, this.p_ingredient, this.p_descript);
+                            window.location.reload();
+                        }
+                    },
+                    error: function (exception) {
+                        alert("數據載入失敗: " + exception.status);
+                    }
+                })
+                
+            }else{
+                alert('請完成所有欄位');
             }
 
-            let product_image1= $('.n-product_Pic1').val();
-            let product_image2 = $('.n-product_Pic2').val();
-            let product_image3 = $('.n-product_Pic3').val();
-            let product_image_topview = $('.n-product_Pic4').val();
-            let product_image_customize = $('.n-product_Pic5').val();
-            product_image1 = getFileName(product_image1);
-            product_image2 = getFileName(product_image2);
-            product_image3 = getFileName(product_image3);
-            product_image_topview = getFileName(product_image_topview);
-            product_image_customize = getFileName(product_image_customize);
-            
-            $.ajax({
-                method: 'POST',
-                url: '../php/n-productAdd.php',
-                data:{
-                    product_list: this.p_number,
-                    product_class: this.p_sort,
-                    product_name: this.p_name,
-                    expiration: this.p_exp,
-                    ingredient: this.p_ingredient,
-                    product_content: this.p_descript,
-                    stock: this.p_stock,
-                    price: this.p_sell,
-                    net_price: this.p_original,
-                    product_customize: this.p_customized,
-                    product_status: this.on_off,
-                    promotion: this.p_status,
-                    promotion2: this.p_limit,
-                    product_image1: product_image1,
-                    product_image2: product_image2,
-                    product_image3: product_image3,
-                    product_image_topview: product_image_topview,
-                    product_image_customize: product_image_customize
-                },
-                dataType:'text',
-                success: function (data) {     
-                    alert(data)
-                },
-                error: function(exception) {
-                    alert("數據載入失敗: " + exception.status);
-                }
-            })
-
-            this.$emit('psave', this.p_number, this.p_sort, this.p_name, this.p_original, this.p_sell, this.p_stock, this.p_status, this.p_limit, this.on_off, this.p_exp, this.p_customized, this.p_ingredient, this.p_descript);
-            
         },
 
         upload_img(e){

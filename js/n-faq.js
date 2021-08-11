@@ -97,16 +97,19 @@ Vue.component('faq-add', {
                     },
                     dataType:'text',
                     success: function (data) {     
-                        alert(data)
+                        alert(data);
+                        
+                        window.location.reload();
                     },
                     error: function(exception) {
                         alert("數據載入失敗: " + exception.status);
                     }
                 })
             }
-            this.$emit('fsave', this.f_sort, this.f_question, this.f_answer);
             
+            this.$emit('fsave', this.f_sort, this.f_question, this.f_answer);
         },
+        
     }  
 });
 
@@ -260,6 +263,7 @@ var appVue = new Vue({
             // console.log(fff);
 
             this.faqs.unshift(fff);
+            window.location.reload();
         },
         log_out(){
             localStorage.setItem("n-login", "no");

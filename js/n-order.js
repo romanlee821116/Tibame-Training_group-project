@@ -209,7 +209,7 @@ var appVue = new Vue({
             localStorage.setItem("n-login", "no");
             location.href = "./n-login.html"
         },        
-       
+    
         showOdata(gopage){
             console.log(gopage);
             if(isNaN(gopage)) return;
@@ -225,8 +225,7 @@ var appVue = new Vue({
                 success: function (response) {
                     appVue.pages = response[0];
                     appVue.orders = response[1];
-                    appVue.order_list = response[2];
-                    
+                    appVue.order_list = response[2];                    
                 },
                 error: function(exception) {
                     alert("發生錯誤: " + exception.status);

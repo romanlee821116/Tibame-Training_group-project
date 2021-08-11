@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  new Vue({
+  let vm = new Vue({
     el: "#checkout_app",
     data: {
       // 單項商品
@@ -304,23 +304,44 @@ $(document).ready(function () {
       // 提交折扣
       sendDiscount() {
         if ($('#checkout_discountNumber').val() !== "") {
-          $('#checkout_discountNumber').val("");
-          $('.checkout_send').css('background-color', '#a3a3a3');
-          $('.checkout_send').css('cursor', 'default');
-          $('.checkout_discountMoney').removeClass('checkout_none');
-          $('.checkout_removeDiscount').removeClass('checkout_none');
-          this.discount = 80;
+          //判斷折扣碼是不是存在
+          let discount_name = document.getElementById('checkout_discountNumber').value;
+          $.ajax({
+            method: 'POST',
+            url: '../php/order_discount.php',
+            data:{
+              discount_name : discount_name
+            },
+            dataType:'text',
+            success: function (data) {      
+              if(data=='0'){
+                // alert('查無此折扣碼');
+                $('.checkout_unvalid').show();
+              }else{                
+                vm.discount = parseInt(data);
+                $('#checkout_discountNumber').val("");
+                $('.checkout_send').css('background-color', '#a3a3a3');
+                $('.checkout_send').css('cursor', 'default');
+                $('.checkout_discountMoney').removeClass('checkout_none');
+                $('.checkout_removeDiscount').removeClass('checkout_none');
+                
 
-          // ========================== localStorage ==========================
-          // 折扣加進去
-          let dis = this.discount;
-          localStorage.setItem('discount', dis);
+                // ========================== localStorage ==========================
+                // 折扣加進去                
+                localStorage.setItem('discount', vm.discount);
 
-          // 總金額重算
-          let new_price = parseInt(localStorage.total) - parseInt(localStorage.discount);
-          localStorage.setItem('total', new_price);
-          this.total_price = new_price;
-          // ==================================================================
+                // 總金額重算
+                let new_price = parseInt(localStorage.total) - parseInt(localStorage.discount);
+                localStorage.setItem('total', new_price);
+                vm.total_price = new_price;
+                // ==================================================================
+              }
+            },
+            error: function(exception) {
+                alert("數據載入失敗: " + exception.status);
+            }
+          })
+          
         }
       },
       // 移除折扣
@@ -353,17 +374,16 @@ $(document).ready(function () {
         };
         // console.log(this.recommend[index].name);
 
-        let product_Id = '';
-        let this_name = this.recommend[index].name;
-        let this_price = this.recommend[index].id_price;
-        let this_img = this.recommend[index].img;
+        let product_Id = this.recommend[index].product_list;
+        let this_name = this.recommend[index].product_name;
+        let this_price = parseInt(this.recommend[index].price);
+        let this_img = this.recommend[index].product_image1;
         let this_qty = 1;
         cart_item.productId = product_Id;
         cart_item.itemName = this_name;
         cart_item.img = this_img;
         cart_item.price = parseInt(this_price);
         cart_item.quantity = this_qty;
-        // console.log(cart_item); 
 
         if (localStorage.item_List) {
           // 先把localStorage上有的一般商品抓下來並放在空陣列
@@ -404,35 +424,26 @@ $(document).ready(function () {
           this.total_price = new_total;
         }
 
-
         // 把localStorage商品更新到vue，才會及時顯現出來
         let item = JSON.parse(localStorage.item_List)
         this.itemList = item;
-        // console.log('refresh');
-      }
+      },
+      fetchData:function(){
+        axios.post('../php/checkout_recommend.php',{
+            action: 'fetchall'
+        }).then(function(res){
+            vm.recommend = res.data;
+            for(let i in vm.recommend){
+              imgURL = '../images/shopping_list/'+vm.recommend[i]['product_image1'];
+              vm.recommend[i]['product_image1'] = imgURL;
+            }
+                                
+        })
+      }, 
     },
-    computed: {
-      // // 商品總金額
-      // itemPrice(){
-      //   let total = 0;
-
-      //   for(let i = 0; i < this.itemList.length; i++){
-      //     let item = this.itemList[i];
-      //     total += item.price * item.quantity;
-      //   };
-      //   for(let a = 0; a < this.customization.length; a++){
-      //     let item2 = this.customization[a];
-      //     total += item2.price * item2.quantity;
-      //   };
-
-      //   this.total_item = total;
-      //   return total.toString().replace(/\B(?=(\d{3})+$)/g, ',');
-      // },
-      // // 訂單總金額
-      // totalPrice(){
-      //   this.total_price = this.total_item - this.discount;
-      //   return this.total_price;
-      // }
+    computed: {},
+    created(){
+        this.fetchData();
     },
     mounted() {
       // 一般商品
@@ -463,7 +474,6 @@ $(document).ready(function () {
 
       // 收件人重置
       localStorage.setItem('delivery_data', this.delivery_data);
-
 
     },
   })
@@ -598,6 +608,12 @@ $(function () {
       $('.checkout_pushItemList').css('left', b + 'px');
     }
   })
+
+  //
+  $('#checkout_discountNumber').on('focus', function(){
+    $('.checkout_unvalid').hide();
+  })
+
 
   //============================可能喜歡================================
   //   let cart_item = {
