@@ -50,7 +50,7 @@
                         <li></li>
                     </ul>
 
-                    <ul v-for='(faq,key) in faqs' class="n-faq_faq">                              
+                    <ul v-for='(faq,key) in faqsd' class="n-faq_faq">                              
                         <li>{{faq.qa_id}}</li>
                         <li>{{f_sort_list[faq.qa_class]}}</li>
                         <li>{{faq.question}}</li>
@@ -63,7 +63,7 @@
 
         <footer class="n-faq_footer">
             <ul>
-                <li v-for='page in pages'>{{page.page}}</li>
+                <li v-for='page in pages' v-on:click='showQdata(page.link)' v-bind:class='{nowpagela:page.page == nowpage}'>{{page.page}}</li>
             </ul>
         </footer>
 

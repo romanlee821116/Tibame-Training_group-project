@@ -1,3 +1,10 @@
+var my_back = localStorage.getItem("n-login");
+if(my_back !== 'yes'){
+    // localStorage.removeItem("n-login")
+    // localStorage.setItem("n-login", "no");
+    location.href = "./n-login.html"
+}
+
 Vue.component('double-check', {            
     template: 
         ` 
@@ -5,8 +12,8 @@ Vue.component('double-check', {
             <section></section>
             <p>尚未存檔，是否確認關閉</p>
             <div>
-                <button type="button" @click='sure'>確認</button>
                 <button type="button" @click='cancel'>取消</button>
+                <button type="button" @click='sure'>確認</button>
             </div>
         </div>                
         `
@@ -116,8 +123,25 @@ var appVue = new Vue({
 
             this.current_edit = null;
 
+            $.ajax({            
+                method: "POST",
+                url: "../php/n-member_update.php",
+                data:{ 
+                    account: this.members[n_index].account, // 哪筆會員
+                    member_status: this.members[n_index].member_status, // 更新的會員狀態
+                },            
+                dataType: "text",
+                success: function (response) {
+                    alert("更新成功");
+                },
+                error: function(exception) {
+                    alert("發生錯誤: " + exception.status);
+                }
+            });
+
         },          
         log_out(){
+            localStorage.setItem("n-login", "no");
             location.href = "./n-login.html"
         },
 
@@ -144,5 +168,18 @@ var appVue = new Vue({
         },
 
     },
+    computed: {
+        membersd: function() {
+            var search = this.member_number;            
+
+            if (search) {
+                return this.members.filter(function(product) {                   
+                    return String (product.member_id).toLowerCase().indexOf(search) > -1                 
+                })                
+            }
+
+            return this.members;
+        }
+    }
     
 })

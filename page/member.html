@@ -8,12 +8,14 @@
     <link rel="stylesheet" href="../css/member.css">
     <link rel="stylesheet" href="../css/cart.css">
     <!-- fontawesome -->
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <title>會員中心 - 小春堂</title>
     <link rel="icon" href="../images/index/logo_footer.png">
-
+    
 
     <script src="../js/vue.js"></script>
     <script src="../js/cart_vue.js"></script>
@@ -37,7 +39,7 @@
         <div id="cart_app">
             <div class="navbar">
                 <div class="navbar-logo">
-                    <a href="./homepage.html"><img src="../images/index/logo.png" alt=""></a>
+                    <a href="../index.html"><img src="../images/index/logo.png" alt=""></a>
                 </div>
                 <div class="navbar-icon">
                     <a href="#"><i class="fas fa-user"></i></a>
@@ -51,12 +53,10 @@
                     <div class="ham_bar3 ham_bar"></div>
                 </div>
                 <div id="ham_myNav" class="ham_overlay">
-                    <div class="ham_wave wave1"></div>
-                    <div class="ham_wave wave2"></div>
-                    <div class="ham_wave wave3"></div>
                     <div class="ham_overlay-content">
+                        <div class='ham_jelly'></div>
                         <div class="ham_select">
-                            <a href="./homepage.html">首頁</a>
+                            <a href="../index.html">首頁</a>
                             <a href="./about.html">關於我們</a>
                             <a href="./news.html">最新消息</a>
                             <a href="./shopping_choose.html">商品專區</a>
@@ -68,120 +68,120 @@
                     </div>
                 </div>
             </div>
-
-            <!-- 購物車 -->
-            <div>
-                <div class="cart_mask"></div>
-                <div class="cart_cartBoard">
-                    <div class="cart_cart">
-                        <div class="cart_cartTitle">
-                            <p>購物車</p>
-                            <div class="cart_close" @click="close()">
-                                <div class="cart_left"></div>
-                                <div class="cart_right"></div>
-                            </div>
+            <div class="cart_cartBoard">
+                <div class="cart_cart">
+                    <div class="cart_cartTitle">
+                        <p>購物車</p>
+                        <div class="cart_close" @click="close()">
+                            <div class="cart_left"></div>
+                            <div class="cart_right"></div>
                         </div>
-                        <!-- ========== 商品細項 ========== -->
-                        <ul class="cart_itemList">
-                            <!-- 購物車空值顯示 -->
-                            <div class="cart_NoItem">
-                                <div>
-                                    <img src="../images/cart/shoppingcart_empty.png">
-                                </div>
-                                <p>購物車還是空的哦！</p>
+                    </div>
+                    <!-- ========== 商品細項 ========== -->
+                    <ul class="cart_itemList">
+                        <!-- 購物車空值顯示 -->
+                        <div class="cart_NoItem">
+                            <div>
+                                <img src="../images/cart/shoppingcart_empty.png">
                             </div>
-                            <!-- 一般商品 -->
-                            <li class="cart_item" v-for="(item,index) in itemList" :id="item.id">
-                                <div class="cart_itemCB" :class="{'cart_choose': item.status}" @click="choose(item)">
-                                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check fa-w-16" role="img" viewBox="0 0 512 512">
-                        <path fill="#ffffff"
-                            d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z" />
-                        </svg>
+                            <p>購物車還是空的哦！</p>
+                        </div>
+                        <!-- 一般商品 -->
+                        <li class="cart_item" v-for="(item,index) in itemList" :id="item.id">
+                            <div class="cart_itemCB" :class="{'cart_choose': item.status}" @click="choose(item)">
+                                <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"
+                                    data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check fa-w-16"
+                                    role="img" viewBox="0 0 512 512">
+                                    <path fill="#ffffff"
+                                        d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z" />
+                                </svg>
+                            </div>
+                            <div class="cart_itemImg">
+                                <img :src="item.img">
+                            </div>
+                            <div class="cart_itemText">
+                                <p class="cart_itemName">{{item.itemName}}</p>
+                                <br>
+                                <p class="cart_itemAmount">$<span class="cart_price">{{item.price}}</span>元
+                                </p>
+                                <div class="cart_itemQuantity">
+                                    <button class="cart_less mainbtn" @click="sub(item)">&#45;</button>
+                                    <input class="cart_quantity" type="text" v-model="item.quantity">
+                                    <button class="cart_add mainbtn" @click="add(item)">&#43;</button>
                                 </div>
+                            </div>
+                            <div class="cart_itemDelete" @click="delete_Item(index)">
+                                <div class="cart_leftD"></div>
+                                <div class="cart_rightD"></div>
+                            </div>
+                        </li>
+
+                        <!-- 客制禮盒 -->
+                        <li class="cart_customization" v-for="(item,index) in customization" :id="item.id">
+                            <!-- 商品 -->
+                            <div class="cart_customizationItem">
+                                <div class="cart_itemCB" :class="{'cart_choose': item.status}" @click="choose(item)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"
+                                        data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check fa-w-16"
+                                        role="img" viewBox="0 0 512 512">
+                                        <path fill="#ffffff"
+                                            d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z" />
+                                    </svg>
+                                </div>
+
                                 <div class="cart_itemImg">
                                     <img :src="item.img">
                                 </div>
+
                                 <div class="cart_itemText">
                                     <p class="cart_itemName">{{item.itemName}}</p>
                                     <br>
-                                    <p class="cart_itemAmount">$<span class="cart_price">{{item.price}}</span>元
-                                    </p>
+                                    <p class="cart_itemAmount">$<span>{{item.price}}</span>元</p>
                                     <div class="cart_itemQuantity">
-                                        <button class="cart_less mainbtn" @click="sub(item)">&#45;</button>
+                                        <button class="cart_less mainbtn" @click="sub(item)">-</button>
                                         <input class="cart_quantity" type="text" v-model="item.quantity">
-                                        <button class="cart_add mainbtn" @click="add(item)">&#43;</button>
-                                    </div>
-                                </div>
-                                <div class="cart_itemDelete" @click="delete_Item(index)">
-                                    <div class="cart_leftD"></div>
-                                    <div class="cart_rightD"></div>
-                                </div>
-                            </li>
-
-                            <!-- 客制禮盒 -->
-                            <li class="cart_customization" v-for="(item,index) in customization" :id="item.id">
-                                <!-- 商品 -->
-                                <div class="cart_customizationItem">
-                                    <div class="cart_itemCB" :class="{'cart_choose': item.status}" @click="choose(item)">
-                                        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check fa-w-16" role="img" viewBox="0 0 512 512">
-                            <path fill="#ffffff"
-                            d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z" />
-                        </svg>
-                                    </div>
-
-                                    <div class="cart_itemImg">
-                                        <img :src="item.img">
-                                    </div>
-
-                                    <div class="cart_itemText">
-                                        <p class="cart_itemName">{{item.itemName}}</p>
-                                        <br>
-                                        <p class="cart_itemAmount">$<span>{{item.price}}</span>元</p>
-                                        <div class="cart_itemQuantity">
-                                            <button class="cart_less mainbtn" @click="sub(item)">-</button>
-                                            <input class="cart_quantity" type="text" v-model="item.quantity">
-                                            <button class="cart_add mainbtn" @click="add(item)">+</button>
-                                        </div>
-                                    </div>
-
-                                    <div class="cart_itemRight">
-                                        <div class="cart_itemDelete" @click="delete_Customization(index)">
-                                            <div class="cart_leftD"></div>
-                                            <div class="cart_rightD"></div>
-                                        </div>
-                                        <div class="cart_detailBtn">查看禮盒明細</div>
+                                        <button class="cart_add mainbtn" @click="add(item)">+</button>
                                     </div>
                                 </div>
 
-                                <!-- 展開禮盒明細 -->
-                                <div class="cart_detailBorder">
-                                    <div class="cart_detail">
-                                        <div>
-                                            <div class="cart_detailItem" v-for="item in item.detail">
-                                                - {{item}}
-                                            </div>
+                                <div class="cart_itemRight">
+                                    <div class="cart_itemDelete" @click="delete_Customization(index)">
+                                        <div class="cart_leftD"></div>
+                                        <div class="cart_rightD"></div>
+                                    </div>
+                                    <div class="cart_detailBtn">查看禮盒明細</div>
+                                </div>
+                            </div>
+
+                            <!-- 展開禮盒明細 -->
+                            <div class="cart_detailBorder">
+                                <div class="cart_detail">
+                                    <div>
+                                        <div class="cart_detailItem" v-for="item in item.detail">
+                                            - {{item}}
                                         </div>
-                                        <div>
-                                            <div class="cart_detailQuantity" v-for="item in item.detail_Quantity">
-                                                x {{item}}
-                                            </div>
+                                    </div>
+                                    <div>
+                                        <div class="cart_detailQuantity" v-for="item in item.detail_Quantity">
+                                            x {{item}}
                                         </div>
                                     </div>
                                 </div>
-                            </li>
-                        </ul>
+                            </div>
+                        </li>
+                    </ul>
 
-                        <div id="cart_deleteMany" @click="delete_All()" :style="{'background-color': delete_bgc, cursor: delete_cursor}">刪除多個</div>
+                    <div id="cart_deleteMany" @click="delete_All()"
+                        :style="{'background-color': delete_bgc, cursor: delete_cursor}">刪除多個</div>
 
-                        <div class="cart_total">
-                            <p>小計</p>
-                            <p>$<span>{{total_Price}}</span></p>
-                        </div>
+                    <div class="cart_total">
+                        <p>小計</p>
+                        <p>$<span>{{total_Price}}</span></p>
                     </div>
-
-                    <div class="cart_checkoutBorder"><a href="../page/checkout.html" class="cart_checkout" @click="stopGo">前往結帳</a></div>
-
                 </div>
+
+                <div class="cart_checkoutBorder"><a href="../page/checkout.html" class="cart_checkout" @click='stopGo'>前往結帳</a></div>
+
             </div>
         </div>
         <!-- nav結束 -->
@@ -204,7 +204,7 @@
             </div>
             <!-- ==================會員資料=================== -->
             <div class='memberPart1'>
-                <label>姓名：<input class='memberLeft memberTop' type="text" value='李安'></label><br>
+                <label>姓名：<input class='memberLeft memberTop' type="text" value='李安' id='memberName'></label><br>
                 <div class='gender'>性別：
                     <input class='memberLeft' name='gender' type="radio" id="male" value='male' checked>
                     <label for="male">男性</label>
@@ -213,10 +213,11 @@
                     <input name='gender' type="radio" id="other" value='other'>
                     <label for="other">第三性</label>
                 </div>
-                <label>信箱：<input class='memberLeft' type="email" value='karuhodou2020@gmail.com'></label><br>
-                <label>連絡電話：<input type="text" value='0912345678'></label><br>
-                <label>地址：<input class='memberLeft' type="text" value="台北市南京東路三段219號4-5F"></label><br>
-                <button type="submit">儲存</button>
+                <label>帳號：<input class='memberLeft' disabled type="email" value='karuhodou2020@gmail.com' id='memberAccount'></label><br>
+                <label>連絡電話：<input type="text" value='0912345678' id='memberPhone'></label><br>
+                <!-- <label>地址：<input class='memberLeft' type="text" value="台北市南京東路三段219號4-5F" id='memberAddress'></label><br> -->
+                <label>地址：<input class='memberLeft memberAdr' type="text" id='memberCity'><input class='memberAdr' type="text" id='memberArea'><input class='memberAdr' type="text" id='memberAddress'></label><br>
+                <button type="submit" onclick='memberChangeData()'>儲存</button>
             </div>
 
             <!-- ==================修改密碼=================== -->
@@ -233,376 +234,38 @@
                     <input class='memberNewPSW2' type='password' placeholder="再次輸入新密碼"><i class="eye eye1 fas fa-eye"></i>
                     <member-error></member-error>
                 </div>
-                <button class='memberChangePSW' type="submit">修改</button>
+                <button class='memberChangePSW' onclick='memberChangePassword()' type="submit">修改</button>
             </div>
 
             <!-- ==================訂單查詢=================== -->
             <div class='memberPart3'>
                 <div class='orderSearch'>
-                    <input type="text" placeholder="請輸入您的訂單編號">
+                    <input type="text" id='keyWord' placeholder="請輸入您的訂單編號">
                     <button type='submit'>搜尋</button>
                 </div>
                 <p class='clearBoth'></p>
-                <div>
-                    <!-- 訂單1 -->
-                    <div class='memberOrder'>
-                        <div class='memberOrderContent' style="table-layout:fixed">
-                            <div class="memberGrid">
-                                <div class='memberGrid1'>訂單編號</div>
-                                <div class='memberGrid2'>日期</div>
-                                <div class='memberGrid3'>金額</div>
-                                <div class='memberGrid4'>付款方式</div>
-                                <div class='memberGrid5'>付款狀態</div>
-                                <div class='memberGrid6'>貨運狀態</div>
-                                <div class='memberGrid7'>訂單狀態</div>
-                                <div class='memberGrid8'>收件人資訊</div>
-                                <div class='memberGrid9'>123456789</div>
-                                <div class='memberGrid10'>2021-04-26</div>
-                                <div class='memberGrid11'>$700</div>
-                                <div class='memberGrid12'>貨到付款</div>
-                                <div class='memberGrid13'>未付款</div>
-                                <div class='memberGrid14'>已出貨</div>
-                                <div class='memberGrid15'>已確認</div>
-                                <div class='memberGrid16 memberReceiverID'>詳細資訊</div>
-                            </div>
-                        </div>
-
-                        <div class='memberProgressAll'>
-                            <div>
-                                <div class='memberProgressDot'>
-                                    <div></div>
-                                    <div class='memberLineCheck'></div>
-                                    <div></div>
-                                    <div class='memberLineCheck'></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div class='memberUnchecked'></div>
-                                </div>
-                                <div class='memberProgressWord'>
-                                    <span>收到訂單</span>
-                                    <span>訂單確認</span>
-                                    <span class='memberWordCheck'>商品出貨</span>
-                                    <span>商品送達</span>
-                                </div>
-                            </div>
-                            <div>
-                                <button class='memberOpenDetail'>查看明細</button>
-                                <button class='memberBuyAgain noshow'>再次購買</button>
-                            </div>
-                        </div>
-                        <div class='memberOrderDetailAll'>
-                            <div class='memberOrderDetail'>
-                                <div class='memberOrderD1'>
-                                    <span>商品名稱</span>
-                                    <span>數量</span>
-                                    <span>價格</span>
-                                </div>
-                                <div class='memberOrderD2'>
-                                    <img src="../images/shopping_list/taiyaki_matcha_a_big.png">
-                                    <div>抹茶鯛魚燒</div>
-                                    <div>2件</div>
-                                    <div>$100</div>
-                                </div>
-                            </div>
-                            <div class='memberOrderDetail'>
-                                <div class='memberOrderD1'>
-                                    <span>商品名稱</span>
-                                    <span>數量</span>
-                                    <span>價格</span>
-                                </div>
-                                <div class='memberOrderD2'>
-                                    <img src="../images/shopping_list/monaka_matcha_b_big.png">
-                                    <div>抹茶最中餅</div>
-                                    <div>5件</div>
-                                    <div>$100</div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- 收件人詳細資訊 -->
-                        <receiver-detail></receiver-detail>
-
-                    </div>
-                    <!-- 訂單1結束====== -->
-                    <!-- 訂單2 -->
-                    <div class='memberOrder'>
-                        <div class='memberOrderContent' style="table-layout:fixed">
-                            <div class="memberGrid">
-                                <div class='memberGrid1'>訂單編號</div>
-                                <div class='memberGrid2'>日期</div>
-                                <div class='memberGrid3'>金額</div>
-                                <div class='memberGrid4'>付款方式</div>
-                                <div class='memberGrid5'>付款狀態</div>
-                                <div class='memberGrid6'>貨運狀態</div>
-                                <div class='memberGrid7'>訂單狀態</div>
-                                <div class='memberGrid8'>收件人資訊</div>
-                                <div class='memberGrid9'>123456789</div>
-                                <div class='memberGrid10'>2021-04-26</div>
-                                <div class='memberGrid11'>$700</div>
-                                <div class='memberGrid12'>貨到付款</div>
-                                <div class='memberGrid13'>未付款</div>
-                                <div class='memberGrid14'>已出貨</div>
-                                <div class='memberGrid15'>已確認</div>
-                                <div class='memberGrid16 memberReceiverID'>詳細資訊</div>
-                            </div>
-                        </div>
-                        <div class='memberProgressAll'>
-                            <div>
-                                <div class='memberProgressDot'>
-                                    <div></div>
-                                    <div></div>
-                                    <div class='memberUnchecked'></div>
-                                    <div></div>
-                                    <div class='memberUnchecked'></div>
-                                    <div></div>
-                                    <div class='memberUnchecked'></div>
-                                </div>
-                                <div class='memberProgressWord'>
-                                    <span class='memberWordCheck'>收到訂單</span>
-                                    <span>訂單確認</span>
-                                    <span>商品出貨</span>
-                                    <span>商品送達</span>
-                                </div>
-                            </div>
-                            <div>
-                                <button class='memberOpenDetail'>查看明細</button>
-                                <button class='memberBuyAgain noshow'>再次購買</button>
-                            </div>
-                        </div>
-                        <div class='memberOrderDetailAll'>
-                            <div class='memberOrderDetail'>
-                                <div class='memberOrderD1'>
-                                    <span>商品名稱</span>
-                                    <span>數量</span>
-                                    <span>價格</span>
-                                </div>
-                                <div class='memberOrderD2'>
-                                    <img src="../images/shopping_list/daifuku_chocolate_a_big.png">
-                                    <div>巧克力大福</div>
-                                    <div>5件</div>
-                                    <div>$100</div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- 收件人詳細資訊 -->
-                        <receiver-detail></receiver-detail>
-
-                    </div>
-                    <!-- 訂單2結束====== -->
-
-                    <!-- 訂單3 -->
-                    <div class='memberOrder'>
-                        <div class='memberOrderContent' style="table-layout:fixed">
-                            <div class="memberGrid">
-                                <div class='memberGrid1'>訂單編號</div>
-                                <div class='memberGrid2'>日期</div>
-                                <div class='memberGrid3'>金額</div>
-                                <div class='memberGrid4'>付款方式</div>
-                                <div class='memberGrid5'>付款狀態</div>
-                                <div class='memberGrid6'>貨運狀態</div>
-                                <div class='memberGrid7'>訂單狀態</div>
-                                <div class='memberGrid8'>收件人資訊</div>
-                                <div class='memberGrid9'>123456789</div>
-                                <div class='memberGrid10'>2021-04-26</div>
-                                <div class='memberGrid11'>$700</div>
-                                <div class='memberGrid12'>貨到付款</div>
-                                <div class='memberGrid13'>未付款</div>
-                                <div class='memberGrid14'>已出貨</div>
-                                <div class='memberGrid15'>已確認</div>
-                                <div class='memberGrid16 memberReceiverID'>詳細資訊</div>
-                            </div>
-                        </div>
-                        <div class='memberProgressAll'>
-                            <div>
-                                <div class='memberProgressDot'>
-                                    <div></div>
-                                    <div class='memberLineCheck'></div>
-                                    <div></div>
-                                    <div class='memberLineCheck'></div>
-                                    <div></div>
-                                    <div class='memberLineCheck'></div>
-                                    <div></div>
-                                </div>
-                                <div class='memberProgressWord'>
-                                    <span>收到訂單</span>
-                                    <span>訂單確認</span>
-                                    <span>商品出貨</span>
-                                    <span class='memberWordCheck'>商品送達</span>
-                                </div>
-                            </div>
-                            <div>
-                                <button class='memberOpenDetail'>查看明細</button>
-                                <button class='memberBuyAgain'>再次購買</button>
-                            </div>
-                        </div>
-                        <div class='memberOrderDetailAll'>
-                            <div class='memberOrderDetail'>
-                                <div class='memberOrderD1'>
-                                    <span>商品名稱</span>
-                                    <span>數量</span>
-                                    <span>價格</span>
-                                </div>
-                                <div class='memberOrderD2'>
-                                    <img src="../images/shopping_list/sweet_almond_a_big.png">
-                                    <div>杏仁瓦片</div>
-                                    <div>5件</div>
-                                    <div>$100</div>
-                                </div>
-                            </div>
-                            <div class='memberOrderDetail'>
-                                <div class='memberOrderD1'>
-                                    <span>商品名稱</span>
-                                    <span>數量</span>
-                                    <span>價格</span>
-                                </div>
-                                <div class='memberOrderD2'>
-                                    <img src="../images/shopping_list/yokan_strawberry_a_big.png">
-                                    <div>草莓羊羹</div>
-                                    <div>3件</div>
-                                    <div>$100</div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- 收件人詳細資訊 -->
-                        <receiver-detail></receiver-detail>
-
-                    </div>
-                    <!-- 訂單3結束====== -->
-                </div>
+                
+                <!-- 訂單顯示的地方 -->
+                <div id='memberOrderList3'></div>
+       
             </div>
 
             <!-- ==================取消/退款查詢=================== -->
             <div class='memberPart4 vueOrder'>
                 <div class='orderSearch'>
-                    <input type="text" placeholder="請輸入您的訂單編號">
+                    <input type="text" id='keyWord' placeholder="請輸入您的訂單編號">
                     <button type='submit'>搜尋</button>
                 </div>
                 <p class='clearBoth'></p>
-                <div>
-                    <div class='memberOrder'>
-                        <div class='memberOrderContent' style="table-layout:fixed">
-                            <div class="memberGrid">
-                                <div class='memberGrid1'>訂單編號</div>
-                                <div class='memberGrid2'>日期</div>
-                                <div class='memberGrid3'>金額</div>
-                                <div class='memberGrid4'>付款方式</div>
-                                <div class='memberGrid5'>付款狀態</div>
-                                <div class='memberGrid6'>貨運狀態</div>
-                                <div class='memberGrid7'>訂單狀態</div>
-                                <div class='memberGrid8'>收件人資訊</div>
-                                <div class='memberGrid9'>123456789</div>
-                                <div class='memberGrid10'>2021-04-26</div>
-                                <div class='memberGrid11'>$700</div>
-                                <div class='memberGrid12'>貨到付款</div>
-                                <div class='memberGrid13'>未付款</div>
-                                <div class='memberGrid14'>待出貨</div>
-                                <div class='memberGrid15'>已取消</div>
-                                <div class='memberGrid16 memberReceiverID'>詳細資訊</div>
-                            </div>
-                        </div>
-                        <div class='memberProgressAll'>
-                            <div>
-                                <div class='memberProgressDot'>
-                                    <div></div>
-                                    <div class='memberLineCheck'></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div class='memberUnchecked'></div>
-                                    <div></div>
-                                    <div class='memberUnchecked'></div>
-                                </div>
-                                <div class='memberProgressWord'>
-                                    <span>收到訂單</span>
-                                    <span class='memberWordCheck'>訂單確認</span>
-                                    <span>商品出貨</span>
-                                    <span>商品送達</span>
-                                </div>
-                            </div>
-                            <div>
-                                <button class='memberOpenDetail'>查看明細</button>
-                                <button class='memberBuyAgain noshow'>再次購買</button>
-                            </div>
-                        </div>
-                        <div class='memberOrderDetailAll'>
-                            <div class='memberOrderDetail'>
-                                <div class='memberOrderD1'>
-                                    <span>商品名稱</span>
-                                    <span>數量</span>
-                                    <span>價格</span>
-                                </div>
-                                <div class='memberOrderD2'>
-                                    <img src="../images/shopping_list/yokan_strawberry_a_big.png">
-                                    <div>草莓羊羹</div>
-                                    <div>3件</div>
-                                    <div>$100</div>
-                                </div>
-                            </div>
-                            <div class='memberOrderDetail'>
-                                <div class='memberOrderD1'>
-                                    <span>商品名稱</span>
-                                    <span>數量</span>
-                                    <span>價格</span>
-                                </div>
-                                <div class='memberOrderD2'>
-                                    <img src="../images/shopping_list/daifuku_chocolate_a_big.png">
-                                    <div>巧克力大福</div>
-                                    <div>5件</div>
-                                    <div>$100</div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- 收件人詳細資訊 -->
-                        <receiver-detail></receiver-detail>
-
-                    </div>
-                    <!-- 訂單1結束====== -->
-                </div>
+                
+                <!-- 訂單顯示的地方 -->
+                <div id='memberOrderList4'></div>
+       
             </div>
 
-            <!-- ============================================ -->
 
             <!-- ==================收藏管理=================== -->
-            <div class='memberPart5'>
-                <div class='memberLikePack'>
-                    <img class='memberLikeImg' src="../images/shopping_list/daifuku_chestnut_a_big.png">
-                    <img class='memberLikeHeart' src="../images/member/favorite.png">
-                </div>
-                <div class='memberLikePack'>
-                    <img class='memberLikeImg' src="../images/shopping_list/namagashi_hydrangea_a_big.png">
-                    <img class='memberLikeHeart' src="../images/member/favorite.png">
-                </div>
-                <div class='memberLikePack'>
-                    <img class='memberLikeImg' src="../images/shopping_list/daifuku_matcha_a_big.png">
-                    <img class='memberLikeHeart' src="../images/member/favorite.png">
-                </div>
-                <div class='memberLikePack'>
-                    <img class='memberLikeImg' src="../images/shopping_list/dorayaki_matcha_a_big.png">
-                    <img class='memberLikeHeart' src="../images/member/favorite.png">
-                </div>
-                <div class='memberLikePack'>
-                    <img class='memberLikeImg' src="../images/shopping_list/dorayaki_taro_a_big.png">
-                    <img class='memberLikeHeart' src="../images/member/favorite.png">
-                </div>
-                <div class='memberLikePack'>
-                    <img class='memberLikeImg' src="../images/shopping_list/sweet_galette_a_big.png">
-                    <img class='memberLikeHeart' src="../images/member/favorite.png">
-                </div>
-                <div class='memberLikePack'>
-                    <img class='memberLikeImg' src="../images/shopping_list/taiyaki_matcha_a_big.png">
-                    <img class='memberLikeHeart' src="../images/member/favorite.png">
-                </div>
-                <div class='memberLikePack'>
-                    <img class='memberLikeImg' src="../images/shopping_list/sweet_fernance_a_big.png">
-                    <img class='memberLikeHeart' src="../images/member/favorite.png">
-                </div>
-                <div class='memberLikePack'>
-                    <img class='memberLikeImg' src="../images/shopping_list/monaka_peanut_a_big.png">
-                    <img class='memberLikeHeart' src="../images/member/favorite.png">
-                </div>
-                <div class='memberLikePack'>
-                    <img class='memberLikeImg' src="../images/shopping_list/yokan_strawberry_a_big.png">
-                    <img class='memberLikeHeart' src="../images/member/favorite.png">
-                </div>
-            </div>
+            <div class='memberPart5'></div>
 
         </div>
 
@@ -610,10 +273,10 @@
         <!-- =============footer============== -->
         <div class="footer">
             <div class="footer-left">
-                <div class='footer-policy'>
-                    <p><a href="#">隱私政策</a></p>
-                    <p><a href="#">服務條款</a></p>
-                </div>
+            <div class='footer-policy'>
+            <p><a href="#">隱私政策</a></p>
+            <p><a href="#">服務條款</a></p>
+            </div>
             </div>
             <div class='footer-media'>
                 <a href="#"><i class="fab fa-instagram-square"></i></a>
@@ -627,12 +290,449 @@
         </div>
         <!-- =======================footer結束======================= -->
 
-
+        
 
     </div>
 
+    <script>
+        // 判斷account的值來自於 localStorage 或 sessionStorage
+        if( localStorage.account ){
+            memberSaveAccount = localStorage.account;
+        }else if( sessionStorage.account ){
+            memberSaveAccount = sessionStorage.account;
+        }
+        // =================載入會員資料====================
+        function memberDetailLoad(){
+            
+            $.ajax({            
+                method: "POST",
+                url: "../php/member.php",
+                data:{ 
+                    // keyword : $('#keyWord').val(),
+                    keyword : memberSaveAccount,
+                },            
+                dataType: "json",
+                success: function (response) {
+
+                    // ==============會員資料=============
+                    $('#memberName').val(`${response.member[0].name}`);
+                    $('#memberAccount').val(`${response.member[0].account}`);
+                    $('#memberPhone').val(`${response.member[0].phone}`);
+                    $('#memberCity').val(`${response.member[0].city}`);
+                    $('#memberArea').val(`${response.member[0].area}`);
+                    $('#memberAddress').val(`${response.member[0].address}`);
+
+                    if( `${response.member[0].gender}` == '男' ){
+                        $('.memberPart1 input[name="gender"]')[0].checked = true;
+                        console.log('male');
+                    }else if( `${response.member[0].gender}` == '女' ){
+                        $('.memberPart1 input[name="gender"]')[1].checked = true;
+                    }else{
+                        $('.memberPart1 input[name="gender"]')[2].checked = true;
+                        
+                    }
 
 
+                    // ==============訂單查詢=============
+                    // **更新html內容前先清空原有資料** (若沒有清空資料會一直累加)
+                    $("#memberOrderList3").html("");
+                    $("#memberOrderList4").html("");
+
+                    // console.log(response);
+
+                    // 顯示訂單資料
+                    $.each(response.main, function(index, row) {
+
+                        // 找折扣碼 & 運費
+                        shippingFee = parseInt(response.shippingDiscount[0].shipping_fee);
+                        discount = parseInt(response.shippingDiscount[0].discount_price);
+
+                        // 運算訂單金額
+                        orderPrice = 0;
+                        $.each(response.detail, function(index, row) {
+                            orderPrice += parseInt(row.quantity)*parseInt(row.order_detail_price);
+                        });
+                        orderTotal = orderPrice + shippingFee - discount;
+
+                        // 重製運送狀態的圖示
+                        $('.memberProgressDot div:nth-child(2n)').css('background-color', '#c4c4c4');
+                        $('.memberProgressDot div:nth-child(2n+1)').addClass('memberUnchecked');
+                        $('.memberProgressDot div:nth-child(1)').removeClass('memberUnchecked');
+                        $('.memberProgressWord span').css('color', '#a3a3a3');
+                        
+                        // 設定狀態們的顯示名稱
+                        if( row.payment_status==0 ){
+                            row.payment_status='未付款';
+                        }else if( row.payment_status==1 ){
+                            row.payment_status='已付款';
+                        }else if( row.payment_status==2 ){
+                            row.payment_status='付款失敗';
+                        }else if( row.payment_status==3 ){
+                            row.payment_status='退款中';
+                        }else{
+                            row.payment_status='已退款';
+                        };
+
+                        if( row.order_status==0 ){
+                            row.order_status='處理中';
+                        }else if( row.order_status==1 ){
+                            row.order_status='已確認';
+                        }else if( row.order_status==2 ){
+                            row.order_status='已完成';
+                        }else{
+                            row.order_status='已取消';
+                        };
+
+                        if( row.shipping_status==0 ){
+                            row.shipping_status='待出貨';
+                        }else if( row.shipping_status==1 ){
+                            row.shipping_status='已出貨';
+                        }else if( row.shipping_status==2 ){
+                            row.shipping_status='已送達';
+                        }else if( row.shipping_status==3 ){
+                            row.shipping_status='已取貨';
+                        }else{
+                            row.shipping_status='已退貨';
+                        };
+
+                        // 判斷訂單要新增在訂單查詢 or 取消查詢
+                        if( `${row.payment_status}` == '付款失敗' || `${row.payment_status}` == '退款中' || `${row.payment_status}` == '已退款' || `${row.order_status}` == '已取消' ){ 
+                            memberOrderPlaceHere = '#memberOrderList4';
+                        }else{
+                            memberOrderPlaceHere = '#memberOrderList3';
+                        };
+
+                        $(`${memberOrderPlaceHere}`).append(
+                            `<div class='memberOrder'>
+                                <div class='memberOrderContent' style='table-layout:fixed'>
+                                    <div class='memberGrid'>
+                                        <div class='memberGrid1'>訂單編號</div>
+                                        <div class='memberGrid2'>日期</div>
+                                        <div class='memberGrid3'>金額</div>
+                                        <div class='memberGrid4'>付款方式</div>
+                                        <div class='memberGrid5'>付款狀態</div>
+                                        <div class='memberGrid6'>貨運狀態</div>
+                                        <div class='memberGrid7'>訂單狀態</div>
+                                        <div class='memberGrid8'>收件人資訊</div>
+                                        <div class='memberGrid9'> ${row.order_list} </div>
+                                        <div class='memberGrid10'> ${row.order_date} </div>
+                                        <div class='memberGrid11'> $${orderTotal} </div>
+                                        <div class='memberGrid12'> ${row.payment} </div>
+                                        <div class='memberGrid13'> ${row.payment_status} </div>
+                                        <div class='memberGrid14'> ${row.shipping_status} </div>
+                                        <div class='memberGrid15'> ${row.order_status} </div>
+                                        <div class='memberGrid16 memberReceiverID'>詳細資訊</div>
+                                    </div>
+                                </div>
+
+                                <div class='memberProgressAll'>
+                                    <div>
+                                        <div class='memberProgressDot'>
+                                            <div></div>
+                                            <div class='memberProgressDot_even1'></div>
+                                            <div class='memberProgressDot_odd1 memberUnchecked'></div>
+                                            <div class='memberProgressDot_even2'></div>
+                                            <div class='memberProgressDot_odd2 memberUnchecked'></div>
+                                            <div class='memberProgressDot_even3'></div>
+                                            <div class='memberProgressDot_odd3 memberUnchecked'></div>
+                                        </div>
+                                        <div class='memberProgressWord'>
+                                            <span class='memberWordCheck1'>收到訂單</span>
+                                            <span class='memberWordCheck2'>訂單確認</span>
+                                            <span class='memberWordCheck3'>商品出貨</span>
+                                            <span class='memberWordCheck4'>商品送達</span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <button class='memberOpenDetail'>查看明細</button>
+                                        <button class='memberBuyAgain noshow'>再次購買</button>
+                                    </div>
+                                </div>
+                                <div class='memberOrderDetailHere'></div>
+                            
+                                <div class='receiverDetail'>
+                                    <div>
+                                        <p>收件人姓名：<input disabled type='text' value=' ${row.receiver_name} '></p>
+                                        <p>收件人電話：<input disabled type='text' value=' ${row.receiver_phone} '></p>
+                                        <p>收件人地址：<input disabled type='text' value=' ${row.shipping_address} '></p>
+                                    </div>
+                                    <button class=''>確認</button>
+                                </div>
+                            
+                            </div>`
+                        );
+                        
+                        // 顯示訂單明細商品
+                        $('.memberOrderDetailHere').hide();
+                        $.each(response.detail, function(index, row) {
+                            $(".memberOrderDetailHere").append(
+                                `<div class='memberOrderDetailAll'>
+                                    <div class='memberOrderDetail'>
+                                        <div class='memberOrderD1'>
+                                            <span>商品名稱</span>
+                                            <span>數量</span>
+                                            <span>價格</span>
+                                        </div>
+                                        <div class='memberOrderD2'>
+                                            <img src='../images/shopping_list/${row.product_image1}'>
+                                            <div>${row.product_name}</div>
+                                            <div>${row.quantity}件</div>
+                                            <div>$${row.order_detail_price}</div>
+                                        </div>
+                                    </div>
+                                </div>`
+                            );
+                        });
+
+                        // 設定進度條的顯示
+
+                        if( row.order_status=='處理中' ){
+                            $('.memberProgressWord span').css('color', '#a3a3a3');
+                            $('.memberWordCheck1').css('color', '#f7c242');
+                        }else if( row.order_status=='已確認'){
+                            $('.memberProgressDot_odd1').removeClass('memberUnchecked');
+                            $('.memberProgressDot_even1').css('background-color', '#f7c242');
+                            $('.memberProgressDot_odd2').removeClass('memberUnchecked');
+                            $('.memberProgressDot_even2').css('background-color', '#f7c242');
+                            $('.memberProgressWord span').css('color', '#a3a3a3');
+                            $('.memberWordCheck2').css('color', '#f7c242');
+                        }else if( row.order_status=='已完成' ){
+                            $('.memberProgressDot_odd1').removeClass('memberUnchecked');
+                            $('.memberProgressDot_even1').css('background-color', '#f7c242');
+                            $('.memberProgressDot_odd2').removeClass('memberUnchecked');
+                        }else{
+                            
+                        };
+
+                        if( row.shipping_status=='待出貨' ){
+                            
+                        }else if( row.shipping_status=='已出貨' ){
+                            $('.memberProgressDot_odd1').removeClass('memberUnchecked');
+                            $('.memberProgressDot_even1').css('background-color', '#f7c242');
+                            $('.memberProgressDot_odd2').removeClass('memberUnchecked');
+                            $('.memberProgressDot_even2').css('background-color', '#f7c242');
+                            $('.memberProgressWord span').css('color', '#a3a3a3');
+                            $('.memberWordCheck3').css('color', '#f7c242');
+                        }else if( row.shipping_status=='已送達' ){
+                            $('.memberProgressDot_odd1').removeClass('memberUnchecked');
+                            $('.memberProgressDot_even1').css('background-color', '#f7c242');
+                            $('.memberProgressDot_odd2').removeClass('memberUnchecked');
+                            $('.memberProgressDot_even2').css('background-color', '#f7c242');
+                            $('.memberProgressDot_odd3').removeClass('memberUnchecked');
+                            $('.memberProgressDot_even3').css('background-color', '#f7c242');
+                            $('.memberProgressDot_odd4').removeClass('memberUnchecked');
+                            $('.memberProgressWord span').css('color', '#a3a3a3');
+                            $('.memberWordCheck4').css('color', '#f7c242');
+                        }else if( row.shipping_status=='已取貨' ){
+                            // event1_css = 'background-color:#f7c242';
+                            $('.memberProgressDot_odd1').removeClass('memberUnchecked');
+                            $('.memberProgressDot_even1').css('background-color', '#f7c242');
+                            $('.memberProgressDot_odd2').removeClass('memberUnchecked');
+                            $('.memberProgressDot_even2').css('background-color', '#f7c242');
+                            $('.memberProgressDot_odd3').removeClass('memberUnchecked');
+                            $('.memberProgressDot_even3').css('background-color', '#f7c242');
+                            $('.memberProgressDot_odd4').removeClass('memberUnchecked');
+                            $('.memberProgressWord span').css('color', '#a3a3a3');
+                            $('.memberWordCheck4').css('color', '#f7c242');
+                        }else{
+                            
+                        };
+
+                        // ===============收藏商品===============
+                        $.each(response.favorite, function(index, row) {
+
+                            $('.memberPart5').append(
+                                `<div class='memberLikePack'>
+                                    <img class='memberLikeImg' src="../images/shopping_list/${row.product_image1}">
+                                    <img class='memberLikeHeart' src="../images/member/favorite.png">
+                                </div>`
+                            );
+
+                        });
+                            
+                    });
+                    // alert('success2');
+                },
+                error: function(exception) {
+                    alert("發生錯誤: " + exception.status);
+                },
+		    });
+        };
+
+        
+
+        // ==================會員更改資料寫入資料庫=================
+        function memberChangeData(response){
+            // 確認欄位沒有空值
+            if($('#memberName').val() != '' && $('#memberPhone').val() != '' && $('#memberCity').val() != '' && $('#memberArea').val() != '' && $('#memberAddress').val() != '' ){
+                // 轉換性別
+                memberGenderForData = $('.memberPart1 input[name="gender"]:checked').val();
+                if( memberGenderForData == 'male' ){
+                    memberGenderForData = '男';
+                }else if( memberGenderForData == 'female' ){
+                    memberGenderForData = '女';
+                }else{
+                    memberGenderForData = '第三性';
+                }
+                // console.log(response);
+                $.ajax({            
+                    method: "POST",
+                    url: "../php/memberInsert.php",
+                    data:{ 
+                        keyword : memberSaveAccount,
+                        memberName : $('#memberName').val(),
+                        memberPhone : $('#memberPhone').val(),
+                        memberCity : $('#memberCity').val(),
+                        memberArea : $('#memberArea').val(),
+                        memberAddress : $('#memberAddress').val(),
+                        memberGender : memberGenderForData,
+                    },            
+                    dataType: "text",
+                    success: function (response) {
+                        memberDetailLoad();
+                        alert('已更新！ ʕ •ᴥ• ʔ ');
+                    },
+                    error: function(exception) {
+                        alert("窩很抱歉(இдஇ)，發生錯誤: " + exception.status);
+                    
+                    },
+                });
+
+            }else{
+                // 欄位有空值，提醒使用者重填
+                alert('有空格忘記填了(இдஇ)，請重新確認');
+            }
+        };
+
+
+        // ==================會員修改密碼寫入資料庫=================
+        function memberChangePassword(response){
+            // 確認三格欄位都正確，才將密碼送進資料
+            memberCheckPassword =[];
+
+            // =============== 密碼反饋 ===================
+            // 清空重來
+            $('.memberError').css('display','none');
+            // $('.memberError').next().children('p').text('資料格式不正確');
+            $('input').css('border','2px solid transparent');
+
+            // 設定變數
+            let oldPSW = $('.memberOldPSW').val();
+            let newPSW = $('.memberNewPSW').val();
+            let newPSW2 = $('.memberNewPSW2').val();
+            // 正規表示法密碼格式
+            let passwordCorrect = /^.{8,16}$/;
+
+            // 判斷欄位是否正確，若正確則在memberCheckPassword新增一個OK
+            if(oldPSW == ""){
+                // e.preventDefault();
+                $('.memberOldPSW').css('border','2px solid #dc3838');
+                $('.memberOldPSW').next().next().css('display','inline-block');
+                $('.memberOldPSW').next().next().children('p').text('請輸入資訊');
+            }else if(!passwordCorrect.test(oldPSW)){
+                // e.preventDefault();
+                $('.memberOldPSW').css('border','2px solid #dc3838');
+                $('.memberOldPSW').next().next().css('display','inline-block');
+                $('.memberOldPSW').next().next().children('p').text('資料格式不正確');
+            }else{
+                memberCheckPassword.push('memberCheckPasswordOK');
+            }
+
+            if(newPSW == ""){
+                // e.preventDefault();
+                $('.memberNewPSW').css('border','2px solid #dc3838');
+                $('.memberNewPSW').next().next().css('display','inline-block');
+                $('.memberNewPSW').next().next().children('p').text('請輸入資訊');
+            }else if(!passwordCorrect.test(newPSW)){
+                // e.preventDefault();
+                $('.memberNewPSW').css('border','2px solid #dc3838');
+                $('.memberNewPSW').next().next().css('display','inline-block');
+                $('.memberNewPSW').next().next().children('p').text('資料格式不正確');
+            }else{
+                memberCheckPassword.push('memberCheckPasswordOK');
+            }
+
+            if(newPSW2 == ""){
+                // e.preventDefault();
+                $('.memberNewPSW2').css('border','2px solid #dc3838');
+                $('.memberNewPSW2').next().next().css('display','inline-block');
+                $('.memberNewPSW2').next().next().children('p').text('請輸入資訊');
+            }else if(!passwordCorrect.test(newPSW2)){
+                // e.preventDefault();
+                $('.memberNewPSW2').css('border','2px solid #dc3838');
+                $('.memberNewPSW2').next().next().css('display','inline-block');
+                $('.memberNewPSW2').next().next().children('p').text('資料格式不正確');
+            }else if(newPSW2 != newPSW ){
+                // e.preventDefault();
+                $('.memberNewPSW2').css('border','2px solid #dc3838');
+                $('.memberNewPSW2').next().next().css('display','inline-block');
+                $('.memberNewPSW2').next().next().children('p').text('兩次輸入密碼不同');
+            }else{
+                memberCheckPassword.push('memberCheckPasswordOK');
+            }
+
+            // 若以上三個欄位都正確，才執行ajax
+            if( memberCheckPassword.length == 3 ){
+                // console.log('working');
+                // $('.memberPart2 input').val() = '';
+                $.ajax({            
+                    method: "POST",
+                    url: "../php/memberPassword.php",
+                    data:{ 
+                        keyword : memberSaveAccount,
+                        memberOldPsw : $('.memberOldPSW').val(),
+                        memberNewPsw : $('.memberNewPSW').val(),
+                        memberNewPsw2 : $('.memberNewPSW2').val(),
+                    },            
+                    dataType: "text",
+                    success: function (response) {
+                        ans = JSON.parse(JSON.parse(JSON.stringify(response)));
+                        // console.log(ans);
+                        // console.log(typeof(ans));
+                        // console.log(ans[0].password);
+                        if( ans[0].password == $('.memberOldPSW').val() ){
+                            alert('已更新！ ʕ •ᴥ• ʔ ');  
+                        }else{
+                            alert('尼的舊密碼錯囉(இдஇ)，請重新輸入 '); 
+                        };
+                            
+                    },
+                    error: function(exception) {
+                        alert("窩很抱歉(இдஇ)，發生錯誤: " + exception.status);
+                    
+                    },
+                });
+            };
+            
+        };
+
+
+        // ===============收藏商品刪除時資料庫也要更新===============
+        function memberFavoriteDele(response){
+            // deleItemName = deleItemSrc.split('/')[6];
+            $.ajax({            
+                    method: "POST",
+                    url: "../php/memberfavorite.php",
+                    data:{ 
+                        keyword : memberSaveAccount,
+                        deleItemPicName : deleItemSrc.split('/')[6],
+                    },            
+                    dataType: "text",
+                    success: function (response) {
+                            alert('已刪除！881！ ʕ •ᴥ• ʔ ');   
+                    },
+                    error: function(exception) {
+                        alert("窩很抱歉(இдஇ)，發生錯誤: " + exception.status);
+                    
+                    },
+                });
+        };
+
+        
+    </script>
+
+
+    
     <!-- <script src='../js/login.js'></script> -->
 </body>
 

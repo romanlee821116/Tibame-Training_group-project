@@ -51,7 +51,7 @@
                         <li></li>
                     </ul>
 
-                    <ul v-for='(discount,key) in discounts' class="n-discount_discount">                              
+                    <ul v-for='(discount,key) in discountsd' class="n-discount_discount">                              
                         <li>{{discount.news_id}}</li>
                         <li>{{discount.create_date}}</li>
                         <li>{{discount.discount_name}}</li>
@@ -122,10 +122,10 @@
                 <div class="n-discount_group" v-for='(img_name, index) in img_names'>
                     <label :for='index'>{{img_name.name}}:</label>
                     <input type="file" :id="index" @change='upload_img'>
-                    <p>請選擇圖片上傳</p>
+                    <p>{{new_img[index]}}</p>
                     <div class="n-discount_img">
                         <img :src='img_name.src'>
-                        <p>請選擇圖片上傳</p>
+                        <!-- <p>請選擇圖片上傳</p> -->
                     </div>
                 </div>
 
