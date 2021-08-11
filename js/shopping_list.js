@@ -1,7 +1,5 @@
 $(document).ready(function() {
 
-
-
     //========================================local storage========================================
     let cart_item = {
         'productCat': 0,
