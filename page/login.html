@@ -72,7 +72,7 @@
 
                             <div id='loginKeep'>
                                 <input type="checkbox" id='loginKeeplog'>
-                                <label for="loginKeeplog">保持登入</label>
+                                <label for="loginKeeplog" class='loginKeeplog'>保持登入</label>
                                 <span id='loginForgetPsw'>忘記密碼？</span>
                             </div>
                             <div class='loginErrorWrap'>
@@ -160,7 +160,7 @@
     </div>
     <!-- 彈出跳窗 -->
     <div class='loginpopBG'>
-        <div class="type2">
+        <div class="type2">            
             <img src="../images/login/send_password.png" alt="">
             <h2>新密碼已寄出</h2>
             <p>系統已發送新密碼至您的指定信箱</p>
@@ -333,14 +333,14 @@
                         if(data == '1'){
                             $('.type2 > h2').text('註冊成功');
                             $('.type2 > p').text('請重新登入');
-                            $('.loginSendPSWclose').text('前往');
+                            $('.type2 a').text('前往');
                             $('.loginSendPSWclose').attr('href','login.html')
                             $('.loginpopBG').show();
                             // location.href = '../page/login.html';
                         }else{
                             $('.type2 > h2').text('註冊失敗');
-                            $('.type2 > p').text('此帳號已被使用，請重新註冊');
-                            $('.loginSendPSWclose').attr('href','login.html')
+                            $('.type2 > p').text('此信箱已被使用，請重新註冊');
+                            $('.loginSendPSWclose').attr('href','#')
                             $('.loginpopBG').show();
                         }
                         
@@ -363,11 +363,21 @@
                 },
                 dataType: 'text',
                 success: function (data) {
-                    if(data == '1'){
-                        $('.type2 > h2').text('登入成功');
-                        $('.type2 > p').text('前往會員中心');
-                        $('.loginSendPSWclose').attr('href','member.html')
-                        $('.loginpopBG').show();
+                    if(data != '0'){
+                        // $('.type2 > h2').text('登入成功');
+                        // $('.type2 > p').text('前往會員中心');
+                        // $('.loginSendPSWclose').attr('href','member.html');
+                        // $('.loginSendPSWclose').attr('href','member.html')
+                        // $('.loginpopBG').show();
+                        // $('.nav_logOut').show();
+                        console.log('success');
+                        
+                        if($('#loginKeeplog').is(':checked')){
+                            localStorage.setItem('account', data);
+                        }else{
+                            sessionStorage.setItem('account', data);
+                        }
+                        window.location.reload();
                     }else{
                         $('.type2 > h2').text('登入失敗');
                         $('.type2 > p').text('帳號或密碼錯誤');

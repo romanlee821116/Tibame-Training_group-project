@@ -1,3 +1,8 @@
+var my_back = localStorage.getItem("n-login");
+if(my_back !== 'yes'){
+    location.href = "./n-login.html"
+}
+
 Vue.component('double-check', {            
     template: 
         ` 
@@ -5,8 +10,8 @@ Vue.component('double-check', {
             <section></section>
             <p>尚未存檔，是否確認關閉</p>
             <div>
-                <button type="button" @click='sure'>確認</button>
                 <button type="button" @click='cancel'>取消</button>
+                <button type="button" @click='sure'>確認</button>
             </div>
         </div>                
         `
@@ -201,9 +206,10 @@ var appVue = new Vue({
 
         },     
         log_out(){
+            localStorage.setItem("n-login", "no");
             location.href = "./n-login.html"
         },        
-       
+    
         showOdata(gopage){
             console.log(gopage);
             if(isNaN(gopage)) return;
@@ -219,8 +225,7 @@ var appVue = new Vue({
                 success: function (response) {
                     appVue.pages = response[0];
                     appVue.orders = response[1];
-                    appVue.order_list = response[2];
-                    
+                    appVue.order_list = response[2];                    
                 },
                 error: function(exception) {
                     alert("發生錯誤: " + exception.status);
@@ -228,5 +233,18 @@ var appVue = new Vue({
             });
         },
     },
+    computed: {
+        ordersd: function() {
+            var search = this.order_number;                
+
+            if (search) {
+                return this.orders.filter(function(product) {                   
+                    return String (product.order_id).toLowerCase().indexOf(search) > -1                 
+                })                
+            }
+
+            return this.orders;
+        }
+    } 
     
 })

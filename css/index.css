@@ -104,12 +104,12 @@ table {
   color: #f7c242;
 }
 
-.navbar .navbar-icon i {
+.navbar .navbar-icon a i {
   color: #bb866a;
   font-size: 28px;
 }
 
-.navbar .navbar-icon i:hover {
+.navbar .navbar-icon a i:hover {
   color: #f7c242;
 }
 

@@ -113,12 +113,12 @@ body {
   color: #f7c242;
 }
 
-.navbar .navbar-icon i {
+.navbar .navbar-icon a i {
   color: #bb866a;
   font-size: 28px;
 }
 
-.navbar .navbar-icon i:hover {
+.navbar .navbar-icon a i:hover {
   color: #f7c242;
 }
 
@@ -1147,14 +1147,14 @@ body {
   width: auto;
   height: 100%;
   display: grid;
-  grid-template-columns: 70px 70px 70px;
-  grid-template-rows: 70px 70px 70px 70px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 20% 20% 20% 20%;
   gap: 10px;
   padding: 10px;
   display: none;
   position: relative;
   z-index: 5;
-  padding: 30px 0 0 40px;
+  padding: 30px 40px;
 }
 
 .cus_step2 .custom_card_textArea .custom_card_iconList img {

@@ -382,6 +382,7 @@ body {
 .n-news_news_bot {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  gap: 25px 15px;
   justify-items: center;
   padding: 20px;
 }

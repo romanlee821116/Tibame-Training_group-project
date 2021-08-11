@@ -55,52 +55,7 @@ $(document).ready(function(){
                 {type: '最中', class:'cus_categoryBtn', id: '6'},
             ],
 
-            cus_item: [
-                // {product_name: '栗子大福',class:'1', product_image_customize: '../images/shopping_list/cuslist_daifuku_chestnut.png', product_class:'5', product_list:'38' },
-                // {product_name: '巧克力大福',class:'2', product_image_customize: '../images/shopping_list/cuslist_daifuku_chocolate.png', product_class:'5', product_list:'32' },
-                // {product_name: '奶油大福',class:'3', product_image_customize: '../images/shopping_list/cuslist_daifuku_cream.png', product_class:'5', product_list:'31' },
-                // {product_name: '芒果大福',class:'4', product_image_customize: '../images/shopping_list/cuslist_daifuku_mango.png', product_class:'5', product_list:'34' },
-                // {product_name: '抹茶大福',class:'5', product_image_customize: '../images/shopping_list/cuslist_daifuku_matcha.png', product_class:'5', product_list:'35' },
-                // {product_name: '柳橙大福',class:'6', product_image_customize: '../images/shopping_list/cuslist_daifuku_oranges.png', product_class:'5', product_list:'36' },
-                // {product_name: '布丁大福',class:'7', product_image_customize: '../images/shopping_list/cuslist_daifuku_pudding.png', product_class:'5', product_list:'33' },
-                // {product_name: '紅豆大福',class:'8', product_image_customize: '../images/shopping_list/cuslist_daifuku_redBean.png', product_class:'5', product_list:'37' },
-                // {product_name: '毛豆大福',class:'9', product_image_customize: '../images/shopping_list/cuslist_daifuku_soybeans.png', product_class:'5', product_list:'30' },
-                // {product_name: '草莓大福',class:'10', product_image_customize: '../images/shopping_list/cuslist_daifuku_strawberry.png', product_class:'5', product_list:'39' },
-                // {product_name: '栗子銅鑼燒',class:'11', product_image_customize: '../images/shopping_list/cuslist_dorayaki_chestnut.png', product_class:'0', product_list:'7' },
-                // {product_name: '巧克力銅鑼燒',class:'12', product_image_customize: '../images/shopping_list/cuslist_dorayaki_chocolate.png', product_class:'0', product_list:'4' },
-                // {product_name: '抹茶銅鑼燒',class:'13', product_image_customize: '../images/shopping_list/cuslist_dorayaki_matcha.png', product_class:'0', product_list:'3' },
-                // {product_name: '布丁銅鑼燒',class:'14', product_image_customize: '../images/shopping_list/cuslist_dorayaki_pudding.png', product_class:'0', product_list:'5' },
-                // {product_name: '紅豆銅鑼燒',class:'15', product_image_customize: '../images/shopping_list/cuslist_dorayaki_redBean.png', product_class:'0', product_list:'6' },
-                // {product_name: '草莓銅鑼燒',class:'16', product_image_customize: '../images/shopping_list/cuslist_dorayaki_strawberry.png', product_class:'0', product_list:'1' },
-                // {product_name: '芋泥銅鑼燒',class:'17', product_image_customize: '../images/shopping_list/cuslist_dorayaki_taro.png', product_class:'0', product_list:'2' },
-                // {product_name: '菊',class:'18', product_image_customize: '../images/shopping_list/cuslist_namagashi_chrysanthemum.png', product_class:'2', product_list:'17' },
-                // {product_name: '花火',class:'19', product_image_customize: '../images/shopping_list/cuslist_namagashi_firework.png', product_class:'2', product_list:'13' },
-                // {product_name: '紫陽花',class:'19', product_image_customize: '../images/shopping_list/cuslist_namagashi_hydrangea.png', product_class:'2', product_list:'16' },
-                // {product_name: '桔梗',class:'19', product_image_customize: '../images/shopping_list/cuslist_namagashi_kikyo.png', product_class:'2', product_list:'14' },
-                // {product_name: '寒牡丹',class:'19', product_image_customize: '../images/shopping_list/cuslist_namagashi_peony.png', product_class:'2', product_list:'15' },
-                // {product_name: '櫻',class:'19', product_image_customize: '../images/shopping_list/cuslist_namagashi_sakura.png', product_class:'2', product_list:'18' },
-                // {product_name: '巧克力最中',class:'19', product_image_customize: '../images/shopping_list/cuslist_monaka_chocolate.png', product_class:'6', product_list:'41' },
-                // {product_name: '抹茶最中',class:'19', product_image_customize: '../images/shopping_list/cuslist_monaka_matcha.png', product_class:'6', product_list:'42' },
-                // {product_name: '牛奶最中',class:'19', product_image_customize: '../images/shopping_list/cuslist_monaka_milk.png', product_class:'6', product_list:'40' },
-                // {product_name: '花生最中',class:'19', product_image_customize: '../images/shopping_list/cuslist_monaka_peanut.png', product_class:'6', product_list:'43' },
-                // {product_name: '紅豆最中',class:'19', product_image_customize: '../images/shopping_list/cuslist_monaka_redBean.png', product_class:'6', product_list:'44' },
-                // {product_name: '奶油鯛魚燒',class:'19', product_image_customize: '../images/shopping_list/cuslist_taiyaki_cream.png', product_class:'3', product_list:'19' },
-                // {product_name: '綠豆鯛魚燒',class:'19', product_image_customize: '../images/shopping_list/cuslist_taiyaki_greenBean.png', product_class:'3', product_list:'22' },
-                // {product_name: '抹茶鯛魚燒',class:'19', product_image_customize: '../images/shopping_list/cuslist_taiyaki_matcha.png', product_class:'3', product_list:'20' },
-                // {product_name: '紅豆鯛魚燒',class:'19', product_image_customize: '../images/shopping_list/cuslist_taiyaki_redBean.png', product_class:'3', product_list:'21' },
-                // {product_name: '櫻花鯛魚燒',class:'19', product_image_customize: '../images/shopping_list/cuslist_taiyaki_sakura.png', product_class:'3', product_list:'23' },
-                // {product_name: '起司羊羹',class:'19', product_image_customize: '../images/shopping_list/cuslist_yokan_cheese.png', product_class:'4', product_list:'26' },
-                // {product_name: '巧克力羊羹',class:'19', product_image_customize: '../images/shopping_list/cuslist_yokan_chocolate.png', product_class:'4', product_list:'25' },
-                // {product_name: '無花果羊羹',class:'19', product_image_customize: '../images/shopping_list/cuslist_yokan_fig.png', product_class:'4', product_list:'28' },
-                // {product_name: '柚子羊羹',class:'19', product_image_customize: '../images/shopping_list/cuslist_yokan_grapefruit.png', product_class:'4', product_list:'24' },
-                // {product_name: '開心果羊羹',class:'19', product_image_customize: '../images/shopping_list/cuslist_yokan_pistachio.png', product_class:'4', product_list:'29' },
-                // {product_name: '草莓羊羹',class:'19', product_image_customize: '../images/shopping_list/cuslist_yokan_strawberry.png', product_class:'4', product_list:'27' },
-                // {product_name: '翡冷翠杏仁脆餅',class:'19', product_image_customize: '../images/shopping_list/cuslist_sweet_almond.png', product_class:'1', product_list:'9' },
-                // {product_name: '費南雪',class:'19', product_image_customize: '../images/shopping_list/cuslist_sweet_fernance.png', product_class:'1', product_list:'10' },
-                // {product_name: '國王餅',class:'19', product_image_customize: '../images/shopping_list/cuslist_sweet_galette.png', product_class:'1', product_list:'12' },
-                // {product_name: '檸檬沙貝蕾',class:'19', product_image_customize: '../images/shopping_list/cuslist_sweet_lemon.png', product_class:'1', product_list:'11' },
-                // {product_name: '瑪德蓮',class:'19', product_image_customize: '../images/shopping_list/cuslist_sweet_madeleine.png', product_class:'1', product_list:'8' },
-            ],          
+            cus_item: [],          
             iconList: [],                 
             message: '',
             content: 'checkBox',
@@ -330,7 +285,6 @@ $(function(){
         alert('添加');
     })
     $('.fa-plus').click(function(e){
-        alert('ihihihihi');
         // let itemPic = $(this).closest('div').prev('div').find('img').attr('src');
         // let picSrc = itemPic.replace('cuslist','cusbox');
         // let itemTxt = $(this).closest('div').find('p').text();
@@ -393,8 +347,7 @@ $(function(){
             $('body').css({
                 // overflowY: 'hidden',
             })
-            //在清單秀出禮盒內容            
-            // let total_box = $('.selected  img:nth-child(even)')
+            //在清單秀出禮盒內容          
             let total_box = $('.haveItem');
             if(boxSize==4){
                 $('.custom_itemConfirm_List > h2').html('四格小資組合 &nbsp $480');
@@ -591,16 +544,27 @@ $(function(){
             $('.custom_cart').css('display','flex').fadeIn();            
         },2300);
         //=================================== local storage ======================================================   
-        if(localStorage['customized_List'] == null){
+        if(!localStorage['customized_List']){
             let customized_newArray=[];
             customized_newArray.push(customized);
             localStorage['customized_List'] = [];
             localStorage.setItem('customized_List', JSON.stringify(customized_newArray));
+
+            let current_subtotal = parseInt(localStorage.getItem('subtotal'));
+            let this_price = parseInt(customized['price']);
+            current_subtotal += this_price;
+            localStorage.setItem('subtotal', current_subtotal);
+            localStorage.setItem('total', current_subtotal);
         }else{
+            let current_subtotal = parseInt(localStorage.getItem('subtotal'));
+            let this_price = parseInt(customized['price']);
+            current_subtotal += this_price;
+            localStorage.setItem('subtotal', current_subtotal);
+            localStorage.setItem('total', current_subtotal);     
+            // 
             let customized_total = JSON.parse(localStorage.getItem('customized_List'));
-            // console.log(customized_total);
             customized_total.push(customized); 
-            localStorage.setItem('customized_List', JSON.stringify(customized_total));           
+            localStorage.setItem('customized_List', JSON.stringify(customized_total));             
         };
     })
 
@@ -1016,16 +980,27 @@ $(function(){
             $('.custom_popUp_bg').fadeIn();
         },3700) 
         //=================================== local storage ======================================================   
-        if(localStorage['customized_List'] == null){
+        if(!localStorage['customized_List']){
             let customized_newArray=[];
             customized_newArray.push(customized);
             localStorage['customized_List'] = [];
             localStorage.setItem('customized_List', JSON.stringify(customized_newArray));
+
+            let current_subtotal = parseInt(localStorage.getItem('subtotal'));
+            let this_price = parseInt(customized['price']);
+            current_subtotal += this_price;
+            localStorage.setItem('subtotal', current_subtotal);
+            localStorage.setItem('total', current_subtotal);
         }else{
+            let current_subtotal = parseInt(localStorage.getItem('subtotal'));
+            let this_price = parseInt(customized['price']);
+            current_subtotal += this_price;
+            localStorage.setItem('subtotal', current_subtotal);
+            localStorage.setItem('total', current_subtotal);     
+            // 
             let customized_total = JSON.parse(localStorage.getItem('customized_List'));
-            // console.log(customized_total);
             customized_total.push(customized); 
-            localStorage.setItem('customized_List', JSON.stringify(customized_total));           
+            localStorage.setItem('customized_List', JSON.stringify(customized_total));             
         };
         
     })

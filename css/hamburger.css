@@ -71,20 +71,20 @@ body {
 }
 
 .ham_overlay .wave1 {
-  animation: animated 10s linear infinite;
+  animation: animated 5s cubic-bezier(0.42, 0.7, 0.69, 0.41) infinite;
   z-index: 1000;
-  opacity: 0.6;
+  opacity: 0.4;
 }
 
 .ham_overlay .wave2 {
-  animation: animated2 8s linear infinite;
+  animation: animated2 5s 0.4s cubic-bezier(0.42, 0.7, 0.69, 0.41) infinite;
   z-index: 999;
-  opacity: 0.8;
+  opacity: 0.6;
   top: 10px;
 }
 
 .ham_overlay .wave3 {
-  animation: animated3 12s linear infinite;
+  animation: animated3 5s 0.8s cubic-bezier(0.42, 0.7, 0.69, 0.41) infinite;
   z-index: 888;
   opacity: 0.8;
   top: 0px;
@@ -113,7 +113,7 @@ body {
     background-position-x: 0;
   }
   100% {
-    background-position-x: -1280px;
+    background-position-x: 1280px;
   }
 }
 

@@ -2,6 +2,17 @@
 
     include("./connection.php"); 
 
+    function getFilePath1(){ 
+        //Apache實際的根目錄路徑
+        $ServerRoot = $_SERVER["DOCUMENT_ROOT"];
+        //Apache根目錄之下的檔案存放路徑
+        $filePath = "/tfd102_g3/images/shopping_list/";        
+        return $ServerRoot.$filePath;
+    };
+
+    $cardFile = $_FILES['files'];
+    // print_r($cardFile);
+
     $product_list = $_POST['product_list'];
     $product_class = $_POST['product_class'];
     $product_name = $_POST['product_name'];
@@ -20,6 +31,20 @@
     $product_image3 = $_POST['product_image3'];
     $product_image_topview = $_POST['product_image_topview'];
     $product_image_customize = $_POST['product_image_customize'];
+
+
+    //新增圖
+    for($i=0; $i<count($cardFile["tmp_name"]); $i++){
+        //Server上的暫存檔路徑含檔名
+        $filePath_Temp = $cardFile["tmp_name"][$i];
+
+        //欲放置的檔案路徑
+        $filePath = getFilePath1().$cardFile["name"][$i];
+
+        //將暫存檔搬移到正確位置
+        copy($filePath_Temp, $filePath);
+    };
+
     
     //判斷產品編號有沒有被使用過    
     $sql_findCat = 'SELECT product_list FROM product WHERE product_list = ?';
@@ -36,9 +61,9 @@
     $Name = $findName->fetchAll();
 
     if(count($Cat)!=0){
-        echo "此商品編號已使用";
+        echo "0";
     }else if(count($Name)!=0){
-        echo "此商品名稱已使用";
+        echo "1";
     }else if(count($Cat)==0 && count($Name)==0){
         $sql_productAdd = "INSERT INTO product(product_list, product_class, product_name, expiration, ingredient, product_content, stock, price, net_price, product_customize, product_status, promotion, promotion2, product_image1, product_image2, product_image3, product_image_topview, product_image_customize)
         VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"; 
@@ -65,7 +90,7 @@
         $statement->bindValue(18, $product_image_customize);
         $statement->execute();
 
-        echo "商品新增成功";
+        echo "2";
     };
 
 

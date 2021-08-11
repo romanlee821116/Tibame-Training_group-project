@@ -59,7 +59,14 @@ $(document).ready(function(){
       this.shipping = localStorage.shipping;
 
       // 清空
-      localStorage.clear()
+      if(localStorage.account){
+        let account = localStorage.account;
+        localStorage.clear();
+        localStorage.setItem('account', account);
+      }else if(sessionStorage.account){
+        localStorage.clear();
+      }
+      
     },
   })
 })

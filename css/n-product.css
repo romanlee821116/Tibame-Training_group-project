@@ -96,6 +96,7 @@ body {
 .n-product_right {
   /* border: 1px solid red; */
   width: 85%;
+  height: 500px;
 }
 
 .n-product_right > div {
@@ -246,6 +247,7 @@ body {
 
 .n-product_footer {
   padding-right: 60px;
+  margin-bottom: 50px;
 }
 
 .n-product_footer ul {
@@ -362,7 +364,7 @@ body {
   font-size: 16px;
   color: #172852;
   font-weight: bold;
-  width: 130px;
+  width: 135px;
   padding-left: 10px;
   border-radius: 3px;
   overflow: hidden;
@@ -409,6 +411,7 @@ body {
   /* border: 1px solid red; */
   position: relative;
   width: 340px;
+  margin: 25px 0;
 }
 
 .n-product_group label {

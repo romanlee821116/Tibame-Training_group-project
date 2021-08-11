@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  new Vue ({
+  let vm = new Vue ({
     el: "#payment_app",
     data: {
       orderer: false,
@@ -23,11 +23,43 @@ $(document).ready(function(){
       // 同會員資料checkbox
       choose(){
         this.orderer=!this.orderer;
+        if(localStorage.account){
+          account = localStorage.account;
+        }else if(sessionStorage.account){
+          account = sessionStorage.account;
+        }
+
+        if(this.orderer){
+          $.ajax({
+            method: 'POST',
+            url: '../php/getMemberInfo.php',
+            data:{
+              account: account,
+            },
+            dataType:'json',
+            success: function (data) {      
+              // console.log(data);
+              const name = data[0]['name'];
+              const phone = data[0]['phone'];
+              const address = data[0]['city'] + data[0]['area'] + data[0]['address'];
+              vm.orderer_data = {orderer_name: name, orderer_phone: phone, orderer_address: address};
+              console.log(this.orderer_data);
+            },
+            error: function(exception) {
+                alert("數據載入失敗: " + exception.status);
+            }
+          })
+        }else{
+          vm.orderer_data = {orderer_name: '', orderer_phone: '', orderer_address: ''};
+        }
+        
+
       },
-      chooseRecipient(){
+      chooseRecipient(){        
         this.recipient=!this.recipient;
       },
       countShipping(){
+        
         this.shipping = 80;
         localStorage.setItem('shipping', this.shipping);
         let new_total = parseInt(localStorage.subtotal) - parseInt(localStorage.discount) + parseInt(localStorage.shipping);
@@ -35,6 +67,7 @@ $(document).ready(function(){
         this.total_price = new_total;
       },
       count711(){
+        
         this.shipping = 60;
         localStorage.setItem('shipping', this.shipping);
         let new_total = parseInt(localStorage.subtotal) - parseInt(localStorage.discount) + parseInt(localStorage.shipping);
@@ -42,6 +75,7 @@ $(document).ready(function(){
         this.total_price = new_total;
       },
       countShop(){
+        
         this.shipping = 0;
         localStorage.setItem('shipping', this.shipping);
         let new_total = parseInt(localStorage.subtotal) - parseInt(localStorage.discount) + parseInt(localStorage.shipping);

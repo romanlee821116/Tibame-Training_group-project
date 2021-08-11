@@ -1,3 +1,10 @@
+var my_back = localStorage.getItem("n-login");
+if(my_back !== 'yes'){
+    // localStorage.removeItem("n-login")
+    // localStorage.setItem("n-login", "no");
+    location.href = "./n-login.html"
+}
+
 Vue.component('double-check', {            
     template: 
         ` 
@@ -5,8 +12,8 @@ Vue.component('double-check', {
             <section></section>
             <p>尚未存檔，是否確認關閉</p>
             <div>
-                <button type="button" @click='sure'>確認</button>
                 <button type="button" @click='cancel'>取消</button>
+                <button type="button" @click='sure'>確認</button>
             </div>
         </div>                
         `
@@ -134,6 +141,7 @@ var appVue = new Vue({
 
         },          
         log_out(){
+            localStorage.setItem("n-login", "no");
             location.href = "./n-login.html"
         },
 
@@ -160,5 +168,18 @@ var appVue = new Vue({
         },
 
     },
+    computed: {
+        membersd: function() {
+            var search = this.member_number;            
+
+            if (search) {
+                return this.members.filter(function(product) {                   
+                    return String (product.member_id).toLowerCase().indexOf(search) > -1                 
+                })                
+            }
+
+            return this.members;
+        }
+    }
     
 })

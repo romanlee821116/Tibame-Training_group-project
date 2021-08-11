@@ -398,5 +398,94 @@
   }
 }
 
+.cart_loginCheckBg {
+  width: 100vw;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 991;
+  background-color: rgba(255, 255, 255, 0.6);
+  z-index: 1200;
+}
+
+.cart_loginCheck {
+  width: 25%;
+  height: 340px;
+  max-width: 300px;
+  max-height: 340px;
+  min-width: 290px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0px 10px 32px rgba(23, 40, 82, 0.6);
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 40px;
+  z-index: 999;
+  position: relative;
+}
+
+.cart_loginCheck img {
+  width: 80px;
+  height: auto;
+}
+
+.cart_loginCheck h2 {
+  color: #172852;
+  font-size: 28px;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.cart_loginCheck p {
+  color: #172852;
+  margin-bottom: 45px;
+  font-size: 14px;
+}
+
+.cart_loginCheck div {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 575px) {
+  .cart_loginCheck {
+    padding: 40px 20px;
+  }
+}
+
+.cart_loginCheck .mainBtn {
+  display: block;
+  padding: 8px 10px;
+  width: 120px;
+  border-radius: 25px;
+  background: #172852;
+  border: 3px solid #172852;
+  color: #fff;
+  text-align: center;
+  font-weight: 900;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.cart_loginCheck .mainBtn:hover {
+  background-color: #2e447c;
+  color: #fff;
+  border: 3px solid #2e447c;
+}
+
+.cart_loginCheck .fa-times {
+  position: absolute;
+  font-size: 22px;
+  top: 15px;
+  right: 20px;
+  color: #000;
+}
+
 /* ================================== 不用複製 =================================== */
 /*# sourceMappingURL=cart.css.map */

@@ -1,3 +1,8 @@
+var my_back = localStorage.getItem("n-login");
+if(my_back !== 'yes'){
+    location.href = "./n-login.html"
+}
+
 Vue.component('double-check', {            
     template: 
         ` 
@@ -92,16 +97,19 @@ Vue.component('faq-add', {
                     },
                     dataType:'text',
                     success: function (data) {     
-                        alert(data)
+                        alert(data);
+                        
+                        window.location.reload();
                     },
                     error: function(exception) {
                         alert("數據載入失敗: " + exception.status);
                     }
                 })
             }
-            this.$emit('fsave', this.f_sort, this.f_question, this.f_answer);
             
+            this.$emit('fsave', this.f_sort, this.f_question, this.f_answer);
         },
+        
     }  
 });
 
@@ -255,8 +263,10 @@ var appVue = new Vue({
             // console.log(fff);
 
             this.faqs.unshift(fff);
+            window.location.reload();
         },
         log_out(){
+            localStorage.setItem("n-login", "no");
             location.href = "./n-login.html"
         },  
         
@@ -283,5 +293,18 @@ var appVue = new Vue({
         },             
         
     },
+    computed: {
+        faqsd: function() {
+            var search = this.faq_number;            
+
+            if (search) {
+                return this.faqs.filter(function(product) {                   
+                    return String (product.qa_id).toLowerCase().indexOf(search) > -1                 
+                })                
+            }
+
+            return this.faqs;
+        }
+    }  
     
 })

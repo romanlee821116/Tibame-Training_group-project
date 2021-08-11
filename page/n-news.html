@@ -17,7 +17,7 @@
                 <img src="../images/backend/n_logo.png" alt="" srcset="">
                 <p>小春堂後臺管理</p>
             </div>
-               
+            
             <div class="n-news_logout" @click='log_out'>
                 <p>帳號登出</p>
                 <img src="../images/backend/log-out.png" alt="" srcset="">
@@ -50,7 +50,7 @@
                         <li></li>
                     </ul>
 
-                    <ul v-for='(news,key) in newss' class="n-news_news">                              
+                    <ul v-for='(news,key) in newssd' class="n-news_news">                              
                         <li>{{news.news_id}}</li>
                         <li>{{news.create_date}}</li>
                         <li>{{n_sort_list[news.news_class]}}</li>
@@ -125,7 +125,7 @@
                     <p>{{new_img[index]}}</p>
                     <div class="n-news_img">
                         <img :src='img_name.src'>
-                        <p>請選擇圖片上傳</p>
+                        <!-- <p>請選擇圖片上傳</p> -->
                     </div>
                 </div> 
 

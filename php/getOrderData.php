@@ -1,6 +1,7 @@
 <?php
 
-include("./config.php");
+// include("./config.php");
+include("./connection.php"); 
 
 $nowpage = $_POST["page"];
 $pdo = getPDO();

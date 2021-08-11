@@ -93,12 +93,12 @@ table {
   color: #f7c242;
 }
 
-.navbar .navbar-icon i {
+.navbar .navbar-icon a i {
   color: #bb866a;
   font-size: 28px;
 }
 
-.navbar .navbar-icon i:hover {
+.navbar .navbar-icon a i:hover {
   color: #f7c242;
 }
 
@@ -229,9 +229,6 @@ table {
   font-weight: bold;
 }
 
-/* .memberOrderDetailAll{
-    display: none;
-} */
 body {
   margin: 0;
   padding: 0;
@@ -437,8 +434,18 @@ html, body {
   color: #172852;
 }
 
-.memberLeft {
+.memberPart1 .memberLeft {
   margin-left: 28px;
+}
+
+.memberPart1 .memberAdr:nth-child(1), .memberPart1 .memberAdr:nth-child(2) {
+  width: 60px !important;
+  margin-right: 5px;
+  padding: 10px 5px 10px 10px;
+}
+
+.memberPart1 .memberAdr:last-child {
+  width: 140px !important;
 }
 
 /* 送出鈕 */
@@ -700,10 +707,6 @@ html, body {
   background-color: #c4c4c4;
 }
 
-.memberProgressAll div .memberProgressDot div.memberLineCheck {
-  background-color: #f7c242;
-}
-
 /* 進度文字 */
 .memberProgressAll div .memberProgressWord {
   color: #a3a3a3;
@@ -712,10 +715,6 @@ html, body {
   justify-content: space-between;
   margin-left: -25px;
   margin-right: -25px;
-}
-
-.memberWordCheck {
-  color: #f7c242;
 }
 
 /* 再次購買 */
@@ -847,14 +846,6 @@ html, body {
   background-color: #f0ebe9;
   border: none;
   color: #172852;
-}
-
-.receiverDetail > p {
-  color: #647bb5;
-  font-size: 12px;
-  text-align: center;
-  padding: 5px 0 5px 0;
-  margin: 0;
 }
 
 .receiverDetail > button {

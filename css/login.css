@@ -3,6 +3,8 @@
   font-family: '微軟正黑體';
   box-sizing: border-box;
   text-decoration: none;
+  margin: 0;
+  padding: 0;
 }
 
 .memberShow {
@@ -21,6 +23,7 @@
   margin-bottom: 500px;
   font-weight: bold;
   min-height: 100vh;
+  overflow-y: hidden;
 }
 
 .loginSignup {

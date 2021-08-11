@@ -105,12 +105,12 @@ body {
   color: #f7c242;
 }
 
-.navbar .navbar-icon i {
+.navbar .navbar-icon a i {
   color: #bb866a;
   font-size: 28px;
 }
 
-.navbar .navbar-icon i:hover {
+.navbar .navbar-icon a i:hover {
   color: #f7c242;
 }
 
@@ -236,6 +236,38 @@ body {
 }
 
 .product_reminder {
+  width: 200px;
+  height: 70px;
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 25px;
+  background-color: #bb866a;
+  text-align: center;
+  line-height: 70px;
+  color: #fff;
+  z-index: 100;
+  display: none;
+}
+
+.product_reminder2 {
+  width: 200px;
+  height: 70px;
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 25px;
+  background-color: #bb866a;
+  text-align: center;
+  line-height: 70px;
+  color: #fff;
+  z-index: 100;
+  display: none;
+}
+
+.product_reminder3 {
   width: 200px;
   height: 70px;
   position: fixed;

@@ -569,7 +569,21 @@ body{
   // border: 1px solid orange;
   display: flex;
   justify-content: space-between;
+  position: relative;
+  .checkout_unvalid{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 150px;
+    font-size: 14px;
+    font-weight: 900;
+    color: red;
+    margin: 0;
+    display: none;
+  }
 }
+
+
 
 #checkout_discountNumber{
   border: none;

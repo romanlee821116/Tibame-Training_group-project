@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../css/n-product.css">
     <link rel="stylesheet" href="../css/n-pop.css">
     <link rel="icon" href="../images/backend/n_logo.png">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 </head>
 <body>
     <div id="app">
@@ -50,7 +50,7 @@
                         <li></li>
                     </ul>
 
-                    <ul v-for='(product,key) in products' class="n-product_product">                            
+                    <ul v-for='(product,key) in productsd' class="n-product_product">                            
                         <li>{{product.product_id}}</li>
                         <li>{{p_sort_list[product.product_class]}}</li>
                         <li>{{product.product_name}}</li>
@@ -163,7 +163,7 @@
                         <p>{{new_img[index]}}</p>
                         <div class="n-product_img">
                             <img :src='img_name.src'>
-                            <p>請選擇圖片上傳</p>
+                            <!-- <p>請選擇圖片上傳</p> -->
                         </div>
                     </div>
 

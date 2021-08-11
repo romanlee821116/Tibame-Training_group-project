@@ -68,18 +68,18 @@ body {
         background-size: 1280px 100px;
     }
     .wave1 {
-        animation: animated 10s linear infinite;
+        animation: animated 5s cubic-bezier(.42,.7,.69,.41) infinite;
         z-index: 1000;
-        opacity: 0.6;
+        opacity: 0.4;
     }
     .wave2 {
-        animation: animated2 8s linear infinite;
+        animation: animated2 5s .4s cubic-bezier(.42,.7,.69,.41) infinite;
         z-index: 999;
-        opacity: 0.8;
+        opacity: 0.6;
         top: 10px;
     }
     .wave3 {
-        animation: animated3 12s linear infinite;
+        animation: animated3 5s .8s cubic-bezier(.42,.7,.69,.41) infinite;
         z-index: 888;
         opacity: 0.8;
         top: 0px;
@@ -105,7 +105,7 @@ body {
             background-position-x: 0;
         }
         100% {
-            background-position-x: -1280px;
+            background-position-x: 1280px;
         }
     }
     .ham_select {

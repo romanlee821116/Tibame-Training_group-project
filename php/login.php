@@ -18,7 +18,7 @@
     $data = $statement->fetchAll();   
     
     if( count($data) > 0){
-        echo "1"; 
+        echo $account; 
     }else{
         echo "0";  
     }
