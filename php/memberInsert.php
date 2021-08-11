@@ -15,7 +15,7 @@
     
     // alert($account);
 
-    include('connection.php');
+    include("./connection.php"); 
     $pdo = getPDO();
     
 
