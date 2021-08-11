@@ -119,10 +119,14 @@ $(function(){
 
 
   // 點擊問題，開關回答
-  $('.FAQ_question').click(function(){
-    $(this).parent('.FAQ_QAList').children('.FAQ_outBorder').slideToggle();
-  });
+  // $('.FAQ_question').on('click',function(){
+  //   $(this).parent('.FAQ_QAList').children('.FAQ_outBorder').slideToggle();
+  // });
 
+  $('.FAQ_classification').on('click','.FAQ_question',function(){
+    // console.log($(this));
+    $(this).next('.FAQ_outBorder').slideToggle();
+  });
 
 
 
@@ -138,8 +142,3 @@ $(function(){
 })
   
   
-  
-    
-  
-
-
