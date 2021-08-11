@@ -1,6 +1,6 @@
 <?php
 
-  include("./login_sql.php"); 
+  include("./connection.php"); 
 
   $pdo = getPDO();
 

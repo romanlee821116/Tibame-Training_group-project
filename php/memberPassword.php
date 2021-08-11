@@ -6,7 +6,7 @@
     $memberOldPsw = $_POST["memberOldPsw"];
     $memberNewPsw = $_POST["memberNewPsw"];
 
-    include('connection.php');
+    include("./connection.php"); 
     $pdo = getPDO();
     
 
