@@ -95,10 +95,12 @@ body{
 .n-faq_right{
     /* border: 1px solid red; */
     width: 85%;
+    min-height: 500px;
 }
 
 .n-faq_right > div{
-    border: 1px solid #bb866a; 
+    border: 1px solid #bb866a;
+    min-height: 455px;    
 }
 
 .n-faq_right form{
