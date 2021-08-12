@@ -517,8 +517,7 @@ body {
 .n-product_group {
   /* border: 1px solid red; */
   position: relative;
-  width: 340px;
-  margin: 25px 0;
+  width: 340px;    
 }
 
 .n-product_group label {

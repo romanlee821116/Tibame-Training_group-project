@@ -520,19 +520,33 @@ var appVue = new Vue({
                 },
             });
         },
-    },
-    computed: {
-        newssd: function() {
-            var search = this.news_number;            
+        lookfor(){
+            const self = this;
 
-            if (search) {
-                return this.newss.filter(function(product) {                   
-                    return String (product.news_id).toLowerCase().indexOf(search) > -1                 
-                })                
-            }
-
-            return this.newss;
+            $.ajax({
+                method: "POST",
+                url: "../php/n-selectn.php",
+                data:{ 
+                    search: self.news_number
+                },            
+                dataType: "json",
+                success: function (res) {
+                    self.newss = res
+                },
+                
+            });
         }
-    }  
+    },
+    // computed: {
+    //     newssd: function() {
+    //         var search = this.news_number;   
+    //         if (search) {
+    //             return this.newss.filter(function(product) {                   
+    //                 return String (product.news_id).toLowerCase().indexOf(search) > -1                 
+    //             })                
+    //         }
+    //         return this.newss;
+    //     }
+    // }  
     
 })

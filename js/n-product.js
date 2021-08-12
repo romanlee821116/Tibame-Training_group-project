@@ -605,20 +605,34 @@ var appVue = new Vue({
                 },
             });
         },
-    }, 
-    computed: {
-        productsd: function() {
-            var search = this.product_number;            
+        lookfor(){
+            const self = this;
 
-            if (search) {
-                return this.products.filter(function(product) {                   
-                    return String (product.product_id).toLowerCase().indexOf(search) > -1                 
-                })                
-            }
-
-            return this.products;
+            $.ajax({
+                method: "POST",
+                url: "../php/n-selectp.php",
+                data:{ 
+                    search: self.product_number
+                },            
+                dataType: "json",
+                success: function (res) {
+                    self.products = res
+                },
+                
+            });
         }
-    }   
+    }, 
+    // computed: {
+    //     productsd: function() {
+    //         var search = this.product_number;  
+    //         if (search) {
+    //             return this.products.filter(function(product) {                   
+    //                 return String (product.product_id).toLowerCase().indexOf(search) > -1                 
+    //             })                
+    //         }
+    //         return this.products;
+    //     }
+    // }   
 })
 
 
