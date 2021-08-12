@@ -97,6 +97,7 @@ Vue.component('news-add', {
                                 <img src=''>
                                 <p>請選擇圖片上傳</p>
                             </div>
+                            <img src="../images/backend/select.png" alt="">
                         </div>                     
                     </div>
                 </form>

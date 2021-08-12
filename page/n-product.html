@@ -156,7 +156,6 @@
                 </div>
 
                 <div class="n-product_edit_right">
-                    
                     <div class="n-product_group" v-for='(img_name, index) in img_names'>
                         <label :for='index'>{{img_name.name}}:</label>
                         <input type="file" :id="index" @change='upload_img'>
@@ -165,8 +164,8 @@
                             <img :src='img_name.src'>
                             <!-- <p>請選擇圖片上傳</p> -->
                         </div>
+                        <img src="../images/backend/select.png" alt="">
                     </div>
-
                 </div>
 
             <div class="n-product_editbtn">

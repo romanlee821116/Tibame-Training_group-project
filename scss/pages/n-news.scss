@@ -434,10 +434,18 @@ body{
     color: #172852;
     font-weight: bold;
 
-    background-image: url("../images/backend/select.png");
-    background-repeat: no-repeat;
-    background-position: right;
-    background-size: contain;
+    // background-image: url("../images/backend/select.png");
+    // background-repeat: no-repeat;
+    // background-position: right;
+    // background-size: contain;
+}
+
+.n-news_group > img{
+    position: absolute;
+    width: 30px;
+    right: 25px;
+    top: -3px;
+    border-radius: 5px;
 }
 
 .n-news_news_bot div.n-news_img{

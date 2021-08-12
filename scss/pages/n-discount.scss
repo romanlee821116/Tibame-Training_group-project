@@ -441,10 +441,18 @@ body{
     color: #172852;
     font-weight: bold;
 
-    background-image: url("../images/backend/select.png");
-    background-repeat: no-repeat;
-    background-position: right;
-    background-size: contain;
+    // background-image: url("../images/backend/select.png");
+    // background-repeat: no-repeat;
+    // background-position: right;
+    // background-size: contain;
+}
+
+.n-discount_group > img{
+    position: absolute;
+    width: 30px;
+    right: 25px;
+    top: -3px;
+    border-radius: 5px;
 }
 
 .n-discount_discount_bot div.n-discount_img{
