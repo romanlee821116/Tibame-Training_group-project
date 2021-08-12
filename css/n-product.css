@@ -252,12 +252,11 @@ body{
 
 .n-product_footer ul{
   /* border: 1px solid #bb866a; */
-  margin: 0;
+  margin: 15px 0;
   padding: 0px;
   list-style: none;
   display: flex;
-  justify-content: flex-end;    
-  margin-top: 15px;
+  justify-content: flex-end; 
 }
 
 .n-product_footer ul li{
