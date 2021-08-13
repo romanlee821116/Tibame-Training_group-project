@@ -36,7 +36,7 @@
     
                     <section>
                         <input type="text" name="search" id="search" placeholder="以會員編號查詢" v-model='member_number'>    
-                        <label for="search" :class="{'-active':member_number}">搜尋</label>
+                        <label for="search" :class="{'-active':member_number}" @click='lookfor'>搜尋</label>
                     </section>
                 </form>
 
@@ -46,7 +46,7 @@
                         <li></li>
                     </ul>
 
-                    <ul v-for='(member,key) in membersd' class="n-member_member">                        
+                    <ul v-for='(member,key) in members' class="n-member_member">                        
                         <li>{{member.member_id}}</li>
                         <li>{{member.account}}</li>
                         <li>{{member.name}}</li>

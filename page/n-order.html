@@ -35,8 +35,8 @@
                     <p>訂單管理</p>
     
                     <section>
-                        <input type="text" name="search" id="search" placeholder="以會員編號查詢" v-model='order_number'>    
-                        <label for="search" :class="{'-active':order_number}">搜尋</label>
+                        <input type="text" name="search" id="search" placeholder="以訂單編號查詢" v-model='order_number'>    
+                        <label for="search" :class="{'-active':order_number}" @click='lookfor'>搜尋</label>
                     </section>
                 </form>
 
@@ -46,7 +46,7 @@
                         <li></li>
                     </ul>
 
-                    <ul v-for='(order,key) in ordersd' class="n-order_order">                        
+                    <ul v-for='(order,key) in orders' class="n-order_order">                        
                         <li>{{order.order_id}}</li>
                         <li>{{order.order_list}}</li>
                         <li>{{order.account}}</li>
