@@ -8,7 +8,7 @@ $(document).ready(function() {
         $('.nav_logOut').fadeOut();
     }
 
-    $('.memberShow').load('login.html').hide();
+    $('.memberShow').load('../page/login.html').hide();
     
     // 點擊人頭打開
     $('body').on('click', '.navbar-icon .fa-user', function() {
@@ -18,7 +18,7 @@ $(document).ready(function() {
         $('.footer').hide();
         $('.navbar').hide();
         if (localStorage.account||sessionStorage.account) {
-            window.location.href = 'member.html';
+            window.location.href = '../page/member.html';
         } else {
             $('.memberShow').fadeIn(700);
             $('body').addClass('stopScroll');
@@ -31,7 +31,7 @@ $(document).ready(function() {
         $('.navbar').hide();
         if (localStorage.account||sessionStorage.account) {
             // window.location.href = 'member.html';
-            window.location.href = 'member.html';
+            window.location.href = '../page/member.html';
             $('.mavbar-icon .fas .fa-user').css('color', '#f7c242');
         } else {
             $('.memberShow').fadeIn(700);

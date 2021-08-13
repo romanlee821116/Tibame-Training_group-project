@@ -7,15 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/member.css">
     <link rel="stylesheet" href="../css/cart.css">
+    <link rel="stylesheet" href="../css/hamburger.css">
     <!-- fontawesome -->
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-    <script src="https://code.jquery.com/jquery-3.6.0.js"
-        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <title>會員中心 - 小春堂</title>
     <link rel="icon" href="../images/index/logo_footer.png">
-    
+
 
     <script src="../js/vue.js"></script>
     <script src="../js/cart_vue.js"></script>
@@ -53,13 +52,15 @@
                     <div class="ham_bar3 ham_bar"></div>
                 </div>
                 <div id="ham_myNav" class="ham_overlay">
+                    <div class="ham_wave wave1"></div>
+                    <div class="ham_wave wave2"></div>
+                    <div class="ham_wave wave3"></div>
                     <div class="ham_overlay-content">
-                        <div class='ham_jelly'></div>
                         <div class="ham_select">
-                            <a href="../index.html">首頁</a>
+                            <a href="./homepage.html">首頁</a>
                             <a href="./about.html">關於我們</a>
                             <a href="./news.html">最新消息</a>
-                            <a href="./shopping_choose.html">商品專區</a>
+                            <a href="./shopping_choose.html" class="stick_color">商品專區</a>
                             <a href="./customized.html">客製化禮盒</a>
                             <a href="./FAQ.html">Q&A</a>
                             <a>會員中心</a>
@@ -89,9 +90,7 @@
                         <!-- 一般商品 -->
                         <li class="cart_item" v-for="(item,index) in itemList" :id="item.id">
                             <div class="cart_itemCB" :class="{'cart_choose': item.status}" @click="choose(item)">
-                                <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"
-                                    data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check fa-w-16"
-                                    role="img" viewBox="0 0 512 512">
+                                <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check fa-w-16" role="img" viewBox="0 0 512 512">
                                     <path fill="#ffffff"
                                         d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z" />
                                 </svg>
@@ -121,9 +120,7 @@
                             <!-- 商品 -->
                             <div class="cart_customizationItem">
                                 <div class="cart_itemCB" :class="{'cart_choose': item.status}" @click="choose(item)">
-                                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"
-                                        data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check fa-w-16"
-                                        role="img" viewBox="0 0 512 512">
+                                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check fa-w-16" role="img" viewBox="0 0 512 512">
                                         <path fill="#ffffff"
                                             d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z" />
                                     </svg>
@@ -171,8 +168,7 @@
                         </li>
                     </ul>
 
-                    <div id="cart_deleteMany" @click="delete_All()"
-                        :style="{'background-color': delete_bgc, cursor: delete_cursor}">刪除多個</div>
+                    <div id="cart_deleteMany" @click="delete_All()" :style="{'background-color': delete_bgc, cursor: delete_cursor}">刪除多個</div>
 
                     <div class="cart_total">
                         <p>小計</p>
@@ -268,10 +264,10 @@
                     <button class='memberPart3Search' type='submit'>搜尋</button>
                 </div>
                 <p class='clearBoth'></p>
-                
+
                 <!-- 訂單顯示的地方 -->
                 <div id='memberOrderList3'></div>
-       
+
             </div>
 
             <!-- ==================取消/退款查詢=================== -->
@@ -281,10 +277,10 @@
                     <button class='memberPart4Search' type='submit'>搜尋</button>
                 </div>
                 <p class='clearBoth'></p>
-                
+
                 <!-- 訂單顯示的地方 -->
                 <div id='memberOrderList4'></div>
-       
+
             </div>
 
 
@@ -297,10 +293,10 @@
         <!-- =============footer============== -->
         <div class="footer">
             <div class="footer-left">
-            <div class='footer-policy'>
-            <p><a href="#">隱私政策</a></p>
-            <p><a href="#">服務條款</a></p>
-            </div>
+                <div class='footer-policy'>
+                    <p><a href="#">隱私政策</a></p>
+                    <p><a href="#">服務條款</a></p>
+                </div>
             </div>
             <div class='footer-media'>
                 <a href="#"><i class="fab fa-instagram-square"></i></a>
@@ -314,29 +310,32 @@
         </div>
         <!-- =======================footer結束======================= -->
 
-        
+
 
     </div>
 
     <script>
+        $(".ham_select").find("a:nth-child(7)").css({
+            color: "#fad689"
+        });
         // 判斷account的值來自於 localStorage 或 sessionStorage
-        if( localStorage.account ){
+        if (localStorage.account) {
             memberSaveAccount = localStorage.account;
-        }else if( sessionStorage.account ){
+        } else if (sessionStorage.account) {
             memberSaveAccount = sessionStorage.account;
         }
         // =================載入會員資料====================
-        function memberDetailLoad(){
-            
-            $.ajax({            
+        function memberDetailLoad() {
+
+            $.ajax({
                 method: "POST",
                 url: "../php/member.php",
-                data:{ 
+                data: {
                     // keyword : $('#keyWord').val(),
-                    keyword : memberSaveAccount,
-                },            
+                    keyword: memberSaveAccount,
+                },
                 dataType: "json",
-                success: function (response) {
+                success: function(response) {
 
                     // ==============會員資料=============
                     $('#memberName').val(`${response.member[0].name}`);
@@ -346,14 +345,14 @@
                     $('#memberArea').val(`${response.member[0].area}`);
                     $('#memberAddress').val(`${response.member[0].address}`);
 
-                    if( `${response.member[0].gender}` == '男' ){
+                    if (`${response.member[0].gender}` == '男') {
                         $('.memberPart1 input[name="gender"]')[0].checked = true;
                         console.log('male');
-                    }else if( `${response.member[0].gender}` == '女' ){
+                    } else if (`${response.member[0].gender}` == '女') {
                         $('.memberPart1 input[name="gender"]')[1].checked = true;
-                    }else{
+                    } else {
                         $('.memberPart1 input[name="gender"]')[2].checked = true;
-                        
+
                     }
 
 
@@ -393,44 +392,44 @@
                         // $('.memberProgressWord span').css('color', '#a3a3a3');
                         
                         // 設定狀態們的顯示名稱
-                        if( row.payment_status==0 ){
-                            row.payment_status='未付款';
-                        }else if( row.payment_status==1 ){
-                            row.payment_status='已付款';
-                        }else if( row.payment_status==2 ){
-                            row.payment_status='付款失敗';
-                        }else if( row.payment_status==3 ){
-                            row.payment_status='退款中';
-                        }else{
-                            row.payment_status='已退款';
+                        if (row.payment_status == 0) {
+                            row.payment_status = '未付款';
+                        } else if (row.payment_status == 1) {
+                            row.payment_status = '已付款';
+                        } else if (row.payment_status == 2) {
+                            row.payment_status = '付款失敗';
+                        } else if (row.payment_status == 3) {
+                            row.payment_status = '退款中';
+                        } else {
+                            row.payment_status = '已退款';
                         };
 
-                        if( row.order_status==0 ){
-                            row.order_status='處理中';
-                        }else if( row.order_status==1 ){
-                            row.order_status='已確認';
-                        }else if( row.order_status==2 ){
-                            row.order_status='已完成';
-                        }else{
-                            row.order_status='已取消';
+                        if (row.order_status == 0) {
+                            row.order_status = '處理中';
+                        } else if (row.order_status == 1) {
+                            row.order_status = '已確認';
+                        } else if (row.order_status == 2) {
+                            row.order_status = '已完成';
+                        } else {
+                            row.order_status = '已取消';
                         };
 
-                        if( row.shipping_status==0 ){
-                            row.shipping_status='待出貨';
-                        }else if( row.shipping_status==1 ){
-                            row.shipping_status='已出貨';
-                        }else if( row.shipping_status==2 ){
-                            row.shipping_status='已送達';
-                        }else if( row.shipping_status==3 ){
-                            row.shipping_status='已取貨';
-                        }else{
-                            row.shipping_status='已退貨';
+                        if (row.shipping_status == 0) {
+                            row.shipping_status = '待出貨';
+                        } else if (row.shipping_status == 1) {
+                            row.shipping_status = '已出貨';
+                        } else if (row.shipping_status == 2) {
+                            row.shipping_status = '已送達';
+                        } else if (row.shipping_status == 3) {
+                            row.shipping_status = '已取貨';
+                        } else {
+                            row.shipping_status = '已退貨';
                         };
 
                         // 判斷訂單要新增在訂單查詢 or 取消查詢
-                        if( `${row.payment_status}` == '付款失敗' || `${row.payment_status}` == '退款中' || `${row.payment_status}` == '已退款' || `${row.order_status}` == '已取消' ){ 
+                        if (`${row.payment_status}` == '付款失敗' || `${row.payment_status}` == '退款中' || `${row.payment_status}` == '已退款' || `${row.order_status}` == '已取消') {
                             memberOrderPlaceHere = '#memberOrderList4';
-                        }else{
+                        } else {
                             memberOrderPlaceHere = '#memberOrderList3';
                         };
 
@@ -616,41 +615,41 @@
                 error: function(exception) {
                     alert("發生錯誤: " + exception.status);
                 },
-		    });
+            });
 
             
         };
 
-        
+
 
         // ==================會員更改資料寫入資料庫=================
-        function memberChangeData(response){
+        function memberChangeData(response) {
             // 確認欄位沒有空值
-            if($('#memberName').val() != '' && $('#memberPhone').val() != '' && $('#memberCity').val() != '' && $('#memberArea').val() != '' && $('#memberAddress').val() != '' ){
+            if ($('#memberName').val() != '' && $('#memberPhone').val() != '' && $('#memberCity').val() != '' && $('#memberArea').val() != '' && $('#memberAddress').val() != '') {
                 // 轉換性別
                 memberGenderForData = $('.memberPart1 input[name="gender"]:checked').val();
-                if( memberGenderForData == 'male' ){
+                if (memberGenderForData == 'male') {
                     memberGenderForData = '男';
-                }else if( memberGenderForData == 'female' ){
+                } else if (memberGenderForData == 'female') {
                     memberGenderForData = '女';
-                }else{
+                } else {
                     memberGenderForData = '第三性';
                 }
                 // console.log(response);
-                $.ajax({            
+                $.ajax({
                     method: "POST",
                     url: "../php/memberInsert.php",
-                    data:{ 
-                        keyword : memberSaveAccount,
-                        memberName : $('#memberName').val(),
-                        memberPhone : $('#memberPhone').val(),
-                        memberCity : $('#memberCity').val(),
-                        memberArea : $('#memberArea').val(),
-                        memberAddress : $('#memberAddress').val(),
-                        memberGender : memberGenderForData,
-                    },            
+                    data: {
+                        keyword: memberSaveAccount,
+                        memberName: $('#memberName').val(),
+                        memberPhone: $('#memberPhone').val(),
+                        memberCity: $('#memberCity').val(),
+                        memberArea: $('#memberArea').val(),
+                        memberAddress: $('#memberAddress').val(),
+                        memberGender: memberGenderForData,
+                    },
                     dataType: "text",
-                    success: function (response) {
+                    success: function(response) {
                         memberDetailLoad();
                         // alert('已更新！ ʕ •ᴥ• ʔ ');
                         $('.memberPart1Popup .type2 h2').text('確認更新');
@@ -662,7 +661,7 @@
                     },
                 });
 
-            }else{
+            } else {
                 // 欄位有空值，提醒使用者重填
                 // alert('有空格忘記填了(இдஇ)，請重新確認');
                 $('.memberPart1Popup .type2 h2').text('空格未填');
@@ -673,15 +672,15 @@
 
 
         // ==================會員修改密碼寫入資料庫=================
-        function memberChangePassword(response){
+        function memberChangePassword(response) {
             // 確認三格欄位都正確，才將密碼送進資料
-            memberCheckPassword =[];
+            memberCheckPassword = [];
 
             // =============== 密碼反饋 ===================
             // 清空重來
-            $('.memberError').css('display','none');
+            $('.memberError').css('display', 'none');
             // $('.memberError').next().children('p').text('資料格式不正確');
-            $('input').css('border','2px solid transparent');
+            $('input').css('border', '2px solid transparent');
 
             // 設定變數
             let oldPSW = $('.memberOldPSW').val();
@@ -691,68 +690,68 @@
             let passwordCorrect = /^.{8,16}$/;
 
             // 判斷欄位是否正確，若正確則在memberCheckPassword新增一個OK
-            if(oldPSW == ""){
+            if (oldPSW == "") {
                 // e.preventDefault();
-                $('.memberOldPSW').css('border','2px solid #dc3838');
-                $('.memberOldPSW').next().next().css('display','inline-block');
+                $('.memberOldPSW').css('border', '2px solid #dc3838');
+                $('.memberOldPSW').next().next().css('display', 'inline-block');
                 $('.memberOldPSW').next().next().children('p').text('請輸入資訊');
-            }else if(!passwordCorrect.test(oldPSW)){
+            } else if (!passwordCorrect.test(oldPSW)) {
                 // e.preventDefault();
-                $('.memberOldPSW').css('border','2px solid #dc3838');
-                $('.memberOldPSW').next().next().css('display','inline-block');
+                $('.memberOldPSW').css('border', '2px solid #dc3838');
+                $('.memberOldPSW').next().next().css('display', 'inline-block');
                 $('.memberOldPSW').next().next().children('p').text('資料格式不正確');
-            }else{
+            } else {
                 memberCheckPassword.push('memberCheckPasswordOK');
             }
 
-            if(newPSW == ""){
+            if (newPSW == "") {
                 // e.preventDefault();
-                $('.memberNewPSW').css('border','2px solid #dc3838');
-                $('.memberNewPSW').next().next().css('display','inline-block');
+                $('.memberNewPSW').css('border', '2px solid #dc3838');
+                $('.memberNewPSW').next().next().css('display', 'inline-block');
                 $('.memberNewPSW').next().next().children('p').text('請輸入資訊');
-            }else if(!passwordCorrect.test(newPSW)){
+            } else if (!passwordCorrect.test(newPSW)) {
                 // e.preventDefault();
-                $('.memberNewPSW').css('border','2px solid #dc3838');
-                $('.memberNewPSW').next().next().css('display','inline-block');
+                $('.memberNewPSW').css('border', '2px solid #dc3838');
+                $('.memberNewPSW').next().next().css('display', 'inline-block');
                 $('.memberNewPSW').next().next().children('p').text('資料格式不正確');
-            }else{
+            } else {
                 memberCheckPassword.push('memberCheckPasswordOK');
             }
 
-            if(newPSW2 == ""){
+            if (newPSW2 == "") {
                 // e.preventDefault();
-                $('.memberNewPSW2').css('border','2px solid #dc3838');
-                $('.memberNewPSW2').next().next().css('display','inline-block');
+                $('.memberNewPSW2').css('border', '2px solid #dc3838');
+                $('.memberNewPSW2').next().next().css('display', 'inline-block');
                 $('.memberNewPSW2').next().next().children('p').text('請輸入資訊');
-            }else if(!passwordCorrect.test(newPSW2)){
+            } else if (!passwordCorrect.test(newPSW2)) {
                 // e.preventDefault();
-                $('.memberNewPSW2').css('border','2px solid #dc3838');
-                $('.memberNewPSW2').next().next().css('display','inline-block');
+                $('.memberNewPSW2').css('border', '2px solid #dc3838');
+                $('.memberNewPSW2').next().next().css('display', 'inline-block');
                 $('.memberNewPSW2').next().next().children('p').text('資料格式不正確');
-            }else if(newPSW2 != newPSW ){
+            } else if (newPSW2 != newPSW) {
                 // e.preventDefault();
-                $('.memberNewPSW2').css('border','2px solid #dc3838');
-                $('.memberNewPSW2').next().next().css('display','inline-block');
+                $('.memberNewPSW2').css('border', '2px solid #dc3838');
+                $('.memberNewPSW2').next().next().css('display', 'inline-block');
                 $('.memberNewPSW2').next().next().children('p').text('兩次輸入密碼不同');
-            }else{
+            } else {
                 memberCheckPassword.push('memberCheckPasswordOK');
             }
 
             // 若以上三個欄位都正確，才執行ajax
-            if( memberCheckPassword.length == 3 ){
+            if (memberCheckPassword.length == 3) {
                 // console.log('working');
                 // $('.memberPart2 input').val() = '';
-                $.ajax({            
+                $.ajax({
                     method: "POST",
                     url: "../php/memberPassword.php",
-                    data:{ 
-                        keyword : memberSaveAccount,
-                        memberOldPsw : $('.memberOldPSW').val(),
-                        memberNewPsw : $('.memberNewPSW').val(),
-                        memberNewPsw2 : $('.memberNewPSW2').val(),
-                    },            
+                    data: {
+                        keyword: memberSaveAccount,
+                        memberOldPsw: $('.memberOldPSW').val(),
+                        memberNewPsw: $('.memberNewPSW').val(),
+                        memberNewPsw2: $('.memberNewPSW2').val(),
+                    },
                     dataType: "text",
-                    success: function (response) {
+                    success: function(response) {
                         ans = JSON.parse(JSON.parse(JSON.stringify(response)));
                         // console.log(ans);
                         // console.log(typeof(ans));
@@ -769,7 +768,7 @@
                             $('.memberPart2Popup .type2 p').text('請您確認後重新輸入');
                             $('.memberPart2Popup').show();
                         };
-                            
+
                     },
                     error: function(exception) {
                         alert("很抱歉，發生錯誤: " + exception.status);
@@ -777,12 +776,12 @@
                     },
                 });
             };
-            
+
         };
 
 
         // ===============收藏商品刪除時資料庫也要更新===============
-        function memberFavoriteDele(response){
+        function memberFavoriteDele(response) {
             // deleItemName = deleItemSrc.split('/')[6];
             $.ajax({            
                     method: "POST",
@@ -802,11 +801,11 @@
                 });
         };
 
-        
+
     </script>
 
 
-    
+
     <!-- <script src='../js/login.js'></script> -->
 </body>
 

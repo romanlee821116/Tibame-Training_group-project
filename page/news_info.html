@@ -13,6 +13,7 @@
     <script src="https://kit.fontawesome.com/8c3a8ab95b.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="../js/vue.js"></script>
+    <script src="../js/news_info.js"></script>
     <script src="../js/cart_vue.js"></script>
     <script src="../js/hamburger.js"></script>
     <script src="../js/navbar.js"></script>
@@ -24,7 +25,7 @@
     <div id="cart_app">
         <div class="navbar">
             <div class="navbar-logo">
-                <a href="./homepage.html"><img src="../images/index/logo.png" alt=""></a>
+                <a href="../page/homepage.html"><img src="../images/index/logo.png" alt=""></a>
             </div>
             <div class="navbar-icon">
                 <a href="#"><i class="fas fa-user"></i></a>
@@ -43,12 +44,12 @@
                 <div class="ham_wave wave3"></div>
                 <div class="ham_overlay-content">
                     <div class="ham_select">
-                        <a href="./homepage.html">首頁</a>
-                        <a href="./about.html">關於我們</a>
-                        <a href="./news.html">最新消息</a>
-                        <a href="./shopping_choose.html">商品專區</a>
-                        <a href="./customized.html">客製化禮盒</a>
-                        <a href="./FAQ.html">Q&A</a>
+                        <a href="../page/homepage.html">首頁</a>
+                        <a href="../page/about.html">關於我們</a>
+                        <a href="../page/news.html">最新消息</a>
+                        <a href="../page/shopping_choose.html">商品專區</a>
+                        <a href="../page/customized.html">客製化禮盒</a>
+                        <a href="../page/FAQ.html">Q&A</a>
                         <a>會員中心</a>
                         <a href="#" class='nav_logOut'>會員登出 &nbsp<i class="fas fa-sign-out-alt"></i></a>
                     </div>
@@ -80,10 +81,12 @@
                         <!-- 一般商品 -->
                         <li class="cart_item" v-for="(item,index) in itemList" :id="item.id">
                             <div class="cart_itemCB" :class="{'cart_choose': item.status}" @click="choose(item)">
-                                <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check fa-w-16" role="img" viewBox="0 0 512 512">
-                  <path fill="#ffffff"
-                    d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z" />
-                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"
+                                    data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check fa-w-16"
+                                    role="img" viewBox="0 0 512 512">
+                                    <path fill="#ffffff"
+                                        d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z" />
+                                </svg>
                             </div>
                             <div class="cart_itemImg">
                                 <img :src="item.img">
@@ -110,10 +113,12 @@
                             <!-- 商品 -->
                             <div class="cart_customizationItem">
                                 <div class="cart_itemCB" :class="{'cart_choose': item.status}" @click="choose(item)">
-                                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check fa-w-16" role="img" viewBox="0 0 512 512">
-                    <path fill="#ffffff"
-                      d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z" />
-                  </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"
+                                        data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check fa-w-16"
+                                        role="img" viewBox="0 0 512 512">
+                                        <path fill="#ffffff"
+                                            d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z" />
+                                    </svg>
                                 </div>
 
                                 <div class="cart_itemImg">
@@ -158,7 +163,8 @@
                         </li>
                     </ul>
 
-                    <div id="cart_deleteMany" @click="delete_All()" :style="{'background-color': delete_bgc, cursor: delete_cursor}">刪除多個</div>
+                    <div id="cart_deleteMany" @click="delete_All()"
+                        :style="{'background-color': delete_bgc, cursor: delete_cursor}">刪除多個</div>
 
                     <div class="cart_total">
                         <p>小計</p>
@@ -166,7 +172,8 @@
                     </div>
                 </div>
 
-                <div class="cart_checkoutBorder"><a href="../page/checkout.html" class="cart_checkout" @click="stopGo">前往結帳</a></div>
+                <div class="cart_checkoutBorder"><a href="../page/checkout.html" class="cart_checkout"
+                        @click="stopGo">前往結帳</a></div>
 
             </div>
         </div>
@@ -188,26 +195,29 @@
         <p>NEWS RELEASE</p>
         <h2>最新消息</h2>
     </div>
-    <section class="newsinfo_content">
-        <h3>盛夏芒果計畫</h3>
-        <h4>6/1起，芒果大福新品上市<br></h4>
-        <div class="newsinfo_mainpic">
-            <div class="newsinfo_gradual"></div>
-            <div class="newsinfo_circle"></div>
-        </div>
-        <article>
-            <p>炎炎夏日，芒果消暑正式開始囉！今年芒果季我們準備了不一樣的嘗試，特選台東「夏雪芒果」與大福做組合，Q彈麻糬外皮，配上內餡滿滿清甜香滑的芒果醬與鮮切芒果，給你夏日消暑的甜點新選擇。</p>
+    <div class="newsinfo_contentBox">
+        <section v-for='(one,key) in newsInfo' class="newsinfo_content">
+            <h3>{{one.news_title1}}</h3>
+            <h4>{{one.news_title2}}<br></h4>
+            <div class="newsinfo_mainpic">
+                <div class="newsinfo_gradual"></div>
+                <div class="newsinfo_circle" :style="'background-image: url('+image_url+one.news_image_right+')'"></div>
+            </div>
+            <article>
+                <p>{{one.news_content1}}</p>
 
-            <div class="newsinfo_pic01"></div>
+                <div class="newsinfo_pic01" :style="'background-image: url('+image_url+one.news_image_main+')'"></div>
 
-            <p>6月初開始為「夏雪芒果」的產季，以土芒果為母本改良，夏雪芒果於 2008年命名及登記，是臺灣第一個有專屬身分證的芒果品種。由於口感好、需細緻栽種技術才能種出金黃色果實，因此有芒果界LV的稱號，最大的特點就是同時具有土芒果的濃厚香氣、愛文的細緻及金煌的甜度，我們特選台南瑞林有機農場產出的夏雪芒果，「用好的心態跟芒果說話，它會聽的到，就會乖乖長大。」瑞林有機農場不使用任何農藥與化學肥料，李順序夫婦抱著「惜福」的心態，用心對待每棵芒果樹，這份愛心與誠意灌溉出來的夏雪芒果，陪你一同拉開明亮甜蜜的夏季序幕。</p>
-            <ul class="newsinfo_picgroup">
-                <li class="newsinfo_pic02"></li>
-                <li class="newsinfo_pic03"></li>
-                <li class="newsinfo_pic04"></li>
-            </ul>
-        </article>
-    </section>
+                <p>{{one.news_content2}}</p>
+                <ul class="newsinfo_picgroup">
+                    <li class="newsinfo_pic02" :style="'background-image: url('+image_url+one.news_image1+')'"></li>
+                    <li class="newsinfo_pic03" :style="'background-image: url('+image_url+one.news_image2+')'"></li>
+                    <li class="newsinfo_pic04" :style="'background-image: url('+image_url+one.news_image3+')'"></li>
+                </ul>
+            </article>
+        </section>
+    </div>
+
 
 
     <!-- =======================footer======================= -->
