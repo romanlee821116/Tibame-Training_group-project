@@ -271,6 +271,11 @@ input {
   border-radius: 5px;
   color: white;
   margin-right: 5px;
+  cursor: pointer;
+}
+
+.loginFB:hover {
+  background-color: rgba(57, 83, 157, 0.8);
 }
 
 .loginFB a, .loginLine a {
@@ -289,6 +294,11 @@ input {
       -ms-flex: 1;
           flex: 1;
   text-align: center;
+  cursor: pointer;
+}
+
+.loginLine:hover {
+  background-color: rgba(0, 205, 0, 0.7);
 }
 
 /* 或的線條 */
@@ -372,6 +382,8 @@ input {
   background-color: #f0ebe9;
   border: none;
   width: 160px;
+  font-weight: bold;
+  color: #172852;
 }
 
 .loginCode span {
@@ -406,6 +418,7 @@ input {
   color: #f0ebe9;
   border: none;
   height: 35px;
+  font-weight: bold;
   cursor: pointer;
 }
 
@@ -488,6 +501,7 @@ input {
   background-color: #f0ebe9;
   border: none;
   color: #172852;
+  font-weight: bold;
 }
 
 /* 返回登入 */

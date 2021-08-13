@@ -7,8 +7,9 @@ $(document).ready(function() {
     } else {
         $('.nav_logOut').fadeOut();
     }
+
+    $('.memberShow').load('login.html').hide();
     
-    // 
     // 點擊人頭打開
     $('body').on('click', '.navbar-icon .fa-user', function() {
         // ----------嘗試用load寫-----------
@@ -19,10 +20,8 @@ $(document).ready(function() {
         if (localStorage.account||sessionStorage.account) {
             window.location.href = 'member.html';
         } else {
-            // $('.memberShow').fadeIn(700);
+            $('.memberShow').fadeIn(700);
             $('body').addClass('stopScroll');
-            // $('.memberShow').load('login.html').hide();
-            $('.memberShow').load('login.html');
         };
     });
     // 點擊漢堡打開
@@ -55,7 +54,8 @@ $(document).ready(function() {
             sessionStorage.removeItem('account');
             $('.nav_logOut').fadeOut();
             $('.navbar-icon .fas .fa-user').css('color', '#bb866a');
-            window.history.back();
+            // window.history.back();
+            window.location.href = 'homepage.html';
         })
     
 

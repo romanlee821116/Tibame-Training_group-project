@@ -175,7 +175,11 @@ $(document).ready(function(){
     });
 
     // ================== 收藏管理 ==================
-    $('body').on('click','.memberLikeHeart',function(){
+    // 刪除已收藏的商品
+    $('body').on('click','.memberLikeHeart',function(event){
+        // 防止事件冒泡
+        event.stopPropagation();
+    
         let deleItem = this;
         $(deleItem).attr('src','../images/member/unfavorite.png')
         $(deleItem).parent().fadeOut(1000);
@@ -189,7 +193,32 @@ $(document).ready(function(){
 
         // =========同步更新資料庫的資料=========
         memberFavoriteDele(deleItemSrc);
+        
     });
+
+    // 點擊商品圖，詢問是否前往商品頁面
+    $('body').on('click','.memberLikePack',function(){
+        console.log('click');
+        let memberFavoritePop =
+        `<div class='popBG'>
+            <div class="type1 memberFavoritePop">
+                <img src="../images/customized/customized_step_a.png" alt="">
+                <h2>查看商品？</h2>
+                <p>現在就前往商品頁查看</p>
+                <div>
+                    <a class='mainBtn memberFavoriteBack'>返回</a>
+                    <a href="./shopping_list.html" class='mainBtn'>前往商品頁</a>                
+                </div>
+            </div>
+        </div>`
+
+        $('.memberPart5').append(memberFavoritePop);
+    });
+
+    $('body').on('click','.memberFavoriteBack',function(){
+        $('.memberPart5').children('div:last-child').remove();
+    });
+
 
     // =============== 關閉彈窗 ==================
     // 會員資料更新
