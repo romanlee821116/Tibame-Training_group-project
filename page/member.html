@@ -204,7 +204,7 @@
             </div>
             <!-- ==================會員資料=================== -->
             <div class='memberPart1'>
-                <label>姓名：<input class='memberLeft memberTop' type="text" value='李安' id='memberName'></label><br>
+                <label>姓名：<input class='memberLeft memberTop' type="text" value='' id='memberName'></label><br>
                 <div class='gender'>性別：
                     <input class='memberLeft' name='gender' type="radio" id="male" value='male' checked>
                     <label for="male">男性</label>
@@ -213,11 +213,23 @@
                     <input name='gender' type="radio" id="other" value='other'>
                     <label for="other">第三性</label>
                 </div>
-                <label>帳號：<input class='memberLeft' disabled type="email" value='karuhodou2020@gmail.com' id='memberAccount'></label><br>
-                <label>連絡電話：<input type="text" value='0912345678' id='memberPhone'></label><br>
+                <label>帳號：<input class='memberLeft' disabled type="email" value='' id='memberAccount'></label><br>
+                <label>連絡電話：<input type="text" value='' id='memberPhone'></label><br>
                 <!-- <label>地址：<input class='memberLeft' type="text" value="台北市南京東路三段219號4-5F" id='memberAddress'></label><br> -->
                 <label>地址：<input class='memberLeft memberAdr' type="text" id='memberCity'><input class='memberAdr' type="text" id='memberArea'><input class='memberAdr' type="text" id='memberAddress'></label><br>
                 <button type="submit" onclick='memberChangeData()'>儲存</button>
+                <!-- 彈出跳窗 -->
+                <div class='memberPart1Popup loginpopBG'>
+                    <div class="type2">            
+                        <img src="../images/login/send_password.png" alt="">
+                        <h2>確認更新！</h2>
+                        <p>已將您的會員資料更新囉</p>
+                        <div>
+                            <a href="#" class='mainBtn memberPart1PopClose'>返回</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- 跳窗結束 -->
             </div>
 
             <!-- ==================修改密碼=================== -->
@@ -235,13 +247,25 @@
                     <member-error></member-error>
                 </div>
                 <button class='memberChangePSW' onclick='memberChangePassword()' type="submit">修改</button>
+                <!-- 彈出跳窗 -->
+                <div class='memberPart2Popup loginpopBG'>
+                    <div class="type2">            
+                        <img src="../images/login/send_password.png" alt="">
+                        <h2>確認更新！</h2>
+                        <p>已將您的會員密碼更新囉</p>
+                        <div>
+                            <a href="#" class='mainBtn memberPart2PopClose'>返回</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- 跳窗結束 -->
             </div>
 
             <!-- ==================訂單查詢=================== -->
             <div class='memberPart3'>
                 <div class='orderSearch'>
-                    <input type="text" id='keyWord' placeholder="請輸入您的訂單編號">
-                    <button type='submit'>搜尋</button>
+                    <input type="text" id='memberPart3SearchKey' placeholder="請輸入您的訂單編號">
+                    <button class='memberPart3Search' type='submit'>搜尋</button>
                 </div>
                 <p class='clearBoth'></p>
                 
@@ -253,8 +277,8 @@
             <!-- ==================取消/退款查詢=================== -->
             <div class='memberPart4 vueOrder'>
                 <div class='orderSearch'>
-                    <input type="text" id='keyWord' placeholder="請輸入您的訂單編號">
-                    <button type='submit'>搜尋</button>
+                    <input type="text" id='memberPart4SearchKey' placeholder="請輸入您的訂單編號">
+                    <button class='memberPart4Search' type='submit'>搜尋</button>
                 </div>
                 <p class='clearBoth'></p>
                 
@@ -342,15 +366,23 @@
 
                     // 顯示訂單資料
                     $.each(response.main, function(index, row) {
+                        // console.log(response.main);
+                        // 找訂單編號order_list
+                        mainOrderList = response.main[index].order_list;
 
                         // 找折扣碼 & 運費
-                        shippingFee = parseInt(response.shippingDiscount[0].shipping_fee);
-                        discount = parseInt(response.shippingDiscount[0].discount_price);
+                        shippingFee = parseInt(response.shippingDiscount[index].shipping_fee);
+                        discount = parseInt(response.shippingDiscount[index].discount_price);
 
                         // 運算訂單金額
                         orderPrice = 0;
                         $.each(response.detail, function(index, row) {
-                            orderPrice += parseInt(row.quantity)*parseInt(row.order_detail_price);
+                            detailOrderList = response.detail[index].order_list;
+                            // console.log(detailOrderList);
+                            // console.log(mainOrderList);
+                            if( detailOrderList == mainOrderList ){
+                                orderPrice += parseInt(row.quantity)*parseInt(row.order_detail_price);
+                            }
                         });
                         orderTotal = orderPrice + shippingFee - discount;
 
@@ -461,11 +493,15 @@
                             
                             </div>`
                         );
-                        
+                        // -------------------
+
+                        memberDetailItem='';
                         // 顯示訂單明細商品
                         $('.memberOrderDetailHere').hide();
                         $.each(response.detail, function(index, row) {
-                            $(".memberOrderDetailHere").append(
+                            detailOrderList = row.order_list;
+                            if( detailOrderList == mainOrderList ){
+                                let this_item =
                                 `<div class='memberOrderDetailAll'>
                                     <div class='memberOrderDetail'>
                                         <div class='memberOrderD1'>
@@ -480,85 +516,105 @@
                                             <div>$${row.order_detail_price}</div>
                                         </div>
                                     </div>
-                                </div>`
-                            );
+                                </div>`;
+                                memberDetailItem+=this_item;
+
+                            };
+                            
                         });
+                        $(".memberOrderDetailHere").eq(index).append(memberDetailItem);
+                        
 
                         // 設定進度條的顯示
+                        // console.log($('.memberOrder').eq(0).find('div.memberProgressDot_odd1'));
 
                         if( row.order_status=='處理中' ){
-                            $('.memberProgressWord span').css('color', '#a3a3a3');
-                            $('.memberWordCheck1').css('color', '#f7c242');
+                            $('.memberProgressAll').eq(index).find('span').css('color', '#a3a3a3');
+                            $('.memberProgressAll').eq(index).find('span.memberWordCheck1').css('color', '#f7c242');
+                            console.log(index+"a");
                         }else if( row.order_status=='已確認'){
-                            $('.memberProgressDot_odd1').removeClass('memberUnchecked');
-                            $('.memberProgressDot_even1').css('background-color', '#f7c242');
-                            $('.memberProgressDot_odd2').removeClass('memberUnchecked');
-                            $('.memberProgressDot_even2').css('background-color', '#f7c242');
-                            $('.memberProgressWord span').css('color', '#a3a3a3');
-                            $('.memberWordCheck2').css('color', '#f7c242');
+                            $('.memberProgressAll').eq(index).find('div.memberProgressDot_odd1').removeClass('memberUnchecked');
+                            $('.memberProgressAll').eq(index).find('div.memberProgressDot_even1').css('background-color', '#f7c242');
+                            $('.memberProgressAll').eq(index).find('div.memberProgressDot_odd2').removeClass('memberUnchecked');
+                            $('.memberProgressAll').eq(index).find('div.memberProgressDot_even2').css('background-color', '#f7c242');
+                            $('.memberProgressAll').eq(index).find('span').css('color', '#a3a3a3');
+                            $('.memberProgressAll').eq(index).find('span.memberWordCheck2').css('color', '#f7c242');
+                            console.log(index+"b");
                         }else if( row.order_status=='已完成' ){
-                            $('.memberProgressDot_odd1').removeClass('memberUnchecked');
-                            $('.memberProgressDot_even1').css('background-color', '#f7c242');
-                            $('.memberProgressDot_odd2').removeClass('memberUnchecked');
+                            $('.memberProgressAll').eq(index).find('div.memberProgressDot_odd1').removeClass('memberUnchecked');
+                            $('.memberProgressAll').eq(index).find('div.memberProgressDot_even1').css('background-color', '#f7c242');
+                            $('.memberProgressAll').eq(index).find('div.memberProgressDot_odd2').removeClass('memberUnchecked');
+                            console.log(index+"c");
+                            console.log($('.memberProgressAll').eq(index).find('span.memberWordCheck1'));
                         }else{
-                            
+                            console.log('d');
                         };
 
                         if( row.shipping_status=='待出貨' ){
                             
                         }else if( row.shipping_status=='已出貨' ){
-                            $('.memberProgressDot_odd1').removeClass('memberUnchecked');
-                            $('.memberProgressDot_even1').css('background-color', '#f7c242');
-                            $('.memberProgressDot_odd2').removeClass('memberUnchecked');
-                            $('.memberProgressDot_even2').css('background-color', '#f7c242');
-                            $('.memberProgressWord span').css('color', '#a3a3a3');
-                            $('.memberWordCheck3').css('color', '#f7c242');
+                            $('.memberProgressAll').eq(index).find('div.memberProgressDot_odd1').removeClass('memberUnchecked');
+                            $('.memberProgressAll').eq(index).find('div.memberProgressDot_even1').css('background-color', '#f7c242');
+                            $('.memberProgressAll').eq(index).find('div.memberProgressDot_odd2').removeClass('memberUnchecked');
+                            $('.memberProgressAll').eq(index).find('div.memberProgressDot_even2').css('background-color', '#f7c242');
+                            $('.memberProgressAll').eq(index).find('span').css('color', '#a3a3a3');
+                            $('.memberProgressAll').eq(index).find('span.memberWordCheck3').css('color', '#f7c242');
                         }else if( row.shipping_status=='已送達' ){
-                            $('.memberProgressDot_odd1').removeClass('memberUnchecked');
-                            $('.memberProgressDot_even1').css('background-color', '#f7c242');
-                            $('.memberProgressDot_odd2').removeClass('memberUnchecked');
-                            $('.memberProgressDot_even2').css('background-color', '#f7c242');
-                            $('.memberProgressDot_odd3').removeClass('memberUnchecked');
-                            $('.memberProgressDot_even3').css('background-color', '#f7c242');
-                            $('.memberProgressDot_odd4').removeClass('memberUnchecked');
-                            $('.memberProgressWord span').css('color', '#a3a3a3');
-                            $('.memberWordCheck4').css('color', '#f7c242');
+                            $('.memberProgressAll').eq(index).find('div.memberProgressDot_odd1').removeClass('memberUnchecked');
+                            $('.memberProgressAll').eq(index).find('div.memberProgressDot_even1').css('background-color', '#f7c242');
+                            $('.memberProgressAll').eq(index).find('div.memberProgressDot_odd2').removeClass('memberUnchecked');
+                            $('.memberProgressAll').eq(index).find('div.memberProgressDot_even2').css('background-color', '#f7c242');
+                            $('.memberProgressAll').eq(index).find('div.memberProgressDot_odd3').removeClass('memberUnchecked');
+                            $('.memberProgressAll').eq(index).find('div.memberProgressDot_even3').css('background-color', '#f7c242');
+                            // $('div .memberProgressDot_odd4').removeClass('memberUnchecked');
+                            $('.memberProgressAll').eq(index).find('span').eq(index).css('color', '#a3a3a3');
+                            $('.memberProgressAll').eq(index).find('span.memberWordCheck4').eq(index).css('color', '#f7c242');
                         }else if( row.shipping_status=='已取貨' ){
                             // event1_css = 'background-color:#f7c242';
-                            $('.memberProgressDot_odd1').removeClass('memberUnchecked');
-                            $('.memberProgressDot_even1').css('background-color', '#f7c242');
-                            $('.memberProgressDot_odd2').removeClass('memberUnchecked');
-                            $('.memberProgressDot_even2').css('background-color', '#f7c242');
-                            $('.memberProgressDot_odd3').removeClass('memberUnchecked');
-                            $('.memberProgressDot_even3').css('background-color', '#f7c242');
-                            $('.memberProgressDot_odd4').removeClass('memberUnchecked');
-                            $('.memberProgressWord span').css('color', '#a3a3a3');
-                            $('.memberWordCheck4').css('color', '#f7c242');
+                            $('.memberProgressAll').eq(index).find('div.memberProgressDot_odd1').removeClass('memberUnchecked');
+                            $('.memberProgressAll').eq(index).find('div.memberProgressDot_even1').css('background-color', '#f7c242');
+                            $('.memberProgressAll').eq(index).find('div.memberProgressDot_odd2').removeClass('memberUnchecked');
+                            $('.memberProgressAll').eq(index).find('div.memberProgressDot_even2').css('background-color', '#f7c242');
+                            $('.memberProgressAll').eq(index).find('div.memberProgressDot_odd3').removeClass('memberUnchecked');
+                            $('.memberProgressAll').eq(index).find('div.memberProgressDot_even3').css('background-color', '#f7c242');
+                            // $('.memberProgressDot_odd4').removeClass('memberUnchecked');
+                            $('.memberProgressAll').eq(index).find('span').css('color', '#a3a3a3');
+                            $('.memberProgressAll').eq(index).find('span.memberWordCheck4').css('color', '#f7c242');
                         }else{
                             
                         };
 
-                        // ===============收藏商品===============
-                        $.each(response.favorite, function(index, row) {
-
-                            $('.memberPart5').append(
-                                `<div class='memberLikePack'>
-                                    <img class='memberLikeImg' src="../images/shopping_list/${row.product_image1}">
-                                    <img class='memberLikeHeart' src="../images/member/favorite.png">
-                                </div>`
-                            );
-
-                        });
-                            
                     });
-                    // alert('success2');
+
+                    // ===============收藏商品===============
+                    $.each(response.favorite, function(index, row) {
+                        $('.memberPart5').append(
+                            `<div class='memberLikePack'>
+                                <img class='memberLikeImg' src="../images/shopping_list/${row.product_image1}">
+                                <img class='memberLikeHeart' src="../images/member/favorite.png">
+                            </div>`
+                        );
+
+                    });
+                            
+
+                    // 如果有資料是空值的話，加上目前沒東西ㄉ文字說明
+                    if( $("#memberOrderList3").html() == null || $("#memberOrderList3").html().length == 0 ){
+                        // $("#memberOrderList3").append("<div class='memberNoContent'>目前沒有訂單哦！</div>");
+                        $(".memberPart3").html("<div class='memberNoContent'>目前沒有訂單哦！</div>");
+                    }
+                    if( $("#memberOrderList4").html() == null || $("#memberOrderList4").html().length == 0 ){
+                        $(".memberPart4").html("<div class='memberNoContent'>目前沒有訂單哦！</div>");
+                    }
+                    if( $(".memberPart5").html() == null || $(".memberPart5").html().length == 0 ){
+                        $(".memberPart5").html("<div class='memberNoContent'>目前沒有收藏任何商品哦！</div>");
+                    }
                 },
                 error: function(exception) {
                     alert("發生錯誤: " + exception.status);
                 },
 		    });
 
-            // 如果有資料是空值的話，加上目前沒東西ㄉ圖片
             
         };
 
@@ -593,17 +649,22 @@
                     dataType: "text",
                     success: function (response) {
                         memberDetailLoad();
-                        alert('已更新！ ʕ •ᴥ• ʔ ');
+                        // alert('已更新！ ʕ •ᴥ• ʔ ');
+                        $('.memberPart1Popup .type2 h2').text('確認更新！');
+                        $('.memberPart1Popup .type2 p').text('已將您的會員資料更新囉');
+                        $('.memberPart1Popup').show();
                     },
                     error: function(exception) {
                         alert("窩很抱歉(இдஇ)，發生錯誤: " + exception.status);
-                    
                     },
                 });
 
             }else{
                 // 欄位有空值，提醒使用者重填
-                alert('有空格忘記填了(இдஇ)，請重新確認');
+                // alert('有空格忘記填了(இдஇ)，請重新確認');
+                $('.memberPart1Popup .type2 h2').text('空格未填唷！');
+                $('.memberPart1Popup .type2 p').text('有空格忘記填了，請重新確認');
+                $('.memberPart1Popup').show();
             }
         };
 
@@ -694,9 +755,16 @@
                         // console.log(typeof(ans));
                         // console.log(ans[0].password);
                         if( ans[0].password == $('.memberOldPSW').val() ){
-                            alert('已更新！ ʕ •ᴥ• ʔ ');  
+                            // alert('已更新！ ʕ •ᴥ• ʔ ');  
+                            $('.memberPart2Popup .type2 h2').text('確認更新！');
+                            $('.memberPart2Popup .type2 p').text('已將您的會員密碼更新囉');
+                            $('.memberPart2Popup').show();
+                            $('.memberPart2 input').val('');
                         }else{
-                            alert('尼的舊密碼錯囉(இдஇ)，請重新輸入 '); 
+                            // alert('尼的舊密碼錯囉(இдஇ)，請重新輸入 '); 
+                            $('.memberPart2Popup .type2 h2').text('舊密碼錯囉！');
+                            $('.memberPart2Popup .type2 p').text('請您確認後重新輸入');
+                            $('.memberPart2Popup').show();
                         };
                             
                     },
@@ -722,7 +790,7 @@
                     },            
                     dataType: "text",
                     success: function (response) {
-                            alert('已刪除！881！ ʕ •ᴥ• ʔ ');   
+                            // alert('已刪除！881！ ʕ •ᴥ• ʔ ');   
                     },
                     error: function(exception) {
                         alert("窩很抱歉(இдஇ)，發生錯誤: " + exception.status);

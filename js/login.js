@@ -379,22 +379,18 @@ $(document).ready(function(){
     $('body').on('click','.loginClose',function(){
         memberFormError0();
     });
+
+    // 呼叫縣市下拉市選單
+    memberAddress();
 });
 
 
     // 註冊會員表單的縣市下拉市選單==============
-    window.onload = function () {
-        // console.log('addressssss');
+    // window.onload = function () {
+    function memberAddress () {
         //當頁面載完之後，用AddressSeleclList.Initialize()，
-        //傳入要綁定的縣市下拉選單ID及鄉鎮市區下拉選單ID
         AddressSeleclList.Initialize('縣市1', '鄉鎮市區1');
-        //後面四個參數分別是兩個下拉選單的預設文字跟值
-        // AddressSeleclList.Initialize('縣市2', '鄉鎮市區2', 'Please Select City', '0', 'Please Select Area', '0');
     }
-    // function show() {
-    //     //取出指定縣市及鄉鎮市區的下拉選單的值
-    //     alert(AddressSeleclList.ReturnSelectAddress('縣市1', '鄉鎮市區1'));
-    // }
 
 
     var app = window.AddressSeleclList =

@@ -139,7 +139,7 @@ $(document).ready(function(){
     // 查看明細 & 收合明細
     $('.memberOrderDetailHere').hide();
     $('body').on('click', '.memberPart3 .memberOpenDetail', function(){
-        console.log($(this));
+        // console.log($(this));
         $(this).parent().parent().next().slideToggle("slow");
         $(this).toggleClass('close_detail');
         if( $(this).hasClass('close_detail') ){
@@ -189,6 +189,59 @@ $(document).ready(function(){
 
         // =========同步更新資料庫的資料=========
         memberFavoriteDele(deleItemSrc);
+    });
+
+    // =============== 關閉彈窗 ==================
+    // 會員資料更新
+    $('.memberPart1PopClose').click(function(){
+        $('.memberPart1Popup').hide();
+    });
+
+    // 會員密碼更新
+    $('.memberPart2PopClose').click(function(){
+        $('.memberPart2Popup').hide();
+    });
+
+    // ============== 搜尋訂單功能 ================
+    // 一般訂單
+    $('body').on('click','.memberPart3Search',function(){
+        // 若有刪除無此訂單的文字，先清除
+        $('#memberOrderList3 .memberNoContent').remove();
+        // 所有人都先出現
+        $("#memberOrderList3 .memberOrder").show();
+
+        let key = $('#memberPart3SearchKey').val();
+        if( key != '' ){          
+            let result = $("#memberOrderList3").find("div.memberGrid9:contains('"+ key +"')").parent().parent().parent();
+            $("#memberOrderList3 .memberOrder").not(result).hide();
+            // console.log($("#memberOrderList3").find("div.memberGrid9:contains('"+ key +"')").parent().parent().parent());
+            if( result.length <= 0 ){
+                $('#memberOrderList3').append("<div class='memberNoContent'>無此訂單編號，請重新輸入</div>");
+            }
+        }else{
+            // $("#memberOrderList3 .memberOrder").show();
+        }      
+        
+    });
+
+    // 取消訂單
+    $('body').on('click','.memberPart4Search',function(){       
+        // 若有刪除無此訂單的文字，先清除
+        $('#memberOrderList4 .memberNoContent').remove();
+        // 所有人都先出現
+        $("#memberOrderList4 .memberOrder").show();
+
+        let key = $('#memberPart4SearchKey').val();
+        if( key != '' ){          
+            let result = $("#memberOrderList4").find("div.memberGrid9:contains('"+ key +"')").parent().parent().parent();
+            $("#memberOrderList4 .memberOrder").not(result).hide();
+            // console.log($("#memberOrderList3").find("div.memberGrid9:contains('"+ key +"')").parent().parent().parent());
+            if( result.length <= 0 ){
+                $('#memberOrderList4').append("<div class='memberNoContent'>無此訂單編號，請重新輸入</div>");
+            }
+        }else{
+            $("#memberOrderList4 .memberOrder").show();
+        } 
     });
 
 });
