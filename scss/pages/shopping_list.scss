@@ -1,5 +1,6 @@
 @import '../mixin/mixin';
-@import '../base/reset.scss';
+// @import '../base/reset.scss';
+@import '../base/color.scss';
 * {
     box-sizing: border-box;
     // border: solid 1px red;
@@ -11,6 +12,18 @@ body {
     margin: 0;
     background-image: url("../images/shopping_list/bg.png");
     background-size: cover;
+}
+
+.loginpop {
+    @include popUpBg();
+    display: none;
+}
+
+.type1 {
+    @include popUp_twoBtn();
+    .mainBtn {
+        @include btn();
+    }
 }
 
 .navbar {
@@ -79,51 +92,6 @@ body {
 
 .stick_color {
     color: #fad689;
-}
-
-#product_counter {
-    position: absolute;
-    top: 2px;
-    left: 54%;
-    width: 20px;
-    height: 20px;
-    color: white;
-    text-align: center;
-    padding: 3px;
-    background-color: red;
-    border-radius: 50%;
-    font-size: 10px;
-}
-
-#product_counter:not(.animated-count) {
-    display: none;
-}
-
-.animated-count {
-    animation: count .5s ease-in-out;
-}
-
-@keyframes count {
-    0% {
-        top: 2px;
-        left: 54%;
-        transform: rotate(0deg)
-    }
-    50% {
-        top: -.4rem;
-        right: -.6rem;
-        transform: rotate(60deg)
-    }
-    75% {
-        top: -.4rem;
-        right: 0rem;
-        transform: rotate(30deg)
-    }
-    100% {
-        top: 2px;
-        left: 54%;
-        transform: rotate(0deg)
-    }
 }
 
 .mediacolumn {
