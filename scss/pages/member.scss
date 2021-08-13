@@ -744,6 +744,38 @@ html, body{
     display: none;
 }
 
+// ===========訂單沒內容的話，新增提示文字===========
+.memberNoContent{
+    text-align: center;
+    margin-top: 130px;
+    font-size: 20px;
+    letter-spacing: 3px;
+    color: #c3c3c3;
+}
+// .memberPart5 .memberNoContent{
+    // margin-top: 130px;
+// }
+
+// =================跳出彈窗們===================
+.loginpopBG{
+	@include popUpBg();
+    display: none;
+}
+.type2{
+	@include popUp_oneBtn();
+	position: relative; //預設是fixed
+    // top: 15%;
+    .mainBtn{
+        @include btn(); //按鈕樣式
+        text-decoration: none;
+    }
+    p{
+        margin-top: 20px;
+    }
+    img{
+        margin-bottom: 20px;
+    }
+}
 
 /* ================= R W D =================== */
 

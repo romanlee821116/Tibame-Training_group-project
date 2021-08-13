@@ -141,16 +141,8 @@ var appVue = new Vue({
             this.o_pay = this.orders[index].payment_status;
             this.o_form = this.orders[index].order_status;
             this.o_ship = this.orders[index].shipping_status;
-
             
         },
-
-
-
-        // f_close(){                    
-        //     this.current_edit = null;
-        //     this.total_cost = null;
-        // },  
 
         f_close(){       
             this.dbcheck=true;
@@ -232,19 +224,35 @@ var appVue = new Vue({
                 },
             });
         },
-    },
-    computed: {
-        ordersd: function() {
-            var search = this.order_number;                
+        lookfor(){
+            const self = this;
 
-            if (search) {
-                return this.orders.filter(function(product) {                   
-                    return String (product.order_id).toLowerCase().indexOf(search) > -1                 
-                })                
-            }
-
-            return this.orders;
+            $.ajax({
+                method: "POST",
+                url: "../php/n-selecto.php",
+                data:{ 
+                    search: self.order_number
+                },            
+                dataType: "json",
+                success: function (res) {
+                    self.orders = res
+                },
+                
+            });
         }
-    } 
+    },
+    // computed: {
+    //     ordersd: function() {
+    //         var search = this.order_number;                
+
+    //         if (search) {
+    //             return this.orders.filter(function(product) {                   
+    //                 return String (product.order_id).toLowerCase().indexOf(search) > -1                 
+    //             })                
+    //         }
+
+    //         return this.orders;
+    //     }
+    // } 
     
 })

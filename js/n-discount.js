@@ -99,6 +99,7 @@ Vue.component('discount-add', {
                                 <img src=''>
                                 <p>請選擇圖片上傳</p>
                             </div>
+                            <img src="../images/backend/select.png" alt="">
                         </div>
                     </div>
                 </form>
@@ -550,20 +551,34 @@ var appVue = new Vue({
                 },
             });
         },
+        lookfor(){
+            const self = this;
+
+            $.ajax({
+                method: "POST",
+                url: "../php/n-selectd.php",
+                data:{ 
+                    search: self.discount_number
+                },            
+                dataType: "json",
+                success: function (res) {
+                    self.discounts = res
+                },
+                
+            });
+        }
         
     },
-    computed: {
-        discountsd: function() {
-            var search = this.discount_number;            
-
-            if (search) {
-                return this.discounts.filter(function(product) {                   
-                    return String (product.news_id).toLowerCase().indexOf(search) > -1                 
-                })                
-            }
-
-            return this.discounts;
-        }
-    }  
+    // computed: {
+    //     discountsd: function() {
+    //         var search = this.discount_number;      
+    //         if (search) {
+    //             return this.discounts.filter(function(product) {                   
+    //                 return String (product.news_id).toLowerCase().indexOf(search) > -1                 
+    //             })                
+    //         }
+    //         return this.discounts;
+    //     }
+    // }  
     
 })
