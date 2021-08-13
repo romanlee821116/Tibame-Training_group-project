@@ -1,5 +1,6 @@
 @import '../mixin/mixin';
 @import '../base/reset.scss';
+@import '../base/color.scss';
 * {
     box-sizing: border-box;
     // border: solid 1px red;
@@ -11,6 +12,19 @@ body {
     margin: 0;
     background-image: url("../images/shopping_list/bg.png");
     background-size: cover;
+}
+
+.popBG {
+    @include popUpBg();
+    display: none;
+}
+
+.type1 {
+    @include popUp_twoBtn();
+}
+
+.mainBtn {
+    @include btn();
 }
 
 .navbar {

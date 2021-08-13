@@ -1,7 +1,13 @@
 <?php
-    include("./connection.php"); 
-    $sql_itemList = "SELECT * FROM product WHERE product_status = 1 and product_class != 7 ORDER BY product_class";
-    $statement = getPDO()->query($sql_itemList);
+
+    include("connection.php"); 
+
+    $product_area_num = intval($_POST["product_area_num"]);
+
+    $sql_itemList = "SELECT * FROM product WHERE product_class = ?";
+    $statement = getPDO()->prepare($sql_itemList);
+    $statement ->bindValue(1,$product_area_num);
+    $statement ->execute();
     $statement = $statement->fetchAll();
     echo json_encode($statement);
 ?>

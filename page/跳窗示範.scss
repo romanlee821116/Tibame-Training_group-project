@@ -1,35 +1,35 @@
 @import '../scss/base/reset.scss';
 @import '../scss/mixin/_mixin.scss';
 @import '../scss/base/color.scss';
-
 // 記得import mixin 跟 colorㄛ
-
-
-.wrap1{
+.wrap1 {
     width: 100vw;
     height: 100vh;
     background-color: #ccc;
-    position: relative;    
+    position: relative;
 }
-.wrap2{
+
+.wrap2 {
     width: 100vw;
     height: 100vh;
     background-color: rgb(184, 255, 237);
     position: relative;
 }
 
-.popBG{
+.popBG {
     @include popUpBg();
 }
 
-.type1{
+.type1 {
     @include popUp_twoBtn();
     position: relative; //預設是fixed
 }
-.type2{
+
+.type2 {
     @include popUp_oneBtn();
     position: relative; //預設是fixed
 }
-.mainBtn{
-    @include btn();   
+
+.mainBtn {
+    @include btn();
 }
