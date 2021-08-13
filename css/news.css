@@ -118,12 +118,12 @@ body {
   color: #f7c242;
 }
 
-.navbar .navbar-icon a i {
+.navbar .navbar-icon i {
   color: #bb866a;
   font-size: 28px;
 }
 
-.navbar .navbar-icon a i:hover {
+.navbar .navbar-icon i:hover {
   color: #f7c242;
 }
 
@@ -607,7 +607,8 @@ body {
 .news_blockpic > img {
   width: 100%;
   height: 100%;
-  vertical-align: middle;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .news_blockStitle {
@@ -779,4 +780,3 @@ body {
         grid-template-columns: 1fr;
   }
 }
-/*# sourceMappingURL=news.css.map */
