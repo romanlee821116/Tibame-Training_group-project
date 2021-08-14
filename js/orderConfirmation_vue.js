@@ -43,31 +43,12 @@ $(function(){
         if($('.OC_next').css('background-color') == 'rgb(163, 163, 163)'){
           e.preventDefault();
         }else{
-          checkOut();
+          checkOut(); //ajax，寫在html
         }
       }
     },
     computed: {
-      // itemPrice(){
-      //   let total = 0;
-  
-      //   for(let i = 0; i < this.itemList.length; i++){
-      //     let item = this.itemList[i];
-      //     total += item.price * item.quantity;
-      //   };
-      //   for(let a = 0; a < this.customization.length; a++){
-      //     let item2 = this.customization[a];
-      //     total += item2.price * item2.quantity;
-      //   };
-  
-      //   this.total_item = total;
-      //   return total.toString().replace(/\B(?=(\d{3})+$)/g, ',');
-      // },
-      // // 訂單總金額
-      // totalPrice(){
-      //   total_price = this.total_item - this.discount;
-      //   return total_price;
-      // }
+      
     },
     mounted(){
       // 一般商品
@@ -100,10 +81,9 @@ $(function(){
         this.delivery_data = data;
       };
 
-      // 卡片
-      if(localStorage.card_data){
-        let data = JSON.parse(localStorage.card_data)
-        this.card_data = data;
+      // 金流選擇
+      if(localStorage.Payment_Type=='onlinePay'){
+        $('#idFormAioCheckOut').attr('action','../php/Ecpay_CreateOrder.php');
       };
 
       // 折扣    

@@ -35,7 +35,7 @@
     $statement = getPDO()->prepare($sql);
     // //給值
     $statement->bindValue(1, $orderlist);
-    $statement->bindValue(2, 'emma@gmail.com'); //會員帳號，需要跟member裡面的一樣
+    $statement->bindValue(2, $account); //會員帳號，需要跟member裡面的一樣
     $statement->bindValue(3, $payment);
     $statement->bindValue(4, $shipping_id);
     $statement->bindValue(5, $store);

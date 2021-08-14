@@ -146,7 +146,7 @@
                             <span class='loginC loginCodeNewForget'></span>
                             <i class="fas fa-sync-alt loginRefresh"></i>
                         </div>
-                        <button class='loginButton loginSendPSW' type="submit">
+                        <button class='loginButton loginSendPSW' type="submit" onclick="loginSendPassword()">
                             傳送新密碼
                         </button>
                         <div class='loginBack'>
@@ -334,9 +334,7 @@
                             $('.type2 > h2').text('註冊成功');
                             $('.type2 > p').text('請重新登入');
                             $('.type2 a').text('前往');
-                            $('.loginSendPSWclose').attr('href','login.html')
                             $('.loginpopBG').show();
-                            // location.href = '../page/login.html';
                         }else{
                             $('.type2 > h2').text('註冊失敗');
                             $('.type2 > p').text('此信箱已被使用，請重新註冊');
@@ -363,33 +361,156 @@
                 },
                 dataType: 'text',
                 success: function (data) {
-                    if(data != '0'){
-                        // $('.type2 > h2').text('登入成功');
-                        // $('.type2 > p').text('前往會員中心');
-                        // $('.loginSendPSWclose').attr('href','member.html');
-                        // $('.loginSendPSWclose').attr('href','member.html')
-                        // $('.loginpopBG').show();
-                        // $('.nav_logOut').show();
-                        console.log('success');
-                        
-                        if($('#loginKeeplog').is(':checked')){
-                            localStorage.setItem('account', data);
-                        }else{
-                            sessionStorage.setItem('account', data);
-                        }
-                        window.location.reload();
+                    // 先判斷帳號密碼是否符合格式
+                    let loginDataRight = [];
+                    // 設定變數
+                    let account = $('.loginAccount').val();
+                    let password = $('#loginPassword').val();
+                    // 正規表示法
+                    // email格式
+                    let mailRight = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+                    // 密碼格式
+                    let passwordRight = /^.{8,16}$/;
+
+                    if(account == ""){
+                        // e.preventDefault();
+                        $('.loginAccount').css('border','2px solid #dc3838');
+                        $('.loginAccount').next().css('display','inline-block');
+                        $('.loginAccount').next().children('p').text('請輸入資訊');
+                    }else if(!mailRight.test(account)){
+                        // e.preventDefault();
+                        $('.loginAccount').css('border','2px solid #dc3838');
+                        $('.loginAccount').next().css('display','inline-block');
                     }else{
-                        $('.type2 > h2').text('登入失敗');
-                        $('.type2 > p').text('帳號或密碼錯誤');
-                        $('.loginSendPSWclose').attr('href','login.html')
-                        $('.loginpopBG').show();
-                    }           
+                        loginDataRight.push('loginRight');         
+                    };
+
+                    if(password == ""){
+                        // e.preventDefault();
+                        $('#loginPassword').css('border','2px solid #dc3838');
+                        $('#loginPassword').next().next().css('display','inline-block');
+                        $('#loginPassword').next().next().children('p').text('請輸入資訊');
+                    }else if(!passwordRight.test(password)){
+                        // e.preventDefault();
+                        $('#loginPassword').css('border','2px solid #dc3838');
+                        $('#loginPassword').next().next().css('display','inline-block');
+                    }else{
+                        loginDataRight.push('loginRight');
+                    };
+
+                    // console.log(loginDataRight.length);
+                    // 帳號跟密碼符合以上js格式後，才送PHP
+                    if( loginDataRight.length == 2){
+                        if(data != '0'){
+                            // $('.type2 > h2').text('登入成功');
+                            // $('.type2 > p').text('前往會員中心');
+                            // $('.loginSendPSWclose').attr('href','member.html');
+                            // $('.loginSendPSWclose').attr('href','member.html')
+                            // $('.loginpopBG').show();
+                            // $('.nav_logOut').show();
+                            
+                            if($('#loginKeeplog').is(':checked')){
+                                localStorage.setItem('account', data);
+                            }else{
+                                sessionStorage.setItem('account', data);
+                            }
+                            window.location.reload();
+                        }else{
+                            $('.type2 > h2').text('登入失敗');
+                            $('.type2 > p').text('帳號或密碼錯誤');
+                            // $('.loginSendPSWclose').attr('href','login.html')
+                            $('.loginpopBG').show();
+                        };           
+                    };
+                       
                 },
                 error: function (exception) {
                     alert("數據載入失敗: " + exception.status);
                 }
             })
-        }
+        };
+
+        function loginSendPassword(){
+            $.ajax({
+                method: 'POST',
+                url: '../php/loginSendPassword.php',
+                data: {
+                    account : $('.loginAccountForget').val(),
+                },
+                dataType: 'text',
+                success: function (data) {
+                    console.log('start');
+                    // 確認是否符合規範
+                    // 清空重來
+                    $('.loginError').css('display','none');
+                    $('.loginError').children('p').text('資料格式不正確');
+                    $('.loginAll input').css('border','2px solid transparent');
+                    
+                    let accountForget = $('.loginAccountForget').val();
+                    let codeForget = $('.loginCodeEnterForget').val();
+                    let codeRightForget = $('.loginCodeNewForget').text().substr(0,4);
+
+                    // 正規表示法
+                    // email格式
+                    let mailRight = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+                    // 忘記密碼
+                    if(accountForget == ""){
+                        // e.preventDefault();
+                        $('.loginAccountForget').css('border','2px solid #dc3838');
+                        $('.loginAccountForget').next().css('display','inline-block');
+                        $('.loginAccountForget').next().children('p').text('請輸入資訊');
+                        $('.loginAccountForget').addClass('loginWrong');   //給忘記密碼的彈窗判斷
+                    }else if(!mailRight.test(accountForget)){
+                        // e.preventDefault();
+                        $('.loginAccountForget').css('border','2px solid #dc3838');
+                        $('.loginAccountForget').next().css('display','inline-block');
+                        $('.loginAccountForget').addClass('loginWrong');   //給忘記密碼的彈窗判斷
+                    }else{
+                        $('.loginAccountForget').removeClass('loginWrong');   //給忘記密碼的彈窗判斷
+                    }
+
+                    if(codeForget == ""){
+                        // e.preventDefault();
+                        $('.loginCodeEnterForget').css('border','2px solid #dc3838');
+                        $('.loginCodeEnterForget').next().css('display','inline-block');
+                        $('.loginCodeEnterForget').next().children('p').text('請輸入資訊');
+                        $('.loginCodeEnterForget').addClass('loginWrong');   //給忘記密碼的彈窗判斷
+                    }else if( codeForget != codeRightForget ){
+                        // e.preventDefault();
+                        $('.loginCodeEnterForget').css('border','2px solid #dc3838');
+                        $('.loginCodeEnterForget').next().css('display','inline-block');
+                        $('.loginCodeEnterForget').next().children('p').text('驗證碼錯誤');
+                        $('.loginCodeEnterForget').addClass('loginWrong');    //給忘記密碼的彈窗判斷
+                    }else{
+                        $('.loginCodeEnterForget').removeClass('loginWrong');    //給忘記密碼的彈窗判斷
+                    };
+                    
+                    // 確認是否有錯誤通知
+                    if( $('.loginAccountForget').hasClass('loginWrong') || $('.loginCodeEnterForget').hasClass('loginWrong')){
+
+                    }else{
+                        // 如果點擊時，沒有錯誤通知，則送PHP
+                        if( data > 0 ){
+                            // mail正確
+                            $('.type2 > h2').text('新密碼已寄出');
+                            $('.type2 > p').text('系統已發送新密碼至您的指定信箱');
+                            $('.loginpopBG').show();
+                        }else{
+                            // mail錯誤
+                            $('.type2 > h2').text('帳號錯誤');
+                            $('.type2 > p').text('請確認後重新輸入');
+                            $('.loginpopBG').show();
+                        }
+                        
+                    };
+                       
+                },
+                error: function (exception) {
+                    alert("數據載入失敗: " + exception.status);
+                }
+            })
+        };
     </script>
 
 </body>

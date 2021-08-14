@@ -801,10 +801,10 @@ body {
         .custom_card_iconList {
             padding: 20px;
             width: auto;
-            height: 100%;
+            height: 90%;
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            grid-template-rows: 20% 20% 20% 20%;
+            grid-template-columns: 30% 30% 30%;
+            grid-template-rows: 25% 25% 25% 25%;
             gap: 10px;
             padding: 10px;
             display: none;
@@ -814,6 +814,8 @@ body {
             img {
                 width: 100%;
                 height: 100%;
+                max-width: 70px;
+                max-height: 70px;
                 background-color: transparent;
                 border-radius: 10px;
                 cursor: pointer;

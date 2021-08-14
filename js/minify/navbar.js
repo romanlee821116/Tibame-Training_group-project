@@ -1,1 +1,0 @@
-$(function(){$(".memberShow").load("login.html").hide(),$(".navbar-icon>a:first").click(function(){$(".memberAll").hide(),$(".footer").hide(),$(".navbar").hide(),$(".memberShow").load("login.html").fadeIn(700)}),$("body").on("click",".loginClose",function(){$(".memberShow").fadeOut(500),$(".memberAll").show(),$(".footer").show(),$(".navbar").show()})});

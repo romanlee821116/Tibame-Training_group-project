@@ -52,7 +52,6 @@ table {
   border-spacing: 0;
 }
 
-<<<<<<< HEAD
 * {
   margin: 0;
   padding: 0;
@@ -463,33 +462,32 @@ table {
   100% {
     opacity: 1;
   }
-=======
-:root {
-  --height: 100px;
-  --width: 200px;
 }
 
-body {
-  width: 100vw;
-  height: 100vh;
->>>>>>> 1735dc46ebf0cda0e8539a6e76d20863109e0f8f
-}
-
-.index_wrapper {
+/* ==================第二面================== */
+.index_p2_container {
   width: 100%;
   height: 100%;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
+  position: relative;
+  z-index: 2;
 }
 
-.index_wrapper .index_video {
+.index_p2_container .iindex_p2_right {
+  width: 50%;
+  height: 100%;
+  background: url("../images/index/banner_monaka_bg.png");
+  background-size: cover 120%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.index_p2_container .iindex_p2_right-mask {
   width: 100%;
   height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
-<<<<<<< HEAD
 .index_p2_container .index_p2_left {
   width: 50%;
   height: 100%;
@@ -506,15 +504,13 @@ body {
 }
 
 .index_p2_container .index_p2_pic img {
-=======
-.index_wrapper .block {
->>>>>>> 1735dc46ebf0cda0e8539a6e76d20863109e0f8f
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.index_p2_container .index_p2_button {
   position: absolute;
   top: 0;
-<<<<<<< HEAD
   left: 50%;
   transform: translateX(-50%);
   height: 100%;
@@ -533,16 +529,15 @@ body {
   .index_p2_container .index_p2_button h2 {
     margin-top: 90px;
   }
-=======
-  left: 0;
->>>>>>> 1735dc46ebf0cda0e8539a6e76d20863109e0f8f
 }
 
-.index_wrapper .content {
+.index_p2_container .index_p2_button a {
+  color: #fff;
+  border: 2px solid #fff;
+  padding: 5px 20px;
+  border-radius: 25px;
   position: absolute;
-  top: 50%;
   left: 50%;
-<<<<<<< HEAD
   transform: translateX(-50%);
   bottom: 80px;
   font-weight: 900;
@@ -579,22 +574,23 @@ body {
 
 /* ==================GAP================== */
 .gap {
-=======
-  transform: translate(-50%, -50%);
-  display: flex;
->>>>>>> 1735dc46ebf0cda0e8539a6e76d20863109e0f8f
   width: 100%;
-  justify-content: space-around;
+  height: 350px;
+  background: url("../images/index/bg.png");
+  background-size: cover;
 }
 
-.index_wrapper .content .logo {
-  width: 120px;
-  height: 120px;
+/* ==================第三面================== */
+.index_page3 {
+  position: relative;
+  overflow-x: hidden;
+  background: url("../images/index/bg.png");
+  background-size: cover;
 }
 
-.index_wrapper .content .logo img {
+.index_page3 .index_p3_container {
+  height: 100vh;
   width: 100%;
-<<<<<<< HEAD
   max-width: 1400px;
   max-height: 850px;
   margin: auto;
@@ -609,81 +605,125 @@ body {
   flex-direction: column;
   align-items: center;
   padding-left: 50px;
-=======
-  height: 100%;
->>>>>>> 1735dc46ebf0cda0e8539a6e76d20863109e0f8f
 }
 
-.index_wrapper .content .button {
-  position: relative;
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  overflow: hidden;
-  margin: 0 0.8rem;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2), 0 3px 8px rgba(0, 0, 0, 0.1);
-  transition: all 0.2s cubic-bezier(0, 0.22, 0.3, 1);
+.index_page3 .index_p3_container .index_p3_txt h1 {
+  font-size: 24px;
+  color: #bb866a;
+  margin-top: 180px;
+  line-height: 0.7em;
+  margin-bottom: 12px;
 }
 
-.index_wrapper .content .button::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.1);
-}
-
-.index_wrapper .content .button a {
-  color: #ccc;
-  font-size: 1rem;
-  z-index: 10;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+.index_page3 .index_p3_container .index_p3_txt h3 {
   font-size: 18px;
+  color: #bb866a;
+  line-height: 0.9em;
+  margin-bottom: 30px;
 }
 
-.index_wrapper .content .button._1 {
-  background: transparent;
+.index_page3 .index_p3_container .index_p3_txt p {
+  width: 60%;
+  color: #bb866a;
+  font-size: 16px;
+  margin-bottom: 24px;
+  line-height: 30px;
+  font-weight: 900;
 }
 
-.index_wrapper .content .button._2 {
-  background: transparent;
+.index_page3 .index_p3_container .index_p3_txt a {
+  background-color: #172852;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 25px;
+  width: 140px;
+  height: 35px;
+  z-index: 2;
+  position: relative;
 }
 
-.index_wrapper .content .back {
+.index_page3 .index_p3_container .index_p3_txt a:hover {
+  background-color: #2e447c;
+}
+
+@media (max-width: 767px) {
+  .index_page3 .index_p3_container .index_p3_txt {
+    width: 70%;
+    height: 60%;
+    padding-left: 0;
+    margin: 0 auto;
+    position: relative;
+    top: 40%;
+  }
+  .index_page3 .index_p3_container .index_p3_txt h1 {
+    margin-top: 30px;
+  }
+  .index_page3 .index_p3_container .index_p3_txt p {
+    width: 100%;
+  }
+  .index_page3 .index_p3_container .index_p3_txt p:nth-child(even) {
+    text-align: center;
+    margin-top: 30px;
+  }
+}
+
+.index_page3 .index_p3_bg {
   position: absolute;
-  width: 0;
-  height: 0;
-  filter: url(#filter);
-  border-radius: 50%;
-  z-index: 5;
-  transition: all 1.5s cubic-bezier(0.1, 0.22, 0.3, 1);
+  top: 0px;
+  right: 0;
+  width: 55%;
+  height: 100%;
 }
 
-.index_wrapper .content .button._1 .back {
-  left: -50%;
-  top: -50%;
-  background: #94856f;
+.index_page3 .index_p3_bg img {
+  width: 100%;
+  height: 140%;
 }
 
-.index_wrapper .content .button._2 .back {
-  right: -50%;
-  top: -50%;
-  background: #94856f;
+@media (max-width: 960px) {
+  .index_page3 .index_p3_bg img {
+    height: 120%;
+  }
 }
 
-.button:hover .back {
-  width: calc(2 * var(--width));
-  height: calc(2 * var(--height));
+@media (max-width: 767px) {
+  .index_page3 .index_p3_bg {
+    position: absolute;
+    width: 100%;
+    height: 40%;
+    top: 0;
+    left: 0px;
+  }
+  .index_page3 .index_p3_bg img {
+    content: url("../images/about/aboutus_rightbg_rotate-1.png");
+    width: 130%;
+    height: 90%;
+  }
 }
 
-<<<<<<< HEAD
+.p3-watermark {
+  position: absolute;
+}
+
+.p3-watermark img {
+  width: 100%;
+  height: 100%;
+}
+
+.p3-mark1 {
+  width: 390px;
+  height: 400px;
+  left: -20px;
+  top: -220px;
+}
+
+.p3-mark2 {
+  width: 310px;
+  height: 290px;
+  left: 280px;
+  bottom: 10px;
+}
+
 /* ==================第四面================== */
 .index_page4 {
   position: relative;
@@ -1891,9 +1931,5 @@ body {
     line-height: 12px;
     display: none;
   }
-=======
-.button:hover a {
-  color: #fff;
->>>>>>> 1735dc46ebf0cda0e8539a6e76d20863109e0f8f
 }
-/*# sourceMappingURL=index.css.map */
+/*# sourceMappingURL=homepage.css.map */

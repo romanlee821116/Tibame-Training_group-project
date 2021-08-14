@@ -861,7 +861,7 @@ html, body {
   text-align: center;
   font-weight: 900;
   cursor: pointer;
-  margin-top: 5px;
+  margin-top: 25px;
 }
 
 .receiverDetail > button:hover {
@@ -935,6 +935,7 @@ html, body {
   width: calc((100% - 95px)/5);
   margin-left: 20px;
   margin-bottom: 20px;
+  cursor: pointer;
 }
 
 .memberLikePack:nth-child(5n+1) {
@@ -1051,6 +1052,97 @@ html, body {
   margin-bottom: 20px;
 }
 
+.popBG {
+  width: 100vw;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 991;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.type1 {
+  width: 33%;
+  height: 320px;
+  max-width: 400px;
+  max-height: 320px;
+  min-width: 290px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.95);
+  -webkit-box-shadow: 0px 10px 32px rgba(23, 40, 82, 0.6);
+          box-shadow: 0px 10px 32px rgba(23, 40, 82, 0.6);
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  padding: 40px;
+  z-index: 999;
+  position: relative;
+}
+
+.type1 img {
+  width: 80px;
+  height: auto;
+}
+
+.type1 h2 {
+  color: #172852;
+  font-size: 28px;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.type1 p {
+  color: #172852;
+  margin-bottom: 45px;
+  font-size: 14px;
+}
+
+.type1 div {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+@media (max-width: 575px) {
+  .type1 {
+    padding: 40px 20px;
+  }
+}
+
+.type1 .mainBtn {
+  display: block;
+  padding: 8px 10px;
+  width: 120px;
+  border-radius: 25px;
+  background: #172852;
+  border: 3px solid #172852;
+  color: #fff;
+  text-align: center;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.type1 .mainBtn:hover {
+  background-color: #2e447c;
+  color: #fff;
+  border: 3px solid #2e447c;
+}
+
 /* ================= R W D =================== */
 @media (max-width: 767px) {
   body .memberAll {
@@ -1085,6 +1177,21 @@ html, body {
   }
   body .memberPart5 .memberLikePack:nth-child(4n+1) {
     margin-left: 0;
+  }
+  body .memberPart5 .memberFavoriteName {
+    display: none;
+    position: absolute;
+    padding-top: 42%;
+    top: 0;
+    left: 0;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    color: #172852;
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+  body .memberPart5 .memberFavoriteName:hover {
+    display: block;
   }
   body .memberLine {
     overflow-x: auto;

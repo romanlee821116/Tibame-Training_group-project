@@ -174,14 +174,11 @@ $(document).ready(function(){
             $('.loginAccount').css('border','2px solid #dc3838');
             $('.loginAccount').next().css('display','inline-block');
             $('.loginAccount').next().children('p').text('請輸入資訊');
-            $('.loginAccount').addClass('loginFalse');    //給登入註冊切換判斷
         }else if(!mailRight.test(account)){
             e.preventDefault();
             $('.loginAccount').css('border','2px solid #dc3838');
             $('.loginAccount').next().css('display','inline-block');
-            $('.loginAccount').addClass('loginFalse');    //給登入註冊切換判斷
         }else{
-            $('.loginAccount').removeClass('loginFalse');    //給登入註冊切換判斷            
         }
 
         if(password == ""){
@@ -189,14 +186,11 @@ $(document).ready(function(){
             $('#loginPassword').css('border','2px solid #dc3838');
             $('#loginPassword').next().next().css('display','inline-block');
             $('#loginPassword').next().next().children('p').text('請輸入資訊');
-            $('#loginPassword').addClass('loginFalse');    //給登入註冊切換判斷
         }else if(!passwordRight.test(password)){
             e.preventDefault();
             $('#loginPassword').css('border','2px solid #dc3838');
             $('#loginPassword').next().next().css('display','inline-block');
-            $('#loginPassword').addClass('loginFalse');    //給登入註冊切換判斷
         }else{
-            $('#loginPassword').removeClass('loginFalse');    //給登入註冊切換判斷
         }
 
         if(password2 == ""){
@@ -253,36 +247,6 @@ $(document).ready(function(){
             $('.loginCodeEnter').next().css('display','inline-block');
             $('.loginCodeEnter').next().children('p').text('驗證碼錯誤');
         };
-
-        // 登入成功
-        // if( $('.loginBtn').hasClass('loginButton') ){
-        //     alert('登入成功');
-        //     // 做登入註冊/會員中心判斷--------
-        //     if( !$('.loginAccount').hasClass('loginFalse') && !$('#loginPassword').hasClass('loginFalse')){
-        //         $(this).addClass('loginOK');
-        //         $('.memberShow').fadeOut(500);
-        //         $('.footer').show();
-        //         $('.navbar').show();
-        //         $('body').removeClass('stopScroll');   // addClass的部分寫在navbar.js
-        //         // window.history.back(-1);
-        //         // $('.navbar-icon>a:first').hasClass('loginOK');
-        //         if(window.location.pathname == '/index.html'){
-        //             window.location.href = 'page/member.html';
-        //         }else{
-        //             window.location.href = 'member.html';
-        //         };
-        //         localStorage.loginStatus = 'Login';
-        //         $('.nav_logOut').fadeIn();
-        //         $('.mavbar-icon .fas .fa-user').css('color','#f7c242');
-        //     }
-        // };
-
-        // // 註冊成功
-        // if( $('.loginBtn').hasClass('loginSignupButton') ){
-        //     console.log('welcome');
-        // };
-
-
         
     });
 
@@ -304,60 +268,60 @@ $(document).ready(function(){
 
 
     // 忘記密碼=============
-    $('.loginSendPSW').click(function(e){
-        // 清空重來
-        $('.loginError').css('display','none');
-        $('.loginError').children('p').text('資料格式不正確');
-        $('.loginAll input').css('border','2px solid transparent');
+    // $('.loginSendPSW').click(function(e){
+        // // 清空重來
+        // $('.loginError').css('display','none');
+        // $('.loginError').children('p').text('資料格式不正確');
+        // $('.loginAll input').css('border','2px solid transparent');
         
-        let accountForget = $('.loginAccountForget').val();
-        let codeForget = $('.loginCodeEnterForget').val();
-        let codeRightForget = $('.loginCodeNewForget').text().substr(0,4);
+        // let accountForget = $('.loginAccountForget').val();
+        // let codeForget = $('.loginCodeEnterForget').val();
+        // let codeRightForget = $('.loginCodeNewForget').text().substr(0,4);
 
-        // 正規表示法
-        // email格式
-        let mailRight = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+        // // 正規表示法
+        // // email格式
+        // let mailRight = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 
-        // 忘記密碼
-        if(accountForget == ""){
-            e.preventDefault();
-            $('.loginAccountForget').css('border','2px solid #dc3838');
-            $('.loginAccountForget').next().css('display','inline-block');
-            $('.loginAccountForget').next().children('p').text('請輸入資訊');
-            $('.loginAccountForget').addClass('loginWrong');   //給忘記密碼的彈窗判斷
-        }else if(!mailRight.test(accountForget)){
-            e.preventDefault();
-            $('.loginAccountForget').css('border','2px solid #dc3838');
-            $('.loginAccountForget').next().css('display','inline-block');
-            $('.loginAccountForget').addClass('loginWrong');   //給忘記密碼的彈窗判斷
-        }else{
-            $('.loginAccountForget').removeClass('loginWrong');   //給忘記密碼的彈窗判斷
-        }
+        // // 忘記密碼
+        // if(accountForget == ""){
+        //     e.preventDefault();
+        //     $('.loginAccountForget').css('border','2px solid #dc3838');
+        //     $('.loginAccountForget').next().css('display','inline-block');
+        //     $('.loginAccountForget').next().children('p').text('請輸入資訊');
+        //     $('.loginAccountForget').addClass('loginWrong');   //給忘記密碼的彈窗判斷
+        // }else if(!mailRight.test(accountForget)){
+        //     e.preventDefault();
+        //     $('.loginAccountForget').css('border','2px solid #dc3838');
+        //     $('.loginAccountForget').next().css('display','inline-block');
+        //     $('.loginAccountForget').addClass('loginWrong');   //給忘記密碼的彈窗判斷
+        // }else{
+        //     $('.loginAccountForget').removeClass('loginWrong');   //給忘記密碼的彈窗判斷
+        // }
 
-        if(codeForget == ""){
-            e.preventDefault();
-            $('.loginCodeEnterForget').css('border','2px solid #dc3838');
-            $('.loginCodeEnterForget').next().css('display','inline-block');
-            $('.loginCodeEnterForget').next().children('p').text('請輸入資訊');
-            $('.loginCodeEnterForget').addClass('loginWrong');   //給忘記密碼的彈窗判斷
-        }else if( codeForget != codeRightForget ){
-            e.preventDefault();
-            $('.loginCodeEnterForget').css('border','2px solid #dc3838');
-            $('.loginCodeEnterForget').next().css('display','inline-block');
-            $('.loginCodeEnterForget').next().children('p').text('驗證碼錯誤');
-            $('.loginCodeEnterForget').addClass('loginWrong');    //給忘記密碼的彈窗判斷
-        }else{
-            $('.loginCodeEnterForget').removeClass('loginWrong');    //給忘記密碼的彈窗判斷
-        };
+        // if(codeForget == ""){
+        //     e.preventDefault();
+        //     $('.loginCodeEnterForget').css('border','2px solid #dc3838');
+        //     $('.loginCodeEnterForget').next().css('display','inline-block');
+        //     $('.loginCodeEnterForget').next().children('p').text('請輸入資訊');
+        //     $('.loginCodeEnterForget').addClass('loginWrong');   //給忘記密碼的彈窗判斷
+        // }else if( codeForget != codeRightForget ){
+        //     e.preventDefault();
+        //     $('.loginCodeEnterForget').css('border','2px solid #dc3838');
+        //     $('.loginCodeEnterForget').next().css('display','inline-block');
+        //     $('.loginCodeEnterForget').next().children('p').text('驗證碼錯誤');
+        //     $('.loginCodeEnterForget').addClass('loginWrong');    //給忘記密碼的彈窗判斷
+        // }else{
+        //     $('.loginCodeEnterForget').removeClass('loginWrong');    //給忘記密碼的彈窗判斷
+        // };
         
-        // 如果點擊時，沒有錯誤通知，則跳出送出密碼視窗
-        if( $('.loginAccountForget').hasClass('loginWrong') || $('.loginCodeEnterForget').hasClass('loginWrong')){
-            console.log('nok');
-        }else{
-            $('.loginpopBG').show();
-            console.log('ok');
-        };
-    });
+        // // 如果點擊時，沒有錯誤通知，則跳出送出密碼視窗
+        // if( $('.loginAccountForget').hasClass('loginWrong') || $('.loginCodeEnterForget').hasClass('loginWrong')){
+        //     // console.log('nok');
+        // }else{
+        //     $('.loginpopBG').show();
+        //     // console.log('ok');
+        // };
+    // });
 
     // 忘記密碼 關閉彈窗---------------
     $('.loginSendPSWclose').click(function(){

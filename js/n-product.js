@@ -231,8 +231,9 @@ Vue.component('product-add', {
                             alert('此商品名稱已使用');
                         }else{
                             alert("商品新增成功");
-                            this.$emit('psave', this.p_number, this.p_sort, this.p_name, this.p_original, this.p_sell, this.p_stock, this.p_status, this.p_limit, this.on_off, this.p_exp, this.p_customized, this.p_ingredient, this.p_descript);
+                            
                             window.location.reload();
+                            Vue.$emit('psave', this.p_number, this.p_sort, this.p_name, this.p_original, this.p_sell, this.p_stock, this.p_status, this.p_limit, this.on_off, this.p_exp, this.p_customized, this.p_ingredient, this.p_descript);
                         }
                     },
                     error: function (exception) {
@@ -243,6 +244,7 @@ Vue.component('product-add', {
             }else{
                 alert('請完成所有欄位');
             }
+            
 
         },
 

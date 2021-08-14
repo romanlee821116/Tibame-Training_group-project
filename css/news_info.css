@@ -54,7 +54,7 @@ table {
 
 * {
   box-sizing: border-box;
-  font-family: '微軟正黑體';
+  font-family: "微軟正黑體";
   font-weight: bold;
 }
 
@@ -446,7 +446,8 @@ body {
   }
 }
 
-.newsAll_title, .newsinfo_content {
+.newsAll_title,
+.newsinfo_content {
   width: 80%;
   max-width: 1200px;
   margin: 0 auto;
@@ -527,9 +528,9 @@ body {
 }
 
 .newsinfo_pic02 {
-  width: 20vw;
+  width: 25vw;
   max-width: 300px;
-  height: 20vw;
+  height: 25vw;
   max-height: 300px;
   background-image: url(../images/shopping_list/daifuku_mango_c_big.png);
   background-repeat: no-repeat;
@@ -539,9 +540,9 @@ body {
 }
 
 .newsinfo_pic03 {
-  width: 20vw;
+  width: 25vw;
   max-width: 300px;
-  height: 20vw;
+  height: 25vw;
   max-height: 300px;
   background-image: url(../images/about/farmer2.jpg);
   background-repeat: no-repeat;
@@ -551,9 +552,9 @@ body {
 }
 
 .newsinfo_pic04 {
-  width: 20vw;
+  width: 25vw;
   max-width: 300px;
-  height: 20vw;
+  height: 25vw;
   max-height: 300px;
   background-image: url(../images/shopping_list/daifuku_mango_a_big.png);
   background-repeat: no-repeat;
@@ -598,8 +599,14 @@ body {
   bottom: 0px;
   left: 0px;
   background-image: url(../images/about/randomMango.jpg);
-  background-position: center;
+  background-position: bottom;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
+}
+
+@media (max-width: 575px) {
+  .newsinfo_mainpic {
+    display: none;
+  }
 }
 /*# sourceMappingURL=news_info.css.map */

@@ -64,7 +64,11 @@ body {
   background-size: cover;
 }
 
+<<<<<<< HEAD
 .loginpop {
+=======
+.popBG {
+>>>>>>> 1735dc46ebf0cda0e8539a6e76d20863109e0f8f
   width: 100vw;
   height: 100%;
   position: absolute;
@@ -73,7 +77,10 @@ body {
   z-index: 991;
   background-color: rgba(255, 255, 255, 0.6);
   display: none;
+<<<<<<< HEAD
   position: fixed;
+=======
+>>>>>>> 1735dc46ebf0cda0e8539a6e76d20863109e0f8f
 }
 
 .type1 {
@@ -85,12 +92,28 @@ body {
   position: fixed;
   top: 50%;
   left: 50%;
+<<<<<<< HEAD
   transform: translate(-50%, -50%);
   border-radius: 20px;
   background-color: rgba(255, 255, 255, 0.95);
   box-shadow: 0px 10px 32px rgba(23, 40, 82, 0.6);
   flex-direction: column;
   align-items: center;
+=======
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.95);
+  -webkit-box-shadow: 0px 10px 32px rgba(23, 40, 82, 0.6);
+          box-shadow: 0px 10px 32px rgba(23, 40, 82, 0.6);
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+>>>>>>> 1735dc46ebf0cda0e8539a6e76d20863109e0f8f
   text-align: center;
   padding: 40px;
   z-index: 999;
@@ -116,8 +139,17 @@ body {
 
 .type1 div {
   width: 100%;
+<<<<<<< HEAD
   display: flex;
   justify-content: space-evenly;
+=======
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+>>>>>>> 1735dc46ebf0cda0e8539a6e76d20863109e0f8f
 }
 
 @media (max-width: 575px) {
@@ -126,7 +158,11 @@ body {
   }
 }
 
+<<<<<<< HEAD
 .type1 .mainBtn {
+=======
+.mainBtn {
+>>>>>>> 1735dc46ebf0cda0e8539a6e76d20863109e0f8f
   display: block;
   padding: 8px 10px;
   width: 120px;
@@ -139,7 +175,11 @@ body {
   cursor: pointer;
 }
 
+<<<<<<< HEAD
 .type1 .mainBtn:hover {
+=======
+.mainBtn:hover {
+>>>>>>> 1735dc46ebf0cda0e8539a6e76d20863109e0f8f
   background-color: #2e447c;
   color: #fff;
   border: 3px solid #2e447c;
@@ -338,7 +378,12 @@ body {
   position: fixed;
   top: 10%;
   left: 50%;
+<<<<<<< HEAD
   transform: translateX(-50%);
+=======
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+>>>>>>> 1735dc46ebf0cda0e8539a6e76d20863109e0f8f
   border-radius: 25px;
   background-color: #bb866a;
   text-align: center;
@@ -354,7 +399,12 @@ body {
   position: fixed;
   top: 10%;
   left: 50%;
+<<<<<<< HEAD
   transform: translateX(-50%);
+=======
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+>>>>>>> 1735dc46ebf0cda0e8539a6e76d20863109e0f8f
   border-radius: 25px;
   background-color: #bb866a;
   text-align: center;
