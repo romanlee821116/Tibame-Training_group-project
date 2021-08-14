@@ -6,6 +6,12 @@ $(document).ready(function(){
       ingredients: [],
       transportation: [],
     },
+    methods: {
+      // spin(e){
+      //   console.log(e);
+      //   $('.FAQ_question').find('.FAQ_plus').toggleClass("FAQ_spin")
+      // }
+    },
     mounted(){
       $.ajax({            
         method: "POST",
@@ -118,28 +124,21 @@ $(function(){
 
 
 
-  // 點擊問題，開關回答
-  $('.FAQ_question').click(function(){
-    $(this).parent('.FAQ_QAList').children('.FAQ_outBorder').slideToggle();
-  });
+  // 點擊問題，開關回答，加號變減號
+
+  // $('.FAQ_classification').on('click','.FAQ_question',function(){
+  //   // console.log($(this));
+  //   $(this).next('.FAQ_outBorder').slideToggle();
+  // });
+
+  
+  $('.FAQ_classification').on('click','.FAQ_question',function(){
+    $(this).find('.FAQ_plus').toggleClass("FAQ_spin")
+    $(this).next('.FAQ_outBorder').stop(true, false).slideToggle();  
+  })
 
 
 
-
-  // 點擊問題，加號變減號
-  let question = document.getElementsByClassName("FAQ_question");
-  let plus = document.getElementsByClassName("FAQ_plus");
-
-  for(let a = 0; a < question.length; a++){
-    question[a].addEventListener("click",function(){
-      plus[a].classList.toggle("FAQ_spin");
-    });
-  }
+  
 })
-  
-  
-  
-    
-  
-
 

@@ -140,15 +140,16 @@ Vue.component('product-add', {
 
                 <div class="n-product_edit_right">
                     <form enctype="multipart/form-data">
-                    <div class="n-product_group" v-for='(item, index) in img_names'>
-                        <label :for='index'>{{item.img_name}}:</label>
-                        <input type="file" :id="index" @change='upload_img' class='n-product_Pic' :name='item.name'>
-                        <p>請選擇圖片上傳</p>
-                        <div class="n-product_img">
-                            <img src=''>
+                        <div class="n-product_group" v-for='(item, index) in img_names'>
+                            <label :for='index'>{{item.img_name}}:</label>
+                            <input type="file" :id="index" @change='upload_img' class='n-product_Pic' :name='item.name'>
                             <p>請選擇圖片上傳</p>
+                            <div class="n-product_img">
+                                <img src=''>
+                                <p>請選擇圖片上傳</p>
+                            </div>
+                            <img src="../images/backend/select.png" alt="">
                         </div>
-                    </div>
                     </form>
                 </div>
 
@@ -411,7 +412,7 @@ var appVue = new Vue({
             this.new_img[2] = this.products[index].product_image3;
             this.new_img[3] = this.products[index].product_image_topview;
             this.new_img[4] = this.products[index].product_image_customize;
-
+     
             this.img_names[0]['src'] = '../images/shopping_list/'+ this.products[index].product_image1;
             this.img_names[1]['src'] = '../images/shopping_list/'+ this.products[index].product_image2;
             this.img_names[2]['src'] = '../images/shopping_list/'+ this.products[index].product_image3;
@@ -607,21 +608,56 @@ var appVue = new Vue({
                 },
             });
         },
-    }, 
-    computed: {
-        productsd: function() {
-            var search = this.product_number;            
+        lookfor(){
+            const self = this;
 
-            if (search) {
-                return this.products.filter(function(product) {                   
-                    return String (product.product_id).toLowerCase().indexOf(search) > -1                 
-                })                
-            }
-
-            return this.products;
+            $.ajax({
+                method: "POST",
+                url: "../php/n-selectp.php",
+                data:{ 
+                    search: self.product_number
+                },            
+                dataType: "json",
+                success: function (res) {
+                    self.products = res
+                },
+                
+            });
         }
-    }   
+    }, 
+    // computed: {
+    //     productsd: function() {
+    //         var search = this.product_number;  
+    //         if (search) {
+    //             return this.products.filter(function(product) {                   
+    //                 return String (product.product_id).toLowerCase().indexOf(search) > -1                 
+    //             })                
+    //         }
+    //         return this.products;
+    //     }
+    // }   
+    updated() {        
+
+        var img_name = this.new_img
+        var new_img_name = []
+
+        for( let i =0; i< img_name.length; i++){
+            if( img_name[i].length > 1){
+                
+                let limit_name = img_name[i].substring(0, 10)
+
+                new_img_name.push(limit_name)
+            }
+        }
+        console.log(new_img_name);
+        // this.new_img = new_img_name
+    },
+    
 })
+
+
+
+
 
 
 

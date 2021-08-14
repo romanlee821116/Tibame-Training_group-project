@@ -166,20 +166,35 @@ var appVue = new Vue({
                 },
             });
         },
+        lookfor(){
+            const self = this;
+
+            $.ajax({
+                method: "POST",
+                url: "../php/n-selectm.php",
+                data:{ 
+                    search: self.member_number
+                },            
+                dataType: "json",
+                success: function (res) {
+                    self.members = res
+                },
+                
+            });
+        }
 
     },
-    computed: {
-        membersd: function() {
-            var search = this.member_number;            
+    // computed: {
+    //     membersd: function() {
+    //         var search = this.member_number;            
 
-            if (search) {
-                return this.members.filter(function(product) {                   
-                    return String (product.member_id).toLowerCase().indexOf(search) > -1                 
-                })                
-            }
-
-            return this.members;
-        }
-    }
+    //         if (search) {
+    //             return this.members.filter(function(product) {                   
+    //                 return String (product.member_id).toLowerCase().indexOf(search) > -1                 
+    //             })                
+    //         }
+    //         return this.members;
+    //     }
+    // }
     
 })

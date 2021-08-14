@@ -1,11 +1,11 @@
-@import '../mixin/mixin';
-@import '../base/reset.scss';
-@import '../base/color.scss';
+@import "../mixin/mixin";
+@import "../base/reset.scss";
+@import "../base/color.scss";
 
 * {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    font-family: '微軟正黑體';
+    font-family: "微軟正黑體";
     font-weight: bold;
 }
 
@@ -18,10 +18,10 @@ body {
     background-size: cover;
 }
 
-.navbar{
+.navbar {
     @include navbar();
 }
-.footer{
+.footer {
     @include footer();
 }
 
@@ -29,10 +29,11 @@ body {
     @include media();
 }
 
-.psychotest{
+.psychotest {
     @include psycoBtn();
 }
-.newsAll_title, .newsinfo_content {
+.newsAll_title,
+.newsinfo_content {
     width: 80%;
     max-width: 1200px;
     margin: 0 auto;
@@ -41,7 +42,7 @@ body {
 
 /* 大標 */
 
-.newsAll_title>p {
+.newsAll_title > p {
     font-size: 14px;
     color: #bb866a;
     padding-bottom: 5px;
@@ -50,7 +51,7 @@ body {
     margin: 0px 0 30px 0;
 }
 
-.newsAll_title>h2 {
+.newsAll_title > h2 {
     font-size: 28px;
     color: #bb866a;
     margin: 0 0 30px 0;
@@ -64,7 +65,7 @@ body {
 
 /* 文章標題 */
 
-.newsinfo_content>h3 {
+.newsinfo_content > h3 {
     margin: 0px;
     font-size: 24px;
     font-weight: bold;
@@ -72,7 +73,7 @@ body {
     color: #172852;
 }
 
-.newsinfo_content>h4 {
+.newsinfo_content > h4 {
     margin: 0px;
     margin-top: 10px;
     margin-bottom: 50px;
@@ -84,7 +85,7 @@ body {
 
 /* 文章內文 */
 
-.newsinfo_content>article>p {
+.newsinfo_content > article > p {
     margin: 0px;
     font-size: 14px;
     line-height: 2;
@@ -117,9 +118,9 @@ body {
 }
 
 .newsinfo_pic02 {
-    width: 20vw;
+    width: 25vw;
     max-width: 300px;
-    height: 20vw;
+    height: 25vw;
     max-height: 300px;
     background-image: url(../images/shopping_list/daifuku_mango_c_big.png);
     background-repeat: no-repeat;
@@ -129,9 +130,9 @@ body {
 }
 
 .newsinfo_pic03 {
-    width: 20vw;
+    width: 25vw;
     max-width: 300px;
-    height: 20vw;
+    height: 25vw;
     max-height: 300px;
     background-image: url(../images/about/farmer2.jpg);
     background-repeat: no-repeat;
@@ -141,9 +142,9 @@ body {
 }
 
 .newsinfo_pic04 {
-    width: 20vw;
+    width: 25vw;
     max-width: 300px;
-    height: 20vw;
+    height: 25vw;
     max-height: 300px;
     background-image: url(../images/shopping_list/daifuku_mango_a_big.png);
     background-repeat: no-repeat;
@@ -166,13 +167,13 @@ body {
     overflow: hidden;
 }
 
-.newsinfo_gradual{
+.newsinfo_gradual {
     position: absolute;
     width: 45vw;
     height: 25vw;
     max-width: 486px;
     max-height: 270px;
-    background: linear-gradient(0deg, rgba(255,255,255,0) 50%, rgba(255,255,255,1) 100%);
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 1) 100%);
     top: 0px;
     right: 0px;
     z-index: 1;
@@ -189,7 +190,12 @@ body {
     bottom: 0px;
     left: 0px;
     background-image: url(../images/about/randomMango.jpg);
-    background-position: center;
+    background-position: bottom;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
+}
+@media (max-width: 575px) {
+    .newsinfo_mainpic {
+        display: none;
+    }
 }

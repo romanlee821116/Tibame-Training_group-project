@@ -291,21 +291,35 @@ var appVue = new Vue({
                     alert("發生錯誤: " + exception.status);
                 },
             });
-        },             
+        },    
+        lookfor(){
+            const self = this;
+
+            $.ajax({
+                method: "POST",
+                url: "../php/n-selectf.php",
+                data:{ 
+                    search: self.faq_number
+                },            
+                dataType: "json",
+                success: function (res) {
+                    self.faqs = res
+                },
+                
+            });
+        }         
         
     },
-    computed: {
-        faqsd: function() {
-            var search = this.faq_number;            
-
-            if (search) {
-                return this.faqs.filter(function(product) {                   
-                    return String (product.qa_id).toLowerCase().indexOf(search) > -1                 
-                })                
-            }
-
-            return this.faqs;
-        }
-    }  
+    // computed: {
+    //     faqsd: function() {
+    //         var search = this.faq_number;     
+    //         if (search) {
+    //             return this.faqs.filter(function(product) {                   
+    //                 return String (product.qa_id).toLowerCase().indexOf(search) > -1                 
+    //             })                
+    //         }
+    //         return this.faqs;
+    //     }
+    // }  
     
 })

@@ -95,10 +95,12 @@ body{
 .n-discount_right{
     /* border: 1px solid red; */
     width: 85%;
+    min-height: 500px;
 }
 
 .n-discount_right > div{
-    border: 1px solid #bb866a;    
+    border: 1px solid #bb866a;  
+    min-height: 455px;   
 }
 
 .n-discount_right form{
@@ -251,12 +253,11 @@ body{
 
 .n-discount_footer ul{
     /* border: 1px solid #bb866a; */
-    margin: 0;
+    margin: 15px 0;
     padding: 0px;
     list-style: none;
     display: flex;
-    justify-content: flex-end;    
-    margin-top: 15px;
+    justify-content: flex-end;  
 }
 
 .n-discount_footer ul li{
@@ -439,10 +440,18 @@ body{
     color: #172852;
     font-weight: bold;
 
-    background-image: url("../images/backend/select.png");
-    background-repeat: no-repeat;
-    background-position: right;
-    background-size: contain;
+    // background-image: url("../images/backend/select.png");
+    // background-repeat: no-repeat;
+    // background-position: right;
+    // background-size: contain;
+}
+
+.n-discount_group > img{
+    position: absolute;
+    width: 30px;
+    right: 25px;
+    top: -3px;
+    border-radius: 5px;
 }
 
 .n-discount_discount_bot div.n-discount_img{
