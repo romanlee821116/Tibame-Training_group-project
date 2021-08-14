@@ -161,8 +161,9 @@ Vue.component('news-add', {
                     contentType: false,
                     success: function (res) {
                         alert(res);
-                        this.$emit('nsave', this.n_sort, this.on_off, this.n_main_title, this.n_sec_title, this.n_main_content, this.n_sec_content);
                         window.location.reload();
+                        Vue.$emit('nsave', this.n_sort, this.on_off, this.n_main_title, this.n_sec_title, this.n_main_content, this.n_sec_content);
+                        
                     },
                     error: function (exception) {
                         alert("數據載入失敗: " + exception.status);
@@ -500,7 +501,7 @@ var appVue = new Vue({
         },
         
         showNdata(gopage){
-            console.log(gopage);
+            // console.log(gopage);
             if(isNaN(gopage)) return;
             this.nowpage = gopage;
 

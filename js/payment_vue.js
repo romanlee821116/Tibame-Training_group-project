@@ -13,7 +13,8 @@ $(document).ready(function(){
       // 收件人資料
       delivery_data: [],
       // 卡片資料
-      card_data: [],
+      card_data: '',
+      Payment_Type:'',
       discount: 0,
       total_price: 0,
       itemPrice:0,
@@ -136,7 +137,7 @@ $(document).ready(function(){
       localStorage.setItem('delivery_data', this.delivery_data);
 
       // 卡片重置
-      localStorage.setItem('card_data', this.card_data);
+      // localStorage.setItem('card_data', this.card_data);
 
 
       // ====================================================
@@ -531,28 +532,28 @@ $(function(){
     // ==================================================
 
     // 選擇信用卡付款的話才存取資料
-    if(fakeClick4 == true){
-      let card_detail = {
-        'cardNumber1': "",
-        'cardNumber2': "",
-        'cardNumber3': "",
-        'cardNumber4': "",
-        'cardYear': "",
-        'cardMonth': "",
-        'cardCertification': ""
-      }
+    // if(fakeClick4 == true){
+    //   let card_detail = {
+    //     'cardNumber1': "",
+    //     'cardNumber2': "",
+    //     'cardNumber3': "",
+    //     'cardNumber4': "",
+    //     'cardYear': "",
+    //     'cardMonth': "",
+    //     'cardCertification': ""
+    //   }
   
-      card_detail.cardNumber1 = cardNumber1;
-      card_detail.cardNumber2 = cardNumber2;
-      card_detail.cardNumber3 = cardNumber3;
-      card_detail.cardNumber4 = cardNumber4;
-      card_detail.cardYear = payment_year;
-      card_detail.cardMonth = payment_month;
-      card_detail.cardCertification = payment_turn;
+    //   card_detail.cardNumber1 = cardNumber1;
+    //   card_detail.cardNumber2 = cardNumber2;
+    //   card_detail.cardNumber3 = cardNumber3;
+    //   card_detail.cardNumber4 = cardNumber4;
+    //   card_detail.cardYear = payment_year;
+    //   card_detail.cardMonth = payment_month;
+    //   card_detail.cardCertification = payment_turn;
 
-      localStorage.setItem('card_data', JSON.stringify(card_detail));
+    //   localStorage.setItem('card_data', JSON.stringify(card_detail));
 
-    }
+    // }
 
 
 

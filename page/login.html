@@ -334,9 +334,10 @@
                             $('.type2 > h2').text('註冊成功');
                             $('.type2 > p').text('請重新登入');
                             $('.type2 a').text('前往');
-                            $('.loginSendPSWclose').attr('href','login.html')
+                            // $('.loginSendPSWclose').on('click', function(){
+                            //     location.reload();
+                            // })
                             $('.loginpopBG').show();
-                            // location.href = '../page/login.html';
                         }else{
                             $('.type2 > h2').text('註冊失敗');
                             $('.type2 > p').text('此信箱已被使用，請重新註冊');
