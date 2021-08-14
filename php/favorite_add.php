@@ -5,8 +5,11 @@
     $account = $_POST["account"];
 
     //建立SQL語法
+    if($item_name){
 
-    $sql = "INSERT INTO favorite(product_name, account) VALUES (?, ?)";
+    }else{
+        $sql = "INSERT INTO favorite(product_name, account) VALUES (?, ?)";
+    }
 
     //執行
     $statement = getPDO()->prepare($sql);

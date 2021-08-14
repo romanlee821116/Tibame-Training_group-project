@@ -1,19 +1,20 @@
-*{
+@charset "UTF-8";
+* {
   box-sizing: border-box;
   font-family: '微軟正黑體';
 }
 
-body{
+body {
   margin: 0;
   min-width: 1199px;
   /* border: 1px solid red; */
 }
 
-.n-discount_header{
+.n-discount_header {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  background-image: url('../images/backend/loginbg.png');
+  background-image: url("../images/backend/loginbg.png");
   background-repeat: no-repeat;
   background-position: center top;
   background-size: 120% 100%;
@@ -21,18 +22,18 @@ body{
   margin-bottom: 30px;
 }
 
-.n-discount_logo{
+.n-discount_logo {
   flex-grow: 2;
   display: flex;
   align-items: center;
   column-gap: 20px;
 }
 
-.n-discount_logo img{
+.n-discount_logo img {
   width: 60px;
 }
 
-.n-discount_logo p{
+.n-discount_logo p {
   font-size: 30px;
   color: #bb866a;
   font-weight: bold;
@@ -40,14 +41,14 @@ body{
   padding: 0;
 }
 
-.n-discount_logout{
+.n-discount_logout {
   display: flex;
   align-items: center;
   column-gap: 10px;
   cursor: pointer;
 }
 
-.n-discount_logout p{
+.n-discount_logout p {
   font-size: 16px;
   color: #172852;
   font-weight: bold;
@@ -55,19 +56,19 @@ body{
   padding: 0;
 }
 
-.n-discount_main{
+.n-discount_main {
   display: flex;
   justify-content: flex-start;
   padding: 0 60px;
 }
 
-.n-discount_left{
+.n-discount_left {
   display: flex;
   flex-direction: column;
   width: 15%;
 }
 
-.n-discount_left > a{
+.n-discount_left > a {
   text-decoration: none;
   font-size: 18px;
   color: #172852;
@@ -84,33 +85,33 @@ body{
   background-color: #f4ece5;
 }
 
-.n-discount_left > a:nth-child(6){
+.n-discount_left > a:nth-child(6) {
   background-color: #f7c242;
 }
 
-.n-discount_left > a:hover{
+.n-discount_left > a:hover {
   background-color: #f7c242;
 }
 
-.n-discount_right{
+.n-discount_right {
   /* border: 1px solid red; */
   width: 85%;
   min-height: 500px;
 }
 
-.n-discount_right > div{
-  border: 1px solid #bb866a; 
-  min-height: 455px;    
+.n-discount_right > div {
+  border: 1px solid #bb866a;
+  min-height: 455px;
 }
 
-.n-discount_right form{
+.n-discount_right form {
   /* border: 1px solid blue; */
   display: flex;
   justify-content: flex-end;
   margin-bottom: 20px;
 }
 
-.n-discount_right form p{
+.n-discount_right form p {
   font-size: 22px;
   color: #bb866a;
   font-weight: bold;
@@ -119,7 +120,7 @@ body{
   border-bottom: 3px solid #b48164;
 }
 
-.n-discount_discountbtn{
+.n-discount_discountbtn {
   /* border: 1px solid red; */
   width: 280px;
   margin-left: 40px;
@@ -128,7 +129,7 @@ body{
   align-items: flex-end;
 }
 
-.n-discount_discountbtn button{
+.n-discount_discountbtn button {
   font-size: 16px;
   font-weight: bold;
   color: #ffffff;
@@ -142,15 +143,14 @@ body{
   height: 28px;
 }
 
-.n-discount_discountbtn .n-discount_add::before{
-  content: url('../images/backend/add.png');
+.n-discount_discountbtn .n-discount_add::before {
+  content: url("../images/backend/add.png");
   position: relative;
   right: 5px;
   top: 2px;
 }
 
-
-.n-discount_right form section{
+.n-discount_right form section {
   flex-grow: 2;
   display: flex;
   justify-content: flex-end;
@@ -158,7 +158,7 @@ body{
   align-items: flex-end;
 }
 
-.n-discount_right form section label{
+.n-discount_right form section label {
   border: 1px solid #a3a3a3;
   width: 80px;
   height: 28px;
@@ -173,7 +173,7 @@ body{
   line-height: 28px;
 }
 
-.n-discount_right form section input{
+.n-discount_right form section input {
   border: 1px solid #cba89a;
   width: 216px;
   height: 28px;
@@ -188,12 +188,12 @@ body{
   padding-left: 5px;
 }
 
-.n-discount_right form section input::placeholder{
+.n-discount_right form section input::placeholder {
   color: #cba89a;
   font-weight: bold;
 }
 
-.n-discount_title{
+.n-discount_title {
   /* border: 1px solid #cba89a; */
   margin: 0;
   padding: 10px;
@@ -204,10 +204,10 @@ body{
   background-color: #cba89a;
   font-size: 16px;
   color: #ffffff;
-  font-weight: bold; 
+  font-weight: bold;
 }
 
-.n-discount_discount{
+.n-discount_discount {
   /* border: 1px solid #cba89a; */
   margin: 0;
   padding: 10px;
@@ -218,49 +218,48 @@ body{
   background-color: #ffffff;
   font-size: 16px;
   color: #172852;
-  font-weight: bold; 
+  font-weight: bold;
   align-items: center;
 }
 
-.n-discount_discount:hover{
+.n-discount_discount:hover {
   background-color: #f8f2ed;
 }
 
-.n-discount_discount li:nth-child(4){
+.n-discount_discount li:nth-child(4) {
   /* -webkit-box 尚在實驗性的屬性值 */
-  display: -webkit-box;  
+  display: -webkit-box;
   /* 用來設定一個元素是水平還是垂直方向排列其內容 */
-  -webkit-box-orient: vertical;  
   /* 限制指定的行數 */
   -webkit-line-clamp: 2;
   overflow: hidden;
 }
 
-.n-discount_discount li:last-child{
+.n-discount_discount li:last-child {
   background-color: #6599e8;
   border-radius: 15px;
   text-align: center;
   color: #ffffff;
 }
 
-.n-discount_discount li:last-child:hover{
+.n-discount_discount li:last-child:hover {
   cursor: pointer;
 }
 
-.n-discount_footer{
+.n-discount_footer {
   padding-right: 60px;
 }
 
-.n-discount_footer ul{
+.n-discount_footer ul {
   /* border: 1px solid #bb866a; */
   margin: 15px 0;
   padding: 0px;
   list-style: none;
   display: flex;
-  justify-content: flex-end;   
+  justify-content: flex-end;
 }
 
-.n-discount_footer ul li{
+.n-discount_footer ul li {
   border: 1px solid #bb866a;
   border-left: none;
   margin: 0;
@@ -270,7 +269,7 @@ body{
   color: #bb866a;
 }
 
-.n-discount_footer ul li:hover{
+.n-discount_footer ul li:hover {
   background-color: #bb866a;
   color: #ffffff;
   cursor: pointer;
@@ -281,15 +280,12 @@ body{
   color: #ffffff !important;
 }
 
-
-.n-discount_footer ul li:first-child{
+.n-discount_footer ul li:first-child {
   border-left: 1px solid #bb866a;
 }
 
-
 /* 編輯 */
-
-.n-discount_edit{
+.n-discount_edit {
   width: 800px;
   height: 90%;
   max-height: 1200px;
@@ -310,19 +306,19 @@ body{
   overflow-y: auto;
 }
 
-.n-discount_edit > p{
+.n-discount_edit > p {
   margin: 0;
   padding: 10px;
   font-size: 18px;
   font-weight: bold;
   color: #ffffff;
-  background-color: #bb866a;   
+  background-color: #bb866a;
   position: sticky;
   top: 0;
   z-index: 3;
 }
 
-.n-discount_discount_mid ul{
+.n-discount_discount_mid ul {
   margin: 0;
   padding: 20px;
   list-style: none;
@@ -333,7 +329,7 @@ body{
   row-gap: 15px;
 }
 
-.n-discount_discount_mid ul li{
+.n-discount_discount_mid ul li {
   font-size: 16px;
   color: #172852;
   font-weight: bold;
@@ -343,19 +339,19 @@ body{
   column-gap: 20px;
 }
 
-.n-discount_discount_mid ul li:first-child{
+.n-discount_discount_mid ul li:first-child {
   display: grid;
   grid-template-columns: 230px 230px 230px;
 }
 
-.n-discount_discount_mid ul li:first-child input{
+.n-discount_discount_mid ul li:first-child input {
   width: 150px;
   border: 1.5px solid #cba89a;
   border-radius: 3px;
   margin-left: 6px;
 }
 
-.n-discount_discount_mid select{
+.n-discount_discount_mid select {
   font-size: 16px;
   color: #172852;
   font-weight: bold;
@@ -364,8 +360,7 @@ body{
   border-radius: 3px;
   overflow: hidden;
   cursor: pointer;
-
-  appearance: none;  
+  appearance: none;
   outline: none;
   background: none;
   background-image: url("../images/backend/select.png");
@@ -373,9 +368,9 @@ body{
   background-position: right;
   background-size: contain;
   border: 1.5px solid #cba89a;
-} 
+}
 
-.n-discount_discount_mid input{
+.n-discount_discount_mid input {
   font-size: 16px;
   color: #172852;
   font-weight: bold;
@@ -383,7 +378,7 @@ body{
   width: 655px;
 }
 
-.n-discount_discount_mid textarea{
+.n-discount_discount_mid textarea {
   font-size: 16px;
   color: #172852;
   font-weight: bold;
@@ -391,33 +386,28 @@ body{
   resize: none;
 }
 
-
-.n-discount_discount_bot{
+.n-discount_discount_bot {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap:25px 15px;
+  gap: 25px 15px;
   justify-items: center;
   padding: 20px;
 }
 
-
-
-
-
-.n-discount_group{
+.n-discount_group {
   /* border: 1px solid red; */
   position: relative;
   width: 340px;
 }
 
-.n-discount_group label{
+.n-discount_group label {
   /* border: 1px solid blue; */
   font-size: 16px;
   color: #172852;
   font-weight: bold;
 }
 
-.n-discount_group input{
+.n-discount_group input {
   /* border: 1px solid purple; */
   position: absolute;
   top: 0;
@@ -426,12 +416,12 @@ body{
   z-index: 2;
 }
 
-.n-discount_group > p{
+.n-discount_group > p {
   margin: 0;
   padding: 3px;
   position: absolute;
   top: -3px;
-  left: 100px;    
+  left: 100px;
   border: 1.5px solid #cba89a;
   border-radius: 5px;
   overflow: hidden;
@@ -439,14 +429,9 @@ body{
   font-size: 16px;
   color: #172852;
   font-weight: bold;
-
-  /* background-image: url("../images/backend/select.png");
-  background-repeat: no-repeat;
-  background-position: right;
-  background-size: contain; */
 }
 
-.n-discount_group > img{
+.n-discount_group > img {
   position: absolute;
   width: 30px;
   right: 25px;
@@ -454,18 +439,18 @@ body{
   border-radius: 5px;
 }
 
-.n-discount_discount_bot div.n-discount_img{
+.n-discount_discount_bot div.n-discount_img {
   border: 1.5px solid #cba89a;
   width: 260px;
   height: 130px;
   margin: 0 auto;
   margin-top: 20px;
-  padding: 0; 
-  margin-right: 25px; 
+  padding: 0;
+  margin-right: 25px;
   position: relative;
 }
 
-.n-discount_discount_bot div.n-discount_img > img{
+.n-discount_discount_bot div.n-discount_img > img {
   max-width: 255px;
   max-height: 125px;
   position: absolute;
@@ -474,7 +459,7 @@ body{
   transform: translate(-50%, -50%);
 }
 
-.n-discount_discount_bot div.n-discount_img > p{
+.n-discount_discount_bot div.n-discount_img > p {
   position: absolute;
   top: 35px;
   left: 70px;
@@ -483,7 +468,7 @@ body{
   font-weight: bold;
 }
 
-.n-discount_editbtn{
+.n-discount_editbtn {
   display: flex;
   justify-content: center;
   column-gap: 30px;
@@ -491,7 +476,7 @@ body{
   /* border: 1px solid red; */
 }
 
-.n-discount_editbtn button{
+.n-discount_editbtn button {
   font-size: 16px;
   font-weight: bold;
   color: #ffffff;
@@ -504,14 +489,12 @@ body{
   height: 34px;
 }
 
-.n-discount_editbtn .n-discount_close{    
+.n-discount_editbtn .n-discount_close {
   background-color: #a3a3a3;
-  border: 1px solid #a3a3a3;    
+  border: 1px solid #a3a3a3;
 }
 
-
-
-#hide{
+#hide {
   background-color: black;
   opacity: .5;
   position: fixed;
@@ -522,14 +505,11 @@ body{
   height: 100%;
 }
 
-.n-discount_right .-active{
+.n-discount_right .-active {
   background: #172852;
 }
 
-.-active2{
+.-active2 {
   color: #a3a3a3;
 }
-
-
-
-
+/*# sourceMappingURL=n-discount.css.map */

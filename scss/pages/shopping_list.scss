@@ -14,17 +14,17 @@ body {
     background-size: cover;
 }
 
-.popBG {
+.loginpop {
     @include popUpBg();
     display: none;
+    position: fixed
 }
 
 .type1 {
     @include popUp_twoBtn();
-}
-
-.mainBtn {
-    @include btn();
+    .mainBtn {
+        @include btn();
+    }
 }
 
 .navbar {

@@ -1,19 +1,20 @@
-*{
+@charset "UTF-8";
+* {
   box-sizing: border-box;
   font-family: '微軟正黑體';
 }
 
-body{
+body {
   margin: 0;
   min-width: 1199px;
   /* border: 1px solid red; */
 }
 
-.n-faq_header{
+.n-faq_header {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  background-image: url('../images/backend/loginbg.png');
+  background-image: url("../images/backend/loginbg.png");
   background-repeat: no-repeat;
   background-position: center top;
   background-size: 120% 100%;
@@ -21,18 +22,18 @@ body{
   margin-bottom: 30px;
 }
 
-.n-faq_logo{
+.n-faq_logo {
   flex-grow: 2;
   display: flex;
   align-items: center;
   column-gap: 20px;
 }
 
-.n-faq_logo img{
+.n-faq_logo img {
   width: 60px;
 }
 
-.n-faq_logo p{
+.n-faq_logo p {
   font-size: 30px;
   color: #bb866a;
   font-weight: bold;
@@ -40,14 +41,14 @@ body{
   padding: 0;
 }
 
-.n-faq_logout{
+.n-faq_logout {
   display: flex;
   align-items: center;
   column-gap: 10px;
   cursor: pointer;
 }
 
-.n-faq_logout p{
+.n-faq_logout p {
   font-size: 16px;
   color: #172852;
   font-weight: bold;
@@ -55,19 +56,19 @@ body{
   padding: 0;
 }
 
-.n-faq_main{
+.n-faq_main {
   display: flex;
   justify-content: flex-start;
   padding: 0 60px;
 }
 
-.n-faq_left{
+.n-faq_left {
   display: flex;
   flex-direction: column;
   width: 15%;
 }
 
-.n-faq_left > a{
+.n-faq_left > a {
   text-decoration: none;
   font-size: 18px;
   color: #172852;
@@ -84,33 +85,33 @@ body{
   background-color: #f4ece5;
 }
 
-.n-faq_left > a:nth-child(7){
+.n-faq_left > a:nth-child(7) {
   background-color: #f7c242;
 }
 
-.n-faq_left > a:hover{
+.n-faq_left > a:hover {
   background-color: #f7c242;
 }
 
-.n-faq_right{
+.n-faq_right {
   /* border: 1px solid red; */
   width: 85%;
-  min-height: 500px;   
+  min-height: 500px;
 }
 
-.n-faq_right > div{
-  border: 1px solid #bb866a; 
-  min-height: 455px;   
+.n-faq_right > div {
+  border: 1px solid #bb866a;
+  min-height: 455px;
 }
 
-.n-faq_right form{
+.n-faq_right form {
   /* border: 1px solid blue; */
   display: flex;
   justify-content: flex-end;
   margin-bottom: 20px;
 }
 
-.n-faq_right form p{
+.n-faq_right form p {
   font-size: 22px;
   color: #bb866a;
   font-weight: bold;
@@ -119,7 +120,7 @@ body{
   border-bottom: 3px solid #b48164;
 }
 
-.n-faq_faqbtn{
+.n-faq_faqbtn {
   /* border: 1px solid red; */
   width: 280px;
   margin-left: 40px;
@@ -128,7 +129,7 @@ body{
   align-items: flex-end;
 }
 
-.n-faq_faqbtn button{
+.n-faq_faqbtn button {
   font-size: 16px;
   font-weight: bold;
   color: #ffffff;
@@ -142,15 +143,14 @@ body{
   height: 28px;
 }
 
-.n-faq_faqbtn .n-faq_add::before{
-  content: url('../images/backend/add.png');
+.n-faq_faqbtn .n-faq_add::before {
+  content: url("../images/backend/add.png");
   position: relative;
   right: 5px;
   top: 2px;
 }
 
-
-.n-faq_right form section{
+.n-faq_right form section {
   flex-grow: 2;
   display: flex;
   justify-content: flex-end;
@@ -158,7 +158,7 @@ body{
   align-items: flex-end;
 }
 
-.n-faq_right form section label{
+.n-faq_right form section label {
   border: 1px solid #a3a3a3;
   width: 80px;
   height: 28px;
@@ -173,7 +173,7 @@ body{
   line-height: 28px;
 }
 
-.n-faq_right form section input{
+.n-faq_right form section input {
   border: 1px solid #cba89a;
   width: 216px;
   height: 28px;
@@ -188,12 +188,12 @@ body{
   padding-left: 5px;
 }
 
-.n-faq_right form section input::placeholder{
+.n-faq_right form section input::placeholder {
   color: #cba89a;
   font-weight: bold;
 }
 
-.n-faq_title{
+.n-faq_title {
   /* border: 1px solid #cba89a; */
   margin: 0;
   padding: 10px;
@@ -204,10 +204,10 @@ body{
   background-color: #cba89a;
   font-size: 16px;
   color: #ffffff;
-  font-weight: bold; 
+  font-weight: bold;
 }
 
-.n-faq_faq{
+.n-faq_faq {
   /* border: 1px solid #cba89a; */
   margin: 0;
   padding: 10px;
@@ -218,60 +218,57 @@ body{
   background-color: #ffffff;
   font-size: 16px;
   color: #172852;
-  font-weight: bold; 
+  font-weight: bold;
   align-items: center;
 }
 
-.n-faq_faq:hover{
+.n-faq_faq:hover {
   background-color: #f8f2ed;
 }
 
-.n-faq_faq li:nth-child(3){
+.n-faq_faq li:nth-child(3) {
   /* -webkit-box 尚在實驗性的屬性值 */
-  display: -webkit-box;  
+  display: -webkit-box;
   /* 用來設定一個元素是水平還是垂直方向排列其內容 */
-  -webkit-box-orient: vertical;  
   /* 限制指定的行數 */
   -webkit-line-clamp: 2;
   overflow: hidden;
 }
 
-.n-faq_faq li:nth-child(4){
+.n-faq_faq li:nth-child(4) {
   /* -webkit-box 尚在實驗性的屬性值 */
-  display: -webkit-box;  
+  display: -webkit-box;
   /* 用來設定一個元素是水平還是垂直方向排列其內容 */
-  -webkit-box-orient: vertical;  
   /* 限制指定的行數 */
   -webkit-line-clamp: 2;
   overflow: hidden;
 }
 
-
-.n-faq_faq li:last-child{
+.n-faq_faq li:last-child {
   background-color: #6599e8;
   border-radius: 15px;
   text-align: center;
   color: #ffffff;
 }
 
-.n-faq_faq li:last-child:hover{
+.n-faq_faq li:last-child:hover {
   cursor: pointer;
 }
 
-.n-faq_footer{
+.n-faq_footer {
   padding-right: 60px;
 }
 
-.n-faq_footer ul{
+.n-faq_footer ul {
   /* border: 1px solid #bb866a; */
   margin: 15px 0;
   padding: 0px;
   list-style: none;
   display: flex;
-  justify-content: flex-end; 
+  justify-content: flex-end;
 }
 
-.n-faq_footer ul li{
+.n-faq_footer ul li {
   border: 1px solid #bb866a;
   border-left: none;
   margin: 0;
@@ -281,7 +278,7 @@ body{
   color: #bb866a;
 }
 
-.n-faq_footer ul li:hover{
+.n-faq_footer ul li:hover {
   background-color: #bb866a;
   color: #ffffff;
   cursor: pointer;
@@ -292,14 +289,12 @@ body{
   color: #ffffff !important;
 }
 
-.n-faq_footer ul li:first-child{
+.n-faq_footer ul li:first-child {
   border-left: 1px solid #bb866a;
 }
 
-
 /* 編輯 */
-
-.n-faq_edit{
+.n-faq_edit {
   width: 800px;
   /* height: 500px; */
   /* border: 1px solid red; */
@@ -308,7 +303,7 @@ body{
   border-radius: 10px;
   overflow: hidden;
   /* position: relative;
-  left: 20%; */
+    left: 20%; */
   position: fixed;
   left: 50%;
   top: 50%;
@@ -316,22 +311,21 @@ body{
   z-index: 2;
   background-color: #ffffff;
   /* overflow-y: scroll; */
-
 }
 
-.n-faq_edit > p{
+.n-faq_edit > p {
   margin: 0;
   padding: 10px;
   font-size: 18px;
   font-weight: bold;
   color: #ffffff;
-  background-color: #bb866a;   
+  background-color: #bb866a;
   position: sticky;
   top: 0;
   z-index: 3;
 }
 
-.n-faq_edit ul{
+.n-faq_edit ul {
   margin: 0;
   padding: 20px;
   list-style: none;
@@ -342,7 +336,7 @@ body{
   row-gap: 15px;
 }
 
-.n-faq_edit ul li{
+.n-faq_edit ul li {
   font-size: 16px;
   color: #172852;
   font-weight: bold;
@@ -350,15 +344,12 @@ body{
   padding: 0;
 }
 
-.n-faq_edit ul li:last-child{
+.n-faq_edit ul li:last-child {
   display: flex;
   column-gap: 3px;
 }
 
-
-
-
-.n-faq_edit select{
+.n-faq_edit select {
   font-size: 16px;
   color: #172852;
   font-weight: bold;
@@ -367,8 +358,7 @@ body{
   border-radius: 3px;
   overflow: hidden;
   cursor: pointer;
-
-  appearance: none;  
+  appearance: none;
   outline: none;
   background: none;
   background-image: url("../images/backend/select.png");
@@ -376,9 +366,9 @@ body{
   background-position: right;
   background-size: contain;
   border: 1.5px solid #cba89a;
-} 
+}
 
-.n-faq_edit input{
+.n-faq_edit input {
   font-size: 16px;
   color: #172852;
   font-weight: bold;
@@ -386,7 +376,7 @@ body{
   width: 655px;
 }
 
-.n-faq_edit textarea{
+.n-faq_edit textarea {
   font-size: 16px;
   color: #172852;
   font-weight: bold;
@@ -394,11 +384,7 @@ body{
   resize: none;
 }
 
-
-
-
-
-.n-faq_editbtn{
+.n-faq_editbtn {
   display: flex;
   justify-content: center;
   column-gap: 30px;
@@ -406,7 +392,7 @@ body{
   /* border: 1px solid red; */
 }
 
-.n-faq_editbtn button{
+.n-faq_editbtn button {
   font-size: 16px;
   font-weight: bold;
   color: #ffffff;
@@ -419,16 +405,12 @@ body{
   height: 34px;
 }
 
-.n-faq_editbtn .n-faq_close{    
+.n-faq_editbtn .n-faq_close {
   background-color: #a3a3a3;
-  border: 1px solid #a3a3a3;    
+  border: 1px solid #a3a3a3;
 }
 
-
-
-
-
-#hide{
+#hide {
   background-color: black;
   opacity: .5;
   position: fixed;
@@ -439,17 +421,11 @@ body{
   height: 100%;
 }
 
-.n-faq_right .-active{
+.n-faq_right .-active {
   background: #172852;
 }
 
-.-active2{
+.-active2 {
   color: #a3a3a3;
 }
-
-
-
-
-
-
-
+/*# sourceMappingURL=n-faq.css.map */

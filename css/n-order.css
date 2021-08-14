@@ -1,19 +1,20 @@
-*{
+@charset "UTF-8";
+* {
   box-sizing: border-box;
   font-family: '微軟正黑體';
 }
 
-body{
+body {
   margin: 0;
   min-width: 1199px;
   /* border: 1px solid red; */
 }
 
-.n-order_header{
+.n-order_header {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  background-image: url('../images/backend/loginbg.png');
+  background-image: url("../images/backend/loginbg.png");
   background-repeat: no-repeat;
   background-position: center top;
   background-size: 120% 100%;
@@ -21,18 +22,18 @@ body{
   margin-bottom: 30px;
 }
 
-.n-order_logo{
+.n-order_logo {
   flex-grow: 2;
   display: flex;
   align-items: center;
   column-gap: 20px;
 }
 
-.n-order_logo img{
+.n-order_logo img {
   width: 60px;
 }
 
-.n-order_logo p{
+.n-order_logo p {
   font-size: 30px;
   color: #bb866a;
   font-weight: bold;
@@ -40,14 +41,14 @@ body{
   padding: 0;
 }
 
-.n-order_logout{
+.n-order_logout {
   display: flex;
   align-items: center;
   column-gap: 10px;
   cursor: pointer;
 }
 
-.n-order_logout p{
+.n-order_logout p {
   font-size: 16px;
   color: #172852;
   font-weight: bold;
@@ -55,19 +56,19 @@ body{
   padding: 0;
 }
 
-.n-order_main{
+.n-order_main {
   display: flex;
   justify-content: flex-start;
   padding: 0 60px;
 }
 
-.n-order_left{
+.n-order_left {
   display: flex;
   flex-direction: column;
   width: 15%;
 }
 
-.n-order_left > a{
+.n-order_left > a {
   text-decoration: none;
   font-size: 18px;
   color: #172852;
@@ -84,33 +85,33 @@ body{
   background-color: #f4ece5;
 }
 
-.n-order_left > a:nth-child(2){
+.n-order_left > a:nth-child(2) {
   background-color: #f7c242;
 }
 
-.n-order_left > a:hover{
+.n-order_left > a:hover {
   background-color: #f7c242;
 }
 
-.n-order_right{
+.n-order_right {
   /* border: 1px solid red; */
   width: 85%;
   min-height: 500px;
 }
 
-.n-order_right > div{
-  border: 1px solid #bb866a; 
-  min-height: 455px;    
+.n-order_right > div {
+  border: 1px solid #bb866a;
+  min-height: 455px;
 }
 
-.n-order_right form{
+.n-order_right form {
   /* border: 1px solid blue; */
   display: flex;
   justify-content: flex-end;
   margin-bottom: 20px;
 }
 
-.n-order_right form p{
+.n-order_right form p {
   font-size: 22px;
   color: #bb866a;
   font-weight: bold;
@@ -119,7 +120,7 @@ body{
   border-bottom: 3px solid #b48164;
 }
 
-.n-order_right form section{
+.n-order_right form section {
   flex-grow: 2;
   display: flex;
   justify-content: flex-end;
@@ -127,7 +128,7 @@ body{
   align-items: flex-end;
 }
 
-.n-order_right form section label{
+.n-order_right form section label {
   border: 1px solid #a3a3a3;
   width: 80px;
   height: 28px;
@@ -142,7 +143,7 @@ body{
   line-height: 28px;
 }
 
-.n-order_right form section input{
+.n-order_right form section input {
   border: 1px solid #cba89a;
   width: 216px;
   height: 28px;
@@ -157,12 +158,12 @@ body{
   padding-left: 5px;
 }
 
-.n-order_right form section input::placeholder{
+.n-order_right form section input::placeholder {
   color: #cba89a;
   font-weight: bold;
 }
 
-.n-order_title{
+.n-order_title {
   /* border: 1px solid #cba89a; */
   margin: 0;
   padding: 10px;
@@ -173,10 +174,10 @@ body{
   background-color: #cba89a;
   font-size: 16px;
   color: #ffffff;
-  font-weight: bold; 
+  font-weight: bold;
 }
 
-.n-order_order{
+.n-order_order {
   /* border: 1px solid #cba89a; */
   margin: 0;
   padding: 10px;
@@ -187,48 +188,48 @@ body{
   background-color: #ffffff;
   font-size: 16px;
   color: #172852;
-  font-weight: bold; 
+  font-weight: bold;
   align-items: center;
 }
 
-.n-order_order:hover{
+.n-order_order:hover {
   background-color: #f8f2ed;
 }
 
-
-.n-order_order li{
-  white-space: nowrap;  
+.n-order_order li {
+  white-space: nowrap;
   /* 不斷行 */
-  overflow: hidden;    
+  overflow: hidden;
   /* 隱藏 */
-  text-overflow: ellipsis; /* 出現省略符號 */
+  text-overflow: ellipsis;
+  /* 出現省略符號 */
 }
 
-.n-order_order li:last-child{
+.n-order_order li:last-child {
   background-color: #6599e8;
   border-radius: 15px;
   text-align: center;
   color: #ffffff;
 }
 
-.n-order_order li:last-child:hover{
+.n-order_order li:last-child:hover {
   cursor: pointer;
 }
 
-.n-order_footer{
+.n-order_footer {
   padding-right: 60px;
 }
 
-.n-order_footer ul{
+.n-order_footer ul {
   /* border: 1px solid #bb866a; */
   margin: 15px 0;
   padding: 0px;
   list-style: none;
   display: flex;
-  justify-content: flex-end; 
+  justify-content: flex-end;
 }
 
-.n-order_footer ul li{
+.n-order_footer ul li {
   border: 1px solid #bb866a;
   border-left: none;
   margin: 0;
@@ -238,7 +239,7 @@ body{
   color: #bb866a;
 }
 
-.n-order_footer ul li:hover{
+.n-order_footer ul li:hover {
   background-color: #bb866a;
   color: #ffffff;
   cursor: pointer;
@@ -249,19 +250,16 @@ body{
   color: #ffffff !important;
 }
 
-.n-order_footer ul li:first-child{
+.n-order_footer ul li:first-child {
   border-left: 1px solid #bb866a;
 }
 
-
-
 /* 編輯區 */
-
-.n-order_edit{
+.n-order_edit {
   width: 750px;
   height: 90%;
   max-height: 1150px;
-  /* border: 1px solid red; */    
+  /* border: 1px solid red; */
   border-radius: 10px;
   overflow: hidden;
   position: fixed;
@@ -272,21 +270,20 @@ body{
   z-index: 2;
   background-color: #ffffff;
   overflow-y: auto;
-
 }
 
-.n-order_edit > p{
+.n-order_edit > p {
   margin: 0;
   padding: 10px;
   font-size: 18px;
   font-weight: bold;
   color: #ffffff;
-  background-color: #bb866a;    
+  background-color: #bb866a;
   position: sticky;
   top: 0;
 }
 
-.n-order_order_search{
+.n-order_order_search {
   /* border: 1px solid red; */
   padding: 20px;
   font-size: 16px;
@@ -294,7 +291,7 @@ body{
   font-weight: bold;
 }
 
-.n-order_order_search > input{
+.n-order_order_search > input {
   font-size: 16px;
   color: #172852;
   font-weight: bold;
@@ -303,20 +300,20 @@ body{
   border: 2px solid #cba89a;
 }
 
-.n-order_total_status{
+.n-order_total_status {
   margin: 30px;
   margin-top: 0;
   padding: 15px 20px;
   list-style: none;
   display: flex;
-  justify-content: center;  
+  justify-content: center;
   column-gap: 30px;
   color: #172852;
-  font-weight: bold;  
+  font-weight: bold;
   border: 2px solid #cba89a;
 }
 
-.n-order_total_status select{
+.n-order_total_status select {
   font-size: 16px;
   color: #172852;
   font-weight: bold;
@@ -325,8 +322,7 @@ body{
   border-radius: 3px;
   overflow: hidden;
   cursor: pointer;
-
-  appearance: none;  
+  appearance: none;
   outline: none;
   background: none;
   background-image: url("../images/backend/select.png");
@@ -335,7 +331,7 @@ body{
   background-size: contain;
 }
 
-.n-order_order_information{
+.n-order_order_information {
   list-style: none;
   font-size: 16px;
   color: #172852;
@@ -348,7 +344,7 @@ body{
   border: 2px solid #cba89a;
 }
 
-.n-order_order_detail{
+.n-order_order_detail {
   list-style: none;
   font-size: 16px;
   color: #172852;
@@ -358,11 +354,11 @@ body{
   border: 2px solid #cba89a;
 }
 
-.n-order_order_detail p{
+.n-order_order_detail p {
   margin: 0;
 }
 
-.n-order_detail_title{
+.n-order_detail_title {
   margin: 10px;
   padding: 8px 15px;
   list-style: none;
@@ -372,7 +368,7 @@ body{
   margin-bottom: 0;
 }
 
-.n-order_order_detail > section{
+.n-order_order_detail > section {
   border: 2px solid #f4ece5;
   width: 624px;
   height: 160px;
@@ -387,12 +383,11 @@ body{
   justify-content: flex-start;
 }
 
-.n-order_order_detail > section > ul > li{
+.n-order_order_detail > section > ul > li {
   width: 200px;
 }
 
-
-.n-order_detail_content{
+.n-order_detail_content {
   margin: 0px;
   padding: 8px 15px;
   list-style: none;
@@ -401,16 +396,16 @@ body{
   align-items: center;
 }
 
-.n-order_order_checkout{
+.n-order_order_checkout {
   margin: 0px;
-  padding: 10px 0;    
+  padding: 10px 0;
   padding-left: 350px;
   width: 624px;
   list-style: none;
   text-align: left;
 }
 
-.n-order_editbtn{
+.n-order_editbtn {
   margin-top: 20px;
   display: flex;
   justify-content: center;
@@ -418,7 +413,7 @@ body{
   margin-bottom: 20px;
 }
 
-.n-order_editbtn button{
+.n-order_editbtn button {
   font-size: 16px;
   font-weight: bold;
   color: #ffffff;
@@ -430,12 +425,12 @@ body{
   cursor: pointer;
 }
 
-.n-order_editbtn .n-order_close{    
+.n-order_editbtn .n-order_close {
   background-color: #a3a3a3;
-  border: 1px solid #a3a3a3;    
+  border: 1px solid #a3a3a3;
 }
 
-#hide{
+#hide {
   background-color: black;
   opacity: .5;
   position: fixed;
@@ -445,10 +440,7 @@ body{
   height: 100%;
 }
 
-.n-order_right .-active{
+.n-order_right .-active {
   background: #172852;
 }
-
-
-
-
+/*# sourceMappingURL=n-order.css.map */
