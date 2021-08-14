@@ -1,6 +1,6 @@
 <?php
 
-include("./config.php");
+include("./connection.php");
 
 $nowtap = $_POST["tap"];
 $change = $_POST["clickcl"];
