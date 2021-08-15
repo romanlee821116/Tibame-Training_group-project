@@ -164,7 +164,7 @@ Vue.component('discount-add', {
                     success: function (res) {
                         alert(res);
                         window.location.reload();
-                        this.$emit('dsave', this.d_number, this.d_money, this.on_off, this.d_main_title, this.d_sec_title, this.d_main_content, this.d_sec_content);
+                        Vue.$emit('dsave', this.d_number, this.d_money, this.on_off, this.d_main_title, this.d_sec_title, this.d_main_content, this.d_sec_content);
                     },
                     error: function (exception) {
                         alert("數據載入失敗: " + exception.status);

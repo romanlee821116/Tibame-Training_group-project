@@ -1088,7 +1088,7 @@ body {
 }
 
 .finish_itemPrice > p:first-child, .finish_discount > p:first-child {
-  width: 70%;
+  width: 74%;
   margin: 0;
   color: #cba89a;
   font-size: 16px;
@@ -1120,7 +1120,7 @@ body {
 }
 
 .finish_total > div:first-child {
-  width: 70%;
+  width: 74%;
   color: #cba89a;
   font-size: 16px;
   font-weight: bold;

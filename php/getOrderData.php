@@ -7,7 +7,7 @@ $nowpage = $_POST["page"];
 $pdo = getPDO();
 $pagecount = $pdo->query('SELECT * FROM tfd102_g3.order;');
 $pagecount = $pagecount->rowCount();
-$odata = $pdo->query('SELECT main.* , sp.shipping_fee, dt.discount_name, dt.discount_price FROM tfd102_g3.order as main inner join discount as dt on main.discount_id = dt.discount_id inner join shippingfee as sp on main.shipping_id = sp.shipping_id ORDER BY order_list LIMIT '.(($nowpage-1)*10).',10;');
+$odata = $pdo->query('SELECT main.* , sp.shipping_fee, dt.discount_name, dt.discount_price FROM tfd102_g3.order as main inner join discount as dt on main.discount_id = dt.discount_id inner join shippingfee as sp on main.shipping_id = sp.shipping_id ORDER BY order_id LIMIT '.(($nowpage-1)*10).',10;');
 $odata = $odata->fetchAll();
 foreach($odata as $value){
     if($value["order_list"]){

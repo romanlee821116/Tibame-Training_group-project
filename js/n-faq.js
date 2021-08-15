@@ -105,9 +105,10 @@ Vue.component('faq-add', {
                         alert("數據載入失敗: " + exception.status);
                     }
                 })
+                this.$emit('fsave', this.f_sort, this.f_question, this.f_answer);
             }
             
-            this.$emit('fsave', this.f_sort, this.f_question, this.f_answer);
+            
         },
         
     }  

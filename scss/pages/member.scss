@@ -639,18 +639,10 @@ html, body{
     color: #172852;
 }
 
-// .receiverDetail>p {
-//     color: #647bb5;
-//     font-size: 12px;
-//     text-align: center;
-//     padding: 5px 0 5px 0;
-//     margin: 0;
-// }
-
 .receiverDetail>button {
     margin: 0 auto;
     @include btn();
-    margin-top: 5px;
+    margin-top: 25px;
 }
 
 
@@ -725,6 +717,7 @@ html, body{
     width: calc((100% - 95px)/5);
     margin-left: 20px;
     margin-bottom: 20px;
+    cursor: pointer;
 }
 
 .memberLikePack:nth-child(5n+1) {
@@ -756,7 +749,7 @@ html, body{
     // margin-top: 130px;
 // }
 
-// =================跳出彈窗們===================
+// =================跳出彈窗們(單按鈕)===================
 .loginpopBG{
 	@include popUpBg();
     display: none;
@@ -776,6 +769,21 @@ html, body{
         margin-bottom: 20px;
     }
 }
+
+// =================跳出彈窗們(雙按鈕)===================
+.popBG{
+    @include popUpBg();
+}
+
+.type1{
+    @include popUp_twoBtn();
+    position: relative; //預設是fixed
+
+    .mainBtn{
+        @include btn();   
+    }
+}
+
 
 /* ================= R W D =================== */
 
@@ -816,6 +824,7 @@ body {
         .memberPart5 {
             .memberLikePack {
                 width: calc((100% - 75px)/4);
+                
             }
             .memberLikePack:nth-child(5n+1) {
                 margin-left: 20px;
@@ -823,6 +832,22 @@ body {
             .memberLikePack:nth-child(4n+1) {
                 margin-left: 0;
             }
+
+            .memberFavoriteName{
+                    display: none;
+                    position: absolute;
+                    padding-top: 42%;
+                    top: 0;
+                    left: 0;
+                    text-align: center;
+                    width: 100%;
+                    height: 100%;
+                    color: #172852;
+                    background-color: rgba(255,255,255,.5);
+                    // &:hover{
+                    //     display: block;
+                    // }
+                }
         }
         // 標題改為滑動的方式
         .memberLine {
