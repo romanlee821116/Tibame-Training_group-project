@@ -1,5 +1,5 @@
 @import '../mixin/mixin';
-@import '../base/reset.scss';
+// @import '../base/reset.scss';
 @import '../base/color.scss';
 * {
     box-sizing: border-box;
@@ -14,15 +14,10 @@ body {
     background-size: cover;
 }
 
-.popBG {
+.loginpop {
     @include popUpBg();
     display: none;
-    .type1 {
-        @include popUp_twoBtn();
-        .mainBtn {
-            @include btn();
-        }        
-    } 
+    position: fixed
 }
   
 
@@ -31,7 +26,12 @@ body {
 
 
 
-
+.type1 {
+    @include popUp_twoBtn();
+    .mainBtn {
+        @include btn();
+    }
+}
 
 .navbar {
     @include navbar();
@@ -499,7 +499,7 @@ body {
         left: 200px;
     }
     .product_left {
-        width: 298px;
+        width: 350px;
         height: 350px;
         transform: translateY(0);
     }

@@ -1,57 +1,4 @@
 @charset "UTF-8";
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: bold inherit '微軟正黑體';
-  vertical-align: baseline;
-  box-sizing: border-box;
-  text-decoration: none;
-  font-weight: 900;
-}
-
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-  display: block;
-}
-
-body {
-  line-height: 1;
-}
-
-ol, ul {
-  list-style: none;
-}
-
-blockquote, q {
-  quotes: none;
-}
-
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: '';
-  content: none;
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
 * {
   box-sizing: border-box;
   font-family: '微軟正黑體';
@@ -64,7 +11,7 @@ body {
   background-size: cover;
 }
 
-.popBG {
+.loginpop {
   width: 100vw;
   height: 100%;
   position: absolute;
@@ -73,9 +20,10 @@ body {
   z-index: 991;
   background-color: rgba(255, 255, 255, 0.6);
   display: none;
+  position: fixed;
 }
 
-.popBG .type1 {
+.type1 {
   width: 33%;
   height: 320px;
   max-width: 400px;
@@ -95,38 +43,38 @@ body {
   z-index: 999;
 }
 
-.popBG .type1 img {
+.type1 img {
   width: 80px;
   height: auto;
 }
 
-.popBG .type1 h2 {
+.type1 h2 {
   color: #172852;
   font-size: 28px;
   margin-top: 15px;
   margin-bottom: 10px;
 }
 
-.popBG .type1 p {
+.type1 p {
   color: #172852;
   margin-bottom: 45px;
   font-size: 14px;
   font-weight: 900;
 }
 
-.popBG .type1 div {
+.type1 div {
   width: 100%;
   display: flex;
   justify-content: space-evenly;
 }
 
 @media (max-width: 575px) {
-  .popBG .type1 {
+  .type1 {
     padding: 40px 20px;
   }
 }
 
-.popBG .type1 .mainBtn {
+.type1 .mainBtn {
   display: block;
   padding: 8px 10px;
   width: 120px;
@@ -139,7 +87,7 @@ body {
   cursor: pointer;
 }
 
-.popBG .type1 .mainBtn:hover {
+.type1 .mainBtn:hover {
   background-color: #2e447c;
   color: #fff;
   border: 3px solid #2e447c;
@@ -933,7 +881,7 @@ body {
     left: 200px;
   }
   .product_left {
-    width: 298px;
+    width: 350px;
     height: 350px;
     transform: translateY(0);
   }

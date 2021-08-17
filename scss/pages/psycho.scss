@@ -215,10 +215,15 @@ body {
 
 .psycho_nextbtndisplay {
     display: none;
+    align-items: center;
+}
+
+.psycho_nextbtn{
+    margin: 0 auto;
+    height: 4vh;
 }
 
 .psycho_nextbtn > a {
-    margin: 2vh auto;
     background-color: #172852;
     color: rgb(255, 255, 255);
     padding: 10px 20px;

@@ -182,7 +182,7 @@ var appVue = new Vue({
                 method: "POST",
                 url: "../php/n-order_update.php",
                 data:{ 
-                    account: this.orders[n_index].account, // 該會員帳號
+                    order_list: this.orders[n_index].order_list, // 該會員帳號
                     payment_status: this.orders[n_index].payment_status, //付款狀態
                     order_status: this.orders[n_index].order_status, // 訂單狀態
                     shipping_status: this.orders[n_index].shipping_status, //貨運狀態

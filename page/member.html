@@ -217,7 +217,7 @@
                 <!-- 彈出跳窗 -->
                 <div class='memberPart1Popup loginpopBG'>
                     <div class="type2">            
-                        <img src="../images/login/send_password.png" alt="">
+                        <img src="../images/member/popup_upLoad_icon.png" alt="">
                         <h2>確認更新！</h2>
                         <p>已將您的會員資料更新囉</p>
                         <div>
@@ -246,7 +246,7 @@
                 <!-- 彈出跳窗 -->
                 <div class='memberPart2Popup loginpopBG'>
                     <div class="type2">            
-                        <img src="../images/login/send_password.png" alt="">
+                        <img src="../images/member/popup_upLoad_icon.png" alt="">
                         <h2>確認更新！</h2>
                         <p>已將您的會員密碼更新囉</p>
                         <div>
@@ -360,6 +360,7 @@
                     // **更新html內容前先清空原有資料** (若沒有清空資料會一直累加)
                     $("#memberOrderList3").html("");
                     $("#memberOrderList4").html("");
+                    $(".memberPart5").html("");
 
                     // console.log(response);
 
@@ -587,6 +588,7 @@
                         $('.memberPart5').append(
                             `<div class='memberLikePack'>
                                 <img class='memberLikeImg' src="../images/shopping_list/${row.product_image1}">
+                                <div class='memberFavoriteName'>${row.product_name}</div>
                                 <img class='memberLikeHeart' src="../images/member/favorite.png">
                             </div>`
                         );
@@ -655,6 +657,7 @@
                         $('.memberPart1Popup .type2 h2').text('確認更新');
                         $('.memberPart1Popup .type2 p').text('已將您的會員資料更新');
                         $('.memberPart1Popup').show();
+                        $('body').addClass('stopScroll');s
                     },
                     error: function(exception) {
                         alert("很抱歉，發生錯誤: " + exception.status);
@@ -667,6 +670,7 @@
                 $('.memberPart1Popup .type2 h2').text('空格未填');
                 $('.memberPart1Popup .type2 p').text('請確認後再重新送出');
                 $('.memberPart1Popup').show();
+                $('body').addClass('stopScroll');
             }
         };
 
@@ -762,11 +766,13 @@
                             $('.memberPart2Popup .type2 p').text('已將您的會員密碼更新');
                             $('.memberPart2Popup').show();
                             $('.memberPart2 input').val('');
+                            $('body').addClass('stopScroll');
                         }else{
                             // alert('尼的舊密碼錯囉(இдஇ)，請重新輸入 '); 
                             $('.memberPart2Popup .type2 h2').text('舊密碼錯誤');
                             $('.memberPart2Popup .type2 p').text('請您確認後重新輸入');
                             $('.memberPart2Popup').show();
+                            $('body').addClass('stopScroll');
                         };
 
                     },
