@@ -225,7 +225,8 @@ input{
     width: 100%;
     display: block;
 
-    margin-bottom: 8px;
+    // margin-bottom: 8px;
+    margin-bottom: 11px;
     padding: 8px;
     border-radius: 5px;
     background-color: #f0ebe9;
@@ -343,7 +344,8 @@ input{
 /* 姓別 */
 #loginFormPage div input[type="radio"] {
     /* vertical-align: text-top; */
-    margin-bottom: 2px;
+    // margin-bottom: 2px;
+    margin: 5px 0;
 }
 #loginFormPage .loginWrapper .loginErrorWrap .loginGender{
     margin-bottom: 10px;

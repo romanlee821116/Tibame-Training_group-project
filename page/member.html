@@ -657,6 +657,7 @@
                         $('.memberPart1Popup .type2 h2').text('確認更新');
                         $('.memberPart1Popup .type2 p').text('已將您的會員資料更新');
                         $('.memberPart1Popup').show();
+                        $('body').addClass('stopScroll');s
                     },
                     error: function(exception) {
                         alert("很抱歉，發生錯誤: " + exception.status);
@@ -669,6 +670,7 @@
                 $('.memberPart1Popup .type2 h2').text('空格未填');
                 $('.memberPart1Popup .type2 p').text('請確認後再重新送出');
                 $('.memberPart1Popup').show();
+                $('body').addClass('stopScroll');
             }
         };
 
@@ -764,11 +766,13 @@
                             $('.memberPart2Popup .type2 p').text('已將您的會員密碼更新');
                             $('.memberPart2Popup').show();
                             $('.memberPart2 input').val('');
+                            $('body').addClass('stopScroll');
                         }else{
                             // alert('尼的舊密碼錯囉(இдஇ)，請重新輸入 '); 
                             $('.memberPart2Popup .type2 h2').text('舊密碼錯誤');
                             $('.memberPart2Popup .type2 p').text('請您確認後重新輸入');
                             $('.memberPart2Popup').show();
+                            $('body').addClass('stopScroll');
                         };
 
                     },
