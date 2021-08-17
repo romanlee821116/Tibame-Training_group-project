@@ -140,35 +140,6 @@
                 <div>付款方式：</div>
                 <div>{{orderer_data.payment_type}}</div>
               </div>
-
-              <!-- 選信用卡才顯示 -->
-              <!-- <div class="OC_credit"> -->
-
-                <!-- 卡號 -->
-                <!-- <div class="OC_cardNumber OC_cardNumber1">
-                  <div class="OC_00 OC_001">信用卡卡號：</div>
-                  <div>
-                    <input type="text"  v-model="card_data.cardNumber1" disabled>-
-                    <input type="text"  v-model="card_data.cardNumber2" disabled>-
-                    <input type="text"  v-model="card_data.cardNumber3" disabled>-
-                    <input type="text"  v-model="card_data.cardNumber4" disabled>
-                  </div>
-                </div> -->
-
-                <!-- 有效期限 -->
-                <!-- <div class="OC_cardDate">
-                  <div class="OC_01">卡片有效期限：</div>
-                  <div>{{card_data.cardYear}} / {{card_data.cardMonth}}</div>
-                </div> -->
-
-                <!-- 認證碼 -->
-                <!-- <div class="OC_cardNumber">
-                  <div class="OC_00">卡片認證碼：</div>
-                  <input type="text" v-model="card_data.cardCertification" disabled>
-                </div>
-
-              </div> -->
-
             </form>
 
 
@@ -260,15 +231,15 @@
               <input type="text" name="TradeDesc" value="Desc" class="form-control"/>
           </label>
           <label class="col-xs-12">名稱 (ItemName):
-              <input type="text"                          name="item_Name[]" value="" class="form-control"/>  
-              <input type="text"                          name="item_Price[]" value="" class="form-control"/>
-              <input type="text"                          name="item_Qty[]" value="" class="form-control"/>
+              <input type="text"                          name="item_Name" value="" class="form-control"/>  
+              <input type="text"                          name="item_Price" value="" class="form-control"/>
+              <input type="text"                          name="item_Qty" value="" class="form-control"/>
               <input type="text" v-for='item in itemList' name="item_Name[]" :value="item.itemName" class="form-control"/>
               <input type="text" v-for='item in itemList' name="item_Price[]" :value="item.price" class="form-control"/>
               <input type="text" v-for='item in itemList' name="item_Qty[]" :value="item.quantity" class="form-control"/>
-              <input type="text"                          name="cus_Name[]"  value="" class="form-control"/>
-              <input type="text"                          name="cus_Price[]"  value="" class="form-control"/>
-              <input type="text"                          name="cus_Qty[]"  value="" class="form-control"/>
+              <input type="text"                          name="cus_Name"  value="" class="form-control"/>
+              <input type="text"                          name="cus_Price"  value="" class="form-control"/>
+              <input type="text"                          name="cus_Qty"  value="" class="form-control"/>
               <input type="text" v-for='item in customization' name="cus_Name[]" :value="item.itemName" class="form-control"/>
               <input type="text" v-for='item in customization' name="cus_Price[]" :value="item.price" class="form-control"/>
               <input type="text" v-for='item in customization' name="cus_Qty[]" :value="item.quantity" class="form-control"/>
@@ -367,24 +338,42 @@
       
       let orderlist = new Date();
       orderlist = orderlist.getTime().toString().slice(-6);
-      // console.log(orderlist);
       let orderer_data = JSON.parse(localStorage.getItem('orderer_data'));
-      // console.log(info);
       orderer_data['order_number']=parseInt(orderlist);
       localStorage.setItem('orderer_data', JSON.stringify(orderer_data));
       
-      
-
-      let payment = $('.OC_payMoney > div:last-child').text();
+      let payment = localStorage.Payment_Type;
+      let payment_Type;
+        if(payment == 'onlinePay'){
+            payment_Type = '線上付款';
+          }else{
+            payment_Type = '取貨付款';
+        };
+      let shipping_id;
+      if(localStorage.shipping == 60){
+        shipping_id = 2;
+      }else if(localStorage.shipping == 80){
+        shipping_id = 1;
+      }else{
+        shipping_id = 3;
+      }
       let shipping_address = $("input[name='ordererAddress']").val();
       let receiver_name = $("input[name='ordererName']").val();
       let receiver_phone = $("input[name='ordererPhone']").val();
       let payment_status;
-        if(payment == '信用卡付款'){
+        if(payment == 'onlinePay'){
           payment_status = 1;
         }else{
           payment_status = 0;
-        }
+        };
+      let store;
+      if(localStorage.shipping == 60){
+        store = localStorage.CVSStoreName +'('+ localStorage.CVaddress +')';
+      }else if(localStorage.shipping == 80){
+        store = '宅配';
+      }else{
+        store = '自取';
+      }
       let discount_id = localStorage.getItem('discount');
       let item_list=JSON.parse(localStorage.getItem('item_List'));
       let customized_list = JSON.parse(localStorage.getItem('customized_List'));
@@ -405,14 +394,14 @@
             data:{
               orderlist: orderlist,
               account: account,
-              payment: payment,
-              shipping_id: 2,
-              store: 'blank',
+              payment: payment_Type,
+              shipping_id: shipping_id,
+              store: store,
               shipping_address: shipping_address,
               receiver_name: receiver_name,
               receiver_phone: receiver_phone,
               payment_status: payment_status,
-              shipping_status: 1,
+              shipping_status: 0,
               order_status: 0,
               order_date: new Date(),
               discount_id: discount_id,

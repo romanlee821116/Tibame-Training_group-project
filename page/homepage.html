@@ -16,7 +16,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/8c3a8ab95b.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.js" integrity="sha512-gSf3NCgs6wWEdztl1e6vUqtRP884ONnCNzCpomdoQ0xXsk06lrxJsR7jX5yM/qAGkPGsps+4bLV5IEjhOZX+gg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="../js/index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" referrerpolicy="no-referrer"></script>
+    <script src="../js/homepage.js"></script>
     <script src="../js/cart_vue.js"></script>
     <script src="../js/hamburger.js"></script>
     <script src="../js/navbar.js"></script>
@@ -361,12 +362,12 @@
                         <div class="index_p6_cardbg" v-for='item in card_list'>
                             <div class="index_p6_cardItem">
                                 <div class="index_p6_itemImg">
-                                    <img :src="item.src" alt="">
+                                    <img :src="item.news_image_main" alt="">
                                 </div>
                                 <div class="index_p6_itemTxt">
-                                    <h3>{{item.time}}</h3>
-                                    <h4>{{item.title}}</h4>
-                                    <p>{{item.txt}}</p>
+                                    <h3>{{item.create_date}}</h3>
+                                    <h4>{{item.news_title1}}</h4>
+                                    <p>{{item.news_title2}}</p>
                                     <a href="./news.html" class='index_p6_cardBtn'>詳細資訊<i
                                             class="fas fa-long-arrow-alt-right"></i></a>
                                 </div>
@@ -525,7 +526,6 @@
                 }
             }, //導覽列提示
             // navigationTooltips: ['首頁介紹', '關於我們', '商品專區', '客製禮盒', '最新消息', '店鋪資訊'],
-
         });
     </script>
     <script>

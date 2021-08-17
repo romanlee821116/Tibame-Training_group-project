@@ -227,13 +227,14 @@ $(document).ready(function () {
                   <a href="#" class='card_closeBtn'><i class="fas fa-times"></i></a>
                   <img src="../images/login/send_password.png" alt="">
                   <h2>您尚未登入</h2>
-                  <p>請先登入已繼續購物</p>
+                  <p>需登入方可完成結帳</p>
                   <div id='goLogin'>
                       <a class='mainBtn cart_goToLogin' >前往登入</a>
                   </div>
               </div>
           </div>`;
-          $("body").append(template);        
+          $("body").append(template);
+          $('body').addClass('fixed_window');      
         }
       },
       
@@ -410,6 +411,7 @@ $(function () {
   //關掉跳窗
   $('body').on('click','.card_closeBtn', function(e){
     $('.cart_loginCheckBg').remove();
+    $('body').removeClass('fixed_window');
     e.preventDefault();
   });
 

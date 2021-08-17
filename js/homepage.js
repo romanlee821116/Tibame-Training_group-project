@@ -71,11 +71,28 @@ $(function () {
                 { class: 'p6-watermark p6-mark3', src: '../images/index/news_watercolor_c.png' },
             ],
             card_list: [
-                { src: '../images/index/news_pic_a.png', time: '2021/06/01', title: '挺防疫，免運活動開跑', txt: '即日起至08/31，輸入折扣碼即可享運費折抵' },
-                { src: '../images/index/news_pic_b.png', time: '2021/04/15', title: '抹茶銅鑼燒新品上市', txt: '靜岡抹茶與阿里山台茶12號以黃金比例調配' },
-                { src: '../images/index/news_pic_c.png', time: '2021/02/02', title: '芋頭銅鑼燒新品上市', txt: '嚴選香濃綿密的大甲芋頭，甜而不膩好滋味' },
+                // { src: '../images/index/news_pic_a.png', time: '2021/06/01', title: '挺防疫，免運活動開跑', txt: '即日起至08/31，輸入折扣碼即可享運費折抵' },
+                // { src: '../images/index/news_pic_b.png', time: '2021/04/15', title: '抹茶銅鑼燒新品上市', txt: '靜岡抹茶與阿里山台茶12號以黃金比例調配' },
+                // { src: '../images/index/news_pic_c.png', time: '2021/02/02', title: '芋頭銅鑼燒新品上市', txt: '嚴選香濃綿密的大甲芋頭，甜而不膩好滋味' },
             ],
-        }
+        },
+        methods: {
+            fetchData(){
+                axios.post('../php/homepage_news.php',{
+                    action: 'fetchall'
+                }).then(function(res){                  
+                    vm5.card_list = res.data;
+                    for(let i in vm5.card_list){
+                        imgURL = '../images/news/'+vm5.card_list[i]['news_image_main'];
+                        vm5.card_list[i]['news_image_main'] = imgURL;                      
+                    }; 
+                })
+            },
+        },
+        created() {
+            this.fetchData();
+        },
+
     })
 
     var vm6 = new Vue({

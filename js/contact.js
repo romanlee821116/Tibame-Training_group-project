@@ -75,5 +75,9 @@ $('button').click(function(e){
     $('#contact_content').css('border','none');
   };
 })
+$('.contact_close').click(function(){
+  $('.contactpopBG').hide();
+  location.reload();
+})
 })
 

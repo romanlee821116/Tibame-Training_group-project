@@ -75,7 +75,7 @@ body {
   display: none;
 }
 
-.type1 {
+.popBG .type1 {
   width: 33%;
   height: 320px;
   max-width: 400px;
@@ -84,59 +84,49 @@ body {
   position: fixed;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   border-radius: 20px;
   background-color: rgba(255, 255, 255, 0.95);
-  -webkit-box-shadow: 0px 10px 32px rgba(23, 40, 82, 0.6);
-          box-shadow: 0px 10px 32px rgba(23, 40, 82, 0.6);
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  box-shadow: 0px 10px 32px rgba(23, 40, 82, 0.6);
+  flex-direction: column;
+  align-items: center;
   text-align: center;
   padding: 40px;
   z-index: 999;
 }
 
-.type1 img {
+.popBG .type1 img {
   width: 80px;
   height: auto;
 }
 
-.type1 h2 {
+.popBG .type1 h2 {
   color: #172852;
   font-size: 28px;
   margin-top: 15px;
   margin-bottom: 10px;
 }
 
-.type1 p {
+.popBG .type1 p {
   color: #172852;
   margin-bottom: 45px;
   font-size: 14px;
+  font-weight: 900;
 }
 
-.type1 div {
+.popBG .type1 div {
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  justify-content: space-evenly;
 }
 
 @media (max-width: 575px) {
-  .type1 {
+  .popBG .type1 {
     padding: 40px 20px;
   }
 }
 
-.mainBtn {
+.popBG .type1 .mainBtn {
   display: block;
   padding: 8px 10px;
   width: 120px;
@@ -149,7 +139,7 @@ body {
   cursor: pointer;
 }
 
-.mainBtn:hover {
+.popBG .type1 .mainBtn:hover {
   background-color: #2e447c;
   color: #fff;
   border: 3px solid #2e447c;
@@ -348,8 +338,7 @@ body {
   position: fixed;
   top: 10%;
   left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
   border-radius: 25px;
   background-color: #bb866a;
   text-align: center;
@@ -365,8 +354,7 @@ body {
   position: fixed;
   top: 10%;
   left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
   border-radius: 25px;
   background-color: #bb866a;
   text-align: center;

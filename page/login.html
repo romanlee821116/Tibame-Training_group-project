@@ -9,6 +9,7 @@
     <!-- fontawesome -->
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <script src='../js/login.js'></script>
@@ -402,19 +403,22 @@
                     // 帳號跟密碼符合以上js格式後，才送PHP
                     if( loginDataRight.length == 2){
                         if(data != '0'){
-                            // $('.type2 > h2').text('登入成功');
-                            // $('.type2 > p').text('前往會員中心');
-                            // $('.loginSendPSWclose').attr('href','member.html');
-                            // $('.loginSendPSWclose').attr('href','member.html')
-                            // $('.loginpopBG').show();
-                            // $('.nav_logOut').show();
-                            
-                            if($('#loginKeeplog').is(':checked')){
-                                localStorage.setItem('account', data);
+                            data = JSON.parse(data)[0];
+                            let account = data['account'];
+                            let status = data['member_status'];
+                            if(status ==0){
+                                $('.type2 > h2').text('登入失敗');
+                                $('.type2 > p').text('您的帳號已停用，請聯絡我們');
+                                $('.loginpopBG').show();
                             }else{
-                                sessionStorage.setItem('account', data);
+                                if($('#loginKeeplog').is(':checked')){
+                                localStorage.setItem('account',  account);
+                                }else{
+                                    sessionStorage.setItem('account',  account);
+                                }
+                                window.location.reload();
                             }
-                            window.location.reload();
+                            
                         }else{
                             $('.type2 > h2').text('登入失敗');
                             $('.type2 > p').text('帳號或密碼錯誤');
@@ -422,7 +426,7 @@
                             $('.loginpopBG').show();
                         };           
                     };
-                       
+                    
                 },
                 error: function (exception) {
                     alert("數據載入失敗: " + exception.status);
@@ -488,14 +492,31 @@
                     
                     // 確認是否有錯誤通知
                     if( $('.loginAccountForget').hasClass('loginWrong') || $('.loginCodeEnterForget').hasClass('loginWrong')){
-
+                        
                     }else{
                         // 如果點擊時，沒有錯誤通知，則送PHP
-                        if( data > 0 ){
+                        if( data != 0 ){
                             // mail正確
                             $('.type2 > h2').text('新密碼已寄出');
                             $('.type2 > p').text('系統已發送新密碼至您的指定信箱');
                             $('.loginpopBG').show();
+                            let pwd = JSON.parse(data)[0].password;
+                            let body = `您的密碼為${pwd}`;
+                            // 寄信
+                            Email.send({
+                                SecureToken : "3ad594-3f7c-49dc-9a72-720bb6b58fa6",
+                                Host : "smtp.elasticemail.com",
+                                Username : "romanlee821116@gmail.com",
+                                Password : "6DFB4A34831E82E8F7625B65028BA55A62E0",
+                                // Password : "roman122715386",
+                                To : 'romanlee821116@gmail.com',
+                                From : "romanlee821116@gmail.com",
+                                Subject : "您的登入密碼 - 小春堂",
+                                Body : body
+                            }).then(
+                            // message => alert('test'),
+                            );
+
                         }else{
                             // mail錯誤
                             $('.type2 > h2').text('帳號錯誤');
@@ -504,7 +525,6 @@
                         }
                         
                     };
-                       
                 },
                 error: function (exception) {
                     alert("數據載入失敗: " + exception.status);

@@ -5,11 +5,11 @@ $obj = new \ECPay_AllInOne();
         $orderlist = $_POST['orderlist'];
         $item_Name = $_POST['item_Name'] ? $_POST['item_Name'] : '';
         $item_Price = $_POST['item_Price'] ? $_POST['item_Price']: '';
-        $item_Qty = $_POST['item_Qty'];
+        $item_Qty = $_POST['item_Qty'] ? $_POST['item_Qty']: '';
 
         $cus_Name = $_POST['cus_Name'] ? $_POST['cus_Name'] : '';
         $cus_Price = $_POST['cus_Price'] ? $_POST['cus_Price']: '';
-        $cus_Qty = $_POST['cus_Qty'];
+        $cus_Qty = $_POST['cus_Qty'] ? $_POST['cus_Qty'] : '';
         $total = $_POST['total'];
  
        //服務參數

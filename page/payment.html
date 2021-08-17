@@ -157,19 +157,21 @@
                     <!-- 選擇門市 -->
                     <div class="payment_shop">
                       <p>選擇門市</p>
-                      <div class="payment_shopMap">門市電子地圖</div>
+                      <div class="payment_shopMap" @click='seven_shop'>
+                        門市電子地圖                        
+                      </div>
                       <div class="payment_shopMapData">
                         <div class="payment_shopData">
                           <div>門市名稱：</div>
-                          <input type="text" name="shopName" placeholder="門市名稱">
+                          <input type="text" name="shopName" placeholder="門市名稱" readonly>
                         </div>
                         <div class="payment_shopData">
                           <div>門市地址：</div>
-                          <input type="text" name="shopAddress" placeholder="門市地址">
+                          <input type="text" name="shopAddress" placeholder="門市地址" readonly>
                         </div>
                         <div class="payment_shopData">
-                          <div>門市電話：</div>
-                          <input type="text" name="shopPhone" placeholder="門市電話">
+                          <div>門市編號：</div>
+                          <input type="text" name="shopPhone" placeholder="門市編號" readonly>
                         </div>
                       </div>
                     </div>
@@ -185,6 +187,7 @@
 
                 </div>
               </div>
+            
 
               <!-- 付款方式 -->
               <div class="payment_payMoney">
@@ -374,7 +377,8 @@
         </a>
 
         <!-- 下一頁 -->
-        <a href="./orderConfirmation.html" class="payment_next" onclick='checkPaymentType()'>
+        <!-- <a href="./orderConfirmation.html" class="payment_next" onclick='checkPaymentType()'> -->
+          <a href="./orderConfirmation.html" class="payment_next">
           <div class="payment_nextText" >下一頁</div>
           <div class="payment_nextImg">
             <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right" class="svg-inline--fa fa-chevron-right fa-w-10" role="img" viewBox="0 0 320 512"><path fill="#ffffff" d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg>
@@ -389,6 +393,11 @@
 
     </div>
   </div>
+  <!--  -->
+  <form action="../php/sevenMap.php" method="POST" id='sevenMap_form' style='display: none;'>        
+    <input type="hidden" name='*ServerReplyURL' value='http://localhost/test/Map_data.php'>
+    <input type="submit" name="" id="sevenMap_btn" value='' >
+  </form>
 
 
   <!-- ========== footer ========== -->
@@ -408,16 +417,8 @@
     <p>本網站為緯育TibaMe前端設計工程師班第68期第三組學員專題成果作品，本平台僅供學習、展示之用。參考資源:snaq.me。若有侵權疑慮，您可以私訊[TibaMe-前端設計工程師養成班]，後續會由專人協助處理
     </p>
     </div>
-  </div>
+  </div>  
   <script>
-    function checkPaymentType(){
-      if($('#payment_online').is(':checked')){
-        localStorage.setItem('Payment_Type','onlinePay');
-        location.href = './orderConfirmation.html';
-      }else{
-        localStorage.setItem('Payment_Type','COD');
-      }
-    }
     
   </script>
 </body>

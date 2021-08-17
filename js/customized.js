@@ -17,8 +17,8 @@ $(document).ready(function(){
     Vue.component('checkCard',{
         methods: {
             close(){
-                $('.custom_popUp_template').fadeOut();
-                $('.custom_popUp_bg').fadeOut();
+                $('.custom_popUp').fadeOut();
+                    $('.custom_popUp_bg').fadeOut();
             }
         },
         template: `
@@ -28,7 +28,7 @@ $(document).ready(function(){
                 <h2>卡片尚未選擇</h2>
                 <p>請選擇卡片種類</p>
                 <div>
-                    <a href="#"class='custom_btn custom_popUp_close' @click='close'>返回</a>            
+                    <a href="#" class='custom_btn custom_popUp_close' @click='close'>返回</a>            
                 </div>
             </div>
         </div> 
@@ -60,6 +60,7 @@ $(document).ready(function(){
             message: '',
             content: 'checkBox',
             boxSize: 0,
+            popshow: false,
         },
         methods: {                       
             //第一步到第二步
@@ -284,34 +285,7 @@ $(function(){
     $('.cus_add').click(function(e){
         alert('添加');
     })
-    $('.fa-plus').click(function(e){
-        // let itemPic = $(this).closest('div').prev('div').find('img').attr('src');
-        // let picSrc = itemPic.replace('cuslist','cusbox');
-        // let itemTxt = $(this).closest('div').find('p').text();
-        // let itemId = $(this).closest('div').prev('div').find('img').attr('data-id');
-
-        // $('.selected .choosenBox').find('.selected_item').attr('src', picSrc).addClass('haveItem');
-        // $('.selected .choosenBox').find('.selected_item').attr('data-id', itemId);
-        // $('.selected .choosenBox').find('.selected_item').attr('data-itemName', itemTxt);
-        // e.preventDefault(); 
-        // //顯示提示
-        // $('.custom_reminder > span').text(`${boxSize-$('.haveItem').length}`)
-        // $('.custom_reminder').fadeIn();
-        // setTimeout(function(){
-        //     $('.custom_reminder').fadeOut();
-        // },1000);
-        // //自動將選到的格子換成下一格
-        // let currentBox = parseInt($('.selected .choosenBox').attr('box-id'));        
-        // let nextBox = `.selected .custom_gridBox[box-id=${currentBox+1}]`
-        // $('.custom_gridBox').removeClass('choosenBox');
-        // $(nextBox).addClass('choosenBox');
-        // if(currentBox == boxSize){
-        //     $('html,body').animate({ scrollTop: 0 },1000); 
-        //     // currentBox = 0;
-        //     $('.selected .custom_gridBox').addClass('choosenBox');  
-        //     $('.custom_reminder').fadeOut();       
-        // }
-    })
+    $('.fa-plus').click(function(e){})
 
 
 //==================選擇內容下一步==================

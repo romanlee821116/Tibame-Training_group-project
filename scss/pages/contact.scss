@@ -384,3 +384,17 @@ textarea:focus{
   top: -36px;
   right: -85px;
 }
+
+.contactpopBG{
+  @include popUpBg();
+    display: none; 
+    .type2{
+      @include popUp_oneBtn();
+      position: relative; //預設是fixed
+        // top: 15%;
+        .mainBtn{
+            @include btn(); //按鈕樣式
+            text-decoration: none;
+        }
+    }
+}

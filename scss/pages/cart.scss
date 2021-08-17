@@ -16,6 +16,10 @@
   z-index: 991;
   display: none;
 }
+.fixed_window{
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
 
 .cart_cartBoard{
   /* border: 1px solid red; */
@@ -438,7 +442,7 @@
 }
 .cart_loginCheck{
 	@include popUp_oneBtn();
-	position: relative; //預設是fixed
+	position: fixed; //預設是fixed
     // top: 15%;
     .mainBtn{
         @include btn(); //按鈕樣式

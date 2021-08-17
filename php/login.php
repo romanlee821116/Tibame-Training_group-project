@@ -18,7 +18,7 @@
     $data = $statement->fetchAll();   
     
     if( count($data) > 0){
-        echo $account; 
+        echo JSON_encode($data); 
     }else{
         echo "0";  
     }

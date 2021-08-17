@@ -84,6 +84,9 @@ $(function(){
       // 金流選擇
       if(localStorage.Payment_Type=='onlinePay'){
         $('#idFormAioCheckOut').attr('action','../php/Ecpay_CreateOrder.php');
+        $('.OC_nextText').text('前往付款');
+      }else{
+        $('.OC_next').attr('href', './finish.html');
       };
 
       // 折扣    

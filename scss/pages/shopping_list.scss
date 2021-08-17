@@ -17,15 +17,21 @@ body {
 .popBG {
     @include popUpBg();
     display: none;
+    .type1 {
+        @include popUp_twoBtn();
+        .mainBtn {
+            @include btn();
+        }        
+    } 
 }
+  
 
-.type1 {
-    @include popUp_twoBtn();
-}
 
-.mainBtn {
-    @include btn();
-}
+
+
+
+
+
 
 .navbar {
     @include navbar();

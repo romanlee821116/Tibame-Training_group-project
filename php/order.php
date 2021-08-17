@@ -66,26 +66,14 @@
             $statement_order_detail->bindValue(3, $quantity);
             $statement_order_detail->bindValue(4, $order_detail_price);
             $statement_order_detail->execute();
-            //取得庫存量
-            // $sql_productStock = "SELECT stock FROM product WHERE product_name = ?";
-            // $statement_productStock = getPDO()->prepare($sql_productStock);
-            // $statement_productStock->bindValue(1, $prodcut_name);
-            // $statement_productStock->execute();
-            // $stock = $statement_productStock->fetchAll(); 
-            // $num = 0;
-            // foreach($stock as $index => $row){    
-            //     $a = $row["stock"];   
-            //     $num += $a;      
-            // };
+            
     
             //update商品庫存量
             $sql_prodcut = "UPDATE product 
                             SET stock = stock- $quantity
                             WHERE product_name = '$product_name'";
             $result = getPDO()->exec($sql_prodcut);          
-            // $sql_prodcut = getPDO()->prepare($sql_prodcut);
-            // $sql_prodcut->bindValue(1, $num - $quantity);
-            // $sql_prodcut->execute();
+            
         }
     }
     
@@ -152,7 +140,7 @@
                 getPDO()->exec($sql_prodcut);
 
             }
-            echo '/第一次/';
+            // echo '/第一次/';
 
             if($customized_List[$j]['cardType']!=''){
                 //新增到customize_card 卡片樣式
@@ -185,5 +173,5 @@
 
 
 //============
-    echo "<script>alert('購買成功');</script>";
+    echo "<script>console.log('購買成功');</script>";
 ?>

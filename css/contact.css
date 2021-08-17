@@ -15,6 +15,11 @@
   display: none;
 }
 
+.fixed_window {
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
 .cart_cartBoard {
   /* border: 1px solid red; */
   background-color: #ffffff;
@@ -427,7 +432,7 @@
   text-align: center;
   padding: 40px;
   z-index: 999;
-  position: relative;
+  position: fixed;
 }
 
 .cart_loginCheck img {
@@ -446,6 +451,7 @@
   color: #172852;
   margin-bottom: 45px;
   font-size: 14px;
+  font-weight: 900;
 }
 
 .cart_loginCheck div {
@@ -1166,5 +1172,87 @@ textarea:focus {
   height: 18px;
   top: -36px;
   right: -85px;
+}
+
+.contactpopBG {
+  width: 100vw;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 991;
+  background-color: rgba(255, 255, 255, 0.6);
+  display: none;
+}
+
+.contactpopBG .type2 {
+  width: 25%;
+  height: 340px;
+  max-width: 300px;
+  max-height: 340px;
+  min-width: 290px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0px 10px 32px rgba(23, 40, 82, 0.6);
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 40px;
+  z-index: 999;
+  position: relative;
+}
+
+.contactpopBG .type2 img {
+  width: 80px;
+  height: auto;
+}
+
+.contactpopBG .type2 h2 {
+  color: #172852;
+  font-size: 28px;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.contactpopBG .type2 p {
+  color: #172852;
+  margin-bottom: 45px;
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.contactpopBG .type2 div {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 575px) {
+  .contactpopBG .type2 {
+    padding: 40px 20px;
+  }
+}
+
+.contactpopBG .type2 .mainBtn {
+  display: block;
+  padding: 8px 10px;
+  width: 120px;
+  border-radius: 25px;
+  background: #172852;
+  border: 3px solid #172852;
+  color: #fff;
+  text-align: center;
+  font-weight: 900;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.contactpopBG .type2 .mainBtn:hover {
+  background-color: #2e447c;
+  color: #fff;
+  border: 3px solid #2e447c;
 }
 /*# sourceMappingURL=contact.css.map */

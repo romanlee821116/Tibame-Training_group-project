@@ -299,20 +299,22 @@
               <div></div>
             </div>
           </div>
-
-          <button type="contact_submit" class="contact_mainBtn mainbtn">送出</button>
-
         </form>
-
+          <button type="contact_submit" class="contact_mainBtn mainbtn" onclick='sendRequest()'>送出</button>
       </div>
-
     </div>
-
-
-
   </div>
-
-
+  <!-- 寄信跳窗 -->
+  <div class='contactpopBG'>
+    <div class="type2">            
+        <img src="../images/login/send_password.png" alt="">
+        <h2>信件已寄出</h2>
+        <p>謝謝您，我們會盡快回覆。</p>
+        <div>
+            <a href="#" class='mainBtn contact_close'>返回</a>
+        </div>
+    </div>
+  </div>
 
 
   <!-- =======================footer======================= -->
@@ -334,6 +336,35 @@
     </div>
   </div>
   <!-- =======================footer結束======================= -->
+  <script>
+    function sendRequest(){
+      let name = $('#contact_yourName').val();
+      let phone = $('#contact_yourPhone').val();
+      let email = $('#contact_yourEmail').val();
+      let contactWay = $(' input[type="radio"]:checked + label').text();
+      let content = $('#contact_content').val();
+      body= `
+        姓名 : ${name}, \
+        電話 : ${phone}, \
+        Email : ${email}, \
+        聯絡方式 : ${contactWay}, \
+        內容 : ${content} /n
+      `;
+      Email.send({
+        SecureToken : "3ad594-3f7c-49dc-9a72-720bb6b58fa6",
+        Host : "smtp.elasticemail.com",
+        Username : "romanlee821116@gmail.com",
+        Password : "6DFB4A34831E82E8F7625B65028BA55A62E0",
+        // Password : "roman122715386",
+        To : 'romanlee821116@gmail.com',
+        From : "romanlee821116@gmail.com",
+        Subject : "客戶聯繫資訊",
+        Body : body
+      }).then(
+        $('.contactpopBG').show(),
+      );
+    }
+  </script>
 </body>
 
 </html>

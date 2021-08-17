@@ -17,7 +17,7 @@
     $data = $statement->fetchAll();   
     
     if( count($data) > 0){
-        echo '1'; 
+        echo json_encode($data); 
     }else{
         echo "0";  
     }

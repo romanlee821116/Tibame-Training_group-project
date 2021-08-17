@@ -863,10 +863,11 @@
                         }
                         .index_p6_itemImg{
                             width: 100%;
-                            height: 45%;
+                            // height: 45%;
+                            height: 150px;
                             overflow: hidden;
                             img{
-                                width: 100%;
+                                width: auto;
                                 height: 100%;
                                 vertical-align: top;
                                 position: relative;
@@ -876,7 +877,8 @@
                         }
                         .index_p6_itemTxt{
                             width: 100%;
-                            height: 55%;
+                            // height: 55%;
+                            height: 170px;
                             text-align: left;
                             padding: 20px;
                             background-color: #fff;
@@ -891,10 +893,15 @@
                                 color: $darkBrown;
                                 font-weight: 900;
                                 line-height: 25px;
+                                display: -webkit-box;
+                                -webkit-line-clamp: 2; //行數
+                                -webkit-box-orient: vertical;
+                                white-space: normal;
                             }
                             h4{
                                 color: $yellow;
                                 margin-bottom: 10px;
+                                text-overflow: ellipsis;
                             }
                         }            
                         .index_p6_cardBtn{
@@ -903,7 +910,9 @@
                             text-align: right;
                             font-size: 14px;
                             color: $darkBlue;
-                            position: relative;
+                            position: absolute;
+                            right: 20px;
+                            bottom: 20px;
                             i{
                                 margin-left: 5px;
                             }

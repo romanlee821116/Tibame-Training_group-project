@@ -44,7 +44,7 @@ $(document).ready(function(){
               const phone = data[0]['phone'];
               const address = data[0]['city'] + data[0]['area'] + data[0]['address'];
               vm.orderer_data = {orderer_name: name, orderer_phone: phone, orderer_address: address};
-              console.log(this.orderer_data);
+              // console.log(this.orderer_data);
             },
             error: function(exception) {
                 alert("數據載入失敗: " + exception.status);
@@ -82,6 +82,24 @@ $(document).ready(function(){
         let new_total = parseInt(localStorage.subtotal) - parseInt(localStorage.discount) + parseInt(localStorage.shipping);
         localStorage.setItem('total', new_total);
         this.total_price = new_total;
+      },
+      seven_shop(){
+        if(this.orderer){
+          // var name = $('.payment_name').val();
+          // var tel = $('.payment_phone').val();
+          // var add = $('.payment_add').val();
+          var name = this.orderer_data.orderer_name;
+          var tel = this.orderer_data.orderer_phone;
+          var add = this.orderer_data.orderer_address;
+          var tempInfo=[{orderer:'true','name': name, 'tel': tel, 'add': add}];
+          localStorage.setItem('tempOrderInfo', JSON.stringify(tempInfo));
+        }else{
+          var tempInfo=[{orderer:'false','name': name, 'tel': tel, 'add': add}];
+          localStorage.setItem('tempOrderInfo', tempInfo);
+        }
+        document.getElementById('sevenMap_btn').click();
+        
+
       }
     },
     computed: {
@@ -136,9 +154,39 @@ $(document).ready(function(){
       // 收件人重置
       localStorage.setItem('delivery_data', this.delivery_data);
 
-      // 卡片重置
-      // localStorage.setItem('card_data', this.card_data);
-
+      // 超商資訊
+      if(localStorage.CVSStoreName){
+        this.count711();
+        let data = JSON.parse(localStorage.tempOrderInfo)[0];
+        // console.log(data);
+        this.orderer = data.orderer;
+        this.orderer_data.orderer_name = data.name;
+        this.orderer_data.orderer_phone = data.tel;
+        this.orderer_data.orderer_address = data.add;
+        document.getElementById('payment_seven').checked;
+        $('#payment_seven').attr('checked', true);
+        // $('.payment_name').val(data.name);
+        // $('.payment_phone').val(data.tel);
+        // $('.payment_add').val(data.add);
+        
+        let shopName = localStorage.CVSStoreName;
+        let shopAddress = localStorage.CVaddress;
+        let shopId = localStorage.CVSStoreID;
+        
+        $('.payment_shop').css('display', 'block');
+        $('.payment_receiver').css('display','none');
+        $('.payment_shopMapData').css('display','block');
+        $('.payment_fakeClick2').css('display','block');
+        $('.payment_fakeClick1').css('display','none');
+        $('.payment_fakeClick3').css('display','none');
+        $('.payment_fake2').css('border','1.5px solid #172852');
+        $('.payment_fake1').css('border','1.5px solid #bb866a');
+        $('.payment_fake3').css('border','1.5px solid #bb866a');
+        $('input[name="shopName"]').val(shopName);
+        $('input[name="shopAddress"]').val(shopAddress);
+        $('input[name="shopPhone"]').val(shopId);
+      }
+      
 
       // ====================================================
     }
@@ -218,9 +266,10 @@ $(function(){
 
 
   // 門市電子地圖
-  $('.payment_shopMap').click(function(){
-    $('.payment_shopMapData').css('display', 'block');
-  })
+  // $('.payment_shopMap').click(function(){    
+  //   document.getElementById('sevenMap_btn').click();
+  //   $('.payment_shopMapData').css('display', 'block');
+  // })
 
 
 
@@ -397,10 +446,10 @@ $(function(){
     // =====================================================================
 
     // 信用卡資料
-    let cardNumber1 = $('#payment_card1').val();
-    let cardNumber2 = $('#payment_card2').val();
-    let cardNumber3 = $('#payment_card3').val();
-    let cardNumber4 = $('#payment_card4').val();
+    // let cardNumber1 = $('#payment_card1').val();
+    // let cardNumber2 = $('#payment_card2').val();
+    // let cardNumber3 = $('#payment_card3').val();
+    // let cardNumber4 = $('#payment_card4').val();
 
     // 付款方式沒選，紅框並停止下一頁
     if(fakeClick4 == false && fakeClick5 == false){
@@ -411,66 +460,66 @@ $(function(){
 
     // =====================================================================
 
-    // 卡號沒輸入，紅框並停止下一頁
-    if(fakeClick4 == true && cardNumber1 == ""){
-      e.preventDefault();
-      $('#payment_card1').css('border','2px solid #dc3838');
-    }else{
-      $('#payment_card1').css('border','none');
-    };
+    // // 卡號沒輸入，紅框並停止下一頁
+    // if(fakeClick4 == true && cardNumber1 == ""){
+    //   e.preventDefault();
+    //   $('#payment_card1').css('border','2px solid #dc3838');
+    // }else{
+    //   $('#payment_card1').css('border','none');
+    // };
 
-    if(fakeClick4 == true && cardNumber2 == ""){
-      e.preventDefault();
-      $('#payment_card2').css('border','2px solid #dc3838');
-    }else{
-      $('#payment_card2').css('border','none');
-    };
+    // if(fakeClick4 == true && cardNumber2 == ""){
+    //   e.preventDefault();
+    //   $('#payment_card2').css('border','2px solid #dc3838');
+    // }else{
+    //   $('#payment_card2').css('border','none');
+    // };
 
-    if(fakeClick4 == true && cardNumber3 == ""){
-      e.preventDefault();
-      $('#payment_card3').css('border','2px solid #dc3838');
-    }else{
-      $('#payment_card3').css('border','none');
-    };
+    // if(fakeClick4 == true && cardNumber3 == ""){
+    //   e.preventDefault();
+    //   $('#payment_card3').css('border','2px solid #dc3838');
+    // }else{
+    //   $('#payment_card3').css('border','none');
+    // };
 
-    if(fakeClick4 == true && cardNumber4 == ""){
-      e.preventDefault();
-      $('#payment_card4').css('border','2px solid #dc3838');
-    }else{
-      $('#payment_card4').css('border','none');
-    };
+    // if(fakeClick4 == true && cardNumber4 == ""){
+    //   e.preventDefault();
+    //   $('#payment_card4').css('border','2px solid #dc3838');
+    // }else{
+    //   $('#payment_card4').css('border','none');
+    // };
 
-    // ====================================================
+    // // ====================================================
 
-    // 卡片有效期限沒輸入，紅框並停止下一頁
-    let payment_year = $('.payment_year').val();
-    let payment_month = $('.payment_month').val();
+    // // 卡片有效期限沒輸入，紅框並停止下一頁
+    // let payment_year = $('.payment_year').val();
+    // let payment_month = $('.payment_month').val();
 
-    if(fakeClick4 == true && payment_year == null){
-      e.preventDefault();
-      $('.payment_year').css('border','2px solid #dc3838');
-    }else{
-      $('.payment_year').css('border','none');
-    };
+    // if(fakeClick4 == true && payment_year == null){
+    //   e.preventDefault();
+    //   $('.payment_year').css('border','2px solid #dc3838');
+    // }else{
+    //   $('.payment_year').css('border','none');
+    // };
 
-    if(fakeClick4 == true && payment_month == null){
-      e.preventDefault();
-      $('.payment_month').css('border','2px solid #dc3838');
-    }else{
-      $('.payment_month').css('border','none');
-    };
+    // if(fakeClick4 == true && payment_month == null){
+    //   e.preventDefault();
+    //   $('.payment_month').css('border','2px solid #dc3838');
+    // }else{
+    //   $('.payment_month').css('border','none');
+    // };
 
-    // ============================================================
+    // // ============================================================
 
-    // 卡片認證碼沒輸入，紅框並停止下一頁
-    let payment_turn = $('.payment_turn').val();
+    // // 卡片認證碼沒輸入，紅框並停止下一頁
+    // let payment_turn = $('.payment_turn').val();
 
-    if(fakeClick4 == true && payment_turn == ""){
-      e.preventDefault();
-      $('.payment_turn').css('border','2px solid #dc3838');
-    }else{
-      $('.payment_turn').css('border','none');
-    };
+    // if(fakeClick4 == true && payment_turn == ""){
+    //   e.preventDefault();
+    //   $('.payment_turn').css('border','2px solid #dc3838');
+    // }else{
+    //   $('.payment_turn').css('border','none');
+    // };
 
 
     // ========================= localStorage ===========================
@@ -555,7 +604,13 @@ $(function(){
 
     // }
 
-
+    if($('#payment_online').is(':checked')){
+      localStorage.setItem('Payment_Type','onlinePay');
+      // location.href = './orderConfirmation.html';
+    }else{
+      localStorage.setItem('Payment_Type','COD');
+      // location.href = './orderConfirmation.html';
+    }
 
 
 
