@@ -1,5 +1,5 @@
 @import '../mixin/mixin';
-@import '../base/reset.scss';
+// @import '../base/reset.scss';
 @import '../base/color.scss';
 * {
     box-sizing: border-box;
@@ -493,7 +493,7 @@ body {
         left: 200px;
     }
     .product_left {
-        width: 298px;
+        width: 350px;
         height: 350px;
         transform: translateY(0);
     }
