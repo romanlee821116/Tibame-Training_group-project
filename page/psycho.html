@@ -12,8 +12,8 @@
     <link rel="stylesheet" href="../css/hamburger.css">
     <script src="https://kit.fontawesome.com/8c3a8ab95b.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="../js/psycho.js"></script>
     <script src="../js/vue.js"></script>
+    <script src="../js/psycho.js"></script>
     <script src="../js/cart_vue.js"></script>
     <script src="../js/hamburger.js"></script>
     <script src="../js/navbar.js"></script>
@@ -247,8 +247,8 @@
             <h3>測驗結果出爐 !</h3>
             <div class="psycho_elvesContent">
                 <p>你是...</p>
-                <span class="psycho_elves_name">火之精靈</span>
-                <span>最喜歡尋找特殊口味的和菓子，對和菓子的愛比誰都熱情</span>
+                <span class="psycho_elves_name">{{alldata[psyhoScorekey].fairy}}</span>
+                <span>{{alldata[psyhoScorekey].wordText}}</span>
                 <div class="psycho_cardRange">
                     <div>
                         <div class="psycho_cardBack"></div>
