@@ -188,7 +188,8 @@ $(document).ready(function(){
         },1000);
 
         // 找刪除的圖檔名
-        deleItemSrc = $(deleItem).prev()[0].src;
+        // deleItemSrc = $(deleItem).prev()[0].src;
+        deleItemSrc = $(deleItem).prev().prev()[0].src;
         deleItemPicName = deleItemSrc.split('/')[6];
 
         // =========同步更新資料庫的資料=========
@@ -202,7 +203,7 @@ $(document).ready(function(){
         let memberFavoritePop =
         `<div class='popBG'>
             <div class="type1 memberFavoritePop">
-                <img src="../images/customized/customized_step_a.png" alt="">
+                <img src="../images/member/popup_goProduct_icon.png" alt="">
                 <h2>查看商品？</h2>
                 <p>現在就前往商品頁查看</p>
                 <div>

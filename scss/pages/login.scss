@@ -36,6 +36,25 @@
     overflow: hidden;
 }
 
+// 收藏商品管理
+.memberPart5 {
+
+    .memberFavoriteName{
+        position: absolute;
+        padding-top: 42%;
+        top: 0;
+        left: 0;
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        color: transparent;
+        &:hover{
+            color: #172852;
+            background-color: rgba(255,255,255,.5);
+        }
+    }
+}
+
 /* 禁止滑動卷軸 */
 .stopScroll {
     height: 100%;
@@ -369,7 +388,7 @@ input{
     align-self: center;
 }
 /* 按鈕 */
-.loginButton, .loginSignupButton{
+.loginButton, .loginSignupButton, .loginSendPSW{
     width: 100%;
     display: block;
 
