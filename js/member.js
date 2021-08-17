@@ -214,10 +214,12 @@ $(document).ready(function(){
         </div>`
 
         $('.memberPart5').append(memberFavoritePop);
+        $('body').addClass('stopScroll');
     });
 
     $('body').on('click','.memberFavoriteBack',function(){
         $('.memberPart5').children('div:last-child').remove();
+        $('body').removeClass('stopScroll');
     });
 
 
@@ -225,11 +227,13 @@ $(document).ready(function(){
     // 會員資料更新
     $('.memberPart1PopClose').click(function(){
         $('.memberPart1Popup').hide();
+        $('body').removeClass('stopScroll');
     });
 
     // 會員密碼更新
     $('.memberPart2PopClose').click(function(){
         $('.memberPart2Popup').hide();
+        $('body').removeClass('stopScroll');
     });
 
     // ============== 搜尋訂單功能 ================
