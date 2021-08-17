@@ -1309,13 +1309,25 @@ body {
 .cus_step2 .custom_card_textArea .custom_card_iconList {
   padding: 20px;
   width: auto;
+<<<<<<< HEAD
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 20% 20% 20% 20%;
+=======
   height: 90%;
   display: -ms-grid;
   display: grid;
+<<<<<<< HEAD
+  grid-template-columns: 30% 30% 30%;
+  grid-template-rows: 25% 25% 25% 25%;
+>>>>>>> 1735dc46ebf0cda0e8539a6e76d20863109e0f8f
+=======
   -ms-grid-columns: 30% 30% 30%;
       grid-template-columns: 30% 30% 30%;
   -ms-grid-rows: 25% 25% 25% 25%;
       grid-template-rows: 25% 25% 25% 25%;
+>>>>>>> fbf9ea2ca9cc9d0c1c3a77a4b4752a1d11463f4c
   gap: 10px;
   padding: 10px;
   display: none;
