@@ -607,7 +607,8 @@ body {
 .news_blockpic > img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .news_blockStitle {

@@ -1,11 +1,7 @@
 @charset "UTF-8";
 * {
-<<<<<<< HEAD
-  box-sizing: border-box;
-=======
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
->>>>>>> dev
   font-family: '微軟正黑體';
 }
 
@@ -16,11 +12,6 @@ body {
 }
 
 .n-product_header {
-<<<<<<< HEAD
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-=======
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -30,7 +21,6 @@ body {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
->>>>>>> dev
   background-image: url("../images/backend/loginbg.png");
   background-repeat: no-repeat;
   background-position: center top;
@@ -40,12 +30,6 @@ body {
 }
 
 .n-product_logo {
-<<<<<<< HEAD
-  flex-grow: 2;
-  display: flex;
-  align-items: center;
-  column-gap: 20px;
-=======
   -webkit-box-flex: 2;
       -ms-flex-positive: 2;
           flex-grow: 2;
@@ -57,7 +41,6 @@ body {
           align-items: center;
   -webkit-column-gap: 20px;
           column-gap: 20px;
->>>>>>> dev
 }
 
 .n-product_logo img {
@@ -73,11 +56,6 @@ body {
 }
 
 .n-product_logout {
-<<<<<<< HEAD
-  display: flex;
-  align-items: center;
-  column-gap: 10px;
-=======
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -86,7 +64,6 @@ body {
           align-items: center;
   -webkit-column-gap: 10px;
           column-gap: 10px;
->>>>>>> dev
   cursor: pointer;
 }
 
@@ -99,25 +76,16 @@ body {
 }
 
 .n-product_main {
-<<<<<<< HEAD
-  display: flex;
-  justify-content: flex-start;
-=======
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
->>>>>>> dev
   padding: 0 60px;
 }
 
 .n-product_left {
-<<<<<<< HEAD
-  display: flex;
-  flex-direction: column;
-=======
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -125,7 +93,6 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
->>>>>>> dev
   width: 15%;
 }
 
@@ -167,17 +134,12 @@ body {
 
 .n-product_right form {
   /* border: 1px solid blue; */
-<<<<<<< HEAD
-  display: flex;
-  justify-content: flex-end;
-=======
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
->>>>>>> dev
   margin-bottom: 20px;
 }
 
@@ -194,11 +156,6 @@ body {
   /* border: 1px solid red; */
   width: 280px;
   margin-left: 40px;
-<<<<<<< HEAD
-  display: flex;
-  column-gap: 40px;
-  align-items: flex-end;
-=======
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -207,7 +164,6 @@ body {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
->>>>>>> dev
 }
 
 .n-product_productbtn button {
@@ -232,13 +188,6 @@ body {
 }
 
 .n-product_right form section {
-<<<<<<< HEAD
-  flex-grow: 2;
-  display: flex;
-  justify-content: flex-end;
-  column-gap: 10px;
-  align-items: flex-end;
-=======
   -webkit-box-flex: 2;
       -ms-flex-positive: 2;
           flex-grow: 2;
@@ -253,7 +202,6 @@ body {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
->>>>>>> dev
 }
 
 .n-product_right form section label {
@@ -286,8 +234,6 @@ body {
   padding-left: 5px;
 }
 
-<<<<<<< HEAD
-=======
 .n-product_right form section input::-webkit-input-placeholder {
   color: #cba89a;
   font-weight: bold;
@@ -303,7 +249,6 @@ body {
   font-weight: bold;
 }
 
->>>>>>> dev
 .n-product_right form section input::placeholder {
   color: #cba89a;
   font-weight: bold;
@@ -314,18 +259,12 @@ body {
   margin: 0;
   padding: 10px;
   list-style: none;
-<<<<<<< HEAD
-  display: grid;
-  grid-template-columns: 1.2fr 1fr 1.2fr .8fr .8fr .8fr .9fr .7fr 107px;
-  column-gap: 10px;
-=======
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1.2fr 1fr 1.2fr .8fr .8fr .8fr .9fr .7fr 107px;
       grid-template-columns: 1.2fr 1fr 1.2fr .8fr .8fr .8fr .9fr .7fr 107px;
   -webkit-column-gap: 10px;
           column-gap: 10px;
->>>>>>> dev
   background-color: #cba89a;
   font-size: 16px;
   color: #ffffff;
@@ -337,29 +276,19 @@ body {
   margin: 0;
   padding: 10px;
   list-style: none;
-<<<<<<< HEAD
-  display: grid;
-  grid-template-columns: 1.2fr 1fr 1.2fr .8fr .8fr .8fr .9fr .7fr 107px;
-  column-gap: 10px;
-=======
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1.2fr 1fr 1.2fr .8fr .8fr .8fr .9fr .7fr 107px;
       grid-template-columns: 1.2fr 1fr 1.2fr .8fr .8fr .8fr .9fr .7fr 107px;
   -webkit-column-gap: 10px;
           column-gap: 10px;
->>>>>>> dev
   background-color: #ffffff;
   font-size: 16px;
   color: #172852;
   font-weight: bold;
-<<<<<<< HEAD
-  align-items: center;
-=======
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
->>>>>>> dev
 }
 
 .n-product_product:hover {
@@ -396,17 +325,12 @@ body {
   margin: 15px 0;
   padding: 0px;
   list-style: none;
-<<<<<<< HEAD
-  display: flex;
-  justify-content: flex-end;
-=======
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
->>>>>>> dev
 }
 
 .n-product_footer ul li {
@@ -441,18 +365,12 @@ body {
   max-height: 1100px;
   /* height: 500px; */
   /* border: 1px solid red; */
-<<<<<<< HEAD
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 44px 980px 54px;
-=======
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
   -ms-grid-rows: 44px 980px 54px;
       grid-template-rows: 44px 980px 54px;
->>>>>>> dev
   border-radius: 10px;
   overflow: hidden;
   /* position: relative; */
@@ -460,12 +378,8 @@ body {
   position: fixed;
   left: 50%;
   top: 50%;
-<<<<<<< HEAD
-  transform: translate(-50%, -50%);
-=======
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
->>>>>>> dev
   z-index: 2;
   background-color: #ffffff;
   overflow-y: auto;
@@ -478,16 +392,12 @@ body {
   font-weight: bold;
   color: #ffffff;
   background-color: #bb866a;
-<<<<<<< HEAD
-  grid-area: 1/1/2/3;
-=======
   -ms-grid-row: 1;
   -ms-grid-row-span: 1;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: 1/1/2/3;
   position: -webkit-sticky;
->>>>>>> dev
   position: sticky;
   top: 0;
   z-index: 3;
@@ -502,12 +412,6 @@ body {
   margin: 0;
   padding: 0px;
   list-style: none;
-<<<<<<< HEAD
-  display: grid;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 2fr 3fr;
-  justify-content: center;
-  align-items: center;
-=======
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 2fr 3fr;
@@ -518,7 +422,6 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
->>>>>>> dev
 }
 
 .n-product_edit_left ul li {
@@ -530,21 +433,6 @@ body {
 }
 
 .n-product_edit_left ul li:nth-child(10) {
-<<<<<<< HEAD
-  transform: translateX(-15px);
-}
-
-.n-product_edit_left ul li:nth-child(11) {
-  display: flex;
-  justify-content: flex-end;
-  column-gap: 5px;
-}
-
-.n-product_edit_left ul li:nth-child(12) {
-  display: flex;
-  justify-content: flex-end;
-  column-gap: 5px;
-=======
   -webkit-transform: translateX(-15px);
           transform: translateX(-15px);
 }
@@ -569,7 +457,6 @@ body {
           justify-content: flex-end;
   -webkit-column-gap: 5px;
           column-gap: 5px;
->>>>>>> dev
 }
 
 .n-product_edit_left select {
@@ -581,13 +468,9 @@ body {
   border-radius: 3px;
   overflow: hidden;
   cursor: pointer;
-<<<<<<< HEAD
-  appearance: none;
-=======
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
->>>>>>> dev
   outline: none;
   background: none;
   background-image: url("../images/backend/select.png");
@@ -616,12 +499,6 @@ body {
   /* border: 1px solid blue; */
   margin: 0;
   padding: 0px;
-<<<<<<< HEAD
-  display: grid;
-  /* grid-template-rows: 1fr 1fr 1fr 1fr 1fr; */
-  justify-content: center;
-  align-items: center;
-=======
   display: -ms-grid;
   display: grid;
   /* grid-template-rows: 1fr 1fr 1fr 1fr 1fr; */
@@ -631,7 +508,6 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
->>>>>>> dev
   /* row-gap: 20px; */
   padding-top: 20px;
   padding-bottom: 20px;
@@ -700,12 +576,8 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-<<<<<<< HEAD
-  transform: translate(-50%, -50%);
-=======
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
->>>>>>> dev
 }
 
 .n-product_edit_right div.n-product_img > p {
@@ -718,11 +590,6 @@ body {
 }
 
 .n-product_editbtn {
-<<<<<<< HEAD
-  display: flex;
-  justify-content: center;
-  column-gap: 30px;
-=======
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -735,7 +602,6 @@ body {
   -ms-grid-row-span: 1;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
->>>>>>> dev
   grid-area: 3/1/4/3;
   height: 54px;
   /* border: 1px solid red; */
