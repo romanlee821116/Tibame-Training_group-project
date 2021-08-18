@@ -362,7 +362,10 @@ $(document).ready(function() {
                         $('.product_reminder').fadeOut();
                     }, 1000);
                 } else {
-                    alert('此產品已在購物車');
+                    $('.product_reminder4').fadeIn();
+                    setTimeout(function() {
+                        $('.product_reminder4').fadeOut();
+                    }, 1000);
                 }
 
             } else {
@@ -376,7 +379,6 @@ $(document).ready(function() {
                 }, 1000);
             }
         } else {
-            alert("不要再點了，沒貨了啦")
 
         }
     });
