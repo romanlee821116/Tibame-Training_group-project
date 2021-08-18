@@ -362,7 +362,9 @@
                     $("#memberOrderList4").html("");
                     $(".memberPart5").html("");
 
-                    // console.log(response);
+                    // 給 detail 判斷放在交易成功或失敗
+                    indexfalse = -1;
+                    indexsuccess = -1;
 
                     // 顯示訂單資料
                     $.each(response.main, function(index, row) {
@@ -428,11 +430,19 @@
                         };
 
                         // 判斷訂單要新增在訂單查詢 or 取消查詢
+                        
                         if (`${row.payment_status}` == '付款失敗' || `${row.payment_status}` == '退款中' || `${row.payment_status}` == '已退款' || `${row.order_status}` == '已取消') {
                             memberOrderPlaceHere = '#memberOrderList4';
+                            indexfalse += 1;
                         } else {
                             memberOrderPlaceHere = '#memberOrderList3';
+                            indexsuccess += 1;
                         };
+
+                        // console.log(indexfalse);
+                        // console.log(indexsuccess);
+
+                        // console.log(memberOrderPlaceHere);
 
                         $(`${memberOrderPlaceHere}`).append(
                             `<div class='memberOrder'>
@@ -501,6 +511,15 @@
                         $.each(response.detail, function(index, row) {
                             detailOrderList = row.order_list;
                             if( detailOrderList == mainOrderList ){
+                                // 幫客製化禮盒改名字
+                                if( row.product_name == '客製化禮盒一' ){
+                                    row.product_name = '四格小資組合';
+                                }else if( row.product_name == '客製化禮盒二' ){
+                                    row.product_name = '六格家庭組合';
+                                }else if( row.product_name == '客製化禮盒三' ){
+                                    row.product_name = '九格派對組合';
+                                }
+
                                 let this_item =
                                 `<div class='memberOrderDetailAll'>
                                     <div class='memberOrderDetail'>
@@ -522,63 +541,86 @@
                             };
                             
                         });
-                        $(".memberOrderDetailHere").eq(index).append(memberDetailItem);
+
+                        // 判斷 detail 跟特效是要加在訂單成功 或 訂單失敗
+                        if (`${memberOrderPlaceHere}` == '#memberOrderList4' ) {
+                            // 失敗
+                            $(`${memberOrderPlaceHere}`).find(".memberOrderDetailHere").eq(`${indexfalse}`).append(memberDetailItem);
+                            indexfordot = indexfalse;
+                        } else {
+                            $(`${memberOrderPlaceHere}`).find(".memberOrderDetailHere").eq(`${indexsuccess}`).append(memberDetailItem);
+                            indexfordot = indexsuccess;
+                        };
+
+                        // $(`${memberOrderPlaceHere}`).find(".memberOrderDetailHere").eq(index).append(memberDetailItem);
+                        // $(".memberOrderDetailHere").eq(index).append(memberDetailItem);
                         
+                        console.log(`${memberOrderPlaceHere}`);
+                        console.log(indexfordot);
 
                         // 設定進度條的顯示
                         // console.log($('.memberOrder').eq(0).find('div.memberProgressDot_odd1'));
-
+                        console.log(row.order_status);
                         if( row.order_status=='處理中' ){
-                            $('.memberProgressAll').eq(index).find('span').css('color', '#a3a3a3');
-                            $('.memberProgressAll').eq(index).find('.memberWordCheck1').css('color', '#f7c242');
+                            $(`${memberOrderPlaceHere}`).find('.memberProgressAll').eq(indexfordot).find('span').css('color', '#a3a3a3');
+                            $(`${memberOrderPlaceHere}`).find('.memberProgressAll').eq(indexfordot).find('.memberWordCheck1').css('color', '#f7c242');
                         }else if( row.order_status=='已確認'){
-                            $('.memberProgressAll').eq(index).find('div.memberProgressDot_odd1').removeClass('memberUnchecked');
-                            $('.memberProgressAll').eq(index).find('div.memberProgressDot_even1').css('background-color', '#f7c242');
-                            $('.memberProgressAll').eq(index).find('div.memberProgressDot_odd2').removeClass('memberUnchecked');
-                            $('.memberProgressAll').eq(index).find('div.memberProgressDot_even2').css('background-color', '#f7c242');
-                            $('.memberProgressAll').eq(index).find('span').css('color', '#a3a3a3');
-                            $('.memberProgressAll').eq(index).find('span.memberWordCheck2').css('color', '#f7c242');
-                            console.log(index+"b");
+                            $(`${memberOrderPlaceHere}`).find('.memberProgressAll').eq(indexfordot).find('div.memberProgressDot_odd1').removeClass('memberUnchecked');
+                            $(`${memberOrderPlaceHere}`).find('.memberProgressAll').eq(indexfordot).find('div.memberProgressDot_even1').css('background-color', '#f7c242');
+                            // $(`${memberOrderPlaceHere}`).eq(index).find('div.memberProgressDot_odd2').removeClass('memberUnchecked');
+                            // $(`${memberOrderPlaceHere}`).eq(index).find('div.memberProgressDot_even2').css('background-color', '#f7c242');
+                            $(`${memberOrderPlaceHere}`).find('.memberProgressAll').eq(indexfordot).find('span').css('color', '#a3a3a3');
+                            $(`${memberOrderPlaceHere}`).find('.memberProgressAll').eq(indexfordot).find('span.memberWordCheck2').css('color', '#f7c242');
+                            // console.log(index+"b");
                         }else if( row.order_status=='已完成' ){
-                            $('.memberProgressAll').eq(index).find('div.memberProgressDot_odd1').removeClass('memberUnchecked');
-                            $('.memberProgressAll').eq(index).find('div.memberProgressDot_even1').css('background-color', '#f7c242');
-                            $('.memberProgressAll').eq(index).find('div.memberProgressDot_odd2').removeClass('memberUnchecked');
+                            $(`${memberOrderPlaceHere}`).find('.memberProgressAll').eq(indexfordot).find('div.memberProgressDot_odd1').removeClass('memberUnchecked');
+                            $(`${memberOrderPlaceHere}`).find('.memberProgressAll').eq(indexfordot).find('div.memberProgressDot_even1').css('background-color', '#f7c242');
+                            $(`${memberOrderPlaceHere}`).find('.memberProgressAll').eq(indexfordot).find('div.memberProgressDot_odd2').removeClass('memberUnchecked');
                         }else{
                             
                         };
 
                         if( row.shipping_status=='待出貨' ){
-                            
+                            $(`${memberOrderPlaceHere}`).find('.memberProgressAll').eq(indexfordot).find('span').css('color', '#a3a3a3');
+                            $(`${memberOrderPlaceHere}`).find('.memberProgressAll').eq(indexfordot).find('.memberWordCheck1').css('color', '#f7c242');
                         }else if( row.shipping_status=='已出貨' ){
-                            $('.memberProgressAll').eq(index).find('div.memberProgressDot_odd1').removeClass('memberUnchecked');
-                            $('.memberProgressAll').eq(index).find('div.memberProgressDot_even1').css('background-color', '#f7c242');
-                            $('.memberProgressAll').eq(index).find('div.memberProgressDot_odd2').removeClass('memberUnchecked');
-                            $('.memberProgressAll').eq(index).find('div.memberProgressDot_even2').css('background-color', '#f7c242');
-                            $('.memberProgressAll').eq(index).find('span').css('color', '#a3a3a3');
-                            $('.memberProgressAll').eq(index).find('span.memberWordCheck3').css('color', '#f7c242');
+                            $(`${memberOrderPlaceHere}`).find('.memberProgressAll').eq(indexfordot).find('div.memberProgressDot_odd1').removeClass('memberUnchecked');
+                            $(`${memberOrderPlaceHere}`).find('.memberProgressAll').eq(indexfordot).find('div.memberProgressDot_even1').css('background-color', '#f7c242');
+                            $(`${memberOrderPlaceHere}`).find('.memberProgressAll').eq(indexfordot).find('div.memberProgressDot_odd2').removeClass('memberUnchecked');
+                            $(`${memberOrderPlaceHere}`).find('.memberProgressAll').eq(indexfordot).find('div.memberProgressDot_even2').css('background-color', '#f7c242');
+                            $(`${memberOrderPlaceHere}`).find('.memberProgressAll').eq(indexfordot).find('span').css('color', '#a3a3a3');
+                            $(`${memberOrderPlaceHere}`).find('.memberProgressAll').eq(indexfordot).find('span.memberWordCheck3').css('color', '#f7c242');
+
                         }else if( row.shipping_status=='已送達' ){
-                            $('.memberProgressAll').eq(index).find('div.memberProgressDot_odd1').removeClass('memberUnchecked');
-                            $('.memberProgressAll').eq(index).find('div.memberProgressDot_even1').css('background-color', '#f7c242');
-                            $('.memberProgressAll').eq(index).find('div.memberProgressDot_odd2').removeClass('memberUnchecked');
-                            $('.memberProgressAll').eq(index).find('div.memberProgressDot_even2').css('background-color', '#f7c242');
-                            $('.memberProgressAll').eq(index).find('div.memberProgressDot_odd3').removeClass('memberUnchecked');
-                            $('.memberProgressAll').eq(index).find('div.memberProgressDot_even3').css('background-color', '#f7c242');
-                            // $('div .memberProgressDot_odd4').removeClass('memberUnchecked');
-                            $('.memberProgressAll').eq(index).find('span').eq(index).css('color', '#a3a3a3');
-                            $('.memberProgressAll').eq(index).find('span.memberWordCheck4').eq(index).css('color', '#f7c242');
+                            $(`${memberOrderPlaceHere}`).find('.memberProgressAll').eq(indexfordot).find('div.memberProgressDot_odd1').removeClass('memberUnchecked');
+                            $(`${memberOrderPlaceHere}`).find('.memberProgressAll').eq(indexfordot).find('div.memberProgressDot_even1').css('background-color', '#f7c242');
+                            $(`${memberOrderPlaceHere}`).find('.memberProgressAll').eq(indexfordot).find('div.memberProgressDot_odd2').removeClass('memberUnchecked');
+                            $(`${memberOrderPlaceHere}`).find('.memberProgressAll').eq(indexfordot).find('div.memberProgressDot_even2').css('background-color', '#f7c242');
+                            $(`${memberOrderPlaceHere}`).find('.memberProgressAll').eq(indexfordot).find('div.memberProgressDot_odd3').removeClass('memberUnchecked');
+                            $(`${memberOrderPlaceHere}`).find('.memberProgressAll').eq(indexfordot).find('div.memberProgressDot_even3').css('background-color', '#f7c242');
+                            $(`${memberOrderPlaceHere}`).find('.memberProgressAll').eq(indexfordot).find('span').css('color', '#a3a3a3');
+                            $(`${memberOrderPlaceHere}`).find('.memberProgressAll').eq(indexfordot).find('span.memberWordCheck4').css('color', '#f7c242');
                         }else if( row.shipping_status=='已取貨' ){
                             // event1_css = 'background-color:#f7c242';
-                            $('.memberProgressAll').eq(index).find('div.memberProgressDot_odd1').removeClass('memberUnchecked');
-                            $('.memberProgressAll').eq(index).find('div.memberProgressDot_even1').css('background-color', '#f7c242');
-                            $('.memberProgressAll').eq(index).find('div.memberProgressDot_odd2').removeClass('memberUnchecked');
-                            $('.memberProgressAll').eq(index).find('div.memberProgressDot_even2').css('background-color', '#f7c242');
-                            $('.memberProgressAll').eq(index).find('div.memberProgressDot_odd3').removeClass('memberUnchecked');
-                            $('.memberProgressAll').eq(index).find('div.memberProgressDot_even3').css('background-color', '#f7c242');
-                            // $('.memberProgressDot_odd4').removeClass('memberUnchecked');
-                            $('.memberProgressAll').eq(index).find('span').css('color', '#a3a3a3');
-                            $('.memberProgressAll').eq(index).find('span.memberWordCheck4').css('color', '#f7c242');
-                        }else{
+                            $(`${memberOrderPlaceHere}`).find('.memberProgressAll').eq(indexfordot).find('div.memberProgressDot_odd1').removeClass('memberUnchecked');
+                            $(`${memberOrderPlaceHere}`).find('.memberProgressAll').eq(indexfordot).find('div.memberProgressDot_even1').css('background-color', '#f7c242');
+                            $(`${memberOrderPlaceHere}`).find('.memberProgressAll').eq(indexfordot).find('div.memberProgressDot_odd2').removeClass('memberUnchecked');
+                            $(`${memberOrderPlaceHere}`).find('.memberProgressAll').eq(indexfordot).find('div.memberProgressDot_even2').css('background-color', '#f7c242');
+                            $(`${memberOrderPlaceHere}`).find('.memberProgressAll').eq(indexfordot).find('div.memberProgressDot_odd3').removeClass('memberUnchecked');
+                            $(`${memberOrderPlaceHere}`).find('.memberProgressAll').eq(indexfordot).find('div.memberProgressDot_even3').css('background-color', '#f7c242');
+                            $(`${memberOrderPlaceHere}`).find('.memberProgressAll').eq(indexfordot).find('span').css('color', '#a3a3a3');
+                            $(`${memberOrderPlaceHere}`).find('.memberProgressAll').eq(indexfordot).find('span.memberWordCheck4').css('color', '#f7c242');
                             
+                        }else{
+                            // 已退貨
+                            $(`${memberOrderPlaceHere}`).find('.memberProgressAll').eq(indexfordot).find('div.memberProgressDot_odd1').removeClass('memberUnchecked');
+                            $(`${memberOrderPlaceHere}`).find('.memberProgressAll').eq(indexfordot).find('div.memberProgressDot_even1').css('background-color', '#f7c242');
+                            $(`${memberOrderPlaceHere}`).find('.memberProgressAll').eq(indexfordot).find('div.memberProgressDot_odd2').removeClass('memberUnchecked');
+                            $(`${memberOrderPlaceHere}`).find('.memberProgressAll').eq(indexfordot).find('div.memberProgressDot_even2').css('background-color', '#f7c242');
+                            $(`${memberOrderPlaceHere}`).find('.memberProgressAll').eq(indexfordot).find('div.memberProgressDot_odd3').removeClass('memberUnchecked');
+                            $(`${memberOrderPlaceHere}`).find('.memberProgressAll').eq(indexfordot).find('div.memberProgressDot_even3').css('background-color', '#f7c242');
+                            $(`${memberOrderPlaceHere}`).find('.memberProgressAll').eq(indexfordot).find('span').css('color', '#a3a3a3');
+                            $(`${memberOrderPlaceHere}`).find('.memberProgressAll').eq(indexfordot).find('span.memberWordCheck4').css('color', '#f7c242');
                         };
 
                     });
@@ -594,12 +636,6 @@
                         );
 
                     });
-                    
-                    // `<div class='memberLikePack'>
-                    //      <img class='memberLikeImg' src="../images/shopping_list/${row.product_image1}">
-                    //      <div class='memberFavoriteName'>${row.product_name}</div>
-                    //      <img class='memberLikeHeart' src="../images/member/favorite.png">
-                    //  </div>`
                             
 
                     // 如果有資料是空值的話，加上目前沒東西ㄉ文字說明
