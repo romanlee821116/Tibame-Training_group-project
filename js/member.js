@@ -208,7 +208,7 @@ $(document).ready(function(){
                 <p>現在就前往商品頁查看</p>
                 <div>
                     <a class='mainBtn memberFavoriteBack'>返回</a>
-                    <a href="./shopping_list.html" class='mainBtn'>前往商品頁</a>                
+                    <a href="./shopping_choose.html" class='mainBtn'>前往商品頁</a>                
                 </div>
             </div>
         </div>`
