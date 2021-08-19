@@ -29,11 +29,12 @@ $('button').click(function(e){
   let fakeClick1 = $('#contact_tel').is(":checked");
   let fakeClick2 = $('#contact_mail').is(":checked");
   var regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-
+  let check =0;
   if(name == ""){
     e.preventDefault();
     $('.contact_one').css('display','inline-block');
     $('#contact_yourName').css('border','2px solid #dc3838');
+    check = 1;
   }else{
     $('.contact_one').css('display','none');
     $('#contact_yourName').css('border','none');
@@ -42,6 +43,7 @@ $('button').click(function(e){
     e.preventDefault();
     $('.contact_two').css('display','inline-block');
     $('#contact_yourPhone').css('border','2px solid #dc3838');
+    check = 1;
   }else{
     $('.contact_two').css('display','none');
     $('#contact_yourPhone').css('border','none');
@@ -50,10 +52,12 @@ $('button').click(function(e){
     e.preventDefault();
     $('.contact_three').css('display','inline-block');
     $('#contact_yourEmail').css('border','2px solid #dc3838');
+    check = 1;
   }else if (!regex.test(email)){
     e.preventDefault();
     $('.contact_three').css('display','inline-block');
     $('#contact_yourEmail').css('border','2px solid #dc3838');
+    check = 1;
   }else{
     $('.contact_three').css('display','none');
     $('#contact_yourEmail').css('border','none');
@@ -63,6 +67,7 @@ $('button').click(function(e){
     $('.contact_four').css('display','inline-block');
     $('.contact_fake1').css('border','2px solid #dc3838');
     $('.contact_fake2').css('border','2px solid #dc3838');
+    check = 1;
   }else{
     $('.contact_four').css('display','none');
   };
@@ -70,13 +75,47 @@ $('button').click(function(e){
     e.preventDefault();
     $('.contact_five').css('display','inline-block');
     $('#contact_content').css('border','2px solid #dc3838');
+    check = 1;
   }else{
     $('.contact_five').css('display','none');
     $('#contact_content').css('border','none');
   };
+  if(check ==0){
+    let name = $('#contact_yourName').val();
+    let phone = $('#contact_yourPhone').val();
+    let email = $('#contact_yourEmail').val();
+    let contactWay = $(' input[type="radio"]:checked + label').text();
+    let content = $('#contact_content').val();
+    body= `
+      姓名 : ${name}, \
+      電話 : ${phone}, \
+      Email : ${email}, \
+      聯絡方式 : ${contactWay}, \
+      內容 : ${content} /n
+    `;
+    Email.send({
+      SecureToken : "3ad594-3f7c-49dc-9a72-720bb6b58fa6",
+      Host : "smtp.elasticemail.com",
+      Username : "romanlee821116@gmail.com",
+      Password : "6DFB4A34831E82E8F7625B65028BA55A62E0",
+      // Password : "roman122715386",
+      To : 'romanlee821116@gmail.com',
+      From : "romanlee821116@gmail.com",
+      Subject : "客戶聯繫資訊",
+      Body : body
+    }).then(
+      $('.contactpopBG').show(),
+      $("html, body").animate({scrollTop: '0'}, 500),
+      setTimeout(function(){
+        $('html, body').css('overflow-y','hidden')
+      },600)
+      
+    );
+  }
 })
 $('.contact_close').click(function(){
   $('.contactpopBG').hide();
+  $('body').css('overflow-y','auto'),
   location.reload();
 })
 })

@@ -709,11 +709,13 @@ html, body{
     width: 100%;
     object-fit: contain;
 }
-
+$likePic_width : calc((100% - 95px)/5);
 .memberPart5 .memberLikePack {
     position: relative;
     display: inline-block;
     width: calc((100% - 95px)/5);
+    height: 0;
+    padding-bottom: calc((100% - 95px)/5);
     margin-left: 20px;
     margin-bottom: 20px;
     cursor: pointer;

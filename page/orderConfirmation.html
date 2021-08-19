@@ -341,6 +341,7 @@
       let orderer_data = JSON.parse(localStorage.getItem('orderer_data'));
       orderer_data['order_number']=parseInt(orderlist);
       localStorage.setItem('orderer_data', JSON.stringify(orderer_data));
+      let delivery_data = JSON.parse(localStorage.getItem('delivery_data'));
       
       let payment = localStorage.Payment_Type;
       let payment_Type;
@@ -357,9 +358,13 @@
       }else{
         shipping_id = 3;
       }
-      let shipping_address = $("input[name='ordererAddress']").val();
-      let receiver_name = $("input[name='ordererName']").val();
-      let receiver_phone = $("input[name='ordererPhone']").val();
+      // let shipping_address = $("input[name='ordererAddress']").val();
+      // let receiver_name = $("input[name='ordererName']").val();
+      // let receiver_phone = $("input[name='ordererPhone']").val();
+      let shipping_address = delivery_data['delivery_address'];
+      let receiver_name = delivery_data['delivery_name'];
+      let receiver_phone = delivery_data['delivery_phone'];
+
       let payment_status;
         if(payment == 'onlinePay'){
           payment_status = 1;

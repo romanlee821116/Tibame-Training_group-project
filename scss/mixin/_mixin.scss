@@ -218,6 +218,11 @@
     p {
         color: $darkBrown;
     }
+    a{
+        &:hover{
+            color: $lightBrown;
+        }
+    }
     .footer-logo {
         display: none;
     }
