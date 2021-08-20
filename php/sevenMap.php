@@ -1,6 +1,7 @@
 <?php
     // 電子地圖
-    define('HOME_URL', 'http://localhost/tfd102_g3/php/');
+    // define('HOME_URL', 'http://localhost/tfd102_g3/php/');
+    define('HOME_URL', 'https://tibamef2e.com/tfd102/project/g3/php');
     require('./Ecpay.Logistic.Integration.php');
     try {
         $AL = new EcpayLogistics();
@@ -9,8 +10,8 @@
             'MerchantTradeNo' => 'no' . date('YmdHis'),
             'LogisticsSubType' => EcpayLogisticsSubType::UNIMART,
             'IsCollection' => EcpayIsCollection::NO,
-            'ServerReplyURL' => 'http://localhost/tfd102_g3/php/Map_data.php',
-            // 'ServerReplyURL' => 'http://localhost/tfd102_g3/php/payment.html',
+            // 'ServerReplyURL' => 'http://localhost/tfd102_g3/php/Map_data.php',
+            'ServerReplyURL' => 'https://tibamef2e.com/tfd102/project/g3/php/Map_data.php',
             'ExtraData' => '測試額外資訊',
             'Device' => EcpayDevice::PC
         );

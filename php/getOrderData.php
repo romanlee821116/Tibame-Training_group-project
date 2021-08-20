@@ -59,6 +59,7 @@ else{
 $page_arr[] = ['page'=>'>', 'link'=>$next];
 $response = [$page_arr,$odata,$oDetailData];
 print_r(json_encode($response));
+// print_r($response);
 // sleep(1);exit;
 
 

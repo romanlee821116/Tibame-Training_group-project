@@ -225,7 +225,7 @@ $(document).ready(function () {
           `<div class='cart_loginCheckBg'>
               <div class="cart_loginCheck">
                   <a href="#" class='card_closeBtn'><i class="fas fa-times"></i></a>
-                  <img src="../images/login/send_password.png" alt="">
+                  <img src="../images/login/popup_login_icon.png" alt="">
                   <h2>您尚未登入</h2>
                   <p>需登入方可完成結帳</p>
                   <div id='goLogin'>

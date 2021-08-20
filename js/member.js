@@ -13,38 +13,6 @@ $(document).ready(function(){
         `,
     }),
 
-    // 訂單查詢的收件人詳細資訊
-    // Vue.component('receiver-detail',{
-    //     data(){
-    //         return {
-    //             memberRecevierName: '李* 先生/小姐',
-    //             memberRecevierPhone: '0912345678',
-    //             memberRecevierAddress: '******民權東路六段',
-    //             // isActive: false,
-    //         };
-    //     },
-    //     template: `
-    //         <div class='receiverDetail'>
-    //             <div>
-    //                 <p>收件人姓名：<input disabled type="text" value='李* 先生/小姐'></p>
-    //                 <p>收件人電話：<input disabled type="text" value='0912345678'></p>
-    //                 <p>收件人地址：<input disabled type="text" value='******民權東路六段'></p>
-    //             </div>
-    //             <p>部分資訊打***以保護個人隱私</p>
-    //             <button>確認</button>
-    //         </div>
-    //     `,
-        // methods: {
-            // recevierClose(){
-            //     // this.isActive = true;
-            //     $('.receiverDetail').fadeOut();
-            //     $('.greyBackground').remove();
-            //     // 可滑動卷軸
-            //     $('body').removeClass('stopScroll');
-            // },
-        // },
-    // });
-
     new Vue({
         el: '.memberAll',
     
@@ -194,6 +162,11 @@ $(document).ready(function(){
 
         // =========同步更新資料庫的資料=========
         memberFavoriteDele(deleItemSrc);
+
+        // 如果有資料是空值的話，加上目前沒東西ㄉ文字說明
+        if($('.memberLikePack').length==1){
+            $(".memberPart5").html("<div class='memberNoContent'>目前尚無收藏任何商品</div>");
+        }
         
     });
 

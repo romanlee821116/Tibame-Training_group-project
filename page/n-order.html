@@ -74,7 +74,7 @@
            
             <div class="n-order_order_search">
                 <label for="">訂單編號:</label>
-                <input type="text" v-model='select_number'>
+                <input type="text" v-model='select_number' readonly>
             </div>
 
             <ul class="n-order_total_status">
@@ -129,12 +129,10 @@
 
                 <section>
                     <ul v-for='lists in order_list[current_edit]' class="n-order_detail_content">
-                        <ul v-for='lists in order_list[current_edit]' class="n-order_detail_content">
                             <!-- <li v-for='list in lists'>{{list}}</li> -->
                             <li>{{lists.product_name}}</li>
                             <li>{{lists.quantity}}</li>
-                            <li>{{lists.order_detail_price}}</li>
-                        </ul>
+                            <li>{{lists.order_detail_price}}</li>                      
                     </ul>
                 </section>
 

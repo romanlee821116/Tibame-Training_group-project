@@ -490,13 +490,20 @@ $(function(){
         $('.cus_bag_card').css('bottom','-100%');
     })
     //hover需要(卡片)
-    $('.cus_giftcard_nextstep').stop().mouseenter(function(){
-        $('.choose-card').fadeIn();
+    // $('.cus_giftcard_nextstep').stop().mouseenter(function(){
+    //     $('.choose-card').fadeIn();
+    //     $('.cus_bag_card').css('bottom','-5%');
+    // }).mouseleave(function(){
+    //     $('.choose-card').fadeOut();
+    //     $('.cus_bag_card').css('bottom','-100%');
+    // })
+    $('.cus_giftcard_nextstep').hover(function(){
+        $('.choose-card').fadeIn(500);
         $('.cus_bag_card').css('bottom','-5%');
-    }).mouseleave(function(){
-        $('.choose-card').fadeOut();
+    }, function(){
+        $('.choose-card').fadeOut(500);
         $('.cus_bag_card').css('bottom','-100%');
-    })
+    });
 // ==================是否製作卡片(結帳)==================
     $('.cus_giftcard_stop').click(function(){
         customized['card']=false;
@@ -593,6 +600,7 @@ $(function(){
     })
 //==================卡片返回上一步==================
     $('.custom_chooseCard_prep').click(function(){
+           
         $('.choosenCard').css('opacity','1');
         // title文案還原
         $('.cus_step2_txt>h2').text('是否製作禮物卡?');
@@ -645,7 +653,7 @@ $(function(){
         $(this).addClass('choosenCard').css('opacity','1');;        
     })
 //==================卡片確認按鈕==================
-    $('.custom_chooseCard_next').click(function(){      
+    $('.custom_chooseCard_next').click(function(){     
         let winWidth = $(window).width();
         if($('.choosenCard').length!=0){
             let cardType = $('.choosenCard').attr('data-cardId');
@@ -745,6 +753,7 @@ $(function(){
 // ==================第四步 : 填寫卡片內容上一步==================
     $('.cus_cardcontent_prestep').click(function(){
         let winWidth = $(window).width();
+       
         // 卡片出現
         $('.choose-card').removeClass('choosenCard');
         $('.choose-card').css({display:'block', opacity: '1', transition:'.5s'});

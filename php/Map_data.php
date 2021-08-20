@@ -11,6 +11,7 @@
     echo "localStorage.setItem('CVaddress',  '".$_POST['CVSAddress']."');";
     echo "localStorage.setItem('CVSStoreName',  '".$_POST['CVSStoreName']."');";
     echo "localStorage.setItem('CVSStoreID',  '".$_POST['CVSStoreID']."');";
-    echo "location.href='http://localhost/tfd102_g3/page/payment.html'";
+    // echo "location.href='http://localhost/tfd102_g3/page/payment.html'";
+    echo "location.href='https://tibamef2e.com/tfd102/project/g3/page/payment.html'";
     echo "</script>";    
 ?>

@@ -80,7 +80,8 @@ $('button').click(function(e){
     $('.contact_five').css('display','none');
     $('#contact_content').css('border','none');
   };
-  if(check ==0){
+
+  if(check==0){
     let name = $('#contact_yourName').val();
     let phone = $('#contact_yourPhone').val();
     let email = $('#contact_yourEmail').val();

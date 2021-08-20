@@ -289,12 +289,12 @@
             <div class="cus_product_contianer">
                 <!--商品 -->
                 <div :class='item.class' v-for='(item, index) in cus_item' :data-itemType='item.product_class' class='cus-item' @mouseover='mouseover(index)' @mouseleave='mouseleave(index)'>
-                    <div class='cus_item_img'>
+                    <div class='cus_item_img' @click.prevent='addItem(index)'>
                         <img :src="item.product_image_customize" :data-id='item.product_list'>
                     </div>
-                    <div class='cus_item_txt'>
+                    <div class='cus_item_txt' @click.prevent='addItem(index)'>
                         <p>{{item.product_name}}</p>
-                        <a href="#" class='cus_add'><i class="fas fa-plus" @click.prevent='addItem(index)'></i></a>
+                        <a href="#" class='cus_add'><i class="fas fa-plus"></i></a>
                     </div>
                 </div>
             </div>
@@ -325,7 +325,7 @@
             <div class='custom_card_textArea'>
                 <img src="../images/customized/letter.png" class='custom_cardBg'>
                 <form action="" method="post">
-                    <textarea name="" id="custom_cardText" v-model='message' v-on:keyup='countWord'></textarea>
+                    <textarea name="" id="custom_cardText" v-model='message' v-on:keyup='countWord' placeholder="請輸入卡片內容..."> </textarea>
                 </form>
                 <div class="custom_card_iconList">
                     <div v-for='icon in iconList'>

@@ -20,6 +20,19 @@
 </head>
 
 <body>
+    <!-- 尚未登入彈窗 -->
+    <div class='loginpop'>
+        <div class="type1">
+            <img src="../images/login/send_password.png" alt="">
+            <h2>尚未登入</h2>
+            <p>是否前往登入?</p>
+            <div>
+                <a href="#" class='mainBtn'>返回</a>
+                <a href="#memberShow" class='mainBtn gotoLogin'>前往登入</a>
+            </div>
+        </div>
+    </div>
+    <!-- log in -->
     <div class="memberShow"></div>
     <!-- navbar -->
     <div id="cart_app">
@@ -81,10 +94,12 @@
                         <!-- 一般商品 -->
                         <li class="cart_item" v-for="(item,index) in itemList" :id="item.id">
                             <div class="cart_itemCB" :class="{'cart_choose': item.status}" @click="choose(item)">
-                                <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check fa-w-16" role="img" viewBox="0 0 512 512">
-                    <path fill="#ffffff"
-                        d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z" />
-                    </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"
+                                    data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check fa-w-16"
+                                    role="img" viewBox="0 0 512 512">
+                                    <path fill="#ffffff"
+                                        d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z" />
+                                </svg>
                             </div>
                             <div class="cart_itemImg">
                                 <img :src="item.img">
@@ -111,10 +126,12 @@
                             <!-- 商品 -->
                             <div class="cart_customizationItem">
                                 <div class="cart_itemCB" :class="{'cart_choose': item.status}" @click="choose(item)">
-                                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check fa-w-16" role="img" viewBox="0 0 512 512">
-                        <path fill="#ffffff"
-                        d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z" />
-                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"
+                                        data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check fa-w-16"
+                                        role="img" viewBox="0 0 512 512">
+                                        <path fill="#ffffff"
+                                            d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z" />
+                                    </svg>
                                 </div>
 
                                 <div class="cart_itemImg">
@@ -159,7 +176,8 @@
                         </li>
                     </ul>
 
-                    <div id="cart_deleteMany" @click="delete_All()" :style="{'background-color': delete_bgc, cursor: delete_cursor}">刪除多個</div>
+                    <div id="cart_deleteMany" @click="delete_All()"
+                        :style="{'background-color': delete_bgc, cursor: delete_cursor}">刪除多個</div>
 
                     <div class="cart_total">
                         <p>小計</p>
@@ -167,7 +185,8 @@
                     </div>
                 </div>
 
-                <div class="cart_checkoutBorder"><a href="../page/checkout.html" class="cart_checkout" @click="stopGo">前往結帳</a></div>
+                <div class="cart_checkoutBorder"><a href="../page/checkout.html" class="cart_checkout"
+                        @click="stopGo">前往結帳</a></div>
 
             </div>
         </div>
@@ -182,7 +201,15 @@
     <section class="psycho_beginScreen">
         <article>
             <div class="psycho_beginpic">
-                <img src="../images/psycho/psycho_start_bookitem.png">
+                <img class="start_bookitem_cardbigstar01" src="../images/psycho/start_bookitem_cardbigstar01.png">
+                <img class="start_bookitem_cardbig02" src="../images/psycho/start_bookitem_cardbig02.png">
+                <img class="start_bookitem_cardbig01" src="../images/psycho/start_bookitem_cardbig01.png">
+                <img class="start_bookitem_cardbg02" src="../images/psycho/start_bookitem_cardbg02.png">
+                <img class="start_bookitem_cardbg01" src="../images/psycho/start_bookitem_cardbg01.png">
+                <img class="start_bookitem_bookstar" src="../images/psycho/start_bookitem_bookstar.png">
+                <img class="start_bookitem_booksd" src="../images/psycho/start_bookitem_booksd.png">
+                <img class="start_bookitem_book" src="../images/psycho/start_bookitem_book.png">
+                <img class="start_bookitem_bg" src="../images/psycho/start_bookitem_bg.png">
             </div>
             <h3>你和菓子的距離</h3>
             <h4>一分鐘心理測驗，看看你是哪種菓子精靈 !</h4>
@@ -231,7 +258,14 @@
         <article class="psycho_loadingSetIn">
             <div>
                 <div class="psycho_loadingpic">
-                    <img src="../images/psycho/loading_bookitem.png">
+                    <img class="start_bookitem_cardbig03" src="../images/psycho/start_bookitem_cardbig01.png">
+                    <img class="start_bookitem_cardbig04" src="../images/psycho/start_bookitem_cardbig01.png">
+                    <img class="start_bookitem_cardbig05" src="../images/psycho/start_bookitem_cardbig01.png">
+                    <img class="start_bookitem_cardbig06" src="../images/psycho/start_bookitem_cardbig01.png">
+                    <img class="start_bookitem_cardbig07" src="../images/psycho/start_bookitem_cardbig01.png">
+                    <img class="start_bookitem_bookstar2" src="../images/psycho/start_bookitem_bookstar.png">
+                    <img class="start_bookitem_booksd2" src="../images/psycho/start_bookitem_booksd.png">
+                    <img class="start_bookitem_book2" src="../images/psycho/start_bookitem_book.png">
                 </div>
                 <h3>測驗結果計算中...</h3>
             </div>
@@ -242,6 +276,12 @@
 
     <!-- ==================測驗結果=================== -->
     <section class="psycho_resultScreen">
+        <div class='product_reminder2'>
+            成功加入收藏
+        </div>
+        <div class='product_reminder3'>
+            成功取消收藏
+        </div>
         <div class="psycho_resultBg"></div>
         <div class="psycho_resultContent">
             <h3>測驗結果出爐 !</h3>
@@ -260,46 +300,12 @@
             </div>
             <!-- ==================收藏管理=================== -->
             <div class='psycho_collectScreen'>
-                <div class='psychoLikePack'>
-                    <img class='psychoLikeImg' src="../images/psycho/product_small.png">
-                    <img class='psychoLikeHeart' onclick="return psychoLikeHeart(this);" src="../images/psycho/favorites_icon_n.png">
+                <div class='psychoLikePack' v-for='one in resultProduct[psyhoScorekey]'>
+                    <img class='psychoLikeImg' :src="'../images/shopping_list/' + one.product_image1">
+                    <img class='psychoLikeHeart' onclick="return psychoLikeHeart(this);" :alt="one.product_name"
+                        :src="'../images/psycho/favorites_icon_'+ one.favorite +'.png'">
                 </div>
-                <div class='psychoLikePack'>
-                    <img class='psychoLikeImg' src="../images/psycho/product_small.png">
-                    <img class='psychoLikeHeart' onclick="return psychoLikeHeart(this);" src="../images/psycho/favorites_icon_n.png">
-                </div>
-                <div class='psychoLikePack'>
-                    <img class='psychoLikeImg' src="../images/psycho/product_small.png">
-                    <img class='psychoLikeHeart' onclick="return psychoLikeHeart(this);" src="../images/psycho/favorites_icon_n.png">
-                </div>
-                <div class='psychoLikePack'>
-                    <img class='psychoLikeImg' src="../images/psycho/product_small.png">
-                    <img class='psychoLikeHeart' onclick="return psychoLikeHeart(this);" src="../images/psycho/favorites_icon_n.png">
-                </div>
-                <div class='psychoLikePack'>
-                    <img class='psychoLikeImg' src="../images/psycho/product_small.png">
-                    <img class='psychoLikeHeart' onclick="return psychoLikeHeart(this);" src="../images/psycho/favorites_icon_n.png">
-                </div>
-                <div class='psychoLikePack'>
-                    <img class='psychoLikeImg' src="../images/psycho/product_small.png">
-                    <img class='psychoLikeHeart' onclick="return psychoLikeHeart(this);" src="../images/psycho/favorites_icon_n.png">
-                </div>
-                <div class='psychoLikePack'>
-                    <img class='psychoLikeImg' src="../images/psycho/product_small.png">
-                    <img class='psychoLikeHeart' onclick="return psychoLikeHeart(this);" src="../images/psycho/favorites_icon_n.png">
-                </div>
-                <div class='psychoLikePack'>
-                    <img class='psychoLikeImg' src="../images/psycho/product_small.png">
-                    <img class='psychoLikeHeart' onclick="return psychoLikeHeart(this);" src="../images/psycho/favorites_icon_n.png">
-                </div>
-                <div class='psychoLikePack'>
-                    <img class='psychoLikeImg' src="../images/psycho/product_small.png">
-                    <img class='psychoLikeHeart' onclick="return psychoLikeHeart(this);" src="../images/psycho/favorites_icon_n.png">
-                </div>
-                <div class='psychoLikePack'>
-                    <img class='psychoLikeImg' src="../images/psycho/product_small.png">
-                    <img class='psychoLikeHeart' onclick="return psychoLikeHeart(this);" src="../images/psycho/favorites_icon_n.png">
-                </div>
+
             </div>
 
             <!-- ============================================ -->

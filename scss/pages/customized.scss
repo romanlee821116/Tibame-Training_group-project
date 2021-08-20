@@ -537,15 +537,20 @@ body {
                 width: $itemWidth;
                 margin: 0 auto;
                 position: relative;
+                cursor: pointer;
                 @include rwd(400px) {
                     width: $rdwWidth;
                 }
+                img {
+                    width: 100%;
+                    height: auto;
+                }
             }
-            .cus_item_img img {
-                width: 100%;
-                height: auto;
-            }
-            .cus_item_txt {
+            // .cus_item_img img {
+            //     width: 100%;
+            //     height: auto;
+            // }
+            .cus_item_txt {                
                 position: absolute;
                 left: 50%;
                 top: $itemWidth;
@@ -558,6 +563,7 @@ body {
                 transform: translate(-50%, -70px);
                 display: none;
                 padding-top: 20px;
+                cursor: pointer;
                 p {
                     position: absolute;
                     left: 50%;
@@ -791,11 +797,14 @@ body {
                 color: $darkBrown;
                 border: 0;
                 padding: 40px;
-                padding-left: 50px;
+                padding-left: 65px;
                 resize: none;
                 &:focus {
                     outline: 0;
                 }
+            }
+            ::placeholder {
+                color: $darkBrown;
             }
         }
         .custom_card_iconList {
@@ -824,9 +833,10 @@ body {
                 border: 2px solid $lightBrown;
             }
             @include rwd(575px) {
-                grid-template-columns: 33% 33% 33%;
+                grid-template-columns: 27% 27% 27%;
                 grid-template-rows: 50px 50px 50px 50px;
                 padding: 20px 20px 20px 30px;
+                gap: 15px;
             }
         }
         @include rwd(575px) {

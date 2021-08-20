@@ -122,7 +122,7 @@ $(function () {
 
 //進場動畫
 function indexIntro(){
-    if(localStorage.entranceAnimation!='true'){
+    if(sessionStorage.entranceAnimation!='true'){
         $('.navbar').css('opacity','0');
         index = 0;
         index2 = 0;
@@ -188,7 +188,7 @@ function indexIntro(){
         $('.index_intro').remove();
     }
     //====set local====
-    localStorage.entranceAnimation = 'true';
+    sessionStorage.entranceAnimation = 'true';
 }
 
 // 跑馬燈替換
