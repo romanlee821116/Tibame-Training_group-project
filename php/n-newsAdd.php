@@ -5,7 +5,7 @@
         //Apache實際的根目錄路徑
         $ServerRoot = $_SERVER["DOCUMENT_ROOT"];
         //Apache根目錄之下的檔案存放路徑
-        $filePath = "/tfd102_g3/images/news/";        
+        $filePath = "/tfd102/project/g3/images/news/";        
         return $ServerRoot.$filePath;
     };
 
