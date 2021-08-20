@@ -5,9 +5,9 @@ include("./connection.php");
 $nowpage = $_POST["page"];
 
 $pdo = getPDO();
-$pagecount = $pdo->query('SELECT * FROM tfd102_g3.qa;');
+$pagecount = $pdo->query('SELECT * FROM qa;');
 $pagecount = $pagecount->rowCount();
-$qdata = $pdo->query('SELECT * FROM tfd102_g3.qa LIMIT '.(($nowpage-1)*10).',10;');
+$qdata = $pdo->query('SELECT * FROM qa LIMIT '.(($nowpage-1)*10).',10;');
 $qdata = $qdata->fetchAll();
 $allpage = ceil($pagecount/10);
 
@@ -60,7 +60,7 @@ print_r(json_encode($response));
 //     $db_host = "127.0.0.1";
 //     $db_user = "root";
 //     $db_pass = "wendy729";
-//     $db_select = "tfd102_g3";
+//     $db_select = ";
 
 //     $dsn = "mysql:host=".$db_host.";dbname=".$db_select;
 //     $pdo = new PDO($dsn, $db_user, $db_pass);
@@ -71,7 +71,7 @@ print_r(json_encode($response));
 
 //     $ServerRoot = $_SERVER["DOCUMENT_ROOT"];
 
-//     $filePath = "/tfd102_g3/Upload/";
+//     $filePath = "/Upload/";
 
 //     return $ServerRoot.$filePath;
 // }

@@ -4,7 +4,7 @@
 
     $search = $_POST["search"];
 
-    $sql = "SELECT * FROM tfd102_g3.news where news_id like ?";
+    $sql = "SELECT * FROM news where news_id like ?";
     
     $statement = getPDO()->prepare($sql);
     $statement->bindValue(1, "%".$search."%");

@@ -6,9 +6,9 @@ include("./connection.php");
 $nowpage = $_POST["page"];
 
 $pdo = getPDO();
-$pagecount = $pdo->query('SELECT * FROM tfd102_g3.member;');
+$pagecount = $pdo->query('SELECT * FROM member;');
 $pagecount = $pagecount->rowCount();
-$mdata = $pdo->query('SELECT * FROM tfd102_g3.member LIMIT '.(($nowpage-1)*10).',10;');
+$mdata = $pdo->query('SELECT * FROM member LIMIT '.(($nowpage-1)*10).',10;');
 $mdata = $mdata->fetchAll();
 $allpage = ceil($pagecount/10);
 
@@ -61,7 +61,7 @@ print_r(json_encode($response));
 //     $db_host = "127.0.0.1";
 //     $db_user = "root";
 //     $db_pass = "wendy729";
-//     $db_select = "tfd102_g3";
+//     $db_select = ";
 
 //     $dsn = "mysql:host=".$db_host.";dbname=".$db_select;
 //     $pdo = new PDO($dsn, $db_user, $db_pass);
@@ -72,7 +72,7 @@ print_r(json_encode($response));
 
 //     $ServerRoot = $_SERVER["DOCUMENT_ROOT"];
 
-//     $filePath = "/tfd102_g3/Upload/";
+//     $filePath = "/Upload/";
 
 //     return $ServerRoot.$filePath;
 // }

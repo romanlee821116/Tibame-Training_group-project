@@ -693,7 +693,7 @@
                         $('.memberPart1Popup .type2 h2').text('確認更新');
                         $('.memberPart1Popup .type2 p').text('已將您的會員資料更新');
                         $('.memberPart1Popup').show();
-                        $('body').addClass('stopScroll');s
+                        $('body').addClass('stopScroll');
                     },
                     error: function(exception) {
                         alert("很抱歉，發生錯誤: " + exception.status);
@@ -830,7 +830,7 @@
                     url: "../php/memberfavorite.php",
                     data:{ 
                         keyword : memberSaveAccount,
-                        deleItemPicName : deleItemSrc.split('/')[6],
+                        deleItemPicName : deleItemSrc.split('/')[8],
                     },            
                     dataType: "text",
                     success: function (response) {

@@ -995,6 +995,7 @@ body {
   width: 150px;
   margin: 0 auto;
   position: relative;
+  cursor: pointer;
 }
 
 @media (max-width: 400px) {
@@ -1022,6 +1023,7 @@ body {
           transform: translate(-50%, -70px);
   display: none;
   padding-top: 20px;
+  cursor: pointer;
 }
 
 .cus_step2 .cus_product_contianer .cus-item .cus_item_txt p {
@@ -1298,12 +1300,28 @@ body {
   color: #bb866a;
   border: 0;
   padding: 40px;
-  padding-left: 50px;
+  padding-left: 65px;
   resize: none;
 }
 
 .cus_step2 .custom_card_textArea form textarea:focus {
   outline: 0;
+}
+
+.cus_step2 .custom_card_textArea form ::-webkit-input-placeholder {
+  color: #bb866a;
+}
+
+.cus_step2 .custom_card_textArea form :-ms-input-placeholder {
+  color: #bb866a;
+}
+
+.cus_step2 .custom_card_textArea form ::-ms-input-placeholder {
+  color: #bb866a;
+}
+
+.cus_step2 .custom_card_textArea form ::placeholder {
+  color: #bb866a;
 }
 
 .cus_step2 .custom_card_textArea .custom_card_iconList {
@@ -1340,11 +1358,12 @@ body {
 
 @media (max-width: 575px) {
   .cus_step2 .custom_card_textArea .custom_card_iconList {
-    -ms-grid-columns: 33% 33% 33%;
-        grid-template-columns: 33% 33% 33%;
+    -ms-grid-columns: 27% 27% 27%;
+        grid-template-columns: 27% 27% 27%;
     -ms-grid-rows: 50px 50px 50px 50px;
         grid-template-rows: 50px 50px 50px 50px;
     padding: 20px 20px 20px 30px;
+    gap: 15px;
   }
 }
 

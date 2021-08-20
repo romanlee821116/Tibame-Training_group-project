@@ -5,13 +5,13 @@ include("./connection.php");
 
 $nowpage = $_POST["page"];
 $pdo = getPDO();
-$pagecount = $pdo->query('SELECT * FROM tfd102_g3.order;');
+$pagecount = $pdo->query('SELECT * FROM `order`;');
 $pagecount = $pagecount->rowCount();
-$odata = $pdo->query('SELECT main.* , sp.shipping_fee, dt.discount_name, dt.discount_price FROM tfd102_g3.order as main inner join discount as dt on main.discount_id = dt.discount_id inner join shippingfee as sp on main.shipping_id = sp.shipping_id ORDER BY order_id LIMIT '.(($nowpage-1)*10).',10;');
+$odata = $pdo->query('SELECT main.* , sp.shipping_fee, dt.discount_name, dt.discount_price FROM `order` as main inner join discount as dt on main.discount_id = dt.discount_id inner join shippingfee as sp on main.shipping_id = sp.shipping_id ORDER BY order_id LIMIT '.(($nowpage-1)*10).',10;');
 $odata = $odata->fetchAll();
 foreach($odata as $value){
     if($value["order_list"]){
-        $one_od = $pdo->query('SELECT product_name,quantity,order_detail_price FROM tfd102_g3.order_detail WHERE order_list = "'.$value["order_list"].'";');
+        $one_od = $pdo->query('SELECT product_name,quantity,order_detail_price FROM order_detail WHERE order_list = "'.$value["order_list"].'";');
         $one_od = $one_od->fetchAll();
         $oDetailData[] = $one_od;
     }
@@ -69,7 +69,7 @@ print_r(json_encode($response));
 //     $db_host = "127.0.0.1";
 //     $db_user = "root";
 //     $db_pass = "wendy729";
-//     $db_select = "tfd102_g3";
+//     $db_select = ";
 
 //     $dsn = "mysql:host=".$db_host.";dbname=".$db_select;
 //     $pdo = new PDO($dsn, $db_user, $db_pass);
@@ -80,7 +80,7 @@ print_r(json_encode($response));
 
 //     $ServerRoot = $_SERVER["DOCUMENT_ROOT"];
 
-//     $filePath = "/tfd102_g3/Upload/";
+//     $filePath = "/Upload/";
 
 //     return $ServerRoot.$filePath;
 // }

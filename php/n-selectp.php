@@ -5,8 +5,8 @@
     // $trt = 5;
     $search = $_POST["search"];
 
-    $sql = "SELECT * FROM tfd102_g3.product where product_id like ?";
-    // $sql = "SELECT * FROM tfd102_g3.product where product_id = ?";
+    $sql = "SELECT * FROM product where product_id like ?";
+    // $sql = "SELECT * FROM product where product_id = ?";
 
     
     $statement = getPDO()->prepare($sql);

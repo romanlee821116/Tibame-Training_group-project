@@ -6,9 +6,9 @@ include("./connection.php");
 $nowpage = $_POST["page"];
 
 $pdo = getPDO();
-$pagecount = $pdo->query('SELECT * FROM tfd102_g3.news WHERE discount_id IS NOT NULL;');
+$pagecount = $pdo->query('SELECT * FROM news WHERE discount_id IS NOT NULL;');
 $pagecount = $pagecount->rowCount();
-$ddata = $pdo->query('SELECT main.* , dt.discount_name, dt.discount_price FROM tfd102_g3.news as main inner join discount as dt on main.discount_id = dt.discount_id WHERE main.discount_id IS NOT NULL LIMIT '.(($nowpage-1)*10).',10;');
+$ddata = $pdo->query('SELECT main.* , dt.discount_name, dt.discount_price FROM news as main inner join discount as dt on main.discount_id = dt.discount_id WHERE main.discount_id IS NOT NULL LIMIT '.(($nowpage-1)*10).',10;');
 $ddata = $ddata->fetchAll();
 $allpage = ceil($pagecount/10);
 
@@ -61,7 +61,7 @@ print_r(json_encode($response));
 //     $db_host = "127.0.0.1";
 //     $db_user = "root";
 //     $db_pass = "wendy729";
-//     $db_select = "tfd102_g3";
+//     $db_select = ";
 
 //     $dsn = "mysql:host=".$db_host.";dbname=".$db_select;
 //     $pdo = new PDO($dsn, $db_user, $db_pass);
@@ -72,7 +72,7 @@ print_r(json_encode($response));
 
 //     $ServerRoot = $_SERVER["DOCUMENT_ROOT"];
 
-//     $filePath = "/tfd102_g3/Upload/";
+//     $filePath = "/Upload/";
 
 //     return $ServerRoot.$filePath;
 // }

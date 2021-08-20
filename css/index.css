@@ -106,6 +106,19 @@ body {
       justify-content: space-around;
 }
 
+@media (max-width: 575px) {
+  .index_wrapper .content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: 70%;
+  }
+}
+
 .index_wrapper .content .logo {
   width: 120px;
   height: 120px;
@@ -156,6 +169,10 @@ body {
   text-transform: uppercase;
   letter-spacing: 2px;
   font-size: 18px;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  line-height: 120px;
 }
 
 .index_wrapper .content .button._1 {

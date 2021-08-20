@@ -1156,6 +1156,10 @@ body {
   color: #bb866a;
 }
 
+.footer a:hover {
+  color: #cba89a;
+}
+
 .footer .footer-logo {
   display: none;
 }

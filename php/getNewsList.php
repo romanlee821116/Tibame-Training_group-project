@@ -5,27 +5,27 @@ include("./connection.php");
 $nowtap = $_POST["tap"];
 $change = $_POST["clickcl"];
 $pdo = getPDO();
-$ndata = $pdo->query('SELECT * FROM tfd102_g3.news LIMIT '.($nowtap*12).';');
+$ndata = $pdo->query('SELECT * FROM news LIMIT '.($nowtap*12).';');
 $ndata = $ndata->fetchAll();
 
 if($change == 1){
-    $ndata = $pdo->query('SELECT * FROM tfd102_g3.news LIMIT '.($nowtap*12).';');
+    $ndata = $pdo->query('SELECT * FROM news LIMIT '.($nowtap*12).';');
     $ndata = $ndata->fetchAll();
 }
 elseif($change == 2){
-    $ndata = $pdo->query('SELECT * FROM tfd102_g3.news WHERE news_class = 0 LIMIT '.($nowtap*12).';');
+    $ndata = $pdo->query('SELECT * FROM news WHERE news_class = 0 LIMIT '.($nowtap*12).';');
     $ndata = $ndata->fetchAll();
 }
 elseif($change == 3){
-    $ndata = $pdo->query('SELECT * FROM tfd102_g3.news WHERE news_class = 1 LIMIT '.($nowtap*12).';');
+    $ndata = $pdo->query('SELECT * FROM news WHERE news_class = 1 LIMIT '.($nowtap*12).';');
     $ndata = $ndata->fetchAll();
 }
 elseif($change == 4){
-    $ndata = $pdo->query('SELECT * FROM tfd102_g3.news WHERE news_class = 2 LIMIT '.($nowtap*12).';');
+    $ndata = $pdo->query('SELECT * FROM news WHERE news_class = 2 LIMIT '.($nowtap*12).';');
     $ndata = $ndata->fetchAll();
 }
 else{
-    $ndata = $pdo->query('SELECT * FROM tfd102_g3.news WHERE news_class = 3 LIMIT '.($nowtap*12).';');
+    $ndata = $pdo->query('SELECT * FROM news WHERE news_class = 3 LIMIT '.($nowtap*12).';');
     $ndata = $ndata->fetchAll();
 }
 
@@ -40,7 +40,7 @@ print_r(json_encode($response));
 //     $db_host = "127.0.0.1";
 //     $db_user = "root";
 //     $db_pass = "wendy729";
-//     $db_select = "tfd102_g3";
+//     $db_select = ";
 
 //     $dsn = "mysql:host=".$db_host.";dbname=".$db_select;
 //     $pdo = new PDO($dsn, $db_user, $db_pass);
@@ -51,7 +51,7 @@ print_r(json_encode($response));
 
 //     $ServerRoot = $_SERVER["DOCUMENT_ROOT"];
 
-//     $filePath = "/tfd102_g3/Upload/";
+//     $filePath = "/Upload/";
 
 //     return $ServerRoot.$filePath;
 // }

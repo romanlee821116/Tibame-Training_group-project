@@ -24,15 +24,16 @@
     $deleItemName = $data_memberFavoriteGetName[0][0];
         
     //建立SQL語法
-    $sql_memberFavoriteDele = 
-    "DELETE from favorite
-    WHERE `account` = :keyword and product_name = :productname";
+    // -- WHERE `account` = :keyword and product_name = :productname";
+    $sql_memberFavoriteDele = "DELETE FROM favorite WHERE account = ? AND product_name = ?";
 
     $statement = $pdo->prepare($sql_memberFavoriteDele);
-    $statement->bindParam("keyword" , $keyword);
-    $statement->bindParam("productname" , $deleItemName);
-    $statement -> execute();
-    $data_memberFavoriteDele = $statement->fetchAll();
+    // $statement->bindParam("keyword" , $keyword);
+    // $statement->bindParam("productname" , $deleItemName);
+    $statement->bindValue(1 , $keyword);
+    $statement->bindValue(2 , $deleItemName);
+    $statement->execute();
+    // $data_memberFavoriteDele = $statement->fetchAll();
     
     echo 'done';
 

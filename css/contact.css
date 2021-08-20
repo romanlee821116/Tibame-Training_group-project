@@ -777,6 +777,10 @@
   color: #bb866a;
 }
 
+.footer a:hover {
+  color: #cba89a;
+}
+
 .footer .footer-logo {
   display: none;
 }
@@ -1031,7 +1035,7 @@ body {
 
 @media screen and (max-width: 576px) {
   .contact_left {
-    width: 80%;
+    width: 83%;
   }
 }
 
