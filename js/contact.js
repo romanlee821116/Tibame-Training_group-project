@@ -100,7 +100,7 @@ $('button').click(function(e){
       Username : "romanlee821116@gmail.com",
       Password : "6DFB4A34831E82E8F7625B65028BA55A62E0",
       // Password : "roman122715386",
-      To : 'romanlee821116@gmail.com',
+      To : 'roman821116@gmail.com',
       From : "romanlee821116@gmail.com",
       Subject : "客戶聯繫資訊",
       Body : body
