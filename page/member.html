@@ -576,13 +576,14 @@
                             $(`${memberOrderPlaceHere}`).find('.memberProgressAll').eq(indexfordot).find('div.memberProgressDot_odd1').removeClass('memberUnchecked');
                             $(`${memberOrderPlaceHere}`).find('.memberProgressAll').eq(indexfordot).find('div.memberProgressDot_even1').css('background-color', '#f7c242');
                             $(`${memberOrderPlaceHere}`).find('.memberProgressAll').eq(indexfordot).find('div.memberProgressDot_odd2').removeClass('memberUnchecked');
-                        }else{
-                            
-                        };
-
-                        if( row.shipping_status=='待出貨' ){
+                        }else if( row.order_status=='已取消'){
                             $(`${memberOrderPlaceHere}`).find('.memberProgressAll').eq(indexfordot).find('span').css('color', '#a3a3a3');
                             $(`${memberOrderPlaceHere}`).find('.memberProgressAll').eq(indexfordot).find('.memberWordCheck1').css('color', '#f7c242');
+                        };
+
+                        if( row.shipping_status=='待出貨'){
+                            // $(`${memberOrderPlaceHere}`).find('.memberProgressAll').eq(indexfordot).find('span').css('color', '#a3a3a3');
+                            // $(`${memberOrderPlaceHere}`).find('.memberProgressAll').eq(indexfordot).find('.memberWordCheck1').css('color', '#f7c242');
                         }else if( row.shipping_status=='已出貨' ){
                             $(`${memberOrderPlaceHere}`).find('.memberProgressAll').eq(indexfordot).find('div.memberProgressDot_odd1').removeClass('memberUnchecked');
                             $(`${memberOrderPlaceHere}`).find('.memberProgressAll').eq(indexfordot).find('div.memberProgressDot_even1').css('background-color', '#f7c242');
