@@ -1481,6 +1481,7 @@ body {
   font-weight: bold;
   color: white;
   text-align: center;
+  line-height: 2;
 }
 
 .psycho_elves_name {
@@ -1500,6 +1501,7 @@ body {
   font-weight: bold;
   color: white;
   text-align: center;
+  line-height: 2;
 }
 
 /* 翻轉卡片 */

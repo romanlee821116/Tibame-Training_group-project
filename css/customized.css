@@ -1340,6 +1340,7 @@ body {
   position: relative;
   z-index: 5;
   padding: 30px 40px;
+  padding-left: 60px;
 }
 
 .cus_step2 .custom_card_textArea .custom_card_iconList img {
