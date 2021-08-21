@@ -25,25 +25,66 @@ $(function () {
                 { class: 'p4-watermark p4-mark3', src: '../images/index/product_watercolor_c.png' },
             ],
             p4_pic:[
-                {src:'../images/shopping_list/daifuku_mango_c_big.png', txt:'芒果大福'},
-                {src:'../images/shopping_list/daifuku_strawberry_b_big.png', txt:'草莓大福'},
-                {src:'../images/shopping_list/daifuku_soybeans_a_big.png', txt:'毛豆大福'},
-                {src:'../images/shopping_list/monaka_chocolate_b_big.png', txt:'巧克力最中'},
-                {src:'../images/shopping_list/monaka_matcha_b_big.png', txt:'抹茶最中'},
-                {src:'../images/shopping_list/namagashi_chrysanthemum_c_big.png', txt:'生菓子菊'},
-                {src:'../images/shopping_list/namagashi_hydrangea_a_big.png', txt:'生菓子繡球花'},
-                {src:'../images/shopping_list/namagashi_kikyo_b_big.png', txt:'生菓子桔梗'},
-                {src:'../images/shopping_list/namagashi_peony_b_big.png', txt:'生菓子牡丹'},
-                {src:'../images/shopping_list/dorayaki_matcha_a_big.png', txt:'抹茶銅鑼燒'},
-                {src:'../images/shopping_list/dorayaki_chestnut_b_big.png', txt:'栗子銅鑼燒'},
-                {src:'../images/shopping_list/daifuku_chocolate_c_big.png', txt:'巧克力大福'},
-                {src:'../images/shopping_list/namagashi_sakura_b_big.png', txt:'生菓子櫻'},
-                {src:'../images/shopping_list/monaka_milk_b_big.png', txt:'牛奶最中'},
-                {src:'../images/shopping_list/dorayaki_taro_c_big.png', txt:'芋頭銅鑼燒'},
-                {src:'../images/shopping_list/namagashi_firework_c_big.png', txt:'生菓子煙花'},
-                {src:'../images/shopping_list/dorayaki_pudding_b_big.png', txt:'布丁銅鑼燒'},
+                // {src:'../images/shopping_list/daifuku_mango_c_big.png', txt:'芒果大福'},
+                // {src:'../images/shopping_list/daifuku_strawberry_b_big.png', txt:'草莓大福'},
+                // {src:'../images/shopping_list/daifuku_soybeans_a_big.png', txt:'毛豆大福'},
+                // {src:'../images/shopping_list/monaka_chocolate_b_big.png', txt:'巧克力最中'},
+                // {src:'../images/shopping_list/monaka_matcha_b_big.png', txt:'抹茶最中'},
+                // {src:'../images/shopping_list/namagashi_chrysanthemum_c_big.png', txt:'生菓子菊'},
+                // {src:'../images/shopping_list/namagashi_hydrangea_a_big.png', txt:'生菓子繡球花'},
+                // {src:'../images/shopping_list/namagashi_kikyo_b_big.png', txt:'生菓子桔梗'},
+                // {src:'../images/shopping_list/namagashi_peony_b_big.png', txt:'生菓子牡丹'},
+                // {src:'../images/shopping_list/dorayaki_matcha_a_big.png', txt:'抹茶銅鑼燒'},
+                // {src:'../images/shopping_list/dorayaki_chestnut_b_big.png', txt:'栗子銅鑼燒'},
+                // {src:'../images/shopping_list/daifuku_chocolate_c_big.png', txt:'巧克力大福'},
+                // {src:'../images/shopping_list/namagashi_sakura_b_big.png', txt:'生菓子櫻'},
+                // {src:'../images/shopping_list/monaka_milk_b_big.png', txt:'牛奶最中'},
+                // {src:'../images/shopping_list/dorayaki_taro_c_big.png', txt:'芋頭銅鑼燒'},
+                // {src:'../images/shopping_list/namagashi_firework_c_big.png', txt:'生菓子煙花'},
+                // {src:'../images/shopping_list/dorayaki_pudding_b_big.png', txt:'布丁銅鑼燒'},
             ],
-        }
+        },
+        methods:{
+            fetchData(){
+                axios.post('../php/homepage_product.php',{
+                    action: 'fetchall'
+                }).then(function(res){
+                    vm3.p4_pic = res.data;
+                    for(let i in vm3.p4_pic){
+                        imgURL = '../images/shopping_list/'+vm3.p4_pic[i]['product_image1'];
+                        vm3.p4_pic[i]['product_image1'] = imgURL;                      
+                    }; 
+                })
+            },
+            productPicChange(){
+                let index = 0;
+                let productPic_list = [
+                    this.p4_pic[0],    
+                    this.p4_pic[1],
+                    this.p4_pic[2],
+                    this.p4_pic[3], 
+                ];
+                console.log(productPic_list);
+                setInterval(() => {
+                    index = (index+1) % 4;
+                    let newSrc = productPic_list[index].product_image1;
+                    let newName = productPic_list[index].product_name;
+                    let newPrice = productPic_list[index].price;
+                    $('.index_p4_bigPic_img>img').attr('src', newSrc);
+                    $('.index_p4_bigPic_info > p:first-child').text(newName);
+                    $('.index_p4_bigPic_info > p:last-child').text('3入 $'+ newPrice +'元');
+                }, 3000);
+            }
+            
+        },
+        created() {
+            this.fetchData();
+            // this.productPicChange();
+        },
+        updated() {
+            this.productPicChange();
+        },
+        
     })
 
     var vm4 = new Vue({
@@ -88,6 +129,7 @@ $(function () {
                     }; 
                 })
             },
+            
         },
         created() {
             this.fetchData();
@@ -117,7 +159,7 @@ $(function () {
     newsCarousel();
     indexIntro();
     shopPicChange();
-    productPicChange();
+    // productPicChange();
 })
 
 //進場動畫
@@ -250,25 +292,6 @@ function newsCarousel() {
     }
 }
 
-function productPicChange(){
-    let index = 0;
-    let productPic_list = [
-        {src: '../images/shopping_list/taiyaki_sakura_c_big.png', name: '櫻花鯛魚燒', price:'3入 $300'},
-        {src: '../images/shopping_list/dorayaki_strawberry_c_big.png', name: '草莓銅鑼燒', price:'3入 $285'},
-        {src: '../images/shopping_list/namagashi_firework_c_big.png', name: '生菓子花火', price:'3入 $330'},
-        {src: '../images/shopping_list/sweet_madeleine_c_big.png', name: '瑪德蓮', price:'3入 $120'},        
-    ];
-    setInterval(() => {
-        index = (index+1) % 4;
-        let newSrc = productPic_list[index].src;
-        let newName = productPic_list[index].name;
-        let newPrice = productPic_list[index].price;
-        $('.index_p4_bigPic_img>img').attr('src', newSrc);
-        $('.index_p4_bigPic_info > p:first-child').text(newName);
-        $('.index_p4_bigPic_info > p:last-child').text(newPrice);
-    }, 3000);
-}
-
 //店鋪資訊照片
 function shopPicChange(){    
     $('.index_p7_shopBtn-right').click(function(){
@@ -286,6 +309,26 @@ function shopPicChange(){
         $('.index_p7_bigPic > img').attr('src', newSrc);
     })
 }
+
+//
+// function productPicChange(){
+//     let index = 0;
+//     let productPic_list = [
+//         {src: '../images/shopping_list/taiyaki_sakura_c_big.png', name: '櫻花鯛魚燒', price:'3入 $300'},
+//         {src: '../images/shopping_list/dorayaki_strawberry_c_big.png', name: '草莓銅鑼燒', price:'3入 $285'},
+//         {src: '../images/shopping_list/namagashi_firework_c_big.png', name: '生菓子花火', price:'3入 $330'},
+//         {src: '../images/shopping_list/sweet_madeleine_c_big.png', name: '瑪德蓮', price:'3入 $120'},        
+//     ];
+//     setInterval(() => {
+//         index = (index+1) % 4;
+//         let newSrc = productPic_list[index].src;
+//         let newName = productPic_list[index].name;
+//         let newPrice = productPic_list[index].price;
+//         $('.index_p4_bigPic_img>img').attr('src', newSrc);
+//         $('.index_p4_bigPic_info > p:first-child').text(newName);
+//         $('.index_p4_bigPic_info > p:last-child').text(newPrice);
+//     }, 3000);
+// }
 
 
 
