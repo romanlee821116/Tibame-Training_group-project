@@ -88,18 +88,17 @@ $('button').click(function(e){
     let contactWay = $(' input[type="radio"]:checked + label').text();
     let content = $('#contact_content').val();
     body= `
-      姓名 : ${name}, \
-      電話 : ${phone}, \
-      Email : ${email}, \
-      聯絡方式 : ${contactWay}, \
-      內容 : ${content} /n
+      姓名 : ${name}, <br>
+      電話 : ${phone}, <br>
+      Email : ${email}, <br>
+      聯絡方式 : ${contactWay}, <br>
+      內容 : ${content} <br>
     `;
     Email.send({
       SecureToken : "3ad594-3f7c-49dc-9a72-720bb6b58fa6",
       Host : "smtp.elasticemail.com",
       Username : "romanlee821116@gmail.com",
       Password : "6DFB4A34831E82E8F7625B65028BA55A62E0",
-      // Password : "roman122715386",
       To : 'roman821116@gmail.com',
       From : "romanlee821116@gmail.com",
       Subject : "客戶聯繫資訊",
