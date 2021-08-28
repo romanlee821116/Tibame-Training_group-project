@@ -1500,7 +1500,6 @@ table {
   overflow: hidden;
   -webkit-box-shadow: #999 0px 0px 10px;
           box-shadow: #999 0px 0px 10px;
-  cursor: pointer;
   -webkit-transition: .2s;
   transition: .2s;
 }

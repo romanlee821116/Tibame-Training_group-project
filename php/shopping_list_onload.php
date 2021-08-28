@@ -12,9 +12,9 @@
                         left join(
                             SELECT * FROM favorite WHERE account = ?) as F 
                         on F.product_name = P.product_name
-                        WHERE product_class = ?";
+                        WHERE product_status = 1 AND product_class = ?";
 
-    $sql_itemList_normal = "SELECT * from product WHERE product_class = ?";
+    $sql_itemList_normal = "SELECT * from product WHERE product_status = 1 AND product_class = ?";
 
 
     if($account == "ohhhhhhhh"){

@@ -408,7 +408,10 @@ $(document).ready(function () {
             this.itemPrice = new_subtotal;
             this.total_price = new_total;
           } else {
-            alert('此產品已在訂單內容');
+            $('.product_reminder4').fadeIn();
+                    setTimeout(function() {
+                        $('.product_reminder4').fadeOut();
+                    }, 1000);
           }
         } else {
           let new_itemList = [];

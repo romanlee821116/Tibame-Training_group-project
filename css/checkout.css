@@ -1824,6 +1824,23 @@ body {
   cursor: pointer;
 }
 
+.product_reminder4 {
+  width: 200px;
+  height: 70px;
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  border-radius: 25px;
+  background-color: #bb866a;
+  text-align: center;
+  line-height: 70px;
+  color: #fff;
+  z-index: 100;
+  display: none;
+}
+
 @media screen and (max-width: 768px) {
   .checkout_maybe {
     display: none;

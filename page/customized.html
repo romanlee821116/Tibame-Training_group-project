@@ -328,6 +328,7 @@
                     <textarea name="" id="custom_cardText" v-model='message' v-on:keyup='countWord' placeholder="請輸入卡片內容..."> </textarea>
                 </form>
                 <div class="custom_card_iconList">
+                    <p style='position: absolute; bottom: 0px; right: 30%; color:#bb866a;'>再次點擊圖案即可取消</p>
                     <div v-for='icon in iconList'>
                         <img :src="icon.cardimage" :data-icon='icon.cardimage_id' class='custom_card_icon'>
                     </div>

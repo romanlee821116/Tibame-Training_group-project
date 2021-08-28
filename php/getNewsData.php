@@ -6,7 +6,7 @@ include("./connection.php");
 $nowpage = $_POST["page"];
 
 $pdo = getPDO();
-$pagecount = $pdo->query('SELECT * FROM news WHERE discount_id IS NULL;');
+$pagecount = $pdo->query('SELECT * FROM news WHERE discount_id IS NULL ;');
 $pagecount = $pagecount->rowCount();
 $ndata = $pdo->query('SELECT * FROM news  WHERE discount_id IS NULL LIMIT '.(($nowpage-1)*10).',10;');
 $ndata = $ndata->fetchAll();

@@ -69,11 +69,11 @@ Vue.component('product-add', {
                             商品類別:
                             <select name="status" id="" v-model='p_sort'>
                                 <option value="0">銅鑼燒</option>
-                                <option value="1">日式餅乾</option>
-                                <option value="2">生菓子</option>
-                                <option value="3">鯛魚燒</option>
+                                <option value="3">日式餅乾</option>
+                                <option value="5">生菓子</option>
+                                <option value="1">鯛魚燒</option>
                                 <option value="4">羊羹</option>
-                                <option value="5">大福</option>
+                                <option value="2">大福</option>
                                 <option value="6">最中</option>
                             </select>
                         </li>
@@ -192,6 +192,17 @@ Vue.component('product-add', {
                 let product_image3 = $('.n-product_Pic').eq(2).val();
                 let product_image_topview = $('.n-product_Pic').eq(3).val();
                 let product_image_customize = $('.n-product_Pic').eq(4).val();
+                let product_class = this.p_sort;
+                // if(this.p_sort==1){
+                //     product_class =3;
+                // }else if(this.p_sort==2){
+                //     product_class =5;
+                // }else if(this.p_sort==3){
+                //     product_class =1;
+                // }else if(this.p_sort==5){
+                //     product_class =2;
+                // };
+                // console.log(product_class);
                 product_image1 = getFileName(product_image1);
                 product_image2 = getFileName(product_image2);
                 product_image3 = getFileName(product_image3);
@@ -199,7 +210,7 @@ Vue.component('product-add', {
                 product_image_customize = getFileName(product_image_customize);
                 // append
                 form_data.append('product_list', this.p_number);
-                form_data.append('product_class', this.p_sort);
+                form_data.append('product_class', product_class);
                 form_data.append('product_name', this.p_name);
                 form_data.append('expiration', this.p_exp);
                 form_data.append('ingredient', this.p_ingredient);
@@ -303,7 +314,7 @@ var appVue = new Vue({
         p_customized_list:['否', '是'],
         on_off_list:['下架', '上架'],
         p_sort:0,
-        p_sort_list:['銅鑼燒', '日式餅乾', '生菓子', '鯛魚燒', '羊羹', '大福', '最中'],
+        p_sort_list:['銅鑼燒', '鯛魚燒', '大福', '日式餅乾', '羊羹', '生菓子', '最中'],
         p_ingredient:'',
         p_descript:'',
 

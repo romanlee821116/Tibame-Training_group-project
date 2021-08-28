@@ -5,27 +5,27 @@ include("./connection.php");
 $nowtap = $_POST["tap"];
 $change = $_POST["clickcl"];
 $pdo = getPDO();
-$ndata = $pdo->query('SELECT * FROM news LIMIT '.($nowtap*12).';');
+$ndata = $pdo->query('SELECT * FROM news WHERE news_status = 1 LIMIT '.($nowtap*12).';');
 $ndata = $ndata->fetchAll();
 
 if($change == 1){
-    $ndata = $pdo->query('SELECT * FROM news LIMIT '.($nowtap*12).';');
+    $ndata = $pdo->query('SELECT * FROM news WHERE news_status = 1 LIMIT '.($nowtap*12).';');
     $ndata = $ndata->fetchAll();
 }
 elseif($change == 2){
-    $ndata = $pdo->query('SELECT * FROM news WHERE news_class = 0 LIMIT '.($nowtap*12).';');
+    $ndata = $pdo->query('SELECT * FROM news WHERE news_class = 0 AND news_status = 1 LIMIT '.($nowtap*12).';');
     $ndata = $ndata->fetchAll();
 }
 elseif($change == 3){
-    $ndata = $pdo->query('SELECT * FROM news WHERE news_class = 1 LIMIT '.($nowtap*12).';');
+    $ndata = $pdo->query('SELECT * FROM news WHERE news_class = 1 AND news_status = 1 LIMIT '.($nowtap*12).';');
     $ndata = $ndata->fetchAll();
 }
 elseif($change == 4){
-    $ndata = $pdo->query('SELECT * FROM news WHERE news_class = 2 LIMIT '.($nowtap*12).';');
+    $ndata = $pdo->query('SELECT * FROM news WHERE news_class = 2 AND news_status = 1 LIMIT '.($nowtap*12).';');
     $ndata = $ndata->fetchAll();
 }
 else{
-    $ndata = $pdo->query('SELECT * FROM news WHERE news_class = 3 LIMIT '.($nowtap*12).';');
+    $ndata = $pdo->query('SELECT * FROM news WHERE news_class = 3 AND news_status = 1 LIMIT '.($nowtap*12).';');
     $ndata = $ndata->fetchAll();
 }
 
